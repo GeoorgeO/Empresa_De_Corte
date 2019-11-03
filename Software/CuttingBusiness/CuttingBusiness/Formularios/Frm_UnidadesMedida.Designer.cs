@@ -46,6 +46,8 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
@@ -55,8 +57,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_UnidadMedida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_UnidadMedida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.Abrevia_UnidadMedida = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -64,13 +64,13 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -242,9 +242,25 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Unidades Medida";
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(391, 63);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(95, 20);
+            this.textEdit1.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(324, 66);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(61, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Abreviatura:";
+            // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(57, 63);
+            this.textNombre.Location = new System.Drawing.Point(80, 63);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -261,7 +277,7 @@
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(57, 28);
+            this.textId.Location = new System.Drawing.Point(80, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -324,22 +340,6 @@
             this.Nombre_UnidadMedida.Visible = true;
             this.Nombre_UnidadMedida.VisibleIndex = 1;
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(324, 66);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(61, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Abreviatura:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(391, 63);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(95, 20);
-            this.textEdit1.TabIndex = 5;
-            // 
             // Abrevia_UnidadMedida
             // 
             this.Abrevia_UnidadMedida.Caption = "Abreviatura";
@@ -368,13 +368,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
