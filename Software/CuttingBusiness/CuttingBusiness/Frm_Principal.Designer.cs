@@ -132,10 +132,10 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage6,
             this.ribbonPage4,
-            this.ribbonPage2,
+            this.ribbonPage6,
             this.ribbonPage5,
+            this.ribbonPage2,
             this.ribbonPage3});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem15);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem4);
@@ -370,8 +370,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup17});
+            this.ribbonPageGroup17,
+            this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Catalogos";
             // 
