@@ -50,6 +50,14 @@
     <Compile Include="Conexion\MSRegistro.cs" />
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
+    <Compile Include="Formularios\CLS_Domicilios.cs" />
+    <Compile Include="Formularios\CLS_Estado.cs" />
+    <Compile Include="Formularios\CLS_Pais.cs" />
+    <Compile Include="Formularios\CLS_Productos.cs" />
+    <Compile Include="Formularios\CLS_Proveedores.cs" />
+    <Compile Include="Formularios\CLS_TipoPersona.cs" />
+    <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
+    <Compile Include="Formularios\CLS_UnidadesMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

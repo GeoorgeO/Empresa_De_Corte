@@ -12,66 +12,66 @@ using CapaDeDatos;
 
 namespace CuttingBusiness
 {
-    public partial class Frm_UnidadesMedida : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Pais : DevExpress.XtraEditors.XtraForm
     {
 
-        public string IdUnidadMedida { get; set; }
-        public string UnidadMedida { get; set; }
+        public string IdPais { get; set; }
+        public string Pais { get; set; }
         public Boolean PaSel { get; set; }
 
-        public Frm_UnidadesMedida()
+        public Frm_Pais(Boolean BPasel)
         {
+            this.PaSel = BPasel;
             InitializeComponent();
         }
 
-        private void CargarUnidadesMedida()
+        private void CargarPais()
         {
             gridControl1.DataSource = null;
-            CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
+            CLS_Pais Pais = new CLS_Pais();
 
-            Clase.MtdSeleccionarUnidadesMedida();
-            if (Clase.Exito)
+            Pais.MtdSeleccionarPais();
+            if (Pais.Exito)
             {
-                gridControl1.DataSource = Clase.Datos;
+                gridControl1.DataSource = Pais.Datos;
             }
         }
 
 
 
-        private void InsertarUnidadesMedida()
+        private void InsertarPais()
         {
-            CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
-            Clase.Id_UnidadMedida = textId.Text.Trim();
-            Clase.Nombre_UnidadMedida = textNombre.Text.Trim();
-            Clase.Abrevia_UnidadMedida = textAbrevia.Text.Trim();
-            Clase.MtdInsertarUnidadesMedida();
-            if (Clase.Exito)
+            CLS_Pais Pais = new CLS_Pais();
+            Pais.Id_Pais = textId.Text.Trim();
+            Pais.Nombre_Pais = textNombre.Text.Trim();
+            Pais.MtdInsertarPais();
+            if (Pais.Exito)
             {
 
-                CargarUnidadesMedida();
+                CargarPais();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
             else
             {
-                XtraMessageBox.Show(Clase.Mensaje);
+                XtraMessageBox.Show(Pais.Mensaje);
             }
         }
 
-        private void EliminarUnidadesMedida()
+        private void EliminarPais()
         {
-            CLS_UnidadesMedida Clase = new CLS_UnidadesMedida();
-            Clase.Id_UnidadMedida = textId.Text.Trim();
-            Clase.MtdEliminarUnidadesMedida();
-            if (Clase.Exito)
+            CLS_Pais Pais = new CLS_Pais();
+            Pais.Id_Pais = textId.Text.Trim();
+            Pais.MtdEliminarPais();
+            if (Pais.Exito)
             {
-                CargarUnidadesMedida();
+                CargarPais();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
             else
             {
-                XtraMessageBox.Show(Clase.Mensaje);
+                XtraMessageBox.Show(Pais.Mensaje);
             }
         }
 
@@ -79,7 +79,6 @@ namespace CuttingBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
-            textAbrevia.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -89,9 +88,8 @@ namespace CuttingBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_UnidadMedida"].ToString();
-                    textNombre.Text = row["Nombre_UnidadMedida"].ToString();
-                    textAbrevia.Text = row["Abrevia_UnidadMedida"].ToString();
+                    textId.Text = row["Id_Pais"].ToString();
+                    textNombre.Text = row["Nombre_Pais"].ToString();
                 }
             }
             catch (Exception ex)
@@ -100,11 +98,26 @@ namespace CuttingBusiness
             }
         }
 
+        private void Frm_Pais_Load(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+            CargarPais();
+        }
+
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarUnidadesMedida();
+
+
+                InsertarPais();
             }
             else
             {
@@ -114,9 +127,9 @@ namespace CuttingBusiness
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0 )
+            if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
             {
-                EliminarUnidadesMedida();
+                EliminarPais();
             }
             else
             {
@@ -134,24 +147,10 @@ namespace CuttingBusiness
             this.Close();
         }
 
-        private void Frm_UnidadesMedida_Load(object sender, EventArgs e)
+        private void btnSeleecionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PaSel == true)
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
-            else
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }
-            CargarUnidadesMedida();
-            
-        }
-
-        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            IdUnidadMedida = textId.Text.Trim();
-            UnidadMedida = textNombre.Text.Trim();
+            IdPais = textId.Text.Trim();
+            Pais = textNombre.Text.Trim();
             this.Close();
         }
     }
