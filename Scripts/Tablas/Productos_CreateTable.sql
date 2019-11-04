@@ -1,4 +1,4 @@
-USE [EmpresaCorte]
+USE [AvoHarvest]
 GO
 IF OBJECT_ID('Productos') IS NOT NULL
 	begin

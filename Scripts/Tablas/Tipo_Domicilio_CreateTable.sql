@@ -1,4 +1,4 @@
-USE [EmpresaCorte]
+USE [AvoHarvest]
 GO
 IF OBJECT_ID('Tipo_Domicilio') IS NOT NULL
 	begin
