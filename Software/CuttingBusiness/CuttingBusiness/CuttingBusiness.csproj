@@ -85,6 +85,18 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Ciudad.Designer.cs">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Calidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Calidad.Designer.cs">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,18 @@
     <Compile Include="Formularios\Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Dueños.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Dueños.Designer.cs">
+      <DependentUpon>Frm_Dueños.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Cultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Cultivo.Designer.cs">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Tipo_Domicilio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +180,12 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Ciudad.resx">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Calidad.resx">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Empleados.resx">
       <DependentUpon>Frm_Empleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Dueños.resx">
+      <DependentUpon>Frm_Dueños.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Cultivo.resx">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Tipo_Domicilio.resx">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
