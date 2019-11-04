@@ -173,7 +173,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Proveedor:";
+            this.lblProveedor.Caption = "Calidad:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -217,10 +217,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 126);
+            this.panelControl2.Location = new System.Drawing.Point(71, 106);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(442, 227);
+            this.panelControl2.Size = new System.Drawing.Size(442, 247);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -230,7 +230,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(418, 203);
+            this.gridControl1.Size = new System.Drawing.Size(418, 223);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -269,7 +269,7 @@
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(442, 126);
+            this.panelControl1.Size = new System.Drawing.Size(442, 106);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -281,13 +281,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(418, 102);
+            this.groupControl1.Size = new System.Drawing.Size(418, 82);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Calidad";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(100, 63);
+            this.textNombre.Location = new System.Drawing.Point(79, 54);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -295,7 +295,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 66);
+            this.labelControl2.Location = new System.Drawing.Point(19, 58);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(39, 13);
             this.labelControl2.TabIndex = 2;
@@ -304,7 +304,7 @@
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(100, 28);
+            this.textId.Location = new System.Drawing.Point(79, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -334,7 +334,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Calidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cultivo";
+            this.Text = "Calidad";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

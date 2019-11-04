@@ -323,7 +323,7 @@
             // textPais
             // 
             this.textPais.Enabled = false;
-            this.textPais.Location = new System.Drawing.Point(168, 77);
+            this.textPais.Location = new System.Drawing.Point(150, 77);
             this.textPais.MenuManager = this.barManager1;
             this.textPais.Name = "textPais";
             this.textPais.Size = new System.Drawing.Size(159, 20);
@@ -332,7 +332,7 @@
             // btnbuscar
             // 
             this.btnbuscar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.ImageOptions.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(138, 75);
+            this.btnbuscar.Location = new System.Drawing.Point(120, 75);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(24, 23);
             this.btnbuscar.TabIndex = 6;
@@ -340,7 +340,7 @@
             // 
             // textIdPais
             // 
-            this.textIdPais.Location = new System.Drawing.Point(96, 77);
+            this.textIdPais.Location = new System.Drawing.Point(78, 77);
             this.textIdPais.MenuManager = this.barManager1;
             this.textIdPais.Name = "textIdPais";
             this.textIdPais.Size = new System.Drawing.Size(37, 20);
@@ -356,7 +356,7 @@
             // 
             // textEstado
             // 
-            this.textEstado.Location = new System.Drawing.Point(96, 52);
+            this.textEstado.Location = new System.Drawing.Point(78, 52);
             this.textEstado.MenuManager = this.barManager1;
             this.textEstado.Name = "textEstado";
             this.textEstado.Size = new System.Drawing.Size(231, 20);
@@ -373,7 +373,7 @@
             // textIdEstado
             // 
             this.textIdEstado.Enabled = false;
-            this.textIdEstado.Location = new System.Drawing.Point(96, 28);
+            this.textIdEstado.Location = new System.Drawing.Point(78, 28);
             this.textIdEstado.MenuManager = this.barManager1;
             this.textIdEstado.Name = "textIdEstado";
             this.textIdEstado.Size = new System.Drawing.Size(100, 20);
