@@ -54,6 +54,7 @@
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Productos.cs" />
+    <Compile Include="Formularios\CLS_Clientes.cs" />
     <Compile Include="Formularios\CLS_Proveedores.cs" />
     <Compile Include="Formularios\CLS_TipoPersona.cs" />
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />

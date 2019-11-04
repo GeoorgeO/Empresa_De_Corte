@@ -97,6 +97,12 @@
     <Compile Include="Formularios\Frm_Estado.Designer.cs">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Huertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Huertas.Designer.cs">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Pais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     </Compile>
     <Compile Include="Formularios\Frm_Productos.Designer.cs">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Clientes.Designer.cs">
+      <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Proveedores.cs">
       <SubType>Form</SubType>
@@ -150,11 +162,17 @@
     <EmbeddedResource Include="Formularios\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Productos.resx">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Clientes.resx">
+      <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
