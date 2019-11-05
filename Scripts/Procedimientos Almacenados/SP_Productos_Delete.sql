@@ -28,7 +28,13 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Productos where Id_Producto=@Id_Producto
+		declare @tVerifica bit
+		select @tVerifica=Activo from dbo.Productos where Id_Producto=@Id_Producto
+		
+		if @tVerifica=1
+			update dbo.Productos set Activo=0 where Id_Producto=@Id_Producto
+		else
+			update dbo.Productos set Activo=1 where Id_Producto=@Id_Producto
 
 		commit transaction T2;
 		set @correcto=1

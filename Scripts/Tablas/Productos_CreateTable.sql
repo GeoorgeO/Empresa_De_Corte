@@ -17,6 +17,8 @@ ELSE
 		[Anaquel] [varchar](5) NULL,
 		[Pasillo] [varchar](5) NULL,
 		[Repisa] [varchar](5) NULL,
+		[Stock] [numeric](18,0) NULL,
+		[Activo] [bit] NULL,
 	 CONSTRAINT [PK_Productos] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Producto] ASC

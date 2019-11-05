@@ -25,7 +25,7 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_Productos_Select
 	-- Add the parameters for the stored procedure here
-	
+	@Activo bit
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -43,9 +43,12 @@ BEGIN
 		  ,Stock_Max
 		  ,Anaquel
 		  ,Pasillo
-		  ,Repisa 
+		  ,Repisa
+		  ,Stock
+		  ,pro.Activo
 		from Productos as pro
 		left join UnidadesMedida as Uni on Uni.Id_UnidadMedida=pro.Id_UnidadMedida
+		where pro.Activo=@Activo
 
 END
 GO

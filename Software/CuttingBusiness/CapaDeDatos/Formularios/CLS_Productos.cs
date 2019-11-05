@@ -18,6 +18,8 @@ namespace CapaDeDatos
         public string Anaquel { get; set; }
         public string Pasillo { get; set; }
         public string Repisa { get; set; }
+        public int Stock { get; set; }
+        public string Activo { get; set; }
 
         public void MtdSeleccionarProductos()
         {
@@ -28,7 +30,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Productos_Select";
-
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

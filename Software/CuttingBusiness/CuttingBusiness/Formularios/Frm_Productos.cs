@@ -19,11 +19,11 @@ namespace CuttingBusiness
             InitializeComponent();
         }
 
-        private void CargarProductos()
+        private void CargarProductos(String Activo)
         {
             gridControl1.DataSource = null;
             CLS_Productos Clase = new CLS_Productos();
-
+            Clase.Activo = Activo;
             Clase.MtdSeleccionarProductos();
             if (Clase.Exito)
             {
@@ -57,7 +57,7 @@ namespace CuttingBusiness
             if (Clase.Exito)
             {
 
-                CargarProductos();
+                CargarProductos("1");
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -74,7 +74,14 @@ namespace CuttingBusiness
             Clase.MtdEliminarProductos();
             if (Clase.Exito)
             {
-                CargarProductos();
+                if (checkActivo.Checked)
+                {
+                    CargarProductos("0");
+                }
+                else
+                {
+                    CargarProductos("1");
+                }
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -96,17 +103,36 @@ namespace CuttingBusiness
             textAnaquel.Text = "";
             textPasillo.Text = "";
             textRepisa.Text = "";
+            labelActivo.Visible = false;
+            bloquear(true);
+            textCantidad.Text = "0";
+
         }
 
         private void iniciarTags()
         {
             textUnidad.Tag = "";
+            labelActivo.Visible = false;
+        }
+
+        private void bloquear(Boolean sino)
+        {
+            checkInventa.Enabled = sino;
+            textUnidad.Enabled = sino;
+            btnbuscar.Enabled = sino;
+            textNombre.Enabled = sino;
+            textMax.Enabled = sino;
+            textMin.Enabled = sino;
+            textPasillo.Enabled = sino;
+            textAnaquel.Enabled = sino;
+            textRepisa.Enabled = sino;
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
             {
+                labelActivo.Visible = true;
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
@@ -114,7 +140,7 @@ namespace CuttingBusiness
                     textNombre.Text = row["Nombre_Producto"].ToString();
                     textUnidad.Tag = row["Id_UnidadMedida"].ToString();
                     textUnidad.Text = row["Nombre_UnidadMedida"].ToString();
-                    if (row["Inventariable"].ToString().Equals("true"))
+                    if (row["Inventariable"].ToString().Equals("True"))
                     {
                         checkInventa.Checked = true;
                     }
@@ -127,7 +153,21 @@ namespace CuttingBusiness
                     textAnaquel.Text = row["Anaquel"].ToString();
                     textPasillo.Text = row["Pasillo"].ToString();
                     textRepisa.Text = row["Repisa"].ToString();
-                   
+                    textCantidad.Text = row["Stock"].ToString();
+                    if (row["Activo"].ToString().Equals("True"))
+                    {
+                        labelActivo.Text = "Activo";
+                        btnEliminar.Caption = "Dar de Baja";
+                        labelActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+                        bloquear(true);
+                    }
+                    else
+                    {
+                        labelActivo.Text = "Inactivo";
+                        btnEliminar.Caption = "Dar de Alta";
+                        labelActivo.ForeColor = System.Drawing.Color.Maroon;
+                        bloquear(false);
+                    }
                 }
             }
             catch (Exception ex)
@@ -172,7 +212,7 @@ namespace CuttingBusiness
 
         private void Frm_Productos_Load(object sender, EventArgs e)
         {
-            CargarProductos();
+            CargarProductos("1");
             iniciarTags();
         }
 
@@ -185,5 +225,18 @@ namespace CuttingBusiness
             textUnidad.Tag = Uni.IdUnidadMedida;
             textUnidad.Text = Uni.UnidadMedida;
         }
+
+        private void checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkActivo.Checked)
+            {
+                CargarProductos("0");
+            }else
+            {
+                CargarProductos("1");
+            }
+        }
+
+        
     }
 }

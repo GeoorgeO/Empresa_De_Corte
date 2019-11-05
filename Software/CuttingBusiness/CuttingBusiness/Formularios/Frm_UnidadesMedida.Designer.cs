@@ -257,7 +257,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(324, 66);
+            this.labelControl3.Location = new System.Drawing.Point(324, 72);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(61, 13);
             this.labelControl3.TabIndex = 4;
@@ -273,7 +273,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(13, 66);
+            this.labelControl2.Location = new System.Drawing.Point(13, 72);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 2;
@@ -290,7 +290,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 31);
+            this.labelControl1.Location = new System.Drawing.Point(13, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 0;
