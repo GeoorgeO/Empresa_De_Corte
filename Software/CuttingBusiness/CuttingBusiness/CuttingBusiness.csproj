@@ -97,6 +97,12 @@
     <Compile Include="Formularios\Frm_Calidad.Designer.cs">
       <DependentUpon>Frm_Calidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Cuadrilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Cuadrilla.Designer.cs">
+      <DependentUpon>Frm_Cuadrilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     </Compile>
     <Compile Include="Formularios\Frm_Cultivo.Designer.cs">
       <DependentUpon>Frm_Cultivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Puesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Puesto.Designer.cs">
+      <DependentUpon>Frm_Puesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Tipo_Domicilio.cs">
       <SubType>Form</SubType>
