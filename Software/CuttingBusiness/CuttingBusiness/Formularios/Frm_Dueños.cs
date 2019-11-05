@@ -132,7 +132,7 @@ namespace CuttingBusiness
             }
             else
             {
-                XtraMessageBox.Show("Es necesario seleccionar un pais.");
+                XtraMessageBox.Show("Es necesario seleccionar un dueño.");
             }
         }
 
