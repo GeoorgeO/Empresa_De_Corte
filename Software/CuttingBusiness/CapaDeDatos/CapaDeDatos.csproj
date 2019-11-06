@@ -50,7 +50,10 @@
     <Compile Include="Conexion\MSRegistro.cs" />
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
+    <Compile Include="Formularios\CLS_Calidades.cs" />
+    <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Domicilios.cs" />
+    <Compile Include="Formularios\CLS_Duenio.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Productos.cs" />
