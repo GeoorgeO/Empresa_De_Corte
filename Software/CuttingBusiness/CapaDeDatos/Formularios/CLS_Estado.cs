@@ -42,9 +42,6 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
         public void MtdInsertarEstado()
         {
             TipoDato _dato = new TipoDato();
@@ -78,7 +75,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdEliminarEstado()
         {
             TipoDato _dato = new TipoDato();
