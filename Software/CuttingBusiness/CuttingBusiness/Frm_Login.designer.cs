@@ -177,15 +177,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(594, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(588, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 149);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 141);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(594, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(588, 27);
             // 
             // barDockControlLeft
             // 
@@ -193,21 +193,21 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 149);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 141);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(594, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(588, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 149);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 141);
             // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 171);
+            this.ClientSize = new System.Drawing.Size(588, 168);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtPass);
@@ -226,7 +226,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Acceso BSC_Inventarios";
+            this.Text = "Acceso Empresa de Corte";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.Shown += new System.EventHandler(this.Frm_Login_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

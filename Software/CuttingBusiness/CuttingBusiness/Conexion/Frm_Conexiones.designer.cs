@@ -114,9 +114,9 @@
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 280);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 268);
             this.barDockControl2.Manager = this.barManager1;
-            this.barDockControl2.Size = new System.Drawing.Size(387, 19);
+            this.barDockControl2.Size = new System.Drawing.Size(387, 31);
             // 
             // barDockControl3
             // 
@@ -124,7 +124,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager1;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 280);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 268);
             // 
             // barDockControl4
             // 
@@ -132,7 +132,7 @@
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl4.Location = new System.Drawing.Point(387, 0);
             this.barDockControl4.Manager = this.barManager1;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 280);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 268);
             // 
             // barButtonItem4
             // 
@@ -164,7 +164,7 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(387, 280);
+            this.panelControl2.Size = new System.Drawing.Size(387, 268);
             this.panelControl2.TabIndex = 6;
             // 
             // xtraTabControl1
@@ -173,7 +173,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(373, 266);
+            this.xtraTabControl1.Size = new System.Drawing.Size(373, 254);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -183,8 +183,8 @@
             this.xtraTabPage1.Controls.Add(this.groupControl2);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(369, 241);
-            this.xtraTabPage1.Text = "Conexion Reportes";
+            this.xtraTabPage1.Size = new System.Drawing.Size(370, 229);
+            this.xtraTabPage1.Text = "Conexion Base de Datos";
             // 
             // groupControl2
             // 
@@ -192,7 +192,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(359, 231);
+            this.groupControl2.Size = new System.Drawing.Size(360, 219);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Datos Reportes";
             // 
@@ -209,9 +209,9 @@
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.txtServer);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(2, 22);
+            this.panelControl3.Location = new System.Drawing.Point(2, 26);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(355, 207);
+            this.panelControl3.Size = new System.Drawing.Size(356, 191);
             this.panelControl3.TabIndex = 0;
             // 
             // btnProbarConexionR

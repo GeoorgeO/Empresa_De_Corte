@@ -63,6 +63,7 @@
     <Compile Include="Formularios\CLS_TipoPersona.cs" />
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Formularios\CLS_UnidadesMedida.cs" />
+    <Compile Include="Formularios\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
