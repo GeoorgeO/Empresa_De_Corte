@@ -280,6 +280,9 @@
     <EmbeddedResource Include="Seguridad\Frm_CargandoConsulta.resx">
       <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Frm_Perfiles.resx">
+      <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
