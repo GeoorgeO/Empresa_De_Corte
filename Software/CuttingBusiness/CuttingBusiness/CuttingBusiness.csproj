@@ -207,6 +207,12 @@
     <Compile Include="Seguridad\Frm_Perfiles.Designer.cs">
       <DependentUpon>Frm_Perfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\Frm_Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Frm_Permisos.Designer.cs">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Frm_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,8 +286,17 @@
     <EmbeddedResource Include="Seguridad\Frm_CargandoConsulta.resx">
       <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Frm_Pantallas.resx">
+      <DependentUpon>Frm_Pantallas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Frm_Perfiles.resx">
       <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Frm_Permisos.resx">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Frm_Usuarios.resx">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
