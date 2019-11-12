@@ -262,7 +262,7 @@
             // Nombre_Pantalla
             // 
             this.Nombre_Pantalla.Caption = "Pantalla";
-            this.Nombre_Pantalla.FieldName = "Nombre_Perfil";
+            this.Nombre_Pantalla.FieldName = "Nombre_Pantalla";
             this.Nombre_Pantalla.Name = "Nombre_Pantalla";
             this.Nombre_Pantalla.Visible = true;
             this.Nombre_Pantalla.VisibleIndex = 1;
