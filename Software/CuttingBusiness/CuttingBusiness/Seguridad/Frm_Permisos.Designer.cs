@@ -47,9 +47,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_PerfilPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -58,6 +57,8 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Nombre_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -129,6 +130,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -137,6 +139,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -145,6 +148,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -153,6 +157,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // btnSeleccionar
             // 
@@ -161,6 +166,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -239,40 +245,35 @@
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_PerfilPantalla,
+            this.Id_Perfil,
             this.Nombre_Perfil,
-            this.gridColumn1});
+            this.Id_Pantalla,
+            this.Nombre_Pantalla});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_PerfilPantalla
+            // Id_Perfil
             // 
-            this.Id_PerfilPantalla.Caption = "Id PerfilPantalla";
-            this.Id_PerfilPantalla.FieldName = "Id_PerfilPantalla";
-            this.Id_PerfilPantalla.Name = "Id_PerfilPantalla";
-            this.Id_PerfilPantalla.Visible = true;
-            this.Id_PerfilPantalla.VisibleIndex = 0;
+            this.Id_Perfil.Caption = "Id Perfil";
+            this.Id_Perfil.FieldName = "Id_Perfil";
+            this.Id_Perfil.Name = "Id_Perfil";
+            this.Id_Perfil.Visible = true;
+            this.Id_Perfil.VisibleIndex = 0;
             // 
             // Nombre_Perfil
             // 
-            this.Nombre_Perfil.Caption = "Perfil";
+            this.Nombre_Perfil.Caption = "Pefil";
             this.Nombre_Perfil.FieldName = "Nombre_Perfil";
             this.Nombre_Perfil.Name = "Nombre_Perfil";
             this.Nombre_Perfil.Visible = true;
             this.Nombre_Perfil.VisibleIndex = 1;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Pantalla";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
             // 
             // panelControl1
             // 
@@ -349,6 +350,22 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // Nombre_Pantalla
+            // 
+            this.Nombre_Pantalla.Caption = "Pantalla";
+            this.Nombre_Pantalla.FieldName = "Nombre_Pantalla";
+            this.Nombre_Pantalla.Name = "Nombre_Pantalla";
+            this.Nombre_Pantalla.Visible = true;
+            this.Nombre_Pantalla.VisibleIndex = 3;
+            // 
+            // Id_Pantalla
+            // 
+            this.Id_Pantalla.Caption = "Id Pantalla";
+            this.Id_Pantalla.FieldName = "Id_Pantalla";
+            this.Id_Pantalla.Name = "Id_Pantalla";
+            this.Id_Pantalla.Visible = true;
+            this.Id_Pantalla.VisibleIndex = 2;
+            // 
             // Frm_Permisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,9 +419,8 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_PerfilPantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Perfil;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -413,5 +429,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Pantalla;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Pantalla;
     }
 }

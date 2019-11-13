@@ -40,7 +40,7 @@ BEGIN
 		  ,Nombre_Perfil
 		from Perfiles_Pantallas as PP
 		left join Pantallas as P on P.Id_Pantalla=PP.Id_Pantalla
-		left join Perfiles as S on S.Id_Perfil=S.Id_Perfil
+		left join Perfiles as S on S.Id_Perfil=PP.Id_Perfil
 
 END
 GO

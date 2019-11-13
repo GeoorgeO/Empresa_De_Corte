@@ -14,6 +14,11 @@ namespace CuttingBusiness
 {
     public partial class Frm_Permisos : DevExpress.XtraEditors.XtraForm
     {
+
+        public string IdPantalla { get; set; }
+        public string IdPerfil { get; set; }
+        public Boolean PaSel { get; set; }
+
         public Frm_Permisos()
         {
             InitializeComponent();
@@ -32,7 +37,6 @@ namespace CuttingBusiness
         }
         private void CargarPerfiles()
         {
-            gridControl1.DataSource = null;
             CLS_Perfiles Clase = new CLS_Perfiles();
 
             Clase.MtdSeleccionarPerfiles();
@@ -46,7 +50,6 @@ namespace CuttingBusiness
         }
         private void CargarPantallas()
         {
-            gridControl1.DataSource = null;
             CLS_Pantallas Clase = new CLS_Pantallas();
 
             Clase.MtdSeleccionarPantallas();
@@ -66,10 +69,17 @@ namespace CuttingBusiness
             Clase.MtdInsertarPerfilesPantallas();
             if (Clase.Exito)
             {
-
-                CargarPerfilesPantallas();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
+                if (Clase.Datos.Rows[0][0].ToString()== "Ya existe")
+                {
+                    XtraMessageBox.Show("Ya Se encuentra esta ventana en el perfil seleccionado");
+                }
+                else
+                {
+                    CargarPerfilesPantallas();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCampos();
+                }
+               
             }
             else
             {
@@ -85,7 +95,7 @@ namespace CuttingBusiness
             Clase.MtdEliminarPerfilesPantallas();
             if (Clase.Exito)
             {
-                CargarPantallas();
+                CargarPerfilesPantallas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -103,9 +113,76 @@ namespace CuttingBusiness
 
         private void Frm_Permisos_Load(object sender, EventArgs e)
         {
-            CargarPerfilesPantallas();
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarPerfiles();
             CargarPantallas();
+            CargarPerfilesPantallas();
+            
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                    gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
+                    gridLookUpEdit2.EditValue = row["Id_Pantalla"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (gridLookUpEdit1.EditValue != null && gridLookUpEdit2.EditValue != null)
+            {
+                InsertarPerfilesPantallas();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un perfil y pantalla.");
+            }
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (gridLookUpEdit1.EditValue != null && gridLookUpEdit2.EditValue != null)
+            {
+                EliminarPerfilesPantallas();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un registro de la lista.");
+            }
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdPantalla = gridLookUpEdit2.EditValue.ToString();
+            IdPerfil = gridLookUpEdit1.EditValue.ToString();
+            this.Close();
         }
     }
 }
