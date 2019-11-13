@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Seguridad
+﻿namespace CuttingBusiness
 {
     partial class Frm_Usuarios
     {
@@ -36,7 +36,6 @@
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -47,22 +46,25 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_PerfilPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Usuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Usuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Contrasena = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.textConfirmaContra = new DevExpress.XtraEditors.TextEdit();
+            this.textContrasena = new DevExpress.XtraEditors.TextEdit();
+            this.textNombre = new DevExpress.XtraEditors.TextEdit();
+            this.textUsuario = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -73,12 +75,13 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -96,8 +99,7 @@
             this.btnLimpiar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir,
-            this.btnSeleccionar});
+            this.btnSalir});
             this.barManager1.MainMenu = this.bIconos;
             this.barManager1.MaxItemId = 67;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -116,8 +118,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -136,6 +137,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -144,6 +146,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -152,6 +155,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -160,14 +164,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 66;
-            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
-            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
-            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -211,7 +208,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 470);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 470);
             // 
             // barDockControlRight
             // 
@@ -229,10 +226,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 191);
+            this.panelControl2.Location = new System.Drawing.Point(56, 191);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(527, 279);
+            this.panelControl2.Size = new System.Drawing.Size(542, 279);
             this.panelControl2.TabIndex = 23;
             // 
             // gridControl1
@@ -242,29 +239,54 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(503, 255);
+            this.gridControl1.Size = new System.Drawing.Size(518, 255);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_PerfilPantalla,
-            this.Nombre_Perfil,
-            this.gridColumn1});
+            this.Id_Usuario,
+            this.Nombre_Usuario,
+            this.Contrasena,
+            this.Id_Perfil,
+            this.Nombre_Perfil});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_PerfilPantalla
+            // Id_Usuario
             // 
-            this.Id_PerfilPantalla.Caption = "Id PerfilPantalla";
-            this.Id_PerfilPantalla.FieldName = "Id_PerfilPantalla";
-            this.Id_PerfilPantalla.Name = "Id_PerfilPantalla";
-            this.Id_PerfilPantalla.Visible = true;
-            this.Id_PerfilPantalla.VisibleIndex = 0;
+            this.Id_Usuario.Caption = "Id Usuario";
+            this.Id_Usuario.FieldName = "Id_Usuario";
+            this.Id_Usuario.Name = "Id_Usuario";
+            this.Id_Usuario.Visible = true;
+            this.Id_Usuario.VisibleIndex = 0;
+            // 
+            // Nombre_Usuario
+            // 
+            this.Nombre_Usuario.Caption = "Usuario";
+            this.Nombre_Usuario.FieldName = "Nombre_Usuario";
+            this.Nombre_Usuario.Name = "Nombre_Usuario";
+            this.Nombre_Usuario.Visible = true;
+            this.Nombre_Usuario.VisibleIndex = 1;
+            // 
+            // Contrasena
+            // 
+            this.Contrasena.Caption = "Contraseña";
+            this.Contrasena.FieldName = "Contrasena";
+            this.Contrasena.Name = "Contrasena";
+            // 
+            // Id_Perfil
+            // 
+            this.Id_Perfil.Caption = "Id Perfil";
+            this.Id_Perfil.FieldName = "Id_Perfil";
+            this.Id_Perfil.Name = "Id_Perfil";
+            this.Id_Perfil.Visible = true;
+            this.Id_Perfil.VisibleIndex = 3;
             // 
             // Nombre_Perfil
             // 
@@ -272,31 +294,24 @@
             this.Nombre_Perfil.FieldName = "Nombre_Perfil";
             this.Nombre_Perfil.Name = "Nombre_Perfil";
             this.Nombre_Perfil.Visible = true;
-            this.Nombre_Perfil.VisibleIndex = 1;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Pantalla";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
+            this.Nombre_Perfil.VisibleIndex = 4;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(527, 191);
+            this.panelControl1.Size = new System.Drawing.Size(542, 191);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textEdit4);
-            this.groupControl1.Controls.Add(this.textEdit3);
-            this.groupControl1.Controls.Add(this.textEdit2);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.textConfirmaContra);
+            this.groupControl1.Controls.Add(this.textContrasena);
+            this.groupControl1.Controls.Add(this.textNombre);
+            this.groupControl1.Controls.Add(this.textUsuario);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -306,9 +321,75 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(503, 167);
+            this.groupControl1.Size = new System.Drawing.Size(518, 167);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
+            // 
+            // textConfirmaContra
+            // 
+            this.textConfirmaContra.Location = new System.Drawing.Point(137, 109);
+            this.textConfirmaContra.MenuManager = this.barManager1;
+            this.textConfirmaContra.Name = "textConfirmaContra";
+            this.textConfirmaContra.Properties.UseSystemPasswordChar = true;
+            this.textConfirmaContra.Size = new System.Drawing.Size(146, 20);
+            this.textConfirmaContra.TabIndex = 10;
+            // 
+            // textContrasena
+            // 
+            this.textContrasena.Location = new System.Drawing.Point(137, 83);
+            this.textContrasena.MenuManager = this.barManager1;
+            this.textContrasena.Name = "textContrasena";
+            this.textContrasena.Properties.UseSystemPasswordChar = true;
+            this.textContrasena.Size = new System.Drawing.Size(146, 20);
+            this.textContrasena.TabIndex = 9;
+            // 
+            // textNombre
+            // 
+            this.textNombre.Location = new System.Drawing.Point(137, 57);
+            this.textNombre.MenuManager = this.barManager1;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(219, 20);
+            this.textNombre.TabIndex = 8;
+            // 
+            // textUsuario
+            // 
+            this.textUsuario.Location = new System.Drawing.Point(137, 31);
+            this.textUsuario.MenuManager = this.barManager1;
+            this.textUsuario.Name = "textUsuario";
+            this.textUsuario.Size = new System.Drawing.Size(100, 20);
+            this.textUsuario.TabIndex = 7;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(18, 113);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(110, 13);
+            this.labelControl5.TabIndex = 6;
+            this.labelControl5.Text = "Confirmar Contraseña:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(18, 87);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(60, 13);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "Contraseña:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(18, 61);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(41, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Nombre:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(18, 35);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(40, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Usuario:";
             // 
             // labelControl1
             // 
@@ -336,70 +417,6 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(18, 35);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(40, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Usuario:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(18, 61);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(41, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Nombre:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(18, 87);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(60, 13);
-            this.labelControl4.TabIndex = 5;
-            this.labelControl4.Text = "Contraseña:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(18, 113);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(110, 13);
-            this.labelControl5.TabIndex = 6;
-            this.labelControl5.Text = "Confirmar Contraseña:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(137, 31);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 7;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(137, 57);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(219, 20);
-            this.textEdit2.TabIndex = 8;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(137, 83);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(146, 20);
-            this.textEdit3.TabIndex = 9;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(137, 109);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(146, 20);
-            this.textEdit4.TabIndex = 10;
-            // 
             // Frm_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,6 +430,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Usuarios";
             this.Text = "Frm_Usuarios";
+            this.Load += new System.EventHandler(this.Frm_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -424,12 +442,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textConfirmaContra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textContrasena.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,7 +462,6 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -454,15 +472,15 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_PerfilPantalla;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Usuario;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Usuario;
+        private DevExpress.XtraGrid.Columns.GridColumn Contrasena;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textConfirmaContra;
+        private DevExpress.XtraEditors.TextEdit textContrasena;
+        private DevExpress.XtraEditors.TextEdit textNombre;
+        private DevExpress.XtraEditors.TextEdit textUsuario;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -470,5 +488,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Perfil;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

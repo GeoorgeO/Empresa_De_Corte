@@ -20,7 +20,7 @@ namespace CuttingBusiness
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Frm_Permisos());
+            Application.Run(new Frm_Usuarios());
         }
     }
 }
