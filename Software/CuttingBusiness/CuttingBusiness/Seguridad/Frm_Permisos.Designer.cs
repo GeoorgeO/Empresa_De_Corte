@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Seguridad
+﻿namespace CuttingBusiness
 {
     partial class Frm_Permisos
     {
@@ -49,15 +49,15 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_PerfilPantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -68,10 +68,10 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -267,6 +267,13 @@
             this.Nombre_Perfil.Visible = true;
             this.Nombre_Perfil.VisibleIndex = 1;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Pantalla";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -290,23 +297,21 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
             // 
-            // gridLookUpEdit1
+            // labelControl2
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(67, 28);
-            this.gridLookUpEdit1.MenuManager = this.barManager1;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(219, 20);
-            this.gridLookUpEdit1.TabIndex = 0;
+            this.labelControl2.Location = new System.Drawing.Point(19, 58);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(42, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Pantalla:";
             // 
-            // gridLookUpEdit1View
+            // labelControl1
             // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.labelControl1.Location = new System.Drawing.Point(19, 32);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(28, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Perfil:";
             // 
             // gridLookUpEdit2
             // 
@@ -326,28 +331,23 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl1
+            // gridLookUpEdit1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 32);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Perfil:";
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(67, 28);
+            this.gridLookUpEdit1.MenuManager = this.barManager1;
+            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
+            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(219, 20);
+            this.gridLookUpEdit1.TabIndex = 0;
             // 
-            // labelControl2
+            // gridLookUpEdit1View
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 58);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(42, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Pantalla:";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Pantalla";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // Frm_Permisos
             // 
@@ -362,6 +362,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Permisos";
             this.Text = "Frm_Permisos";
+            this.Load += new System.EventHandler(this.Frm_Permisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -373,10 +374,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
