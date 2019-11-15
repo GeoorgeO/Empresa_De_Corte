@@ -65,6 +65,8 @@
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.checkActivo = new DevExpress.XtraEditors.CheckEdit();
+            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -82,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -150,7 +153,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Caption = "Quitar";
+            this.btnEliminar.Caption = "Inabilitar";
             this.btnEliminar.Id = 57;
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
@@ -198,9 +201,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 470);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 464);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(598, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(598, 31);
             // 
             // barDockControlLeft
             // 
@@ -208,7 +211,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 470);
+            this.barDockControlLeft.Size = new System.Drawing.Size(55, 464);
             // 
             // barDockControlRight
             // 
@@ -216,7 +219,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(598, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 470);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 464);
             // 
             // repositoryItemTextEdit1
             // 
@@ -224,22 +227,23 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 191);
+            this.panelControl2.Location = new System.Drawing.Point(55, 191);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(542, 279);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
+            this.panelControl2.Size = new System.Drawing.Size(543, 273);
             this.panelControl2.TabIndex = 23;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.Location = new System.Drawing.Point(7, 32);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(518, 255);
+            this.gridControl1.Size = new System.Drawing.Size(529, 234);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -286,7 +290,7 @@
             this.Id_Perfil.FieldName = "Id_Perfil";
             this.Id_Perfil.Name = "Id_Perfil";
             this.Id_Perfil.Visible = true;
-            this.Id_Perfil.VisibleIndex = 3;
+            this.Id_Perfil.VisibleIndex = 2;
             // 
             // Nombre_Perfil
             // 
@@ -294,20 +298,21 @@
             this.Nombre_Perfil.FieldName = "Nombre_Perfil";
             this.Nombre_Perfil.Name = "Nombre_Perfil";
             this.Nombre_Perfil.Visible = true;
-            this.Nombre_Perfil.VisibleIndex = 4;
+            this.Nombre_Perfil.VisibleIndex = 3;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(55, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(542, 191);
+            this.panelControl1.Size = new System.Drawing.Size(543, 191);
             this.panelControl1.TabIndex = 22;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelActivo);
             this.groupControl1.Controls.Add(this.textConfirmaContra);
             this.groupControl1.Controls.Add(this.textContrasena);
             this.groupControl1.Controls.Add(this.textNombre);
@@ -321,7 +326,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(518, 167);
+            this.groupControl1.Size = new System.Drawing.Size(519, 167);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
             // 
@@ -417,6 +422,28 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // checkActivo
+            // 
+            this.checkActivo.Location = new System.Drawing.Point(12, 6);
+            this.checkActivo.MenuManager = this.barManager1;
+            this.checkActivo.Name = "checkActivo";
+            this.checkActivo.Properties.Caption = "Inactivos";
+            this.checkActivo.Size = new System.Drawing.Size(75, 19);
+            this.checkActivo.TabIndex = 2;
+            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
+            // 
+            // labelActivo
+            // 
+            this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.OliveDrab;
+            this.labelActivo.Appearance.Options.UseFont = true;
+            this.labelActivo.Appearance.Options.UseForeColor = true;
+            this.labelActivo.Location = new System.Drawing.Point(464, 23);
+            this.labelActivo.Name = "labelActivo";
+            this.labelActivo.Size = new System.Drawing.Size(36, 13);
+            this.labelActivo.TabIndex = 11;
+            this.labelActivo.Text = "Activo";
+            // 
             // Frm_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -449,6 +476,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkActivo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,5 +519,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Perfil;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraEditors.CheckEdit checkActivo;
+        private DevExpress.XtraEditors.LabelControl labelActivo;
     }
 }

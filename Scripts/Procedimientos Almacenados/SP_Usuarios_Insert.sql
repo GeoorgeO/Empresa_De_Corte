@@ -18,7 +18,9 @@ create PROCEDURE [dbo].[SP_Usuarios_Insert]
 	@Id_Usuario varchar(10),
 	@Nombre_Usuario varchar(50),
 	@Contrasena varchar(20),
-	@Id_Perfil char(3)
+	@Id_Perfil char(3),
+	@Creador varchar(10),
+	@Modificador varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,7 +42,9 @@ BEGIN
 			UPDATE dbo.Usuarios
 		        SET Nombre_Usuario=@Nombre_Usuario,
 				Contrasena=@Contrasena,
-				Id_Perfil=@Id_Perfil
+				Id_Perfil=@Id_Perfil,
+				Modificador=@Modificador,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Usuario=@Id_Usuario
 				
@@ -49,12 +53,18 @@ BEGIN
 	           (Id_Usuario
 	           ,Nombre_Usuario
 			   ,Contrasena
-			   ,Id_Perfil)
+			   ,Id_Perfil
+			   ,Creador
+			   ,Fecha_Creador
+			   ,Activo)
 	     	VALUES
 	           (@Id_Usuario
 	           ,@Nombre_Usuario
 			   ,@Contrasena
-			   ,@Id_Perfil)
+			   ,@Id_Perfil
+			   ,@Creador
+			   ,getdate()
+			   ,1)
 		
 		commit transaction T1;
 		set @correcto=1

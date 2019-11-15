@@ -37,7 +37,7 @@ namespace CuttingBusiness
             InitializeComponent();
         }
 
-        private void CargarProveedores()
+        private void CargarClientes()
         {
             gridControl1.DataSource = null;
             CLS_Clientes Proveedores = new CLS_Clientes();
@@ -62,11 +62,11 @@ namespace CuttingBusiness
             }
         }
 
-        private void InsertarProveedores()
+        private void InsertarClientes()
         {
             CLS_Clientes Proveedores = new CLS_Clientes();
-            Proveedores.Id_Proveedor = textIdProveedor.Text.Trim();
-            Proveedores.Nombre_Proveedor = textProveedor.Text.Trim();
+            Proveedores.Id_Cliente = textIdProveedor.Text.Trim();
+            Proveedores.Nombre_Cliente = textProveedor.Text.Trim();
             Proveedores.Telefono1 = textTelefono.Text.Trim();
             Proveedores.Telefono2 = textTelefono2.Text.Trim();
             Proveedores.Email = textCorreo.Text.Trim();
@@ -75,7 +75,7 @@ namespace CuttingBusiness
             if (Proveedores.Exito)
             {
 
-                CargarProveedores();
+                CargarClientes();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -118,15 +118,15 @@ namespace CuttingBusiness
             }
         }
 
-        private void EliminarProveedores()
+        private void EliminarClientes()
         {
             CLS_Clientes Proveedores = new CLS_Clientes();
-            Proveedores.Id_Proveedor = textIdProveedor.Text.Trim();
+            Proveedores.Id_Cliente = textIdProveedor.Text.Trim();
             Proveedores.MtdEliminarClientes();
             if (Proveedores.Exito)
             {
                 EliminarDomicilioPersona();
-                CargarProveedores();
+                CargarClientes();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -224,7 +224,7 @@ namespace CuttingBusiness
             {
                 if (textProveedor.Text.ToString().Trim().Length > 0)
                 {
-                    InsertarProveedores();
+                    InsertarClientes();
                 }
                 else
                 {
@@ -258,7 +258,7 @@ namespace CuttingBusiness
             {
                 if (textIdProveedor.Text.Trim().Length > 0)
                 {
-                    EliminarProveedores();
+                    EliminarClientes();
                 }
                 else
                 {
@@ -298,7 +298,7 @@ namespace CuttingBusiness
 
         private void Frm_Proveedores_Load(object sender, EventArgs e)
         {
-            CargarProveedores();
+            CargarClientes();
             CargarDomicilio();
             iniciarTags();
         }

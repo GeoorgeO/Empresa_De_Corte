@@ -9,8 +9,8 @@ namespace CapaDeDatos
     public class CLS_Clientes : ConexionBase
     {
 
-    public string Id_Proveedor { get; set; }
-    public string Nombre_Proveedor { get; set; }
+    public string Id_Cliente { get; set; }
+    public string Nombre_Cliente { get; set; }
     public string Telefono1 { get; set; }
     public string Telefono2 { get; set; }
     public string Email { get; set; }
@@ -24,7 +24,7 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Proveedores_Select";
+            _conexion.NombreProcedimiento = "SP_Clientes_Select";
 
             _conexion.EjecutarDataset();
 
@@ -56,11 +56,11 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Proveedores_Insert";
-            _dato.CadenaTexto = Id_Proveedor;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Proveedor");
-            _dato.CadenaTexto = Nombre_Proveedor;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Proveedor");
+            _conexion.NombreProcedimiento = "SP_Clientes_Insert";
+            _dato.CadenaTexto = Id_Cliente;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cliente");
+            _dato.CadenaTexto = Nombre_Cliente;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Cliente");
             _dato.CadenaTexto = Telefono1;
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono1");
             _dato.CadenaTexto = Telefono2;
@@ -96,9 +96,9 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Proveedores_Delete";
-            _dato.CadenaTexto = Id_Proveedor;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Proveedor");
+            _conexion.NombreProcedimiento = "SP_Clientes_Delete";
+            _dato.CadenaTexto = Id_Cliente;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cliente");
             _conexion.EjecutarDataset();
 
             if (_conexion.Exito)

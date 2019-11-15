@@ -15,17 +15,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Usuarios_Select')
-DROP PROCEDURE SP_Usuarios_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_UsuariosAcceso_Select')
+DROP PROCEDURE SP_UsuariosAcceso_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Usuarios_Select
+CREATE PROCEDURE SP_UsuariosAcceso_Select
 	-- Add the parameters for the stored procedure here
-	@Activo bit
+	@Id_Usuario varchar(10),
+	@Contrasena varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -35,13 +36,11 @@ BEGIN
     -- Insert statements for procedure here
 	
 		select Id_Usuario
-	      ,Nombre_Usuario
 		  ,Contrasena
-		  ,U.Id_Perfil
-		  ,Nombre_Perfil
+		  ,Id_Perfil
+		  ,Activo
 		from Usuarios as U
-		left join Perfiles as P on P.Id_Perfil=U.Id_Perfil
-		where Activo=@Activo
+		where Id_Usuario=@Id_Usuario and Contrasena=@Contrasena
 
 END
 GO

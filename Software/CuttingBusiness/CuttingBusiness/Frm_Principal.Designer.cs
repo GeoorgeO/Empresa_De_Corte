@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPantallas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPerfiles = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEntradas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSalidas = new DevExpress.XtraBars.BarButtonItem();
             this.btnEmpleados = new DevExpress.XtraBars.BarButtonItem();
             this.btnCuadrilla = new DevExpress.XtraBars.BarButtonItem();
             this.btnHerramientas = new DevExpress.XtraBars.BarButtonItem();
@@ -86,6 +86,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -97,12 +98,12 @@
             this.ribbonControl1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.barButtonItem1,
+            this.btnUsuarios,
             this.skinRibbonGalleryBarItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
+            this.btnPantallas,
+            this.btnPerfiles,
+            this.btnEntradas,
+            this.btnSalidas,
             this.btnEmpleados,
             this.btnCuadrilla,
             this.btnHerramientas,
@@ -126,9 +127,10 @@
             this.barButtonItem25,
             this.barButtonItem26,
             this.btnUnidaddeMedida,
-            this.btnClientes});
+            this.btnClientes,
+            this.btnPermisos});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 31;
+            this.ribbonControl1.MaxItemId = 32;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -138,19 +140,20 @@
             this.ribbonPage2,
             this.ribbonPage3});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem15);
-            this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem4);
-            this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem5);
+            this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
+            this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(915, 145);
+            this.ribbonControl1.Size = new System.Drawing.Size(921, 146);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
-            // barButtonItem1
+            // btnUsuarios
             // 
-            this.barButtonItem1.Caption = "Usuarios";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnUsuarios.Caption = "Usuarios";
+            this.btnUsuarios.Id = 1;
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -158,37 +161,39 @@
             this.skinRibbonGalleryBarItem1.Id = 2;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
-            // barButtonItem2
+            // btnPantallas
             // 
-            this.barButtonItem2.Caption = "Pantallas";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnPantallas.Caption = "Pantallas";
+            this.btnPantallas.Id = 3;
+            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnPantallas.Name = "btnPantallas";
+            this.btnPantallas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallas_ItemClick);
             // 
-            // barButtonItem3
+            // btnPerfiles
             // 
-            this.barButtonItem3.Caption = "Perfiles";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnPerfiles.Caption = "Perfiles";
+            this.btnPerfiles.Id = 4;
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnPerfiles.Name = "btnPerfiles";
+            this.btnPerfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfiles_ItemClick);
             // 
-            // barButtonItem4
+            // btnEntradas
             // 
-            this.barButtonItem4.Caption = "Entradas";
-            this.barButtonItem4.Id = 5;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnEntradas.Caption = "Entradas";
+            this.btnEntradas.Id = 5;
+            this.btnEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnEntradas.Name = "btnEntradas";
             // 
-            // barButtonItem5
+            // btnSalidas
             // 
-            this.barButtonItem5.Caption = "Salidas";
-            this.barButtonItem5.Id = 6;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnSalidas.Caption = "Salidas";
+            this.btnSalidas.Id = 6;
+            this.btnSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btnSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnSalidas.Name = "btnSalidas";
             // 
             // btnEmpleados
             // 
@@ -230,6 +235,7 @@
             this.btnProveedores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.Image")));
             this.btnProveedores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.ImageOptions.LargeImage")));
             this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -373,6 +379,7 @@
             this.btnUnidaddeMedida.Id = 29;
             this.btnUnidaddeMedida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUnidaddeMedida.ImageOptions.LargeImage")));
             this.btnUnidaddeMedida.Name = "btnUnidaddeMedida";
+            this.btnUnidaddeMedida.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnidaddeMedida_ItemClick);
             // 
             // btnClientes
             // 
@@ -381,6 +388,7 @@
             this.btnClientes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.ImageOptions.Image")));
             this.btnClientes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.ImageOptions.LargeImage")));
             this.btnClientes.Name = "btnClientes";
+            this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -420,8 +428,8 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnEntradas);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnSalidas);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Mov. Inventario";
             // 
@@ -518,9 +526,10 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnUsuarios);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPantallas);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPerfiles);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPermisos);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Seguridad";
             // 
@@ -550,14 +559,23 @@
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Seven Classic";
+            this.SkinForm.LookAndFeel.SkinName = "Sharp Plus";
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.Caption = "Permisos";
+            this.btnPermisos.Id = 31;
+            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
+            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
             // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 426);
+            this.ClientSize = new System.Drawing.Size(921, 429);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";
@@ -565,6 +583,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AvoHarvest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
@@ -577,17 +596,17 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnUsuarios;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnPantallas;
+        private DevExpress.XtraBars.BarButtonItem btnPerfiles;
+        private DevExpress.XtraBars.BarButtonItem btnEntradas;
+        private DevExpress.XtraBars.BarButtonItem btnSalidas;
         private DevExpress.XtraBars.BarButtonItem btnEmpleados;
         private DevExpress.XtraBars.BarButtonItem btnCuadrilla;
         private DevExpress.XtraBars.BarButtonItem btnHerramientas;
@@ -630,6 +649,7 @@
         private DevExpress.XtraBars.BarButtonItem btnUnidaddeMedida;
         private DevExpress.XtraBars.BarButtonItem btnClientes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem btnPermisos;
     }
 }
 

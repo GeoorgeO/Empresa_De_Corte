@@ -12,6 +12,11 @@ ELSE
 		[Nombre_Usuario] [varchar](50) NULL,
 		[Contrasena] [varchar](20) NULL,
 		[Id_Perfil] [char](3) NOT NULL,
+		[Creador] [varchar](10) NOT NULL,
+		[Fecha_Creador] [datetime] NOT NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] datetime NULL,
+		[Activo] [bit] NOT NULL,
 	 CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Usuario] ASC

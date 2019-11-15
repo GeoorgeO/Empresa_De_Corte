@@ -14,7 +14,24 @@ namespace CuttingBusiness
 {
     public partial class Frm_Usuarios : DevExpress.XtraEditors.XtraForm
     {
-      
+        public string UsuariosLogin { get; set; }
+
+
+        private static Frm_Usuarios m_FormDefInstance;
+        public static Frm_Usuarios DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Usuarios();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_Usuarios()
         {
             InitializeComponent();
@@ -24,6 +41,14 @@ namespace CuttingBusiness
         {
             gridControl1.DataSource = null;
             CLS_Usuarios Clase = new CLS_Usuarios();
+
+            if (checkActivo.Checked)
+            {
+                Clase.Activo = "0";
+            }else
+            {
+                Clase.Activo = "1";
+            }
 
             Clase.MtdSeleccionarUsuarios();
             if (Clase.Exito)
@@ -51,6 +76,8 @@ namespace CuttingBusiness
             Clase.Nombre_Usuario =textNombre.Text.Trim();
             Clase.Contrasena = textContrasena.Text.Trim();
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
+            Clase.Creador = UsuariosLogin;
+            Clase.Modificador= UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
             {
@@ -90,6 +117,14 @@ namespace CuttingBusiness
             textContrasena.Text = "";
             textConfirmaContra.Text = "";
             gridLookUpEdit1.EditValue = null;
+            labelActivo.Visible = false;
+            inabilitar(true);
+        }
+
+        private void inabilitar(Boolean sino)
+        {
+            groupControl1.Enabled = sino;
+            btnGuardar.Enabled = sino;
         }
 
         private void Frm_Usuarios_Load(object sender, EventArgs e)
@@ -111,7 +146,23 @@ namespace CuttingBusiness
                     textNombre.Text = row["Nombre_Usuario"].ToString();
                     textContrasena.Text = row["Contrasena"].ToString();
                     gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
-                    
+
+                    labelActivo.Visible = true;
+
+                    if (checkActivo.Checked)
+                    {
+                        labelActivo.ForeColor = System.Drawing.Color.Maroon;
+                        labelActivo.Text = "Inactivo";
+                        btnEliminar.Caption = "Abilitar";
+                        inabilitar(false);
+                    }
+                    else
+                    {
+                        labelActivo.ForeColor = System.Drawing.Color.OliveDrab;
+                        labelActivo.Text = "Activo";
+                        btnEliminar.Caption = "Inabilitar";
+                        inabilitar(true);
+                    }
                 }
             }
             catch (Exception ex)
@@ -160,6 +211,11 @@ namespace CuttingBusiness
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarUsuarios();
         }
     }
 }

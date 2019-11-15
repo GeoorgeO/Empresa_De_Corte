@@ -28,8 +28,14 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Usuarios where Id_Usuario=@Id_Usuario
-
+		declare @Activo bit
+		select @Activo=Activo from dbo.Usuarios where Id_Usuario=@Id_Usuario
+		
+		if @Activo=1
+			update dbo.Usuarios set Activo=0 where Id_Usuario=@Id_Usuario
+		else
+			update dbo.Usuarios set Activo=1 where Id_Usuario=@Id_Usuario
+			
 		commit transaction T2;
 		set @correcto=1
 	end try

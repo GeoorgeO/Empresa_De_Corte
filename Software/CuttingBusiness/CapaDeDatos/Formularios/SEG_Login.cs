@@ -10,8 +10,8 @@ namespace CapaDeDatos
     public class SEG_Login:ConexionBase
     {
         public System.Nullable<int> IdUsuario { get; set; }
-        public string v_passwo_usu { get; set; }
-        public string c_codigo_usu { get; set; }
+        public string Contrasena { get; set; }
+        public string Id_Usuario { get; set; }
         public System.Nullable<int> IsRestablecerContrasenia { get; set; }
         public string UltimoAcceso { get; set; }
 
@@ -23,11 +23,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "usp_UsuarioAccesosInventarioSelect";
-                _dato.CadenaTexto = c_codigo_usu;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_usu");
-                _dato.CadenaTexto = v_passwo_usu;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_passwo_usu");
+                _conexion.NombreProcedimiento = "SP_UsuariosAcceso_Select";
+                _dato.CadenaTexto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.CadenaTexto = Contrasena;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contrasena");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

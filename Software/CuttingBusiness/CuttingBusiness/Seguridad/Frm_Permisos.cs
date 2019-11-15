@@ -19,6 +19,21 @@ namespace CuttingBusiness
         public string IdPerfil { get; set; }
         public Boolean PaSel { get; set; }
 
+        private static Frm_Permisos m_FormDefInstance;
+        public static Frm_Permisos DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Permisos();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_Permisos()
         {
             InitializeComponent();
