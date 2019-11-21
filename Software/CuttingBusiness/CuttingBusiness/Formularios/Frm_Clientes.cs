@@ -53,7 +53,7 @@ namespace CuttingBusiness
         {
             gridControl2.DataSource = null;
             CLS_Domicilios Domicilio = new CLS_Domicilios();
-            Domicilio.Id_Empleado = textIdProveedor.Text.Trim();
+            Domicilio.Id_Empleado = textIdCliente.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdSeleccionarDomicilio();
             if (Domicilio.Exito)
@@ -64,15 +64,15 @@ namespace CuttingBusiness
 
         private void InsertarClientes()
         {
-            CLS_Clientes Proveedores = new CLS_Clientes();
-            Proveedores.Id_Cliente = textIdProveedor.Text.Trim();
-            Proveedores.Nombre_Cliente = textProveedor.Text.Trim();
-            Proveedores.Telefono1 = textTelefono.Text.Trim();
-            Proveedores.Telefono2 = textTelefono2.Text.Trim();
-            Proveedores.Email = textCorreo.Text.Trim();
-            Proveedores.Contacto = textContacto.Text.Trim();
-            Proveedores.MtdInsertarClientes();
-            if (Proveedores.Exito)
+            CLS_Clientes Clientes = new CLS_Clientes();
+            Clientes.Id_Cliente = textIdCliente.Text.Trim();
+            Clientes.Nombre_Cliente = textCliente.Text.Trim();
+            Clientes.Telefono1 = textTelefono.Text.Trim();
+            Clientes.Telefono2 = textTelefono2.Text.Trim();
+            Clientes.Email = textCorreo.Text.Trim();
+            Clientes.Contacto = textContacto.Text.Trim();
+            Clientes.MtdInsertarClientes();
+            if (Clientes.Exito)
             {
 
                 CargarClientes();
@@ -81,7 +81,7 @@ namespace CuttingBusiness
             }
             else
             {
-                XtraMessageBox.Show(Proveedores.Mensaje);
+                XtraMessageBox.Show(Clientes.Mensaje);
             }
         }
 
@@ -102,7 +102,7 @@ namespace CuttingBusiness
             Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
             Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
-            Domicilio.Id_Empleado = textIdProveedor.Text.Trim();
+            Domicilio.Id_Empleado = textIdCliente.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
@@ -120,10 +120,10 @@ namespace CuttingBusiness
 
         private void EliminarClientes()
         {
-            CLS_Clientes Proveedores = new CLS_Clientes();
-            Proveedores.Id_Cliente = textIdProveedor.Text.Trim();
-            Proveedores.MtdEliminarClientes();
-            if (Proveedores.Exito)
+            CLS_Clientes Clientes = new CLS_Clientes();
+            Clientes.Id_Cliente = textIdCliente.Text.Trim();
+            Clientes.MtdEliminarClientes();
+            if (Clientes.Exito)
             {
                 EliminarDomicilioPersona();
                 CargarClientes();
@@ -132,7 +132,7 @@ namespace CuttingBusiness
             }
             else
             {
-                XtraMessageBox.Show(Proveedores.Mensaje);
+                XtraMessageBox.Show(Clientes.Mensaje);
             }
         }
 
@@ -156,7 +156,7 @@ namespace CuttingBusiness
         private void EliminarDomicilioPersona()
         {
             CLS_Domicilios Domicilio = new CLS_Domicilios();
-            Domicilio.Id_Empleado = textIdProveedor.Text.Trim();
+            Domicilio.Id_Empleado = textIdCliente.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdEliminarDomicilioPersona();
             if (Domicilio.Exito)
@@ -173,8 +173,8 @@ namespace CuttingBusiness
 
         private void LimpiarCampos()
         {
-            textIdProveedor.Text = "";
-            textProveedor.Text = "";
+            textIdCliente.Text = "";
+            textCliente.Text = "";
             textTelefono.Text = "";
             textTelefono2.Text = "";
             textCorreo.Text = "";
@@ -202,8 +202,8 @@ namespace CuttingBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textIdProveedor.Text = row["Id_Proveedor"].ToString();
-                    textProveedor.Text = row["Nombre_Proveedor"].ToString();
+                    textIdCliente.Text = row["Id_Cliente"].ToString();
+                    textCliente.Text = row["Nombre_Cliente"].ToString();
                     textTelefono.Text = row["Telefono1"].ToString();
                     textTelefono2.Text = row["Telefono2"].ToString();
                     textCorreo.Text = row["Email"].ToString();
@@ -222,7 +222,7 @@ namespace CuttingBusiness
         {
             if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
             {
-                if (textProveedor.Text.ToString().Trim().Length > 0)
+                if (textCliente.Text.ToString().Trim().Length > 0)
                 {
                     InsertarClientes();
                 }
@@ -256,7 +256,7 @@ namespace CuttingBusiness
         {
             if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
             {
-                if (textIdProveedor.Text.Trim().Length > 0)
+                if (textIdCliente.Text.Trim().Length > 0)
                 {
                     EliminarClientes();
                 }
@@ -346,6 +346,19 @@ namespace CuttingBusiness
 
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
             textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
+        }
+
+        private void textIdProveedor_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textIdCliente.Text == String.Empty)
+            {
+                xtraTabPage2.PageEnabled = false;
+
+            }
+            else
+            {
+                xtraTabPage2.PageEnabled = true;
+            }
         }
     }
 }

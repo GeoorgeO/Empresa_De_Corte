@@ -63,9 +63,9 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textTelefono = new DevExpress.XtraEditors.TextEdit();
             this.label = new DevExpress.XtraEditors.LabelControl();
-            this.textProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.textCliente = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.textIdCliente = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -115,8 +115,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textCorreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdCliente.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -387,9 +387,9 @@
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.textTelefono);
             this.groupControl1.Controls.Add(this.label);
-            this.groupControl1.Controls.Add(this.textProveedor);
+            this.groupControl1.Controls.Add(this.textCliente);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textIdProveedor);
+            this.groupControl1.Controls.Add(this.textIdCliente);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
@@ -458,12 +458,12 @@
             this.label.TabIndex = 4;
             this.label.Text = "Telefono 1:";
             // 
-            // textProveedor
+            // textCliente
             // 
-            this.textProveedor.Location = new System.Drawing.Point(86, 55);
-            this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Size = new System.Drawing.Size(192, 20);
-            this.textProveedor.TabIndex = 3;
+            this.textCliente.Location = new System.Drawing.Point(86, 55);
+            this.textCliente.Name = "textCliente";
+            this.textCliente.Size = new System.Drawing.Size(192, 20);
+            this.textCliente.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -473,13 +473,14 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
-            // textIdProveedor
+            // textIdCliente
             // 
-            this.textIdProveedor.Enabled = false;
-            this.textIdProveedor.Location = new System.Drawing.Point(86, 29);
-            this.textIdProveedor.Name = "textIdProveedor";
-            this.textIdProveedor.Size = new System.Drawing.Size(100, 20);
-            this.textIdProveedor.TabIndex = 1;
+            this.textIdCliente.Enabled = false;
+            this.textIdCliente.Location = new System.Drawing.Point(86, 29);
+            this.textIdCliente.Name = "textIdCliente";
+            this.textIdCliente.Size = new System.Drawing.Size(100, 20);
+            this.textIdCliente.TabIndex = 1;
+            this.textIdCliente.EditValueChanged += new System.EventHandler(this.textIdProveedor_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -495,7 +496,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(806, 413);
+            this.xtraTabPage2.Size = new System.Drawing.Size(804, 410);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -505,7 +506,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 145);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(796, 263);
+            this.panelControl2.Size = new System.Drawing.Size(794, 260);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -515,7 +516,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(782, 249);
+            this.gridControl2.Size = new System.Drawing.Size(780, 246);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -644,7 +645,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(796, 140);
+            this.groupControl2.Size = new System.Drawing.Size(794, 140);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -824,8 +825,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textCorreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textCliente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textIdCliente.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -875,9 +876,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit textTelefono;
         private DevExpress.XtraEditors.LabelControl label;
-        private DevExpress.XtraEditors.TextEdit textProveedor;
+        private DevExpress.XtraEditors.TextEdit textCliente;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textIdProveedor;
+        private DevExpress.XtraEditors.TextEdit textIdCliente;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.PanelControl panelControl2;

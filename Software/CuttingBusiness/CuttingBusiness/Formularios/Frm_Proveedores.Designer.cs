@@ -65,7 +65,7 @@
             this.label = new DevExpress.XtraEditors.LabelControl();
             this.textProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -116,7 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -248,9 +248,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 438);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 435);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(866, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(866, 28);
             // 
             // barDockControlLeft
             // 
@@ -258,7 +258,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 438);
+            this.barDockControlLeft.Size = new System.Drawing.Size(58, 435);
             // 
             // barDockControlRight
             // 
@@ -266,7 +266,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(866, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 435);
             // 
             // repositoryItemTextEdit1
             // 
@@ -275,10 +275,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(56, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(58, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(810, 438);
+            this.xtraTabControl1.Size = new System.Drawing.Size(808, 435);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -389,7 +389,7 @@
             this.groupControl1.Controls.Add(this.label);
             this.groupControl1.Controls.Add(this.textProveedor);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textIdProveedor);
+            this.groupControl1.Controls.Add(this.textId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
@@ -473,13 +473,14 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
-            // textIdProveedor
+            // textId
             // 
-            this.textIdProveedor.Enabled = false;
-            this.textIdProveedor.Location = new System.Drawing.Point(86, 29);
-            this.textIdProveedor.Name = "textIdProveedor";
-            this.textIdProveedor.Size = new System.Drawing.Size(100, 20);
-            this.textIdProveedor.TabIndex = 1;
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(86, 29);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 1;
+            this.textId.EditValueChanged += new System.EventHandler(this.textIdProveedor_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -495,7 +496,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(804, 410);
+            this.xtraTabPage2.Size = new System.Drawing.Size(806, 413);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -505,7 +506,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 144);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(794, 261);
+            this.panelControl2.Size = new System.Drawing.Size(796, 264);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -515,7 +516,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(780, 247);
+            this.gridControl2.Size = new System.Drawing.Size(782, 250);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -644,7 +645,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(794, 139);
+            this.groupControl2.Size = new System.Drawing.Size(796, 139);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -825,7 +826,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTelefono.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -877,7 +878,7 @@
         private DevExpress.XtraEditors.LabelControl label;
         private DevExpress.XtraEditors.TextEdit textProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textIdProveedor;
+        private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.PanelControl panelControl2;

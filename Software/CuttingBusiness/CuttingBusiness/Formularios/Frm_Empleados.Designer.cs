@@ -90,7 +90,7 @@
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.textProveedor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textIdProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -154,7 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -473,7 +473,7 @@
             this.groupControl1.Controls.Add(this.dateEdit1);
             this.groupControl1.Controls.Add(this.textProveedor);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textIdProveedor);
+            this.groupControl1.Controls.Add(this.textId);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
@@ -738,13 +738,14 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Nombre:";
             // 
-            // textIdProveedor
+            // textId
             // 
-            this.textIdProveedor.Enabled = false;
-            this.textIdProveedor.Location = new System.Drawing.Point(94, 29);
-            this.textIdProveedor.Name = "textIdProveedor";
-            this.textIdProveedor.Size = new System.Drawing.Size(100, 20);
-            this.textIdProveedor.TabIndex = 1;
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(94, 29);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 1;
+            this.textId.EditValueChanged += new System.EventHandler(this.textIdProveedor_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -760,7 +761,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(784, 497);
+            this.xtraTabPage2.Size = new System.Drawing.Size(789, 492);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -770,7 +771,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 145);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(774, 347);
+            this.panelControl2.Size = new System.Drawing.Size(779, 342);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -779,7 +780,7 @@
             this.gridControl2.Location = new System.Drawing.Point(7, 7);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(760, 333);
+            this.gridControl2.Size = new System.Drawing.Size(765, 328);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -907,7 +908,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(774, 140);
+            this.groupControl2.Size = new System.Drawing.Size(779, 140);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1092,7 +1093,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textIdProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -1157,7 +1158,7 @@
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.TextEdit textProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textIdProveedor;
+        private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.PanelControl panelControl2;

@@ -33,5 +33,17 @@ namespace CuttingBusiness
         {
             InitializeComponent();
         }
+
+        private void textIdProveedor_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textId.Text == String.Empty)
+            {
+                xtraTabPage2.PageEnabled = false;
+            }
+            else
+            {
+                xtraTabPage2.PageEnabled = true;
+            }
+        }
     }
 }
