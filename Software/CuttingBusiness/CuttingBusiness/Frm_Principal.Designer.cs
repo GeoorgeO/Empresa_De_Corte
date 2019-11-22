@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
@@ -42,25 +41,26 @@
             this.btnHerramientas = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsumos = new DevExpress.XtraBars.BarButtonItem();
             this.btnProveedores = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem21 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem22 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRespaldoBD = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportarODC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCobros = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportarRendimientoODC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCapturaODC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNomina = new DevExpress.XtraBars.BarButtonItem();
+            this.btnControlAlmacen = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFormatoODC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCatalogos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNominaporFecha = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAcumuladoNomina = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRendimientoODC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTrabajadores = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSegurodeVida = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSeguroSocial = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAlmacen = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRtpCobros = new DevExpress.XtraBars.BarButtonItem();
             this.btnUnidaddeMedida = new DevExpress.XtraBars.BarButtonItem();
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -84,9 +84,8 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -109,23 +108,23 @@
             this.btnHerramientas,
             this.btnInsumos,
             this.btnProveedores,
-            this.barButtonItem6,
-            this.barButtonItem11,
-            this.barButtonItem12,
-            this.barButtonItem13,
-            this.barButtonItem14,
-            this.barButtonItem15,
-            this.barButtonItem16,
-            this.barButtonItem17,
-            this.barButtonItem18,
-            this.barButtonItem19,
-            this.barButtonItem20,
-            this.barButtonItem21,
-            this.barButtonItem22,
-            this.barButtonItem23,
-            this.barButtonItem24,
-            this.barButtonItem25,
-            this.barButtonItem26,
+            this.btnRespaldoBD,
+            this.btnImportarODC,
+            this.btnCobros,
+            this.btnImportarRendimientoODC,
+            this.btnCapturaODC,
+            this.btnNomina,
+            this.btnControlAlmacen,
+            this.btnFormatoODC,
+            this.btnCatalogos,
+            this.btnNominaporFecha,
+            this.btnAcumuladoNomina,
+            this.btnRendimientoODC,
+            this.btnTrabajadores,
+            this.btnSegurodeVida,
+            this.btnSeguroSocial,
+            this.btnAlmacen,
+            this.btnRtpCobros,
             this.btnUnidaddeMedida,
             this.btnClientes,
             this.btnPermisos});
@@ -139,7 +138,7 @@
             this.ribbonPage5,
             this.ribbonPage2,
             this.ribbonPage3});
-            this.ribbonControl1.QuickToolbarItemLinks.Add(this.barButtonItem15);
+            this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnNomina);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
@@ -150,8 +149,8 @@
             // 
             this.btnUsuarios.Caption = "Usuarios";
             this.btnUsuarios.Id = 1;
-            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.LargeImage")));
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
             // 
@@ -165,8 +164,8 @@
             // 
             this.btnPantallas.Caption = "Pantallas";
             this.btnPantallas.Id = 3;
-            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.Image")));
+            this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.LargeImage")));
             this.btnPantallas.Name = "btnPantallas";
             this.btnPantallas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallas_ItemClick);
             // 
@@ -174,8 +173,8 @@
             // 
             this.btnPerfiles.Caption = "Perfiles";
             this.btnPerfiles.Id = 4;
-            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.Image")));
+            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.LargeImage")));
             this.btnPerfiles.Name = "btnPerfiles";
             this.btnPerfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfiles_ItemClick);
             // 
@@ -183,17 +182,19 @@
             // 
             this.btnEntradas.Caption = "Entradas";
             this.btnEntradas.Id = 5;
-            this.btnEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntradas.ImageOptions.Image")));
+            this.btnEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEntradas.ImageOptions.LargeImage")));
             this.btnEntradas.Name = "btnEntradas";
+            this.btnEntradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEntradas_ItemClick);
             // 
             // btnSalidas
             // 
             this.btnSalidas.Caption = "Salidas";
             this.btnSalidas.Id = 6;
-            this.btnSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btnSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalidas.ImageOptions.Image")));
+            this.btnSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalidas.ImageOptions.LargeImage")));
             this.btnSalidas.Name = "btnSalidas";
+            this.btnSalidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalidas_ItemClick);
             // 
             // btnEmpleados
             // 
@@ -211,6 +212,7 @@
             this.btnCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCuadrilla.ImageOptions.Image")));
             this.btnCuadrilla.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCuadrilla.ImageOptions.LargeImage")));
             this.btnCuadrilla.Name = "btnCuadrilla";
+            this.btnCuadrilla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCuadrilla_ItemClick);
             // 
             // btnHerramientas
             // 
@@ -219,6 +221,7 @@
             this.btnHerramientas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHerramientas.ImageOptions.Image")));
             this.btnHerramientas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHerramientas.ImageOptions.LargeImage")));
             this.btnHerramientas.Name = "btnHerramientas";
+            this.btnHerramientas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHerramientas_ItemClick);
             // 
             // btnInsumos
             // 
@@ -227,6 +230,7 @@
             this.btnInsumos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInsumos.ImageOptions.Image")));
             this.btnInsumos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInsumos.ImageOptions.LargeImage")));
             this.btnInsumos.Name = "btnInsumos";
+            this.btnInsumos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInsumos_ItemClick);
             // 
             // btnProveedores
             // 
@@ -237,141 +241,158 @@
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
-            // barButtonItem6
+            // btnRespaldoBD
             // 
-            this.barButtonItem6.Caption = "Respaldo BD";
-            this.barButtonItem6.Id = 12;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btnRespaldoBD.Caption = "Respaldo BD";
+            this.btnRespaldoBD.Id = 12;
+            this.btnRespaldoBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.btnRespaldoBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btnRespaldoBD.Name = "btnRespaldoBD";
+            this.btnRespaldoBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRespaldoBD_ItemClick);
             // 
-            // barButtonItem11
+            // btnImportarODC
             // 
-            this.barButtonItem11.Caption = "Importar ODC";
-            this.barButtonItem11.Id = 13;
-            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
-            this.barButtonItem11.Name = "barButtonItem11";
+            this.btnImportarODC.Caption = "Importar ODC";
+            this.btnImportarODC.Id = 13;
+            this.btnImportarODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarODC.ImageOptions.Image")));
+            this.btnImportarODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportarODC.ImageOptions.LargeImage")));
+            this.btnImportarODC.Name = "btnImportarODC";
+            this.btnImportarODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarODC_ItemClick);
             // 
-            // barButtonItem12
+            // btnCobros
             // 
-            this.barButtonItem12.Caption = "Cobros";
-            this.barButtonItem12.Id = 14;
-            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
-            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.btnCobros.Caption = "Cobros";
+            this.btnCobros.Id = 14;
+            this.btnCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCobros.ImageOptions.Image")));
+            this.btnCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCobros.ImageOptions.LargeImage")));
+            this.btnCobros.Name = "btnCobros";
+            this.btnCobros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCobros_ItemClick);
             // 
-            // barButtonItem13
+            // btnImportarRendimientoODC
             // 
-            this.barButtonItem13.Caption = "Importar Rendimineto ODC";
-            this.barButtonItem13.Id = 15;
-            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
-            this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.btnImportarRendimientoODC.Caption = "Importar Rendimineto ODC";
+            this.btnImportarRendimientoODC.Id = 15;
+            this.btnImportarRendimientoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.Image")));
+            this.btnImportarRendimientoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.LargeImage")));
+            this.btnImportarRendimientoODC.Name = "btnImportarRendimientoODC";
+            this.btnImportarRendimientoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarRendimientoODC_ItemClick);
             // 
-            // barButtonItem14
+            // btnCapturaODC
             // 
-            this.barButtonItem14.Caption = "Captura ODC";
-            this.barButtonItem14.Id = 16;
-            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.btnCapturaODC.Caption = "Captura ODC";
+            this.btnCapturaODC.Id = 16;
+            this.btnCapturaODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapturaODC.ImageOptions.Image")));
+            this.btnCapturaODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCapturaODC.ImageOptions.LargeImage")));
+            this.btnCapturaODC.Name = "btnCapturaODC";
+            this.btnCapturaODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapturaODC_ItemClick);
             // 
-            // barButtonItem15
+            // btnNomina
             // 
-            this.barButtonItem15.Caption = "Nomina";
-            this.barButtonItem15.Id = 17;
-            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
-            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
-            this.barButtonItem15.Name = "barButtonItem15";
+            this.btnNomina.Caption = "Nomina";
+            this.btnNomina.Id = 17;
+            this.btnNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNomina.ImageOptions.Image")));
+            this.btnNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNomina.ImageOptions.LargeImage")));
+            this.btnNomina.Name = "btnNomina";
+            this.btnNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNomina_ItemClick);
             // 
-            // barButtonItem16
+            // btnControlAlmacen
             // 
-            this.barButtonItem16.Caption = "Control de Almacen";
-            this.barButtonItem16.Id = 18;
-            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.barButtonItem16.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.btnControlAlmacen.Caption = "Control de Almacen";
+            this.btnControlAlmacen.Id = 18;
+            this.btnControlAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.Image")));
+            this.btnControlAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.LargeImage")));
+            this.btnControlAlmacen.Name = "btnControlAlmacen";
+            this.btnControlAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnControlAlmacen_ItemClick);
             // 
-            // barButtonItem17
+            // btnFormatoODC
             // 
-            this.barButtonItem17.Caption = "Formato ODC";
-            this.barButtonItem17.Id = 19;
-            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonItem17.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.btnFormatoODC.Caption = "Formato ODC";
+            this.btnFormatoODC.Id = 19;
+            this.btnFormatoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.Image")));
+            this.btnFormatoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.LargeImage")));
+            this.btnFormatoODC.Name = "btnFormatoODC";
+            this.btnFormatoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFormatoODC_ItemClick);
             // 
-            // barButtonItem18
+            // btnCatalogos
             // 
-            this.barButtonItem18.Caption = "Catologos";
-            this.barButtonItem18.Id = 20;
-            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
-            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
-            this.barButtonItem18.Name = "barButtonItem18";
+            this.btnCatalogos.Caption = "Catologos";
+            this.btnCatalogos.Id = 20;
+            this.btnCatalogos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogos.ImageOptions.Image")));
+            this.btnCatalogos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCatalogos.ImageOptions.LargeImage")));
+            this.btnCatalogos.Name = "btnCatalogos";
+            this.btnCatalogos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCatalogos_ItemClick);
             // 
-            // barButtonItem19
+            // btnNominaporFecha
             // 
-            this.barButtonItem19.Caption = "Nomina por Fecha (Excel)";
-            this.barButtonItem19.Id = 21;
-            this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
-            this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
-            this.barButtonItem19.Name = "barButtonItem19";
+            this.btnNominaporFecha.Caption = "Nomina por Fecha (Excel)";
+            this.btnNominaporFecha.Id = 21;
+            this.btnNominaporFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNominaporFecha.ImageOptions.Image")));
+            this.btnNominaporFecha.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNominaporFecha.ImageOptions.LargeImage")));
+            this.btnNominaporFecha.Name = "btnNominaporFecha";
+            this.btnNominaporFecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNominaporFecha_ItemClick);
             // 
-            // barButtonItem20
+            // btnAcumuladoNomina
             // 
-            this.barButtonItem20.Caption = "Acumulado nomina por fecha";
-            this.barButtonItem20.Id = 22;
-            this.barButtonItem20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.Image")));
-            this.barButtonItem20.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.LargeImage")));
-            this.barButtonItem20.Name = "barButtonItem20";
+            this.btnAcumuladoNomina.Caption = "Acumulado nomina por fecha";
+            this.btnAcumuladoNomina.Id = 22;
+            this.btnAcumuladoNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAcumuladoNomina.ImageOptions.Image")));
+            this.btnAcumuladoNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAcumuladoNomina.ImageOptions.LargeImage")));
+            this.btnAcumuladoNomina.Name = "btnAcumuladoNomina";
+            this.btnAcumuladoNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAcumuladoNomina_ItemClick);
             // 
-            // barButtonItem21
+            // btnRendimientoODC
             // 
-            this.barButtonItem21.Caption = "Rendimiento por ODC";
-            this.barButtonItem21.Id = 23;
-            this.barButtonItem21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.Image")));
-            this.barButtonItem21.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.LargeImage")));
-            this.barButtonItem21.Name = "barButtonItem21";
+            this.btnRendimientoODC.Caption = "Rendimiento por ODC";
+            this.btnRendimientoODC.Id = 23;
+            this.btnRendimientoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRendimientoODC.ImageOptions.Image")));
+            this.btnRendimientoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRendimientoODC.ImageOptions.LargeImage")));
+            this.btnRendimientoODC.Name = "btnRendimientoODC";
+            this.btnRendimientoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRendimientoODC_ItemClick);
             // 
-            // barButtonItem22
+            // btnTrabajadores
             // 
-            this.barButtonItem22.Caption = "Trabajadores";
-            this.barButtonItem22.Id = 24;
-            this.barButtonItem22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.Image")));
-            this.barButtonItem22.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem22.ImageOptions.LargeImage")));
-            this.barButtonItem22.Name = "barButtonItem22";
+            this.btnTrabajadores.Caption = "Trabajadores";
+            this.btnTrabajadores.Id = 24;
+            this.btnTrabajadores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajadores.ImageOptions.Image")));
+            this.btnTrabajadores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTrabajadores.ImageOptions.LargeImage")));
+            this.btnTrabajadores.Name = "btnTrabajadores";
+            this.btnTrabajadores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrabajadores_ItemClick);
             // 
-            // barButtonItem23
+            // btnSegurodeVida
             // 
-            this.barButtonItem23.Caption = "Seguro de Vida";
-            this.barButtonItem23.Id = 25;
-            this.barButtonItem23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.Image")));
-            this.barButtonItem23.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem23.ImageOptions.LargeImage")));
-            this.barButtonItem23.Name = "barButtonItem23";
+            this.btnSegurodeVida.Caption = "Seguro de Vida";
+            this.btnSegurodeVida.Id = 25;
+            this.btnSegurodeVida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSegurodeVida.ImageOptions.Image")));
+            this.btnSegurodeVida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSegurodeVida.ImageOptions.LargeImage")));
+            this.btnSegurodeVida.Name = "btnSegurodeVida";
+            this.btnSegurodeVida.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSegurodeVida_ItemClick);
             // 
-            // barButtonItem24
+            // btnSeguroSocial
             // 
-            this.barButtonItem24.Caption = "Seguro Social";
-            this.barButtonItem24.Id = 26;
-            this.barButtonItem24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.ImageOptions.Image")));
-            this.barButtonItem24.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem24.ImageOptions.LargeImage")));
-            this.barButtonItem24.Name = "barButtonItem24";
+            this.btnSeguroSocial.Caption = "Seguro Social";
+            this.btnSeguroSocial.Id = 26;
+            this.btnSeguroSocial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeguroSocial.ImageOptions.Image")));
+            this.btnSeguroSocial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeguroSocial.ImageOptions.LargeImage")));
+            this.btnSeguroSocial.Name = "btnSeguroSocial";
+            this.btnSeguroSocial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeguroSocial_ItemClick);
             // 
-            // barButtonItem25
+            // btnAlmacen
             // 
-            this.barButtonItem25.Caption = "Almacen";
-            this.barButtonItem25.Id = 27;
-            this.barButtonItem25.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.Image")));
-            this.barButtonItem25.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.LargeImage")));
-            this.barButtonItem25.Name = "barButtonItem25";
+            this.btnAlmacen.Caption = "Almacen";
+            this.btnAlmacen.Id = 27;
+            this.btnAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.Image")));
+            this.btnAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.LargeImage")));
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlmacen_ItemClick);
             // 
-            // barButtonItem26
+            // btnRtpCobros
             // 
-            this.barButtonItem26.Caption = "Cobros";
-            this.barButtonItem26.Id = 28;
-            this.barButtonItem26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
-            this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
-            this.barButtonItem26.Name = "barButtonItem26";
+            this.btnRtpCobros.Caption = "Cobros";
+            this.btnRtpCobros.Id = 28;
+            this.btnRtpCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
+            this.btnRtpCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
+            this.btnRtpCobros.Name = "btnRtpCobros";
+            this.btnRtpCobros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRtpCobros_ItemClick);
             // 
             // btnUnidaddeMedida
             // 
@@ -389,6 +410,15 @@
             this.btnClientes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClientes.ImageOptions.LargeImage")));
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.Caption = "Permisos";
+            this.btnPermisos.Id = 31;
+            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.Image")));
+            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPermisos.ImageOptions.LargeImage")));
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -445,25 +475,25 @@
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem11);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem12);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarODC);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnCobros);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarRendimientoODC);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem14);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnCapturaODC);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnNomina);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageGroup9
             // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnControlAlmacen);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnFormatoODC);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPage5
@@ -481,39 +511,39 @@
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem18);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnCatalogos);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPageGroup11
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem19);
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnNominaporFecha);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnAcumuladoNomina);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
             // ribbonPageGroup12
             // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.barButtonItem21);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btnRendimientoODC);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             // 
             // ribbonPageGroup13
             // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.barButtonItem22);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnTrabajadores);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             // 
             // ribbonPageGroup14
             // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem23);
-            this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem24);
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnSegurodeVida);
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnSeguroSocial);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             // 
             // ribbonPageGroup15
             // 
-            this.ribbonPageGroup15.ItemLinks.Add(this.barButtonItem25);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnAlmacen);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             // 
             // ribbonPageGroup16
             // 
-            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem26);
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnRtpCobros);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             // 
             // ribbonPage2
@@ -535,7 +565,7 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnRespaldoBD);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Respaldo";
             // 
@@ -560,15 +590,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Sharp Plus";
-            // 
-            // btnPermisos
-            // 
-            this.btnPermisos.Caption = "Permisos";
-            this.btnPermisos.Id = 31;
-            this.btnPermisos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image1")));
-            this.btnPermisos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage1")));
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -617,23 +638,23 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel SkinForm;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem21;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem22;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem23;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem24;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem25;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem26;
+        private DevExpress.XtraBars.BarButtonItem btnRespaldoBD;
+        private DevExpress.XtraBars.BarButtonItem btnImportarODC;
+        private DevExpress.XtraBars.BarButtonItem btnCobros;
+        private DevExpress.XtraBars.BarButtonItem btnImportarRendimientoODC;
+        private DevExpress.XtraBars.BarButtonItem btnCapturaODC;
+        private DevExpress.XtraBars.BarButtonItem btnNomina;
+        private DevExpress.XtraBars.BarButtonItem btnControlAlmacen;
+        private DevExpress.XtraBars.BarButtonItem btnFormatoODC;
+        private DevExpress.XtraBars.BarButtonItem btnCatalogos;
+        private DevExpress.XtraBars.BarButtonItem btnNominaporFecha;
+        private DevExpress.XtraBars.BarButtonItem btnAcumuladoNomina;
+        private DevExpress.XtraBars.BarButtonItem btnRendimientoODC;
+        private DevExpress.XtraBars.BarButtonItem btnTrabajadores;
+        private DevExpress.XtraBars.BarButtonItem btnSegurodeVida;
+        private DevExpress.XtraBars.BarButtonItem btnSeguroSocial;
+        private DevExpress.XtraBars.BarButtonItem btnAlmacen;
+        private DevExpress.XtraBars.BarButtonItem btnRtpCobros;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
