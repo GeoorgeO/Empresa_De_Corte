@@ -34,9 +34,8 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select Nombre_Pantalla
+		select Id_Pantalla
 		from Perfiles_Pantallas as P
-		inner join Pantallas as A on A.Id_Pantalla=P.Id_Pantalla
 		where P.Id_Perfil=@Id_Perfil
 END
 GO
