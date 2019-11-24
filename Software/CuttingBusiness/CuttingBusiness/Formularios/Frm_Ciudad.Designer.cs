@@ -50,6 +50,7 @@
             this.Id_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnbuscar = new DevExpress.XtraEditors.SimpleButton();
@@ -59,7 +60,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -270,6 +270,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Nombre Ciudad";
+            this.gridColumn1.FieldName = "Nombre_Ciudad";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
@@ -281,6 +282,14 @@
             this.Id_Estado.Name = "Id_Estado";
             this.Id_Estado.Visible = true;
             this.Id_Estado.VisibleIndex = 2;
+            // 
+            // Nombre_Estado
+            // 
+            this.Nombre_Estado.Caption = "Estado";
+            this.Nombre_Estado.FieldName = "Nombre_Estado";
+            this.Nombre_Estado.Name = "Nombre_Estado";
+            this.Nombre_Estado.Visible = true;
+            this.Nombre_Estado.VisibleIndex = 3;
             // 
             // panelControl1
             // 
@@ -365,14 +374,6 @@
             this.labelControl1.Size = new System.Drawing.Size(53, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Ciudad: ";
-            // 
-            // Nombre_Estado
-            // 
-            this.Nombre_Estado.Caption = "Estado";
-            this.Nombre_Estado.FieldName = "Nombre_Estado";
-            this.Nombre_Estado.Name = "Nombre_Estado";
-            this.Nombre_Estado.Visible = true;
-            this.Nombre_Estado.VisibleIndex = 3;
             // 
             // Frm_Ciudad
             // 

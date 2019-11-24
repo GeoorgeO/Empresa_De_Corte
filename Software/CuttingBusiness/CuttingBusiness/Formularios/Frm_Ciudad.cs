@@ -45,7 +45,7 @@ namespace CuttingBusiness
 
             Clase.Id_Ciudad = textId.Text.Trim();
             Clase.Nombre_Ciudad = textNombre.Text.Trim();
-            Clase.Id_Estado = textEstado.Text.Trim();
+            Clase.Id_Estado = textEstado.Tag.ToString();
 
             Clase.MtdInsertarCiudad();
 
@@ -167,8 +167,8 @@ namespace CuttingBusiness
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            Frm_Estado Estado = new Frm_Estado(true);
-
+            Frm_Estado Estado = new Frm_Estado();
+            Estado.PaSel = true;
             Estado.ShowDialog();
 
             textEstado.Tag = Estado.IdEstado;

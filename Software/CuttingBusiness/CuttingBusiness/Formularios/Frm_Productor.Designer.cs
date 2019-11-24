@@ -1,6 +1,6 @@
 ﻿namespace CuttingBusiness
 {
-    partial class Frm_Dueños
+    partial class Frm_Productor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dueños));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Productor));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -194,7 +194,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 350);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 347);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(513, 28);
             // 
@@ -204,7 +204,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(73, 350);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 347);
             // 
             // barDockControlRight
             // 
@@ -212,7 +212,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(513, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 350);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 347);
             // 
             // repositoryItemTextEdit1
             // 
@@ -222,10 +222,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(73, 107);
+            this.panelControl2.Location = new System.Drawing.Point(73, 110);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(440, 243);
+            this.panelControl2.Size = new System.Drawing.Size(440, 237);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -235,7 +235,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(416, 219);
+            this.gridControl1.Size = new System.Drawing.Size(416, 213);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -252,21 +252,23 @@
             // 
             // Id_Duenio
             // 
-            this.Id_Duenio.Caption = "Id Dueño";
+            this.Id_Duenio.Caption = "Id Productor";
             this.Id_Duenio.FieldName = "Id_Duenio";
             this.Id_Duenio.Name = "Id_Duenio";
             this.Id_Duenio.OptionsColumn.AllowEdit = false;
             this.Id_Duenio.Visible = true;
             this.Id_Duenio.VisibleIndex = 0;
+            this.Id_Duenio.Width = 121;
             // 
             // Nombre_duenio
             // 
-            this.Nombre_duenio.Caption = "Nombre Dueño";
+            this.Nombre_duenio.Caption = "Nombre Productor";
             this.Nombre_duenio.FieldName = "Nombre_Duenio";
             this.Nombre_duenio.Name = "Nombre_duenio";
             this.Nombre_duenio.OptionsColumn.AllowEdit = false;
             this.Nombre_duenio.Visible = true;
             this.Nombre_duenio.VisibleIndex = 1;
+            this.Nombre_duenio.Width = 279;
             // 
             // panelControl1
             // 
@@ -275,7 +277,7 @@
             this.panelControl1.Location = new System.Drawing.Point(73, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(440, 107);
+            this.panelControl1.Size = new System.Drawing.Size(440, 110);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -287,13 +289,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(416, 83);
+            this.groupControl1.Size = new System.Drawing.Size(416, 86);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Dueño";
+            this.groupControl1.Text = "Datos Productor";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(97, 54);
+            this.textNombre.Location = new System.Drawing.Point(106, 54);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -301,7 +303,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 58);
+            this.labelControl2.Location = new System.Drawing.Point(19, 61);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(75, 13);
             this.labelControl2.TabIndex = 2;
@@ -310,7 +312,7 @@
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(97, 28);
+            this.textId.Location = new System.Drawing.Point(106, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -318,7 +320,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 31);
+            this.labelControl1.Location = new System.Drawing.Point(19, 35);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 0;
@@ -328,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 378);
+            this.ClientSize = new System.Drawing.Size(513, 375);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -340,7 +342,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Dueños";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dueños";
+            this.Text = "Productor";
             this.Load += new System.EventHandler(this.Frm_Dueños_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

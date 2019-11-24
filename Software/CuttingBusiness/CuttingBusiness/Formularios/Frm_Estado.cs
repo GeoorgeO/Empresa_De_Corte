@@ -21,7 +21,7 @@ namespace CuttingBusiness
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Estado(false);
+                    m_FormDefInstance = new Frm_Estado();
                 return m_FormDefInstance;
             }
             set
@@ -31,9 +31,8 @@ namespace CuttingBusiness
         }
 
         public Boolean PaSel { get; set; }
-        public Frm_Estado(Boolean BPasel)
+        public Frm_Estado()
         {
-            this.PaSel = BPasel;
             InitializeComponent();
         }
 

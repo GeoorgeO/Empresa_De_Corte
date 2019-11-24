@@ -12,10 +12,10 @@ using CapaDeDatos;
 
 namespace CuttingBusiness
 {
-    public partial class Frm_Dueños : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Productor : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
-        public Frm_Dueños()
+        public Frm_Productor()
         {
           
             InitializeComponent();
