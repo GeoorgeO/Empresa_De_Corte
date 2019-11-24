@@ -55,6 +55,7 @@
     <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Domicilios.cs" />
     <Compile Include="Formularios\CLS_Duenio.cs" />
+    <Compile Include="Formularios\CLS_Empleados.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Pantallas.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Formularios\CLS_Productos.cs" />
     <Compile Include="Formularios\CLS_Clientes.cs" />
     <Compile Include="Formularios\CLS_Proveedores.cs" />
+    <Compile Include="Formularios\CLS_Puestos.cs" />
     <Compile Include="Formularios\CLS_TipoPersona.cs" />
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Formularios\CLS_UnidadesMedida.cs" />

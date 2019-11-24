@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDeDatos.Formularios
+namespace CapaDeDatos
 {
     public class CLS_Empleados : ConexionBase
     {
@@ -23,7 +23,7 @@ namespace CapaDeDatos.Formularios
         public string Id_Cuadrilla { get; set; }
         public string Activo { get; set; }
 
-        public void MtdSeleccionarUsuarios()
+        public void MtdSeleccionarEmpleados()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -56,7 +56,7 @@ namespace CapaDeDatos.Formularios
 
 
 
-        public void MtdInsertarUsuarios()
+        public void MtdInsertarEmpleados()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -65,18 +65,32 @@ namespace CapaDeDatos.Formularios
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empleados_Insert";
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = Nombre_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Usuario");
-                _dato.CadenaTexto = Contrasena;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contrasena");
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
-                _dato.CadenaTexto = Creador;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Creador");
-                _dato.CadenaTexto = Modificador;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Modificador");
+                _dato.CadenaTexto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
+                _dato.CadenaTexto = Nombre_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Empleado");
+                _dato.CadenaTexto = Fecha_Nacimiento;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Nacimiento");
+                _dato.CadenaTexto = NSS;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "NSS");
+                _dato.CadenaTexto = Fecha_Alta_Seg_Social;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Alta_Seg_Social");
+                _dato.CadenaTexto = Fecha_Baja_Seg_Social;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Baja_Seg_Social");
+                _dato.CadenaTexto = Cuenta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Cuenta");
+                _dato.CadenaTexto = Tarjeta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Tarjeta");
+                _dato.CadenaTexto = Fecha_Alta_Seg_Vida;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Alta_Seg_Vida");
+                _dato.CadenaTexto = Fecha_Baja_Seg_Vida;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Baja_Seg_Vida");
+                _dato.CadenaTexto = Id_Puesto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Puesto");
+                _dato.CadenaTexto = Id_Cuadrilla;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuadrilla");
+                _dato.CadenaTexto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -96,7 +110,7 @@ namespace CapaDeDatos.Formularios
             }
         }
 
-        public void MtdEliminarUsuarios()
+        public void MtdEliminarEmpleados()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
