@@ -56,7 +56,7 @@ namespace CuttingBusiness
                 gridControl1.DataSource = Clase.Datos;
             }
         }
-        private void CargarPerfiles()
+        private void CargarPerfiles(string Valor)
         {
             CLS_Perfiles Clase = new CLS_Perfiles();
 
@@ -65,16 +65,17 @@ namespace CuttingBusiness
             {
                 gridLookUpEdit1.Properties.DisplayMember = "Nombre_Perfil";
                 gridLookUpEdit1.Properties.ValueMember = "Id_Perfil";
-                gridLookUpEdit1.EditValue = null;
+                gridLookUpEdit1.EditValue = Valor;
                 gridLookUpEdit1.Properties.DataSource = Clase.Datos;
             }
         }
         private void InsertarUsuarios()
         {
+            Crypto encryp = new Crypto();
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
             Clase.Nombre_Usuario =textNombre.Text.Trim();
-            Clase.Contrasena = textContrasena.Text.Trim();
+            Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
             Clase.Creador = UsuariosLogin;
             Clase.Modificador= UsuariosLogin;
@@ -129,8 +130,8 @@ namespace CuttingBusiness
 
         private void Frm_Usuarios_Load(object sender, EventArgs e)
         {
-            
-            CargarPerfiles();
+            UsuariosLogin = "001";
+            CargarPerfiles(null);
             CargarUsuarios();
             
         }
@@ -141,10 +142,12 @@ namespace CuttingBusiness
             {
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
+                    Crypto desencryp = new Crypto();
                     DataRow row = this.gridView1.GetDataRow(i);
                     textUsuario.Text = row["Id_Usuario"].ToString();
                     textNombre.Text = row["Nombre_Usuario"].ToString();
-                    textContrasena.Text = row["Contrasena"].ToString();
+                    textContrasena.Text =desencryp.Desencriptar(row["Contrasena"].ToString());
+                    textConfirmaContra.Text= desencryp.Desencriptar(row["Contrasena"].ToString());
                     gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
 
                     labelActivo.Visible = true;
@@ -216,6 +219,14 @@ namespace CuttingBusiness
         private void checkActivo_CheckedChanged(object sender, EventArgs e)
         {
             CargarUsuarios();
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            Frm_Perfiles frm = new Frm_Perfiles();
+            frm.PaSel = true;
+            frm.ShowDialog();
+            CargarPerfiles(null);
         }
     }
 }

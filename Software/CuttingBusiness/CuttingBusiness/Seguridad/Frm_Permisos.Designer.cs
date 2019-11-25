@@ -49,6 +49,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -57,8 +59,6 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Nombre_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -200,9 +200,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 402);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 396);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(502, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(502, 28);
             // 
             // barDockControlLeft
             // 
@@ -210,7 +210,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 402);
+            this.barDockControlLeft.Size = new System.Drawing.Size(73, 396);
             // 
             // barDockControlRight
             // 
@@ -218,7 +218,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(502, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 402);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 396);
             // 
             // repositoryItemTextEdit1
             // 
@@ -228,10 +228,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 108);
+            this.panelControl2.Location = new System.Drawing.Point(73, 108);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(431, 294);
+            this.panelControl2.Size = new System.Drawing.Size(429, 288);
             this.panelControl2.TabIndex = 21;
             // 
             // gridControl1
@@ -241,7 +241,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(407, 270);
+            this.gridControl1.Size = new System.Drawing.Size(405, 264);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -275,14 +275,30 @@
             this.Nombre_Perfil.Visible = true;
             this.Nombre_Perfil.VisibleIndex = 1;
             // 
+            // Id_Pantalla
+            // 
+            this.Id_Pantalla.Caption = "Id Pantalla";
+            this.Id_Pantalla.FieldName = "Id_Pantalla";
+            this.Id_Pantalla.Name = "Id_Pantalla";
+            this.Id_Pantalla.Visible = true;
+            this.Id_Pantalla.VisibleIndex = 2;
+            // 
+            // Nombre_Pantalla
+            // 
+            this.Nombre_Pantalla.Caption = "Pantalla";
+            this.Nombre_Pantalla.FieldName = "Nombre_Pantalla";
+            this.Nombre_Pantalla.Name = "Nombre_Pantalla";
+            this.Nombre_Pantalla.Visible = true;
+            this.Nombre_Pantalla.VisibleIndex = 3;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(73, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(431, 108);
+            this.panelControl1.Size = new System.Drawing.Size(429, 108);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -294,13 +310,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(407, 84);
+            this.groupControl1.Size = new System.Drawing.Size(405, 84);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil - Pantalla";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 58);
+            this.labelControl2.Location = new System.Drawing.Point(19, 60);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 3;
@@ -308,7 +324,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 32);
+            this.labelControl1.Location = new System.Drawing.Point(19, 34);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
@@ -350,27 +366,11 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // Nombre_Pantalla
-            // 
-            this.Nombre_Pantalla.Caption = "Pantalla";
-            this.Nombre_Pantalla.FieldName = "Nombre_Pantalla";
-            this.Nombre_Pantalla.Name = "Nombre_Pantalla";
-            this.Nombre_Pantalla.Visible = true;
-            this.Nombre_Pantalla.VisibleIndex = 3;
-            // 
-            // Id_Pantalla
-            // 
-            this.Id_Pantalla.Caption = "Id Pantalla";
-            this.Id_Pantalla.FieldName = "Id_Pantalla";
-            this.Id_Pantalla.Name = "Id_Pantalla";
-            this.Id_Pantalla.Visible = true;
-            this.Id_Pantalla.VisibleIndex = 2;
-            // 
             // Frm_Permisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 427);
+            this.ClientSize = new System.Drawing.Size(502, 424);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);

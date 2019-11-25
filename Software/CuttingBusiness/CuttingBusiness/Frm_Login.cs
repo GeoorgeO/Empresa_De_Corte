@@ -39,7 +39,7 @@ namespace CuttingBusiness
                 if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
                 {
                     Crypto claseencripta = new Crypto();
-                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena = txtPass.Text };
+                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena =claseencripta.Encriptar(txtPass.Text) };
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {

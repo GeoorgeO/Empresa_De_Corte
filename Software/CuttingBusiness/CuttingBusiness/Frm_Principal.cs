@@ -147,10 +147,15 @@ namespace CuttingBusiness
 
         private void btnPantallas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            if (TieneAcceso("030"))
+            {
                 Frm_Pantallas Ventana = new Frm_Pantallas();
                 Ventana.ShowDialog();
-            
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [030]");
+            }
         }
 
         private void btnPermisos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
