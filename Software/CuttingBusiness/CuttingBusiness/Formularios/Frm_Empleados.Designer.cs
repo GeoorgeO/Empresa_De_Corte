@@ -776,7 +776,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(783, 493);
+            this.xtraTabPage2.Size = new System.Drawing.Size(779, 487);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -786,7 +786,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 145);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(773, 343);
+            this.panelControl2.Size = new System.Drawing.Size(769, 337);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -795,7 +795,7 @@
             this.gridControl2.Location = new System.Drawing.Point(7, 7);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(759, 329);
+            this.gridControl2.Size = new System.Drawing.Size(755, 323);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -923,7 +923,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(773, 140);
+            this.groupControl2.Size = new System.Drawing.Size(769, 140);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 

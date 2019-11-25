@@ -18,7 +18,20 @@ namespace CuttingBusiness
         {
             InitializeComponent();
         }
-
+        private static Frm_Huertas m_FormDefInstance;
+        public static Frm_Huertas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Huertas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         public void CargarEstado(string Valor)
         {
             CLS_Estado comboEstado = new CLS_Estado();

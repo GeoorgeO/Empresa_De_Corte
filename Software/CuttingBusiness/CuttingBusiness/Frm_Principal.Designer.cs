@@ -62,6 +62,7 @@
             this.btnUnidaddeMedida = new DevExpress.XtraBars.BarButtonItem();
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
             this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHuertas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,6 +88,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -128,9 +130,11 @@
             this.btnRtpCobros,
             this.btnUnidaddeMedida,
             this.btnClientes,
-            this.btnPermisos});
+            this.btnPermisos,
+            this.btnHuertas,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -168,6 +172,7 @@
             this.btnPantallas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.Image")));
             this.btnPantallas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantallas.ImageOptions.LargeImage")));
             this.btnPantallas.Name = "btnPantallas";
+            this.btnPantallas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnPantallas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallas_ItemClick);
             // 
             // btnPerfiles
@@ -421,6 +426,15 @@
             this.btnPermisos.Name = "btnPermisos";
             this.btnPermisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPermisos_ItemClick);
             // 
+            // btnHuertas
+            // 
+            this.btnHuertas.Caption = "Huertas";
+            this.btnHuertas.Id = 32;
+            this.btnHuertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuertas.ImageOptions.Image")));
+            this.btnHuertas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuertas.ImageOptions.LargeImage")));
+            this.btnHuertas.Name = "btnHuertas";
+            this.btnHuertas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuertas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -446,6 +460,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramientas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnInsumos);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUnidaddeMedida);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnHuertas);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos Iniciales";
@@ -476,6 +491,7 @@
             // 
             // ribbonPageGroup7
             // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarODC);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCobros);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarRendimientoODC);
@@ -592,6 +608,14 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Precaptura ODC";
+            this.barButtonItem1.Id = 33;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -605,6 +629,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AvoHarvest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Principal_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -672,6 +698,8 @@
         private DevExpress.XtraBars.BarButtonItem btnClientes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem btnPermisos;
+        private DevExpress.XtraBars.BarButtonItem btnHuertas;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 

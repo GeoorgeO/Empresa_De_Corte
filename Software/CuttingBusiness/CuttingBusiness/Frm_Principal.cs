@@ -421,5 +421,35 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [029]");
             }
         }
+
+        private void btnHuertas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("031"))
+            {
+                Frm_Huertas Ventana = new Frm_Huertas();
+                Frm_Huertas.DefInstance.MdiParent = this;
+                Frm_Huertas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [029]");
+            }
+        }
+
+        private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea salir de la aplicación?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            MSRegistro RegIn = new MSRegistro();
+            RegIn.SaveSetting("ConexionSQL", "Sking", SkinForm.LookAndFeel.SkinName);
+        }
+
+        private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

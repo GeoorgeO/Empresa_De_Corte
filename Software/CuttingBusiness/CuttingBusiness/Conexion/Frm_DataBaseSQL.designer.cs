@@ -75,7 +75,7 @@
             this.panelControl2.Size = new System.Drawing.Size(279, 187);
             this.panelControl2.TabIndex = 0;
             // 
-            // gridControl1
+            // dtgBaseDeDatos
             // 
             this.dtgBaseDeDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgBaseDeDatos.Location = new System.Drawing.Point(12, 12);
@@ -86,7 +86,7 @@
             this.dtgBaseDeDatos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValoresBaseDeDatos});
             // 
-            // gridView1
+            // dtgValoresBaseDeDatos
             // 
             this.dtgValoresBaseDeDatos.GridControl = this.dtgBaseDeDatos;
             this.dtgValoresBaseDeDatos.Name = "dtgValoresBaseDeDatos";
