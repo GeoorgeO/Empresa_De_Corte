@@ -67,16 +67,16 @@ namespace CuttingBusiness
         }
         private void CargarPuesto()
         {
-           /* CLS_Perfiles Clase = new CLS_Perfiles();
+            CLS_Puestos Clase = new CLS_Puestos();
 
-            Clase.MtdSeleccionarPerfiles();
+            Clase.MtdSeleccionarPuestos();
             if (Clase.Exito)
             {
-                gridLookUpEdit1.Properties.DisplayMember = "Nombre_Perfil";
-                gridLookUpEdit1.Properties.ValueMember = "Id_Perfil";
-                gridLookUpEdit1.EditValue = null;
-                gridLookUpEdit1.Properties.DataSource = Clase.Datos;
-            }*/
+                glePuesto.Properties.DisplayMember = "Nombre_Puesto";
+                glePuesto.Properties.ValueMember = "Id_Puesto";
+                glePuesto.EditValue = null;
+                glePuesto.Properties.DataSource = Clase.Datos;
+            }
         }
         private void InsertarEmpleados()
         {
@@ -92,7 +92,7 @@ namespace CuttingBusiness
             Clase.Fecha_Alta_Seg_Vida= dateAltaSegVida.DateTime.Year.ToString() + DosCero(dateAltaSegVida.DateTime.Month.ToString()) + DosCero(dateAltaSegVida.DateTime.Day.ToString());
             Clase.Fecha_Baja_Seg_Vida= dateBajaSegVida.DateTime.Year.ToString() + DosCero(dateBajaSegVida.DateTime.Month.ToString()) + DosCero(dateBajaSegVida.DateTime.Day.ToString());
             Clase.Id_Puesto= glePuesto.EditValue.ToString();
-            Clase.Id_Cuadrilla= gleCuadrilla.EditValue.ToString();
+            Clase.Id_Cuadrilla = "";// gleCuadrilla.EditValue.ToString();
             Clase.Activo = "1";
             Clase.MtdInsertarEmpleados();
             if (Clase.Exito)
@@ -165,12 +165,52 @@ namespace CuttingBusiness
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            LimpiarCampos();
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (textId.Text.Trim().Length > 0)
+            {
+                EliminarEmpleados();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un Empleado.");
+            }
+        }
 
+        private void btnBusqPuesto_Click(object sender, EventArgs e)
+        {
+            Frm_Puesto Clase = new Frm_Puesto();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
+
+            
+        }
+
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (textEmpleado.Text.ToString().Trim().Length > 0)
+            {
+                InsertarEmpleados();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario Agregar un nombre del producto");
+            }
+        }
+
+        private void Frm_Empleados_Load(object sender, EventArgs e)
+        {
+            CargarPuesto();
+            CargarEmpleados();
+        }
+
+        private void checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+                CargarEmpleados();
+           
         }
     }
 }

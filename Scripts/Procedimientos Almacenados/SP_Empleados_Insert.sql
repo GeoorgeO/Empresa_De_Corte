@@ -65,7 +65,7 @@ BEGIN
 		    	Id_Empleado=@Id_Empleado
 				
 		else
-			INSERT INTO dbo.Usuarios
+			INSERT INTO dbo.Empleados
 	           (Id_Empleado
 	           ,Nombre_Empleado
 			   ,Fecha_Nacimiento
@@ -76,7 +76,7 @@ BEGIN
 			   ,Tarjeta
 			   ,Fecha_Alta_Seg_Vida
 			   ,Fecha_Baja_Seg_Vida
-			   ,Id_Puesto,
+			   ,Id_Puesto
 			   ,Id_Cuadrilla
 			   ,Activo)
 	     	VALUES

@@ -50,17 +50,17 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Nacimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NSS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Alta_Seg_Social = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Baja_Seg_Social = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cuenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tarjeta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Alta_Seg_Vida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Baja_Seg_Vida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnBusqCuadrilla = new DevExpress.XtraEditors.SimpleButton();
             this.gleCuadrilla = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -126,6 +126,9 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.Id_Cuadrilla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Cuadrilla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -232,6 +235,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -293,7 +297,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(53, 515);
+            this.barDockControl3.Size = new System.Drawing.Size(57, 515);
             // 
             // barDockControl5
             // 
@@ -314,10 +318,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(53, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(57, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(785, 515);
+            this.xtraTabControl1.Size = new System.Drawing.Size(781, 515);
             this.xtraTabControl1.TabIndex = 8;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -329,7 +333,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(779, 487);
+            this.xtraTabPage1.Size = new System.Drawing.Size(775, 487);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -340,7 +344,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 221);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(769, 261);
+            this.panelControl1.Size = new System.Drawing.Size(765, 261);
             this.panelControl1.TabIndex = 2;
             // 
             // checkActivo
@@ -350,6 +354,7 @@
             this.checkActivo.Properties.Caption = "Inactivos";
             this.checkActivo.Size = new System.Drawing.Size(75, 19);
             this.checkActivo.TabIndex = 3;
+            this.checkActivo.CheckedChanged += new System.EventHandler(this.checkActivo_CheckedChanged);
             // 
             // gridControl1
             // 
@@ -357,7 +362,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 32);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(755, 222);
+            this.gridControl1.Size = new System.Drawing.Size(751, 222);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -366,17 +371,20 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Empleado,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11});
+            this.Nombre_Empleado,
+            this.Fecha_Nacimiento,
+            this.NSS,
+            this.Fecha_Alta_Seg_Social,
+            this.Fecha_Baja_Seg_Social,
+            this.Cuenta,
+            this.Tarjeta,
+            this.Fecha_Alta_Seg_Vida,
+            this.Fecha_Baja_Seg_Vida,
+            this.Id_Puesto,
+            this.Nombre_Puesto,
+            this.Id_Cuadrilla,
+            this.Nombre_Cuadrilla,
+            this.Activo});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -392,71 +400,93 @@
             this.Id_Empleado.Visible = true;
             this.Id_Empleado.VisibleIndex = 0;
             // 
-            // gridColumn1
+            // Nombre_Empleado
             // 
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.Nombre_Empleado.Caption = "Empleado";
+            this.Nombre_Empleado.FieldName = "Nombre_Empleado";
+            this.Nombre_Empleado.Name = "Nombre_Empleado";
+            this.Nombre_Empleado.Visible = true;
+            this.Nombre_Empleado.VisibleIndex = 1;
             // 
-            // gridColumn2
+            // Fecha_Nacimiento
             // 
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.Fecha_Nacimiento.Caption = "F. Nacimineto";
+            this.Fecha_Nacimiento.FieldName = "Fecha_Nacimiento";
+            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
+            this.Fecha_Nacimiento.Visible = true;
+            this.Fecha_Nacimiento.VisibleIndex = 2;
             // 
-            // gridColumn3
+            // NSS
             // 
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.NSS.Caption = "NSS";
+            this.NSS.FieldName = "NSS";
+            this.NSS.Name = "NSS";
+            this.NSS.Visible = true;
+            this.NSS.VisibleIndex = 3;
             // 
-            // gridColumn4
+            // Fecha_Alta_Seg_Social
             // 
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.Fecha_Alta_Seg_Social.Caption = "F. Alta Seg.";
+            this.Fecha_Alta_Seg_Social.FieldName = "Fecha_Alta_Seg_Social";
+            this.Fecha_Alta_Seg_Social.Name = "Fecha_Alta_Seg_Social";
+            this.Fecha_Alta_Seg_Social.Visible = true;
+            this.Fecha_Alta_Seg_Social.VisibleIndex = 4;
             // 
-            // gridColumn5
+            // Fecha_Baja_Seg_Social
             // 
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.Fecha_Baja_Seg_Social.Caption = "F. Baja Seg.";
+            this.Fecha_Baja_Seg_Social.FieldName = "Fecha_Baja_Seg_Social";
+            this.Fecha_Baja_Seg_Social.Name = "Fecha_Baja_Seg_Social";
+            this.Fecha_Baja_Seg_Social.Visible = true;
+            this.Fecha_Baja_Seg_Social.VisibleIndex = 5;
             // 
-            // gridColumn6
+            // Cuenta
             // 
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.Cuenta.Caption = "Cuenta";
+            this.Cuenta.FieldName = "Cuenta";
+            this.Cuenta.Name = "Cuenta";
+            this.Cuenta.Visible = true;
+            this.Cuenta.VisibleIndex = 6;
             // 
-            // gridColumn7
+            // Tarjeta
             // 
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 7;
+            this.Tarjeta.Caption = "Tarjeta";
+            this.Tarjeta.FieldName = "Tarjeta";
+            this.Tarjeta.Name = "Tarjeta";
+            this.Tarjeta.Visible = true;
+            this.Tarjeta.VisibleIndex = 7;
             // 
-            // gridColumn8
+            // Fecha_Alta_Seg_Vida
             // 
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
+            this.Fecha_Alta_Seg_Vida.Caption = "F. Alta Seg. Vida";
+            this.Fecha_Alta_Seg_Vida.FieldName = "Fecha_Alta_Seg_Vida";
+            this.Fecha_Alta_Seg_Vida.Name = "Fecha_Alta_Seg_Vida";
+            this.Fecha_Alta_Seg_Vida.Visible = true;
+            this.Fecha_Alta_Seg_Vida.VisibleIndex = 8;
             // 
-            // gridColumn9
+            // Fecha_Baja_Seg_Vida
             // 
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 9;
+            this.Fecha_Baja_Seg_Vida.Caption = "F. Baja Seg. Vida";
+            this.Fecha_Baja_Seg_Vida.FieldName = "Fecha_Baja_Seg_Vida";
+            this.Fecha_Baja_Seg_Vida.Name = "Fecha_Baja_Seg_Vida";
+            this.Fecha_Baja_Seg_Vida.Visible = true;
+            this.Fecha_Baja_Seg_Vida.VisibleIndex = 9;
             // 
-            // gridColumn10
+            // Id_Puesto
             // 
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 10;
+            this.Id_Puesto.Caption = "Id Puesto";
+            this.Id_Puesto.FieldName = "Id_Puesto";
+            this.Id_Puesto.Name = "Id_Puesto";
+            this.Id_Puesto.Visible = true;
+            this.Id_Puesto.VisibleIndex = 10;
             // 
-            // gridColumn11
+            // Nombre_Puesto
             // 
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 11;
+            this.Nombre_Puesto.Caption = "Puesto";
+            this.Nombre_Puesto.FieldName = "Nombre_Puesto";
+            this.Nombre_Puesto.Name = "Nombre_Puesto";
+            this.Nombre_Puesto.Visible = true;
+            this.Nombre_Puesto.VisibleIndex = 11;
             // 
             // groupControl1
             // 
@@ -492,7 +522,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(769, 216);
+            this.groupControl1.Size = new System.Drawing.Size(765, 216);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
             // 
@@ -553,6 +583,7 @@
             this.btnBusqPuesto.Name = "btnBusqPuesto";
             this.btnBusqPuesto.Size = new System.Drawing.Size(24, 23);
             this.btnBusqPuesto.TabIndex = 25;
+            this.btnBusqPuesto.Click += new System.EventHandler(this.btnBusqPuesto_Click);
             // 
             // labelControl21
             // 
@@ -1064,6 +1095,30 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
+            // Id_Cuadrilla
+            // 
+            this.Id_Cuadrilla.Caption = "Id Cuadrilla";
+            this.Id_Cuadrilla.FieldName = "Id_Cuadrilla";
+            this.Id_Cuadrilla.Name = "Id_Cuadrilla";
+            this.Id_Cuadrilla.Visible = true;
+            this.Id_Cuadrilla.VisibleIndex = 12;
+            // 
+            // Nombre_Cuadrilla
+            // 
+            this.Nombre_Cuadrilla.Caption = "Cuadrilla";
+            this.Nombre_Cuadrilla.FieldName = "Nombre_Cuadrilla";
+            this.Nombre_Cuadrilla.Name = "Nombre_Cuadrilla";
+            this.Nombre_Cuadrilla.Visible = true;
+            this.Nombre_Cuadrilla.VisibleIndex = 13;
+            // 
+            // Activo
+            // 
+            this.Activo.Caption = "Activo";
+            this.Activo.FieldName = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.Visible = true;
+            this.Activo.VisibleIndex = 14;
+            // 
             // Frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1078,6 +1133,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Empleados";
             this.Text = "Empleados";
+            this.Load += new System.EventHandler(this.Frm_Empleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -1215,18 +1271,21 @@
         private DevExpress.XtraEditors.GridLookUpEdit glePuesto;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.SimpleButton btnBusqPuesto;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Nacimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn NSS;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Alta_Seg_Social;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Baja_Seg_Social;
+        private DevExpress.XtraGrid.Columns.GridColumn Cuenta;
+        private DevExpress.XtraGrid.Columns.GridColumn Tarjeta;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Alta_Seg_Vida;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Baja_Seg_Vida;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Puesto;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Puesto;
         private DevExpress.XtraEditors.SimpleButton btnBusqCuadrilla;
         private DevExpress.XtraEditors.CheckEdit checkActivo;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Cuadrilla;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Cuadrilla;
+        private DevExpress.XtraGrid.Columns.GridColumn Activo;
     }
 }
