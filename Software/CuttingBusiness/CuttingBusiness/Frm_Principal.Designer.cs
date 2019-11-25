@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnUsuarios = new DevExpress.XtraBars.BarButtonItem();
@@ -84,8 +85,8 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -142,7 +143,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(921, 146);
+            this.ribbonControl1.Size = new System.Drawing.Size(915, 144);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnUsuarios
@@ -245,8 +246,8 @@
             // 
             this.btnRespaldoBD.Caption = "Respaldo BD";
             this.btnRespaldoBD.Id = 12;
-            this.btnRespaldoBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btnRespaldoBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btnRespaldoBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.Image")));
+            this.btnRespaldoBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.LargeImage")));
             this.btnRespaldoBD.Name = "btnRespaldoBD";
             this.btnRespaldoBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRespaldoBD_ItemClick);
             // 
@@ -380,8 +381,8 @@
             // 
             this.btnAlmacen.Caption = "Almacen";
             this.btnAlmacen.Id = 27;
-            this.btnAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.Image")));
-            this.btnAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem25.ImageOptions.LargeImage")));
+            this.btnAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.ImageOptions.Image")));
+            this.btnAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.ImageOptions.LargeImage")));
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlmacen_ItemClick);
             // 
@@ -389,8 +390,8 @@
             // 
             this.btnRtpCobros.Caption = "Cobros";
             this.btnRtpCobros.Id = 28;
-            this.btnRtpCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.Image")));
-            this.btnRtpCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
+            this.btnRtpCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRtpCobros.ImageOptions.Image")));
+            this.btnRtpCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRtpCobros.ImageOptions.LargeImage")));
             this.btnRtpCobros.Name = "btnRtpCobros";
             this.btnRtpCobros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRtpCobros_ItemClick);
             // 
@@ -589,14 +590,14 @@
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Sharp Plus";
+            this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 429);
+            this.ClientSize = new System.Drawing.Size(915, 426);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";

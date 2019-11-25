@@ -115,6 +115,12 @@
     <Compile Include="Formularios\Frm_Estado.Designer.cs">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Herramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Herramientas.Designer.cs">
+      <DependentUpon>Frm_Herramientas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Huertas.cs">
       <SubType>Form</SubType>
     </Compile>
