@@ -192,6 +192,9 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("005"))
             {
+                Frm_Productos Ventana = new Frm_Productos();
+                Frm_Productos.DefInstance.MdiParent = this;
+                Frm_Productos.DefInstance.Show();
             }
             else
             {

@@ -18,7 +18,20 @@ namespace CuttingBusiness
         {
             InitializeComponent();
         }
-
+        private static Frm_Productos m_FormDefInstance;
+        public static Frm_Productos DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Productos();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         private void CargarProductos(String Activo)
         {
             gridControl1.DataSource = null;
