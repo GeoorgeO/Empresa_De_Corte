@@ -61,11 +61,13 @@
     <Compile Include="Formularios\CLS_Pantallas.cs" />
     <Compile Include="Formularios\CLS_Perfiles.cs" />
     <Compile Include="Formularios\CLS_Perfiles_Pantallas.cs" />
+    <Compile Include="Formularios\CLS_PrecapturaODC.cs" />
     <Compile Include="Formularios\CLS_Productos.cs" />
     <Compile Include="Formularios\CLS_Clientes.cs" />
     <Compile Include="Formularios\CLS_Proveedores.cs" />
     <Compile Include="Formularios\CLS_Puestos.cs" />
     <Compile Include="Formularios\CLS_TipoPersona.cs" />
+    <Compile Include="Formularios\CLS_TiposCorte.cs" />
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Formularios\CLS_UnidadesMedida.cs" />
     <Compile Include="Formularios\CLS_Usuarios.cs" />
