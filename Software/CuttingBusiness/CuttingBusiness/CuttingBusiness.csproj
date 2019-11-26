@@ -85,6 +85,18 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Salidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Salidas.Designer.cs">
+      <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Frm_Entradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Entradas.Designer.cs">
+      <DependentUpon>Frm_Entradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Ciudad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Salidas.resx">
+      <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Entradas.resx">
+      <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
