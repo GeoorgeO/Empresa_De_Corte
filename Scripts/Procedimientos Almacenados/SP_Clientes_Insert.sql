@@ -5,22 +5,23 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Proveedores_Insert')
-DROP PROCEDURE SP_Proveedores_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Clientes_Insert')
+DROP PROCEDURE SP_Clientes_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Proveedores_Insert] 
+create PROCEDURE [dbo].[SP_Clientes_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Proveedor char(8),
-	@Nombre_Proveedor varchar(150),
+	@Id_Cliente char(8),
+	@Nombre_Cliente varchar(150),
 	@Telefono1 varchar(15),
 	@Telefono2 varchar(15),
 	@Email varchar(50),
-	@Contacto varchar(100)
+	@Contacto varchar(100),
+	@RFC varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,38 +35,41 @@ BEGIN
 	begin try
 
 		declare @maximo char(8)
-		select @maximo=right(Concat('00000000', isnull(max(Id_Proveedor),0)+1),8) from dbo.Proveedores
+		select @maximo=right(Concat('00000000', isnull(max(Id_Cliente),0)+1),8) from dbo.Clientes
 
 		declare @Existe int
-		select @Existe = count(Id_Proveedor) from dbo.Proveedores a where (a.Id_Proveedor=@Id_Proveedor)
+		select @Existe = count(Id_Cliente) from dbo.Clientes a where (a.Id_Cliente=@Id_Cliente)
 
 		if @Existe>0 
 		
-			UPDATE dbo.Proveedores
-		        SET Nombre_Proveedor=@Nombre_Proveedor,
+			UPDATE dbo.Clientes
+		        SET Nombre_Cliente=@Nombre_Cliente,
 				Telefono1=@Telefono1,
 				Telefono2=@Telefono2,
 				Email=@Email,
-				Contacto=@Contacto
+				Contacto=@Contacto,
+				RFC=@RFC
 		    WHERE
 		    	Id_Proveedor=@Id_Proveedor
 				
 		else
 		
-			INSERT INTO dbo.Proveedores
-	           (Id_Proveedor
-	           ,Nombre_Proveedor
+			INSERT INTO dbo.Clientes
+	           (Id_Cliente
+	           ,Nombre_Cliente
 			   ,Telefono1
 			   ,Telefono2
 			   ,Email
-			   ,Contacto)
+			   ,Contacto
+			   ,RFC)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Proveedor
+	           ,@Nombre_Cliente
 			   ,@Telefono1
 			   ,@Telefono2
 			   ,@Email
-			   ,@Contacto)
+			   ,@Contacto
+			   ,@RFC)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -15,6 +15,7 @@ namespace CapaDeDatos
     public string Telefono2 { get; set; }
     public string Email { get; set; }
     public string Contacto { get; set; }
+    public string RFC { get; set; }
 
         public void MtdSeleccionarClientes()
     {
@@ -69,7 +70,9 @@ namespace CapaDeDatos
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email");
             _dato.CadenaTexto = Contacto;
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contacto");
-            _conexion.EjecutarDataset();
+            _dato.CadenaTexto = RFC;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC");
+                _conexion.EjecutarDataset();
 
             if (_conexion.Exito)
             {

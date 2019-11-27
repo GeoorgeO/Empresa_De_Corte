@@ -14,7 +14,7 @@ ELSE
 		[NoExterior] [varchar](10) NULL,
 		[Colonia] [varchar](50) NULL,
 		[Codigo_Postal] [char](5) NULL,
-		[Id_Estado] [char](3) NULL,
+		[Id_Ciudad] [char](3) NULL,
 		[Id_TipoDomicilio] [char](4) NULL,
 		[Id_Persona] [char](8) NULL,
 		[id_TipoPersona] [char](4) NULL,

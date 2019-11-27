@@ -5,17 +5,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Proveedores_Delete')
-DROP PROCEDURE SP_Proveedores_Delete
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Clientes_Delete')
+DROP PROCEDURE SP_Clientes_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_Proveedores_Delete] 
+create PROCEDURE [dbo].[SP_Clientes_Delete] 
 	-- Add the parameters for the stored procedure here
-	@Id_Proveedor char(8)
+	@Id_Cliente char(8)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -28,7 +28,7 @@ BEGIN
 	begin transaction T2;
 	begin try
 		
-		delete from dbo.Proveedores where Id_Proveedor=@Id_Proveedor
+		delete from dbo.Clientes where Id_Cliente=@Id_Cliente
 
 		commit transaction T2;
 		set @correcto=1

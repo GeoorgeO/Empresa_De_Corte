@@ -14,7 +14,7 @@ namespace CapaDeDatos
         public string NoExterior { get; set; }
         public string Colonia { get; set; }
         public string Codigo_Postal { get; set; }
-        public string Id_Estado { get; set; }
+        public string Id_Ciudad { get; set; }
         public string Id_TipoDomicilio { get; set; }
         public string Id_Empleado { get; set; }
         public string id_TipoPersona { get; set; }
@@ -76,8 +76,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Colonia");
                 _dato.CadenaTexto = Codigo_Postal;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Codigo_Postal");
-                _dato.CadenaTexto = Id_Estado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Estado");
+                _dato.CadenaTexto = Id_Ciudad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Ciudad");
                 _dato.CadenaTexto = Id_TipoDomicilio;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoDomicilio");
                 _dato.CadenaTexto = Id_Empleado;

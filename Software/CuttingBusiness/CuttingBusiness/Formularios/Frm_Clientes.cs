@@ -71,6 +71,7 @@ namespace CuttingBusiness
             Clientes.Telefono2 = textTelefono2.Text.Trim();
             Clientes.Email = textCorreo.Text.Trim();
             Clientes.Contacto = textContacto.Text.Trim();
+            Clientes.RFC = txtRFC.Text.Trim();
             Clientes.MtdInsertarClientes();
             if (Clientes.Exito)
             {
@@ -100,7 +101,7 @@ namespace CuttingBusiness
             Domicilio.NoExterior = textNoExterior.Text.Trim();
             Domicilio.Colonia = textColonia.Text.Trim();
             Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
-            Domicilio.Id_Estado = textEstado.Tag.ToString().Trim();
+            Domicilio.Id_Ciudad = txtCiudad.Tag.ToString().Trim();
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
             Domicilio.Id_Empleado = textIdCliente.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
@@ -179,6 +180,7 @@ namespace CuttingBusiness
             textTelefono2.Text = "";
             textCorreo.Text = "";
             textContacto.Text = "";
+            txtRFC.Text = "";
         }
 
         private void LimpiarCamposDomicilio()
@@ -189,6 +191,8 @@ namespace CuttingBusiness
             textNoExterior.Text = "";
             textEstado.Tag = "";
             textEstado.Text = "";
+            txtCiudad.Tag = "";
+            txtCiudad.Text = "";
             textCodigoPostal.Text = "";
             textColonia.Text = "";
             textTipoDomicilio.Tag = "";
@@ -208,6 +212,7 @@ namespace CuttingBusiness
                     textTelefono2.Text = row["Telefono2"].ToString();
                     textCorreo.Text = row["Email"].ToString();
                     textContacto.Text = row["Contacto"].ToString();
+                    txtRFC.Text = row["RFC"].ToString();
                 }
             }
             catch (Exception ex)
@@ -224,7 +229,7 @@ namespace CuttingBusiness
             {
                 if (textCliente.Text.ToString().Trim().Length > 0)
                 {
-                    InsertarClientes();
+                        InsertarClientes();
                 }
                 else
                 {
@@ -235,14 +240,13 @@ namespace CuttingBusiness
             {
                 if (textCalle.Text.ToString().Trim().Length > 0)
                 {
-                    if (textNoExterior.Text.ToString().Trim().Length > 0)
+                    if (textNoExterior.Text.Trim().Length > 0 || textNoInterior.Text.Trim().Length > 0)
                     {
-
                         InsertarDomicilio();
                     }
                     else
                     {
-                        XtraMessageBox.Show("Es necesario agregar un numero exterior.");
+                        XtraMessageBox.Show("Es necesario agregar un numero exterior o interior.");
                     }
                 }
                 else
@@ -301,6 +305,7 @@ namespace CuttingBusiness
             CargarClientes();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)
@@ -318,6 +323,8 @@ namespace CuttingBusiness
                     textColonia.Text = row["Colonia"].ToString();
                     textEstado.Tag = row["Id_Estado"].ToString();
                     textEstado.Text = row["Nombre_Estado"].ToString();
+                    txtCiudad.Tag = row["Id_Ciudad"].ToString();
+                    txtCiudad.Text = row["Nombre_Ciudad"].ToString();
                     textTipoDomicilio.Tag = row["Id_TipoDomicilio"].ToString();
                     textTipoDomicilio.Text = row["Nombre_TipoDomicilio"].ToString();
                 }
@@ -330,12 +337,14 @@ namespace CuttingBusiness
 
         private void btnBusqEstado_Click(object sender, EventArgs e)
         {
-            Frm_Estado Estado = new Frm_Estado();
-            Estado.PaSel = true;
-            Estado.ShowDialog();
+            Frm_Ciudad Clase = new Frm_Ciudad();
+            Clase.PaSel = true;
+            Clase.ShowDialog();
 
-            textEstado.Tag = Estado.IdEstado;
-            textEstado.Text = Estado.Estado;
+            txtCiudad.Tag = Clase.IdCiudad;
+            txtCiudad.Text = Clase.Ciudad;
+            textEstado.Tag = Clase.IdEstado;
+            textEstado.Text = Clase.Estado;
         }
 
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)

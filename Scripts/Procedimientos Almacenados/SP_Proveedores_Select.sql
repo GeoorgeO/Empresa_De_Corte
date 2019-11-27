@@ -39,7 +39,8 @@ BEGIN
 		  ,Telefono1
 		  ,Telefono2
 		  ,Email
-		  ,Contacto 
+		  ,Contacto
+		  ,RFC
 		from Proveedores
 
 END

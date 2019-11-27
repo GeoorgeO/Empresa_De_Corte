@@ -20,7 +20,8 @@ create PROCEDURE [dbo].[SP_Proveedores_Insert]
 	@Telefono1 varchar(15),
 	@Telefono2 varchar(15),
 	@Email varchar(50),
-	@Contacto varchar(100)
+	@Contacto varchar(100),
+	@RFC varchar(20)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -46,7 +47,8 @@ BEGIN
 				Telefono1=@Telefono1,
 				Telefono2=@Telefono2,
 				Email=@Email,
-				Contacto=@Contacto
+				Contacto=@Contacto,
+				RFC=@RFC
 		    WHERE
 		    	Id_Proveedor=@Id_Proveedor
 				
@@ -58,14 +60,16 @@ BEGIN
 			   ,Telefono1
 			   ,Telefono2
 			   ,Email
-			   ,Contacto)
+			   ,Contacto
+			   ,RFC)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Proveedor
 			   ,@Telefono1
 			   ,@Telefono2
 			   ,@Email
-			   ,@Contacto)
+			   ,@Contacto
+			   ,@RFC)
 		
 		commit transaction T1;
 		set @correcto=1

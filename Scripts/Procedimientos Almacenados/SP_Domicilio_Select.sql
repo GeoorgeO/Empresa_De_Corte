@@ -41,7 +41,9 @@ BEGIN
 		  ,D.NoExterior
 		  ,D.Colonia
 		  ,D.Codigo_Postal
-		  ,D.Id_Estado
+		  ,D.Id_Ciudad
+		  ,C.Nombre_Ciudad
+		  ,C.Id_Estado
 		  ,E.Nombre_Estado
 		  ,D.Id_TipoDomicilio
 		  ,TD.Nombre_TipoDomicilio
@@ -49,7 +51,8 @@ BEGIN
 		  ,D.id_TipoPersona
 		  ,TP.TipoPersona
 		from Domicilios as D
-		left join Estado as E on D.Id_Estado=E.Id_Estado
+		left join Ciudades as C on C.Id_Ciudad=D.id_Ciudad
+		left join Estado as E on C.Id_Estado=E.Id_Estado
 		left join Tipo_Domicilio as TD on D.Id_TipoDomicilio=TD.Id_TipoDomicilio
 		left join TipoPersona as TP on D.id_TipoPersona=TP.id_TipoPersona
 		where TP.Id_TipoPersona=@id_TipoPersona

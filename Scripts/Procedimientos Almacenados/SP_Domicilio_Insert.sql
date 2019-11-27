@@ -21,7 +21,7 @@ create PROCEDURE [dbo].[SP_Domicilio_Insert]
 	@NoExterior varchar(10),
 	@Colonia varchar(50),
 	@Codigo_Postal char(5),
-	@Id_Estado char(3),
+	@Id_Ciudad char(3),
 	@Id_TipoDomicilio char(4),
 	@Id_Persona char(8),
 	@id_TipoPersona char(4)
@@ -51,7 +51,7 @@ BEGIN
 				NoExterior=@NoExterior,
 				Colonia=@Colonia,
 				Codigo_Postal=@Codigo_Postal,
-				Id_Estado=@Id_Estado,
+				Id_Ciudad=@Id_Ciudad,
 				Id_TipoDomicilio=@Id_TipoDomicilio,
 				Id_Persona=@Id_Persona,
 				id_TipoPersona=@id_TipoPersona
@@ -67,7 +67,7 @@ BEGIN
 			   ,NoExterior
 			   ,Colonia
 			   ,Codigo_Postal
-			   ,Id_Estado
+			   ,Id_Ciudad
 			   ,Id_TipoDomicilio
 			   ,Id_Persona
 			   ,id_TipoPersona)
@@ -78,7 +78,7 @@ BEGIN
 			   ,@NoExterior
 			   ,@Colonia
 			   ,@Codigo_Postal
-			   ,@Id_Estado
+			   ,@Id_Ciudad
 			   ,@Id_TipoDomicilio
 			   ,@Id_Persona
 			   ,@id_TipoPersona)

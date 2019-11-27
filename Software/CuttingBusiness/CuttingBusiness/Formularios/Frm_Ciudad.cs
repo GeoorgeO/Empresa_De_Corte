@@ -26,6 +26,8 @@ namespace CuttingBusiness
 
         public string IdCiudad { get; set; }
         public string Ciudad { get; set; }
+        public string IdEstado { get; set; }
+        public string Estado { get; set; }
 
         private void CargarCiudad()
         {
@@ -100,8 +102,8 @@ namespace CuttingBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Ciudad"].ToString();
                     textNombre.Text = row["Nombre_Ciudad"].ToString();
-                    textNombre.Tag = row["Id_Estado"].ToString();
-                    textNombre.Text = row["Nombre_Estado"].ToString();
+                    textEstado.Tag = row["Id_Estado"].ToString();
+                    textEstado.Text = row["Nombre_Estado"].ToString();
                 }
             }
             catch (Exception ex)
@@ -162,6 +164,8 @@ namespace CuttingBusiness
         {
             IdCiudad = textId.Text.Trim();
             Ciudad = textNombre.Text.Trim();
+            IdEstado = textEstado.Tag.ToString();
+            Estado = textEstado.Text.Trim();
             this.Close();
         }
 
