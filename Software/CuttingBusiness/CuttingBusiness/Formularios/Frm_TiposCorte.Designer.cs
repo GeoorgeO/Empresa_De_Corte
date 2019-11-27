@@ -177,7 +177,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Pais:";
+            this.lblProveedor.Caption = "Tipos Corte:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -334,7 +334,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_TiposCorte";
-            this.Text = "Frm_TiposCorte";
+            this.Text = "Tipos de Corte";
             this.Load += new System.EventHandler(this.Frm_TiposCorte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

@@ -68,7 +68,8 @@ BEGIN
 			   ,Anaquel
 			   ,Pasillo
 			   ,Repisa
-			   ,Activo)
+			   ,Activo
+			   ,Stock)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Producto
@@ -79,7 +80,8 @@ BEGIN
 			   ,@Anaquel
 			   ,@Pasillo
 			   ,@Repisa
-			   ,1)
+			   ,1
+			   ,0)
 		
 		commit transaction T1;
 		set @correcto=1

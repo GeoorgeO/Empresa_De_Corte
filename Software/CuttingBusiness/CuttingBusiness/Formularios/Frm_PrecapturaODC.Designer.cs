@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_PrecapturaODC));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -52,6 +51,11 @@
             this.Id_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCiudad = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEstado = new DevExpress.XtraEditors.SimpleButton();
             this.textArea = new DevExpress.XtraEditors.TextEdit();
             this.textProductor = new DevExpress.XtraEditors.TextEdit();
             this.textJefaArea = new DevExpress.XtraEditors.TextEdit();
@@ -79,11 +83,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnCiudad = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEstado = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -218,7 +217,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "PreCapctura ODC";
+            this.lblProveedor.Caption = "PreCapctura ODC:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -367,6 +366,46 @@
             this.groupControl1.Size = new System.Drawing.Size(843, 163);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos PreCaptura Orden de Corte";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(614, 131);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(24, 23);
+            this.simpleButton3.TabIndex = 31;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(614, 53);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(24, 23);
+            this.simpleButton2.TabIndex = 30;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(614, 27);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
+            this.simpleButton1.TabIndex = 29;
+            // 
+            // btnCiudad
+            // 
+            this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.Image")));
+            this.btnCiudad.Location = new System.Drawing.Point(296, 79);
+            this.btnCiudad.Name = "btnCiudad";
+            this.btnCiudad.Size = new System.Drawing.Size(24, 23);
+            this.btnCiudad.TabIndex = 28;
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstado.ImageOptions.Image")));
+            this.btnEstado.Location = new System.Drawing.Point(296, 53);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(24, 23);
+            this.btnEstado.TabIndex = 27;
             // 
             // textArea
             // 
@@ -587,46 +626,6 @@
             this.labelControl1.Size = new System.Drawing.Size(24, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "No.: ";
-            // 
-            // btnCiudad
-            // 
-            this.btnCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.Image")));
-            this.btnCiudad.Location = new System.Drawing.Point(296, 79);
-            this.btnCiudad.Name = "btnCiudad";
-            this.btnCiudad.Size = new System.Drawing.Size(24, 23);
-            this.btnCiudad.TabIndex = 28;
-            // 
-            // btnEstado
-            // 
-            this.btnEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstado.ImageOptions.Image")));
-            this.btnEstado.Location = new System.Drawing.Point(296, 53);
-            this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(24, 23);
-            this.btnEstado.TabIndex = 27;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(614, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton1.TabIndex = 29;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(614, 53);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton2.TabIndex = 30;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(614, 131);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton3.TabIndex = 31;
             // 
             // Frm_PrecapturaODC
             // 
