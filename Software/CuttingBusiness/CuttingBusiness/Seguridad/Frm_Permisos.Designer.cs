@@ -47,7 +47,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.cmbPerfiles = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -67,13 +67,14 @@
             this.dtgValDisponibles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPerfiles = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPerfiles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -126,8 +127,6 @@
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
             this.bIconos.OptionsBar.AllowCollapse = true;
@@ -251,8 +250,9 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnPerfiles);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.gridLookUpEdit1);
+            this.groupControl1.Controls.Add(this.cmbPerfiles);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
@@ -268,16 +268,18 @@
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Perfil:";
             // 
-            // gridLookUpEdit1
+            // cmbPerfiles
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(67, 28);
-            this.gridLookUpEdit1.MenuManager = this.barManager1;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbPerfiles.Location = new System.Drawing.Point(67, 28);
+            this.cmbPerfiles.MenuManager = this.barManager1;
+            this.cmbPerfiles.Name = "cmbPerfiles";
+            this.cmbPerfiles.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(219, 20);
-            this.gridLookUpEdit1.TabIndex = 0;
+            this.cmbPerfiles.Properties.NullText = "- Seleccionar Perfil -";
+            this.cmbPerfiles.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cmbPerfiles.Size = new System.Drawing.Size(219, 20);
+            this.cmbPerfiles.TabIndex = 0;
+            this.cmbPerfiles.EditValueChanged += new System.EventHandler(this.cmbPerfiles_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -328,6 +330,7 @@
             this.dtgAsignadas.TabIndex = 1;
             this.dtgAsignadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValAsignadas});
+            this.dtgAsignadas.Click += new System.EventHandler(this.dtgAsignadas_Click);
             // 
             // dtgValAsignadas
             // 
@@ -342,7 +345,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Pantalla";
-            this.gridColumn1.FieldName = "InventarioPantallaNombre";
+            this.gridColumn1.FieldName = "Nombre_Pantalla";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
@@ -350,8 +353,8 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "InventarioPantallaId";
-            this.gridColumn4.FieldName = "InventarioPantallaId";
+            this.gridColumn4.Caption = "Id Pantalla";
+            this.gridColumn4.FieldName = "Id_Pantalla";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
@@ -376,6 +379,7 @@
             this.btnDispone.Name = "btnDispone";
             this.btnDispone.Size = new System.Drawing.Size(40, 40);
             this.btnDispone.TabIndex = 3;
+            this.btnDispone.Click += new System.EventHandler(this.btnDispone_Click);
             // 
             // btnAsigna
             // 
@@ -384,6 +388,7 @@
             this.btnAsigna.Name = "btnAsigna";
             this.btnAsigna.Size = new System.Drawing.Size(40, 40);
             this.btnAsigna.TabIndex = 2;
+            this.btnAsigna.Click += new System.EventHandler(this.btnAsigna_Click);
             // 
             // btnDisponeTodos
             // 
@@ -392,6 +397,7 @@
             this.btnDisponeTodos.Name = "btnDisponeTodos";
             this.btnDisponeTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDisponeTodos.TabIndex = 1;
+            this.btnDisponeTodos.Click += new System.EventHandler(this.btnDisponeTodos_Click);
             // 
             // btnAsignaTodos
             // 
@@ -400,6 +406,7 @@
             this.btnAsignaTodos.Name = "btnAsignaTodos";
             this.btnAsignaTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignaTodos.TabIndex = 0;
+            this.btnAsignaTodos.Click += new System.EventHandler(this.btnAsignaTodos_Click);
             // 
             // panelControl5
             // 
@@ -432,6 +439,7 @@
             this.dtgDisponibles.TabIndex = 0;
             this.dtgDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDisponibles});
+            this.dtgDisponibles.Click += new System.EventHandler(this.dtgDisponibles_Click);
             // 
             // dtgValDisponibles
             // 
@@ -447,7 +455,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Pantalla";
-            this.gridColumn2.FieldName = "InventarioPantallaNombre";
+            this.gridColumn2.FieldName = "Nombre_Pantalla";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
@@ -456,13 +464,22 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "InventarioPantallaId";
-            this.gridColumn3.FieldName = "InventarioPantallaId";
+            this.gridColumn3.Caption = "Id Pantalla";
+            this.gridColumn3.FieldName = "Id_Pantalla";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             this.gridColumn3.Width = 163;
+            // 
+            // btnPerfiles
+            // 
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductor.ImageOptions.Image")));
+            this.btnPerfiles.Location = new System.Drawing.Point(292, 27);
+            this.btnPerfiles.Name = "btnPerfiles";
+            this.btnPerfiles.Size = new System.Drawing.Size(24, 23);
+            this.btnPerfiles.TabIndex = 9;
+            this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
             // Frm_Permisos
             // 
@@ -475,7 +492,11 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Permisos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permisos";
             this.Load += new System.EventHandler(this.Frm_Permisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -485,7 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPerfiles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -527,7 +548,7 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit cmbPerfiles;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl4;
@@ -547,5 +568,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValDisponibles;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton btnPerfiles;
     }
 }

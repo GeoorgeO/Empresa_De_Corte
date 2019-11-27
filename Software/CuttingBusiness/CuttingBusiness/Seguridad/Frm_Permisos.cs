@@ -18,7 +18,8 @@ namespace CuttingBusiness
         public string IdPantalla { get; set; }
         public string IdPerfil { get; set; }
         public Boolean PaSel { get; set; }
-
+        public string InventarioPantallaIdDisponible { get; set; }
+        public string InventarioPantallaIdAsignada { get; set; }
         private static Frm_Permisos m_FormDefInstance;
         public static Frm_Permisos DefInstance
         {
@@ -49,10 +50,10 @@ namespace CuttingBusiness
             Clase.MtdSeleccionarPerfiles();
             if (Clase.Exito)
             {
-                gridLookUpEdit1.Properties.DisplayMember = "Nombre_Perfil";
-                gridLookUpEdit1.Properties.ValueMember = "Id_Perfil";
-                gridLookUpEdit1.EditValue = null;
-                gridLookUpEdit1.Properties.DataSource = Clase.Datos;
+                cmbPerfiles.Properties.DisplayMember = "Nombre_Perfil";
+                cmbPerfiles.Properties.ValueMember = "Id_Perfil";
+                cmbPerfiles.EditValue = null;
+                cmbPerfiles.Properties.DataSource = Clase.Datos;
             }
         }
         
@@ -60,7 +61,7 @@ namespace CuttingBusiness
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
             Clase.Id_Pantalla = AddPantalla;
-            Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
+            Clase.Id_Perfil = cmbPerfiles.EditValue.ToString();
             Clase.MtdInsertarPerfilesPantallas();
             if (Clase.Exito)
             {
@@ -85,7 +86,7 @@ namespace CuttingBusiness
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
             Clase.Id_Pantalla = RemovePantalla;
-            Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
+            Clase.Id_Perfil = cmbPerfiles.EditValue.ToString();
             Clase.MtdEliminarPerfilesPantallas();
             if (Clase.Exito)
             {
@@ -101,6 +102,7 @@ namespace CuttingBusiness
         private void LimpiarCampos()
         {
             CargarPerfiles();
+            cmbPerfiles.EditValue = null;
         }
 
         private void Frm_Permisos_Load(object sender, EventArgs e)
@@ -125,6 +127,203 @@ namespace CuttingBusiness
         {
             this.Close();
         }
-        
+        private void CargarAsignadas()
+        {
+            if (cmbPerfiles.EditValue != null)
+            {
+                CLS_Perfiles_Pantallas conPerfiles = new CLS_Perfiles_Pantallas();
+                conPerfiles.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                conPerfiles.MtdSeleccionarPantallasAsignadas();
+                if (conPerfiles.Exito)
+                {
+                    dtgAsignadas.DataSource = conPerfiles.Datos;
+                    dtgValAsignadas.ClearSelection();
+                    InventarioPantallaIdAsignada = string.Empty;
+                }
+            }
+            else
+            {
+                dtgAsignadas.DataSource = null;
+            }
+        }
+
+        private void CargarDisponible()
+        {
+            if (cmbPerfiles.EditValue != null)
+            {
+                CLS_Perfiles_Pantallas conPerfiles = new CLS_Perfiles_Pantallas();
+                conPerfiles.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                conPerfiles.MtdSeleccionarPantallasDisponibles();
+                if (conPerfiles.Exito)
+                {
+                    dtgDisponibles.DataSource = conPerfiles.Datos;
+                    dtgValDisponibles.ClearSelection();
+                    InventarioPantallaIdDisponible = string.Empty;
+                }
+            }
+            else
+            {
+                dtgDisponibles.DataSource = null;
+            }
+        }
+
+        private void cmbPerfiles_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarDisponible();
+            CargarAsignadas();
+        }
+
+        private void btnAsignaTodos_Click(object sender, EventArgs e)
+        {
+            if (dtgValDisponibles.RowCount > 0)
+            {
+                Boolean Exito = true;
+                for (int i = 0; i < dtgValDisponibles.RowCount; i++)
+                {
+                    int xRow = dtgValDisponibles.GetVisibleRowHandle(i);
+                    //Inserta Detalles
+                    CLS_Perfiles_Pantallas ins = new CLS_Perfiles_Pantallas();
+                    ins.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                    ins.Id_Pantalla = dtgValDisponibles.GetRowCellValue(xRow, dtgValDisponibles.Columns["Id_Pantalla"]).ToString();
+                    ins.MtdInsertarPerfilesPantallas();
+                    if (!ins.Exito)
+                    {
+                        Exito = false;
+                        XtraMessageBox.Show(ins.Mensaje);
+                    }
+                }
+                if (Exito)
+                {
+                    CargarAsignadas();
+                    CargarDisponible();
+                    XtraMessageBox.Show("Se han asignado los permisos con exito");
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Todos los permisos ya estan asignados");
+            }
+        }
+
+        private void btnDisponeTodos_Click(object sender, EventArgs e)
+        {
+            if (dtgValAsignadas.RowCount > 0)
+            {
+                Boolean Exito = true;
+                for (int i = 0; i < dtgValAsignadas.RowCount; i++)
+                {
+                    int xRow = dtgValAsignadas.GetVisibleRowHandle(i);
+                    //Inserta Detalles
+                    CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
+                    del.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                    del.Id_Pantalla = dtgValAsignadas.GetRowCellValue(xRow, dtgValAsignadas.Columns["Id_Pantalla"]).ToString();
+                    del.MtdEliminarPerfilesPantallas();
+                    if (!del.Exito)
+                    {
+                        Exito = false;
+                        XtraMessageBox.Show(del.Mensaje);
+                    }
+                }
+                if (Exito)
+                {
+                    CargarAsignadas();
+                    CargarDisponible();
+                    XtraMessageBox.Show("Se han quitado los permisos con exito");
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Todos los permisos ya estan disponibles");
+            }
+        }
+
+        private void btnAsigna_Click(object sender, EventArgs e)
+        {
+            if (cmbPerfiles.EditValue != null && InventarioPantallaIdDisponible !=string.Empty)
+            {
+                CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
+                del.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                del.Id_Pantalla = InventarioPantallaIdDisponible;
+                del.MtdInsertarPerfilesPantallas();
+                if (del.Exito)
+                {
+                    XtraMessageBox.Show("Se ha asignado el permiso con exito");
+                    CargarAsignadas();
+                    CargarDisponible();
+                }
+                else
+                {
+                    XtraMessageBox.Show(del.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado Usuario o pantalla a asignar");
+            }
+        }
+
+        private void btnDispone_Click(object sender, EventArgs e)
+        {
+            if (cmbPerfiles.EditValue != null && InventarioPantallaIdAsignada !=string.Empty)
+            {
+                CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
+                del.Id_Perfil = cmbPerfiles.EditValue.ToString();
+                del.Id_Pantalla = InventarioPantallaIdAsignada;
+                del.MtdEliminarPerfilesPantallas();
+                if (del.Exito)
+                {
+                    XtraMessageBox.Show("Se ha quitado el permiso con exito");
+                    CargarAsignadas();
+                    CargarDisponible();
+                }
+                else
+                {
+                    XtraMessageBox.Show(del.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado Usuario o pantalla a quitar");
+            }
+        }
+
+        private void dtgAsignadas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValAsignadas.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValAsignadas.GetDataRow(i);
+                    InventarioPantallaIdAsignada = row["Id_Pantalla"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgDisponibles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValDisponibles.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValDisponibles.GetDataRow(i);
+                    InventarioPantallaIdDisponible = row["Id_Pantalla"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnPerfiles_Click(object sender, EventArgs e)
+        {
+            Frm_Perfiles frm = new Frm_Perfiles();
+            frm.ShowDialog();
+            CargarPerfiles();
+        }
     }
 }
