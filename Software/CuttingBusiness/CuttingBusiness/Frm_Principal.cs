@@ -451,5 +451,10 @@ namespace CuttingBusiness
         {
             Application.Exit();
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

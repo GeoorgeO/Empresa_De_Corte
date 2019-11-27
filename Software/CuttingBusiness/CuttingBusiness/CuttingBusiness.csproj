@@ -115,6 +115,12 @@
     <Compile Include="Formularios\Frm_Cuadrilla.Designer.cs">
       <DependentUpon>Frm_Cuadrilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_CuadrillaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_CuadrillaCategoria.Designer.cs">
+      <DependentUpon>Frm_CuadrillaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Calidad.resx">
       <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Cuadrilla.resx">
+      <DependentUpon>Frm_Cuadrilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_CuadrillaCategoria.resx">
+      <DependentUpon>Frm_CuadrillaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Empleados.resx">
       <DependentUpon>Frm_Empleados.cs</DependentUpon>
