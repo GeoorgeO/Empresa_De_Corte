@@ -30,7 +30,7 @@ namespace CuttingBusiness
             }
         }
 
-        const string idTipoPersona = "0001";
+        const string idTipoPersona = "0007";
 
         public Frm_Proveedores()
         {
@@ -305,6 +305,7 @@ namespace CuttingBusiness
             CargarProveedores();
             CargarDomicilio();
             iniciarTags();
+            LimpiarCampos();
         }
 
         private void gridControl2_Click(object sender, EventArgs e)

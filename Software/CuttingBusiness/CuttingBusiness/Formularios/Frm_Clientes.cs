@@ -30,7 +30,7 @@ namespace CuttingBusiness
             }
         }
 
-        const string idTipoPersona = "0002";
+        const string idTipoPersona = "0006";
 
         public Frm_Clientes()
         {
