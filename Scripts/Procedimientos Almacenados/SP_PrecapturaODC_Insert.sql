@@ -16,8 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_PrecapturaODC_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_PrecapturaODC bigint,
-	@Id_JefeCuadrilla] char(5),
-	@Id_Huerta] char(5),
+	@JefeCuadrilla varchar(100),
+	@Id_Huerta char(5),
 	@Transportista varchar(50),
 	@Placas varchar(15),
 	@Candado varchar(15),
@@ -39,27 +39,57 @@ BEGIN
 	begin transaction T1;
 	begin try
 
-		declare @maximo char(3)
-		select @maximo=right(Concat('000', isnull(max(Id_Pais),0)+1),3) from dbo.Pais
+		declare @maximo bigint
+		select @maximo=isnull(max(Id_PrecapturaODC),0)+1 from dbo.PrecapturaODC
 
 		declare @Existe int
-		select @Existe = count(Id_Pais) from dbo.Pais a where (a.Id_Pais=@Id_Pais)
+		select @Existe = count(Id_PrecapturaODC) from dbo.PrecapturaODC a where (a.Id_PrecapturaODC=@Id_PrecapturaODC)
 
 		if @Existe>0 
 		
-			UPDATE dbo.Pais
-		        SET Nombre_Pais=@Nombre_Pais
+			UPDATE dbo.PrecapturaODC
+		        SET JefeCuadrilla=@JefeCuadrilla,
+				Id_Huerta=@Id_Huerta,
+				Transportista=@Transportista,
+				Placas=@Placas,
+				Candado=@Candado,
+				ODC=@ODC,
+				Id_TipoCorte=@Id_TipoCorte,
+				PSobreBanda=@PSobreBanda,
+				Precio=@Precio,
+				Empaque=@Empaque,
+				JefeArea=@JefeArea
 		    WHERE
-		    	Id_Pais=@Id_Pais
+		    	Id_PrecapturaODC=@Id_PrecapturaODC
 				
 		else
 		
-			INSERT INTO dbo.Pais
-	           (Id_Pais
-	           ,Nombre_Pais)
+			INSERT INTO dbo.PrecapturaODC
+	           (Id_PrecapturaODC
+	           ,JefeCuadrilla
+			   ,Id_Huerta
+			   ,Transportista
+			   ,Placas
+			   ,Candado
+			   ,ODC
+			   ,Id_TipoCorte
+			   ,PSobreBanda
+			   ,Precio
+			   ,Empaque
+			   ,JefeArea)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Pais)
+	           ,@JefeCuadrilla
+			   ,@Id_Huerta
+			   ,@Transportista
+			   ,@Placas
+			   ,@Candado
+			   ,@ODC
+			   ,@Id_TipoCorte
+			   ,@PSobreBanda
+			   ,@Precio
+			   ,@Empaque
+			   ,@JefeArea)
 		
 		commit transaction T1;
 		set @correcto=1

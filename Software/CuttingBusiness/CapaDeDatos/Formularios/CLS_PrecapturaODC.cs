@@ -10,7 +10,7 @@ namespace CapaDeDatos
     {
 
         public string Id_PrecapturaODC { get; set; }
-        public string Id_JefeCuadrilla { get; set; }
+        public string JefeCuadrilla { get; set; }
         public string Id_Huerta { get; set; }
         public string Transportista { get; set; }
         public string Placas { get; set; }
@@ -18,7 +18,7 @@ namespace CapaDeDatos
         public string ODC { get; set; }
         public string Id_TipoCorte { get; set; }
         public string PSobreBanda { get; set; }
-        public string Precio { get; set; }
+        public double Precio { get; set; }
         public string Empaque { get; set; }
         public string JefeArea { get; set; }
 
@@ -65,8 +65,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_PrecapturaODC_Insert";
                 _dato.CadenaTexto = Id_PrecapturaODC;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_PrecapturaODC");
-                _dato.CadenaTexto = Id_JefeCuadrilla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_JefeCuadrilla");
+                _dato.CadenaTexto = JefeCuadrilla;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "JefeCuadrilla");
                 _dato.CadenaTexto = Id_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
                 _dato.CadenaTexto = Transportista;
@@ -81,8 +81,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoCorte");
                 _dato.CadenaTexto = PSobreBanda;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PSobreBanda");
-                _dato.CadenaTexto = Precio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Precio");
+                _dato.DecimalValor = Convert.ToDecimal(Precio);
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio");
                 _dato.CadenaTexto = Empaque;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Empaque");
                 _dato.CadenaTexto = JefeArea;

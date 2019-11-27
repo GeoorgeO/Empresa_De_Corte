@@ -9,7 +9,7 @@ ELSE
 		
 	CREATE TABLE [dbo].[PrecapturaODC](
 		[Id_PrecapturaODC] [bigint] NOT NULL,
-		[Id_JefeCuadrilla] [char](5) NULL,
+		[JefeCuadrilla] [varchar](100) NULL,
 		[Id_Huerta] [char](5) NULL,
 		[Transportista] [varchar](50) NULL,
 		[Placas] [varchar](15) NULL,

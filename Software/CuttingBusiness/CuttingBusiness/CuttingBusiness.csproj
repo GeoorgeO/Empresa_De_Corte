@@ -85,10 +85,10 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Frm_Salidas.cs">
+    <Compile Include="Formularios\Frm_Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Frm_Salidas.Designer.cs">
+    <Compile Include="Formularios\Frm_Salidas.Designer.cs">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Frm_Entradas.cs">
@@ -144,6 +144,12 @@
     </Compile>
     <Compile Include="Formularios\Frm_Pais.Designer.cs">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_PrecapturaODC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_PrecapturaODC.Designer.cs">
+      <DependentUpon>Frm_PrecapturaODC.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Productor.cs">
       <SubType>Form</SubType>
@@ -252,7 +258,7 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Frm_Salidas.resx">
+    <EmbeddedResource Include="Formularios\Frm_Salidas.resx">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_PrecapturaODC.resx">
+      <DependentUpon>Frm_PrecapturaODC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Productor.resx">
       <DependentUpon>Frm_Productor.cs</DependentUpon>
