@@ -44,35 +44,53 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Perfil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.dtgAsignadas = new DevExpress.XtraGrid.GridControl();
+            this.dtgValAsignadas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnDispone = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAsigna = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDisponeTodos = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAsignaTodos = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.dtgDisponibles = new DevExpress.XtraGrid.GridControl();
+            this.dtgValDisponibles = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsignadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValAsignadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValDisponibles)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -139,7 +157,6 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -148,7 +165,6 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -166,7 +182,6 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -184,7 +199,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Pais:";
+            this.lblProveedor.Caption = "Permisos:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -194,15 +209,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(502, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(860, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 396);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 536);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(502, 28);
+            this.barDockControlBottom.Size = new System.Drawing.Size(860, 25);
             // 
             // barDockControlLeft
             // 
@@ -210,117 +225,40 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(73, 396);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 536);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(502, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(860, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 396);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 536);
             // 
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.gridControl1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(73, 108);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(429, 288);
-            this.panelControl2.TabIndex = 21;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(405, 264);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Perfil,
-            this.Nombre_Perfil,
-            this.Id_Pantalla,
-            this.Nombre_Pantalla});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // Id_Perfil
-            // 
-            this.Id_Perfil.Caption = "Id Perfil";
-            this.Id_Perfil.FieldName = "Id_Perfil";
-            this.Id_Perfil.Name = "Id_Perfil";
-            this.Id_Perfil.Visible = true;
-            this.Id_Perfil.VisibleIndex = 0;
-            // 
-            // Nombre_Perfil
-            // 
-            this.Nombre_Perfil.Caption = "Pefil";
-            this.Nombre_Perfil.FieldName = "Nombre_Perfil";
-            this.Nombre_Perfil.Name = "Nombre_Perfil";
-            this.Nombre_Perfil.Visible = true;
-            this.Nombre_Perfil.VisibleIndex = 1;
-            // 
-            // Id_Pantalla
-            // 
-            this.Id_Pantalla.Caption = "Id Pantalla";
-            this.Id_Pantalla.FieldName = "Id_Pantalla";
-            this.Id_Pantalla.Name = "Id_Pantalla";
-            this.Id_Pantalla.Visible = true;
-            this.Id_Pantalla.VisibleIndex = 2;
-            // 
-            // Nombre_Pantalla
-            // 
-            this.Nombre_Pantalla.Caption = "Pantalla";
-            this.Nombre_Pantalla.FieldName = "Nombre_Pantalla";
-            this.Nombre_Pantalla.Name = "Nombre_Pantalla";
-            this.Nombre_Pantalla.Visible = true;
-            this.Nombre_Pantalla.VisibleIndex = 3;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(73, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(429, 108);
+            this.panelControl1.Size = new System.Drawing.Size(789, 84);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.gridLookUpEdit2);
             this.groupControl1.Controls.Add(this.gridLookUpEdit1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(405, 84);
+            this.groupControl1.Size = new System.Drawing.Size(765, 60);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Perfil - Pantalla";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 60);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(42, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Pantalla:";
+            this.groupControl1.Text = "Perfiles";
             // 
             // labelControl1
             // 
@@ -329,24 +267,6 @@
             this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Perfil:";
-            // 
-            // gridLookUpEdit2
-            // 
-            this.gridLookUpEdit2.Location = new System.Drawing.Point(67, 54);
-            this.gridLookUpEdit2.MenuManager = this.barManager1;
-            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
-            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit2.Properties.PopupView = this.gridView2;
-            this.gridLookUpEdit2.Size = new System.Drawing.Size(219, 20);
-            this.gridLookUpEdit2.TabIndex = 1;
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridLookUpEdit1
             // 
@@ -366,11 +286,189 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.panelControl4);
+            this.panelControl2.Controls.Add(this.panelControl3);
+            this.panelControl2.Controls.Add(this.panelControl5);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(71, 84);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(789, 452);
+            this.panelControl2.TabIndex = 26;
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.groupControl2);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl4.Location = new System.Drawing.Point(421, 2);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl4.Size = new System.Drawing.Size(359, 448);
+            this.panelControl4.TabIndex = 6;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dtgAsignadas);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(7, 7);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl2.Size = new System.Drawing.Size(345, 434);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "Asignadas";
+            // 
+            // dtgAsignadas
+            // 
+            this.dtgAsignadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgAsignadas.Location = new System.Drawing.Point(7, 25);
+            this.dtgAsignadas.MainView = this.dtgValAsignadas;
+            this.dtgAsignadas.Name = "dtgAsignadas";
+            this.dtgAsignadas.Size = new System.Drawing.Size(331, 402);
+            this.dtgAsignadas.TabIndex = 1;
+            this.dtgAsignadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValAsignadas});
+            // 
+            // dtgValAsignadas
+            // 
+            this.dtgValAsignadas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn4});
+            this.dtgValAsignadas.GridControl = this.dtgAsignadas;
+            this.dtgValAsignadas.Name = "dtgValAsignadas";
+            this.dtgValAsignadas.OptionsSelection.MultiSelect = true;
+            this.dtgValAsignadas.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Pantalla";
+            this.gridColumn1.FieldName = "InventarioPantallaNombre";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "InventarioPantallaId";
+            this.gridColumn4.FieldName = "InventarioPantallaId";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.btnDispone);
+            this.panelControl3.Controls.Add(this.btnAsigna);
+            this.panelControl3.Controls.Add(this.btnDisponeTodos);
+            this.panelControl3.Controls.Add(this.btnAsignaTodos);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl3.Location = new System.Drawing.Point(361, 2);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(60, 448);
+            this.panelControl3.TabIndex = 5;
+            // 
+            // btnDispone
+            // 
+            this.btnDispone.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDispone.ImageOptions.Image")));
+            this.btnDispone.Location = new System.Drawing.Point(10, 172);
+            this.btnDispone.Name = "btnDispone";
+            this.btnDispone.Size = new System.Drawing.Size(40, 40);
+            this.btnDispone.TabIndex = 3;
+            // 
+            // btnAsigna
+            // 
+            this.btnAsigna.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAsigna.ImageOptions.Image")));
+            this.btnAsigna.Location = new System.Drawing.Point(10, 126);
+            this.btnAsigna.Name = "btnAsigna";
+            this.btnAsigna.Size = new System.Drawing.Size(40, 40);
+            this.btnAsigna.TabIndex = 2;
+            // 
+            // btnDisponeTodos
+            // 
+            this.btnDisponeTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDisponeTodos.ImageOptions.Image")));
+            this.btnDisponeTodos.Location = new System.Drawing.Point(10, 80);
+            this.btnDisponeTodos.Name = "btnDisponeTodos";
+            this.btnDisponeTodos.Size = new System.Drawing.Size(40, 40);
+            this.btnDisponeTodos.TabIndex = 1;
+            // 
+            // btnAsignaTodos
+            // 
+            this.btnAsignaTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignaTodos.ImageOptions.Image")));
+            this.btnAsignaTodos.Location = new System.Drawing.Point(11, 34);
+            this.btnAsignaTodos.Name = "btnAsignaTodos";
+            this.btnAsignaTodos.Size = new System.Drawing.Size(40, 40);
+            this.btnAsignaTodos.TabIndex = 0;
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.groupControl3);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl5.Location = new System.Drawing.Point(2, 2);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl5.Size = new System.Drawing.Size(359, 448);
+            this.panelControl5.TabIndex = 4;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.dtgDisponibles);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(7, 7);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl3.Size = new System.Drawing.Size(345, 434);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "Disponibles";
+            // 
+            // dtgDisponibles
+            // 
+            this.dtgDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDisponibles.Location = new System.Drawing.Point(7, 25);
+            this.dtgDisponibles.MainView = this.dtgValDisponibles;
+            this.dtgDisponibles.Name = "dtgDisponibles";
+            this.dtgDisponibles.Size = new System.Drawing.Size(331, 402);
+            this.dtgDisponibles.TabIndex = 0;
+            this.dtgDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValDisponibles});
+            // 
+            // dtgValDisponibles
+            // 
+            this.dtgValDisponibles.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3});
+            this.dtgValDisponibles.GridControl = this.dtgDisponibles;
+            this.dtgValDisponibles.Name = "dtgValDisponibles";
+            this.dtgValDisponibles.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgValDisponibles.OptionsSelection.MultiSelect = true;
+            this.dtgValDisponibles.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Pantalla";
+            this.gridColumn2.FieldName = "InventarioPantallaNombre";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 150;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "InventarioPantallaId";
+            this.gridColumn3.FieldName = "InventarioPantallaId";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 163;
+            // 
             // Frm_Permisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 424);
+            this.ClientSize = new System.Drawing.Size(860, 561);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -378,23 +476,33 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Permisos";
-            this.Text = "Frm_Permisos";
+            this.Text = "Permisos";
             this.Load += new System.EventHandler(this.Frm_Permisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAsignadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValAsignadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValDisponibles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,20 +524,28 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Perfil;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Perfil;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Pantalla;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Pantalla;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraGrid.GridControl dtgAsignadas;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValAsignadas;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnDispone;
+        private DevExpress.XtraEditors.SimpleButton btnAsigna;
+        private DevExpress.XtraEditors.SimpleButton btnDisponeTodos;
+        private DevExpress.XtraEditors.SimpleButton btnAsignaTodos;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraGrid.GridControl dtgDisponibles;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValDisponibles;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }
