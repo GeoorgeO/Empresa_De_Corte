@@ -51,7 +51,9 @@
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
+    <Compile Include="Formularios\CLS_CategoriasCuadrilla.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
+    <Compile Include="Formularios\CLS_Cuadrillas.cs" />
     <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Domicilios.cs" />
     <Compile Include="Formularios\CLS_Duenio.cs" />

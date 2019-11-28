@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Pais : ConexionBase
+    public class CLS_CategoriasCuadrilla : ConexionBase
     {
 
-        public string Id_Pais { get; set; }
-        public string Nombre_Pais { get; set; }
+        public string Id_Categoria { get; set; }
+        public string Nombre_Categoria { get; set; }
 
-        public void MtdSeleccionarPais()
+        public void MtdSeleccionarCategoriasCuadrilla()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -20,7 +20,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Pais_Select";
+                _conexion.NombreProcedimiento = "SP_CategoriasCuadrilla_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -41,7 +41,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdInsertarPais()
+        public void MtdInsertarCategoriasCuadrilla()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -49,11 +49,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Pais_Insert";
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
-                _dato.CadenaTexto = Nombre_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Pais");
+                _conexion.NombreProcedimiento = "SP_CategoriasCuadrilla_Insert";
+                _dato.CadenaTexto = Id_Categoria;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Categoria");
+                _dato.CadenaTexto = Nombre_Categoria;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Categoria");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -73,7 +73,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdEliminarPais()
+        public void MtdEliminarCategoriasCuadrilla()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -81,9 +81,9 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Pais_Delete";
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
+                _conexion.NombreProcedimiento = "SP_CategoriasCuadrilla_Delete";
+                _dato.CadenaTexto = Id_Categoria;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Categoria");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
