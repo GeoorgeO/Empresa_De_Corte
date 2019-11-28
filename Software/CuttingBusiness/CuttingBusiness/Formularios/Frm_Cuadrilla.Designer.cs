@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cuadrilla));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnBusqPuesto = new DevExpress.XtraEditors.SimpleButton();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.btnBusqCategoria = new DevExpress.XtraEditors.SimpleButton();
+            this.gleCategoria = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.barManager2 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -47,7 +46,7 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -56,10 +55,10 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gleCategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -68,35 +67,35 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.btnBusqPuesto);
-            this.panelControl1.Controls.Add(this.gridLookUpEdit1);
+            this.panelControl1.Controls.Add(this.btnBusqCategoria);
+            this.panelControl1.Controls.Add(this.gleCategoria);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.textEdit1);
+            this.panelControl1.Controls.Add(this.textId);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(53, 0);
+            this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(392, 75);
+            this.panelControl1.Size = new System.Drawing.Size(388, 75);
             this.panelControl1.TabIndex = 0;
             // 
-            // btnBusqPuesto
+            // btnBusqCategoria
             // 
-            this.btnBusqPuesto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqPuesto.ImageOptions.Image")));
-            this.btnBusqPuesto.Location = new System.Drawing.Point(261, 37);
-            this.btnBusqPuesto.Name = "btnBusqPuesto";
-            this.btnBusqPuesto.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqPuesto.TabIndex = 26;
+            this.btnBusqCategoria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqPuesto.ImageOptions.Image")));
+            this.btnBusqCategoria.Location = new System.Drawing.Point(261, 37);
+            this.btnBusqCategoria.Name = "btnBusqCategoria";
+            this.btnBusqCategoria.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqCategoria.TabIndex = 26;
             // 
-            // gridLookUpEdit1
+            // gleCategoria
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(119, 38);
-            this.gridLookUpEdit1.MenuManager = this.barManager2;
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gleCategoria.Location = new System.Drawing.Point(119, 38);
+            this.gleCategoria.MenuManager = this.barManager2;
+            this.gleCategoria.Name = "gleCategoria";
+            this.gleCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(136, 20);
-            this.gridLookUpEdit1.TabIndex = 3;
+            this.gleCategoria.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gleCategoria.Size = new System.Drawing.Size(136, 20);
+            this.gleCategoria.TabIndex = 3;
             // 
             // barManager2
             // 
@@ -155,6 +154,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -214,7 +214,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(53, 473);
+            this.barDockControl3.Size = new System.Drawing.Size(57, 473);
             // 
             // barDockControl5
             // 
@@ -239,13 +239,13 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Categoria Cuadrilla:";
             // 
-            // textEdit1
+            // textId
             // 
-            this.textEdit1.Location = new System.Drawing.Point(119, 12);
-            this.textEdit1.MenuManager = this.barManager2;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 1;
+            this.textId.Location = new System.Drawing.Point(119, 12);
+            this.textId.MenuManager = this.barManager2;
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -259,10 +259,10 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(53, 75);
+            this.panelControl2.Location = new System.Drawing.Point(57, 75);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(392, 398);
+            this.panelControl2.Size = new System.Drawing.Size(388, 398);
             this.panelControl2.TabIndex = 5;
             // 
             // gridControl1
@@ -272,10 +272,11 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(368, 374);
+            this.gridControl1.Size = new System.Drawing.Size(364, 374);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -317,13 +318,14 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Cuadrilla";
             this.Text = "Frm_Cuadrilla";
+            this.Load += new System.EventHandler(this.Frm_Cuadrilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gleCategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -336,7 +338,7 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit gleCategoria;
         private DevExpress.XtraBars.BarManager barManager2;
         public DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
@@ -352,9 +354,9 @@
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton btnBusqPuesto;
+        private DevExpress.XtraEditors.SimpleButton btnBusqCategoria;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

@@ -8,8 +8,8 @@ ELSE
 	begin
 		
 	CREATE TABLE [dbo].[Cuadrillas](
-		[Id_Cuadrilla] [char](3) NOT NULL,
-		[Id_Categoria] [char](4) NULL,
+		[Id_Cuadrilla] [char](4) NOT NULL,
+		[Id_Categoria] [char](4) NOT NULL,
 	 CONSTRAINT [PK_Cuadrilla] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Cuadrilla] ASC

@@ -5,18 +5,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_CategoriasCuadrilla_Insert')
-DROP PROCEDURE SP_CategoriasCuadrilla_Insert
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Cuadrillas_Insert')
+DROP PROCEDURE SP_Cuadrillas_Insert
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE [dbo].[SP_CategoriasCuadrilla_Insert] 
+create PROCEDURE [dbo].[SP_Cuadrillas_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Categoria char(4),
-	@Nombre_Categoria varchar(20)
+	@Id_Cuadrilla char(4),
+	@Id_Categoria char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -30,26 +30,26 @@ BEGIN
 	begin try
 
 		declare @maximo char(4)
-		select @maximo=right(Concat('0000', isnull(max(Id_Categoria),0)+1),4) from dbo.CategoriasCuadrilla
+		select @maximo=right(Concat('0000', isnull(max(Id_Cuadrilla),0)+1),4) from dbo.Cuadrillas
 
 		declare @Existe int
-		select @Existe = count(Id_Categoria) from dbo.CategoriasCuadrilla a where (a.Id_Categoria=@Id_Categoria)
+		select @Existe = count(Id_Cuadrilla) from dbo.Cuadrillas a where (a.Id_Cuadrilla=@Id_Cuadrilla)
 
 		if @Existe>0 
 		
-			UPDATE dbo.CategoriasCuadrilla
-		        SET Nombre_Categoria=@Nombre_Categoria
+			UPDATE dbo.Cuadrillas
+		        SET Id_Categoria=@Id_Categoria
 		    WHERE
-		    	Id_Categoria=@Id_Categoria
+		    	Id_Cuadrilla=@Id_Cuadrilla
 				
 		else
 		
-			INSERT INTO dbo.CategoriasCuadrilla
-	           (Id_Categoria
-	           ,Nombre_Categoria)
+			INSERT INTO dbo.Cuadrillas
+	           (Id_Cuadrilla
+	           ,Id_Categoria)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Categoria)
+	           ,@Id_Categoria)
 		
 		commit transaction T1;
 		set @correcto=1
