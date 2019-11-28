@@ -66,6 +66,7 @@
     <Compile Include="Formularios\CLS_PrecapturaODC.cs" />
     <Compile Include="Formularios\CLS_Productos.cs" />
     <Compile Include="Formularios\CLS_Clientes.cs" />
+    <Compile Include="Formularios\CLS_ProductoTipo.cs" />
     <Compile Include="Formularios\CLS_Proveedores.cs" />
     <Compile Include="Formularios\CLS_Puestos.cs" />
     <Compile Include="Formularios\CLS_TipoPersona.cs" />
