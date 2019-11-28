@@ -15,17 +15,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Empleados_Select')
-DROP PROCEDURE SP_Empleados_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_CuadrillasJefe_Select')
+DROP PROCEDURE SP_CuadrillasJefe_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Empleados_Select
+CREATE PROCEDURE SP_CuadrillasJefe_Select
 	-- Add the parameters for the stored procedure here
-	@Activo bit
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,25 +34,13 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select Id_Empleado,
-			Nombre_Empleado,
-			Fecha_Nacimiento,
-			NSS,
-			Fecha_Alta_Seg_Social,
-			Fecha_Baja_Seg_Social,
-			Cuenta,
-			Tarjeta,
-			Fecha_Alta_Seg_Vida,
-			Fecha_Baja_Seg_Vida,
-			E.Id_Puesto,
-			P.Nombre_Puesto,
-			E.Id_Cuadrilla,
-			CC.Nombre_Categoria,
-			Activo
-		from Empleados as E
-		left join Puestos as P on P.Id_Puesto=E.Id_Puesto
-		left join Cuadrillas as C on C.Id_Cuadrilla=E.Id_Cuadrilla
+		select C.Id_Cuadrilla
+			,C.Id_Categoria
+			,CC.Nombre_Categoria
+		from Cuadrillas as C
 		left join CategoriasCuadrilla as CC on CC.Id_Categoria=C.Id_Categoria
-		where Activo=@Activo
+		left join Empleados as E on E.Id_Cuadrilla=C.Id_Cuadrilla
+		where E.Id_Cuadrilla is null
+
 END
 GO

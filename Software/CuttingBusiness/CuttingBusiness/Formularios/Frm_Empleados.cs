@@ -81,6 +81,20 @@ namespace CuttingBusiness
             }
         }
 
+        private void CargarCuadrillas()
+        {
+            CLS_Cuadrillas Clase = new CLS_Cuadrillas();
+
+            Clase.MtdSeleccionarCuadrillasJefes();
+            if (Clase.Exito)
+            {
+                gleCuadrilla.Properties.DisplayMember = "Nombre_Categoria";
+                gleCuadrilla.Properties.ValueMember = "Id_Cuadrilla";
+                gleCuadrilla.EditValue = null;
+                gleCuadrilla.Properties.DataSource = Clase.Datos;
+            }
+        }
+
         private void CargarDomicilio()
         {
             gridControl2.DataSource = null;
@@ -108,7 +122,7 @@ namespace CuttingBusiness
             Clase.Fecha_Alta_Seg_Vida= dateAltaSegVida.DateTime.Year.ToString() + DosCero(dateAltaSegVida.DateTime.Month.ToString()) + DosCero(dateAltaSegVida.DateTime.Day.ToString());
             Clase.Fecha_Baja_Seg_Vida= dateBajaSegVida.DateTime.Year.ToString() + DosCero(dateBajaSegVida.DateTime.Month.ToString()) + DosCero(dateBajaSegVida.DateTime.Day.ToString());
             Clase.Id_Puesto= glePuesto.EditValue.ToString();
-            Clase.Id_Cuadrilla = "";// gleCuadrilla.EditValue.ToString();
+            Clase.Id_Cuadrilla = gleCuadrilla.EditValue.ToString();
             Clase.Activo = "1";
             Clase.MtdInsertarEmpleados();
             if (Clase.Exito)
@@ -198,6 +212,10 @@ namespace CuttingBusiness
             glePuesto.EditValue = null;
             labelActivo.Visible = false;
             inabilitar(true);
+
+            gleCuadrilla.Visible = false;
+            labelControl22.Visible = false;
+            btnBusqCuadrilla.Visible = false;
         }
 
         private void LimpiarCamposDomicilio()
@@ -241,7 +259,15 @@ namespace CuttingBusiness
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LimpiarCampos();
+            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            {
+                LimpiarCampos();
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                LimpiarCamposDomicilio();
+            }
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -373,6 +399,84 @@ namespace CuttingBusiness
 
             textTipoDomicilio.Tag = tipoDomicilio.IdTipoDomicilio;
             textTipoDomicilio.Text = tipoDomicilio.TipoDomicilio;
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                labelActivo.Visible = true;
+                foreach (int i in this.gridView1.GetSelectedRows())
+                {
+                    DataRow row = this.gridView1.GetDataRow(i);
+                    textId.Text = row["Id_Empleado"].ToString();
+                    textEmpleado.Text = row["Nombre_Empleado"].ToString();
+                    dateNacimiento.EditValue = row["Fecha_Nacimiento"].ToString();
+                    textNSS.Text = row["NSS"].ToString();
+                    dateAltaSegSocial.EditValue = row["Fecha_Alta_Seg_Social"].ToString();
+                    dateBajaSegSocial.Text = row["Fecha_Baja_Seg_Social"].ToString();
+                    textCuenta.Text = row["Cuenta"].ToString();
+                    textNoTarjeta.Text = row["Tarjeta"].ToString();
+                    dateAltaSegVida.Text = row["Fecha_Alta_Seg_Vida"].ToString();
+                    dateBajaSegVida.Text = row["Fecha_Baja_Seg_Vida"].ToString();
+                    glePuesto.EditValue = row["Id_Puesto"].ToString();
+                    //textEmpleado.Text = row["Nombre_Puesto"].ToString();
+                    gleCuadrilla.EditValue = row["Id_Cuadrilla"].ToString();
+                    //textEmpleado.Text = row["Nombre_Categoria"].ToString();
+                    if(row["Activo"].ToString().Equals("True"))
+                    {
+                        labelActivo.Text = "Activo";
+                        labelActivo.ForeColor= System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+                        groupControl1.Enabled = true;
+                        groupControl2.Enabled = true;
+                        btnGuardar.Enabled = true;
+                        btnEliminar.Caption = "Inabilitar";
+                    }
+                    else
+                    {
+                        labelActivo.Text = "Inactivo";
+                        labelActivo.ForeColor = System.Drawing.Color.Maroon;
+                        groupControl1.Enabled = false;
+                        groupControl2.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnEliminar.Caption = "Habilitar";
+                    }
+                }
+                CargarDomicilio();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void glePuesto_EditValueChanged(object sender, EventArgs e)
+        {
+            if (glePuesto.EditValue != null)
+            {
+                if (glePuesto.EditValue.ToString().Trim().Equals("01"))
+                {
+                    gleCuadrilla.Visible = true;
+                    labelControl22.Visible = true;
+                    btnBusqCuadrilla.Visible = true;
+
+                    CargarCuadrillas();
+                }
+                else
+                {
+                    gleCuadrilla.Visible = false;
+                    labelControl22.Visible = false;
+                    btnBusqCuadrilla.Visible = false;
+                }
+            }
+            
+        }
+
+        private void btnBusqCuadrilla_Click(object sender, EventArgs e)
+        {
+            Frm_Cuadrilla Clase = new Frm_Cuadrilla();
+            Clase.ShowDialog();
+            CargarCuadrillas();
         }
     }
 }

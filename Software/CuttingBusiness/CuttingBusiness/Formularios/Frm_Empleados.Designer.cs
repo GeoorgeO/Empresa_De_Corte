@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empleados));
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -61,7 +62,7 @@
             this.Id_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Cuadrilla = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Cuadrilla = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnBusqCuadrilla = new DevExpress.XtraEditors.SimpleButton();
@@ -105,6 +106,8 @@
             this.NoExterior = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Colonia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo_Postal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_TipoDomicilio = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -130,8 +133,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.Id_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Ciudad = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -243,7 +244,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Caption = "Eliminar";
+            this.btnEliminar.Caption = "Inabilitar";
             this.btnEliminar.Id = 57;
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
@@ -301,7 +302,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(57, 515);
+            this.barDockControl3.Size = new System.Drawing.Size(60, 515);
             // 
             // barDockControl5
             // 
@@ -322,10 +323,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(57, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(60, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(781, 515);
+            this.xtraTabControl1.Size = new System.Drawing.Size(778, 515);
             this.xtraTabControl1.TabIndex = 8;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -337,7 +338,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(775, 487);
+            this.xtraTabPage1.Size = new System.Drawing.Size(772, 487);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -348,7 +349,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 221);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(765, 261);
+            this.panelControl1.Size = new System.Drawing.Size(762, 261);
             this.panelControl1.TabIndex = 2;
             // 
             // checkActivo
@@ -366,10 +367,11 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 32);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(751, 222);
+            this.gridControl1.Size = new System.Drawing.Size(748, 222);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -387,7 +389,7 @@
             this.Id_Puesto,
             this.Nombre_Puesto,
             this.Id_Cuadrilla,
-            this.Nombre_Cuadrilla,
+            this.Nombre_Categoria,
             this.Activo});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -500,13 +502,13 @@
             this.Id_Cuadrilla.Visible = true;
             this.Id_Cuadrilla.VisibleIndex = 12;
             // 
-            // Nombre_Cuadrilla
+            // Nombre_Categoria
             // 
-            this.Nombre_Cuadrilla.Caption = "Cuadrilla";
-            this.Nombre_Cuadrilla.FieldName = "Nombre_Cuadrilla";
-            this.Nombre_Cuadrilla.Name = "Nombre_Cuadrilla";
-            this.Nombre_Cuadrilla.Visible = true;
-            this.Nombre_Cuadrilla.VisibleIndex = 13;
+            this.Nombre_Categoria.Caption = "Categoria";
+            this.Nombre_Categoria.FieldName = "Nombre_Categoria";
+            this.Nombre_Categoria.Name = "Nombre_Categoria";
+            this.Nombre_Categoria.Visible = true;
+            this.Nombre_Categoria.VisibleIndex = 13;
             // 
             // Activo
             // 
@@ -550,7 +552,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(765, 216);
+            this.groupControl1.Size = new System.Drawing.Size(762, 216);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
             // 
@@ -561,6 +563,7 @@
             this.btnBusqCuadrilla.Name = "btnBusqCuadrilla";
             this.btnBusqCuadrilla.Size = new System.Drawing.Size(24, 23);
             this.btnBusqCuadrilla.TabIndex = 29;
+            this.btnBusqCuadrilla.Click += new System.EventHandler(this.btnBusqCuadrilla_Click);
             // 
             // gleCuadrilla
             // 
@@ -596,6 +599,7 @@
             this.glePuesto.Properties.PopupView = this.gridLookUpEdit1View;
             this.glePuesto.Size = new System.Drawing.Size(162, 20);
             this.glePuesto.TabIndex = 26;
+            this.glePuesto.EditValueChanged += new System.EventHandler(this.glePuesto_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -624,7 +628,7 @@
             // labelActivo
             // 
             this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.labelActivo.Appearance.Options.UseFont = true;
             this.labelActivo.Appearance.Options.UseForeColor = true;
             this.labelActivo.Location = new System.Drawing.Point(94, 187);
@@ -698,7 +702,6 @@
             // 
             // textCuenta
             // 
-            this.textCuenta.Enabled = false;
             this.textCuenta.Location = new System.Drawing.Point(479, 29);
             this.textCuenta.Name = "textCuenta";
             this.textCuenta.Size = new System.Drawing.Size(192, 20);
@@ -763,7 +766,6 @@
             // 
             // textNSS
             // 
-            this.textNSS.Enabled = false;
             this.textNSS.Location = new System.Drawing.Point(94, 108);
             this.textNSS.Name = "textNSS";
             this.textNSS.Size = new System.Drawing.Size(182, 20);
@@ -930,6 +932,22 @@
             this.Codigo_Postal.Visible = true;
             this.Codigo_Postal.VisibleIndex = 5;
             // 
+            // Id_Ciudad
+            // 
+            this.Id_Ciudad.Caption = "Id Ciudad";
+            this.Id_Ciudad.FieldName = "Id_Ciudad";
+            this.Id_Ciudad.Name = "Id_Ciudad";
+            this.Id_Ciudad.Visible = true;
+            this.Id_Ciudad.VisibleIndex = 6;
+            // 
+            // Nombre_Ciudad
+            // 
+            this.Nombre_Ciudad.Caption = "Ciudad";
+            this.Nombre_Ciudad.FieldName = "Nombre_Ciudad";
+            this.Nombre_Ciudad.Name = "Nombre_Ciudad";
+            this.Nombre_Ciudad.Visible = true;
+            this.Nombre_Ciudad.VisibleIndex = 7;
+            // 
             // Id_Estado
             // 
             this.Id_Estado.Caption = "Id Estado";
@@ -996,7 +1014,7 @@
             this.txtCiudad.Location = new System.Drawing.Point(79, 109);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(226, 20);
-            this.txtCiudad.TabIndex = 25;
+            this.txtCiudad.TabIndex = 5;
             // 
             // labelControl20
             // 
@@ -1011,7 +1029,7 @@
             this.textColonia.Location = new System.Drawing.Point(409, 57);
             this.textColonia.Name = "textColonia";
             this.textColonia.Size = new System.Drawing.Size(221, 20);
-            this.textColonia.TabIndex = 23;
+            this.textColonia.TabIndex = 8;
             // 
             // btnBusqTipoDomicilio
             // 
@@ -1019,7 +1037,7 @@
             this.btnBusqTipoDomicilio.Location = new System.Drawing.Point(633, 82);
             this.btnBusqTipoDomicilio.Name = "btnBusqTipoDomicilio";
             this.btnBusqTipoDomicilio.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqTipoDomicilio.TabIndex = 18;
+            this.btnBusqTipoDomicilio.TabIndex = 11;
             this.btnBusqTipoDomicilio.Click += new System.EventHandler(this.btnBusqTipoDomicilio_Click);
             // 
             // textTipoDomicilio
@@ -1027,15 +1045,15 @@
             this.textTipoDomicilio.Location = new System.Drawing.Point(409, 83);
             this.textTipoDomicilio.Name = "textTipoDomicilio";
             this.textTipoDomicilio.Size = new System.Drawing.Size(221, 20);
-            this.textTipoDomicilio.TabIndex = 17;
+            this.textTipoDomicilio.TabIndex = 9;
             // 
             // btnBusqCiudad
             // 
-            this.btnBusqCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEstado.ImageOptions.Image")));
+            this.btnBusqCiudad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqCiudad.ImageOptions.Image")));
             this.btnBusqCiudad.Location = new System.Drawing.Point(308, 108);
             this.btnBusqCiudad.Name = "btnBusqCiudad";
             this.btnBusqCiudad.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqCiudad.TabIndex = 16;
+            this.btnBusqCiudad.TabIndex = 10;
             this.btnBusqCiudad.Click += new System.EventHandler(this.btnBusqEstado_Click);
             // 
             // textCodigoPostal
@@ -1043,28 +1061,29 @@
             this.textCodigoPostal.Location = new System.Drawing.Point(409, 31);
             this.textCodigoPostal.Name = "textCodigoPostal";
             this.textCodigoPostal.Size = new System.Drawing.Size(86, 20);
-            this.textCodigoPostal.TabIndex = 15;
+            this.textCodigoPostal.TabIndex = 7;
             // 
             // textEstado
             // 
+            this.textEstado.Enabled = false;
             this.textEstado.Location = new System.Drawing.Point(79, 135);
             this.textEstado.Name = "textEstado";
             this.textEstado.Size = new System.Drawing.Size(226, 20);
-            this.textEstado.TabIndex = 14;
+            this.textEstado.TabIndex = 6;
             // 
             // textNoExterior
             // 
-            this.textNoExterior.Location = new System.Drawing.Point(228, 83);
+            this.textNoExterior.Location = new System.Drawing.Point(79, 84);
             this.textNoExterior.Name = "textNoExterior";
             this.textNoExterior.Size = new System.Drawing.Size(77, 20);
-            this.textNoExterior.TabIndex = 13;
+            this.textNoExterior.TabIndex = 3;
             // 
             // textNoInterior
             // 
-            this.textNoInterior.Location = new System.Drawing.Point(79, 83);
+            this.textNoInterior.Location = new System.Drawing.Point(228, 83);
             this.textNoInterior.Name = "textNoInterior";
             this.textNoInterior.Size = new System.Drawing.Size(77, 20);
-            this.textNoInterior.TabIndex = 12;
+            this.textNoInterior.TabIndex = 4;
             // 
             // labelControl11
             // 
@@ -1100,7 +1119,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(167, 87);
+            this.labelControl15.Location = new System.Drawing.Point(17, 87);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(57, 13);
             this.labelControl15.TabIndex = 5;
@@ -1108,7 +1127,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(17, 87);
+            this.labelControl16.Location = new System.Drawing.Point(169, 87);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(55, 13);
             this.labelControl16.TabIndex = 4;
@@ -1119,7 +1138,7 @@
             this.textCalle.Location = new System.Drawing.Point(79, 57);
             this.textCalle.Name = "textCalle";
             this.textCalle.Size = new System.Drawing.Size(226, 20);
-            this.textCalle.TabIndex = 3;
+            this.textCalle.TabIndex = 2;
             // 
             // labelControl17
             // 
@@ -1144,22 +1163,6 @@
             this.labelControl18.Size = new System.Drawing.Size(59, 13);
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
-            // 
-            // Id_Ciudad
-            // 
-            this.Id_Ciudad.Caption = "Id Ciudad";
-            this.Id_Ciudad.FieldName = "Id_Ciudad";
-            this.Id_Ciudad.Name = "Id_Ciudad";
-            this.Id_Ciudad.Visible = true;
-            this.Id_Ciudad.VisibleIndex = 6;
-            // 
-            // Nombre_Ciudad
-            // 
-            this.Nombre_Ciudad.Caption = "Ciudad";
-            this.Nombre_Ciudad.FieldName = "Nombre_Ciudad";
-            this.Nombre_Ciudad.Name = "Nombre_Ciudad";
-            this.Nombre_Ciudad.Visible = true;
-            this.Nombre_Ciudad.VisibleIndex = 7;
             // 
             // Frm_Empleados
             // 
@@ -1328,7 +1331,7 @@
         private DevExpress.XtraEditors.SimpleButton btnBusqCuadrilla;
         private DevExpress.XtraEditors.CheckEdit checkActivo;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Cuadrilla;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Cuadrilla;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Categoria;
         private DevExpress.XtraGrid.Columns.GridColumn Activo;
         private DevExpress.XtraEditors.TextEdit txtCiudad;
         private DevExpress.XtraEditors.LabelControl labelControl20;

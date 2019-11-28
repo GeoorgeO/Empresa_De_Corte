@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Formularios
+﻿namespace CuttingBusiness
 {
     partial class Frm_Cuadrilla
     {
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cuadrilla));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnBusqCategoria = new DevExpress.XtraEditors.SimpleButton();
             this.gleCategoria = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -52,7 +53,8 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gleCategoria.Properties)).BeginInit();
@@ -80,11 +82,12 @@
             // 
             // btnBusqCategoria
             // 
-            this.btnBusqCategoria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqPuesto.ImageOptions.Image")));
+            this.btnBusqCategoria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqCategoria.ImageOptions.Image")));
             this.btnBusqCategoria.Location = new System.Drawing.Point(261, 37);
             this.btnBusqCategoria.Name = "btnBusqCategoria";
             this.btnBusqCategoria.Size = new System.Drawing.Size(24, 23);
             this.btnBusqCategoria.TabIndex = 26;
+            this.btnBusqCategoria.Click += new System.EventHandler(this.btnBusqCategoria_Click);
             // 
             // gleCategoria
             // 
@@ -93,6 +96,7 @@
             this.gleCategoria.Name = "gleCategoria";
             this.gleCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gleCategoria.Properties.NullText = "- Seleccionar -";
             this.gleCategoria.Properties.PopupView = this.gridLookUpEdit1View;
             this.gleCategoria.Size = new System.Drawing.Size(136, 20);
             this.gleCategoria.TabIndex = 3;
@@ -146,6 +150,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -163,6 +168,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -171,6 +177,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bar2
             // 
@@ -241,6 +248,7 @@
             // 
             // textId
             // 
+            this.textId.Enabled = false;
             this.textId.Location = new System.Drawing.Point(119, 12);
             this.textId.MenuManager = this.barManager2;
             this.textId.Name = "textId";
@@ -282,9 +290,11 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2});
+            this.Id_Categoria,
+            this.Nombre_Categoria});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -295,12 +305,21 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
-            // gridColumn2
+            // Id_Categoria
             // 
-            this.gridColumn2.Caption = "Categoria Cuadrilla";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.Id_Categoria.Caption = "Id Categoria";
+            this.Id_Categoria.FieldName = "Id_Categoria";
+            this.Id_Categoria.Name = "Id_Categoria";
+            this.Id_Categoria.Visible = true;
+            this.Id_Categoria.VisibleIndex = 1;
+            // 
+            // Nombre_Categoria
+            // 
+            this.Nombre_Categoria.Caption = "Categoria";
+            this.Nombre_Categoria.FieldName = "Nombre_Categoria";
+            this.Nombre_Categoria.Name = "Nombre_Categoria";
+            this.Nombre_Categoria.Visible = true;
+            this.Nombre_Categoria.VisibleIndex = 2;
             // 
             // Frm_Cuadrilla
             // 
@@ -360,6 +379,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Categoria;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Categoria;
     }
 }

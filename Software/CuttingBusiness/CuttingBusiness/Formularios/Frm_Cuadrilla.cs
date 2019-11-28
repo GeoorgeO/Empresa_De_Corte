@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 
-namespace CuttingBusiness.Formularios
+namespace CuttingBusiness
 {
     public partial class Frm_Cuadrilla : DevExpress.XtraEditors.XtraForm
     {
@@ -33,7 +33,7 @@ namespace CuttingBusiness.Formularios
 
         private void CargarCategoriasCuadrilla()
         {
-            gridControl1.DataSource = null;
+            
             CLS_CategoriasCuadrilla Clase = new CLS_CategoriasCuadrilla();
 
             Clase.MtdSeleccionarCategoriasCuadrilla();
@@ -85,7 +85,7 @@ namespace CuttingBusiness.Formularios
         private void LimpiarCampos()
         {
             textId.Text = "";
-            
+            gleCategoria.EditValue = null;
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -114,14 +114,43 @@ namespace CuttingBusiness.Formularios
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.ToString().Trim().Length > 0)
+            if (gleCategoria.EditValue.ToString().Trim().Length > 0)
             {
                 InsertarCuadrillas();
             }
             else
             {
-                XtraMessageBox.Show("Es necesario Agregar una categoria.");
+                XtraMessageBox.Show("Es necesario Agregar una Cuadrilla.");
             }
+        }
+
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (textId.Text.Trim().Length > 0 )
+            {
+                EliminarCuadrillas();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar una cuadrilla.");
+            }
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBusqCategoria_Click(object sender, EventArgs e)
+        {
+            Frm_CuadrillaCategoria Clase = new Frm_CuadrillaCategoria();
+            Clase.ShowDialog();
+            CargarCategoriasCuadrilla();
         }
     }
 }
