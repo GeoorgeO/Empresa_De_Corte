@@ -267,6 +267,11 @@ namespace CuttingBusiness
             }
         }
 
-        
+        private void btnTipoProducto_Click(object sender, EventArgs e)
+        {
+            Frm_Productos_Tipo frm = new Frm_Productos_Tipo();
+            frm.ShowDialog();
+            CargarProductoTipo(null);
+        }
     }
 }

@@ -59,8 +59,14 @@
             this.Repisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cboProductoTipo = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTipoProducto = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.textCantidad = new DevExpress.XtraEditors.TextEdit();
@@ -85,12 +91,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnTipoProducto = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cboProductoTipo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -102,6 +102,8 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInventa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -116,8 +118,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -413,6 +413,14 @@
             this.Activo.VisibleIndex = 12;
             this.Activo.Width = 47;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Tipo Producto";
+            this.gridColumn1.FieldName = "Nombre_ProductoTipo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -447,6 +455,53 @@
             this.groupControl1.Size = new System.Drawing.Size(902, 187);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos del Producto";
+            // 
+            // cboProductoTipo
+            // 
+            this.cboProductoTipo.Location = new System.Drawing.Point(70, 81);
+            this.cboProductoTipo.MenuManager = this.barManager1;
+            this.cboProductoTipo.Name = "cboProductoTipo";
+            this.cboProductoTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboProductoTipo.Properties.NullText = "- Seleccionar -";
+            this.cboProductoTipo.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cboProductoTipo.Size = new System.Drawing.Size(136, 20);
+            this.cboProductoTipo.TabIndex = 18;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Id Tipo Producto";
+            this.gridColumn2.FieldName = "Id_ProductoTipo";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Nombre Tipo Producto";
+            this.gridColumn3.FieldName = "Nombre_ProductoTipo";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // btnTipoProducto
+            // 
+            this.btnTipoProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoProducto.ImageOptions.Image")));
+            this.btnTipoProducto.Location = new System.Drawing.Point(214, 79);
+            this.btnTipoProducto.Name = "btnTipoProducto";
+            this.btnTipoProducto.Size = new System.Drawing.Size(24, 23);
+            this.btnTipoProducto.TabIndex = 17;
+            this.btnTipoProducto.Click += new System.EventHandler(this.btnTipoProducto_Click);
             // 
             // labelControl10
             // 
@@ -679,59 +734,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id: ";
             // 
-            // btnTipoProducto
-            // 
-            this.btnTipoProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnTipoProducto.Location = new System.Drawing.Point(214, 79);
-            this.btnTipoProducto.Name = "btnTipoProducto";
-            this.btnTipoProducto.Size = new System.Drawing.Size(24, 23);
-            this.btnTipoProducto.TabIndex = 17;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Tipo Producto";
-            this.gridColumn1.FieldName = "Nombre_ProductoTipo";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            // 
-            // cboProductoTipo
-            // 
-            this.cboProductoTipo.Location = new System.Drawing.Point(70, 81);
-            this.cboProductoTipo.MenuManager = this.barManager1;
-            this.cboProductoTipo.Name = "cboProductoTipo";
-            this.cboProductoTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboProductoTipo.Properties.PopupView = this.gridLookUpEdit1View;
-            this.cboProductoTipo.Size = new System.Drawing.Size(136, 20);
-            this.cboProductoTipo.TabIndex = 18;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn3});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Id Tipo Producto";
-            this.gridColumn2.FieldName = "Id_ProductoTipo";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Nombre Tipo Producto";
-            this.gridColumn3.FieldName = "Nombre_ProductoTipo";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
             // Frm_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -758,6 +760,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInventa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -774,8 +778,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -175,6 +175,12 @@
     <Compile Include="Formularios\Frm_Clientes.Designer.cs">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Productos_Tipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Productos_Tipo.Designer.cs">
+      <DependentUpon>Frm_Productos_Tipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Clientes.resx">
       <DependentUpon>Frm_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Productos_Tipo.resx">
+      <DependentUpon>Frm_Productos_Tipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>

@@ -24,30 +24,30 @@ namespace CuttingBusiness
         public string IdCultivo { get; set; }
         public string Cultivo { get; set; }
 
-        private void CargarCultivo()
+        private void CargarProductos_Tipo()
         {
             gridControl1.DataSource = null;
-            CLS_Cultivo Clase = new CLS_Cultivo();
+            CLS_ProductoTipo Clase = new CLS_ProductoTipo();
 
-            Clase.MtdSeleccionarCultivo();
+            Clase.MtdSeleccionarProductoTipo();
             if (Clase.Exito)
             {
                 gridControl1.DataSource = Clase.Datos;
             }
         }
 
-        private void InsertarCultivo()
+        private void InsertarProductos_Tipo()
         {
-            CLS_Cultivo Clase = new CLS_Cultivo();
+            CLS_ProductoTipo Clase = new CLS_ProductoTipo();
 
-            Clase.Id_Cultivo = textId.Text.Trim();
-            Clase.Nombre_Cultivo = textNombre.Text.Trim();
+            Clase.Id_ProductoTipo = textId.Text.Trim();
+            Clase.Nombre_ProductoTipo = textNombre.Text.Trim();
 
-            Clase.MtdInsertarCultivo();
+            Clase.MtdInsertarProductoTipo();
 
             if (Clase.Exito)
             {
-                CargarCultivo();
+                CargarProductos_Tipo();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
             }
@@ -57,14 +57,14 @@ namespace CuttingBusiness
             }
         }
 
-        private void EliminarCultivo()
+        private void EliminarProductos_Tipo()
         {
-            CLS_Cultivo Clase = new CLS_Cultivo();
-            Clase.Id_Cultivo = textId.Text.Trim();
-            Clase.MtdEliminarCultivo();
+            CLS_ProductoTipo Clase = new CLS_ProductoTipo();
+            Clase.Id_ProductoTipo = textId.Text.Trim();
+            Clase.MtdEliminarProductoTipo();
             if (Clase.Exito)
             {
-                CargarCultivo();
+                CargarProductos_Tipo();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
             }
@@ -87,8 +87,8 @@ namespace CuttingBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Cultivo"].ToString();
-                    textNombre.Text = row["Nombre_Cultivo"].ToString();
+                    textId.Text = row["Id_ProductoTipo"].ToString();
+                    textNombre.Text = row["Nombre_ProductoTipo"].ToString();
                 }
             }
             catch (Exception ex)
@@ -107,14 +107,14 @@ namespace CuttingBusiness
             {
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
-            CargarCultivo();
+            CargarProductos_Tipo();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-                InsertarCultivo();
+                InsertarProductos_Tipo();
             }
             else
             {
@@ -126,7 +126,7 @@ namespace CuttingBusiness
         {
             if (textId.Text.Trim().Length > 0)
             {
-                EliminarCultivo();
+                EliminarProductos_Tipo();
             }
             else
             {
@@ -149,11 +149,6 @@ namespace CuttingBusiness
             IdCultivo = textId.Text.Trim();
             Cultivo = textNombre.Text.Trim();
             this.Close();
-        }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

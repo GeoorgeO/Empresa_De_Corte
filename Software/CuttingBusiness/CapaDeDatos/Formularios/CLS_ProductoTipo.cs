@@ -9,8 +9,8 @@ namespace CapaDeDatos
     public class CLS_ProductoTipo : ConexionBase
     {
 
-        public string Id_Cultivo { get; set; }
-        public string Nombre_Cultivo { get; set; }
+        public string Id_ProductoTipo { get; set; }
+        public string Nombre_ProductoTipo { get; set; }
 
         public void MtdSeleccionarProductoTipo()
         {
@@ -50,9 +50,9 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_ProductoTipo_Insert";
-                _dato.CadenaTexto = Id_Cultivo;
+                _dato.CadenaTexto = Id_ProductoTipo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_ProductoTipo");
-                _dato.CadenaTexto = Nombre_Cultivo;
+                _dato.CadenaTexto = Nombre_ProductoTipo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_ProductoTipo");
                 _conexion.EjecutarDataset();
 
@@ -81,7 +81,7 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_ProductoTipo_Delete";
-                _dato.CadenaTexto = Id_Cultivo;
+                _dato.CadenaTexto = Id_ProductoTipo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_ProductoTipo");
                 _conexion.EjecutarDataset();
 

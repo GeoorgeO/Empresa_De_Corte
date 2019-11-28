@@ -290,7 +290,6 @@
             this.groupControl1.Size = new System.Drawing.Size(418, 84);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Tipo Producto";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // textNombre
             // 
