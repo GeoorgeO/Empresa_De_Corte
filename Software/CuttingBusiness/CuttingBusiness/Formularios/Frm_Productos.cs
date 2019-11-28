@@ -140,6 +140,9 @@ namespace CuttingBusiness
             textPasillo.Enabled = sino;
             textAnaquel.Enabled = sino;
             textRepisa.Enabled = sino;
+            cboProductoTipo.Enabled = sino;
+            btnTipoProducto.Enabled = sino;
+            btnGuardar.Enabled = sino;
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
