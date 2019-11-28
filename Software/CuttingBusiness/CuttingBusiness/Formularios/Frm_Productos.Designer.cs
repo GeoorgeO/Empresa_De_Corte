@@ -61,6 +61,7 @@
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.textCantidad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -84,8 +85,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnTipoProducto = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cboProductoTipo = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -111,7 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -228,9 +234,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 546);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 548);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(982, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(982, 25);
             // 
             // barDockControlLeft
             // 
@@ -238,7 +244,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 546);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 548);
             // 
             // barDockControlRight
             // 
@@ -246,7 +252,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(982, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 546);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 548);
             // 
             // repositoryItemTextEdit1
             // 
@@ -257,10 +263,10 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(54, 211);
+            this.panelControl2.Location = new System.Drawing.Point(56, 211);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(928, 335);
+            this.panelControl2.Size = new System.Drawing.Size(926, 337);
             this.panelControl2.TabIndex = 27;
             // 
             // checkActivo
@@ -280,7 +286,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(914, 296);
+            this.gridControl1.Size = new System.Drawing.Size(912, 298);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -300,7 +306,8 @@
             this.Pasillo,
             this.Repisa,
             this.Cantidad,
-            this.Activo});
+            this.Activo,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -339,7 +346,7 @@
             this.Nombre_UnidadMedida.FieldName = "Nombre_UnidadMedida";
             this.Nombre_UnidadMedida.Name = "Nombre_UnidadMedida";
             this.Nombre_UnidadMedida.Visible = true;
-            this.Nombre_UnidadMedida.VisibleIndex = 3;
+            this.Nombre_UnidadMedida.VisibleIndex = 4;
             // 
             // Inventariable
             // 
@@ -347,7 +354,7 @@
             this.Inventariable.FieldName = "Inventariable";
             this.Inventariable.Name = "Inventariable";
             this.Inventariable.Visible = true;
-            this.Inventariable.VisibleIndex = 4;
+            this.Inventariable.VisibleIndex = 5;
             // 
             // Stock_Min
             // 
@@ -355,7 +362,7 @@
             this.Stock_Min.FieldName = "Stock_Min";
             this.Stock_Min.Name = "Stock_Min";
             this.Stock_Min.Visible = true;
-            this.Stock_Min.VisibleIndex = 6;
+            this.Stock_Min.VisibleIndex = 7;
             // 
             // Stock_Max
             // 
@@ -363,7 +370,7 @@
             this.Stock_Max.FieldName = "Stock_Max";
             this.Stock_Max.Name = "Stock_Max";
             this.Stock_Max.Visible = true;
-            this.Stock_Max.VisibleIndex = 7;
+            this.Stock_Max.VisibleIndex = 8;
             // 
             // Anaquel
             // 
@@ -371,7 +378,7 @@
             this.Anaquel.FieldName = "Anaquel";
             this.Anaquel.Name = "Anaquel";
             this.Anaquel.Visible = true;
-            this.Anaquel.VisibleIndex = 8;
+            this.Anaquel.VisibleIndex = 9;
             // 
             // Pasillo
             // 
@@ -379,7 +386,7 @@
             this.Pasillo.FieldName = "Pasillo";
             this.Pasillo.Name = "Pasillo";
             this.Pasillo.Visible = true;
-            this.Pasillo.VisibleIndex = 9;
+            this.Pasillo.VisibleIndex = 10;
             // 
             // Repisa
             // 
@@ -387,15 +394,15 @@
             this.Repisa.FieldName = "Repisa";
             this.Repisa.Name = "Repisa";
             this.Repisa.Visible = true;
-            this.Repisa.VisibleIndex = 10;
+            this.Repisa.VisibleIndex = 11;
             // 
             // Cantidad
             // 
             this.Cantidad.Caption = "Cantidad";
-            this.Cantidad.FieldName = "Cantidad";
+            this.Cantidad.FieldName = "Stock";
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.Visible = true;
-            this.Cantidad.VisibleIndex = 5;
+            this.Cantidad.VisibleIndex = 6;
             // 
             // Activo
             // 
@@ -403,22 +410,23 @@
             this.Activo.FieldName = "Activo";
             this.Activo.Name = "Activo";
             this.Activo.Visible = true;
-            this.Activo.VisibleIndex = 11;
+            this.Activo.VisibleIndex = 12;
             this.Activo.Width = 47;
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(54, 0);
+            this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(928, 211);
+            this.panelControl1.Size = new System.Drawing.Size(926, 211);
             this.panelControl1.TabIndex = 26;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.comboBoxEdit1);
+            this.groupControl1.Controls.Add(this.cboProductoTipo);
+            this.groupControl1.Controls.Add(this.btnTipoProducto);
             this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.labelActivo);
             this.groupControl1.Controls.Add(this.textCantidad);
@@ -436,9 +444,17 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(904, 187);
+            this.groupControl1.Size = new System.Drawing.Size(902, 187);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos del Producto";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(14, 77);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(47, 26);
+            this.labelControl10.TabIndex = 15;
+            this.labelControl10.Text = "Tipo de \r\nProducto:";
             // 
             // labelActivo
             // 
@@ -499,12 +515,12 @@
             // 
             // textRepisa
             // 
-            this.textRepisa.Location = new System.Drawing.Point(217, 42);
+            this.textRepisa.Location = new System.Drawing.Point(214, 42);
             this.textRepisa.MenuManager = this.barManager1;
             this.textRepisa.Name = "textRepisa";
             this.textRepisa.Properties.Appearance.Options.UseTextOptions = true;
             this.textRepisa.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textRepisa.Size = new System.Drawing.Size(100, 20);
+            this.textRepisa.Size = new System.Drawing.Size(97, 20);
             this.textRepisa.TabIndex = 6;
             // 
             // textAnaquel
@@ -514,22 +530,22 @@
             this.textAnaquel.Name = "textAnaquel";
             this.textAnaquel.Properties.Appearance.Options.UseTextOptions = true;
             this.textAnaquel.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textAnaquel.Size = new System.Drawing.Size(100, 20);
+            this.textAnaquel.Size = new System.Drawing.Size(97, 20);
             this.textAnaquel.TabIndex = 5;
             // 
             // textPasillo
             // 
-            this.textPasillo.Location = new System.Drawing.Point(5, 42);
+            this.textPasillo.Location = new System.Drawing.Point(8, 42);
             this.textPasillo.MenuManager = this.barManager1;
             this.textPasillo.Name = "textPasillo";
             this.textPasillo.Properties.Appearance.Options.UseTextOptions = true;
             this.textPasillo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textPasillo.Size = new System.Drawing.Size(100, 20);
+            this.textPasillo.Size = new System.Drawing.Size(97, 20);
             this.textPasillo.TabIndex = 4;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(251, 23);
+            this.labelControl8.Location = new System.Drawing.Point(246, 23);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(32, 13);
             this.labelControl8.TabIndex = 3;
@@ -537,7 +553,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(142, 23);
+            this.labelControl7.Location = new System.Drawing.Point(140, 23);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(39, 13);
             this.labelControl7.TabIndex = 2;
@@ -545,7 +561,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(41, 23);
+            this.labelControl6.Location = new System.Drawing.Point(42, 23);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(29, 13);
             this.labelControl6.TabIndex = 1;
@@ -573,25 +589,25 @@
             this.textMin.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textMin.Properties.Mask.EditMask = "f0";
             this.textMin.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textMin.Size = new System.Drawing.Size(100, 20);
+            this.textMin.Size = new System.Drawing.Size(97, 20);
             this.textMin.TabIndex = 3;
             // 
             // textMax
             // 
             this.textMax.EditValue = "0";
-            this.textMax.Location = new System.Drawing.Point(5, 42);
+            this.textMax.Location = new System.Drawing.Point(9, 42);
             this.textMax.MenuManager = this.barManager1;
             this.textMax.Name = "textMax";
             this.textMax.Properties.Appearance.Options.UseTextOptions = true;
             this.textMax.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textMax.Properties.Mask.EditMask = "f0";
             this.textMax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textMax.Size = new System.Drawing.Size(100, 20);
+            this.textMax.Size = new System.Drawing.Size(97, 20);
             this.textMax.TabIndex = 2;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(145, 23);
+            this.labelControl5.Location = new System.Drawing.Point(143, 23);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(32, 13);
             this.labelControl5.TabIndex = 1;
@@ -599,7 +615,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(37, 23);
+            this.labelControl4.Location = new System.Drawing.Point(39, 23);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(36, 13);
             this.labelControl4.TabIndex = 0;
@@ -663,26 +679,58 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id: ";
             // 
-            // labelControl10
+            // btnTipoProducto
             // 
-            this.labelControl10.Location = new System.Drawing.Point(14, 77);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(47, 26);
-            this.labelControl10.TabIndex = 15;
-            this.labelControl10.Text = "Tipo de \r\nProducto:";
+            this.btnTipoProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTipoProducto.Location = new System.Drawing.Point(214, 79);
+            this.btnTipoProducto.Name = "btnTipoProducto";
+            this.btnTipoProducto.Size = new System.Drawing.Size(24, 23);
+            this.btnTipoProducto.TabIndex = 17;
             // 
-            // comboBoxEdit1
+            // gridColumn1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(70, 80);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gridColumn1.Caption = "Tipo Producto";
+            this.gridColumn1.FieldName = "Nombre_ProductoTipo";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            // 
+            // cboProductoTipo
+            // 
+            this.cboProductoTipo.Location = new System.Drawing.Point(70, 81);
+            this.cboProductoTipo.MenuManager = this.barManager1;
+            this.cboProductoTipo.Name = "cboProductoTipo";
+            this.cboProductoTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "Herramienta",
-            "Insumo"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(136, 20);
-            this.comboBoxEdit1.TabIndex = 16;
+            this.cboProductoTipo.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cboProductoTipo.Size = new System.Drawing.Size(136, 20);
+            this.cboProductoTipo.TabIndex = 18;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Id Tipo Producto";
+            this.gridColumn2.FieldName = "Id_ProductoTipo";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Nombre Tipo Producto";
+            this.gridColumn3.FieldName = "Nombre_ProductoTipo";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // Frm_Productos
             // 
@@ -726,7 +774,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,7 +837,12 @@
         private DevExpress.XtraEditors.CheckEdit checkActivo;
         private DevExpress.XtraEditors.LabelControl labelActivo;
         private DevExpress.XtraGrid.Columns.GridColumn Activo;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.SimpleButton btnTipoProducto;
+        private DevExpress.XtraEditors.GridLookUpEdit cboProductoTipo;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

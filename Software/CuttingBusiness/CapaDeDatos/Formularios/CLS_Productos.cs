@@ -20,6 +20,7 @@ namespace CapaDeDatos
         public string Repisa { get; set; }
         public int Stock { get; set; }
         public string Activo { get; set; }
+        public string Id_ProductoTipo { get; set; }
 
         public void MtdSeleccionarProductos()
         {
@@ -81,6 +82,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Pasillo");
                 _dato.CadenaTexto = Repisa;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Repisa");
+                _dato.CadenaTexto = Id_ProductoTipo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_ProductoTipo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

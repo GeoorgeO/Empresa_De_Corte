@@ -66,6 +66,7 @@ namespace CuttingBusiness
             Clase.Pasillo = textPasillo.Text.Trim();
             Clase.Repisa = textRepisa.Text.Trim();
             Clase.Anaquel = textAnaquel.Text.Trim();
+            Clase.Id_ProductoTipo = cboProductoTipo.EditValue.ToString();
             Clase.MtdInsertarProductos();
             if (Clase.Exito)
             {
@@ -226,9 +227,25 @@ namespace CuttingBusiness
         private void Frm_Productos_Load(object sender, EventArgs e)
         {
             CargarProductos("1");
+            CargarProductoTipo(null);
             iniciarTags();
         }
-
+        public void CargarProductoTipo(string Valor)
+        {
+            CLS_ProductoTipo comboCiudad = new CLS_ProductoTipo();
+            comboCiudad.MtdSeleccionarProductoTipo();
+            if (comboCiudad.Exito)
+            {
+                CargarComboProductoTipo(comboCiudad.Datos, Valor);
+            }
+        }
+        private void CargarComboProductoTipo(DataTable Datos, string Valor)
+        {
+            cboProductoTipo.Properties.DisplayMember = "Nombre_ProductoTipo";
+            cboProductoTipo.Properties.ValueMember = "Id_ProductoTipo";
+            cboProductoTipo.EditValue = Valor;
+            cboProductoTipo.Properties.DataSource = Datos;
+        }
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             Frm_UnidadesMedida Uni = new Frm_UnidadesMedida();
