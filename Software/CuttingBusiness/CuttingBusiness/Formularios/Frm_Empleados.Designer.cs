@@ -65,6 +65,8 @@
             this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkSinSVida = new DevExpress.XtraEditors.CheckEdit();
+            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
             this.btnBusqCuadrilla = new DevExpress.XtraEditors.SimpleButton();
             this.gleCuadrilla = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -133,8 +135,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
-            this.chkSinSVida = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -146,6 +146,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gleCuadrilla.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glePuesto.Properties)).BeginInit();
@@ -182,8 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -562,6 +562,26 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
             // 
+            // chkSinSVida
+            // 
+            this.chkSinSVida.Location = new System.Drawing.Point(585, 95);
+            this.chkSinSVida.MenuManager = this.barManager2;
+            this.chkSinSVida.Name = "chkSinSVida";
+            this.chkSinSVida.Properties.Caption = "Sin Seguro de Vida";
+            this.chkSinSVida.Size = new System.Drawing.Size(118, 19);
+            this.chkSinSVida.TabIndex = 31;
+            this.chkSinSVida.CheckedChanged += new System.EventHandler(this.chkSinSVida_CheckedChanged);
+            // 
+            // chkSinSSocial
+            // 
+            this.chkSinSSocial.Location = new System.Drawing.Point(201, 148);
+            this.chkSinSSocial.MenuManager = this.barManager2;
+            this.chkSinSSocial.Name = "chkSinSSocial";
+            this.chkSinSSocial.Properties.Caption = "Sin Seguro Social";
+            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
+            this.chkSinSSocial.TabIndex = 30;
+            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
+            // 
             // btnBusqCuadrilla
             // 
             this.btnBusqCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqCuadrilla.ImageOptions.Image")));
@@ -751,6 +771,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateBajaSegSocial.Size = new System.Drawing.Size(100, 20);
             this.dateBajaSegSocial.TabIndex = 10;
+            
             // 
             // labelControl5
             // 
@@ -1172,26 +1193,6 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
-            // chkSinSSocial
-            // 
-            this.chkSinSSocial.Location = new System.Drawing.Point(201, 148);
-            this.chkSinSSocial.MenuManager = this.barManager2;
-            this.chkSinSSocial.Name = "chkSinSSocial";
-            this.chkSinSSocial.Properties.Caption = "Sin Seguro Social";
-            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
-            this.chkSinSSocial.TabIndex = 30;
-            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
-            // 
-            // chkSinSVida
-            // 
-            this.chkSinSVida.Location = new System.Drawing.Point(585, 95);
-            this.chkSinSVida.MenuManager = this.barManager2;
-            this.chkSinSVida.Name = "chkSinSVida";
-            this.chkSinSVida.Properties.Caption = "Sin Seguro de Vida";
-            this.chkSinSVida.Size = new System.Drawing.Size(118, 19);
-            this.chkSinSVida.TabIndex = 31;
-            this.chkSinSVida.CheckedChanged += new System.EventHandler(this.chkSinSVida_CheckedChanged);
-            // 
             // Frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1219,6 +1220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gleCuadrilla.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glePuesto.Properties)).EndInit();
@@ -1256,8 +1259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

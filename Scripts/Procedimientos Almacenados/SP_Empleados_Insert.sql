@@ -19,12 +19,12 @@ create PROCEDURE [dbo].[SP_Empleados_Insert]
 	@Nombre_Empleado varchar(100),
 	@Fecha_Nacimiento datetime,
 	@NSS varchar(15),
-	@Fecha_Alta_Seg_Social datetime,
-	@Fecha_Baja_Seg_Social datetime,
+	@Fecha_Alta_Seg_Social varchar(15),
+	@Fecha_Baja_Seg_Social varchar(15),
 	@Cuenta varchar(150),
 	@Tarjeta varchar(150),
-	@Fecha_Alta_Seg_Vida datetime,
-	@Fecha_Baja_Seg_Vida datetime,
+	@Fecha_Alta_Seg_Vida varchar(15),
+	@Fecha_Baja_Seg_Vida varchar(15),
 	@Id_Puesto char(3),
 	@Id_Cuadrilla char(5),
 	@Activo bit
@@ -45,6 +45,16 @@ BEGIN
 
 		declare @Existe int
 		select @Existe = count(Id_Empleado) from dbo.Empleados a where (a.Id_Empleado=@Id_Empleado)
+
+
+		if len(@Fecha_Alta_Seg_Social)=0 
+			set @Fecha_Alta_Seg_Social=NULL
+		if len(@Fecha_Baja_Seg_Social)=0 
+			set @Fecha_Baja_Seg_Social=NULL
+		if len(@Fecha_Alta_Seg_Vida)=0 
+			set @Fecha_Alta_Seg_Vida=NULL
+		if len(@Fecha_Baja_Seg_Vida)=0 
+			set @Fecha_Baja_Seg_Vida=NULL 
 
 		if @Existe>0 
 		

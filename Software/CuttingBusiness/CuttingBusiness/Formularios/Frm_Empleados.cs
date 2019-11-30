@@ -123,7 +123,7 @@ namespace CuttingBusiness
             {
                 Clase.Fecha_Alta_Seg_Social = string.Empty;
             }
-            if (dateBajaSegSocial != null)
+            if (dateBajaSegSocial.EditValue != null)
             {
                 Clase.Fecha_Baja_Seg_Social = dateBajaSegSocial.DateTime.Year.ToString() + DosCero(dateBajaSegSocial.DateTime.Month.ToString()) + DosCero(dateBajaSegSocial.DateTime.Day.ToString());
             }
@@ -133,7 +133,7 @@ namespace CuttingBusiness
             }
             Clase.Cuenta= textCuenta.Text.Trim();
             Clase.Tarjeta= textNoTarjeta.Text.Trim();
-            if (dateAltaSegVida != null)
+            if (dateAltaSegVida.EditValue != null)
             {
                 Clase.Fecha_Alta_Seg_Vida = dateAltaSegVida.DateTime.Year.ToString() + DosCero(dateAltaSegVida.DateTime.Month.ToString()) + DosCero(dateAltaSegVida.DateTime.Day.ToString());
             } 
@@ -141,7 +141,7 @@ namespace CuttingBusiness
             {
                 Clase.Fecha_Alta_Seg_Vida = string.Empty;
             }
-            if (dateBajaSegVida != null)
+            if (dateBajaSegVida.EditValue != null)
             {
                 Clase.Fecha_Baja_Seg_Vida = dateBajaSegVida.DateTime.Year.ToString() + DosCero(dateBajaSegVida.DateTime.Month.ToString()) + DosCero(dateBajaSegVida.DateTime.Day.ToString());
             }
@@ -471,11 +471,25 @@ namespace CuttingBusiness
                     dateNacimiento.EditValue = row["Fecha_Nacimiento"].ToString();
                     textNSS.Text = row["NSS"].ToString();
                     dateAltaSegSocial.EditValue = row["Fecha_Alta_Seg_Social"].ToString();
-                    dateBajaSegSocial.Text = row["Fecha_Baja_Seg_Social"].ToString();
+                    if (row["Fecha_Alta_Seg_Social"].ToString().Equals(""))
+                    {
+                        chkSinSSocial.Checked = true;
+                        dateAltaSegSocial.EditValue = null;
+                        dateBajaSegSocial.EditValue = null;
+                        textNSS.Text = "";
+                    }
+                    dateBajaSegSocial.EditValue = row["Fecha_Baja_Seg_Social"].ToString();
                     textCuenta.Text = row["Cuenta"].ToString();
                     textNoTarjeta.Text = row["Tarjeta"].ToString();
-                    dateAltaSegVida.Text = row["Fecha_Alta_Seg_Vida"].ToString();
-                    dateBajaSegVida.Text = row["Fecha_Baja_Seg_Vida"].ToString();
+                    dateAltaSegVida.EditValue = row["Fecha_Alta_Seg_Vida"].ToString();
+                    dateBajaSegVida.EditValue = row["Fecha_Baja_Seg_Vida"].ToString();
+                    if (row["Fecha_Alta_Seg_Vida"].ToString().Equals(""))
+                    {
+                        chkSinSVida.Checked = true;
+                        dateAltaSegVida.EditValue = null;
+                        dateBajaSegVida.EditValue = null;
+                    }
+                    
                     glePuesto.EditValue = row["Id_Puesto"].ToString();
                     //textEmpleado.Text = row["Nombre_Puesto"].ToString();
                     gleCuadrilla.EditValue = row["Id_Cuadrilla"].ToString();
@@ -552,7 +566,7 @@ namespace CuttingBusiness
                 dateAltaSegSocial.EditValue = DateTime.Now;
                 dateBajaSegSocial.Enabled = true;
                 dateBajaSegSocial.EditValue = null;
-                textNSS.Enabled = false;
+                textNSS.Enabled = true;
             }
         }
 
@@ -573,5 +587,7 @@ namespace CuttingBusiness
                 dateBajaSegVida.EditValue = null;
             }
         }
+
+       
     }
 }
