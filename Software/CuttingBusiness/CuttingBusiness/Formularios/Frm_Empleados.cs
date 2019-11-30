@@ -115,14 +115,49 @@ namespace CuttingBusiness
             Clase.Nombre_Empleado = textEmpleado.Text.Trim();
             Clase.Fecha_Nacimiento = dateNacimiento.DateTime.Year.ToString() + DosCero(dateNacimiento.DateTime.Month.ToString()) + DosCero(dateNacimiento.DateTime.Day.ToString());
             Clase.NSS = textNSS.Text.Trim();
-            Clase.Fecha_Alta_Seg_Social = dateAltaSegSocial.DateTime.Year.ToString() + DosCero(dateAltaSegSocial.DateTime.Month.ToString()) + DosCero(dateAltaSegSocial.DateTime.Day.ToString());
-            Clase.Fecha_Baja_Seg_Social = dateBajaSegSocial.DateTime.Year.ToString() + DosCero(dateBajaSegSocial.DateTime.Month.ToString()) + DosCero(dateBajaSegSocial.DateTime.Day.ToString());
+            if (dateAltaSegSocial.EditValue != null)
+            {
+                Clase.Fecha_Alta_Seg_Social = dateAltaSegSocial.DateTime.Year.ToString() + DosCero(dateAltaSegSocial.DateTime.Month.ToString()) + DosCero(dateAltaSegSocial.DateTime.Day.ToString());
+            }
+            else
+            {
+                Clase.Fecha_Alta_Seg_Social = string.Empty;
+            }
+            if (dateBajaSegSocial != null)
+            {
+                Clase.Fecha_Baja_Seg_Social = dateBajaSegSocial.DateTime.Year.ToString() + DosCero(dateBajaSegSocial.DateTime.Month.ToString()) + DosCero(dateBajaSegSocial.DateTime.Day.ToString());
+            }
+            else
+            {
+                Clase.Fecha_Baja_Seg_Social = string.Empty;
+            }
             Clase.Cuenta= textCuenta.Text.Trim();
             Clase.Tarjeta= textNoTarjeta.Text.Trim();
-            Clase.Fecha_Alta_Seg_Vida= dateAltaSegVida.DateTime.Year.ToString() + DosCero(dateAltaSegVida.DateTime.Month.ToString()) + DosCero(dateAltaSegVida.DateTime.Day.ToString());
-            Clase.Fecha_Baja_Seg_Vida= dateBajaSegVida.DateTime.Year.ToString() + DosCero(dateBajaSegVida.DateTime.Month.ToString()) + DosCero(dateBajaSegVida.DateTime.Day.ToString());
+            if (dateAltaSegVida != null)
+            {
+                Clase.Fecha_Alta_Seg_Vida = dateAltaSegVida.DateTime.Year.ToString() + DosCero(dateAltaSegVida.DateTime.Month.ToString()) + DosCero(dateAltaSegVida.DateTime.Day.ToString());
+            } 
+            else
+            {
+                Clase.Fecha_Alta_Seg_Vida = string.Empty;
+            }
+            if (dateBajaSegVida != null)
+            {
+                Clase.Fecha_Baja_Seg_Vida = dateBajaSegVida.DateTime.Year.ToString() + DosCero(dateBajaSegVida.DateTime.Month.ToString()) + DosCero(dateBajaSegVida.DateTime.Day.ToString());
+            }
+            else
+            {
+                Clase.Fecha_Baja_Seg_Vida = string.Empty;
+            }
             Clase.Id_Puesto= glePuesto.EditValue.ToString();
-            Clase.Id_Cuadrilla = gleCuadrilla.EditValue.ToString();
+            if(gleCuadrilla.EditValue!=null)
+            {
+                Clase.Id_Cuadrilla = gleCuadrilla.EditValue.ToString();
+            }
+            else
+            {
+                Clase.Id_Cuadrilla = string.Empty;
+            }
             Clase.Activo = "1";
             Clase.MtdInsertarEmpleados();
             if (Clase.Exito)
@@ -311,11 +346,25 @@ namespace CuttingBusiness
             {
                 if (textEmpleado.Text.ToString().Trim().Length > 0)
                 {
-                    InsertarEmpleados();
+                    if (glePuesto.EditValue != null)
+                    {
+                        if (dateNacimiento.EditValue != null)
+                        {
+                            InsertarEmpleados();
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Debe colocar una fecha de Nacimiento");
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Debe seleccionar un puesto");
+                    }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Es necesario Agregar un nombre del producto");
+                    XtraMessageBox.Show("Es necesario Agregar un nombre del Empleado");
                 }
             }
             else
@@ -344,12 +393,20 @@ namespace CuttingBusiness
             CargarEmpleados();
             CargarDomicilio();
             LimpiarCampos();
+            LlenarFechas();
+        }
+
+        private void LlenarFechas()
+        {
+            DateTime Valor = DateTime.Now;
+            dateNacimiento.EditValue = Valor.AddYears(-18);
+            dateAltaSegVida.EditValue = DateTime.Now;
+            dateAltaSegSocial.EditValue = DateTime.Now;
         }
 
         private void checkActivo_CheckedChanged(object sender, EventArgs e)
         {
-                CargarEmpleados();
-           
+            CargarEmpleados();
         }
 
         private void btnBusqEstado_Click(object sender, EventArgs e)
@@ -477,6 +534,44 @@ namespace CuttingBusiness
             Frm_Cuadrilla Clase = new Frm_Cuadrilla();
             Clase.ShowDialog();
             CargarCuadrillas();
+        }
+
+        private void chkSinSSocial_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkSinSSocial.Checked==true)
+            {
+                dateAltaSegSocial.Enabled = false;
+                dateAltaSegSocial.EditValue = null;
+                dateBajaSegSocial.Enabled = false;
+                dateBajaSegSocial.EditValue = null;
+                textNSS.Enabled = false;
+            }
+            else
+            {
+                dateAltaSegSocial.Enabled = true;
+                dateAltaSegSocial.EditValue = DateTime.Now;
+                dateBajaSegSocial.Enabled = true;
+                dateBajaSegSocial.EditValue = null;
+                textNSS.Enabled = false;
+            }
+        }
+
+        private void chkSinSVida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSinSVida.Checked == true)
+            {
+                dateAltaSegVida.Enabled = false;
+                dateAltaSegVida.EditValue = null;
+                dateBajaSegVida.Enabled = false;
+                dateBajaSegVida.EditValue = null;
+            }
+            else
+            {
+                dateAltaSegVida.Enabled = true;
+                dateAltaSegVida.EditValue = DateTime.Now;
+                dateBajaSegVida.Enabled = true;
+                dateBajaSegVida.EditValue = null;
+            }
         }
     }
 }

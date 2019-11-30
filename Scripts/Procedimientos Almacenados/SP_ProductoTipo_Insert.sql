@@ -15,8 +15,8 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_ProductoTipo_Insert] 
 	-- Add the parameters for the stored procedure here
-	@Id_Cultivo char(2),
-	@Nombre_Cultivo varchar(30)
+	@Id_ProductoTipo char(2),
+	@Nombre_ProductoTipo varchar(30)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -30,26 +30,26 @@ BEGIN
 	begin try
 
 		declare @maximo char(2)
-		select @maximo=right(Concat('00', isnull(max(Id_Cultivo),0)+1),2) from dbo.Cultivo
+		select @maximo=right(Concat('00', isnull(max(Id_ProductoTipo),0)+1),2) from dbo.ProductoTipo
 
 		declare @Existe int
-		select @Existe = count(Id_Cultivo) from dbo.Cultivo a where (a.Id_Cultivo=@Id_Cultivo)
+		select @Existe = count(Id_Cultivo) from dbo.Cultivo a where (a.Id_Cultivo=@Id_ProductoTipo)
 
 		if @Existe>0 
 		
-			UPDATE dbo.Cultivo
-		        SET Nombre_Cultivo=@Nombre_Cultivo
+			UPDATE dbo.ProductoTipo
+		        SET Nombre_ProductoTipo=@Nombre_ProductoTipo
 		    WHERE
-		    	Id_Cultivo=@Id_Cultivo
+		    	Id_ProductoTipo=@Id_ProductoTipo
 				
 		else
 		
-			INSERT INTO dbo.Cultivo
-	           (Id_Cultivo
-	           ,Nombre_Cultivo)
+			INSERT INTO dbo.ProductoTipo
+	           (Id_ProductoTipo
+	           ,Nombre_ProductoTipo)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Cultivo)
+	           ,@Nombre_ProductoTipo)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -14,6 +14,7 @@ namespace CuttingBusiness
 {
     public partial class Frm_Huertas : DevExpress.XtraEditors.XtraForm
     {
+        public Boolean PaSel { get; set; }
         public Frm_Huertas()
         {
             InitializeComponent();
@@ -98,6 +99,14 @@ namespace CuttingBusiness
         }
         private void Frm_Huertas_Shown(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarEstado(null);
             CargarCiudad(null);
             CargarCalidad(null);
@@ -188,7 +197,7 @@ namespace CuttingBusiness
                                 {
                                     if (cboCultivo.EditValue != null)
                                     {
-                                        
+                                        InsertarHuerta();
                                     }
                                     else
                                     {
@@ -223,6 +232,155 @@ namespace CuttingBusiness
             else
             {
                 XtraMessageBox.Show("Falta de colocar un registro de huerta");
+            }
+        }
+        void CargarHuertas()
+        {
+            dtgHuertas.DataSource = null;
+            CLS_Huerta Clase = new CLS_Huerta();
+
+            Clase.MtdSeleccionarHuerta();
+            if (Clase.Exito)
+            {
+                dtgHuertas.DataSource = Clase.Datos;
+            }
+        }
+        private void InsertarHuerta()
+        {
+            CLS_Huerta Clase = new CLS_Huerta();
+            Clase.Id_Huerta = txtCodigo.Text;
+            Clase.Nombre_Huerta = txtNombreHuerta.Text;
+            Clase.Registro_Huerta = txtRegistro.Text;
+            Clase.Id_Duenio = txtNombreProductor.Tag.ToString();
+            Clase.Id_Estado = cboEstado.EditValue.ToString();
+            Clase.Id_Ciudad = cboCiudad.EditValue.ToString();
+            Clase.Id_Calidad = cboCalidad.EditValue.ToString();
+            Clase.Id_Cultivo = cboCultivo.EditValue.ToString();
+            Clase.zona_Huerta =Convert.ToInt32(txtZona.Text);
+            Clase.banda_Huerta = txtBanda.Text;
+            Clase.este_Huerta =Convert.ToInt32(txtEste.Text);
+            Clase.norte_Huerta =Convert.ToInt32(txtNorte.Text);
+            Clase.asnm_Huerta = Convert.ToInt32(txtASMN.Text);
+            Clase.latitud_Huerta = txtLatitud.Text;
+            Clase.longitud_Huerta = txtLonguitud.Text;
+            Clase.MtdInsertarHuerta();
+
+            if (Clase.Exito)
+            {
+                CargarHuertas();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+
+        void Eliminarhuerta()
+        {
+            CLS_Huerta Clase = new CLS_Huerta();
+            Clase.Id_Huerta = txtCodigo.Text.Trim();
+            Clase.MtdEliminarHuerta();
+            if (Clase.Exito)
+            {
+                CargarHuertas();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCampos();
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+        private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtCodigo.Text.Trim().Length > 0)
+            {
+                Eliminarhuerta();
+            }
+            else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un cultivo.");
+            }
+        }
+
+        void bloquear(bool value)
+        {
+            txtCodigo.Enabled = value;
+            txtNombreHuerta.Enabled = value;
+            txtRegistro.Enabled = value;
+            txtNombreProductor.Enabled = value;
+            cboEstado.Enabled = value;
+            cboCiudad.Enabled = value;
+            cboCalidad.Enabled = value;
+            cboCultivo.Enabled = value;
+            txtZona.Enabled = value;
+            txtBanda.Enabled = value;
+            txtEste.Enabled = value;
+            txtNorte.Enabled = value;
+            txtASMN.Enabled = value;
+            txtLatitud.Enabled = value;
+            txtLonguitud.Enabled = value;
+            btnGuardar.Enabled = value;
+            btnEliminar.Enabled = value;
+            if (PaSel == true)
+            {
+                if (value == true)
+                {
+                    btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+                else
+                {
+                    btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                }
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+        }
+        private void dtgHuertas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValHuertas.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValHuertas.GetDataRow(i);
+                    txtCodigo.Text= row["Id_Cultivo"].ToString();
+                    txtNombreHuerta.Text=row["Nombre_Huerta"].ToString(); 
+                    txtRegistro.Text=row["Registro_Huerta"].ToString(); 
+                    txtNombreProductor.Tag = row["Id_Duenio"].ToString();
+                    cboEstado.EditValue = row["Id_Estado"].ToString();
+                    cboCiudad.EditValue = row["Id_Ciudad"].ToString();
+                    cboCalidad.EditValue = row["Id_Calidad"].ToString();
+                    cboCultivo.EditValue = row["Id_Cultivo"].ToString();
+                    txtZona.Text= row["zona_Huerta"].ToString();
+                    txtBanda.Text = row["banda_Huerta"].ToString();
+                    txtEste.Text= row["este_Huerta"].ToString();
+                    txtNorte.Text= row["norte_Huerta"].ToString();
+                    txtASMN.Text= row["asnm_Huerta"].ToString();
+                    txtLatitud.Text = row["latitud_Huerta"].ToString();
+                    txtLonguitud.Text = row["longitud_Huerta"].ToString();
+                    if (row["Activo"].ToString().Equals("True"))
+                    {
+                        labelActivo.Text = "Activo";
+                        btnEliminar.Caption = "Dar de Baja";
+                        labelActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+                        bloquear(true);
+                    }
+                    else
+                    {
+                        labelActivo.Text = "Inactivo";
+                        btnEliminar.Caption = "Dar de Alta";
+                        labelActivo.ForeColor = System.Drawing.Color.Maroon;
+                        bloquear(false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
             }
         }
     }

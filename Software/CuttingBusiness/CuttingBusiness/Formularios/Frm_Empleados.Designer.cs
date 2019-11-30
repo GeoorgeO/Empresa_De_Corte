@@ -133,6 +133,8 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
+            this.chkSinSVida = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -180,6 +182,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -520,6 +524,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.chkSinSVida);
+            this.groupControl1.Controls.Add(this.chkSinSSocial);
             this.groupControl1.Controls.Add(this.btnBusqCuadrilla);
             this.groupControl1.Controls.Add(this.gleCuadrilla);
             this.groupControl1.Controls.Add(this.labelControl22);
@@ -571,6 +577,7 @@
             this.gleCuadrilla.Name = "gleCuadrilla";
             this.gleCuadrilla.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gleCuadrilla.Properties.NullText = "- Seleccionar -";
             this.gleCuadrilla.Properties.PopupView = this.gridView3;
             this.gleCuadrilla.Size = new System.Drawing.Size(162, 20);
             this.gleCuadrilla.TabIndex = 28;
@@ -596,6 +603,7 @@
             this.glePuesto.Name = "glePuesto";
             this.glePuesto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.glePuesto.Properties.NullText = "- Seleccionar -";
             this.glePuesto.Properties.PopupView = this.gridLookUpEdit1View;
             this.glePuesto.Size = new System.Drawing.Size(162, 20);
             this.glePuesto.TabIndex = 26;
@@ -837,7 +845,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(775, 487);
+            this.xtraTabPage2.Size = new System.Drawing.Size(772, 487);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -847,7 +855,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 170);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(765, 312);
+            this.panelControl2.Size = new System.Drawing.Size(762, 312);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -856,7 +864,7 @@
             this.gridControl2.Location = new System.Drawing.Point(7, 7);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(751, 298);
+            this.gridControl2.Size = new System.Drawing.Size(748, 298);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1005,7 +1013,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(765, 165);
+            this.groupControl2.Size = new System.Drawing.Size(762, 165);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1164,6 +1172,26 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
+            // chkSinSSocial
+            // 
+            this.chkSinSSocial.Location = new System.Drawing.Point(201, 148);
+            this.chkSinSSocial.MenuManager = this.barManager2;
+            this.chkSinSSocial.Name = "chkSinSSocial";
+            this.chkSinSSocial.Properties.Caption = "Sin Seguro Social";
+            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
+            this.chkSinSSocial.TabIndex = 30;
+            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
+            // 
+            // chkSinSVida
+            // 
+            this.chkSinSVida.Location = new System.Drawing.Point(585, 95);
+            this.chkSinSVida.MenuManager = this.barManager2;
+            this.chkSinSVida.Name = "chkSinSVida";
+            this.chkSinSVida.Properties.Caption = "Sin Seguro de Vida";
+            this.chkSinSVida.Size = new System.Drawing.Size(118, 19);
+            this.chkSinSVida.TabIndex = 31;
+            this.chkSinSVida.CheckedChanged += new System.EventHandler(this.chkSinSVida_CheckedChanged);
+            // 
             // Frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1228,6 +1256,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1337,5 +1367,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Ciudad;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Ciudad;
+        private DevExpress.XtraEditors.CheckEdit chkSinSVida;
+        private DevExpress.XtraEditors.CheckEdit chkSinSSocial;
     }
 }
