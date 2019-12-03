@@ -97,6 +97,12 @@
     <Compile Include="Control\Frm_Entradas.Designer.cs">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Series.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Series.Designer.cs">
+      <DependentUpon>Frm_Series.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Ciudad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Series.resx">
+      <DependentUpon>Frm_Series.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
