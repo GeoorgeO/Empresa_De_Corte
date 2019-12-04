@@ -50,6 +50,8 @@
     <Compile Include="Conexion\MSRegistro.cs" />
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
+    <Compile Include="Formularios\CLS_TiposEntradas.cs" />
+    <Compile Include="Formularios\CLS_TiposSalidas.cs" />
     <Compile Include="Formularios\CLS_Series.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_CategoriasCuadrilla.cs" />

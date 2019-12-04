@@ -456,5 +456,47 @@ namespace CuttingBusiness
         {
             this.Close();
         }
+
+        private void btnTiposEntradas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("032"))
+            {
+                Frm_TiposEntradas Ventana = new Frm_TiposEntradas();
+                Ventana.PaSel = false;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [032]");
+            }
+        }
+
+        private void btnTiposSalidas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("033"))
+            {
+                Frm_TiposSalidas Ventana = new Frm_TiposSalidas();
+                Ventana.PaSel = false;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [033]");
+            }
+        }
+
+        private void btnSeries_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("034"))
+            {
+                Frm_Series Ventana = new Frm_Series();
+                Ventana.PaSel = false;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [034]");
+            }
+        }
     }
 }

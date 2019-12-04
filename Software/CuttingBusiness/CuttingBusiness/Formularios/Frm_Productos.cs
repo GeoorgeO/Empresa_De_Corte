@@ -32,6 +32,10 @@ namespace CuttingBusiness
                 m_FormDefInstance = value;
             }
         }
+        public string IdProducto { get; set; }
+        public string Producto { get; set; }
+        public string UnidadMedida { get;  set; }
+        public bool PaSel { get; set; }
         private void CargarProductos(String Activo)
         {
             gridControl1.DataSource = null;
@@ -43,9 +47,6 @@ namespace CuttingBusiness
                 gridControl1.DataSource = Clase.Datos;
             }
         }
-
-
-
         private void InsertarProductos()
         {
             string inventa = "";
@@ -275,6 +276,14 @@ namespace CuttingBusiness
             Frm_Productos_Tipo frm = new Frm_Productos_Tipo();
             frm.ShowDialog();
             CargarProductoTipo(null);
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdProducto = textId.Text;
+            Producto = textNombre.Text;
+            UnidadMedida = textUnidad.Text;
+            this.Close();
         }
     }
 }

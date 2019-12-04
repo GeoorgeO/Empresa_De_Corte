@@ -36,6 +36,7 @@
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -135,9 +136,10 @@
             this.btnLimpiar,
             this.btnGuardar,
             this.btnEliminar,
-            this.btnSalir});
+            this.btnSalir,
+            this.btnSeleccionar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 67;
+            this.barManager1.MaxItemId = 68;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -154,7 +156,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -202,6 +205,15 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Caption = "Seleccionar";
+            this.btnSeleccionar.Id = 67;
+            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
+            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
+            // 
             // bEstado
             // 
             this.bEstado.BarName = "Barra de estado";
@@ -234,9 +246,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 548);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 546);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(982, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(982, 27);
             // 
             // barDockControlLeft
             // 
@@ -244,7 +256,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 548);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 546);
             // 
             // barDockControlRight
             // 
@@ -252,7 +264,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(982, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 548);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 546);
             // 
             // repositoryItemTextEdit1
             // 
@@ -263,10 +275,10 @@
             this.panelControl2.Controls.Add(this.checkActivo);
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(56, 211);
+            this.panelControl2.Location = new System.Drawing.Point(69, 211);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(926, 337);
+            this.panelControl2.Size = new System.Drawing.Size(913, 335);
             this.panelControl2.TabIndex = 27;
             // 
             // checkActivo
@@ -286,7 +298,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(912, 298);
+            this.gridControl1.Size = new System.Drawing.Size(899, 296);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -425,10 +437,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(926, 211);
+            this.panelControl1.Size = new System.Drawing.Size(913, 211);
             this.panelControl1.TabIndex = 26;
             // 
             // groupControl1
@@ -452,7 +464,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(902, 187);
+            this.groupControl1.Size = new System.Drawing.Size(889, 187);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos del Producto";
             // 
@@ -846,5 +858,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
     }
 }

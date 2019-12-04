@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Control
+﻿namespace CuttingBusiness
 {
     partial class Frm_Entradas
     {
@@ -45,6 +45,10 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnTipoEntrada = new DevExpress.XtraEditors.SimpleButton();
+            this.cboTipoEntrada = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.btnSeries = new DevExpress.XtraEditors.SimpleButton();
             this.cboSerie = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnBuscarFolio = new DevExpress.XtraEditors.SimpleButton();
@@ -61,7 +65,7 @@
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
             this.txtObservaciones = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCodigo = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
@@ -83,16 +87,16 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnSeries = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTipoEntrada = new DevExpress.XtraEditors.SimpleButton();
-            this.cboTipoEntrada = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFolio.Properties)).BeginInit();
@@ -113,7 +117,6 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -168,6 +171,7 @@
             this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
             // 
             // btnGuardar
             // 
@@ -201,7 +205,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Huerta:";
+            this.lblProveedor.Caption = "Entradas";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -217,9 +221,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 427);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 425);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1038, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1038, 27);
             // 
             // barDockControlLeft
             // 
@@ -227,7 +231,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 427);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 425);
             // 
             // barDockControlRight
             // 
@@ -235,7 +239,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1038, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 427);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 425);
             // 
             // btnEliminar
             // 
@@ -253,10 +257,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(982, 105);
+            this.panelControl1.Size = new System.Drawing.Size(984, 105);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl2
@@ -278,20 +282,63 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(7, 7);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(968, 91);
+            this.groupControl2.Size = new System.Drawing.Size(970, 91);
             this.groupControl2.TabIndex = 22;
             this.groupControl2.Text = "Datos de la Entrada";
+            // 
+            // btnTipoEntrada
+            // 
+            this.btnTipoEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoEntrada.ImageOptions.Image")));
+            this.btnTipoEntrada.Location = new System.Drawing.Point(345, 56);
+            this.btnTipoEntrada.Name = "btnTipoEntrada";
+            this.btnTipoEntrada.Size = new System.Drawing.Size(24, 23);
+            this.btnTipoEntrada.TabIndex = 26;
+            this.btnTipoEntrada.Click += new System.EventHandler(this.btnTipoEntrada_Click);
+            // 
+            // cboTipoEntrada
+            // 
+            this.cboTipoEntrada.Location = new System.Drawing.Point(98, 57);
+            this.cboTipoEntrada.MenuManager = this.barManager1;
+            this.cboTipoEntrada.Name = "cboTipoEntrada";
+            this.cboTipoEntrada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTipoEntrada.Properties.NullText = "- Seleccionar -";
+            this.cboTipoEntrada.Size = new System.Drawing.Size(241, 20);
+            this.cboTipoEntrada.TabIndex = 2;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.AppearancePressed.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(19, 61);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(74, 13);
+            this.labelControl12.TabIndex = 24;
+            this.labelControl12.Text = "Tipo Entrada:";
+            // 
+            // btnSeries
+            // 
+            this.btnSeries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeries.ImageOptions.Image")));
+            this.btnSeries.Location = new System.Drawing.Point(538, 30);
+            this.btnSeries.Name = "btnSeries";
+            this.btnSeries.Size = new System.Drawing.Size(24, 23);
+            this.btnSeries.TabIndex = 23;
+            this.btnSeries.Click += new System.EventHandler(this.btnSeries_Click);
             // 
             // cboSerie
             // 
             this.cboSerie.Location = new System.Drawing.Point(432, 31);
             this.cboSerie.MenuManager = this.barManager1;
             this.cboSerie.Name = "cboSerie";
+            this.cboSerie.Properties.Appearance.Options.UseTextOptions = true;
+            this.cboSerie.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.cboSerie.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboSerie.Properties.NullText = "- Seleccionar -";
             this.cboSerie.Size = new System.Drawing.Size(100, 20);
-            this.cboSerie.TabIndex = 22;
+            this.cboSerie.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -332,6 +379,7 @@
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(24, 23);
             this.btnProveedor.TabIndex = 20;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // labelControl2
             // 
@@ -351,7 +399,7 @@
             this.txtNombreProveedor.MenuManager = this.barManager1;
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(241, 20);
-            this.txtNombreProveedor.TabIndex = 10;
+            this.txtNombreProveedor.TabIndex = 1;
             // 
             // labelControl4
             // 
@@ -367,11 +415,12 @@
             // 
             // txtFolio
             // 
+            this.txtFolio.Enabled = false;
             this.txtFolio.Location = new System.Drawing.Point(432, 57);
             this.txtFolio.MenuManager = this.barManager1;
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(100, 20);
-            this.txtFolio.TabIndex = 3;
+            this.txtFolio.TabIndex = 4;
             // 
             // dtFecha
             // 
@@ -384,16 +433,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFecha.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dtFecha.Size = new System.Drawing.Size(123, 20);
-            this.dtFecha.TabIndex = 7;
+            this.dtFecha.TabIndex = 6;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.groupControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(56, 105);
+            this.panelControl2.Location = new System.Drawing.Point(54, 105);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(982, 128);
+            this.panelControl2.Size = new System.Drawing.Size(984, 128);
             this.panelControl2.TabIndex = 9;
             // 
             // groupControl1
@@ -402,7 +451,7 @@
             this.groupControl1.Controls.Add(this.btnAgregar);
             this.groupControl1.Controls.Add(this.txtCodigo);
             this.groupControl1.Controls.Add(this.txtObservaciones);
-            this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.btnCodigo);
             this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.txtTotal);
@@ -417,7 +466,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(968, 114);
+            this.groupControl1.Size = new System.Drawing.Size(970, 114);
             this.groupControl1.TabIndex = 36;
             this.groupControl1.Text = "Captura de Articulos";
             // 
@@ -439,8 +488,9 @@
             this.btnAgregar.Location = new System.Drawing.Point(576, 59);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 39);
-            this.btnAgregar.TabIndex = 35;
+            this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCodigo
             // 
@@ -448,7 +498,7 @@
             this.txtCodigo.MenuManager = this.barManager1;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(112, 20);
-            this.txtCodigo.TabIndex = 10;
+            this.txtCodigo.TabIndex = 1;
             // 
             // txtObservaciones
             // 
@@ -456,15 +506,16 @@
             this.txtObservaciones.MenuManager = this.barManager1;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(222, 20);
-            this.txtObservaciones.TabIndex = 34;
+            this.txtObservaciones.TabIndex = 7;
             // 
-            // simpleButton2
+            // btnCodigo
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(246, 28);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton2.TabIndex = 22;
+            this.btnCodigo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnCodigo.Location = new System.Drawing.Point(246, 28);
+            this.btnCodigo.Name = "btnCodigo";
+            this.btnCodigo.Size = new System.Drawing.Size(24, 23);
+            this.btnCodigo.TabIndex = 22;
+            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
             // labelControl11
             // 
@@ -492,19 +543,23 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(432, 81);
             this.txtTotal.MenuManager = this.barManager1;
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Properties.Mask.EditMask = "c2";
+            this.txtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTotal.Size = new System.Drawing.Size(112, 20);
-            this.txtTotal.TabIndex = 32;
+            this.txtTotal.TabIndex = 6;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(128, 55);
             this.txtDescripcion.MenuManager = this.barManager1;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 20);
-            this.txtDescripcion.TabIndex = 24;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // labelControl10
             // 
@@ -536,15 +591,17 @@
             this.txtPrecio.MenuManager = this.barManager1;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(112, 20);
-            this.txtPrecio.TabIndex = 30;
+            this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
             // 
             // txtUnidaddeMedida
             // 
+            this.txtUnidaddeMedida.Enabled = false;
             this.txtUnidaddeMedida.Location = new System.Drawing.Point(128, 81);
             this.txtUnidaddeMedida.MenuManager = this.barManager1;
             this.txtUnidaddeMedida.Name = "txtUnidaddeMedida";
             this.txtUnidaddeMedida.Size = new System.Drawing.Size(142, 20);
-            this.txtUnidaddeMedida.TabIndex = 26;
+            this.txtUnidaddeMedida.TabIndex = 3;
             // 
             // labelControl9
             // 
@@ -576,16 +633,17 @@
             this.txtCantidad.MenuManager = this.barManager1;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(112, 20);
-            this.txtCantidad.TabIndex = 28;
+            this.txtCantidad.TabIndex = 4;
+            this.txtCantidad.Leave += new System.EventHandler(this.txtCantidad_Leave);
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.dtgEntradas);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(56, 233);
+            this.panelControl3.Location = new System.Drawing.Point(54, 233);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(982, 194);
+            this.panelControl3.Size = new System.Drawing.Size(984, 192);
             this.panelControl3.TabIndex = 10;
             // 
             // dtgEntradas
@@ -595,7 +653,7 @@
             this.dtgEntradas.MainView = this.dtgValEntradas;
             this.dtgEntradas.MenuManager = this.barManager1;
             this.dtgEntradas.Name = "dtgEntradas";
-            this.dtgEntradas.Size = new System.Drawing.Size(968, 180);
+            this.dtgEntradas.Size = new System.Drawing.Size(970, 178);
             this.dtgEntradas.TabIndex = 0;
             this.dtgEntradas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEntradas});
@@ -609,7 +667,10 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
             this.dtgValEntradas.GridControl = this.dtgEntradas;
             this.dtgValEntradas.Name = "dtgValEntradas";
             this.dtgValEntradas.OptionsView.ShowGroupPanel = false;
@@ -617,98 +678,84 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Codigo";
+            this.gridColumn1.FieldName = "Id_Producto";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 96;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 91;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Descripción";
+            this.gridColumn2.FieldName = "Nombre_Producto";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 270;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 259;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Unidad de Medida";
+            this.gridColumn3.FieldName = "Nombre_UnidadMedida";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 100;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 95;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Cantidad";
+            this.gridColumn4.FieldName = "Cantidad_EntradaDetalles";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 90;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 86;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Precio";
+            this.gridColumn5.FieldName = "Precio_EntradaDetalles";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 90;
+            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 86;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Total";
+            this.gridColumn6.FieldName = "Total_EntradaDetalles";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 90;
+            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 86;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Observaciones";
+            this.gridColumn7.FieldName = "Observaciones_EntradaDetalles";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 216;
+            this.gridColumn7.VisibleIndex = 7;
+            this.gridColumn7.Width = 212;
             // 
-            // btnSeries
+            // gridColumn8
             // 
-            this.btnSeries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
-            this.btnSeries.Location = new System.Drawing.Point(538, 30);
-            this.btnSeries.Name = "btnSeries";
-            this.btnSeries.Size = new System.Drawing.Size(24, 23);
-            this.btnSeries.TabIndex = 23;
+            this.gridColumn8.Caption = "#";
+            this.gridColumn8.FieldName = "Registro_EntradaDetalles";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 37;
             // 
-            // btnTipoEntrada
+            // gridColumn9
             // 
-            this.btnTipoEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnTipoEntrada.Location = new System.Drawing.Point(345, 56);
-            this.btnTipoEntrada.Name = "btnTipoEntrada";
-            this.btnTipoEntrada.Size = new System.Drawing.Size(24, 23);
-            this.btnTipoEntrada.TabIndex = 26;
-            this.btnTipoEntrada.Click += new System.EventHandler(this.btnTipoEntrada_Click);
+            this.gridColumn9.FieldName = "Serie_Entrada";
+            this.gridColumn9.Name = "gridColumn9";
             // 
-            // cboTipoEntrada
+            // gridColumn10
             // 
-            this.cboTipoEntrada.Location = new System.Drawing.Point(98, 57);
-            this.cboTipoEntrada.MenuManager = this.barManager1;
-            this.cboTipoEntrada.Name = "cboTipoEntrada";
-            this.cboTipoEntrada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboTipoEntrada.Properties.NullText = "- Seleccionar -";
-            this.cboTipoEntrada.Size = new System.Drawing.Size(241, 20);
-            this.cboTipoEntrada.TabIndex = 25;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.AppearancePressed.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(19, 61);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(74, 13);
-            this.labelControl12.TabIndex = 24;
-            this.labelControl12.Text = "Tipo Entrada:";
+            this.gridColumn10.FieldName = "Folio_Entrada";
+            this.gridColumn10.Name = "gridColumn10";
             // 
             // Frm_Entradas
             // 
@@ -724,6 +771,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Entradas";
             this.Text = "Entradas";
+            this.Shown += new System.EventHandler(this.Frm_Entradas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -731,6 +779,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFolio.Properties)).EndInit();
@@ -752,7 +801,6 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,7 +847,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
         private DevExpress.XtraEditors.TextEdit txtCodigo;
         private DevExpress.XtraEditors.TextEdit txtObservaciones;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCodigo;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtTotal;
@@ -817,5 +865,8 @@
         private DevExpress.XtraEditors.LookUpEdit cboTipoEntrada;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.SimpleButton btnSeries;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

@@ -12,9 +12,12 @@ using CapaDeDatos;
 
 namespace CuttingBusiness
 {
+    
     public partial class Frm_Proveedores : DevExpress.XtraEditors.XtraForm
     {
-
+        public Boolean PaSel { get; set; }
+        public string IdProveedor { get; set; }
+        public string Proveedor { get; set; }
         private static Frm_Proveedores m_FormDefInstance;
         public static Frm_Proveedores DefInstance
         {
@@ -302,6 +305,14 @@ namespace CuttingBusiness
 
         private void Frm_Proveedores_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarProveedores();
             CargarDomicilio();
             iniciarTags();
@@ -368,6 +379,13 @@ namespace CuttingBusiness
             {
                 xtraTabPage2.PageEnabled = true;
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdProveedor = textId.Text.Trim();
+            Proveedor = textProveedor.Text.Trim();
+            this.Close();
         }
     }
 }

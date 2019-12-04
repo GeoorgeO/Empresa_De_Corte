@@ -91,6 +91,9 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnTiposEntradas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTiposSalidas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -135,9 +138,12 @@
             this.btnPermisos,
             this.btnHuertas,
             this.barButtonItem1,
-            this.btnSalir});
+            this.btnSalir,
+            this.btnTiposEntradas,
+            this.btnTiposSalidas,
+            this.btnSeries});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 35;
+            this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -450,8 +456,8 @@
             // 
             this.btnSalir.Caption = "Salir";
             this.btnSalir.Id = 34;
-            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
+            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
@@ -503,6 +509,9 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnEntradas);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnSalidas);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnTiposEntradas);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnTiposSalidas);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnSeries);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Mov. Inventario";
             // 
@@ -635,6 +644,33 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // btnTiposEntradas
+            // 
+            this.btnTiposEntradas.Caption = "Tipos de Entrada";
+            this.btnTiposEntradas.Id = 35;
+            this.btnTiposEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnTiposEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnTiposEntradas.Name = "btnTiposEntradas";
+            this.btnTiposEntradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposEntradas_ItemClick);
+            // 
+            // btnTiposSalidas
+            // 
+            this.btnTiposSalidas.Caption = "Tipos de Salida";
+            this.btnTiposSalidas.Id = 36;
+            this.btnTiposSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnTiposSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnTiposSalidas.Name = "btnTiposSalidas";
+            this.btnTiposSalidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposSalidas_ItemClick);
+            // 
+            // btnSeries
+            // 
+            this.btnSeries.Caption = "Series";
+            this.btnSeries.Id = 37;
+            this.btnSeries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnSeries.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnSeries.Name = "btnSeries";
+            this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -721,6 +757,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnSalir;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarButtonItem btnTiposEntradas;
+        private DevExpress.XtraBars.BarButtonItem btnTiposSalidas;
+        private DevExpress.XtraBars.BarButtonItem btnSeries;
     }
 }
 
