@@ -6,21 +6,30 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Productos : ConexionBase
+    public class CLS_Entradas : ConexionBase
     {
+        // Encabezado de la entrada
 
+        public string Id_Proveedor { get; set; }
+        public string Id_TipoEntrada { get; set; }
+        public string Fecha_Entrada { get; set; }
+        public int Numero_ArticulosEntrada { get; set; }
+
+        // Detalles de la entrada
+        public string Serie_Entrada { get; set; }
+        public string Folio_Entrada { get; set; }
+        public int Registro_EntradaDetalles { get; set; }
         public string Id_Producto { get; set; }
         public string Nombre_Producto { get; set; }
-        public string Id_UnidadMedida { get; set; }
-        public string Inventariable { get; set; }
-        public int Stock_Min { get; set; }
-        public int Stock_Max { get; set; }
-        public string Anaquel { get; set; }
-        public string Pasillo { get; set; }
-        public string Repisa { get; set; }
-        public int Stock { get; set; }
-        public string Activo { get; set; }
-        public string Id_ProductoTipo { get; set; }
+        public string Nombre_UnidadMedida { get; set; }
+        public int Cantidad_EntradaDetalles { get; set; }
+        public decimal Precio_EntradaDetalles { get; set; }
+        public decimal Total_EntradaDetalles { get; set; }
+        public string Observaciones_EntradaDetalles { get; set; }
+
+
+
+
 
         public void MtdSeleccionarProductos()
         {
@@ -84,9 +93,6 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
         public void MtdInsertarProductos()
         {
             TipoDato _dato = new TipoDato();
@@ -134,7 +140,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdEliminarProductos()
         {
             TipoDato _dato = new TipoDato();

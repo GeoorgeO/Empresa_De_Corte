@@ -67,7 +67,22 @@ namespace CuttingBusiness
             txtNombreProveedor.Text = frm.Proveedor;
         }
 
+        private void FormatoDeColumnas()
+        {
+            gPrecio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gPrecio.DisplayFormat.FormatString = "$ ###,###0.00";
+            gTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gTotal.DisplayFormat.FormatString = "$ ###,###0.00";
+        }
         private void Frm_Entradas_Shown(object sender, EventArgs e)
+        {
+            FormatoDeCampos();
+            FormatoDeColumnas();
+            LimpiarCampos();
+            MakeTablaPedidos();
+        }
+
+        private void FormatoDeCampos()
         {
             txtPrecio.Properties.Mask.MaskType = MaskType.Numeric;
             txtPrecio.Properties.Mask.EditMask = "$ ###,###0.00";
@@ -75,8 +90,8 @@ namespace CuttingBusiness
             txtTotal.Properties.Mask.MaskType = MaskType.Numeric;
             txtTotal.Properties.Mask.EditMask = "$ ###,###0.00";
             txtTotal.Properties.Mask.UseMaskAsDisplayFormat = true;
-            LimpiarCampos();
         }
+
         private void btnTipoEntrada_Click(object sender, EventArgs e)
         {
             Frm_TiposEntradas frm = new Frm_TiposEntradas();
@@ -103,6 +118,14 @@ namespace CuttingBusiness
             txtCodigo.Text = frm.IdProducto;
             txtDescripcion.Text = frm.Producto;
             txtUnidaddeMedida.Text = frm.UnidadMedida;
+            if(txtCodigo.Text!=string.Empty&& txtDescripcion.Text!=string.Empty&& txtUnidaddeMedida.Text!=string.Empty)
+            {
+                txtCantidad.Focus();
+            }
+            else
+            {
+                txtCodigo.Focus();
+            }
         }
 
         void LimpiarCampos()
@@ -244,26 +267,39 @@ namespace CuttingBusiness
 
             table.Columns.Add(column);
 
+            column = new DataColumn();
+            column.DataType = typeof(Boolean);
+            column.ColumnName = "AplicadoInventario";
+            column.AutoIncrement = false;
+            column.Caption = "Aplicado";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
             dtgEntradas.DataSource = table;
         }
-        private void CreatNewRowArticulo(string Numero, string ArticuloCodigo, string ArticuloDescripcion, string ArticuloCosto, string ArticuloCantidad, string ArticuloSub0, string ArticuloSub16,
-                                    string ArticuloTotal, string ArticuloTotalLinea, string ArticuloCostoAdquisicion)
+        private void CreatNewRowArticulo(string vSerie_Entrada, string vFolio_Entrada, string vRegistro_EntradaDetalles, string vId_Producto, string vNombre_Producto, string vNombre_UnidadMedida, string vCantidad_EntradaDetalles, string vPrecio_EntradaDetalles, string vTotal_EntradaDetalles, string vObservaciones_EntradaDetalles)
         {
             dtgValEntradas.AddNewRow();
             int rowHandle = dtgValEntradas.GetRowHandle(dtgValEntradas.DataRowCount);
             if (dtgValEntradas.IsNewItemRow(rowHandle))
             {
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Serie_Entrada"], Numero);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Folio_Entrada"], ArticuloCodigo);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Registro_EntradaDetalles"], ArticuloDescripcion);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Id_Producto"], ArticuloCosto);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Nombre_Producto"], ArticuloCantidad);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Nombre_UnidadMedida"], ArticuloSub0);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Cantidad_EntradaDetalles"], ArticuloSub16);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Precio_EntradaDetalles"], ArticuloTotal);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Total_EntradaDetalles"], ArticuloTotalLinea);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["ArticuloCostoAdquisicion"], ArticuloTotalLinea);
-                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Observaciones_EntradaDetalles"], ArticuloCostoAdquisicion);
+                decimal Precio = 0;
+                decimal Total = 0;
+                decimal.TryParse(txtPrecio.Text, style, culture, out Precio);
+                decimal.TryParse(txtTotal.Text, style, culture, out Total);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Serie_Entrada"], vSerie_Entrada);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Folio_Entrada"], vFolio_Entrada);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Registro_EntradaDetalles"], vRegistro_EntradaDetalles);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Id_Producto"], vId_Producto);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Nombre_Producto"], vNombre_Producto);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Nombre_UnidadMedida"], vNombre_UnidadMedida);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Cantidad_EntradaDetalles"], vCantidad_EntradaDetalles);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Precio_EntradaDetalles"], Precio);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Total_EntradaDetalles"], Total);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Observaciones_EntradaDetalles"], vObservaciones_EntradaDetalles);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["AplicadoInventario"], 0);
             }
         }
         private void NumerarReg()
@@ -275,20 +311,255 @@ namespace CuttingBusiness
             }
         }
 
+        private bool ValidarCampos()
+        {
+            if(txtCodigo.Text!=string.Empty && txtDescripcion.Text!=string.Empty && txtUnidaddeMedida.Text!=string.Empty)
+            {
+                if(Convert.ToInt32(txtCantidad.Text)>0)
+                {
+                    decimal Precio = 0;
+                    if(decimal.TryParse(txtPrecio.Text,style,culture,out Precio))
+                    {
+                        if(Precio>0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("el precio debe ser mayor a 0");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("la cantidad debe ser mayor a 0");
+                    return false;
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan datos del producto");
+                return false;
+            }
+        }
+        private void LimpiarDetalles()
+        {
+            txtCodigo.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+            txtUnidaddeMedida.Text = string.Empty;
+            txtCantidad.Text = "0";
+            txtPrecio.Text = "0";
+            txtTotal.Text = "0";
+            txtObservaciones.Text = string.Empty;
+            txtCodigo.Focus();
+        }
+        private bool ExisteCodigo()
+        {
+            Boolean Valor = false;
+            for (int x = 0; x < dtgValEntradas.RowCount; x++)
+            {
+                int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                string ArticuloCodigo = dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString();
+                if (txtCodigo.Text.TrimEnd() == ArticuloCodigo.TrimEnd())
+                {
+                    string ArticuloCantidad = dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"]).ToString();
+                    int vCantidad = Convert.ToInt32(ArticuloCantidad) + Convert.ToInt32(txtCantidad.Text);
+                    dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"], vCantidad);
+
+                    decimal Precio = 0;
+                    decimal Total = 0;
+                    decimal.TryParse(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Precio_EntradaDetalles"]).ToString(), style, culture, out Precio);
+                    Total = vCantidad * Precio;
+                    dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Total_EntradaDetalles"], Total);
+                    Valor = true;
+                    LimpiarDetalles();
+                    dtgValEntradas.Focus();
+                    dtgValEntradas.UpdateTotalSummary();
+                    dtgValEntradas.UpdateSummary();
+                    dtgValEntradas.UpdateGroupSummary();
+                    txtCodigo.Focus();
+                }
+            }
+            return Valor;
+        }
+       
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string vSerie_Entrada = "0";
-            string vFolio_Entrada = "0";
-            string vRegistro_EntradaDetalles = Convert.ToString(dtgValEntradas.RowCount + 1);
-            string vId_Producto = txtCodigo.Text;
-            string vNombre_Producto = txtDescripcion.Text;
-            string vNombre_UnidadMedida = txtUnidaddeMedida.Text;
-            string vCantidad_EntradaDetalles = txtCantidad.Text;
-            string vPrecio_EntradaDetalles = txtPrecio.Text;
-            string vTotal_EntradaDetalles = txtTotal.Text;
-            string vObservaciones_EntradaDetalles = txtObservaciones.Text;
-            CreatNewRowArticulo(vNumero, vArticuloCodigo, vArticuloDescripcion, vArticuloCosto, vCantidad, vSub0, vSub16, vTotal, vTotalLinea, vCostoAdquisicion);
-            NumerarReg();
+            if (ValidarCampos())
+            {
+                if (!ExisteCodigo())
+                {
+                    string vSerie_Entrada = "0";
+                    string vFolio_Entrada = "0";
+                    string vRegistro_EntradaDetalles = Convert.ToString(dtgValEntradas.RowCount + 1);
+                    string vId_Producto = txtCodigo.Text;
+                    string vNombre_Producto = txtDescripcion.Text;
+                    string vNombre_UnidadMedida = txtUnidaddeMedida.Text;
+                    string vCantidad_EntradaDetalles = txtCantidad.Text;
+                    string vPrecio_EntradaDetalles = txtPrecio.Text;
+                    string vTotal_EntradaDetalles = txtTotal.Text;
+                    string vObservaciones_EntradaDetalles = txtObservaciones.Text;
+                    CreatNewRowArticulo(vSerie_Entrada, vFolio_Entrada, vRegistro_EntradaDetalles, vId_Producto, vNombre_Producto, vNombre_UnidadMedida, vCantidad_EntradaDetalles, vPrecio_EntradaDetalles, vTotal_EntradaDetalles, vObservaciones_EntradaDetalles);
+                    LimpiarDetalles();
+                    dtgValEntradas.Focus();
+                    dtgValEntradas.UpdateTotalSummary();
+                    dtgValEntradas.UpdateSummary();
+                    dtgValEntradas.UpdateGroupSummary();
+                    txtCodigo.Focus();
+                }
+                NumerarReg();
+            }
+        }
+        private void dtgEntradas_DoubleClick(object sender, EventArgs e)
+        {
+            if (dtgValEntradas.RowCount > 0)
+            {
+                try
+                {
+                    DialogResult = XtraMessageBox.Show("¿Desea Eliminar este articulo de la Entrada?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        dtgValEntradas.DeleteRow(dtgValEntradas.FocusedRowHandle);
+                        NumerarReg();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtCodigo.Text == string.Empty && e.KeyValue == 13)
+            {
+                Frm_Productos frm = new Frm_Productos();
+                frm.IdProducto = string.Empty;
+                frm.Producto = string.Empty;
+                frm.UnidadMedida = string.Empty;
+                frm.PaSel = true;
+                frm.ShowDialog();
+                txtCodigo.Text = frm.IdProducto;
+                txtDescripcion.Text = frm.Producto;
+                txtUnidaddeMedida.Text = frm.UnidadMedida;
+                if (txtCodigo.Text != string.Empty && txtDescripcion.Text != string.Empty && txtUnidaddeMedida.Text != string.Empty)
+                {
+                    txtCantidad.Focus();
+                }
+                else
+                {
+                    txtCodigo.Focus();
+                }
+            }
+            else if (txtCodigo.Text != string.Empty && e.KeyValue == 13)
+            {
+                BuscarCodigo();
+            }
+        }
+        private Boolean BuscarCodigo()
+        {
+            Boolean Valor = false;
+            CLS_Productos sel = new CLS_Productos();
+            sel.Id_Producto = txtCodigo.Text;
+            sel.Activo = "1";
+            sel.MtdSeleccionarProductosId();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txtCodigo.Text = sel.Datos.Rows[0]["Id_Producto"].ToString().TrimEnd();
+                    txtDescripcion.Text = sel.Datos.Rows[0]["Nombre_Producto"].ToString().TrimEnd();
+                    txtUnidaddeMedida.Text = sel.Datos.Rows[0]["Nombre_UnidadMedida"].ToString().TrimEnd();
+                    Valor = true;
+                    txtCantidad.Focus();
+                }
+                else
+                {
+                    XtraMessageBox.Show("El producto a buscar no existe o se encuentra inactivo");
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+            return Valor;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.I))
+            {
+                btnAgregar.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(ValidaEncabezado())
+            {
+                if(ValidaDetalles())
+                {
+                    GuardarEntrada();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No existe articulos a ingresar en la entrada");
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan datos en el encabezado de la entrada");
+            }
+        }
+
+        private void GuardarEntrada()
+        {
+            
+        }
+
+        private bool ValidaEncabezado()
+        {
+            Boolean Valor = false;
+            if(txtNombreProveedor.Text!=string.Empty)
+            {
+                if(cboTipoEntrada.EditValue!=null)
+                {
+                    if(cboSerie.EditValue!=null)
+                    {
+                        Valor = true;
+                    }
+                    else
+                    {
+                        Valor = false;
+                    }
+                }
+                else
+                {
+                    Valor = false;
+                }
+            }
+            else
+            {
+                Valor = false;
+            }
+            return Valor;
+        }
+        private bool ValidaDetalles()
+        {
+            Boolean Valor = false;
+            if(dtgValEntradas.RowCount>0)
+            {
+                Valor = true;
+            }
+            return Valor;
         }
     }
 }
