@@ -140,6 +140,7 @@ namespace CuttingBusiness
             CargarTiposdeEntrada(null);
             CargarSeries(null);
             dtFecha.DateTime = DateTime.Now;
+            progressBarControl1.Position = 0;
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -258,10 +259,20 @@ namespace CuttingBusiness
             table.Columns.Add(column);
 
             column = new DataColumn();
-            column.DataType = typeof(decimal);
+            column.DataType = typeof(string);
             column.ColumnName = "Observaciones_EntradaDetalles";
             column.AutoIncrement = false;
             column.Caption = "Observaciones";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(Boolean);
+            column.ColumnName = "AplicadoInventario";
+            column.AutoIncrement = false;
+            column.Caption = "Guardado";
             column.ReadOnly = false;
             column.Unique = false;
 
@@ -405,12 +416,13 @@ namespace CuttingBusiness
                     string vTotal_EntradaDetalles = txtTotal.Text;
                     string vObservaciones_EntradaDetalles = txtObservaciones.Text;
                     CreatNewRowArticulo(vSerie_Entrada, vFolio_Entrada, vRegistro_EntradaDetalles, vId_Producto, vNombre_Producto, vNombre_UnidadMedida, vCantidad_EntradaDetalles, vPrecio_EntradaDetalles, vTotal_EntradaDetalles, vObservaciones_EntradaDetalles);
-                    LimpiarDetalles();
+                   
                     dtgValEntradas.Focus();
                     dtgValEntradas.UpdateTotalSummary();
                     dtgValEntradas.UpdateSummary();
                     dtgValEntradas.UpdateGroupSummary();
                     txtCodigo.Focus();
+                    LimpiarDetalles();
                 }
                 NumerarReg();
             }
@@ -507,7 +519,15 @@ namespace CuttingBusiness
             {
                 if(ValidaDetalles())
                 {
-                    GuardarEntrada();
+                    if (txtFolio.Text.Trim().Length > 0)
+                    {
+                        Guardadosecundario();
+                        Afectacionsecundario();
+                    }else
+                    {
+                        GuardarEntrada();
+                    }
+                   
                 }
                 else
                 {
@@ -520,9 +540,223 @@ namespace CuttingBusiness
             }
         }
 
-        private void GuardarEntrada()
+        private string DosCero(string sVal)
         {
+            string str = "";
+            if (sVal.Length == 1)
+            {
+                return (str = "0" + sVal);
+            }
+            return sVal;
+        }
+
+        private void Guardadosecundario()
+        {
+            progressBarControl1.Properties.Maximum = dtgValEntradas.RowCount;
+
+            lblStatus.Text = "Guardando Entradas faltantes";
+            for (int x = 0; x < dtgValEntradas.RowCount; x++)
+            {
+                Application.DoEvents();
+                int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Guardados"]).ToString().Equals("False"))
+                {
+                    if (GuardarEntradaDetalle(
+                   cboSerie.EditValue.ToString().Trim(),
+                   txtFolio.Text,
+                   Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Registro_EntradaDetalles"])),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString(),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Nombre_Producto"]).ToString(),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Nombre_UnidadMedida"]).ToString(),
+                   Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"])),
+                   Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Precio_EntradaDetalles"])),
+                    Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Total_EntradaDetalles"])),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString()
+                   ))
+                    {
+                        
+                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Guardados"], true);
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Problema al intentar guardar el producto: " + dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString();
+                       
+                    }
+                }
+                progressBarControl1.Position = x + 1;
+
+            }
+        }
+
+        private void Afectacionsecundario()
+        {
+            progressBarControl1.Position = 0;
+            progressBarControl1.Properties.Maximum = dtgValEntradas.RowCount;
+            lblStatus.Text = "Afectando Inventario";
+            for (int x = 0; x < dtgValEntradas.RowCount; x++)
+            {
+                Application.DoEvents();
+                int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["AplicadoInventario"]).ToString().Equals("False"))
+                {
+                    if (AfectarEntradaDetalle(
+                    cboSerie.EditValue.ToString().Trim(),
+                    txtFolio.Text,
+                    dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString(),
+                    Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"]))
+                    ))
+                    {
+                        
+                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["AplicadoInventario"], true);
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Problema al afectar inventario en el producto: " + dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString() + " . Intente realizar el proceso de forma manual";
+                      
+                    }
+                }
+                progressBarControl1.Position = x + 1;
+            }
             
+        }
+
+
+        private Boolean GuardarEntrada()
+        {
+            CLS_Entradas Clase = new CLS_Entradas();
+            Clase.Folio_Entrada = txtFolio.Text.Trim();
+            Clase.Serie_Entrada = cboSerie.EditValue.ToString().Trim();
+            Clase.Id_Proveedor = txtNombreProveedor.Tag.ToString().Trim();
+            Clase.Id_TipoEntrada = cboTipoEntrada.EditValue.ToString().Trim();
+            DateTime Fecha = Convert.ToDateTime(dtFecha.Text.Trim());
+            Clase.Fecha_Entrada = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
+            Clase.Numero_ArticulosEntrada = SumarCantidadArticulos();
+            Clase.MtdInsertarEntradaEncabezado();
+            if (Clase.Exito)
+            {
+                progressBarControl1.Properties.Maximum = dtgValEntradas.RowCount;
+                txtFolio.Text = Clase.Datos.Rows[0][0].ToString();
+                lblStatus.Text = "Guardando Entrada";
+                for (int x = 0; x < dtgValEntradas.RowCount; x++)
+                {
+                    Application.DoEvents();
+                    int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                    if (GuardarEntradaDetalle(
+                        cboSerie.EditValue.ToString().Trim(),
+                        txtFolio.Text,
+                        Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Registro_EntradaDetalles"])),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString(),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Nombre_Producto"]).ToString(),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Nombre_UnidadMedida"]).ToString(),
+                        Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"])),
+                        Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Precio_EntradaDetalles"])),
+                         Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Total_EntradaDetalles"])),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString()
+                        ))
+                    {
+                        progressBarControl1.Position = x + 1;
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Problema al intentar guardar el producto: "+ dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString();
+                        return false;
+
+                    }
+                    
+                }
+
+                progressBarControl1.Position = 0;
+                progressBarControl1.Properties.Maximum = dtgValEntradas.RowCount;
+                lblStatus.Text = "Afectando Inventario";
+                for (int x = 0; x < dtgValEntradas.RowCount; x++)
+                {
+                    Application.DoEvents();
+                    int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                    if (AfectarEntradaDetalle(
+                        cboSerie.EditValue.ToString().Trim(),
+                        txtFolio.Text,
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString(),
+                        Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"]))
+                        ))
+                    {
+                        progressBarControl1.Position = x + 1;
+                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["AplicadoInventario"], true);
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Problema al afectar inventario en el producto: " + dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Id_Producto"]).ToString()+" . Intente realizar el proceso de forma manual";
+                        return false;
+                    }
+                    
+                }
+
+
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
+                return true;
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+                return false;
+            }
+        }
+
+        private Boolean AfectarEntradaDetalle(string Serie_Entrada, string Folio_Entrada, string Id_Producto, int Cantidad_EntradaDetalles)
+        {
+            CLS_Entradas Clase = new CLS_Entradas();
+            Clase.Serie_Entrada = Serie_Entrada;
+            Clase.Folio_Entrada = Folio_Entrada;
+            Clase.Id_Producto = Id_Producto;
+            Clase.Cantidad_EntradaDetalles = Cantidad_EntradaDetalles;
+            Clase.MtdAfectarInventario();
+            if (Clase.Exito)
+            {
+                return true;
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+                return false;
+            }
+        }
+
+        private int SumarCantidadArticulos()
+        {
+            int Total;
+            Total = 0;
+            for(int x=0; x<dtgValEntradas.RowCount; x++)
+            {
+                int xRow = dtgValEntradas.GetVisibleRowHandle(x);
+                Total = Total + Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"]).ToString());
+            }
+
+            return Total;
+        }
+
+        private Boolean GuardarEntradaDetalle(string Serie_Entrada,string Folio_Entrada,int Registro_EntradaDetalles, string Id_Producto,string Nombre_Producto,string Nombre_UnidadMedida, int Cantidad_EntradaDetalles,decimal Precio_EntradaDetalles, decimal Total_EntradaDetalles,string Observaciones_EntradaDetalles)
+        {
+            CLS_Entradas Clase = new CLS_Entradas();
+            Clase.Serie_Entrada = Serie_Entrada;
+            Clase.Folio_Entrada = Folio_Entrada;
+            Clase.Registro_EntradaDetalles = Registro_EntradaDetalles;
+            Clase.Id_Producto = Id_Producto;
+            Clase.Nombre_Producto = Nombre_Producto;
+            Clase.Nombre_UnidadMedida = Nombre_UnidadMedida;
+            Clase.Cantidad_EntradaDetalles = Cantidad_EntradaDetalles;
+            Clase.Precio_EntradaDetalles = Precio_EntradaDetalles;
+            Clase.Total_EntradaDetalles = Total_EntradaDetalles;
+            Clase.Observaciones_EntradaDetalles = Observaciones_EntradaDetalles;
+            Clase.MtdInsertarEntradaDetalles();
+            if (Clase.Exito)
+            {
+                return true;
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+                return false;
+            }
         }
 
         private bool ValidaEncabezado()
@@ -560,6 +794,11 @@ namespace CuttingBusiness
                 Valor = true;
             }
             return Valor;
+        }
+
+        private void btnBuscarFolio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

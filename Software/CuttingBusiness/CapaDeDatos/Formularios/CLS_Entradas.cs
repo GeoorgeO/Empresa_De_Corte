@@ -31,7 +31,7 @@ namespace CapaDeDatos
 
 
 
-        public void MtdSeleccionarProductos()
+        public void MtdSeleccionarEntradaEncabezado()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -39,9 +39,8 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Productos_Select";
-                _dato.CadenaTexto = Activo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _conexion.NombreProcedimiento = "SP_EntradaEncabezado_Select";
+
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -59,9 +58,9 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-
         }
-        public void MtdSeleccionarProductosId()
+
+        public void MtdInsertarEntradaEncabezado()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -69,11 +68,53 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_ProductosId_Select";
+                _conexion.NombreProcedimiento = "SP_EntradaEncabezado_Insert";
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
+                _dato.CadenaTexto = Id_Proveedor;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Proveedor");
+                _dato.CadenaTexto = Id_TipoEntrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoEntrada");
+                _dato.CadenaTexto = Fecha_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Entrada");
+                _dato.Entero = Numero_ArticulosEntrada;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Numero_ArticulosEntrada");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdAfectarInventario()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_EntradaInventario_Update";
+                _dato.CadenaTexto = Folio_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Entrada");
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
                 _dato.CadenaTexto = Id_Producto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Producto");
-                _dato.CadenaTexto = Activo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.Entero = Cantidad_EntradaDetalles;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cantidad_EntradaDetalles");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -91,9 +132,9 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-
         }
-        public void MtdInsertarProductos()
+
+        public void MtdSeleccionarEntradaDetalles()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -101,27 +142,56 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Productos_Insert";
+                _conexion.NombreProcedimiento = "SP_EntradaDetalles_Select";
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdInsertarEntradaDetalles()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_EntradaDetalles_Insert";
+                _dato.CadenaTexto = Folio_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Entrada");
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
+                _dato.Entero = Registro_EntradaDetalles;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Registro_EntradaDetalles");
                 _dato.CadenaTexto = Id_Producto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Producto");
                 _dato.CadenaTexto = Nombre_Producto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Producto");
-                _dato.CadenaTexto = Id_UnidadMedida;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_UnidadMedida");
-                _dato.CadenaTexto = Inventariable;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Inventariable");
-                _dato.Entero = Stock_Min;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Stock_Min");
-                _dato.Entero = Stock_Max;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Stock_Max");
-                _dato.CadenaTexto = Anaquel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Anaquel");
-                _dato.CadenaTexto = Pasillo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Pasillo");
-                _dato.CadenaTexto = Repisa;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Repisa");
-                _dato.CadenaTexto = Id_ProductoTipo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_ProductoTipo");
+                _dato.CadenaTexto = Nombre_UnidadMedida;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_UnidadMedida");
+                _dato.Entero = Cantidad_EntradaDetalles;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cantidad_EntradaDetalles");
+                _dato.DecimalValor = Convert.ToDecimal(Precio_EntradaDetalles);
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_EntradaDetalles");
+                _dato.DecimalValor = Convert.ToDecimal(Total_EntradaDetalles);
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Total_EntradaDetalles");
+                _dato.CadenaTexto = Observaciones_EntradaDetalles;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Observaciones_EntradaDetalles");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -140,7 +210,8 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-        public void MtdEliminarProductos()
+
+        public void MtdEliminarEntradaDetalles()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -148,9 +219,11 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Productos_Delete";
-                _dato.CadenaTexto = Id_Producto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Producto");
+                _conexion.NombreProcedimiento = "SP_EntradaDetalles_Delete";
+                _dato.CadenaTexto = Folio_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Entrada");
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

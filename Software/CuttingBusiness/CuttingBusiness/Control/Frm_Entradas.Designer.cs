@@ -86,14 +86,15 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cantidad_EntradaDetalles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AplicadoInventario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Guardado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -402,6 +403,7 @@
             this.btnBuscarFolio.Name = "btnBuscarFolio";
             this.btnBuscarFolio.Size = new System.Drawing.Size(24, 23);
             this.btnBuscarFolio.TabIndex = 21;
+            this.btnBuscarFolio.Click += new System.EventHandler(this.btnBuscarFolio_Click);
             // 
             // labelControl1
             // 
@@ -714,14 +716,15 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4,
+            this.Cantidad_EntradaDetalles,
             this.gPrecio,
             this.gTotal,
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
-            this.gridColumn5});
+            this.AplicadoInventario,
+            this.Guardado});
             this.dtgValEntradas.GridControl = this.dtgEntradas;
             this.dtgValEntradas.Name = "dtgValEntradas";
             this.dtgValEntradas.OptionsBehavior.Editable = false;
@@ -736,7 +739,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 91;
+            this.gridColumn1.Width = 83;
             // 
             // gridColumn2
             // 
@@ -745,7 +748,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 260;
+            this.gridColumn2.Width = 239;
             // 
             // gridColumn3
             // 
@@ -754,18 +757,17 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 82;
             // 
-            // gridColumn4
+            // Cantidad_EntradaDetalles
             // 
-            this.gridColumn4.Caption = "Cantidad";
-            this.gridColumn4.FieldName = "Cantidad_EntradaDetalles";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.Cantidad_EntradaDetalles.Caption = "Cantidad";
+            this.Cantidad_EntradaDetalles.FieldName = "Cantidad_EntradaDetalles";
+            this.Cantidad_EntradaDetalles.Name = "Cantidad_EntradaDetalles";
+            this.Cantidad_EntradaDetalles.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Cantidad_EntradaDetalles", "={0:#.##}")});
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 86;
+            this.Cantidad_EntradaDetalles.Visible = true;
+            this.Cantidad_EntradaDetalles.VisibleIndex = 4;
+            this.Cantidad_EntradaDetalles.Width = 79;
             // 
             // gPrecio
             // 
@@ -776,7 +778,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Precio_EntradaDetalles", "={0:#.##}")});
             this.gPrecio.Visible = true;
             this.gPrecio.VisibleIndex = 5;
-            this.gPrecio.Width = 86;
+            this.gPrecio.Width = 79;
             // 
             // gTotal
             // 
@@ -787,7 +789,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total_EntradaDetalles", "={0:#.##}")});
             this.gTotal.Visible = true;
             this.gTotal.VisibleIndex = 6;
-            this.gTotal.Width = 83;
+            this.gTotal.Width = 76;
             // 
             // gridColumn7
             // 
@@ -796,7 +798,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 7;
-            this.gridColumn7.Width = 208;
+            this.gridColumn7.Width = 191;
             // 
             // gridColumn8
             // 
@@ -805,7 +807,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 37;
+            this.gridColumn8.Width = 34;
             // 
             // gridColumn9
             // 
@@ -817,14 +819,23 @@
             this.gridColumn10.FieldName = "Folio_Entrada";
             this.gridColumn10.Name = "gridColumn10";
             // 
-            // gridColumn5
+            // AplicadoInventario
             // 
-            this.gridColumn5.Caption = "Aplicado a Inventario";
-            this.gridColumn5.FieldName = "AplicadoInventario";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
-            this.gridColumn5.Width = 101;
+            this.AplicadoInventario.Caption = "Aplicado a Inventario";
+            this.AplicadoInventario.FieldName = "AplicadoInventario";
+            this.AplicadoInventario.Name = "AplicadoInventario";
+            this.AplicadoInventario.Visible = true;
+            this.AplicadoInventario.VisibleIndex = 9;
+            this.AplicadoInventario.Width = 103;
+            // 
+            // Guardado
+            // 
+            this.Guardado.Caption = "Guardados";
+            this.Guardado.FieldName = "Guardado";
+            this.Guardado.Name = "Guardado";
+            this.Guardado.Visible = true;
+            this.Guardado.VisibleIndex = 8;
+            this.Guardado.Width = 63;
             // 
             // Frm_Entradas
             // 
@@ -908,7 +919,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn Cantidad_EntradaDetalles;
         private DevExpress.XtraGrid.Columns.GridColumn gPrecio;
         private DevExpress.XtraGrid.Columns.GridColumn gTotal;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
@@ -938,9 +949,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn AplicadoInventario;
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
         private DevExpress.XtraBars.BarLargeButtonItem btnAfectarInventario;
+        private DevExpress.XtraGrid.Columns.GridColumn Guardado;
     }
 }
