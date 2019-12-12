@@ -270,7 +270,7 @@ namespace CuttingBusiness
 
             column = new DataColumn();
             column.DataType = typeof(Boolean);
-            column.ColumnName = "AplicadoInventario";
+            column.ColumnName = "Guardado";
             column.AutoIncrement = false;
             column.Caption = "Guardado";
             column.ReadOnly = false;
@@ -290,6 +290,21 @@ namespace CuttingBusiness
 
             dtgEntradas.DataSource = table;
         }
+
+
+        private void CargarEntradasDetalles()
+        {
+            dtgEntradas.DataSource = null;
+            CLS_Entradas Clase = new CLS_Entradas();
+            Clase.Folio_Entrada = txtFolio.Text;
+            Clase.Serie_Entrada = cboSerie.EditValue.ToString();
+            Clase.MtdSeleccionarEntradaDetalles();
+            if (Clase.Exito)
+            {
+                dtgEntradas.DataSource = Clase.Datos;
+            }
+        }
+
         private void CreatNewRowArticulo(string vSerie_Entrada, string vFolio_Entrada, string vRegistro_EntradaDetalles, string vId_Producto, string vNombre_Producto, string vNombre_UnidadMedida, string vCantidad_EntradaDetalles, string vPrecio_EntradaDetalles, string vTotal_EntradaDetalles, string vObservaciones_EntradaDetalles)
         {
             dtgValEntradas.AddNewRow();
@@ -597,7 +612,7 @@ namespace CuttingBusiness
             {
                 Application.DoEvents();
                 int xRow = dtgValEntradas.GetVisibleRowHandle(x);
-                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["AplicadoInventario"]).ToString().Equals("False"))
+                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Guardado"]).ToString().Equals("True") && dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["AplicadoInventario"]).ToString().Equals("False"))
                 {
                     if (AfectarEntradaDetalle(
                     cboSerie.EditValue.ToString().Trim(),
@@ -798,7 +813,34 @@ namespace CuttingBusiness
 
         private void btnBuscarFolio_Click(object sender, EventArgs e)
         {
+            Frm_BusqEntradas frm = new Frm_BusqEntradas();
 
+            LimpiarCampos();
+
+            frm.ShowDialog();
+
+            txtFolio.Text = frm.IdEntrada;
+            cboSerie.EditValue = frm.IdSerie;
+            cboTipoEntrada.EditValue = frm.IdTipoEntrada;
+            txtNombreProveedor.Tag = frm.IdProveedor;
+            txtNombreProveedor.Text = frm.NombreProveedor;
+            dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
+
+            
+            CargarEntradasDetalles();
+           
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+       
+
+        private void btnAfectarInventario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Afectacionsecundario();
         }
     }
 }

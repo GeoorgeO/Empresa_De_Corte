@@ -39,7 +39,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_EntradaEncabezado_Select";
+                _conexion.NombreProcedimiento = "SP_Entradas_Select";
 
                 _conexion.EjecutarDataset();
 
@@ -143,7 +143,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_EntradaDetalles_Select";
-
+                _dato.CadenaTexto = Folio_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Entrada");
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
