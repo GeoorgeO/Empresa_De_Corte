@@ -436,12 +436,16 @@ namespace CuttingBusiness
                     dtgValEntradas.UpdateTotalSummary();
                     dtgValEntradas.UpdateSummary();
                     dtgValEntradas.UpdateGroupSummary();
+                    dtgValEntradas.FocusedRowHandle = 0;
+                    dtgValEntradas.SelectRow(0);
                     txtCodigo.Focus();
                     LimpiarDetalles();
+                    
                 }
                 NumerarReg();
             }
         }
+
         private void dtgEntradas_DoubleClick(object sender, EventArgs e)
         {
             if (dtgValEntradas.RowCount > 0)
@@ -825,22 +829,17 @@ namespace CuttingBusiness
             txtNombreProveedor.Tag = frm.IdProveedor;
             txtNombreProveedor.Text = frm.NombreProveedor;
             dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
-
-            
             CargarEntradasDetalles();
-           
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Close();
         }
-
-       
-
         private void btnAfectarInventario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Afectacionsecundario();
         }
+
     }
 }
