@@ -325,6 +325,7 @@ namespace CuttingBusiness
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Precio_EntradaDetalles"], Precio);
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Total_EntradaDetalles"], Total);
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Observaciones_EntradaDetalles"], vObservaciones_EntradaDetalles);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Guardado"], 0);
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["AplicadoInventario"], 0);
             }
         }
