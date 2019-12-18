@@ -95,7 +95,7 @@ namespace CuttingBusiness
         private void btnTipoEntrada_Click(object sender, EventArgs e)
         {
             Frm_TiposEntradas frm = new Frm_TiposEntradas();
-            frm.PaSel = false;
+           
             frm.ShowDialog();
             CargarTiposdeEntrada(null);
         }
@@ -141,6 +141,11 @@ namespace CuttingBusiness
             CargarSeries(null);
             dtFecha.DateTime = DateTime.Now;
             progressBarControl1.Position = 0;
+            txtFolio.Text = "";
+            txtNombreProveedor.Tag = "";
+            txtNombreProveedor.Text = "";
+            dtgEntradas.DataSource = null;
+            bloquearEntrada(true);
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -449,22 +454,26 @@ namespace CuttingBusiness
 
         private void dtgEntradas_DoubleClick(object sender, EventArgs e)
         {
-            if (dtgValEntradas.RowCount > 0)
+            if (txtFolio.Text.Trim().Length == 0)
             {
-                try
+                if (dtgValEntradas.RowCount > 0)
                 {
-                    DialogResult = XtraMessageBox.Show("¿Desea Eliminar este articulo de la Entrada?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                    if (DialogResult == DialogResult.Yes)
+                    try
                     {
-                        dtgValEntradas.DeleteRow(dtgValEntradas.FocusedRowHandle);
-                        NumerarReg();
+                        DialogResult = XtraMessageBox.Show("¿Desea Eliminar este articulo de la Entrada?", "Elimnar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        if (DialogResult == DialogResult.Yes)
+                        {
+                            dtgValEntradas.DeleteRow(dtgValEntradas.FocusedRowHandle);
+                            NumerarReg();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
+            
         }
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
@@ -579,7 +588,7 @@ namespace CuttingBusiness
             {
                 Application.DoEvents();
                 int xRow = dtgValEntradas.GetVisibleRowHandle(x);
-                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Guardados"]).ToString().Equals("False"))
+                if (dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Guardado"]).ToString().Equals("False"))
                 {
                     if (GuardarEntradaDetalle(
                    cboSerie.EditValue.ToString().Trim(),
@@ -595,7 +604,7 @@ namespace CuttingBusiness
                    ))
                     {
                         
-                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Guardados"], true);
+                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Guardado"], true);
                     }
                     else
                     {
@@ -831,6 +840,7 @@ namespace CuttingBusiness
             txtNombreProveedor.Text = frm.NombreProveedor;
             dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
             CargarEntradasDetalles();
+            bloquearEntrada(false);
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -839,7 +849,30 @@ namespace CuttingBusiness
         }
         private void btnAfectarInventario_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Afectacionsecundario();
+            if (txtFolio.Text.Trim().Length > 0)
+            {
+                if (dtgValEntradas.RowCount > 0)
+                {
+                    Afectacionsecundario();
+                }
+            }
+            
+        }
+
+        private void bloquearEntrada( Boolean sino)
+        {
+            groupControl1.Enabled = sino;
+            dtFecha.Enabled=sino;
+            txtFolio.Enabled=sino;
+            txtNombreProveedor.Enabled=sino;
+            cboSerie.Enabled = sino;
+            cboTipoEntrada.Enabled = sino;
+            btnProveedor.Enabled = sino;
+            btnTipoEntrada.Enabled = sino;
+            btnSeries.Enabled = sino;
+            
+            btnGuardar.Enabled = sino;
+            btnAfectarInventario.Enabled = sino;
         }
 
     }

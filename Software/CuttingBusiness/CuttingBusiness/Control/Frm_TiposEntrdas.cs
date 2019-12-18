@@ -87,8 +87,8 @@ namespace CuttingBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Calidad"].ToString();
-                    textNombre.Text = row["Nombre_Calidad"].ToString();
+                    textId.Text = row["Id_TipoEntrada"].ToString();
+                    textNombre.Text = row["Nombre_TipoEntrada"].ToString();
                 }
             }
             catch (Exception ex)
@@ -154,6 +154,18 @@ namespace CuttingBusiness
         private void Frm_TiposEntradas_Shown(object sender, EventArgs e)
         {
             CargarTipoEntrada();
+        }
+
+        private void Frm_TiposEntradas_Load_1(object sender, EventArgs e)
+        {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
     }
 }
