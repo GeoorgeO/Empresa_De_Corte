@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Salidas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -287,7 +286,7 @@
             // 
             // btnBusquedaFolio
             // 
-            this.btnBusquedaFolio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnBusquedaFolio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusquedaFolio.ImageOptions.Image")));
             this.btnBusquedaFolio.Location = new System.Drawing.Point(820, 29);
             this.btnBusquedaFolio.Name = "btnBusquedaFolio";
             this.btnBusquedaFolio.Size = new System.Drawing.Size(24, 23);
@@ -307,7 +306,7 @@
             // 
             // btnJefeCuadrilla
             // 
-            this.btnJefeCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstado.ImageOptions.Image")));
+            this.btnJefeCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnJefeCuadrilla.ImageOptions.Image")));
             this.btnJefeCuadrilla.Location = new System.Drawing.Point(571, 29);
             this.btnJefeCuadrilla.Name = "btnJefeCuadrilla";
             this.btnJefeCuadrilla.Size = new System.Drawing.Size(24, 23);
@@ -423,7 +422,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
             this.btnAgregar.Location = new System.Drawing.Point(576, 59);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 39);
@@ -672,6 +671,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Salidas";
             this.Text = "Salidas";
+            this.Load += new System.EventHandler(this.Frm_Salidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

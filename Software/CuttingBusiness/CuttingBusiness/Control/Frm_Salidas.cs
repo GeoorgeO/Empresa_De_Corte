@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Net;
 
 namespace CuttingBusiness
 {
@@ -16,6 +17,13 @@ namespace CuttingBusiness
         public Frm_Salidas()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Salidas_Load(object sender, EventArgs e)
+        {
+            String hostName = string.Empty;
+            hostName = Dns.GetHostName();
+            
         }
     }
 }
