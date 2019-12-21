@@ -91,6 +91,24 @@
     <Compile Include="Control\Frm_BusqEntradas.Designer.cs">
       <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_BusqJefeCuadrillas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_BusqJefeCuadrillas.Designer.cs">
+      <DependentUpon>Frm_BusqJefeCuadrillas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Frm_BusqSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_BusqSalidas.Designer.cs">
+      <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Frm_Salidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Salidas.Designer.cs">
+      <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_TiposEntrdas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +120,6 @@
     </Compile>
     <Compile Include="Control\Frm_TiposSalidas.Designer.cs">
       <DependentUpon>Frm_TiposSalidas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Frm_Salidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Frm_Salidas.Designer.cs">
-      <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\Frm_Entradas.cs">
       <SubType>Form</SubType>
@@ -297,14 +309,20 @@
     <EmbeddedResource Include="Control\Frm_BusqEntradas.resx">
       <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_BusqJefeCuadrillas.resx">
+      <DependentUpon>Frm_BusqJefeCuadrillas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_BusqSalidas.resx">
+      <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Salidas.resx">
+      <DependentUpon>Frm_Salidas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_TiposEntrdas.resx">
       <DependentUpon>Frm_TiposEntrdas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_TiposSalidas.resx">
       <DependentUpon>Frm_TiposSalidas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Frm_Salidas.resx">
-      <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>

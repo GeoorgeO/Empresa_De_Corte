@@ -38,6 +38,7 @@ BEGIN
 			Folio_Salida,
 			S.Id_JefeCuadrilla,
 			E.Nombre_Empleado,
+			Id_TipoSalida,
 			Fecha_Salida,
 			Numero_Articulossalida
 		from SalidasEncabezado as S

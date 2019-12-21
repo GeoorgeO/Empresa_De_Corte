@@ -18,8 +18,9 @@ create PROCEDURE [dbo].[SP_SalidasEncabezado_Insert]
 	@Serie_Salida varchar(30),
 	@Folio_Salida char(8),
 	@Id_JefeCuadrilla char(8),
+	@Id_TipoSalida char(3), 
 	@Fecha_Salida datetime,
-	@Numero_Articulossalida int,
+	@Numero_Articulossalida int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -36,8 +37,8 @@ BEGIN
 		select @maximo=right(Concat('00000000', isnull(max(Folio_Salida),0)+1),8) from dbo.SalidasEncabezado where Serie_Salida=@Serie_Salida
 
 		INSERT INTO SalidasEncabezado
-								 (Serie_Salida, Folio_Salida, Id_JefeCuadrilla, Fecha_Salida, Numero_Articulossalida)
-		VALUES        (@Serie_Salida,@maximo,@Id_JefeCuadrilla,@Fecha_Salida,@Numero_Articulossalida)
+								 (Serie_Salida, Folio_Salida, Id_JefeCuadrilla,Id_TipoSalida, Fecha_Salida, Numero_Articulossalida)
+		VALUES        (@Serie_Salida,@maximo,@Id_JefeCuadrilla,@Id_TipoSalida,@Fecha_Salida,@Numero_Articulossalida)
 		
 		commit transaction T1;
 		set @correcto=1
