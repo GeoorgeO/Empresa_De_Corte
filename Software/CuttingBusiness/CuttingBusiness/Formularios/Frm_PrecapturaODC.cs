@@ -21,13 +21,13 @@ namespace CuttingBusiness
 
         private void CargarPrecapturaODC()
         {
-            gridControl1.DataSource = null;
+            dtgPreCaptura.DataSource = null;
             CLS_PrecapturaODC Clase = new CLS_PrecapturaODC();
 
             Clase.MtdSeleccionarPrecapturaODC();
             if (Clase.Exito)
             {
-                gridControl1.DataSource = Clase.Datos;
+                dtgPreCaptura.DataSource = Clase.Datos;
             }
         }
 
@@ -111,9 +111,9 @@ namespace CuttingBusiness
         {
             try
             {
-                foreach (int i in this.gridView1.GetSelectedRows())
+                foreach (int i in this.dtgValPreCaptura.GetSelectedRows())
                 {
-                    DataRow row = this.gridView1.GetDataRow(i);
+                    DataRow row = this.dtgValPreCaptura.GetDataRow(i);
                     textId.Text = row["Id_PrecapturaODC"].ToString();
                     textJefeCuadrilla.Text = row["JefeCuadrilla"].ToString();
                     textHuerta.Tag = row["Id_Huerta"].ToString();
