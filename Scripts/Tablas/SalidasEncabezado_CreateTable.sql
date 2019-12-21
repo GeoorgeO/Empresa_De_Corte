@@ -11,6 +11,7 @@ ELSE
 		[Serie_Salida] [varchar](30) NOT NULL,
 		[Folio_Salida] [char](8) NOT NULL,
 		[Id_JefeCuadrilla] [char](8) NULL,
+		[Id_TipoSalida] [char](3) NULL,
 		[Fecha_Salida] [datetime] NULL,
 		[Numero_Articulossalida] [int] NULL,
 	 CONSTRAINT [PK_SalidasEncabezado] PRIMARY KEY CLUSTERED 
