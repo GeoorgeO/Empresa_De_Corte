@@ -28,9 +28,9 @@ namespace CuttingBusiness
         private void CargarTipoSalida()
         {
             gridControl1.DataSource = null;
-            CLS_Calidades Clase = new CLS_Calidades();
+            CLS_TiposSalidas Clase = new CLS_TiposSalidas ();
 
-            Clase.MtdSeleccionarCalidad();
+            Clase.MtdSeleccionarTiposSalidas();
             if (Clase.Exito)
             {
                 gridControl1.DataSource = Clase.Datos;
@@ -87,8 +87,8 @@ namespace CuttingBusiness
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Calidad"].ToString();
-                    textNombre.Text = row["Nombre_Calidad"].ToString();
+                    textId.Text = row["Id_TipoSalida"].ToString();
+                    textNombre.Text = row["Nombre_TipoSalida"].ToString();
                 }
             }
             catch (Exception ex)
@@ -99,14 +99,7 @@ namespace CuttingBusiness
 
         private void Frm_TiposSalidas_Load(object sender, EventArgs e)
         {
-            if (PaSel == true)
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
-            else
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }
+           
             CargarTipoSalida();
         }
 
@@ -144,11 +137,11 @@ namespace CuttingBusiness
             this.Close();
         }
 
-        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        
+
+        private void Frm_TiposSalidas_Load_1(object sender, EventArgs e)
         {
-            IdTipoSalida = textId.Text.Trim();
-            TipoSalida = textNombre.Text.Trim();
-            this.Close();
+            CargarTipoSalida();
         }
     }
 }

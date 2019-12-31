@@ -34,9 +34,10 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select isnull(Stock - Cantidad,0) as Disponible
+		select isnull(isnull(avg(Stock),0) - isnull(sum(Cantidad),0),0) as Disponible
 		from Productos as P
 		left join ReservaProductoSalida as R on R.Id_Producto=P.Id_Producto
 		where P.Id_Producto=@Id_Producto
+		group by P.Id_Producto
 END
 GO

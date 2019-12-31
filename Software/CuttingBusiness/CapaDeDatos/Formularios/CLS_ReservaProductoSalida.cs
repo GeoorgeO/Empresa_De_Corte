@@ -22,7 +22,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_ReservaProductoSalida_Select";
-
+                _dato.CadenaTexto = Id_Producto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Producto");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

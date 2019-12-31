@@ -16,7 +16,6 @@ GO
 create PROCEDURE [dbo].[SP_SalidasEncabezado_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Serie_Salida varchar(30),
-	@Folio_Salida char(8),
 	@Id_JefeCuadrilla char(8),
 	@Id_TipoSalida char(3), 
 	@Fecha_Salida datetime,

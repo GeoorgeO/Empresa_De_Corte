@@ -38,10 +38,12 @@ BEGIN
 			Folio_Salida,
 			S.Id_JefeCuadrilla,
 			E.Nombre_Empleado,
-			Id_TipoSalida,
+			S.Id_TipoSalida,
+			TS.Nombre_TipoSalida,
 			Fecha_Salida,
 			Numero_Articulossalida
 		from SalidasEncabezado as S
 		left join Empleados as E on S.Id_JefeCuadrilla=E.Id_Empleado
+		left join TiposSalidas as TS on TS.Id_TipoSalida=S.Id_TipoSalida
 END
 GO

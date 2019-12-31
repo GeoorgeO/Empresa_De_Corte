@@ -1,4 +1,4 @@
-
+use [AvoHarvest]
 GO
 /****** Object:  StoredProcedure [dbo].[SP_BSC_ClienteInsert]    Script Date: 25/08/2018 12:39:13 p. m. ******/
 SET ANSI_NULLS ON

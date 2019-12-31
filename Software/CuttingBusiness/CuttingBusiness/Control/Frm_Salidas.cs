@@ -225,6 +225,7 @@ namespace CuttingBusiness
             textJefeCuadrilla.Text = "";
             gridSalidas.DataSource = null;
             bloquearSalida(true);
+            deleteReserva();
         }
 
         private void CreatNewRowArticulo(string vSerie_Entrada, string vFolio_Entrada, string vRegistro_EntradaDetalles, string vId_Producto, string vNombre_Producto, string vNombre_UnidadMedida, string vCantidad_EntradaDetalles, string vPrecio_EntradaDetalles, string vTotal_EntradaDetalles, string vObservaciones_EntradaDetalles)
@@ -250,6 +251,7 @@ namespace CuttingBusiness
                 gridViewSalidas.SetRowCellValue(rowHandle, gridViewSalidas.Columns["Guardado"], 0);
                 gridViewSalidas.SetRowCellValue(rowHandle, gridViewSalidas.Columns["AplicadoInventario"], 0);
             }
+            InsertReserva();
         }
 
         private void CargarSalidasDetalles()
@@ -283,8 +285,15 @@ namespace CuttingBusiness
                     decimal Precio = 0;
                     if (decimal.TryParse(txtPrecio.Text, style, culture, out Precio))
                     {
-                        
+                        if (SelectReserva(txtCodigo.Text)>=Convert.ToInt32(txtCantidad.Text))
+                        {
                             return true;
+                        }else
+                        {
+                            XtraMessageBox.Show("No existe la cantidad necesaria en almacen, Solo se encuentran " + SelectReserva(txtCodigo.Text.Trim()).ToString() + " en stock");
+                            return false;
+                        }
+                            
                         
                     }
                     else
@@ -332,6 +341,9 @@ namespace CuttingBusiness
                     decimal Total = 0;
                     decimal.TryParse(gridViewSalidas.GetRowCellValue(xRow, gridViewSalidas.Columns["Precio_SalidaDetalles"]).ToString(), style, culture, out Precio);
                     Total = vCantidad * Precio;
+
+                    InsertReserva();
+
                     gridViewSalidas.SetRowCellValue(xRow, gridViewSalidas.Columns["Total_SalidaDetalles"], Total);
                     Valor = true;
                     LimpiarDetalles();
@@ -468,6 +480,7 @@ namespace CuttingBusiness
             Clase.MtdInsertarSalidasEncabezado();
             if (Clase.Exito)
             {
+                bloquearSalidaError(false);
                 progressBarControl1.Properties.Maximum = gridViewSalidas.RowCount;
                 txtFolio.Text = Clase.Datos.Rows[0][0].ToString();
                 lblStatus.Text = "Guardando Salida";
@@ -489,6 +502,7 @@ namespace CuttingBusiness
                         ))
                     {
                         progressBarControl1.Position = x + 1;
+                        gridViewSalidas.SetRowCellValue(xRow, gridViewSalidas.Columns["Guardado"], true);
                     }
                     else
                     {
@@ -645,6 +659,20 @@ namespace CuttingBusiness
             btnGuardar.Enabled = sino;
             btnAfectarInventario.Enabled = sino;
         }
+        private void bloquearSalidaError(Boolean sino)
+        {
+            groupControl1.Enabled = sino;
+            dateFecha.Enabled = sino;
+            txtFolio.Enabled = sino;
+            textJefeCuadrilla.Enabled = sino;
+            cboSerie.Enabled = sino;
+            cboTipoSalida.Enabled = sino;
+            btnProveedor.Enabled = sino;
+            btnTipoSalida.Enabled = sino;
+            btnSeries.Enabled = sino;
+
+   
+        }
 
         private void Frm_Salidas_Load(object sender, EventArgs e)
         {
@@ -767,6 +795,7 @@ namespace CuttingBusiness
                     {
                         GuardarSalida();
                     }
+                    verificaParaLiberarReserva();
 
                 }
                 else
@@ -804,26 +833,21 @@ namespace CuttingBusiness
 
             frm.ShowDialog();
 
-            txtFolio.Text = frm.IdSalida;
-            cboSerie.EditValue = frm.IdSerie;
-            cboTipoSalida.EditValue = frm.IdTipoSalida;
-            textJefeCuadrilla.Tag = frm.IdJefeCuadrilla;
-            textJefeCuadrilla.Text = frm.JefeCuadrilla;
-            dateFecha.EditValue = Convert.ToDateTime(frm.FechaSalida);
-            CargarSalidasDetalles();
-            bloquearSalida(false);
+            if (frm.IdSalida.Trim().Length > 0)
+            {
+                txtFolio.Text = frm.IdSalida;
+                cboSerie.EditValue = frm.IdSerie;
+                cboTipoSalida.EditValue = frm.IdTipoSalida;
+                textJefeCuadrilla.Tag = frm.IdJefeCuadrilla;
+                textJefeCuadrilla.Text = frm.JefeCuadrilla;
+                dateFecha.EditValue = Convert.ToDateTime(frm.FechaSalida);
+                CargarSalidasDetalles();
+                bloquearSalida(false);
+            }
+            
         }
 
-        private void ValidarCantidadProducto()
-        {
-            if(Convert.ToInt32(txtCantidad.Text)<= SelectReserva(txtCodigo.Text.Trim()))
-            {
-                InsertReserva();
-            }else
-            {
-                XtraMessageBox.Show("No existe la cantidad necesaria en almacen, Solo se encuentran "+ SelectReserva(txtCodigo.Text.Trim()).ToString()+" en stock");
-            }
-        }
+        
         private int SelectReserva(string Producto)
         {
             CLS_ReservaProductoSalida Clase = new CLS_ReservaProductoSalida();
@@ -882,6 +906,32 @@ namespace CuttingBusiness
             }
         }
 
+        private void verificaParaLiberarReserva()
+        {
+            Boolean Completo = true;
+            for (int x = 0; x < gridViewSalidas.RowCount; x++)
+            {
+                int xRow = gridViewSalidas.GetVisibleRowHandle(x);
+                if (gridViewSalidas.GetRowCellValue(xRow, gridViewSalidas.Columns["AplicadoInventario"]).ToString().Equals("True"))
+                {
+
+                }else
+                {
+                    Completo = false;
+                    break;
+                }
+            }
+            if (Completo)
+            {
+                deleteReserva();
+                if (txtFolio.Text.Trim().Length > 0)
+                {
+                    bloquearSalida(false);
+                }
+            }
+            
+        }
+
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             Frm_BusqJefeCuadrillas frm = new Frm_BusqJefeCuadrillas();
@@ -893,7 +943,9 @@ namespace CuttingBusiness
 
         }
 
-        private void txtCodigo_EditValueChanged(object sender, EventArgs e)
+      
+
+        private void Frm_Salidas_FormClosed(object sender, FormClosedEventArgs e)
         {
             deleteReserva();
         }

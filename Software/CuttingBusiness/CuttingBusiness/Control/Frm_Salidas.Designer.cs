@@ -242,10 +242,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 521);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 520);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1157, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1157, 35);
             // 
             // barDockControlLeft
             // 
@@ -254,7 +254,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(80, 521);
+            this.barDockControlLeft.Size = new System.Drawing.Size(78, 520);
             // 
             // barDockControlRight
             // 
@@ -263,7 +263,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1157, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 520);
             // 
             // btnEliminar
             // 
@@ -281,11 +281,11 @@
             // 
             this.panelControl3.Controls.Add(this.gridSalidas);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(80, 333);
+            this.panelControl3.Location = new System.Drawing.Point(78, 333);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl3.Size = new System.Drawing.Size(1077, 188);
+            this.panelControl3.Size = new System.Drawing.Size(1079, 187);
             this.panelControl3.TabIndex = 13;
             // 
             // gridSalidas
@@ -297,7 +297,7 @@
             this.gridSalidas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridSalidas.MenuManager = this.barManager1;
             this.gridSalidas.Name = "gridSalidas";
-            this.gridSalidas.Size = new System.Drawing.Size(1061, 172);
+            this.gridSalidas.Size = new System.Drawing.Size(1063, 171);
             this.gridSalidas.TabIndex = 0;
             this.gridSalidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSalidas});
@@ -430,11 +430,11 @@
             // 
             this.panelControl2.Controls.Add(this.groupControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(80, 175);
+            this.panelControl2.Location = new System.Drawing.Point(78, 175);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl2.Size = new System.Drawing.Size(1077, 158);
+            this.panelControl2.Size = new System.Drawing.Size(1079, 158);
             this.panelControl2.TabIndex = 12;
             // 
             // groupControl1
@@ -459,7 +459,7 @@
             this.groupControl1.Location = new System.Drawing.Point(8, 8);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1061, 142);
+            this.groupControl1.Size = new System.Drawing.Size(1063, 142);
             this.groupControl1.TabIndex = 36;
             this.groupControl1.Text = "Captura de Articulos";
             // 
@@ -469,7 +469,7 @@
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.AppearancePressed.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(22, 42);
+            this.labelControl5.Location = new System.Drawing.Point(22, 43);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(54, 17);
@@ -495,7 +495,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(131, 22);
             this.txtCodigo.TabIndex = 1;
-            this.txtCodigo.EditValueChanged += new System.EventHandler(this.txtCodigo_EditValueChanged);
             // 
             // txtObservaciones
             // 
@@ -522,7 +521,7 @@
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.AppearancePressed.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(672, 42);
+            this.labelControl11.Location = new System.Drawing.Point(672, 43);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(105, 17);
@@ -535,7 +534,7 @@
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.AppearancePressed.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(22, 74);
+            this.labelControl6.Location = new System.Drawing.Point(22, 75);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(83, 17);
@@ -571,7 +570,7 @@
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.AppearancePressed.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(435, 106);
+            this.labelControl10.Location = new System.Drawing.Point(435, 107);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(40, 17);
@@ -585,7 +584,7 @@
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.AppearancePressed.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(22, 106);
+            this.labelControl7.Location = new System.Drawing.Point(22, 107);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(127, 17);
@@ -620,7 +619,7 @@
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.AppearancePressed.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(435, 74);
+            this.labelControl9.Location = new System.Drawing.Point(435, 75);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(47, 17);
@@ -634,7 +633,7 @@
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.AppearancePressed.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(435, 42);
+            this.labelControl8.Location = new System.Drawing.Point(435, 43);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(67, 17);
@@ -656,11 +655,11 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(80, 0);
+            this.panelControl1.Location = new System.Drawing.Point(78, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(1077, 175);
+            this.panelControl1.Size = new System.Drawing.Size(1079, 175);
             this.panelControl1.TabIndex = 11;
             // 
             // groupControl2
@@ -685,23 +684,21 @@
             this.groupControl2.Location = new System.Drawing.Point(8, 8);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1061, 159);
+            this.groupControl2.Size = new System.Drawing.Size(1063, 159);
             this.groupControl2.TabIndex = 22;
-            this.groupControl2.Text = "Datos de la Entrada";
+            this.groupControl2.Text = "Datos de la Salida";
             // 
             // lblStatus
             // 
             this.lblStatus.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Appearance.Options.UseFont = true;
-            this.lblStatus.Appearance.Options.UseTextOptions = true;
-            this.lblStatus.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblStatus.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.AppearancePressed.Options.UseFont = true;
             this.lblStatus.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblStatus.Location = new System.Drawing.Point(114, 133);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(281, 21);
+            this.lblStatus.Size = new System.Drawing.Size(765, 21);
             this.lblStatus.TabIndex = 28;
             this.lblStatus.Text = "Guardando Salida";
             // 
@@ -743,7 +740,7 @@
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.AppearancePressed.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(18, 73);
+            this.labelControl12.Location = new System.Drawing.Point(18, 74);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(79, 17);
@@ -780,7 +777,7 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.AppearancePressed.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(675, 41);
+            this.labelControl3.Location = new System.Drawing.Point(675, 42);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 17);
@@ -803,7 +800,7 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.AppearancePressed.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(458, 41);
+            this.labelControl1.Location = new System.Drawing.Point(458, 42);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(39, 17);
@@ -826,7 +823,7 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.AppearancePressed.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(458, 73);
+            this.labelControl2.Location = new System.Drawing.Point(458, 74);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 17);
@@ -848,7 +845,7 @@
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.AppearancePressed.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(18, 41);
+            this.labelControl4.Location = new System.Drawing.Point(18, 42);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(93, 17);
@@ -894,6 +891,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Salidas";
             this.Text = "Frm_Salidas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Salidas_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Salidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

@@ -145,7 +145,7 @@ namespace CapaDeDatos
                 _dato.CadenaTexto = Id_Producto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Producto");
                 _dato.Entero = Cantidad_SalidaDetalles;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cantidad_SalidaDetalles");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cantidad_SalidasDetalles");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

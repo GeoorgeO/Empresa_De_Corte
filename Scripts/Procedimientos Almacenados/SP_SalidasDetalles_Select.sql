@@ -45,7 +45,8 @@ BEGIN
 			,Precio_SalidaDetalles
 			,Total_SalidaDetalles
 			,Observaciones_SalidaDetalles
-			AplicadoInventario
+			,Guardado=(CONVERT(bit,1))
+			,AplicadoInventario
 		from SalidasDetalles S
 		where Serie_Salida=@Serie_Salida and Folio_Salida=@Folio_Salida
 		

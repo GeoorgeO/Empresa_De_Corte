@@ -15,7 +15,7 @@ GO
 -- =============================================
 create PROCEDURE [dbo].[SP_ReservaProductoSalida_Delete] 
 	-- Add the parameters for the stored procedure here
-	@EquipoReservo char(3)
+	@EquipoReservo varchar(80)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from

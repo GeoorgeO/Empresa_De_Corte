@@ -467,6 +467,7 @@ namespace CuttingBusiness
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Empleado"].ToString();
+                    glePuesto.EditValue = row["Id_Puesto"].ToString();
                     textEmpleado.Text = row["Nombre_Empleado"].ToString();
                     dateNacimiento.EditValue = row["Fecha_Nacimiento"].ToString();
                     textNSS.Text = row["NSS"].ToString();
@@ -479,6 +480,10 @@ namespace CuttingBusiness
                         textNSS.Text = "";
                     }
                     dateBajaSegSocial.EditValue = row["Fecha_Baja_Seg_Social"].ToString();
+                    if (row["Fecha_Baja_Seg_Social"].ToString().Equals(""))
+                    {
+                        dateBajaSegSocial.EditValue = null;
+                    }
                     textCuenta.Text = row["Cuenta"].ToString();
                     textNoTarjeta.Text = row["Tarjeta"].ToString();
                     dateAltaSegVida.EditValue = row["Fecha_Alta_Seg_Vida"].ToString();
@@ -489,8 +494,11 @@ namespace CuttingBusiness
                         dateAltaSegVida.EditValue = null;
                         dateBajaSegVida.EditValue = null;
                     }
-                    
-                    glePuesto.EditValue = row["Id_Puesto"].ToString();
+                    if (row["Fecha_Baja_Seg_Vida"].ToString().Equals(""))
+                    {
+                        dateBajaSegVida.EditValue = null;
+                    }
+                   
                     //textEmpleado.Text = row["Nombre_Puesto"].ToString();
                     gleCuadrilla.EditValue = row["Id_Cuadrilla"].ToString();
                     //textEmpleado.Text = row["Nombre_Categoria"].ToString();
