@@ -18,6 +18,22 @@ namespace CuttingBusiness
     {
         public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
         public CultureInfo culture = CultureInfo.CreateSpecificCulture("es-MX");
+
+        private static Frm_Entradas m_FormDefInstance;
+        public static Frm_Entradas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Entradas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_Entradas()
         {
             InitializeComponent();
@@ -684,6 +700,7 @@ namespace CuttingBusiness
                         ))
                     {
                         progressBarControl1.Position = x + 1;
+                        dtgValEntradas.SetRowCellValue(xRow, dtgValEntradas.Columns["Guardado"], true);
                     }
                     else
                     {
@@ -833,14 +850,18 @@ namespace CuttingBusiness
 
             frm.ShowDialog();
 
-            txtFolio.Text = frm.IdEntrada;
-            cboSerie.EditValue = frm.IdSerie;
-            cboTipoEntrada.EditValue = frm.IdTipoEntrada;
-            txtNombreProveedor.Tag = frm.IdProveedor;
-            txtNombreProveedor.Text = frm.NombreProveedor;
-            dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
-            CargarEntradasDetalles();
-            bloquearEntrada(false);
+            if (frm.IdEntrada.Trim().Length > 0)
+            {
+                txtFolio.Text = frm.IdEntrada;
+                cboSerie.EditValue = frm.IdSerie;
+                cboTipoEntrada.EditValue = frm.IdTipoEntrada;
+                txtNombreProveedor.Tag = frm.IdProveedor;
+                txtNombreProveedor.Text = frm.NombreProveedor;
+                dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
+                CargarEntradasDetalles();
+                bloquearEntrada(false);
+            }
+            
         }
 
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

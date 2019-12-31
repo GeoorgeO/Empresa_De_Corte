@@ -1,4 +1,4 @@
-
+USE [AvoHarvest]
 GO
 IF OBJECT_ID('MotivoSalida') IS NOT NULL
 	begin

@@ -21,6 +21,21 @@ namespace CuttingBusiness
         public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
         public CultureInfo culture = CultureInfo.CreateSpecificCulture("es-MX");
 
+        private static Frm_Salidas m_FormDefInstance;
+        public static Frm_Salidas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Salidas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_Salidas()
         {
             InitializeComponent();

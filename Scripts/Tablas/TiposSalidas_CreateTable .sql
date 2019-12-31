@@ -1,4 +1,4 @@
-
+USE [AvoHarvest]
 GO
 IF OBJECT_ID('TiposSalidas') IS NOT NULL
 	begin

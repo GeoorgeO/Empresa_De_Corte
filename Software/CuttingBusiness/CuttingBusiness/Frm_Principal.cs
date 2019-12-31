@@ -217,6 +217,9 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("008"))
             {
+                Frm_Entradas Ventana = new Frm_Entradas();
+                Frm_Entradas.DefInstance.MdiParent = this;
+                Frm_Entradas.DefInstance.Show();
             }
             else
             {
@@ -228,6 +231,9 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("009"))
             {
+                Frm_Salidas Ventana = new Frm_Salidas();
+                Frm_Salidas.DefInstance.MdiParent = this;
+                Frm_Salidas.DefInstance.Show();
             }
             else
             {
