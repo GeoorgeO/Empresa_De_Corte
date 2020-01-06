@@ -46,6 +46,7 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.cboEstado = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -121,7 +122,6 @@
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.labelActivo = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -249,6 +249,7 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -349,6 +350,18 @@
             this.groupControl1.Size = new System.Drawing.Size(933, 280);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
+            // 
+            // labelActivo
+            // 
+            this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.labelActivo.Appearance.Options.UseFont = true;
+            this.labelActivo.Appearance.Options.UseForeColor = true;
+            this.labelActivo.Location = new System.Drawing.Point(305, 48);
+            this.labelActivo.Name = "labelActivo";
+            this.labelActivo.Size = new System.Drawing.Size(42, 16);
+            this.labelActivo.TabIndex = 36;
+            this.labelActivo.Text = "Activo";
             // 
             // separatorControl1
             // 
@@ -1023,18 +1036,6 @@
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 15;
             this.gridColumn29.Width = 65;
-            // 
-            // labelActivo
-            // 
-            this.labelActivo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActivo.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.labelActivo.Appearance.Options.UseFont = true;
-            this.labelActivo.Appearance.Options.UseForeColor = true;
-            this.labelActivo.Location = new System.Drawing.Point(305, 48);
-            this.labelActivo.Name = "labelActivo";
-            this.labelActivo.Size = new System.Drawing.Size(42, 16);
-            this.labelActivo.TabIndex = 36;
-            this.labelActivo.Text = "Activo";
             // 
             // Frm_Huertas
             // 

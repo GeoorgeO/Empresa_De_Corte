@@ -211,5 +211,47 @@ namespace CuttingBusiness
         {
             this.Close();
         }
+
+        private void btnJefeCuadrilla_Click(object sender, EventArgs e)
+        {
+            Frm_BusqJefeCuadrillas frm = new Frm_BusqJefeCuadrillas();
+
+            frm.ShowDialog();
+
+            textJefeCuadrilla.Tag = frm.IdEmpleado;
+            textJefeCuadrilla.Text = frm.NombreEmpleado;
+        }
+
+        private void btnHuertas_Click(object sender, EventArgs e)
+        {
+            Frm_Huertas frm = new Frm_Huertas();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textHuerta.Tag = frm.IdHuerta;
+            textHuerta.Text = frm.Huerta;
+        }
+
+        private void btnTiposCorte_Click(object sender, EventArgs e)
+        {
+            Frm_TiposCorte frm = new Frm_TiposCorte();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textTipoCorte.Tag = frm.IdTipoCorte;
+            textTipoCorte.Text = frm.TipoCorte;
+        }
+
+        private void checkPSobreBanda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPSobreBanda.Checked)
+            {
+                textPrecio.Text = "0";
+                textPrecio.Enabled = false;
+            }else
+            {
+                textPrecio.Enabled = true;
+            }
+        }
     }
 }

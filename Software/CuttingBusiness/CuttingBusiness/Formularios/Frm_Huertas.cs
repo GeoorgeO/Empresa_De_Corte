@@ -15,6 +15,10 @@ namespace CuttingBusiness
     public partial class Frm_Huertas : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
+
+        public string IdHuerta { get; set; }
+        public string Huerta { get; set; }
+
         public Frm_Huertas()
         {
             InitializeComponent();
@@ -381,6 +385,20 @@ namespace CuttingBusiness
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtCodigo.Text.Trim().Length > 0)
+            {
+                IdHuerta = txtCodigo.Text.Trim();
+                Huerta = txtNombreHuerta.Text.Trim();
+
+                this.Close();
+            }else
+            {
+                XtraMessageBox.Show("Es necesario seleccionar un elemento de la lista.");
             }
         }
     }
