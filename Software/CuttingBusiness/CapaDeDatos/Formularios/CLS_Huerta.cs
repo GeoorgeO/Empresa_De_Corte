@@ -17,13 +17,13 @@ namespace CapaDeDatos
         public string Id_Ciudad { get; set; }
         public string Id_Calidad { get; set; }
         public string Id_Cultivo { get; set; }
-        public int zona_Huerta { get; set; }
+        public decimal zona_Huerta { get; set; }
         public string banda_Huerta { get; set; }
-        public int este_Huerta { get; set; }
-        public int norte_Huerta { get; set; }
-        public int asnm_Huerta { get; set; }
-        public string latitud_Huerta { get; set; }
-        public string longitud_Huerta { get; set; }
+        public decimal este_Huerta { get; set; }
+        public decimal norte_Huerta { get; set; }
+        public decimal asnm_Huerta { get; set; }
+        public decimal latitud_Huerta { get; set; }
+        public decimal longitud_Huerta { get; set; }
         public string Activo { get; set; }
 
 
@@ -82,20 +82,20 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
                 _dato.CadenaTexto = Id_Cultivo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
-                _dato.Entero = zona_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "zona_Huerta");
+                _dato.DecimalValor = zona_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "zona_Huerta");
                 _dato.CadenaTexto = banda_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "banda_Huerta");
-                _dato.Entero = este_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "este_Huerta");
-                _dato.Entero = norte_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "norte_Huerta");
-                _dato.Entero = asnm_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "asnm_Huerta");
-                _dato.CadenaTexto = latitud_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "latitud_Huerta");
-                _dato.CadenaTexto = longitud_Huerta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "longitud_Huerta");
+                _dato.DecimalValor = este_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "este_Huerta");
+                _dato.DecimalValor = norte_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "norte_Huerta");
+                _dato.DecimalValor = asnm_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "asnm_Huerta");
+                _dato.DecimalValor = latitud_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "latitud_Huerta");
+                _dato.DecimalValor = longitud_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "longitud_Huerta");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

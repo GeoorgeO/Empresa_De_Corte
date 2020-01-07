@@ -121,7 +121,6 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -277,15 +276,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1018, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1012, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 537);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 529);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1018, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1012, 27);
             // 
             // barDockControlLeft
             // 
@@ -293,15 +292,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 537);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 529);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1018, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1012, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 537);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 529);
             // 
             // repositoryItemTextEdit1
             // 
@@ -311,10 +310,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(71, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(947, 294);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Size = new System.Drawing.Size(943, 294);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -347,7 +346,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(933, 280);
+            this.groupControl1.Size = new System.Drawing.Size(929, 280);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
             // 
@@ -546,6 +545,8 @@
             this.txtLonguitud.Location = new System.Drawing.Point(63, 75);
             this.txtLonguitud.MenuManager = this.barManager1;
             this.txtLonguitud.Name = "txtLonguitud";
+            this.txtLonguitud.Properties.Mask.EditMask = "f5";
+            this.txtLonguitud.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLonguitud.Size = new System.Drawing.Size(138, 20);
             this.txtLonguitud.TabIndex = 16;
             // 
@@ -562,6 +563,8 @@
             this.txtLatitud.Location = new System.Drawing.Point(63, 49);
             this.txtLatitud.MenuManager = this.barManager1;
             this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.Properties.Mask.EditMask = "f5";
+            this.txtLatitud.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtLatitud.Size = new System.Drawing.Size(138, 20);
             this.txtLatitud.TabIndex = 14;
             // 
@@ -578,6 +581,8 @@
             this.txtASMN.Location = new System.Drawing.Point(63, 23);
             this.txtASMN.MenuManager = this.barManager1;
             this.txtASMN.Name = "txtASMN";
+            this.txtASMN.Properties.Mask.EditMask = "f2";
+            this.txtASMN.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtASMN.Size = new System.Drawing.Size(94, 20);
             this.txtASMN.TabIndex = 12;
             // 
@@ -610,6 +615,8 @@
             this.txtNorte.Location = new System.Drawing.Point(57, 101);
             this.txtNorte.MenuManager = this.barManager1;
             this.txtNorte.Name = "txtNorte";
+            this.txtNorte.Properties.Mask.EditMask = "f2";
+            this.txtNorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtNorte.Size = new System.Drawing.Size(101, 20);
             this.txtNorte.TabIndex = 18;
             // 
@@ -626,6 +633,8 @@
             this.txtEste.Location = new System.Drawing.Point(57, 75);
             this.txtEste.MenuManager = this.barManager1;
             this.txtEste.Name = "txtEste";
+            this.txtEste.Properties.Mask.EditMask = "f2";
+            this.txtEste.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtEste.Size = new System.Drawing.Size(101, 20);
             this.txtEste.TabIndex = 16;
             // 
@@ -658,6 +667,8 @@
             this.txtZona.Location = new System.Drawing.Point(57, 23);
             this.txtZona.MenuManager = this.barManager1;
             this.txtZona.Name = "txtZona";
+            this.txtZona.Properties.Mask.EditMask = "f2";
+            this.txtZona.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtZona.Size = new System.Drawing.Size(59, 20);
             this.txtZona.TabIndex = 12;
             // 
@@ -788,6 +799,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(75, 46);
             this.txtCodigo.MenuManager = this.barManager1;
             this.txtCodigo.Name = "txtCodigo";
@@ -815,20 +827,20 @@
             // 
             this.panelControl2.Controls.Add(this.dtgHuertas);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(71, 294);
+            this.panelControl2.Location = new System.Drawing.Point(69, 294);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(947, 243);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl2.Size = new System.Drawing.Size(943, 235);
             this.panelControl2.TabIndex = 9;
             // 
             // dtgHuertas
             // 
             this.dtgHuertas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgHuertas.Location = new System.Drawing.Point(7, 32);
+            this.dtgHuertas.Location = new System.Drawing.Point(7, 7);
             this.dtgHuertas.MainView = this.dtgValHuertas;
             this.dtgHuertas.MenuManager = this.barManager1;
             this.dtgHuertas.Name = "dtgHuertas";
-            this.dtgHuertas.Size = new System.Drawing.Size(933, 204);
+            this.dtgHuertas.Size = new System.Drawing.Size(929, 221);
             this.dtgHuertas.TabIndex = 0;
             this.dtgHuertas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValHuertas});
@@ -1041,7 +1053,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 562);
+            this.ClientSize = new System.Drawing.Size(1012, 556);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -1146,7 +1158,6 @@
         private DevExpress.XtraEditors.TextEdit txtCodigo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnProductor;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.GridLookUpEdit cboCultivo;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GridLookUpEdit cboCalidad;

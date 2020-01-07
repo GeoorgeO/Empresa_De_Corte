@@ -127,6 +127,12 @@
     <Compile Include="Control\Frm_Entradas.Designer.cs">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Huertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Huertas.designer.cs">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Series.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,12 +180,6 @@
     </Compile>
     <Compile Include="Formularios\Frm_Herramientas.Designer.cs">
       <DependentUpon>Frm_Herramientas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Frm_Huertas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Frm_Huertas.Designer.cs">
-      <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Pais.cs">
       <SubType>Form</SubType>
@@ -327,6 +327,9 @@
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
+      <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Series.resx">
       <DependentUpon>Frm_Series.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,9 +350,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
-      <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
