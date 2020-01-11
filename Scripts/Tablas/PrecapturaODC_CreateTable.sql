@@ -18,8 +18,9 @@ ELSE
 		[Id_TipoCorte] [char](3) NULL,
 		[PSobreBanda][bit] NOT NULL,
 		[Precio][numeric](18,2) NOT NULL,
-		[Empaque][varchar](50) NULL,
-		[JefeArea][varchar](80) NULL,
+		[Id_empaque][char](3) NULL,
+		[Id_Jefe_Area][char](4) NULL,
+		[Id_Area][char](4) NULL,
 	 CONSTRAINT [PK_PrecapturaODC] PRIMARY KEY CLUSTERED 
 	(
 		[Id_PrecapturaODC] ASC

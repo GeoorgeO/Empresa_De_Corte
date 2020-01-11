@@ -25,8 +25,9 @@ create PROCEDURE [dbo].[SP_PrecapturaODC_Insert]
 	@Id_TipoCorte char(3),
 	@PSobreBanda bit,
 	@Precio numeric(18,2) ,
-	@Empaque varchar](50) ,
-	@JefeArea varchar(80) 
+	@Id_Empaque char(3) ,
+	@Id_Jefe_Area char(4),
+	@Id_Area char(4),
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from

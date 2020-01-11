@@ -46,12 +46,20 @@ BEGIN
 			tc.Nombre_TipoCorte
 			PSobreBanda,
 			Precio,
-			Empaque,
-			JefeArea 
+			ODC.Id_Empaque,
+			Nombre_Empaque,
+			ODC.Id_Jefe_Area,
+			Nombre_Jefe_Area,
+			ODC.Id_Area,
+			Nombre_Area,
+			ODC.Id_Duenio,
+			Nombre_Duenio
 		from PrecapturaODC as ODC
 		left join Huertas as hue on hue.Id_Huerta=ODC.Id_Huerta
 		left join TiposCorte as tc on tc.Id_TipoCorte=ODC.Id_TipoCorte
-		
-
+		left join Empaques as E on E.Id_Empaque=ODC.Id_Empaque
+		left join Areas as A on A.Id_Area=ODC.Id_Area
+		left join Jefes_Area as JA on JA.Id_Jefe_Area=ODC.Id_Jefe_Area
+		left join Duenio as D on D.Id_Duenio=ODC.Id_Duenio
 END
 GO
