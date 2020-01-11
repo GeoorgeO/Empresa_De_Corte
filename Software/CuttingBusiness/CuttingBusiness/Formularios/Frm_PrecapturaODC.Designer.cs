@@ -50,25 +50,26 @@
             this.Id_PrecapturaODC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.JefeCuadrilla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Transportista = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Placas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_TipoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_TipoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empaque = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empaque = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Jefe_Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ODC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Candado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PSobreBanda = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqJefesArea = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqAreas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBusqEmpaques = new DevExpress.XtraEditors.SimpleButton();
             this.btnTiposCorte = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuertas = new DevExpress.XtraEditors.SimpleButton();
             this.btnJefeCuadrilla = new DevExpress.XtraEditors.SimpleButton();
@@ -99,6 +100,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.Id_Jefe_Area = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -302,20 +305,22 @@
             this.Id_PrecapturaODC,
             this.JefeCuadrilla,
             this.Id_Huerta,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
+            this.Nombre_Huerta,
+            this.Transportista,
+            this.Placas,
+            this.Id_TipoCorte,
+            this.Nombre_TipoCorte,
+            this.Id_Empaque,
+            this.Nombre_Empaque,
+            this.Id_Jefe_Area,
+            this.Nombre_Jefe_Area,
+            this.Id_Duenio,
+            this.Nombre_Duenio,
+            this.Id_Area,
+            this.Nombre_Area,
+            this.ODC,
+            this.Candado,
+            this.PSobreBanda,
             this.gridColumn15});
             this.dtgValPreCaptura.GridControl = this.dtgPreCaptura;
             this.dtgValPreCaptura.Name = "dtgValPreCaptura";
@@ -347,103 +352,117 @@
             this.Id_Huerta.Visible = true;
             this.Id_Huerta.VisibleIndex = 2;
             // 
-            // gridColumn1
+            // Nombre_Huerta
             // 
-            this.gridColumn1.Caption = "Huerta";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
+            this.Nombre_Huerta.Caption = "Huerta";
+            this.Nombre_Huerta.FieldName = "Nombre_Huerta";
+            this.Nombre_Huerta.Name = "Nombre_Huerta";
+            this.Nombre_Huerta.Visible = true;
+            this.Nombre_Huerta.VisibleIndex = 3;
             // 
-            // gridColumn2
+            // Transportista
             // 
-            this.gridColumn2.Caption = "Transportista";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
+            this.Transportista.Caption = "Transportista";
+            this.Transportista.FieldName = "Transportista";
+            this.Transportista.Name = "Transportista";
+            this.Transportista.Visible = true;
+            this.Transportista.VisibleIndex = 4;
             // 
-            // gridColumn3
+            // Placas
             // 
-            this.gridColumn3.Caption = "Placas";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 5;
+            this.Placas.Caption = "Placas";
+            this.Placas.FieldName = "Placas";
+            this.Placas.Name = "Placas";
+            this.Placas.Visible = true;
+            this.Placas.VisibleIndex = 5;
             // 
-            // gridColumn4
+            // Id_TipoCorte
             // 
-            this.gridColumn4.Caption = "Id Tipo de corte";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
+            this.Id_TipoCorte.Caption = "Id Tipo de corte";
+            this.Id_TipoCorte.FieldName = "Id_TipoCorte";
+            this.Id_TipoCorte.Name = "Id_TipoCorte";
+            this.Id_TipoCorte.Visible = true;
+            this.Id_TipoCorte.VisibleIndex = 6;
             // 
-            // gridColumn5
+            // Nombre_TipoCorte
             // 
-            this.gridColumn5.Caption = "Tipo de Corte";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 7;
+            this.Nombre_TipoCorte.Caption = "Tipo de Corte";
+            this.Nombre_TipoCorte.FieldName = "Nombre_TipoCorte";
+            this.Nombre_TipoCorte.Name = "Nombre_TipoCorte";
+            this.Nombre_TipoCorte.Visible = true;
+            this.Nombre_TipoCorte.VisibleIndex = 7;
             // 
-            // gridColumn6
+            // Id_Empaque
             // 
-            this.gridColumn6.Caption = "Id Empaque";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 8;
+            this.Id_Empaque.Caption = "Id Empaque";
+            this.Id_Empaque.FieldName = "Id_Empaque";
+            this.Id_Empaque.Name = "Id_Empaque";
+            this.Id_Empaque.Visible = true;
+            this.Id_Empaque.VisibleIndex = 8;
             // 
-            // gridColumn7
+            // Nombre_Empaque
             // 
-            this.gridColumn7.Caption = "Empaque";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 9;
+            this.Nombre_Empaque.Caption = "Empaque";
+            this.Nombre_Empaque.FieldName = "Nombre_Empaque";
+            this.Nombre_Empaque.Name = "Nombre_Empaque";
+            this.Nombre_Empaque.Visible = true;
+            this.Nombre_Empaque.VisibleIndex = 9;
             // 
-            // gridColumn8
+            // Nombre_Jefe_Area
             // 
-            this.gridColumn8.Caption = "Jefe de Area";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 10;
+            this.Nombre_Jefe_Area.Caption = "Jefe de Area";
+            this.Nombre_Jefe_Area.FieldName = "Nombre_Jefe_Area";
+            this.Nombre_Jefe_Area.Name = "Nombre_Jefe_Area";
+            this.Nombre_Jefe_Area.Visible = true;
+            this.Nombre_Jefe_Area.VisibleIndex = 10;
             // 
-            // gridColumn9
+            // Nombre_Duenio
             // 
-            this.gridColumn9.Caption = "Productor";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 11;
+            this.Nombre_Duenio.Caption = "Productor";
+            this.Nombre_Duenio.FieldName = "Nombre_Duenio";
+            this.Nombre_Duenio.Name = "Nombre_Duenio";
+            this.Nombre_Duenio.Visible = true;
+            this.Nombre_Duenio.VisibleIndex = 11;
             // 
-            // gridColumn10
+            // Id_Area
             // 
-            this.gridColumn10.Caption = "Id Area";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 12;
+            this.Id_Area.Caption = "Id Area";
+            this.Id_Area.FieldName = "Id_Area";
+            this.Id_Area.Name = "Id_Area";
+            this.Id_Area.Visible = true;
+            this.Id_Area.VisibleIndex = 12;
             // 
-            // gridColumn11
+            // Nombre_Area
             // 
-            this.gridColumn11.Caption = "Area";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 13;
+            this.Nombre_Area.Caption = "Area";
+            this.Nombre_Area.FieldName = "Nombre_Area";
+            this.Nombre_Area.Name = "Nombre_Area";
+            this.Nombre_Area.Visible = true;
+            this.Nombre_Area.VisibleIndex = 13;
             // 
-            // gridColumn12
+            // ODC
             // 
-            this.gridColumn12.Caption = "ODC";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 14;
+            this.ODC.Caption = "ODC";
+            this.ODC.FieldName = "ODC";
+            this.ODC.Name = "ODC";
+            this.ODC.Visible = true;
+            this.ODC.VisibleIndex = 14;
             // 
-            // gridColumn13
+            // Candado
             // 
-            this.gridColumn13.Caption = "Candado";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 15;
+            this.Candado.Caption = "Candado";
+            this.Candado.FieldName = "Candado";
+            this.Candado.Name = "Candado";
+            this.Candado.Visible = true;
+            this.Candado.VisibleIndex = 15;
             // 
-            // gridColumn14
+            // PSobreBanda
             // 
-            this.gridColumn14.Caption = "P. Sobre Banda";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 16;
+            this.PSobreBanda.Caption = "P. Sobre Banda";
+            this.PSobreBanda.FieldName = "PSobreBanda";
+            this.PSobreBanda.Name = "PSobreBanda";
+            this.PSobreBanda.Visible = true;
+            this.PSobreBanda.VisibleIndex = 16;
             // 
             // gridColumn15
             // 
@@ -464,8 +483,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton3);
-            this.groupControl1.Controls.Add(this.simpleButton2);
+            this.groupControl1.Controls.Add(this.btnBusqJefesArea);
+            this.groupControl1.Controls.Add(this.btnBusqAreas);
+            this.groupControl1.Controls.Add(this.btnBusqEmpaques);
             this.groupControl1.Controls.Add(this.btnTiposCorte);
             this.groupControl1.Controls.Add(this.btnHuertas);
             this.groupControl1.Controls.Add(this.btnJefeCuadrilla);
@@ -503,25 +523,36 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos PreCaptura Orden de Corte";
             // 
-            // simpleButton3
+            // btnBusqJefesArea
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(614, 131);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton3.TabIndex = 31;
+            this.btnBusqJefesArea.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqJefesArea.ImageOptions.Image")));
+            this.btnBusqJefesArea.Location = new System.Drawing.Point(614, 79);
+            this.btnBusqJefesArea.Name = "btnBusqJefesArea";
+            this.btnBusqJefesArea.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqJefesArea.TabIndex = 32;
+            this.btnBusqJefesArea.Click += new System.EventHandler(this.btnBusqJefesArea_Click);
             // 
-            // simpleButton2
+            // btnBusqAreas
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(614, 53);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(24, 23);
-            this.simpleButton2.TabIndex = 30;
+            this.btnBusqAreas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnBusqAreas.Location = new System.Drawing.Point(614, 131);
+            this.btnBusqAreas.Name = "btnBusqAreas";
+            this.btnBusqAreas.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqAreas.TabIndex = 31;
+            this.btnBusqAreas.Click += new System.EventHandler(this.btnBusqAreas_Click);
+            // 
+            // btnBusqEmpaques
+            // 
+            this.btnBusqEmpaques.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEmpaques.ImageOptions.Image")));
+            this.btnBusqEmpaques.Location = new System.Drawing.Point(614, 53);
+            this.btnBusqEmpaques.Name = "btnBusqEmpaques";
+            this.btnBusqEmpaques.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqEmpaques.TabIndex = 30;
+            this.btnBusqEmpaques.Click += new System.EventHandler(this.btnBusqEmpaques_Click);
             // 
             // btnTiposCorte
             // 
-            this.btnTiposCorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnTiposCorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTiposCorte.ImageOptions.Image")));
             this.btnTiposCorte.Location = new System.Drawing.Point(614, 27);
             this.btnTiposCorte.Name = "btnTiposCorte";
             this.btnTiposCorte.Size = new System.Drawing.Size(24, 23);
@@ -530,7 +561,7 @@
             // 
             // btnHuertas
             // 
-            this.btnHuertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.ImageOptions.Image")));
+            this.btnHuertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuertas.ImageOptions.Image")));
             this.btnHuertas.Location = new System.Drawing.Point(296, 79);
             this.btnHuertas.Name = "btnHuertas";
             this.btnHuertas.Size = new System.Drawing.Size(24, 23);
@@ -539,7 +570,7 @@
             // 
             // btnJefeCuadrilla
             // 
-            this.btnJefeCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEstado.ImageOptions.Image")));
+            this.btnJefeCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnJefeCuadrilla.ImageOptions.Image")));
             this.btnJefeCuadrilla.Location = new System.Drawing.Point(296, 53);
             this.btnJefeCuadrilla.Name = "btnJefeCuadrilla";
             this.btnJefeCuadrilla.Size = new System.Drawing.Size(24, 23);
@@ -566,6 +597,7 @@
             // 
             // textJefaArea
             // 
+            this.textJefaArea.Enabled = false;
             this.textJefaArea.Location = new System.Drawing.Point(401, 80);
             this.textJefaArea.MenuManager = this.barManager1;
             this.textJefaArea.Name = "textJefaArea";
@@ -772,6 +804,22 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "No.: ";
             // 
+            // Id_Jefe_Area
+            // 
+            this.Id_Jefe_Area.Caption = "Id Jefe Aarea";
+            this.Id_Jefe_Area.FieldName = "Id_Jefe_Area";
+            this.Id_Jefe_Area.Name = "Id_Jefe_Area";
+            this.Id_Jefe_Area.Visible = true;
+            this.Id_Jefe_Area.VisibleIndex = 18;
+            // 
+            // Id_Duenio
+            // 
+            this.Id_Duenio.Caption = "Id Productor";
+            this.Id_Duenio.FieldName = "Id_Duenio";
+            this.Id_Duenio.Name = "Id_Duenio";
+            this.Id_Duenio.Visible = true;
+            this.Id_Duenio.VisibleIndex = 19;
+            // 
             // Frm_PrecapturaODC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -870,22 +918,25 @@
         private DevExpress.XtraEditors.SimpleButton btnTiposCorte;
         private DevExpress.XtraEditors.SimpleButton btnHuertas;
         private DevExpress.XtraEditors.SimpleButton btnJefeCuadrilla;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraEditors.SimpleButton btnBusqEmpaques;
+        private DevExpress.XtraEditors.SimpleButton btnBusqAreas;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Huerta;
+        private DevExpress.XtraGrid.Columns.GridColumn Transportista;
+        private DevExpress.XtraGrid.Columns.GridColumn Placas;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_TipoCorte;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_TipoCorte;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empaque;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empaque;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Jefe_Area;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Duenio;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Area;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Area;
+        private DevExpress.XtraGrid.Columns.GridColumn ODC;
+        private DevExpress.XtraGrid.Columns.GridColumn Candado;
+        private DevExpress.XtraGrid.Columns.GridColumn PSobreBanda;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraEditors.SimpleButton btnBusqJefesArea;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Jefe_Area;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Duenio;
     }
 }

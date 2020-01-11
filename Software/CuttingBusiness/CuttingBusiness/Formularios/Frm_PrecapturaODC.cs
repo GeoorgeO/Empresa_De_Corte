@@ -253,5 +253,35 @@ namespace CuttingBusiness
                 textPrecio.Enabled = true;
             }
         }
+
+        private void btnBusqEmpaques_Click(object sender, EventArgs e)
+        {
+            Frm_Empaques frm = new Frm_Empaques();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textEmpaque.Tag = frm.IdEmpaque;
+            textEmpaque.Text = frm.Empaque;
+        }
+
+        private void btnBusqJefesArea_Click(object sender, EventArgs e)
+        {
+            Frm_Jefes_Area frm = new Frm_Jefes_Area();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textArea.Tag = frm.IdJefeArea;
+            textArea.Text = frm.JefeArea;
+        }
+
+        private void btnBusqAreas_Click(object sender, EventArgs e)
+        {
+            Frm_Areas frm = new Frm_Areas();
+            frm.PaSel = true;
+            frm.ShowDialog();
+
+            textArea.Tag = frm.IdArea;
+            textArea.Text = frm.Area;
+        }
     }
 }

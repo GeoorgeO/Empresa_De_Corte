@@ -145,6 +145,12 @@
     <Compile Include="Formularios\Frm_Huertas.designer.cs">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Jefes_Area.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Jefes_Area.Designer.cs">
+      <DependentUpon>Frm_Jefes_Area.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Series.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Jefes_Area.resx">
+      <DependentUpon>Frm_Jefes_Area.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Series.resx">
       <DependentUpon>Frm_Series.cs</DependentUpon>
