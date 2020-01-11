@@ -127,6 +127,18 @@
     <Compile Include="Control\Frm_Entradas.Designer.cs">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Areas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Areas.Designer.cs">
+      <DependentUpon>Frm_Areas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Empaques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Empaques.Designer.cs">
+      <DependentUpon>Frm_Empaques.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Huertas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Areas.resx">
+      <DependentUpon>Frm_Areas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Empaques.resx">
+      <DependentUpon>Frm_Empaques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
