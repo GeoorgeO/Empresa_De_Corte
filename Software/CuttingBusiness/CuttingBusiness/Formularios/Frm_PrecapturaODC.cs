@@ -40,8 +40,8 @@ namespace CuttingBusiness
             Clase.Transportista = textTransportista.Text.Trim();
             Clase.Placas = textPlacas.Text.Trim();
             Clase.Id_TipoCorte = textTipoCorte.Tag.ToString();
-            Clase.Empaque = textEmpaque.Text.Trim();
-            Clase.JefeArea = textJefaArea.Text.Trim();
+            Clase.Id_Empaque = textEmpaque.Tag.ToString().Trim();
+            Clase.Id_Jefe_Area = textJefeArea.Tag.ToString().Trim();
             Clase.ODC = textODC.Text.Trim();
             Clase.Candado = textCandado.Text.Trim();
             if (checkPSobreBanda.Checked)
@@ -54,6 +54,8 @@ namespace CuttingBusiness
                 Clase.PSobreBanda = "0";
                 Clase.Precio = Convert.ToDouble(textPrecio.Text.Trim()) ;
             }
+            Clase.Id_Area = textArea.Tag.ToString().Trim();
+            Clase.Id_Duenio = textProductor.Tag.ToString().Trim();
            
             Clase.MtdInsertarPrecapturaODC();
             if (Clase.Exito)
@@ -98,6 +100,13 @@ namespace CuttingBusiness
             textODC.Text = "";
             textTipoCorte.Text = "";
             textTipoCorte.Text = "";
+            textPrecio.Text = "0";
+            textArea.Tag = "";
+            textArea.Text = "";
+            textJefeArea.Tag = "";
+            textJefeArea.Text = "";
+            textEmpaque.Tag = "";
+            textEmpaque.Text = "";
         }
 
         private void inicialisarTags()
@@ -132,8 +141,14 @@ namespace CuttingBusiness
                         checkPSobreBanda.Checked = false;
                     }
                     textPrecio.Text = row["Precio"].ToString();
-                    textEmpaque.Text = row["Empaque"].ToString();
-                    textJefaArea.Text = row["JefeArea"].ToString();
+                    textEmpaque.Tag = row["Id_Empaque"].ToString();
+                    textEmpaque.Text = row["Nombre_Empaque"].ToString();
+                    textJefeArea.Tag = row["Id_Jefe_Area"].ToString();
+                    textJefeArea.Text = row["Nombre_Jefe_Area"].ToString();
+                    textArea.Tag= row["Id_Area"].ToString();
+                    textArea.Text = row["Nombre_Area"].ToString();
+                    textProductor.Tag = row["Id_Duenio"].ToString();
+                    textProductor.Text = row["Nombre_Duenio"].ToString();
                 }
             }
             catch (Exception ex)
@@ -144,14 +159,15 @@ namespace CuttingBusiness
 
         private void Frm_PrecapturaODC_Load(object sender, EventArgs e)
         {
-           /* if (PaSel == true)
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            }
-            else
-            {
-                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            }*/
+            /* if (PaSel == true)
+             {
+                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+             }
+             else
+             {
+                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+             }*/
+            LimpiarCampos();
             CargarPrecapturaODC();
             inicialisarTags();
         }
@@ -230,6 +246,8 @@ namespace CuttingBusiness
 
             textHuerta.Tag = frm.IdHuerta;
             textHuerta.Text = frm.Huerta;
+            textProductor.Tag = frm.IdDuenio;
+            textProductor.Text = frm.Duenio;
         }
 
         private void btnTiposCorte_Click(object sender, EventArgs e)
@@ -270,8 +288,8 @@ namespace CuttingBusiness
             frm.PaSel = true;
             frm.ShowDialog();
 
-            textArea.Tag = frm.IdJefeArea;
-            textArea.Text = frm.JefeArea;
+            textJefeArea.Tag = frm.IdJefeArea;
+            textJefeArea.Text = frm.JefeArea;
         }
 
         private void btnBusqAreas_Click(object sender, EventArgs e)

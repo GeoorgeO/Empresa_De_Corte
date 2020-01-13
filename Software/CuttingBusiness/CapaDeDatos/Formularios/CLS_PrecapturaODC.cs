@@ -19,8 +19,10 @@ namespace CapaDeDatos
         public string Id_TipoCorte { get; set; }
         public string PSobreBanda { get; set; }
         public double Precio { get; set; }
-        public string Empaque { get; set; }
-        public string JefeArea { get; set; }
+        public string Id_Empaque { get; set; }
+        public string Id_Jefe_Area { get; set; }
+        public string Id_Area { get; set; }
+        public string Id_Duenio { get; set; }
 
         public void MtdSeleccionarPrecapturaODC()
         {
@@ -83,10 +85,14 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PSobreBanda");
                 _dato.DecimalValor = Convert.ToDecimal(Precio);
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio");
-                _dato.CadenaTexto = Empaque;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Empaque");
-                _dato.CadenaTexto = JefeArea;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "JefeArea");
+                _dato.CadenaTexto = Id_Empaque;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empaque");
+                _dato.CadenaTexto = Id_Jefe_Area;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Jefe_Area");
+                _dato.CadenaTexto = Id_Area;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Area");
+                _dato.CadenaTexto = Id_Duenio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Duenio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

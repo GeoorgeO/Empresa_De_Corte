@@ -21,6 +21,7 @@ ELSE
 		[Id_empaque][char](3) NULL,
 		[Id_Jefe_Area][char](4) NULL,
 		[Id_Area][char](4) NULL,
+		[Id_duenio][char](4) NULL,
 	 CONSTRAINT [PK_PrecapturaODC] PRIMARY KEY CLUSTERED 
 	(
 		[Id_PrecapturaODC] ASC

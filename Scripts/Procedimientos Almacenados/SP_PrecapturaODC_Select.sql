@@ -36,14 +36,14 @@ BEGIN
 	
 		select Id_PrecapturaODC,
 			JefeCuadrilla,
-			Id_Huerta,
+			ODC.Id_Huerta,
 			hue.Nombre_Huerta,
 			Transportista,
 			Placas,
 			Candado,
 			ODC,
-			Id_TipoCorte,
-			tc.Nombre_TipoCorte
+			ODC.Id_TipoCorte,
+			tc.Nombre_TipoCorte,
 			PSobreBanda,
 			Precio,
 			ODC.Id_Empaque,

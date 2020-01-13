@@ -19,6 +19,8 @@ namespace CuttingBusiness
 
         public string IdHuerta { get; set; }
         public string Huerta { get; set; }
+        public string IdDuenio { get; set; }
+        public string Duenio { get; set; }
 
         public Frm_Huertas()
         {
@@ -297,6 +299,7 @@ namespace CuttingBusiness
             Clase.asnm_Huerta = Convert.ToDecimal(txtASMN.Text);
             Clase.latitud_Huerta = Convert.ToDecimal(txtLatitud.Text);
             Clase.longitud_Huerta = Convert.ToDecimal(txtLonguitud.Text);
+            Clase.Activo = "1";
             Clase.MtdInsertarHuerta();
 
             if (Clase.Exito)
@@ -422,6 +425,8 @@ namespace CuttingBusiness
         {
             IdHuerta = txtCodigo.Text.Trim();
             Huerta = txtNombreHuerta.Text.Trim();
+            IdDuenio = txtNombreProductor.Tag.ToString().Trim();
+            Duenio = txtNombreProductor.Text.Trim();
             this.Close();
         }
     }

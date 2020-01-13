@@ -28,6 +28,7 @@ create PROCEDURE [dbo].[SP_PrecapturaODC_Insert]
 	@Id_Empaque char(3) ,
 	@Id_Jefe_Area char(4),
 	@Id_Area char(4),
+	@Id_Duenio char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -58,8 +59,10 @@ BEGIN
 				Id_TipoCorte=@Id_TipoCorte,
 				PSobreBanda=@PSobreBanda,
 				Precio=@Precio,
-				Empaque=@Empaque,
-				JefeArea=@JefeArea
+				Id_Empaque=@Id_Empaque,
+				Id_Jefe_Area=@Id_Jefe_Area,
+				Id_Area=@Id_Area,
+				Id_Duenio=@Id_Duenio
 		    WHERE
 		    	Id_PrecapturaODC=@Id_PrecapturaODC
 				
@@ -76,8 +79,10 @@ BEGIN
 			   ,Id_TipoCorte
 			   ,PSobreBanda
 			   ,Precio
-			   ,Empaque
-			   ,JefeArea)
+			   ,Id_Empaque
+			   ,Id_Jefe_Area
+			   ,Id_Area
+			   ,Id_Duenio)
 	     	VALUES
 	           (@maximo
 	           ,@JefeCuadrilla
@@ -89,8 +94,10 @@ BEGIN
 			   ,@Id_TipoCorte
 			   ,@PSobreBanda
 			   ,@Precio
-			   ,@Empaque
-			   ,@JefeArea)
+			   ,@Id_Empaque
+			   ,@Id_Jefe_Area
+			   ,@Id_Area
+			   ,@Id_Duenio)
 		
 		commit transaction T1;
 		set @correcto=1

@@ -66,8 +66,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Huerta_Insert";
-                _dato.CadenaTexto = Id_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
+                _dato.CadenaTexto = Id_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
                 _dato.CadenaTexto = Nombre_Huerta;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Huerta");
                 _dato.CadenaTexto = Registro_Huerta;
