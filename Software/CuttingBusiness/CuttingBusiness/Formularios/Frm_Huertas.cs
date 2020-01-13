@@ -388,6 +388,7 @@ namespace CuttingBusiness
                     txtNombreHuerta.Text=row["Nombre_Huerta"].ToString(); 
                     txtRegistro.Text=row["Registro_Huerta"].ToString(); 
                     txtNombreProductor.Tag = row["Id_Duenio"].ToString();
+                    txtNombreProductor.Text = row["Nombre_Duenio"].ToString();
                     cboEstado.EditValue = row["Id_Estado"].ToString();
                     cboCiudad.EditValue = row["Id_Ciudad"].ToString();
                     cboCalidad.EditValue = row["Id_Calidad"].ToString();
@@ -399,7 +400,7 @@ namespace CuttingBusiness
                     txtASMN.Text= row["asnm_Huerta"].ToString();
                     txtLatitud.Text = row["latitud_Huerta"].ToString();
                     txtLonguitud.Text = row["longitud_Huerta"].ToString();
-                    if (row["Activo"].ToString().Equals("True"))
+                    if (row["Activa_Huerta"].ToString().Equals("True"))
                     {
                         labelActivo.Text = "Activo";
                         btnEliminar.Caption = "Dar de Baja";
