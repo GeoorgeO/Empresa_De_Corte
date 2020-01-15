@@ -14,6 +14,22 @@ namespace CuttingBusiness
 {
     public partial class Frm_PrecapturaODC : DevExpress.XtraEditors.XtraForm
     {
+
+        private static Frm_PrecapturaODC m_FormDefInstance;
+        public static Frm_PrecapturaODC DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_PrecapturaODC();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_PrecapturaODC()
         {
             InitializeComponent();

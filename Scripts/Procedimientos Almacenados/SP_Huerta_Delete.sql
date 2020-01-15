@@ -6,7 +6,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Huerta_Delete')
-DROP PROCEDURE SP_Pais_Delete
+DROP PROCEDURE SP_Huerta_Delete
 GO
 -- =============================================
 -- Author:		<Author,,Name>

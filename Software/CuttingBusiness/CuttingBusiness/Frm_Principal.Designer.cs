@@ -63,8 +63,11 @@
             this.btnClientes = new DevExpress.XtraBars.BarButtonItem();
             this.btnPermisos = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuertas = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPreODC = new DevExpress.XtraBars.BarButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTiposEntradas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTiposSalidas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -91,9 +94,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnTiposEntradas = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTiposSalidas = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -137,12 +137,13 @@
             this.btnClientes,
             this.btnPermisos,
             this.btnHuertas,
-            this.barButtonItem1,
+            this.btnPreODC,
             this.btnSalir,
             this.btnTiposEntradas,
             this.btnTiposSalidas,
             this.btnSeries});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -156,7 +157,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(915, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(1067, 181);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnUsuarios
@@ -444,13 +445,14 @@
             this.btnHuertas.Name = "btnHuertas";
             this.btnHuertas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuertas_ItemClick);
             // 
-            // barButtonItem1
+            // btnPreODC
             // 
-            this.barButtonItem1.Caption = "Precaptura ODC";
-            this.barButtonItem1.Id = 33;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnPreODC.Caption = "Precaptura ODC";
+            this.btnPreODC.Id = 33;
+            this.btnPreODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnPreODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnPreODC.Name = "btnPreODC";
+            this.btnPreODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPreODC_ItemClick);
             // 
             // btnSalir
             // 
@@ -460,6 +462,33 @@
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
+            // 
+            // btnTiposEntradas
+            // 
+            this.btnTiposEntradas.Caption = "Tipos de Entrada";
+            this.btnTiposEntradas.Id = 35;
+            this.btnTiposEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTiposEntradas.ImageOptions.Image")));
+            this.btnTiposEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTiposEntradas.ImageOptions.LargeImage")));
+            this.btnTiposEntradas.Name = "btnTiposEntradas";
+            this.btnTiposEntradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposEntradas_ItemClick);
+            // 
+            // btnTiposSalidas
+            // 
+            this.btnTiposSalidas.Caption = "Tipos de Salida";
+            this.btnTiposSalidas.Id = 36;
+            this.btnTiposSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTiposSalidas.ImageOptions.Image")));
+            this.btnTiposSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTiposSalidas.ImageOptions.LargeImage")));
+            this.btnTiposSalidas.Name = "btnTiposSalidas";
+            this.btnTiposSalidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposSalidas_ItemClick);
+            // 
+            // btnSeries
+            // 
+            this.btnSeries.Caption = "Series";
+            this.btnSeries.Id = 37;
+            this.btnSeries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeries.ImageOptions.Image")));
+            this.btnSeries.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeries.ImageOptions.LargeImage")));
+            this.btnSeries.Name = "btnSeries";
+            this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -527,7 +556,7 @@
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnPreODC);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarODC);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCobros);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarRendimientoODC);
@@ -644,41 +673,15 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // btnTiposEntradas
-            // 
-            this.btnTiposEntradas.Caption = "Tipos de Entrada";
-            this.btnTiposEntradas.Id = 35;
-            this.btnTiposEntradas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnTiposEntradas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnTiposEntradas.Name = "btnTiposEntradas";
-            this.btnTiposEntradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposEntradas_ItemClick);
-            // 
-            // btnTiposSalidas
-            // 
-            this.btnTiposSalidas.Caption = "Tipos de Salida";
-            this.btnTiposSalidas.Id = 36;
-            this.btnTiposSalidas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnTiposSalidas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btnTiposSalidas.Name = "btnTiposSalidas";
-            this.btnTiposSalidas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiposSalidas_ItemClick);
-            // 
-            // btnSeries
-            // 
-            this.btnSeries.Caption = "Series";
-            this.btnSeries.Id = 37;
-            this.btnSeries.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnSeries.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.btnSeries.Name = "btnSeries";
-            this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
-            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 426);
+            this.ClientSize = new System.Drawing.Size(1067, 524);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Frm_Principal";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -754,7 +757,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem btnPermisos;
         private DevExpress.XtraBars.BarButtonItem btnHuertas;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnPreODC;
         private DevExpress.XtraBars.BarButtonItem btnSalir;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem btnTiposEntradas;

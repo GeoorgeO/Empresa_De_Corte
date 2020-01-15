@@ -504,5 +504,13 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [034]");
             }
         }
+
+        private void btnPreODC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+            Frm_PrecapturaODC Ventana = new Frm_PrecapturaODC();
+            Frm_PrecapturaODC.DefInstance.MdiParent = this;
+            Frm_PrecapturaODC.DefInstance.Show();
+        }
     }
 }
