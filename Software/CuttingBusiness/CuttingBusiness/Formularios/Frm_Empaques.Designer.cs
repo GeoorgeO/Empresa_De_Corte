@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Empaques));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -177,7 +178,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Pais:";
+            this.lblProveedor.Caption = "Empaque:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -194,10 +195,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 393);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(612, 35);
+            this.barDockControlBottom.Size = new System.Drawing.Size(612, 34);
             // 
             // barDockControlLeft
             // 
@@ -206,7 +207,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(85, 392);
+            this.barDockControlLeft.Size = new System.Drawing.Size(87, 393);
             // 
             // barDockControlRight
             // 
@@ -215,7 +216,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(612, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 393);
             // 
             // repositoryItemTextEdit1
             // 
@@ -225,11 +226,11 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(85, 133);
+            this.panelControl2.Location = new System.Drawing.Point(87, 133);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(12);
-            this.panelControl2.Size = new System.Drawing.Size(527, 259);
+            this.panelControl2.Size = new System.Drawing.Size(525, 260);
             this.panelControl2.TabIndex = 21;
             // 
             // gridControl1
@@ -241,7 +242,7 @@
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(499, 231);
+            this.gridControl1.Size = new System.Drawing.Size(497, 232);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -249,12 +250,15 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Empaque,
             this.Nombre_Empaque});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Empaque
@@ -262,6 +266,8 @@
             this.Id_Empaque.Caption = "Id Empaque";
             this.Id_Empaque.FieldName = "Id_Empaque";
             this.Id_Empaque.Name = "Id_Empaque";
+            this.Id_Empaque.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Empaque", "Registros: {0}")});
             this.Id_Empaque.Visible = true;
             this.Id_Empaque.VisibleIndex = 0;
             // 
@@ -277,11 +283,11 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(85, 0);
+            this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(12);
-            this.panelControl1.Size = new System.Drawing.Size(527, 133);
+            this.panelControl1.Size = new System.Drawing.Size(525, 133);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -294,7 +300,7 @@
             this.groupControl1.Location = new System.Drawing.Point(14, 14);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(499, 105);
+            this.groupControl1.Size = new System.Drawing.Size(497, 105);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empaques";
             // 

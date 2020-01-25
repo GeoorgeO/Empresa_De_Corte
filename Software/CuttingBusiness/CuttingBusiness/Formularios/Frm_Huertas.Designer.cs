@@ -317,7 +317,7 @@
             this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl1.Size = new System.Drawing.Size(1094, 362);
             this.panelControl1.TabIndex = 4;
             // 
@@ -876,7 +876,7 @@
             this.panelControl2.Location = new System.Drawing.Point(87, 362);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
             this.panelControl2.Size = new System.Drawing.Size(1094, 288);
             this.panelControl2.TabIndex = 9;
             // 
@@ -897,6 +897,8 @@
             // 
             // dtgValHuertas
             // 
+            this.dtgValHuertas.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValHuertas.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.dtgValHuertas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -923,6 +925,7 @@
             this.dtgValHuertas.Name = "dtgValHuertas";
             this.dtgValHuertas.OptionsBehavior.Editable = false;
             this.dtgValHuertas.OptionsFind.AlwaysVisible = true;
+            this.dtgValHuertas.OptionsView.ShowFooter = true;
             this.dtgValHuertas.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -930,6 +933,8 @@
             this.gridColumn1.Caption = "Codigo";
             this.gridColumn1.FieldName = "Id_Huerta";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Huerta", "Registros: {0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 58;

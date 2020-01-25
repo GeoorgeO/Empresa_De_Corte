@@ -96,6 +96,8 @@ namespace CuttingBusiness
             }
         }
 
+        
+
         private void Frm_Areas_Load(object sender, EventArgs e)
         {
             if (PaSel == true)
@@ -107,6 +109,7 @@ namespace CuttingBusiness
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarAreas();
+           
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

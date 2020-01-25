@@ -53,8 +53,12 @@
             this.Nombre_Huerta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Transportista = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Placas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Candado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ODC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_TipoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_TipoCorte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PSobreBanda = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Precio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Empaque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Empaque = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Jefe_Area = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,10 +67,6 @@
             this.Nombre_Duenio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Id_Area = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Area = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ODC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Candado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PSobreBanda = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Precio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnBusqJefesArea = new DevExpress.XtraEditors.SimpleButton();
@@ -287,7 +287,7 @@
             this.panelControl2.Location = new System.Drawing.Point(87, 230);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(12);
             this.panelControl2.Size = new System.Drawing.Size(1007, 454);
             this.panelControl2.TabIndex = 19;
             // 
@@ -308,6 +308,8 @@
             // 
             // dtgValPreCaptura
             // 
+            this.dtgValPreCaptura.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValPreCaptura.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.dtgValPreCaptura.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_PrecapturaODC,
             this.JefeCuadrilla,
@@ -333,6 +335,7 @@
             this.dtgValPreCaptura.Name = "dtgValPreCaptura";
             this.dtgValPreCaptura.OptionsBehavior.Editable = false;
             this.dtgValPreCaptura.OptionsFind.AlwaysVisible = true;
+            this.dtgValPreCaptura.OptionsView.ShowFooter = true;
             this.dtgValPreCaptura.OptionsView.ShowGroupPanel = false;
             // 
             // Id_PrecapturaODC
@@ -340,6 +343,8 @@
             this.Id_PrecapturaODC.Caption = "No.";
             this.Id_PrecapturaODC.FieldName = "Id_PrecapturaODC";
             this.Id_PrecapturaODC.Name = "Id_PrecapturaODC";
+            this.Id_PrecapturaODC.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_PrecapturaODC", "Registros: {0}")});
             this.Id_PrecapturaODC.Visible = true;
             this.Id_PrecapturaODC.VisibleIndex = 0;
             // 
@@ -383,6 +388,22 @@
             this.Placas.Visible = true;
             this.Placas.VisibleIndex = 5;
             // 
+            // Candado
+            // 
+            this.Candado.Caption = "Candado";
+            this.Candado.FieldName = "Candado";
+            this.Candado.Name = "Candado";
+            this.Candado.Visible = true;
+            this.Candado.VisibleIndex = 15;
+            // 
+            // ODC
+            // 
+            this.ODC.Caption = "ODC";
+            this.ODC.FieldName = "ODC";
+            this.ODC.Name = "ODC";
+            this.ODC.Visible = true;
+            this.ODC.VisibleIndex = 14;
+            // 
             // Id_TipoCorte
             // 
             this.Id_TipoCorte.Caption = "Id Tipo de corte";
@@ -398,6 +419,22 @@
             this.Nombre_TipoCorte.Name = "Nombre_TipoCorte";
             this.Nombre_TipoCorte.Visible = true;
             this.Nombre_TipoCorte.VisibleIndex = 7;
+            // 
+            // PSobreBanda
+            // 
+            this.PSobreBanda.Caption = "P. Sobre Banda";
+            this.PSobreBanda.FieldName = "PSobreBanda";
+            this.PSobreBanda.Name = "PSobreBanda";
+            this.PSobreBanda.Visible = true;
+            this.PSobreBanda.VisibleIndex = 16;
+            // 
+            // Precio
+            // 
+            this.Precio.Caption = "Precio por kg";
+            this.Precio.FieldName = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Visible = true;
+            this.Precio.VisibleIndex = 17;
             // 
             // Id_Empaque
             // 
@@ -463,38 +500,6 @@
             this.Nombre_Area.Visible = true;
             this.Nombre_Area.VisibleIndex = 13;
             // 
-            // ODC
-            // 
-            this.ODC.Caption = "ODC";
-            this.ODC.FieldName = "ODC";
-            this.ODC.Name = "ODC";
-            this.ODC.Visible = true;
-            this.ODC.VisibleIndex = 14;
-            // 
-            // Candado
-            // 
-            this.Candado.Caption = "Candado";
-            this.Candado.FieldName = "Candado";
-            this.Candado.Name = "Candado";
-            this.Candado.Visible = true;
-            this.Candado.VisibleIndex = 15;
-            // 
-            // PSobreBanda
-            // 
-            this.PSobreBanda.Caption = "P. Sobre Banda";
-            this.PSobreBanda.FieldName = "PSobreBanda";
-            this.PSobreBanda.Name = "PSobreBanda";
-            this.PSobreBanda.Visible = true;
-            this.PSobreBanda.VisibleIndex = 16;
-            // 
-            // Precio
-            // 
-            this.Precio.Caption = "Precio por kg";
-            this.Precio.FieldName = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.Visible = true;
-            this.Precio.VisibleIndex = 17;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -502,7 +507,7 @@
             this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(12);
             this.panelControl1.Size = new System.Drawing.Size(1007, 230);
             this.panelControl1.TabIndex = 18;
             // 
