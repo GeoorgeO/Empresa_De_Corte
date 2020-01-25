@@ -92,6 +92,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -137,9 +139,10 @@
             this.btnGuardar,
             this.btnEliminar,
             this.btnSalir,
-            this.btnSeleccionar});
+            this.btnSeleccionar,
+            this.barLargeButtonItem1});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 68;
+            this.barManager1.MaxItemId = 69;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -157,7 +160,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSeleccionar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem1)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -453,7 +457,7 @@
             this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(12);
             this.panelControl1.Size = new System.Drawing.Size(1059, 260);
             this.panelControl1.TabIndex = 26;
             // 
@@ -787,6 +791,19 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id: ";
             // 
+            // barLargeButtonItem1
+            // 
+            this.barLargeButtonItem1.Caption = "Excel";
+            this.barLargeButtonItem1.Id = 68;
+            this.barLargeButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
+            this.barLargeButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
+            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.barLargeButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
+            // 
+            // xtraSaveFileDialog1
+            // 
+            this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
+            // 
             // Frm_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -901,5 +918,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
+        private DevExpress.XtraEditors.XtraSaveFileDialog xtraSaveFileDialog1;
     }
 }

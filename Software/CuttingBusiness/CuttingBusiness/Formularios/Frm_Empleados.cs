@@ -113,7 +113,13 @@ namespace CuttingBusiness
             CLS_Empleados Clase = new CLS_Empleados();
             Clase.Id_Empleado = textId.Text.Trim();
             Clase.Nombre_Empleado = textEmpleado.Text.Trim();
-            Clase.Fecha_Nacimiento = dateNacimiento.DateTime.Year.ToString() + DosCero(dateNacimiento.DateTime.Month.ToString()) + DosCero(dateNacimiento.DateTime.Day.ToString());
+            if (dateNacimiento.EditValue != null)
+            {
+                Clase.Fecha_Nacimiento = dateNacimiento.DateTime.Year.ToString() + DosCero(dateNacimiento.DateTime.Month.ToString()) + DosCero(dateNacimiento.DateTime.Day.ToString());
+            }else
+            {
+                Clase.Fecha_Nacimiento = string.Empty;
+            }
             Clase.NSS = textNSS.Text.Trim();
             if (dateAltaSegSocial.EditValue != null)
             {
@@ -348,7 +354,7 @@ namespace CuttingBusiness
                 {
                     if (glePuesto.EditValue != null)
                     {
-                        if (dateNacimiento.EditValue != null)
+                        if (dateNacimiento.EditValue != null && checkSinFNac.Checked==true)
                         {
                             InsertarEmpleados();
                         }
@@ -596,6 +602,18 @@ namespace CuttingBusiness
             }
         }
 
-       
+        private void checkSinFNac_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkSinFNac.Checked == true)
+            {
+                dateNacimiento.Enabled = false;
+                dateNacimiento.EditValue = null;
+            }
+            else
+            {
+                dateNacimiento.Enabled = true;
+                dateNacimiento.EditValue = DateTime.Now.AddYears(-18);
+            }
+        }
     }
 }

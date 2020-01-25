@@ -141,7 +141,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Rutas:";
+            this.lblProveedor.Caption = "Salida:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -152,7 +152,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(751, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1045, 0);
             // 
             // barDockControlBottom
             // 
@@ -161,7 +161,7 @@
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 499);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(751, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1045, 34);
             // 
             // barDockControlLeft
             // 
@@ -176,7 +176,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(751, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1045, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 499);
@@ -217,7 +217,7 @@
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(664, 499);
+            this.panelControl1.Size = new System.Drawing.Size(958, 499);
             this.panelControl1.TabIndex = 6;
             // 
             // gridControl1
@@ -229,7 +229,7 @@
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(648, 483);
+            this.gridControl1.Size = new System.Drawing.Size(942, 483);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -237,6 +237,8 @@
             // 
             // dtgValRutas
             // 
+            this.dtgValRutas.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValRutas.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.dtgValRutas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Serie_Salida,
             this.Folio_Salida,
@@ -248,6 +250,7 @@
             this.dtgValRutas.GridControl = this.gridControl1;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
+            this.dtgValRutas.OptionsView.ShowFooter = true;
             this.dtgValRutas.OptionsView.ShowGroupPanel = false;
             // 
             // Serie_Salida
@@ -256,6 +259,8 @@
             this.Serie_Salida.FieldName = "Serie_Salida";
             this.Serie_Salida.Name = "Serie_Salida";
             this.Serie_Salida.OptionsColumn.AllowEdit = false;
+            this.Serie_Salida.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Serie_Salida", "Registros: {0}")});
             this.Serie_Salida.Visible = true;
             this.Serie_Salida.VisibleIndex = 0;
             this.Serie_Salida.Width = 97;
@@ -314,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 533);
+            this.ClientSize = new System.Drawing.Size(1045, 533);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

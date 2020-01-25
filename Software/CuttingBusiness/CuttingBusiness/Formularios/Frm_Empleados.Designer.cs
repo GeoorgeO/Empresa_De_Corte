@@ -65,6 +65,7 @@
             this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkSinFNac = new DevExpress.XtraEditors.CheckEdit();
             this.chkSinSVida = new DevExpress.XtraEditors.CheckEdit();
             this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
             this.btnBusqCuadrilla = new DevExpress.XtraEditors.SimpleButton();
@@ -146,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSinFNac.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gleCuadrilla.Properties)).BeginInit();
@@ -348,7 +350,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(6);
             this.xtraTabPage1.Size = new System.Drawing.Size(899, 598);
             this.xtraTabPage1.Text = "Datos";
             // 
@@ -539,6 +541,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.checkSinFNac);
             this.groupControl1.Controls.Add(this.chkSinSVida);
             this.groupControl1.Controls.Add(this.chkSinSSocial);
             this.groupControl1.Controls.Add(this.btnBusqCuadrilla);
@@ -577,6 +580,17 @@
             this.groupControl1.Size = new System.Drawing.Size(887, 266);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
+            // 
+            // checkSinFNac
+            // 
+            this.checkSinFNac.Location = new System.Drawing.Point(234, 104);
+            this.checkSinFNac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkSinFNac.MenuManager = this.barManager2;
+            this.checkSinFNac.Name = "checkSinFNac";
+            this.checkSinFNac.Properties.Caption = "Sin F. Nacimiento";
+            this.checkSinFNac.Size = new System.Drawing.Size(132, 20);
+            this.checkSinFNac.TabIndex = 32;
+            this.checkSinFNac.CheckedChanged += new System.EventHandler(this.checkSinFNac_CheckedChanged);
             // 
             // chkSinSVida
             // 
@@ -756,9 +770,9 @@
             this.labelControl7.Location = new System.Drawing.Point(461, 73);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(66, 16);
+            this.labelControl7.Size = new System.Drawing.Size(36, 16);
             this.labelControl7.TabIndex = 15;
-            this.labelControl7.Text = "No Tarjeta:";
+            this.labelControl7.Text = "Clave:";
             // 
             // textCuenta
             // 
@@ -913,8 +927,8 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.xtraTabPage2.Size = new System.Drawing.Size(901, 600);
+            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(6);
+            this.xtraTabPage2.Size = new System.Drawing.Size(899, 598);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -924,8 +938,8 @@
             this.panelControl2.Location = new System.Drawing.Point(6, 209);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panelControl2.Size = new System.Drawing.Size(889, 385);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
+            this.panelControl2.Size = new System.Drawing.Size(887, 383);
             this.panelControl2.TabIndex = 16;
             // 
             // gridControl2
@@ -936,7 +950,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(873, 369);
+            this.gridControl2.Size = new System.Drawing.Size(871, 367);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1086,7 +1100,7 @@
             this.groupControl2.Location = new System.Drawing.Point(6, 6);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(889, 203);
+            this.groupControl2.Size = new System.Drawing.Size(887, 203);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1293,6 +1307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkSinFNac.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSinSVida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gleCuadrilla.Properties)).EndInit();
@@ -1443,5 +1458,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Ciudad;
         private DevExpress.XtraEditors.CheckEdit chkSinSVida;
         private DevExpress.XtraEditors.CheckEdit chkSinSSocial;
+        private DevExpress.XtraEditors.CheckEdit checkSinFNac;
     }
 }

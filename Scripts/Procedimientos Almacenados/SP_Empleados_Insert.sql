@@ -55,6 +55,9 @@ BEGIN
 			set @Fecha_Alta_Seg_Vida=NULL
 		if len(@Fecha_Baja_Seg_Vida)=0 
 			set @Fecha_Baja_Seg_Vida=NULL 
+			
+		if len(@Fecha_Nacimiento)=0
+			set @Fecha_Nacimiento=null
 
 		if @Existe>0 
 		

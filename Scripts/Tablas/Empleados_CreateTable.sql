@@ -10,7 +10,7 @@ ELSE
 	CREATE TABLE [dbo].[Empleados](
 		[Id_Empleado] [char](6) NOT NULL,
 		[Nombre_Empleado] [varchar](100) NOT NULL,
-		[Fecha_Nacimiento] [datetime] NOT NULL,
+		[Fecha_Nacimiento] [datetime] NULL,
 		[NSS] [varchar](15) NULL,
 		[Fecha_Alta_Seg_Social] [datetime] NULL,
 		[Fecha_Baja_Seg_Social] [datetime] NULL,

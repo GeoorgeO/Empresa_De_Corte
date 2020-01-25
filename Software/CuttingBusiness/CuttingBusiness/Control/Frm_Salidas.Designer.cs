@@ -242,10 +242,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 520);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 521);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1157, 35);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1157, 34);
             // 
             // barDockControlLeft
             // 
@@ -254,7 +254,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(78, 520);
+            this.barDockControlLeft.Size = new System.Drawing.Size(80, 521);
             // 
             // barDockControlRight
             // 
@@ -263,7 +263,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1157, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 520);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // btnEliminar
             // 
@@ -281,11 +281,11 @@
             // 
             this.panelControl3.Controls.Add(this.gridSalidas);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(78, 333);
+            this.panelControl3.Location = new System.Drawing.Point(80, 333);
             this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl3.Size = new System.Drawing.Size(1079, 187);
+            this.panelControl3.Size = new System.Drawing.Size(1077, 188);
             this.panelControl3.TabIndex = 13;
             // 
             // gridSalidas
@@ -297,7 +297,7 @@
             this.gridSalidas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridSalidas.MenuManager = this.barManager1;
             this.gridSalidas.Name = "gridSalidas";
-            this.gridSalidas.Size = new System.Drawing.Size(1063, 171);
+            this.gridSalidas.Size = new System.Drawing.Size(1061, 172);
             this.gridSalidas.TabIndex = 0;
             this.gridSalidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSalidas});
@@ -330,6 +330,8 @@
             this.gridColumn1.Caption = "Codigo";
             this.gridColumn1.FieldName = "Id_Producto";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Producto", "{0} Registros")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 83;
@@ -430,11 +432,11 @@
             // 
             this.panelControl2.Controls.Add(this.groupControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(78, 175);
+            this.panelControl2.Location = new System.Drawing.Point(80, 175);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl2.Size = new System.Drawing.Size(1079, 158);
+            this.panelControl2.Size = new System.Drawing.Size(1077, 158);
             this.panelControl2.TabIndex = 12;
             // 
             // groupControl1
@@ -459,7 +461,7 @@
             this.groupControl1.Location = new System.Drawing.Point(8, 8);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1063, 142);
+            this.groupControl1.Size = new System.Drawing.Size(1061, 142);
             this.groupControl1.TabIndex = 36;
             this.groupControl1.Text = "Captura de Articulos";
             // 
@@ -655,11 +657,11 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(78, 0);
+            this.panelControl1.Location = new System.Drawing.Point(80, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(1079, 175);
+            this.panelControl1.Size = new System.Drawing.Size(1077, 175);
             this.panelControl1.TabIndex = 11;
             // 
             // groupControl2
@@ -684,7 +686,7 @@
             this.groupControl2.Location = new System.Drawing.Point(8, 8);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1063, 159);
+            this.groupControl2.Size = new System.Drawing.Size(1061, 159);
             this.groupControl2.TabIndex = 22;
             this.groupControl2.Text = "Datos de la Salida";
             // 

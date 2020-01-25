@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_TiposEntradas));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -194,10 +195,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 430);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 431);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(598, 35);
+            this.barDockControlBottom.Size = new System.Drawing.Size(598, 34);
             // 
             // barDockControlLeft
             // 
@@ -206,7 +207,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(85, 430);
+            this.barDockControlLeft.Size = new System.Drawing.Size(87, 431);
             // 
             // barDockControlRight
             // 
@@ -215,7 +216,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(598, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 430);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 431);
             // 
             // repositoryItemTextEdit1
             // 
@@ -225,11 +226,11 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(85, 130);
+            this.panelControl2.Location = new System.Drawing.Point(87, 130);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.panelControl2.Size = new System.Drawing.Size(513, 300);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(12);
+            this.panelControl2.Size = new System.Drawing.Size(511, 301);
             this.panelControl2.TabIndex = 7;
             // 
             // gridControl1
@@ -241,7 +242,7 @@
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(485, 272);
+            this.gridControl1.Size = new System.Drawing.Size(483, 273);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -249,11 +250,14 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_TipoEntrada,
             this.Nombre_TipoEntrada});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_TipoEntrada
@@ -262,6 +266,8 @@
             this.Id_TipoEntrada.FieldName = "Id_TipoEntrada";
             this.Id_TipoEntrada.Name = "Id_TipoEntrada";
             this.Id_TipoEntrada.OptionsColumn.AllowEdit = false;
+            this.Id_TipoEntrada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_TipoEntrada", "Registros: {0}")});
             this.Id_TipoEntrada.Visible = true;
             this.Id_TipoEntrada.VisibleIndex = 0;
             // 
@@ -278,11 +284,11 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(85, 0);
+            this.panelControl1.Location = new System.Drawing.Point(87, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.panelControl1.Size = new System.Drawing.Size(513, 130);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(12);
+            this.panelControl1.Size = new System.Drawing.Size(511, 130);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl1
@@ -295,7 +301,7 @@
             this.groupControl1.Location = new System.Drawing.Point(14, 14);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(485, 102);
+            this.groupControl1.Size = new System.Drawing.Size(483, 102);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos Tipo de Entrada";
             // 

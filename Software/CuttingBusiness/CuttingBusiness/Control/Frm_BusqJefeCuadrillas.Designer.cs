@@ -136,7 +136,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Rutas:";
+            this.lblProveedor.Caption = "Jefe Cuadrilla:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -232,12 +232,15 @@
             // 
             // dtgValRutas
             // 
+            this.dtgValRutas.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValRutas.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.dtgValRutas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_Empleado,
             this.Nombre_Empleado});
             this.dtgValRutas.GridControl = this.gridControl1;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
+            this.dtgValRutas.OptionsView.ShowFooter = true;
             this.dtgValRutas.OptionsView.ShowGroupPanel = false;
             // 
             // Id_Empleado
@@ -246,6 +249,8 @@
             this.Id_Empleado.FieldName = "Id_Empleado";
             this.Id_Empleado.Name = "Id_Empleado";
             this.Id_Empleado.OptionsColumn.AllowEdit = false;
+            this.Id_Empleado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Empleado", "Registros: {0}")});
             this.Id_Empleado.Visible = true;
             this.Id_Empleado.VisibleIndex = 0;
             this.Id_Empleado.Width = 97;

@@ -238,11 +238,14 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id_TipoSalida,
             this.Nombre_TipoSalida});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // Id_TipoSalida
@@ -251,6 +254,8 @@
             this.Id_TipoSalida.FieldName = "Id_TipoSalida";
             this.Id_TipoSalida.Name = "Id_TipoSalida";
             this.Id_TipoSalida.OptionsColumn.AllowEdit = false;
+            this.Id_TipoSalida.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_TipoSalida", "Registros: {0}")});
             this.Id_TipoSalida.Visible = true;
             this.Id_TipoSalida.VisibleIndex = 0;
             // 

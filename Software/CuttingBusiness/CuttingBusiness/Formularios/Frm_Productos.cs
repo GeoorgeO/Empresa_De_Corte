@@ -285,5 +285,16 @@ namespace CuttingBusiness
             UnidadMedida = textUnidad.Text;
             this.Close();
         }
+
+        private void barLargeButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            xtraSaveFileDialog1.ShowDialog();
+            if (xtraSaveFileDialog1.FileName.Length > 0)
+            {
+                gridControl1.ExportToXlsx(xtraSaveFileDialog1.FileName + ".xlsx");
+                
+            }
+            
+        }
     }
 }
