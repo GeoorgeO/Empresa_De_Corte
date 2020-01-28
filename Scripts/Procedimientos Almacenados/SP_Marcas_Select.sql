@@ -15,15 +15,15 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Entradas_Select')
-DROP PROCEDURE SP_Entradas_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Marcas_Select')
+DROP PROCEDURE SP_Marcas_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Entradas_Select
+CREATE PROCEDURE SP_Marcas_Select
 	-- Add the parameters for the stored procedure here
 	
 AS
@@ -34,20 +34,9 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select Serie_Entrada
-	      ,Folio_Entrada
-		  ,E.Id_Proveedor
-		  ,P.Nombre_Proveedor
-		  ,E.Id_TipoEntrada
-		  ,TE.Nombre_TipoEntrada
-		  ,Fecha_Entrada
-		  ,Numero_ArticulosEntrada
-		  ,FacturaPDFNombre
-		  ,Orden_Compra
-		from EntradaEncabezado E
-		left join Proveedores as P on P.Id_Proveedor=E.Id_Proveedor
-		left join TiposEntradas as TE on TE.Id_TipoEntrada=E.Id_TipoEntrada
-		
+		select Id_Marca
+	      ,Nombre_Marca
+		from Marcas
 
 END
 GO

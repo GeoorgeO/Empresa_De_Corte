@@ -39,6 +39,8 @@
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.Dialogs.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.2.Drawing, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.XtraBars.v17.2" />
@@ -49,6 +51,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\SES_Existencias\SES_Existencias\bin\Debug\DevExpress.XtraGrid.v17.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\SES_Existencias\SES_Existencias\bin\Debug\itextsharp.dll</HintPath>
@@ -130,6 +133,12 @@
     <Compile Include="Control\Frm_Entradas.Designer.cs">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_ViewPDFs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_ViewPDFs.Designer.cs">
+      <DependentUpon>Frm_ViewPDFs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Areas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +162,12 @@
     </Compile>
     <Compile Include="Formularios\Frm_Jefes_Area.Designer.cs">
       <DependentUpon>Frm_Jefes_Area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Marcas.Designer.cs">
+      <DependentUpon>Frm_Marcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Series.cs">
       <SubType>Form</SubType>
@@ -348,6 +363,9 @@
     <EmbeddedResource Include="Control\Frm_Entradas.resx">
       <DependentUpon>Frm_Entradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_ViewPDFs.resx">
+      <DependentUpon>Frm_ViewPDFs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Areas.resx">
       <DependentUpon>Frm_Areas.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Jefes_Area.resx">
       <DependentUpon>Frm_Jefes_Area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Marcas.resx">
+      <DependentUpon>Frm_Marcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Series.resx">
       <DependentUpon>Frm_Series.cs</DependentUpon>

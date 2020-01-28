@@ -14,6 +14,9 @@ namespace CapaDeDatos
         public string Id_TipoEntrada { get; set; }
         public string Fecha_Entrada { get; set; }
         public int Numero_ArticulosEntrada { get; set; }
+        public byte[] FacturaPDF { get; set; }
+        public string FacturaPDFNombre { get; set; }
+        public string Orden_Compra { get; set; }
 
         // Detalles de la entrada
         public string Serie_Entrada { get; set; }
@@ -27,7 +30,37 @@ namespace CapaDeDatos
         public decimal Total_EntradaDetalles { get; set; }
         public string Observaciones_EntradaDetalles { get; set; }
 
+        public void MtdSeleccionarEntradaPDF()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_EntradasPDF_Select";
+                _dato.CadenaTexto = Serie_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Serie_Entrada");
+                _dato.CadenaTexto = Folio_Entrada;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Folio_Entrada");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
 
 
 
@@ -79,6 +112,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Entrada");
                 _dato.Entero = Numero_ArticulosEntrada;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Numero_ArticulosEntrada");
+                _dato.ImagenValor = FacturaPDF;
+                _conexion.agregarParametro(EnumTipoDato.imagen, _dato, "FacturaPDF");
+                _dato.CadenaTexto = FacturaPDFNombre;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FacturaPDFNombre");
+                _dato.CadenaTexto = Orden_Compra;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Orden_Compra");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

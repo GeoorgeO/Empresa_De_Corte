@@ -46,6 +46,12 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnVisualizarPDF = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCargarPDF = new DevExpress.XtraEditors.SimpleButton();
+            this.textNomFactura = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.btnTipoEntrada = new DevExpress.XtraEditors.SimpleButton();
@@ -95,16 +101,15 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.AplicadoInventario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Guardado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textNomFactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).BeginInit();
@@ -127,8 +132,6 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -296,7 +299,9 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.textEdit2);
+            this.groupControl2.Controls.Add(this.btnVisualizarPDF);
+            this.groupControl2.Controls.Add(this.btnCargarPDF);
+            this.groupControl2.Controls.Add(this.textNomFactura);
             this.groupControl2.Controls.Add(this.textEdit1);
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.labelControl13);
@@ -323,6 +328,72 @@
             this.groupControl2.Size = new System.Drawing.Size(1213, 159);
             this.groupControl2.TabIndex = 22;
             this.groupControl2.Text = "Datos de la Entrada";
+            // 
+            // btnVisualizarPDF
+            // 
+            this.btnVisualizarPDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizarPDF.ImageOptions.Image")));
+            this.btnVisualizarPDF.Location = new System.Drawing.Point(939, 69);
+            this.btnVisualizarPDF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVisualizarPDF.Name = "btnVisualizarPDF";
+            this.btnVisualizarPDF.Size = new System.Drawing.Size(28, 28);
+            this.btnVisualizarPDF.TabIndex = 34;
+            this.btnVisualizarPDF.Click += new System.EventHandler(this.btnVisualizarPDF_Click);
+            // 
+            // btnCargarPDF
+            // 
+            this.btnCargarPDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarPDF.ImageOptions.Image")));
+            this.btnCargarPDF.Location = new System.Drawing.Point(905, 69);
+            this.btnCargarPDF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCargarPDF.Name = "btnCargarPDF";
+            this.btnCargarPDF.Size = new System.Drawing.Size(28, 28);
+            this.btnCargarPDF.TabIndex = 33;
+            this.btnCargarPDF.Click += new System.EventHandler(this.btnCargarPDF_Click);
+            // 
+            // textNomFactura
+            // 
+            this.textNomFactura.Enabled = false;
+            this.textNomFactura.Location = new System.Drawing.Point(782, 70);
+            this.textNomFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textNomFactura.MenuManager = this.barManager1;
+            this.textNomFactura.Name = "textNomFactura";
+            this.textNomFactura.Size = new System.Drawing.Size(117, 22);
+            this.textNomFactura.TabIndex = 32;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(782, 38);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(117, 22);
+            this.textEdit1.TabIndex = 31;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.AppearancePressed.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(685, 72);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(57, 17);
+            this.labelControl14.TabIndex = 30;
+            this.labelControl14.Text = "Factura:";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.AppearancePressed.Options.UseFont = true;
+            this.labelControl13.Location = new System.Drawing.Point(685, 42);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(91, 17);
+            this.labelControl13.TabIndex = 29;
+            this.labelControl13.Text = "Ord. compra:";
             // 
             // lblStatus
             // 
@@ -378,7 +449,7 @@
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.AppearancePressed.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(22, 76);
+            this.labelControl12.Location = new System.Drawing.Point(22, 72);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(94, 17);
@@ -415,7 +486,7 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.AppearancePressed.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(932, 44);
+            this.labelControl3.Location = new System.Drawing.Point(959, 42);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 17);
@@ -438,7 +509,7 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.AppearancePressed.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(458, 44);
+            this.labelControl1.Location = new System.Drawing.Point(458, 42);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(39, 17);
@@ -461,7 +532,7 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.AppearancePressed.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(458, 76);
+            this.labelControl2.Location = new System.Drawing.Point(458, 72);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(37, 17);
@@ -483,7 +554,7 @@
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.AppearancePressed.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(22, 44);
+            this.labelControl4.Location = new System.Drawing.Point(22, 42);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(77, 17);
@@ -504,7 +575,7 @@
             // 
             this.dtFecha.EditValue = null;
             this.dtFecha.Enabled = false;
-            this.dtFecha.Location = new System.Drawing.Point(993, 38);
+            this.dtFecha.Location = new System.Drawing.Point(1009, 38);
             this.dtFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -894,51 +965,9 @@
             this.Guardado.VisibleIndex = 8;
             this.Guardado.Width = 63;
             // 
-            // labelControl13
+            // OpenDialog
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.AppearancePressed.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(685, 44);
-            this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(91, 17);
-            this.labelControl13.TabIndex = 29;
-            this.labelControl13.Text = "Ord. compra:";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.AppearancePressed.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(685, 75);
-            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(57, 17);
-            this.labelControl14.TabIndex = 30;
-            this.labelControl14.Text = "Factura:";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(782, 38);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(117, 22);
-            this.textEdit1.TabIndex = 31;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(782, 70);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(117, 22);
-            this.textEdit2.TabIndex = 32;
+            this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
             // Frm_Entradas
             // 
@@ -963,6 +992,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textNomFactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).EndInit();
@@ -986,8 +1017,6 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1060,9 +1089,12 @@
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
         private DevExpress.XtraBars.BarLargeButtonItem btnAfectarInventario;
         private DevExpress.XtraGrid.Columns.GridColumn Guardado;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textNomFactura;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.SimpleButton btnCargarPDF;
+        private DevExpress.XtraEditors.SimpleButton btnVisualizarPDF;
+        private DevExpress.XtraEditors.XtraOpenFileDialog OpenDialog;
     }
 }
