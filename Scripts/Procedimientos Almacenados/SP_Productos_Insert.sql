@@ -23,7 +23,8 @@ create PROCEDURE [dbo].[SP_Productos_Insert]
 	@Stock_Max numeric(18,0),
 	@Anaquel varchar(5),
 	@Pasillo varchar(5),
-	@Repisa varchar(5)
+	@Repisa varchar(5),
+	@Id_Marca char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -52,7 +53,8 @@ BEGIN
 				Stock_Max=@Stock_Max,
 				Anaquel=@Anaquel,
 				Pasillo=@Pasillo,
-				Repisa=@Repisa
+				Repisa=@Repisa,
+				Id_Marca=@Id_Marca
 		    WHERE
 		    	Id_Producto=@Id_Producto
 				
@@ -69,7 +71,8 @@ BEGIN
 			   ,Pasillo
 			   ,Repisa
 			   ,Activo
-			   ,Stock)
+			   ,Stock
+			   ,Id_Marca)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Producto
@@ -81,7 +84,8 @@ BEGIN
 			   ,@Pasillo
 			   ,@Repisa
 			   ,1
-			   ,0)
+			   ,0
+			   ,@Id_Marca)
 		
 		commit transaction T1;
 		set @correcto=1

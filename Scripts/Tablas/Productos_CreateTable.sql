@@ -19,6 +19,7 @@ ELSE
 		[Repisa] [varchar](5) NULL,
 		[Stock] [numeric](18,0) NULL,
 		[Activo] [bit] NULL,
+		[Id_Marca][char](4) NULL
 	 CONSTRAINT [PK_Productos] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Producto] ASC

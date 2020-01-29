@@ -68,6 +68,7 @@ namespace CuttingBusiness
             Clase.Repisa = textRepisa.Text.Trim();
             Clase.Anaquel = textAnaquel.Text.Trim();
             Clase.Id_ProductoTipo = cboProductoTipo.EditValue.ToString();
+            Clase.Id_Marca = textMarca.Tag.ToString();
             Clase.MtdInsertarProductos();
             if (Clase.Exito)
             {
@@ -128,6 +129,7 @@ namespace CuttingBusiness
         {
             textUnidad.Tag = "";
             labelActivo.Visible = false;
+            textMarca.Tag = "";
         }
 
         private void bloquear(Boolean sino)
@@ -186,6 +188,9 @@ namespace CuttingBusiness
                         labelActivo.ForeColor = System.Drawing.Color.Maroon;
                         bloquear(false);
                     }
+                    textMarca.Tag= row["Id_Marca"].ToString();
+                    textMarca.Text= row["Nombre_Marca"].ToString();
+                    cboProductoTipo.EditValue= row["Id_ProductoTipo"].ToString();
                 }
             }
             catch (Exception ex)
@@ -295,6 +300,16 @@ namespace CuttingBusiness
                 
             }
             
+        }
+
+        private void btnBusqMarca_Click(object sender, EventArgs e)
+        {
+            Frm_Marcas Uni = new Frm_Marcas();
+            Uni.PaSel = true;
+            Uni.ShowDialog();
+
+            textMarca.Tag = Uni.IdMarca;
+            textMarca.Text = Uni.Marca;
         }
     }
 }
