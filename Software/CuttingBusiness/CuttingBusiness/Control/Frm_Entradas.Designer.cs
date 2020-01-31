@@ -46,10 +46,13 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnBusqEmpleado = new DevExpress.XtraEditors.SimpleButton();
+            this.textEmpleado = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.btnVisualizarPDF = new DevExpress.XtraEditors.SimpleButton();
             this.btnCargarPDF = new DevExpress.XtraEditors.SimpleButton();
             this.textNomFactura = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textOrdenCompra = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
@@ -70,6 +73,10 @@
             this.dtFecha = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dateCaducidad = new DevExpress.XtraEditors.DateEdit();
+            this.textLote = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
@@ -101,22 +108,19 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.AplicadoInventario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Guardado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Lote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fecha_Caducidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.textEmpleado = new DevExpress.XtraEditors.TextEdit();
-            this.btnBusqEmpleado = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEmpleado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNomFactura.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textOrdenCompra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).BeginInit();
@@ -128,6 +132,9 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
@@ -139,10 +146,7 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEmpleado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -261,9 +265,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 556);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1122, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1122, 27);
             // 
             // barDockControlLeft
             // 
@@ -271,7 +275,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(68, 556);
+            this.barDockControlLeft.Size = new System.Drawing.Size(66, 554);
             // 
             // barDockControlRight
             // 
@@ -279,7 +283,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1122, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 556);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 554);
             // 
             // btnEliminar
             // 
@@ -297,10 +301,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(68, 0);
+            this.panelControl1.Location = new System.Drawing.Point(66, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(1054, 142);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl1.Size = new System.Drawing.Size(1056, 142);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl2
@@ -311,7 +315,7 @@
             this.groupControl2.Controls.Add(this.btnVisualizarPDF);
             this.groupControl2.Controls.Add(this.btnCargarPDF);
             this.groupControl2.Controls.Add(this.textNomFactura);
-            this.groupControl2.Controls.Add(this.textEdit1);
+            this.groupControl2.Controls.Add(this.textOrdenCompra);
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.labelControl13);
             this.groupControl2.Controls.Add(this.lblStatus);
@@ -333,9 +337,39 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(7, 7);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1040, 128);
+            this.groupControl2.Size = new System.Drawing.Size(1042, 128);
             this.groupControl2.TabIndex = 22;
             this.groupControl2.Text = "Datos de la Entrada";
+            // 
+            // btnBusqEmpleado
+            // 
+            this.btnBusqEmpleado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqEmpleado.ImageOptions.Image")));
+            this.btnBusqEmpleado.Location = new System.Drawing.Point(835, 83);
+            this.btnBusqEmpleado.Name = "btnBusqEmpleado";
+            this.btnBusqEmpleado.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqEmpleado.TabIndex = 37;
+            this.btnBusqEmpleado.Click += new System.EventHandler(this.btnBusqEmpleado_Click);
+            // 
+            // textEmpleado
+            // 
+            this.textEmpleado.Enabled = false;
+            this.textEmpleado.Location = new System.Drawing.Point(670, 85);
+            this.textEmpleado.MenuManager = this.barManager1;
+            this.textEmpleado.Name = "textEmpleado";
+            this.textEmpleado.Size = new System.Drawing.Size(159, 20);
+            this.textEmpleado.TabIndex = 36;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.AppearancePressed.Options.UseFont = true;
+            this.labelControl15.Location = new System.Drawing.Point(587, 82);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(55, 26);
+            this.labelControl15.TabIndex = 35;
+            this.labelControl15.Text = "Empleado\r\nReceptor:";
             // 
             // btnVisualizarPDF
             // 
@@ -364,14 +398,13 @@
             this.textNomFactura.Size = new System.Drawing.Size(100, 20);
             this.textNomFactura.TabIndex = 32;
             // 
-            // textEdit1
+            // textOrdenCompra
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(670, 31);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 31;
+            this.textOrdenCompra.Location = new System.Drawing.Point(670, 31);
+            this.textOrdenCompra.MenuManager = this.barManager1;
+            this.textOrdenCompra.Name = "textOrdenCompra";
+            this.textOrdenCompra.Size = new System.Drawing.Size(100, 20);
+            this.textOrdenCompra.TabIndex = 31;
             // 
             // labelControl14
             // 
@@ -379,7 +412,7 @@
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.AppearancePressed.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(587, 58);
+            this.labelControl14.Location = new System.Drawing.Point(587, 59);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(46, 13);
             this.labelControl14.TabIndex = 30;
@@ -391,7 +424,7 @@
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.AppearancePressed.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(587, 34);
+            this.labelControl13.Location = new System.Drawing.Point(587, 35);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(72, 13);
             this.labelControl13.TabIndex = 29;
@@ -447,7 +480,7 @@
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.AppearancePressed.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(19, 58);
+            this.labelControl12.Location = new System.Drawing.Point(19, 59);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(74, 13);
             this.labelControl12.TabIndex = 24;
@@ -481,7 +514,7 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.AppearancePressed.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(855, 34);
+            this.labelControl3.Location = new System.Drawing.Point(855, 35);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(36, 13);
             this.labelControl3.TabIndex = 8;
@@ -502,7 +535,7 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.AppearancePressed.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(393, 34);
+            this.labelControl1.Location = new System.Drawing.Point(393, 35);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(32, 13);
             this.labelControl1.TabIndex = 0;
@@ -523,7 +556,7 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.AppearancePressed.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(393, 58);
+            this.labelControl2.Location = new System.Drawing.Point(393, 59);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(29, 13);
             this.labelControl2.TabIndex = 1;
@@ -543,7 +576,7 @@
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.AppearancePressed.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(19, 34);
+            this.labelControl4.Location = new System.Drawing.Point(19, 35);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(62, 13);
             this.labelControl4.TabIndex = 9;
@@ -576,16 +609,17 @@
             // 
             this.panelControl2.Controls.Add(this.groupControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(68, 142);
+            this.panelControl2.Location = new System.Drawing.Point(66, 142);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl2.Size = new System.Drawing.Size(1054, 128);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl2.Size = new System.Drawing.Size(1056, 128);
             this.panelControl2.TabIndex = 9;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.dateEdit1);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.chkSinSSocial);
+            this.groupControl1.Controls.Add(this.dateCaducidad);
+            this.groupControl1.Controls.Add(this.textLote);
             this.groupControl1.Controls.Add(this.labelControl17);
             this.groupControl1.Controls.Add(this.labelControl16);
             this.groupControl1.Controls.Add(this.labelControl5);
@@ -607,9 +641,54 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1040, 114);
+            this.groupControl1.Size = new System.Drawing.Size(1042, 114);
             this.groupControl1.TabIndex = 36;
             this.groupControl1.Text = "Captura de Articulos";
+            // 
+            // dateCaducidad
+            // 
+            this.dateCaducidad.EditValue = null;
+            this.dateCaducidad.Location = new System.Drawing.Point(671, 81);
+            this.dateCaducidad.MenuManager = this.barManager1;
+            this.dateCaducidad.Name = "dateCaducidad";
+            this.dateCaducidad.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateCaducidad.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateCaducidad.Size = new System.Drawing.Size(126, 20);
+            this.dateCaducidad.TabIndex = 37;
+            // 
+            // textLote
+            // 
+            this.textLote.Location = new System.Drawing.Point(671, 55);
+            this.textLote.MenuManager = this.barManager1;
+            this.textLote.Name = "textLote";
+            this.textLote.Size = new System.Drawing.Size(126, 20);
+            this.textLote.TabIndex = 8;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.AppearancePressed.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(576, 87);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(73, 13);
+            this.labelControl17.TabIndex = 35;
+            this.labelControl17.Text = "F. Caducidad:";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl16.AppearancePressed.Options.UseFont = true;
+            this.labelControl16.Location = new System.Drawing.Point(576, 61);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(28, 13);
+            this.labelControl16.TabIndex = 34;
+            this.labelControl16.Text = "Lote:";
             // 
             // labelControl5
             // 
@@ -617,7 +696,7 @@
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.AppearancePressed.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(19, 34);
+            this.labelControl5.Location = new System.Drawing.Point(19, 35);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(41, 13);
             this.labelControl5.TabIndex = 9;
@@ -626,7 +705,7 @@
             // btnAgregar
             // 
             this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(829, 59);
+            this.btnAgregar.Location = new System.Drawing.Point(935, 62);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 39);
             this.btnAgregar.TabIndex = 8;
@@ -665,7 +744,7 @@
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.AppearancePressed.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(576, 34);
+            this.labelControl11.Location = new System.Drawing.Point(576, 35);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(86, 13);
             this.labelControl11.TabIndex = 33;
@@ -677,7 +756,7 @@
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.AppearancePressed.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(19, 60);
+            this.labelControl6.Location = new System.Drawing.Point(19, 61);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(68, 13);
             this.labelControl6.TabIndex = 23;
@@ -709,7 +788,7 @@
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.AppearancePressed.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(373, 86);
+            this.labelControl10.Location = new System.Drawing.Point(373, 87);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(32, 13);
             this.labelControl10.TabIndex = 31;
@@ -721,7 +800,7 @@
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.AppearancePressed.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(19, 86);
+            this.labelControl7.Location = new System.Drawing.Point(19, 87);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(103, 13);
             this.labelControl7.TabIndex = 25;
@@ -753,7 +832,7 @@
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.AppearancePressed.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(373, 60);
+            this.labelControl9.Location = new System.Drawing.Point(373, 61);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(38, 13);
             this.labelControl9.TabIndex = 29;
@@ -765,7 +844,7 @@
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.AppearancePressed.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(373, 34);
+            this.labelControl8.Location = new System.Drawing.Point(373, 35);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(53, 13);
             this.labelControl8.TabIndex = 27;
@@ -786,10 +865,10 @@
             // 
             this.panelControl3.Controls.Add(this.dtgEntradas);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(68, 270);
+            this.panelControl3.Location = new System.Drawing.Point(66, 270);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.panelControl3.Size = new System.Drawing.Size(1054, 286);
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl3.Size = new System.Drawing.Size(1056, 284);
             this.panelControl3.TabIndex = 10;
             // 
             // dtgEntradas
@@ -799,7 +878,7 @@
             this.dtgEntradas.MainView = this.dtgValEntradas;
             this.dtgEntradas.MenuManager = this.barManager1;
             this.dtgEntradas.Name = "dtgEntradas";
-            this.dtgEntradas.Size = new System.Drawing.Size(1040, 272);
+            this.dtgEntradas.Size = new System.Drawing.Size(1042, 270);
             this.dtgEntradas.TabIndex = 0;
             this.dtgEntradas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEntradas});
@@ -807,6 +886,8 @@
             // 
             // dtgValEntradas
             // 
+            this.dtgValEntradas.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValEntradas.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.dtgValEntradas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -819,7 +900,9 @@
             this.gridColumn9,
             this.gridColumn10,
             this.AplicadoInventario,
-            this.Guardado});
+            this.Guardado,
+            this.Lote,
+            this.Fecha_Caducidad});
             this.dtgValEntradas.GridControl = this.dtgEntradas;
             this.dtgValEntradas.Name = "dtgValEntradas";
             this.dtgValEntradas.OptionsBehavior.Editable = false;
@@ -833,7 +916,7 @@
             this.gridColumn1.FieldName = "Id_Producto";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Producto", "{0} Registros")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Producto", "Registros:{0}")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 83;
@@ -934,85 +1017,35 @@
             this.Guardado.VisibleIndex = 8;
             this.Guardado.Width = 63;
             // 
+            // Lote
+            // 
+            this.Lote.Caption = "Lote";
+            this.Lote.FieldName = "Lote";
+            this.Lote.Name = "Lote";
+            this.Lote.Visible = true;
+            this.Lote.VisibleIndex = 10;
+            // 
+            // Fecha_Caducidad
+            // 
+            this.Fecha_Caducidad.Caption = "Caducidad";
+            this.Fecha_Caducidad.FieldName = "Fecha_Caducidad";
+            this.Fecha_Caducidad.Name = "Fecha_Caducidad";
+            this.Fecha_Caducidad.Visible = true;
+            this.Fecha_Caducidad.VisibleIndex = 11;
+            // 
             // OpenDialog
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
-            // labelControl15
+            // chkSinSSocial
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.AppearancePressed.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(587, 81);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(55, 26);
-            this.labelControl15.TabIndex = 35;
-            this.labelControl15.Text = "Empleado\r\nReceptor:";
-            // 
-            // textEmpleado
-            // 
-            this.textEmpleado.Enabled = false;
-            this.textEmpleado.Location = new System.Drawing.Point(670, 85);
-            this.textEmpleado.MenuManager = this.barManager1;
-            this.textEmpleado.Name = "textEmpleado";
-            this.textEmpleado.Size = new System.Drawing.Size(159, 20);
-            this.textEmpleado.TabIndex = 36;
-            // 
-            // btnBusqEmpleado
-            // 
-            this.btnBusqEmpleado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnBusqEmpleado.Location = new System.Drawing.Point(835, 83);
-            this.btnBusqEmpleado.Name = "btnBusqEmpleado";
-            this.btnBusqEmpleado.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqEmpleado.TabIndex = 37;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.AppearancePressed.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(576, 60);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(28, 13);
-            this.labelControl16.TabIndex = 34;
-            this.labelControl16.Text = "Lote:";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.AppearancePressed.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(576, 86);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(73, 13);
-            this.labelControl17.TabIndex = 35;
-            this.labelControl17.Text = "F. Caducidad:";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(671, 55);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Mask.EditMask = "c2";
-            this.textEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEdit2.Size = new System.Drawing.Size(126, 20);
-            this.textEdit2.TabIndex = 36;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(671, 81);
-            this.dateEdit1.MenuManager = this.barManager1;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(126, 20);
-            this.dateEdit1.TabIndex = 37;
+            this.chkSinSSocial.EditValue = true;
+            this.chkSinSSocial.Location = new System.Drawing.Point(802, 81);
+            this.chkSinSSocial.Name = "chkSinSSocial";
+            this.chkSinSSocial.Properties.Caption = "Sin Caducidad";
+            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
+            this.chkSinSSocial.TabIndex = 38;
+            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
             // 
             // Frm_Entradas
             // 
@@ -1028,6 +1061,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Entradas";
             this.Text = "Entradas";
+            this.Load += new System.EventHandler(this.Frm_Entradas_Load);
             this.Shown += new System.EventHandler(this.Frm_Entradas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -1036,8 +1070,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEmpleado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNomFactura.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textOrdenCompra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTipoEntrada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboSerie.Properties)).EndInit();
@@ -1050,6 +1085,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
@@ -1061,10 +1099,7 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEmpleado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1138,7 +1173,7 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnAfectarInventario;
         private DevExpress.XtraGrid.Columns.GridColumn Guardado;
         private DevExpress.XtraEditors.TextEdit textNomFactura;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textOrdenCompra;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.SimpleButton btnCargarPDF;
@@ -1147,9 +1182,12 @@
         private DevExpress.XtraEditors.SimpleButton btnBusqEmpleado;
         private DevExpress.XtraEditors.TextEdit textEmpleado;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.DateEdit dateCaducidad;
+        private DevExpress.XtraEditors.TextEdit textLote;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraGrid.Columns.GridColumn Lote;
+        private DevExpress.XtraGrid.Columns.GridColumn Fecha_Caducidad;
+        private DevExpress.XtraEditors.CheckEdit chkSinSSocial;
     }
 }

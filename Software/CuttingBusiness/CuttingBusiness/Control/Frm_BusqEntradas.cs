@@ -27,6 +27,10 @@ namespace CuttingBusiness
         public string NombreTipoEntrada { get; set; }
         public string FechaEntrada { get; set; }
         public string NumeroArticulosEntrada { get; set; }
+        public string Factura { get; set; }
+        public string OrdenCompra { get; set; }
+        public string IdEmpleado { get; set; }
+        public string Empleado { get; set; }
 
         private void CargarEntradas()
         {
@@ -54,6 +58,10 @@ namespace CuttingBusiness
                 NombreTipoEntrada= row["Nombre_TipoEntrada"].ToString();
                 FechaEntrada= row["Fecha_Entrada"].ToString();
                 NumeroArticulosEntrada= row["Numero_ArticulosEntrada"].ToString();
+                Factura = row["FacturaPDFNombre"].ToString();
+                OrdenCompra = row["Orden_Compra"].ToString();
+                IdEmpleado = row["Id_Empleado"].ToString();
+                Empleado = row["Nombre_Empleado"].ToString();
             }
             else
             {
@@ -77,6 +85,10 @@ namespace CuttingBusiness
                     NombreTipoEntrada = row["Nombre_TipoEntrada"].ToString();
                     FechaEntrada = row["Fecha_Entrada"].ToString();
                     NumeroArticulosEntrada = row["Numero_ArticulosEntrada"].ToString();
+                    Factura = row["FacturaPDFNombre"].ToString();
+                    OrdenCompra = row["Orden_Compra"].ToString();
+                    IdEmpleado = row["Id_Empleado"].ToString();
+                    Empleado = row["Nombre_Empleado"].ToString();
                 }
             }
             catch (Exception ex)

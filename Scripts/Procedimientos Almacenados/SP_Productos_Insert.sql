@@ -24,6 +24,7 @@ create PROCEDURE [dbo].[SP_Productos_Insert]
 	@Anaquel varchar(5),
 	@Pasillo varchar(5),
 	@Repisa varchar(5),
+	@Id_ProductoTipo char(2),
 	@Id_Marca char(4)
 AS
 BEGIN
@@ -54,6 +55,7 @@ BEGIN
 				Anaquel=@Anaquel,
 				Pasillo=@Pasillo,
 				Repisa=@Repisa,
+				Id_ProductoTipo=@Id_ProductoTipo,
 				Id_Marca=@Id_Marca
 		    WHERE
 		    	Id_Producto=@Id_Producto
@@ -72,6 +74,7 @@ BEGIN
 			   ,Repisa
 			   ,Activo
 			   ,Stock
+			   ,Id_ProductoTipo
 			   ,Id_Marca)
 	     	VALUES
 	           (@maximo
@@ -85,6 +88,7 @@ BEGIN
 			   ,@Repisa
 			   ,1
 			   ,0
+			   ,@Id_ProductoTipo
 			   ,@Id_Marca)
 		
 		commit transaction T1;

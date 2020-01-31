@@ -17,6 +17,7 @@ namespace CapaDeDatos
         public byte[] FacturaPDF { get; set; }
         public string FacturaPDFNombre { get; set; }
         public string Orden_Compra { get; set; }
+        public string Id_Empleado { get; set; }
 
         // Detalles de la entrada
         public string Serie_Entrada { get; set; }
@@ -29,6 +30,8 @@ namespace CapaDeDatos
         public decimal Precio_EntradaDetalles { get; set; }
         public decimal Total_EntradaDetalles { get; set; }
         public string Observaciones_EntradaDetalles { get; set; }
+        public string Lote { get; set; }
+        public string Fecha_Caducidad { get; set; }
 
         public void MtdSeleccionarEntradaPDF()
         {
@@ -118,6 +121,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FacturaPDFNombre");
                 _dato.CadenaTexto = Orden_Compra;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Orden_Compra");
+                _dato.CadenaTexto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -234,6 +239,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Total_EntradaDetalles");
                 _dato.CadenaTexto = Observaciones_EntradaDetalles;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Observaciones_EntradaDetalles");
+                _dato.CadenaTexto = Lote;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Lote");
+                _dato.CadenaTexto = Fecha_Caducidad;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Caducidad");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

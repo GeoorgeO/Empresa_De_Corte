@@ -17,7 +17,7 @@ create PROCEDURE [dbo].[SP_Empleados_Insert]
 	-- Add the parameters for the stored procedure here
 	@Id_Empleado char(6),
 	@Nombre_Empleado varchar(100),
-	@Fecha_Nacimiento datetime,
+	@Fecha_Nacimiento varchar(15),
 	@NSS varchar(15),
 	@Fecha_Alta_Seg_Social varchar(15),
 	@Fecha_Baja_Seg_Social varchar(15),

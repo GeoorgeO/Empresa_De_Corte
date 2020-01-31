@@ -16,7 +16,8 @@ ELSE
 		[Numero_ArticulosEntrada] [int] NULL,
 		[Orden_Compra] [varchar](10) NULL,
 		[FacturaPDF] [varbinary](max) NULL,
-		[FacturaPDFNombre] [varchar](80) NULL
+		[FacturaPDFNombre] [varchar](80) NULL,
+		[Id_Empleado][char](6) NULL,
 	 CONSTRAINT [PK_EntradaEncabezado] PRIMARY KEY CLUSTERED 
 	(
 		[Serie_Entrada] ASC,

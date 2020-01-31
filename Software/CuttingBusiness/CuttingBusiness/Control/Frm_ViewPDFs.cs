@@ -16,11 +16,14 @@ namespace CuttingBusiness
     {
         public string Id_Entrada { get; set; }
         public string serie { get; set; }
+        public string ruta { get; set; }
 
         public Frm_ViewPDFs()
         {
             InitializeComponent();
         }
+
+
 
         private void Frm_ViewPDFs_Load(object sender, EventArgs e)
         {
@@ -36,6 +39,13 @@ namespace CuttingBusiness
 
                     System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
                     this.pdfViewer1.LoadDocument(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+                }
+            }
+            else
+            {
+                if (ruta.Length > 0)
+                {
+                    this.pdfViewer1.LoadDocument(ruta);
                 }
             }
         }

@@ -18,7 +18,9 @@ ELSE
 		[Precio_EntradaDetalles] [money] NULL,
 		[Total_EntradaDetalles] [money] NULL,
 		[Observaciones_EntradaDetalles] [varchar](200) NULL,
-		[AplicadoInventario] [bit] NULL
+		[AplicadoInventario] [bit] NULL,
+		[Lote][varchar](50) NULL,
+		[Fecha_Caducidad][datetime] NULL
 	) ON [PRIMARY]
 
 	end

@@ -34,7 +34,9 @@ CREATE PROCEDURE SP_EntradaDetalles_Insert
 	@Cantidad_EntradaDetalles	int,
 	@Precio_EntradaDetalles	money,
 	@Total_EntradaDetalles	money,
-	@Observaciones_EntradaDetalles	varchar(200)
+	@Observaciones_EntradaDetalles	varchar(200),
+	@Lote varchar(50) NULL,
+	@Fecha_Caducidad varchar(15) NULL
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -46,11 +48,15 @@ BEGIN
 
 	begin transaction T1;
 	begin try
+	
+	if len(@Fecha_Caducidad)=0
+			set @Fecha_Caducidad=null
+	
     -- Insert statements for procedure here
 		INSERT INTO EntradaDetalles
 							 (Serie_Entrada, Folio_Entrada, Registro_EntradaDetalles, Id_Producto, Nombre_Producto, Nombre_UnidadMedida, Cantidad_EntradaDetalles, Precio_EntradaDetalles, Total_EntradaDetalles, Observaciones_EntradaDetalles, 
-							 AplicadoInventario)
-		VALUES        (@Serie_Entrada,@Folio_Entrada,@Registro_EntradaDetalles,@Id_Producto,@Nombre_Producto,@Nombre_UnidadMedida,@Cantidad_EntradaDetalles,@Precio_EntradaDetalles,@Total_EntradaDetalles,@Observaciones_EntradaDetalles,0)
+							 AplicadoInventario,Lote,Fecha_Caducidad)
+		VALUES        (@Serie_Entrada,@Folio_Entrada,@Registro_EntradaDetalles,@Id_Producto,@Nombre_Producto,@Nombre_UnidadMedida,@Cantidad_EntradaDetalles,@Precio_EntradaDetalles,@Total_EntradaDetalles,@Observaciones_EntradaDetalles,0,@Lote,@Fecha_Caducidad)
 	
 	commit transaction T1;
 		set @correcto=1

@@ -47,6 +47,8 @@ BEGIN
 		  ,Observaciones_EntradaDetalles
 		  ,Guardado=CONVERT(bit,1)
 		  ,AplicadoInventario
+		  ,Lote
+		  ,Fecha_Caducidad
 		from EntradaDetalles E
 		where Serie_Entrada=@Serie_Entrada and Folio_Entrada=@Folio_Entrada
 		

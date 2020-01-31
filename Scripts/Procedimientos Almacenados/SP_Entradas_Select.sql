@@ -44,9 +44,12 @@ BEGIN
 		  ,Numero_ArticulosEntrada
 		  ,FacturaPDFNombre
 		  ,Orden_Compra
+		  ,E.Id_Empleado
+		  ,Nombre_Empleado
 		from EntradaEncabezado E
 		left join Proveedores as P on P.Id_Proveedor=E.Id_Proveedor
 		left join TiposEntradas as TE on TE.Id_TipoEntrada=E.Id_TipoEntrada
+		left join Empleados as EMP on EMP.Id_Empleado=E.Id_Empleado
 		
 
 END

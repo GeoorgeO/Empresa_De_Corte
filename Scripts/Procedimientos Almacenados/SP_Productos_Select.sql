@@ -35,7 +35,7 @@ BEGIN
     -- Insert statements for procedure here
 	
 				SELECT        pro.Id_Producto, pro.Nombre_Producto, pro.Id_UnidadMedida, Uni.Nombre_UnidadMedida, pro.Inventariable, pro.Stock_Min, pro.Stock_Max, pro.Anaquel, pro.Pasillo, pro.Repisa, pro.Stock, pro.Activo, 
-                         ProductoTipo.Nombre_ProductoTipo,pro.Id_Marca,m.Nombre_Marca
+                        pro.Id_ProductoTipo, ProductoTipo.Nombre_ProductoTipo,pro.Id_Marca,m.Nombre_Marca
 		FROM            Productos AS pro INNER JOIN
                          ProductoTipo ON pro.Id_ProductoTipo = ProductoTipo.Id_ProductoTipo LEFT OUTER JOIN
                          UnidadesMedida AS Uni ON Uni.Id_UnidadMedida = pro.Id_UnidadMedida	

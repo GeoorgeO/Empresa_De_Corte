@@ -18,6 +18,10 @@ namespace CuttingBusiness
 
         const string idTipoPersona = "0001";
 
+        public string IdEmpleado { get; set; }
+        public string Empleado { get; set; }
+        public Boolean PaSel { get; set; }
+
         private static Frm_Empleados m_FormDefInstance;
         public static Frm_Empleados DefInstance
         {
@@ -354,7 +358,7 @@ namespace CuttingBusiness
                 {
                     if (glePuesto.EditValue != null)
                     {
-                        if (dateNacimiento.EditValue != null && checkSinFNac.Checked==true)
+                        if (dateNacimiento.EditValue != null || checkSinFNac.Checked==true)
                         {
                             InsertarEmpleados();
                         }
@@ -395,6 +399,14 @@ namespace CuttingBusiness
 
         private void Frm_Empleados_Load(object sender, EventArgs e)
         {
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             CargarPuesto();
             CargarEmpleados();
             CargarDomicilio();
@@ -413,6 +425,17 @@ namespace CuttingBusiness
         private void checkActivo_CheckedChanged(object sender, EventArgs e)
         {
             CargarEmpleados();
+            if (checkActivo.Checked)
+            {
+                btnSeleccionar.Enabled = false;
+            }else
+            {
+                if (PaSel == true)
+                {
+                    btnSeleccionar.Enabled = true;
+                }
+                
+            }
         }
 
         private void btnBusqEstado_Click(object sender, EventArgs e)
@@ -476,6 +499,12 @@ namespace CuttingBusiness
                     glePuesto.EditValue = row["Id_Puesto"].ToString();
                     textEmpleado.Text = row["Nombre_Empleado"].ToString();
                     dateNacimiento.EditValue = row["Fecha_Nacimiento"].ToString();
+                    if (row["Fecha_Nacimiento"].ToString().Equals(""))
+                    {
+                        checkSinFNac.Checked = true;
+                        dateNacimiento.EditValue = null;
+                        
+                    }
                     textNSS.Text = row["NSS"].ToString();
                     dateAltaSegSocial.EditValue = row["Fecha_Alta_Seg_Social"].ToString();
                     if (row["Fecha_Alta_Seg_Social"].ToString().Equals(""))
@@ -614,6 +643,13 @@ namespace CuttingBusiness
                 dateNacimiento.Enabled = true;
                 dateNacimiento.EditValue = DateTime.Now.AddYears(-18);
             }
+        }
+
+        private void btnSeleccionar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            IdEmpleado = textId.Text.Trim();
+            Empleado = textEmpleado.Text.Trim();
+            this.Close();
         }
     }
 }

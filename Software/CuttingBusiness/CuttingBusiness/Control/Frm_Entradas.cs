@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using CapaDeDatos;
 using DevExpress.XtraEditors.Mask;
 using System.Globalization;
+using System.IO;
 
 namespace CuttingBusiness
 {
@@ -21,6 +22,7 @@ namespace CuttingBusiness
 
 
         string RutaPDF = "", NombrePDF = "";
+        Byte[] ArchivoPDFGlobal = null;
 
         private static Frm_Entradas m_FormDefInstance;
         public static Frm_Entradas DefInstance
@@ -163,7 +165,15 @@ namespace CuttingBusiness
             txtFolio.Text = "";
             txtNombreProveedor.Tag = "";
             txtNombreProveedor.Text = "";
-            dtgEntradas.DataSource = null;
+            textOrdenCompra.Text = "";
+            textLote.Text = "";
+            chkSinSSocial.Checked = true;
+            RutaPDF = "";
+            NombrePDF = "";
+            ArchivoPDFGlobal = null;
+            textEmpleado.Tag = "";
+            textEmpleado.Text = "";
+            MakeTablaPedidos();
             bloquearEntrada(true);
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -312,6 +322,26 @@ namespace CuttingBusiness
 
             table.Columns.Add(column);
 
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "Lote";
+            column.AutoIncrement = false;
+            column.Caption = "Lote";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(DateTime);
+            column.ColumnName = "Fecha_Caducidad";
+            column.AutoIncrement = false;
+            column.Caption = "Caducidad";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
             dtgEntradas.DataSource = table;
         }
 
@@ -329,7 +359,7 @@ namespace CuttingBusiness
             }
         }
 
-        private void CreatNewRowArticulo(string vSerie_Entrada, string vFolio_Entrada, string vRegistro_EntradaDetalles, string vId_Producto, string vNombre_Producto, string vNombre_UnidadMedida, string vCantidad_EntradaDetalles, string vPrecio_EntradaDetalles, string vTotal_EntradaDetalles, string vObservaciones_EntradaDetalles)
+        private void CreatNewRowArticulo(string vSerie_Entrada, string vFolio_Entrada, string vRegistro_EntradaDetalles, string vId_Producto, string vNombre_Producto, string vNombre_UnidadMedida, string vCantidad_EntradaDetalles, string vPrecio_EntradaDetalles, string vTotal_EntradaDetalles, string vObservaciones_EntradaDetalles,string Lote,string Fecha_Caducidad)
         {
             dtgValEntradas.AddNewRow();
             int rowHandle = dtgValEntradas.GetRowHandle(dtgValEntradas.DataRowCount);
@@ -351,6 +381,8 @@ namespace CuttingBusiness
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Observaciones_EntradaDetalles"], vObservaciones_EntradaDetalles);
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Guardado"], 0);
                 dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["AplicadoInventario"], 0);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Lote"], Lote);
+                dtgValEntradas.SetRowCellValue(rowHandle, dtgValEntradas.Columns["Fecha_Caducidad"], Fecha_Caducidad);
             }
         }
         private void NumerarReg()
@@ -407,6 +439,8 @@ namespace CuttingBusiness
             txtPrecio.Text = "0";
             txtTotal.Text = "0";
             txtObservaciones.Text = string.Empty;
+            textLote.Text = "";
+            dateCaducidad.EditValue = null;
             txtCodigo.Focus();
         }
         private bool ExisteCodigo()
@@ -455,7 +489,16 @@ namespace CuttingBusiness
                     string vPrecio_EntradaDetalles = txtPrecio.Text;
                     string vTotal_EntradaDetalles = txtTotal.Text;
                     string vObservaciones_EntradaDetalles = txtObservaciones.Text;
-                    CreatNewRowArticulo(vSerie_Entrada, vFolio_Entrada, vRegistro_EntradaDetalles, vId_Producto, vNombre_Producto, vNombre_UnidadMedida, vCantidad_EntradaDetalles, vPrecio_EntradaDetalles, vTotal_EntradaDetalles, vObservaciones_EntradaDetalles);
+                    string vCaducidad= string.Empty;
+                    if (dateCaducidad.EditValue != null)
+                    {
+                        vCaducidad=dateCaducidad.Text;
+                    }
+                    else
+                    {
+                        vCaducidad = null;
+                    }
+                    CreatNewRowArticulo(vSerie_Entrada, vFolio_Entrada, vRegistro_EntradaDetalles, vId_Producto, vNombre_Producto, vNombre_UnidadMedida, vCantidad_EntradaDetalles, vPrecio_EntradaDetalles, vTotal_EntradaDetalles, vObservaciones_EntradaDetalles, textLote.Text.Trim(), vCaducidad);
                    
                     dtgValEntradas.Focus();
                     dtgValEntradas.UpdateTotalSummary();
@@ -619,7 +662,9 @@ namespace CuttingBusiness
                    Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"])),
                    Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Precio_EntradaDetalles"])),
                     Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Total_EntradaDetalles"])),
-                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString()
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString(),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Lote"]).ToString(),
+                   dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Fecha_Caducidad"]).ToString()
                    ))
                     {
                         
@@ -679,6 +724,41 @@ namespace CuttingBusiness
             DateTime Fecha = Convert.ToDateTime(dtFecha.Text.Trim());
             Clase.Fecha_Entrada = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Numero_ArticulosEntrada = SumarCantidadArticulos();
+            Clase.Orden_Compra = textOrdenCompra.Text;
+            Clase.FacturaPDFNombre = textNomFactura.Text;
+
+            Byte[] ArchivoPDF = null;
+            
+
+            FileStream fsPDF = null;
+           
+
+            Boolean noentroPDF = true;
+            if (RutaPDF.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(RutaPDF, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDF = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDF, 0, (int)fsPDF.Length);
+            }
+            else
+            {
+                ArchivoPDF = ArchivoPDFGlobal;
+                noentroPDF = false;
+            }
+            if (ArchivoPDF != null)
+            {
+                Clase.FacturaPDF = ArchivoPDF;
+            }
+            else
+            {
+                Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+            }
+            Clase.Id_Empleado = textEmpleado.Tag.ToString();
+            
             Clase.MtdInsertarEntradaEncabezado();
             if (Clase.Exito)
             {
@@ -699,7 +779,9 @@ namespace CuttingBusiness
                         Convert.ToInt32(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Cantidad_EntradaDetalles"])),
                         Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Precio_EntradaDetalles"])),
                          Convert.ToDecimal(dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Total_EntradaDetalles"])),
-                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString()
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Observaciones_EntradaDetalles"]).ToString(),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Lote"]).ToString(),
+                        dtgValEntradas.GetRowCellValue(xRow, dtgValEntradas.Columns["Fecha_Caducidad"]).ToString()
                         ))
                     {
                         progressBarControl1.Position = x + 1;
@@ -749,6 +831,10 @@ namespace CuttingBusiness
                 XtraMessageBox.Show(Clase.Mensaje);
                 return false;
             }
+            if (noentroPDF)
+            {
+                fsPDF.Close();
+            }
         }
 
         private Boolean AfectarEntradaDetalle(string Serie_Entrada, string Folio_Entrada, string Id_Producto, int Cantidad_EntradaDetalles)
@@ -783,7 +869,7 @@ namespace CuttingBusiness
             return Total;
         }
 
-        private Boolean GuardarEntradaDetalle(string Serie_Entrada,string Folio_Entrada,int Registro_EntradaDetalles, string Id_Producto,string Nombre_Producto,string Nombre_UnidadMedida, int Cantidad_EntradaDetalles,decimal Precio_EntradaDetalles, decimal Total_EntradaDetalles,string Observaciones_EntradaDetalles)
+        private Boolean GuardarEntradaDetalle(string Serie_Entrada,string Folio_Entrada,int Registro_EntradaDetalles, string Id_Producto,string Nombre_Producto,string Nombre_UnidadMedida, int Cantidad_EntradaDetalles,decimal Precio_EntradaDetalles, decimal Total_EntradaDetalles,string Observaciones_EntradaDetalles,string Lote,string Fecha_Caducidad)
         {
             CLS_Entradas Clase = new CLS_Entradas();
             Clase.Serie_Entrada = Serie_Entrada;
@@ -796,6 +882,20 @@ namespace CuttingBusiness
             Clase.Precio_EntradaDetalles = Precio_EntradaDetalles;
             Clase.Total_EntradaDetalles = Total_EntradaDetalles;
             Clase.Observaciones_EntradaDetalles = Observaciones_EntradaDetalles;
+            Clase.Lote = Lote;
+
+            string tempf = Fecha_Caducidad;
+
+            if (Fecha_Caducidad.Length>0)
+            {
+                DateTime Fecha = Convert.ToDateTime(Fecha_Caducidad.Trim());
+                Clase.Fecha_Caducidad = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString()); 
+            }
+            else
+            {
+                Clase.Fecha_Caducidad = string.Empty;
+            }
+           
             Clase.MtdInsertarEntradaDetalles();
             if (Clase.Exito)
             {
@@ -861,6 +961,11 @@ namespace CuttingBusiness
                 txtNombreProveedor.Tag = frm.IdProveedor;
                 txtNombreProveedor.Text = frm.NombreProveedor;
                 dtFecha.EditValue = Convert.ToDateTime(frm.FechaEntrada);
+                textNomFactura.Text = frm.Factura;
+                textOrdenCompra.Text = frm.OrdenCompra;
+                textEmpleado.Tag = frm.IdEmpleado;
+                textEmpleado.Text = frm.Empleado;
+
                 CargarEntradasDetalles();
                 bloquearEntrada(false);
             }
@@ -894,7 +999,10 @@ namespace CuttingBusiness
             btnProveedor.Enabled = sino;
             btnTipoEntrada.Enabled = sino;
             btnSeries.Enabled = sino;
-            
+            textOrdenCompra.Enabled = sino;
+            btnCargarPDF.Enabled = sino;
+          
+            btnBusqEmpleado.Enabled = sino;
             btnGuardar.Enabled = sino;
             btnAfectarInventario.Enabled = sino;
         }
@@ -905,13 +1013,43 @@ namespace CuttingBusiness
             {
                 Frm_ViewPDFs frm = new Frm_ViewPDFs();
                 frm.Id_Entrada = txtFolio.Text.Trim();
-                frm.serie = cboSerie.Text.Trim();
-
+                frm.serie = cboSerie.EditValue.ToString();
+                frm.ruta = RutaPDF;
                 frm.ShowDialog();
                 frm.Dispose();
                 System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
             }
             
+        }
+
+        private void btnBusqEmpleado_Click(object sender, EventArgs e)
+        {
+            Frm_Empleados frm = new Frm_Empleados();
+            frm.IdEmpleado = string.Empty;
+            frm.Empleado = string.Empty;
+            frm.PaSel = true;
+            frm.ShowDialog();
+            textEmpleado.Tag = frm.IdEmpleado;
+            textEmpleado.Text = frm.Empleado;
+        }
+
+        private void chkSinSSocial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSinSSocial.Checked)
+            {
+                dateCaducidad.EditValue = null;
+                dateCaducidad.Enabled = false;
+            }else
+            {
+                dateCaducidad.EditValue = DateTime.Now.AddMonths(1);
+                dateCaducidad.Enabled = true;
+            }
+        }
+
+        private void Frm_Entradas_Load(object sender, EventArgs e)
+        {
+            dateCaducidad.EditValue = null;
+            dateCaducidad.Enabled = false;
         }
 
         private void btnCargarPDF_Click(object sender, EventArgs e)

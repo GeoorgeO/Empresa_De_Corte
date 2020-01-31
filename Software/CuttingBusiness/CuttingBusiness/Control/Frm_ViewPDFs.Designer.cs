@@ -36,18 +36,24 @@
             // 
             this.pdfViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pdfViewer1.Location = new System.Drawing.Point(0, 0);
+            this.pdfViewer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.Size = new System.Drawing.Size(475, 502);
+            this.pdfViewer1.Size = new System.Drawing.Size(407, 408);
             this.pdfViewer1.TabIndex = 0;
             // 
             // Frm_ViewPDFs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 502);
+            this.ClientSize = new System.Drawing.Size(407, 408);
             this.Controls.Add(this.pdfViewer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_ViewPDFs";
-            this.Text = "Frm_ViewPDFs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visualizador de Facturas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ViewPDFs_Load);
             this.ResumeLayout(false);
 

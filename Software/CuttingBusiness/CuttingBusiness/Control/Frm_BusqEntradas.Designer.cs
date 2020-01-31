@@ -54,6 +54,10 @@
             this.Nombre_TipoEntrada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Entrada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Numero_ArticulosEntrada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FacturaPDFNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Orden_Compra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -151,17 +155,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1036, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(888, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 501);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 410);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1036, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(888, 25);
             // 
             // barDockControlLeft
             // 
@@ -169,17 +171,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(87, 501);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 410);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1036, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(888, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 501);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
             // 
             // btnLimpiar
             // 
@@ -213,23 +213,20 @@
             // 
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(87, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(6);
-            this.panelControl1.Size = new System.Drawing.Size(949, 501);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Size = new System.Drawing.Size(817, 410);
             this.panelControl1.TabIndex = 5;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(8, 8);
+            this.gridControl1.Location = new System.Drawing.Point(7, 7);
             this.gridControl1.MainView = this.dtgValRutas;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(933, 485);
+            this.gridControl1.Size = new System.Drawing.Size(803, 396);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRutas});
@@ -246,7 +243,11 @@
             this.Id_TipoEntrada,
             this.Nombre_TipoEntrada,
             this.Fecha_Entrada,
-            this.Numero_ArticulosEntrada});
+            this.Numero_ArticulosEntrada,
+            this.FacturaPDFNombre,
+            this.Orden_Compra,
+            this.Id_Empleado,
+            this.Nombre_Empleado});
             this.dtgValRutas.GridControl = this.gridControl1;
             this.dtgValRutas.Name = "dtgValRutas";
             this.dtgValRutas.OptionsFind.AlwaysVisible = true;
@@ -315,17 +316,46 @@
             this.Numero_ArticulosEntrada.Visible = true;
             this.Numero_ArticulosEntrada.VisibleIndex = 6;
             // 
+            // FacturaPDFNombre
+            // 
+            this.FacturaPDFNombre.Caption = "Factura";
+            this.FacturaPDFNombre.FieldName = "FacturaPDFNombre";
+            this.FacturaPDFNombre.Name = "FacturaPDFNombre";
+            this.FacturaPDFNombre.Visible = true;
+            this.FacturaPDFNombre.VisibleIndex = 7;
+            // 
+            // Orden_Compra
+            // 
+            this.Orden_Compra.Caption = "Orden Compra";
+            this.Orden_Compra.FieldName = "Orden_Compra";
+            this.Orden_Compra.Name = "Orden_Compra";
+            this.Orden_Compra.Visible = true;
+            this.Orden_Compra.VisibleIndex = 8;
+            // 
+            // Id_Empleado
+            // 
+            this.Id_Empleado.Caption = "Id Empleado";
+            this.Id_Empleado.FieldName = "Id_Empleado";
+            this.Id_Empleado.Name = "Id_Empleado";
+            // 
+            // Nombre_Empleado
+            // 
+            this.Nombre_Empleado.Caption = "Empleado";
+            this.Nombre_Empleado.FieldName = "Nombre_Empleado";
+            this.Nombre_Empleado.Name = "Nombre_Empleado";
+            this.Nombre_Empleado.Visible = true;
+            this.Nombre_Empleado.VisibleIndex = 9;
+            // 
             // Frm_BusqEntradas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 535);
+            this.ClientSize = new System.Drawing.Size(888, 435);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Frm_BusqEntradas";
             this.Text = "Frm_BusqEntradas";
             this.Load += new System.EventHandler(this.Frm_BusqEntradas_Load);
@@ -366,5 +396,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha_Entrada;
         private DevExpress.XtraGrid.Columns.GridColumn Numero_ArticulosEntrada;
+        private DevExpress.XtraGrid.Columns.GridColumn FacturaPDFNombre;
+        private DevExpress.XtraGrid.Columns.GridColumn Orden_Compra;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Empleado;
     }
 }
