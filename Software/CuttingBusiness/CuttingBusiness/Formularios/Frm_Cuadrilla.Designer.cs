@@ -75,33 +75,30 @@
             this.panelControl1.Controls.Add(this.textId);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(68, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Location = new System.Drawing.Point(53, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(451, 92);
+            this.panelControl1.Size = new System.Drawing.Size(392, 75);
             this.panelControl1.TabIndex = 0;
             // 
             // btnBusqCategoria
             // 
             this.btnBusqCategoria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqCategoria.ImageOptions.Image")));
-            this.btnBusqCategoria.Location = new System.Drawing.Point(304, 46);
-            this.btnBusqCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBusqCategoria.Location = new System.Drawing.Point(261, 37);
             this.btnBusqCategoria.Name = "btnBusqCategoria";
-            this.btnBusqCategoria.Size = new System.Drawing.Size(28, 28);
+            this.btnBusqCategoria.Size = new System.Drawing.Size(24, 23);
             this.btnBusqCategoria.TabIndex = 26;
             this.btnBusqCategoria.Click += new System.EventHandler(this.btnBusqCategoria_Click);
             // 
             // gleCategoria
             // 
-            this.gleCategoria.Location = new System.Drawing.Point(139, 47);
-            this.gleCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gleCategoria.Location = new System.Drawing.Point(119, 38);
             this.gleCategoria.MenuManager = this.barManager2;
             this.gleCategoria.Name = "gleCategoria";
             this.gleCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gleCategoria.Properties.NullText = "- Seleccionar -";
             this.gleCategoria.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gleCategoria.Size = new System.Drawing.Size(159, 22);
+            this.gleCategoria.Size = new System.Drawing.Size(136, 20);
             this.gleCategoria.TabIndex = 3;
             // 
             // barManager2
@@ -208,17 +205,15 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl1.Size = new System.Drawing.Size(519, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(445, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 580);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 473);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl2.Size = new System.Drawing.Size(519, 38);
+            this.barDockControl2.Size = new System.Drawing.Size(445, 29);
             // 
             // barDockControl3
             // 
@@ -226,17 +221,15 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl3.Size = new System.Drawing.Size(68, 580);
+            this.barDockControl3.Size = new System.Drawing.Size(53, 473);
             // 
             // barDockControl5
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl5.Location = new System.Drawing.Point(519, 0);
+            this.barDockControl5.Location = new System.Drawing.Point(445, 0);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControl5.Size = new System.Drawing.Size(0, 580);
+            this.barDockControl5.Size = new System.Drawing.Size(0, 473);
             // 
             // gridLookUpEdit1View
             // 
@@ -247,29 +240,26 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(23, 52);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Location = new System.Drawing.Point(20, 42);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(114, 16);
+            this.labelControl2.Size = new System.Drawing.Size(95, 13);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Categoria Cuadrilla:";
             // 
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(139, 15);
-            this.textId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textId.Location = new System.Drawing.Point(119, 12);
             this.textId.MenuManager = this.barManager2;
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(117, 22);
+            this.textId.Size = new System.Drawing.Size(100, 20);
             this.textId.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(23, 16);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(20, 13);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(70, 16);
+            this.labelControl1.Size = new System.Drawing.Size(58, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Cuadrilla:";
             // 
@@ -277,23 +267,20 @@
             // 
             this.panelControl2.Controls.Add(this.gridControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(68, 92);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl2.Location = new System.Drawing.Point(53, 75);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.panelControl2.Size = new System.Drawing.Size(451, 488);
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl2.Size = new System.Drawing.Size(392, 398);
             this.panelControl2.TabIndex = 5;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(14, 14);
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.MenuManager = this.barManager2;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(423, 460);
+            this.gridControl1.Size = new System.Drawing.Size(368, 374);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -341,9 +328,9 @@
             // 
             // Frm_Cuadrilla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 618);
+            this.ClientSize = new System.Drawing.Size(445, 502);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControl3);
@@ -351,7 +338,6 @@
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Cuadrilla";

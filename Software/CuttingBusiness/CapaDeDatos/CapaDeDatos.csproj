@@ -55,6 +55,7 @@
     <Compile Include="Formularios\CLS_Entradas.cs" />
     <Compile Include="Formularios\CLS_Jefes_Area.cs" />
     <Compile Include="Formularios\CLS_Marcas.cs" />
+    <Compile Include="Formularios\CLS_Parametros.cs" />
     <Compile Include="Formularios\CLS_ReservaProductoSalida.cs" />
     <Compile Include="Formularios\CLS_Salidas.cs" />
     <Compile Include="Formularios\CLS_TiposEntradas.cs" />
