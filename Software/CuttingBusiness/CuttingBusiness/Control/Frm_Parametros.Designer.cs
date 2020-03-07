@@ -147,6 +147,10 @@
             // 
             this.textPagoxCajaSup.Location = new System.Drawing.Point(367, 106);
             this.textPagoxCajaSup.Name = "textPagoxCajaSup";
+            this.textPagoxCajaSup.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoxCajaSup.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoxCajaSup.Properties.Mask.EditMask = "n2";
+            this.textPagoxCajaSup.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoxCajaSup.Size = new System.Drawing.Size(73, 20);
             this.textPagoxCajaSup.TabIndex = 18;
             // 
@@ -154,6 +158,10 @@
             // 
             this.textPagoxCajaInf.Location = new System.Drawing.Point(288, 106);
             this.textPagoxCajaInf.Name = "textPagoxCajaInf";
+            this.textPagoxCajaInf.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoxCajaInf.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoxCajaInf.Properties.Mask.EditMask = "n2";
+            this.textPagoxCajaInf.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoxCajaInf.Size = new System.Drawing.Size(73, 20);
             this.textPagoxCajaInf.TabIndex = 17;
             // 
@@ -161,6 +169,10 @@
             // 
             this.textPagoxCaja.Location = new System.Drawing.Point(209, 106);
             this.textPagoxCaja.Name = "textPagoxCaja";
+            this.textPagoxCaja.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoxCaja.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoxCaja.Properties.Mask.EditMask = "n2";
+            this.textPagoxCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoxCaja.Size = new System.Drawing.Size(73, 20);
             this.textPagoxCaja.TabIndex = 16;
             // 
@@ -176,6 +188,8 @@
             // 
             this.textLimSupCort.Location = new System.Drawing.Point(367, 59);
             this.textLimSupCort.Name = "textLimSupCort";
+            this.textLimSupCort.Properties.Appearance.Options.UseTextOptions = true;
+            this.textLimSupCort.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textLimSupCort.Size = new System.Drawing.Size(73, 20);
             this.textLimSupCort.TabIndex = 14;
             // 
@@ -183,6 +197,10 @@
             // 
             this.textLimInfCort.Location = new System.Drawing.Point(288, 59);
             this.textLimInfCort.Name = "textLimInfCort";
+            this.textLimInfCort.Properties.Appearance.Options.UseTextOptions = true;
+            this.textLimInfCort.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textLimInfCort.Properties.Mask.EditMask = "n2";
+            this.textLimInfCort.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textLimInfCort.Size = new System.Drawing.Size(73, 20);
             this.textLimInfCort.TabIndex = 13;
             // 
@@ -206,6 +224,10 @@
             // 
             this.textTopePago.Location = new System.Drawing.Point(209, 75);
             this.textTopePago.Name = "textTopePago";
+            this.textTopePago.Properties.Appearance.Options.UseTextOptions = true;
+            this.textTopePago.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textTopePago.Properties.Mask.EditMask = "n2";
+            this.textTopePago.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textTopePago.Size = new System.Drawing.Size(73, 20);
             this.textTopePago.TabIndex = 10;
             // 
@@ -213,6 +235,10 @@
             // 
             this.textNCortadores.Location = new System.Drawing.Point(130, 75);
             this.textNCortadores.Name = "textNCortadores";
+            this.textNCortadores.Properties.Appearance.Options.UseTextOptions = true;
+            this.textNCortadores.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textNCortadores.Properties.Mask.EditMask = "n2";
+            this.textNCortadores.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textNCortadores.Size = new System.Drawing.Size(73, 20);
             this.textNCortadores.TabIndex = 9;
             // 
@@ -220,6 +246,10 @@
             // 
             this.textPagoxDia.Location = new System.Drawing.Point(51, 75);
             this.textPagoxDia.Name = "textPagoxDia";
+            this.textPagoxDia.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoxDia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoxDia.Properties.Mask.EditMask = "n2";
+            this.textPagoxDia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoxDia.Size = new System.Drawing.Size(73, 20);
             this.textPagoxDia.TabIndex = 8;
             // 
@@ -227,6 +257,10 @@
             // 
             this.textTopePagoMission.Location = new System.Drawing.Point(209, 49);
             this.textTopePagoMission.Name = "textTopePagoMission";
+            this.textTopePagoMission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textTopePagoMission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textTopePagoMission.Properties.Mask.EditMask = "n2";
+            this.textTopePagoMission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textTopePagoMission.Size = new System.Drawing.Size(73, 20);
             this.textTopePagoMission.TabIndex = 7;
             // 
@@ -234,6 +268,10 @@
             // 
             this.textNCortadoresMission.Location = new System.Drawing.Point(130, 49);
             this.textNCortadoresMission.Name = "textNCortadoresMission";
+            this.textNCortadoresMission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textNCortadoresMission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textNCortadoresMission.Properties.Mask.EditMask = "n2";
+            this.textNCortadoresMission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textNCortadoresMission.Size = new System.Drawing.Size(73, 20);
             this.textNCortadoresMission.TabIndex = 6;
             // 
@@ -241,6 +279,10 @@
             // 
             this.textPagoxDiaMission.Location = new System.Drawing.Point(51, 49);
             this.textPagoxDiaMission.Name = "textPagoxDiaMission";
+            this.textPagoxDiaMission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoxDiaMission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoxDiaMission.Properties.Mask.EditMask = "n2";
+            this.textPagoxDiaMission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoxDiaMission.Size = new System.Drawing.Size(73, 20);
             this.textPagoxDiaMission.TabIndex = 5;
             // 
@@ -320,6 +362,10 @@
             // 
             this.textPagoSup3Mission.Location = new System.Drawing.Point(260, 104);
             this.textPagoSup3Mission.Name = "textPagoSup3Mission";
+            this.textPagoSup3Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup3Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoSup3Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoSup3Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoSup3Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup3Mission.TabIndex = 31;
             // 
@@ -327,6 +373,10 @@
             // 
             this.textPagoInf3Mission.Location = new System.Drawing.Point(181, 104);
             this.textPagoInf3Mission.Name = "textPagoInf3Mission";
+            this.textPagoInf3Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf3Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf3Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoInf3Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf3Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf3Mission.TabIndex = 30;
             // 
@@ -334,6 +384,10 @@
             // 
             this.textPagoSup2Mission.Location = new System.Drawing.Point(260, 78);
             this.textPagoSup2Mission.Name = "textPagoSup2Mission";
+            this.textPagoSup2Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup2Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoSup2Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoSup2Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoSup2Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup2Mission.TabIndex = 29;
             // 
@@ -341,6 +395,10 @@
             // 
             this.textPagoInf2Mission.Location = new System.Drawing.Point(181, 78);
             this.textPagoInf2Mission.Name = "textPagoInf2Mission";
+            this.textPagoInf2Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf2Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf2Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoInf2Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf2Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf2Mission.TabIndex = 28;
             // 
@@ -348,6 +406,10 @@
             // 
             this.textPagoSup1Mission.Location = new System.Drawing.Point(260, 52);
             this.textPagoSup1Mission.Name = "textPagoSup1Mission";
+            this.textPagoSup1Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup1Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoSup1Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoSup1Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoSup1Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup1Mission.TabIndex = 27;
             // 
@@ -355,6 +417,10 @@
             // 
             this.textPagoInf1Mission.Location = new System.Drawing.Point(181, 52);
             this.textPagoInf1Mission.Name = "textPagoInf1Mission";
+            this.textPagoInf1Mission.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf1Mission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf1Mission.Properties.Mask.EditMask = "n2";
+            this.textPagoInf1Mission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf1Mission.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf1Mission.TabIndex = 26;
             // 
@@ -362,6 +428,8 @@
             // 
             this.textPagoSup3.Location = new System.Drawing.Point(84, 104);
             this.textPagoSup3.Name = "textPagoSup3";
+            this.textPagoSup3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPagoSup3.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup3.TabIndex = 25;
             // 
@@ -369,6 +437,10 @@
             // 
             this.textPagoInf3.Location = new System.Drawing.Point(5, 104);
             this.textPagoInf3.Name = "textPagoInf3";
+            this.textPagoInf3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf3.Properties.Mask.EditMask = "n2";
+            this.textPagoInf3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf3.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf3.TabIndex = 24;
             // 
@@ -376,6 +448,10 @@
             // 
             this.textPagoSup2.Location = new System.Drawing.Point(84, 78);
             this.textPagoSup2.Name = "textPagoSup2";
+            this.textPagoSup2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoSup2.Properties.Mask.EditMask = "n2";
+            this.textPagoSup2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoSup2.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup2.TabIndex = 23;
             // 
@@ -383,6 +459,10 @@
             // 
             this.textPagoInf2.Location = new System.Drawing.Point(5, 78);
             this.textPagoInf2.Name = "textPagoInf2";
+            this.textPagoInf2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf2.Properties.Mask.EditMask = "n2";
+            this.textPagoInf2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf2.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf2.TabIndex = 22;
             // 
@@ -390,6 +470,10 @@
             // 
             this.textPagoSup1.Location = new System.Drawing.Point(84, 52);
             this.textPagoSup1.Name = "textPagoSup1";
+            this.textPagoSup1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoSup1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoSup1.Properties.Mask.EditMask = "n2";
+            this.textPagoSup1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoSup1.Size = new System.Drawing.Size(73, 20);
             this.textPagoSup1.TabIndex = 21;
             // 
@@ -397,6 +481,10 @@
             // 
             this.textPagoInf1.Location = new System.Drawing.Point(5, 52);
             this.textPagoInf1.Name = "textPagoInf1";
+            this.textPagoInf1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoInf1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoInf1.Properties.Mask.EditMask = "n2";
+            this.textPagoInf1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPagoInf1.Size = new System.Drawing.Size(73, 20);
             this.textPagoInf1.TabIndex = 20;
             // 
@@ -436,6 +524,10 @@
             // 
             this.textKgxDiaSup3.Location = new System.Drawing.Point(84, 104);
             this.textKgxDiaSup3.Name = "textKgxDiaSup3";
+            this.textKgxDiaSup3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaSup3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaSup3.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaSup3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaSup3.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaSup3.TabIndex = 19;
             // 
@@ -443,6 +535,10 @@
             // 
             this.textKgxDiaInf3.Location = new System.Drawing.Point(5, 104);
             this.textKgxDiaInf3.Name = "textKgxDiaInf3";
+            this.textKgxDiaInf3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaInf3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaInf3.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaInf3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaInf3.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaInf3.TabIndex = 18;
             // 
@@ -450,6 +546,10 @@
             // 
             this.textKgxDiaSup2.Location = new System.Drawing.Point(84, 78);
             this.textKgxDiaSup2.Name = "textKgxDiaSup2";
+            this.textKgxDiaSup2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaSup2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaSup2.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaSup2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaSup2.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaSup2.TabIndex = 17;
             // 
@@ -457,6 +557,10 @@
             // 
             this.textKgxDiaInf2.Location = new System.Drawing.Point(5, 78);
             this.textKgxDiaInf2.Name = "textKgxDiaInf2";
+            this.textKgxDiaInf2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaInf2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaInf2.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaInf2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaInf2.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaInf2.TabIndex = 16;
             // 
@@ -464,6 +568,10 @@
             // 
             this.textKgxDiaSup1.Location = new System.Drawing.Point(84, 52);
             this.textKgxDiaSup1.Name = "textKgxDiaSup1";
+            this.textKgxDiaSup1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaSup1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaSup1.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaSup1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaSup1.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaSup1.TabIndex = 15;
             // 
@@ -471,6 +579,10 @@
             // 
             this.textKgxDiaInf1.Location = new System.Drawing.Point(5, 52);
             this.textKgxDiaInf1.Name = "textKgxDiaInf1";
+            this.textKgxDiaInf1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textKgxDiaInf1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textKgxDiaInf1.Properties.Mask.EditMask = "n2";
+            this.textKgxDiaInf1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textKgxDiaInf1.Size = new System.Drawing.Size(73, 20);
             this.textKgxDiaInf1.TabIndex = 14;
             // 
