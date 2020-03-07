@@ -109,6 +109,12 @@
     <Compile Include="Control\Frm_BusqSalidas.Designer.cs">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Nomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Nomina.Designer.cs">
+      <DependentUpon>Frm_Nomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Parametros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_BusqSalidas.resx">
       <DependentUpon>Frm_BusqSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Nomina.resx">
+      <DependentUpon>Frm_Nomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Parametros.resx">
       <DependentUpon>Frm_Parametros.cs</DependentUpon>
