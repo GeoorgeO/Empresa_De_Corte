@@ -58,6 +58,7 @@
     <Compile Include="Formularios\CLS_Parametros.cs" />
     <Compile Include="Formularios\CLS_ReservaProductoSalida.cs" />
     <Compile Include="Formularios\CLS_Salidas.cs" />
+    <Compile Include="Formularios\CLS_ServiciosCortes.cs" />
     <Compile Include="Formularios\CLS_TiposEntradas.cs" />
     <Compile Include="Formularios\CLS_TiposSalidas.cs" />
     <Compile Include="Formularios\CLS_Series.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Formularios\CLS_UnidadesMedida.cs" />
     <Compile Include="Formularios\CLS_Usuarios.cs" />
+    <Compile Include="Formularios\ColumnasExcel.cs" />
     <Compile Include="Formularios\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

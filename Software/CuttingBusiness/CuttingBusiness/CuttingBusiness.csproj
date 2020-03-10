@@ -52,9 +52,17 @@
       <HintPath>..\..\..\..\SES_Existencias\SES_Existencias\bin\Debug\DevExpress.XtraGrid.v17.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraPdfViewer.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraSpreadsheet.v17.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\SES_Existencias\SES_Existencias\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SpreadsheetLight.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -121,6 +129,12 @@
     <Compile Include="Control\Frm_Parametros.Designer.cs">
       <DependentUpon>Frm_Parametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Parametros_PSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Parametros_PSC.designer.cs">
+      <DependentUpon>Frm_Parametros_PSC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +182,12 @@
     </Compile>
     <Compile Include="Formularios\Frm_Huertas.designer.cs">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_ImportarODC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_ImportarODC.Designer.cs">
+      <DependentUpon>Frm_ImportarODC.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Jefes_Area.cs">
       <SubType>Form</SubType>
@@ -369,6 +389,9 @@
     <EmbeddedResource Include="Control\Frm_Parametros.resx">
       <DependentUpon>Frm_Parametros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Parametros_PSC.resx">
+      <DependentUpon>Frm_Parametros_PSC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Salidas.resx">
       <DependentUpon>Frm_Salidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Huertas.resx">
       <DependentUpon>Frm_Huertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_ImportarODC.resx">
+      <DependentUpon>Frm_ImportarODC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Jefes_Area.resx">
       <DependentUpon>Frm_Jefes_Area.cs</DependentUpon>

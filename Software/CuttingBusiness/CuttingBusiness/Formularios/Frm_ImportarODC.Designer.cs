@@ -497,6 +497,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_ImportarODC";
             this.Text = "Frm_ImportarODC";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Frm_ImportarODC_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
