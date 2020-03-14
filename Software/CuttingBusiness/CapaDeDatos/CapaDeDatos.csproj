@@ -52,12 +52,16 @@
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Formularios\CLS_Areas.cs" />
     <Compile Include="Formularios\CLS_Empaques.cs" />
+    <Compile Include="Formularios\CLS_Empleados_Nomina.cs" />
     <Compile Include="Formularios\CLS_Entradas.cs" />
+    <Compile Include="Formularios\CLS_HojaNomina.cs" />
+    <Compile Include="Formularios\CLS_HojaNominaDetalle.cs" />
     <Compile Include="Formularios\CLS_Jefes_Area.cs" />
     <Compile Include="Formularios\CLS_Marcas.cs" />
     <Compile Include="Formularios\CLS_Parametros.cs" />
     <Compile Include="Formularios\CLS_ReservaProductoSalida.cs" />
     <Compile Include="Formularios\CLS_Salidas.cs" />
+    <Compile Include="Formularios\CLS_ServicioCortes.cs" />
     <Compile Include="Formularios\CLS_ServiciosCortes.cs" />
     <Compile Include="Formularios\CLS_TiposEntradas.cs" />
     <Compile Include="Formularios\CLS_TiposSalidas.cs" />

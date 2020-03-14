@@ -73,6 +73,7 @@
             this.dtFecha = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
             this.dateCaducidad = new DevExpress.XtraEditors.DateEdit();
             this.textLote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -111,7 +112,6 @@
             this.Lote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Fecha_Caducidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.chkSinSSocial = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -132,6 +132,7 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLote.Properties)).BeginInit();
@@ -146,7 +147,6 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -265,9 +265,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 556);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1122, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1122, 25);
             // 
             // barDockControlLeft
             // 
@@ -275,7 +275,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(66, 554);
+            this.barDockControlLeft.Size = new System.Drawing.Size(68, 556);
             // 
             // barDockControlRight
             // 
@@ -283,7 +283,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1122, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 554);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 556);
             // 
             // btnEliminar
             // 
@@ -301,10 +301,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(66, 0);
+            this.panelControl1.Location = new System.Drawing.Point(68, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1056, 142);
+            this.panelControl1.Size = new System.Drawing.Size(1054, 142);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl2
@@ -337,7 +337,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(7, 7);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1042, 128);
+            this.groupControl2.Size = new System.Drawing.Size(1040, 128);
             this.groupControl2.TabIndex = 22;
             this.groupControl2.Text = "Datos de la Entrada";
             // 
@@ -609,10 +609,10 @@
             // 
             this.panelControl2.Controls.Add(this.groupControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(66, 142);
+            this.panelControl2.Location = new System.Drawing.Point(68, 142);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1056, 128);
+            this.panelControl2.Size = new System.Drawing.Size(1054, 128);
             this.panelControl2.TabIndex = 9;
             // 
             // groupControl1
@@ -641,9 +641,19 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1042, 114);
+            this.groupControl1.Size = new System.Drawing.Size(1040, 114);
             this.groupControl1.TabIndex = 36;
             this.groupControl1.Text = "Captura de Articulos";
+            // 
+            // chkSinSSocial
+            // 
+            this.chkSinSSocial.EditValue = true;
+            this.chkSinSSocial.Location = new System.Drawing.Point(802, 81);
+            this.chkSinSSocial.Name = "chkSinSSocial";
+            this.chkSinSSocial.Properties.Caption = "Sin Caducidad";
+            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
+            this.chkSinSSocial.TabIndex = 38;
+            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
             // 
             // dateCaducidad
             // 
@@ -865,10 +875,10 @@
             // 
             this.panelControl3.Controls.Add(this.dtgEntradas);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(66, 270);
+            this.panelControl3.Location = new System.Drawing.Point(68, 270);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(1056, 284);
+            this.panelControl3.Size = new System.Drawing.Size(1054, 286);
             this.panelControl3.TabIndex = 10;
             // 
             // dtgEntradas
@@ -878,7 +888,7 @@
             this.dtgEntradas.MainView = this.dtgValEntradas;
             this.dtgEntradas.MenuManager = this.barManager1;
             this.dtgEntradas.Name = "dtgEntradas";
-            this.dtgEntradas.Size = new System.Drawing.Size(1042, 270);
+            this.dtgEntradas.Size = new System.Drawing.Size(1040, 272);
             this.dtgEntradas.TabIndex = 0;
             this.dtgEntradas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEntradas});
@@ -1037,16 +1047,6 @@
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
             // 
-            // chkSinSSocial
-            // 
-            this.chkSinSSocial.EditValue = true;
-            this.chkSinSSocial.Location = new System.Drawing.Point(802, 81);
-            this.chkSinSSocial.Name = "chkSinSSocial";
-            this.chkSinSSocial.Properties.Caption = "Sin Caducidad";
-            this.chkSinSSocial.Size = new System.Drawing.Size(113, 19);
-            this.chkSinSSocial.TabIndex = 38;
-            this.chkSinSSocial.CheckedChanged += new System.EventHandler(this.chkSinSSocial_CheckedChanged);
-            // 
             // Frm_Entradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1085,6 +1085,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCaducidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textLote.Properties)).EndInit();
@@ -1099,7 +1100,6 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEntradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEntradas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkSinSSocial.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
