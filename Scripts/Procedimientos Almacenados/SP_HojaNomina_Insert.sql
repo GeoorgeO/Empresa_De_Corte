@@ -34,7 +34,8 @@ create PROCEDURE [dbo].[SP_HojaNomina_Insert]
 	@Total_Importe numeric(10,2),
 	@Pago_x_dia bit,
 	@Pago_falso bit,
-	@Festivo bit
+	@Festivo bit,
+	@Estatus char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -71,7 +72,8 @@ BEGIN
 				Total_Importe=@Total_Importe,
 				Pago_x_dia=@Pago_x_dia,
 				Pago_falso=@Pago_falso,
-				Festivo=@Festivo
+				Festivo=@Festivo,
+				Estatus=@Estatus
 		    WHERE
 		    	Id_HojaNomina=@Id_HojaNomina
 				
@@ -97,7 +99,8 @@ BEGIN
 			   ,Total_Importe
 			   ,Pago_x_dia
 			   ,Pago_falso
-			   ,Festivo)
+			   ,Festivo
+			   ,Estatus)
 	     	VALUES
 	           (@Id_HojaNomina
 	           ,@Fecha_HojaNomina
@@ -118,7 +121,8 @@ BEGIN
 			   ,@Total_Importe
 			   ,@Pago_x_dia
 			   ,@Pago_falso
-			   ,@Festivo)
+			   ,@Festivo
+			   ,@Estatus)
 		
 		commit transaction T1;
 		set @correcto=1

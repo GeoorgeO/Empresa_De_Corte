@@ -31,6 +31,7 @@ namespace CapaDeDatos
         public string Pago_falso { get; set; }
         public string Festivo { get; set; }
         public string Id_Tipo { get; set; }
+        public string Estatus { get; set; }
 
         public void MtdSeleccionarHojaNomina()
         {
@@ -174,6 +175,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Festivo");
                 _dato.DecimalValor = Cajas_cortados_x_dia;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Cajas_cortados_x_dia");
+                _dato.CadenaTexto = Estatus;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Estatus");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

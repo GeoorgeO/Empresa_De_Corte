@@ -99,6 +99,12 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_AbrirHoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_AbrirHoja.Designer.cs">
+      <DependentUpon>Frm_AbrirHoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_BusqEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_AbrirHoja.resx">
+      <DependentUpon>Frm_AbrirHoja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_BusqEntradas.resx">
       <DependentUpon>Frm_BusqEntradas.cs</DependentUpon>

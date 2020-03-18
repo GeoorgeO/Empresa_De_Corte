@@ -54,7 +54,8 @@ BEGIN
 			Total_Importe,
 			Pago_x_dia,
 			Pago_falso,
-			Festivo
+			Festivo,
+			Estatus
 		from HojaNomina as H
 		left join Empleados as E on E.Id_Empleado=H.Id_JefeCuadrilla
 		where Id_HojaNomina=@Id_HojaNomina

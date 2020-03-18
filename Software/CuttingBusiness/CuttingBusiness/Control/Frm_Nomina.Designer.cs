@@ -32,7 +32,7 @@
             this.dateFecha = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textIdHojaNomina = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAbrirHoja = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelEmpresa = new DevExpress.XtraEditors.LabelControl();
             this.labelPagoDiario = new DevExpress.XtraEditors.LabelControl();
@@ -49,10 +49,10 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lueEmpleados = new DevExpress.XtraEditors.LookUpEdit();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnIncluirApoyo = new DevExpress.XtraEditors.SimpleButton();
             this.checkFestivo = new DevExpress.XtraEditors.CheckEdit();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnELiminar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
@@ -73,18 +73,19 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Empleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_empleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_empleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cajas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Importe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_secuencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_HojaNomina = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkPagoFalso = new DevExpress.XtraEditors.CheckEdit();
             this.checkPagoxDia = new DevExpress.XtraEditors.CheckEdit();
             this.textCajas = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
-            this.Id_secuencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_HojaNomina = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_Puesto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -141,13 +142,14 @@
             this.textIdHojaNomina.TabIndex = 2;
             this.textIdHojaNomina.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
-            // simpleButton1
+            // btnAbrirHoja
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(240, 27);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(29, 23);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "F3";
+            this.btnAbrirHoja.Location = new System.Drawing.Point(240, 27);
+            this.btnAbrirHoja.Name = "btnAbrirHoja";
+            this.btnAbrirHoja.Size = new System.Drawing.Size(29, 23);
+            this.btnAbrirHoja.TabIndex = 3;
+            this.btnAbrirHoja.Text = "F3";
+            this.btnAbrirHoja.Click += new System.EventHandler(this.btnAbrirHoja_Click);
             // 
             // labelControl2
             // 
@@ -207,10 +209,10 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.lueEmpleados);
-            this.groupControl1.Controls.Add(this.simpleButton6);
+            this.groupControl1.Controls.Add(this.btnIncluirApoyo);
             this.groupControl1.Controls.Add(this.checkFestivo);
-            this.groupControl1.Controls.Add(this.simpleButton5);
-            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.btnNuevo);
+            this.groupControl1.Controls.Add(this.btnELiminar);
             this.groupControl1.Controls.Add(this.btnAgregar);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Controls.Add(this.gridControl1);
@@ -326,13 +328,13 @@
             this.lueEmpleados.Size = new System.Drawing.Size(292, 20);
             this.lueEmpleados.TabIndex = 16;
             // 
-            // simpleButton6
+            // btnIncluirApoyo
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(444, 377);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton6.TabIndex = 14;
-            this.simpleButton6.Text = "Incluir apoyo";
+            this.btnIncluirApoyo.Location = new System.Drawing.Point(444, 377);
+            this.btnIncluirApoyo.Name = "btnIncluirApoyo";
+            this.btnIncluirApoyo.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirApoyo.TabIndex = 14;
+            this.btnIncluirApoyo.Text = "Incluir apoyo";
             // 
             // checkFestivo
             // 
@@ -343,21 +345,21 @@
             this.checkFestivo.TabIndex = 13;
             this.checkFestivo.CheckedChanged += new System.EventHandler(this.checkFestivo_CheckedChanged);
             // 
-            // simpleButton5
+            // btnNuevo
             // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(169, 50);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(25, 26);
-            this.simpleButton5.TabIndex = 12;
+            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(169, 50);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(25, 26);
+            this.btnNuevo.TabIndex = 12;
             // 
-            // simpleButton4
+            // btnELiminar
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(224, 50);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(25, 26);
-            this.simpleButton4.TabIndex = 11;
+            this.btnELiminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnELiminar.Location = new System.Drawing.Point(224, 50);
+            this.btnELiminar.Name = "btnELiminar";
+            this.btnELiminar.Size = new System.Drawing.Size(25, 26);
+            this.btnELiminar.TabIndex = 11;
             // 
             // btnAgregar
             // 
@@ -563,7 +565,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Empleado,
+            this.Id_empleado,
             this.Nombre_empleado,
             this.Cajas,
             this.Importe,
@@ -575,13 +577,13 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // Id_Empleado
+            // Id_empleado
             // 
-            this.Id_Empleado.Caption = "Id Trabajador";
-            this.Id_Empleado.FieldName = "Id_Empleado";
-            this.Id_Empleado.Name = "Id_Empleado";
-            this.Id_Empleado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Pais", "Registros: {0}")});
+            this.Id_empleado.Caption = "Id Trabajador";
+            this.Id_empleado.FieldName = "Id_empleado";
+            this.Id_empleado.Name = "Id_empleado";
+            this.Id_empleado.Visible = true;
+            this.Id_empleado.VisibleIndex = 3;
             // 
             // Nombre_empleado
             // 
@@ -609,6 +611,24 @@
             this.Importe.Visible = true;
             this.Importe.VisibleIndex = 2;
             this.Importe.Width = 78;
+            // 
+            // Id_secuencia
+            // 
+            this.Id_secuencia.Caption = "Secuencia";
+            this.Id_secuencia.FieldName = "Id_secuencia";
+            this.Id_secuencia.Name = "Id_secuencia";
+            // 
+            // Id_HojaNomina
+            // 
+            this.Id_HojaNomina.Caption = "Id_HojaNomina";
+            this.Id_HojaNomina.FieldName = "Id_HojaNomina";
+            this.Id_HojaNomina.Name = "Id_HojaNomina";
+            // 
+            // Id_Puesto
+            // 
+            this.Id_Puesto.Caption = "Id_Puesto";
+            this.Id_Puesto.FieldName = "Id_Puesto";
+            this.Id_Puesto.Name = "Id_Puesto";
             // 
             // checkPagoFalso
             // 
@@ -658,29 +678,19 @@
             this.lueCuadrillas.TabIndex = 42;
             this.lueCuadrillas.EditValueChanged += new System.EventHandler(this.lueCuadrillas_EditValueChanged);
             // 
-            // Id_secuencia
+            // labelEstatus
             // 
-            this.Id_secuencia.Caption = "Secuencia";
-            this.Id_secuencia.FieldName = "Id_secuencia";
-            this.Id_secuencia.Name = "Id_secuencia";
-            // 
-            // Id_HojaNomina
-            // 
-            this.Id_HojaNomina.Caption = "Id_HojaNomina";
-            this.Id_HojaNomina.FieldName = "Id_HojaNomina";
-            this.Id_HojaNomina.Name = "Id_HojaNomina";
-            // 
-            // Id_Puesto
-            // 
-            this.Id_Puesto.Caption = "Id_Puesto";
-            this.Id_Puesto.FieldName = "Id_Puesto";
-            this.Id_Puesto.Name = "Id_Puesto";
+            this.labelEstatus.Location = new System.Drawing.Point(433, 12);
+            this.labelEstatus.Name = "labelEstatus";
+            this.labelEstatus.Size = new System.Drawing.Size(0, 13);
+            this.labelEstatus.TabIndex = 43;
             // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 558);
+            this.Controls.Add(this.labelEstatus);
             this.Controls.Add(this.lueCuadrillas);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.groupControl1);
@@ -689,7 +699,7 @@
             this.Controls.Add(this.labelPagoDiario);
             this.Controls.Add(this.labelEmpresa);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnAbrirHoja);
             this.Controls.Add(this.textIdHojaNomina);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dateFecha);
@@ -733,7 +743,7 @@
         private DevExpress.XtraEditors.DateEdit dateFecha;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit textIdHojaNomina;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnAbrirHoja;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelEmpresa;
         private DevExpress.XtraEditors.LabelControl labelPagoDiario;
@@ -743,8 +753,8 @@
         private DevExpress.XtraEditors.CheckEdit checkPagoFalso;
         private DevExpress.XtraEditors.CheckEdit checkPagoxDia;
         private DevExpress.XtraEditors.TextEdit textCajas;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnNuevo;
+        private DevExpress.XtraEditors.SimpleButton btnELiminar;
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
@@ -764,11 +774,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Empleado;
+        private DevExpress.XtraGrid.Columns.GridColumn Id_empleado;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_empleado;
         private DevExpress.XtraGrid.Columns.GridColumn Cajas;
         private DevExpress.XtraGrid.Columns.GridColumn Importe;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btnIncluirApoyo;
         private DevExpress.XtraEditors.CheckEdit checkFestivo;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
         private DevExpress.XtraEditors.LabelControl labelControl13;
@@ -786,5 +796,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_secuencia;
         private DevExpress.XtraGrid.Columns.GridColumn Id_HojaNomina;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Puesto;
+        private DevExpress.XtraEditors.LabelControl labelEstatus;
     }
 }

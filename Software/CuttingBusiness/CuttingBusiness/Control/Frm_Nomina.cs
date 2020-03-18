@@ -169,6 +169,11 @@ namespace CuttingBusiness
                             {
                                 checkFestivo.Checked = false;
                             }
+                            if (Clase.Datos.Rows[0][21].ToString().Trim().Length > 0)
+                            {
+                                labelEstatus.Text = "Estatus: Nomina Cerrada";
+                                bloquerHoja(false);
+                            }
                             CargarDetalle();
                             Abrir = false;
                         }
@@ -191,6 +196,20 @@ namespace CuttingBusiness
                     }
                 }
             }
+        }
+
+        private void bloquerHoja(Boolean sino)
+        {
+            dateFecha.Enabled = sino;
+            lueCuadrillas.Enabled = sino;
+            lueEmpleados.Enabled = sino;
+            textCajas.Enabled = sino;
+            btnAgregar.Enabled = sino;
+            btnNuevo.Enabled = sino;
+            btnELiminar.Enabled = sino;
+            checkPagoxDia.Enabled = sino;
+            checkPagoFalso.Enabled = sino;
+            btnIncluirApoyo.Enabled = sino;
         }
 
         private void guardarHoja()
@@ -248,6 +267,14 @@ namespace CuttingBusiness
             {
                 Clase.Festivo = "0";
             }
+            if (labelEstatus.Text.Trim().Length > 0)
+            {
+                Clase.Estatus = "C";
+            }else
+            {
+                Clase.Estatus = "";
+            }
+         
             Clase.MtdInsertarHojaNomina();
             if (Clase.Exito)
             {
@@ -265,6 +292,10 @@ namespace CuttingBusiness
         private void ContadorTotal()
         {
             labelContadorTotal.Text = gridView1.RowCount.ToString();
+            labelContadorCortador.Text = "0";
+            labelImporteCortador.Text = "0";
+            labelContadorCajas.Text = "0";
+            labelImporte.Text = "0";
             if (gridView1.RowCount > 0)
             {
                 for (int x = 0; x < gridView1.RowCount; x++)
@@ -276,33 +307,34 @@ namespace CuttingBusiness
                         labelContadorCortador.Text = (Convert.ToInt32(labelContadorCortador.Text) + 1).ToString();
                         labelImporteCortador.Text = (Convert.ToDecimal(labelImporteCortador.Text) + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
                     }
-
                     labelContadorCajas.Text = (Convert.ToInt32(labelContadorCajas.Text) + Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"]))).ToString();
-                    decimal valortemp = Convert.ToDecimal(labelImporte.Text) + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
                     labelImporte.Text = (Convert.ToDecimal(labelImporte.Text) + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
-
                 }
             }
             
         }
 
-        private void guardarDetalle(string Hoja,string secuencia,string empleado,int cajas,decimal importe)
+        private void guardarDetalle(string Hoja,string secuencia,string empleado,int cajas,decimal importe, Boolean recarga)
         {
             CLS_HojaNominaDetalle Clase = new CLS_HojaNominaDetalle();
 
-            Clase.Id_HojaNomina = textIdHojaNomina.Text.Trim();
-            Clase.Id_secuencia = DosCero(vtSecuencia.ToString());
-            Clase.Id_empleado = lueEmpleados.EditValue.ToString();
-            Clase.Cajas = Convert.ToDecimal(textCajas.Text);
+            Clase.Id_HojaNomina = Hoja.Trim();
+            Clase.Id_secuencia = DosCero(secuencia.ToString());
+            Clase.Id_empleado = empleado;
+            Clase.Cajas = cajas;
 
-            Clase.Importe = (Convert.ToDecimal(textCajas.Text) * Convert.ToDecimal(textPromedioCaja2.Text));
+            Clase.Importe = importe;
 
 
             Clase.MtdInsertarHojaNominaDetalle();
             if (Clase.Exito)
             {
+                if (recarga == true)
+                {
+                    CargarDetalle();
+                }
+                ContadorTotal();
 
-                CargarDetalle();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
             }
             else
@@ -313,21 +345,24 @@ namespace CuttingBusiness
 
         
 
-        private void reCargaImporteyprecioCaja()
+        private void calculanuevosvalores()
         {
             if (gridView1.RowCount > 0)
             {
                 textPromedioCaja2.Text = (vtTotalImporte / Convert.ToInt32(labelContadorCajas.Text)).ToString();
                 for (int x = 0; x < gridView1.RowCount; x++)
                 {
-
                     int xRow = gridView1.GetVisibleRowHandle(x);
 
                     gridView1.SetRowCellValue(xRow, "Importe", Convert.ToDecimal(textPromedioCaja2.Text) * Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"])));
-                    
-
                 }
-      
+            }
+        }
+
+        private void insertanuevosvalores()
+        {
+            if (gridView1.RowCount > 0)
+            {
                 for (int y = 0; y < gridView1.RowCount; y++)
                 {
 
@@ -335,15 +370,16 @@ namespace CuttingBusiness
                     string hoja, secuencia, empleado;
                     int cajas;
                     decimal importe;
-                    hoja= gridView1.GetRowCellValue(xRow2, gridView1.Columns["Id_HojaNomina"]).ToString();
+                    hoja = gridView1.GetRowCellValue(xRow2, gridView1.Columns["Id_HojaNomina"]).ToString();
                     secuencia = gridView1.GetRowCellValue(xRow2, gridView1.Columns["Id_secuencia"]).ToString();
-                    empleado = gridView1.GetRowCellValue(xRow2, gridView1.Columns["Id_Empleado"]).ToString();
+                    empleado = gridView1.GetRowCellValue(xRow2, gridView1.Columns["Id_empleado"]).ToString();
                     cajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow2, gridView1.Columns["Cajas"]));
                     importe = Convert.ToDecimal(gridView1.GetRowCellValue(xRow2, gridView1.Columns["Importe"]));
-                    guardarDetalle(hoja, secuencia, empleado, cajas, importe);
+                    guardarDetalle(hoja, secuencia, empleado, cajas, importe,false);
                 }
             }
-        }
+
+         }
 
         private void CargarDetalle()
         {
@@ -355,7 +391,7 @@ namespace CuttingBusiness
             {
                 gridControl1.DataSource = Clase.Datos;
             }
-            ContadorTotal();
+            
         }
 
         private string DosCero(string sVal)
@@ -377,10 +413,7 @@ namespace CuttingBusiness
                 {
                     guardarHoja();
                 }
-                
             }
-         
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -392,10 +425,11 @@ namespace CuttingBusiness
                     if (Convert.ToDecimal(textCajas.Text) > 0)
                     {
                       
-                        guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(textCajas.Text), (Convert.ToDecimal(textCajas.Text) * Convert.ToDecimal(textPromedioCaja2.Text)));
+                        guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(textCajas.Text), (Convert.ToDecimal(textCajas.Text) * Convert.ToDecimal(textPromedioCaja2.Text)),true);
                         if (gridView1.RowCount > 1)
                         {
-                            reCargaImporteyprecioCaja();
+                            calculanuevosvalores();
+                            insertanuevosvalores();
                         }
                         
                     }else
@@ -434,6 +468,11 @@ namespace CuttingBusiness
         private void checkFestivo_CheckedChanged(object sender, EventArgs e)
         {
             cargarParametros();
+        }
+
+        private void btnAbrirHoja_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dateFecha_EditValueChanged(object sender, EventArgs e)
