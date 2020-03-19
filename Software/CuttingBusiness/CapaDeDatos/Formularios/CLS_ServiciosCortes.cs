@@ -23,6 +23,8 @@ namespace CapaDeDatos
         public string PSC_FolioZ { get; set; }
         public string PSC_JefeArea { get; set; }
         public string PSC_ClaveDia { get; set; }
+        public string  Fecha_Inicio{ get; set; }
+        public string Fecha_Fin { get; set; }
 
         public void MtdSeleccionarServicioCorteODC()
         {
@@ -56,7 +58,68 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSeleccionarServicioCorteODCCont()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ServiciosODCCont_Select";
+                _dato.CadenaTexto = PSC_ODC;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PSC_ODC");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdSeleccionarServicioCorteODC_Fechas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ServiciosODC_Select";
+                _dato.CadenaTexto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Inicio");
+                _dato.CadenaTexto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Fin");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarServiciosCortes()
         {
             TipoDato _dato = new TipoDato();
@@ -113,6 +176,38 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
+        }
+        public void MtdEliminarServicioCorteODC()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_ServiciosODC_Delete";
+                _dato.CadenaTexto = PSC_Fecha;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PSC_Fecha");
+                _dato.CadenaTexto = PSC_ODC;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "PSC_ODC");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
         }
     }
 }

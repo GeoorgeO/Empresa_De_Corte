@@ -1,6 +1,6 @@
 ﻿namespace CuttingBusiness
 {
-    partial class Frm_ImportarODC
+    partial class Frm_ServiciosODC
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ImportarODC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ServiciosODC));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
-            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnBuscarServicios = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnExaminar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnImportar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnParametros = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnGenerarApoyo = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -44,22 +42,22 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnImportar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnParametros = new DevExpress.XtraBars.BarLargeButtonItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtClave = new DevExpress.XtraEditors.TextEdit();
-            this.txtHoja = new DevExpress.XtraEditors.TextEdit();
-            this.pgbProgreso = new DevExpress.XtraEditors.ProgressBarControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtRutaArchivo = new DevExpress.XtraEditors.TextEdit();
+            this.dtFin = new DevExpress.XtraEditors.DateEdit();
+            this.dtInicio = new DevExpress.XtraEditors.DateEdit();
+            this.col_Pesada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgServicios = new DevExpress.XtraGrid.GridControl();
             this.dtgValServicios = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.col_Fecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_ODC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_Pesada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Placas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Huertas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Productor = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,22 +68,19 @@
             this.col_CajasZ = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_FolioZ = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_JefeArea = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.spreadsheetBarController1 = new DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController();
-            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_ClaveDia = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoja.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pgbProgreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRutaArchivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInicio.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -100,11 +95,11 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.lblProveedor,
-            this.btnLimpiar,
+            this.btnGenerarApoyo,
             this.btnImportar,
             this.btnParametros,
             this.btnSalir,
-            this.btnExaminar,
+            this.btnEliminar,
             this.btnBuscarServicios});
             this.barManager1.MainMenu = this.bIconos;
             this.barManager1.MaxItemId = 80;
@@ -121,11 +116,9 @@
             this.bIconos.FloatLocation = new System.Drawing.Point(42, 184);
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnBuscarServicios),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnExaminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnImportar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnParametros),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGenerarApoyo),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
@@ -138,15 +131,6 @@
             this.bIconos.OptionsBar.UseWholeRow = true;
             this.bIconos.Text = "Menú principal";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Caption = "Limpiar";
-            this.btnLimpiar.Id = 50;
-            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
-            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
-            // 
             // btnBuscarServicios
             // 
             this.btnBuscarServicios.Caption = "  Buscar \r\nServicios";
@@ -156,32 +140,23 @@
             this.btnBuscarServicios.Name = "btnBuscarServicios";
             this.btnBuscarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBuscarServicios_ItemClick);
             // 
-            // btnExaminar
+            // btnGenerarApoyo
             // 
-            this.btnExaminar.Caption = "Examinar";
-            this.btnExaminar.Id = 67;
-            this.btnExaminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExaminar.ImageOptions.Image")));
-            this.btnExaminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar.ImageOptions.LargeImage")));
-            this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExaminar_ItemClick);
+            this.btnGenerarApoyo.Caption = "Generar\r\n Apoyo";
+            this.btnGenerarApoyo.Id = 50;
+            this.btnGenerarApoyo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarApoyo.ImageOptions.Image")));
+            this.btnGenerarApoyo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGenerarApoyo.ImageOptions.LargeImage")));
+            this.btnGenerarApoyo.Name = "btnGenerarApoyo";
+            this.btnGenerarApoyo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGenerarApoyo_ItemClick);
             // 
-            // btnImportar
+            // btnEliminar
             // 
-            this.btnImportar.Caption = "Importar";
-            this.btnImportar.Id = 53;
-            this.btnImportar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportar.ImageOptions.Image")));
-            this.btnImportar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportar.ImageOptions.LargeImage")));
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportar_ItemClick);
-            // 
-            // btnParametros
-            // 
-            this.btnParametros.Caption = "Parametros";
-            this.btnParametros.Id = 57;
-            this.btnParametros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParametros.ImageOptions.Image")));
-            this.btnParametros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnParametros.ImageOptions.LargeImage")));
-            this.btnParametros.Name = "btnParametros";
-            this.btnParametros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametros_ItemClick);
+            this.btnEliminar.Caption = "Eliminar";
+            this.btnEliminar.Id = 67;
+            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -217,15 +192,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(982, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(922, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 534);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 475);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(982, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(922, 25);
             // 
             // barDockControlLeft
             // 
@@ -233,15 +208,31 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(72, 534);
+            this.barDockControlLeft.Size = new System.Drawing.Size(59, 475);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(982, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(922, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 534);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 475);
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.Caption = "Importar";
+            this.btnImportar.Id = 53;
+            this.btnImportar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportar.ImageOptions.Image")));
+            this.btnImportar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportar.ImageOptions.LargeImage")));
+            this.btnImportar.Name = "btnImportar";
+            // 
+            // btnParametros
+            // 
+            this.btnParametros.Caption = "Parametros";
+            this.btnParametros.Id = 57;
+            this.btnParametros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParametros.ImageOptions.Image")));
+            this.btnParametros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnParametros.ImageOptions.LargeImage")));
+            this.btnParametros.Name = "btnParametros";
             // 
             // repositoryItemTextEdit1
             // 
@@ -249,96 +240,85 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.txtClave);
-            this.panelControl1.Controls.Add(this.txtHoja);
-            this.panelControl1.Controls.Add(this.pgbProgreso);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.txtRutaArchivo);
+            this.panelControl1.Controls.Add(this.dtFin);
+            this.panelControl1.Controls.Add(this.dtInicio);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(72, 0);
+            this.panelControl1.Location = new System.Drawing.Point(59, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(910, 78);
+            this.panelControl1.Size = new System.Drawing.Size(863, 80);
             this.panelControl1.TabIndex = 4;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(583, 43);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(31, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Clave:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(584, 18);
+            this.labelControl2.Location = new System.Drawing.Point(27, 45);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(91, 13);
-            this.labelControl2.TabIndex = 6;
-            this.labelControl2.Text = "Nombre de la hoja:";
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(681, 39);
-            this.txtClave.MenuManager = this.barManager1;
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(100, 20);
-            this.txtClave.TabIndex = 5;
-            // 
-            // txtHoja
-            // 
-            this.txtHoja.Location = new System.Drawing.Point(681, 14);
-            this.txtHoja.MenuManager = this.barManager1;
-            this.txtHoja.Name = "txtHoja";
-            this.txtHoja.Size = new System.Drawing.Size(100, 20);
-            this.txtHoja.TabIndex = 4;
-            // 
-            // pgbProgreso
-            // 
-            this.pgbProgreso.Location = new System.Drawing.Point(111, 40);
-            this.pgbProgreso.MenuManager = this.barManager1;
-            this.pgbProgreso.Name = "pgbProgreso";
-            this.pgbProgreso.Properties.ShowTitle = true;
-            this.pgbProgreso.Size = new System.Drawing.Size(463, 18);
-            this.pgbProgreso.TabIndex = 3;
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Fecha Fin:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(30, 43);
+            this.labelControl1.Location = new System.Drawing.Point(27, 19);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(64, 13);
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "% Importado";
+            this.labelControl1.Text = "Fecha Inicio:";
             // 
-            // txtRutaArchivo
+            // dtFin
             // 
-            this.txtRutaArchivo.Enabled = false;
-            this.txtRutaArchivo.Location = new System.Drawing.Point(30, 14);
-            this.txtRutaArchivo.MenuManager = this.barManager1;
-            this.txtRutaArchivo.Name = "txtRutaArchivo";
-            this.txtRutaArchivo.Size = new System.Drawing.Size(544, 20);
-            this.txtRutaArchivo.TabIndex = 1;
+            this.dtFin.EditValue = null;
+            this.dtFin.Location = new System.Drawing.Point(96, 42);
+            this.dtFin.MenuManager = this.barManager1;
+            this.dtFin.Name = "dtFin";
+            this.dtFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFin.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFin.Size = new System.Drawing.Size(170, 20);
+            this.dtFin.TabIndex = 1;
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.EditValue = null;
+            this.dtInicio.Location = new System.Drawing.Point(96, 16);
+            this.dtInicio.MenuManager = this.barManager1;
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtInicio.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtInicio.Size = new System.Drawing.Size(170, 20);
+            this.dtInicio.TabIndex = 0;
+            // 
+            // col_Pesada
+            // 
+            this.col_Pesada.Caption = "Pesada";
+            this.col_Pesada.FieldName = "col_Pesada";
+            this.col_Pesada.Name = "col_Pesada";
+            this.col_Pesada.Visible = true;
+            this.col_Pesada.VisibleIndex = 3;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dtgServicios);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(72, 78);
+            this.panelControl2.Location = new System.Drawing.Point(59, 80);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(910, 456);
-            this.panelControl2.TabIndex = 5;
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl2.Size = new System.Drawing.Size(863, 395);
+            this.panelControl2.TabIndex = 10;
             // 
             // dtgServicios
             // 
             this.dtgServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgServicios.Location = new System.Drawing.Point(7, 7);
+            this.dtgServicios.Location = new System.Drawing.Point(12, 12);
             this.dtgServicios.MainView = this.dtgValServicios;
             this.dtgServicios.MenuManager = this.barManager1;
             this.dtgServicios.Name = "dtgServicios";
-            this.dtgServicios.Size = new System.Drawing.Size(896, 442);
-            this.dtgServicios.TabIndex = 0;
+            this.dtgServicios.Size = new System.Drawing.Size(839, 371);
+            this.dtgServicios.TabIndex = 1;
             this.dtgServicios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValServicios});
             // 
@@ -348,7 +328,7 @@
             this.col_Fecha,
             this.col_ODC,
             this.col_Ubicacion,
-            this.col_Pesada,
+            this.gridColumn1,
             this.col_Placas,
             this.col_Huertas,
             this.col_Productor,
@@ -358,16 +338,18 @@
             this.col_JefeCuadrilla,
             this.col_CajasZ,
             this.col_FolioZ,
-            this.col_JefeArea});
+            this.col_JefeArea,
+            this.col_ClaveDia});
             this.dtgValServicios.GridControl = this.dtgServicios;
             this.dtgValServicios.Name = "dtgValServicios";
+            this.dtgValServicios.OptionsFind.AlwaysVisible = true;
             this.dtgValServicios.OptionsView.ShowFooter = true;
             this.dtgValServicios.OptionsView.ShowGroupPanel = false;
             // 
             // col_Fecha
             // 
             this.col_Fecha.Caption = "Fecha";
-            this.col_Fecha.FieldName = "col_Fecha";
+            this.col_Fecha.FieldName = "PSC_Fecha";
             this.col_Fecha.Name = "col_Fecha";
             this.col_Fecha.OptionsColumn.AllowEdit = false;
             this.col_Fecha.Visible = true;
@@ -376,7 +358,7 @@
             // col_ODC
             // 
             this.col_ODC.Caption = "ODC";
-            this.col_ODC.FieldName = "col_ODC";
+            this.col_ODC.FieldName = "PSC_ODC";
             this.col_ODC.Name = "col_ODC";
             this.col_ODC.OptionsColumn.AllowEdit = false;
             this.col_ODC.Visible = true;
@@ -385,25 +367,25 @@
             // col_Ubicacion
             // 
             this.col_Ubicacion.Caption = "Ubicacion";
-            this.col_Ubicacion.FieldName = "col_Ubicacion";
+            this.col_Ubicacion.FieldName = "PSC_Ubicacion";
             this.col_Ubicacion.Name = "col_Ubicacion";
             this.col_Ubicacion.OptionsColumn.AllowEdit = false;
             this.col_Ubicacion.Visible = true;
             this.col_Ubicacion.VisibleIndex = 2;
             // 
-            // col_Pesada
+            // gridColumn1
             // 
-            this.col_Pesada.Caption = "Pesada";
-            this.col_Pesada.FieldName = "col_Pesada";
-            this.col_Pesada.Name = "col_Pesada";
-            this.col_Pesada.OptionsColumn.AllowEdit = false;
-            this.col_Pesada.Visible = true;
-            this.col_Pesada.VisibleIndex = 3;
+            this.gridColumn1.Caption = "Pesada";
+            this.gridColumn1.FieldName = "PSC_Pesada";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
             // 
             // col_Placas
             // 
             this.col_Placas.Caption = "Placas";
-            this.col_Placas.FieldName = "col_Placas";
+            this.col_Placas.FieldName = "PSC_Placas";
             this.col_Placas.Name = "col_Placas";
             this.col_Placas.OptionsColumn.AllowEdit = false;
             this.col_Placas.Visible = true;
@@ -412,7 +394,7 @@
             // col_Huertas
             // 
             this.col_Huertas.Caption = "Huertas";
-            this.col_Huertas.FieldName = "col_Huertas";
+            this.col_Huertas.FieldName = "PSC_Huertas";
             this.col_Huertas.Name = "col_Huertas";
             this.col_Huertas.OptionsColumn.AllowEdit = false;
             this.col_Huertas.Visible = true;
@@ -421,7 +403,7 @@
             // col_Productor
             // 
             this.col_Productor.Caption = "Productor";
-            this.col_Productor.FieldName = "col_Productor";
+            this.col_Productor.FieldName = "PSC_Productor";
             this.col_Productor.Name = "col_Productor";
             this.col_Productor.OptionsColumn.AllowEdit = false;
             this.col_Productor.Visible = true;
@@ -430,7 +412,7 @@
             // col_Cajas
             // 
             this.col_Cajas.Caption = "Cajas";
-            this.col_Cajas.FieldName = "col_Cajas";
+            this.col_Cajas.FieldName = "PSC_Cajas";
             this.col_Cajas.Name = "col_Cajas";
             this.col_Cajas.OptionsColumn.AllowEdit = false;
             this.col_Cajas.Visible = true;
@@ -439,7 +421,7 @@
             // col_Kilos
             // 
             this.col_Kilos.Caption = "Kilos";
-            this.col_Kilos.FieldName = "col_Kilos";
+            this.col_Kilos.FieldName = "PSC_Kilos";
             this.col_Kilos.Name = "col_Kilos";
             this.col_Kilos.OptionsColumn.AllowEdit = false;
             this.col_Kilos.Visible = true;
@@ -448,7 +430,7 @@
             // col_Variedad
             // 
             this.col_Variedad.Caption = "Variedad";
-            this.col_Variedad.FieldName = "col_Variedad";
+            this.col_Variedad.FieldName = "PSC_Variedad";
             this.col_Variedad.Name = "col_Variedad";
             this.col_Variedad.OptionsColumn.AllowEdit = false;
             this.col_Variedad.Visible = true;
@@ -457,7 +439,7 @@
             // col_JefeCuadrilla
             // 
             this.col_JefeCuadrilla.Caption = "Jefe Cuadrilla";
-            this.col_JefeCuadrilla.FieldName = "col_JefeCuadrilla";
+            this.col_JefeCuadrilla.FieldName = "PSC_JefeCuadrilla";
             this.col_JefeCuadrilla.Name = "col_JefeCuadrilla";
             this.col_JefeCuadrilla.OptionsColumn.AllowEdit = false;
             this.col_JefeCuadrilla.Visible = true;
@@ -466,7 +448,7 @@
             // col_CajasZ
             // 
             this.col_CajasZ.Caption = "CajasZ";
-            this.col_CajasZ.FieldName = "col_CajasZ";
+            this.col_CajasZ.FieldName = "PSC_CajasZ";
             this.col_CajasZ.Name = "col_CajasZ";
             this.col_CajasZ.OptionsColumn.AllowEdit = false;
             this.col_CajasZ.Visible = true;
@@ -475,7 +457,7 @@
             // col_FolioZ
             // 
             this.col_FolioZ.Caption = "FolioZ";
-            this.col_FolioZ.FieldName = "col_FolioZ";
+            this.col_FolioZ.FieldName = "PSC_FolioZ";
             this.col_FolioZ.Name = "col_FolioZ";
             this.col_FolioZ.OptionsColumn.AllowEdit = false;
             this.col_FolioZ.Visible = true;
@@ -484,52 +466,48 @@
             // col_JefeArea
             // 
             this.col_JefeArea.Caption = "Jefe Area";
-            this.col_JefeArea.FieldName = "col_JefeArea";
+            this.col_JefeArea.FieldName = "PSC_JefeArea";
             this.col_JefeArea.Name = "col_JefeArea";
             this.col_JefeArea.OptionsColumn.AllowEdit = false;
             this.col_JefeArea.Visible = true;
             this.col_JefeArea.VisibleIndex = 13;
             // 
-            // OpenDialog
+            // col_ClaveDia
             // 
-            this.OpenDialog.FileName = "xtraOpenFileDialog1";
+            this.col_ClaveDia.Caption = "ClaveDia";
+            this.col_ClaveDia.FieldName = "PSC_ClaveDia";
+            this.col_ClaveDia.Name = "col_ClaveDia";
+            this.col_ClaveDia.Visible = true;
+            this.col_ClaveDia.VisibleIndex = 14;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Fecha";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // Frm_ImportarODC
+            // Frm_ServiciosODC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 559);
+            this.ClientSize = new System.Drawing.Size(922, 500);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_ImportarODC";
-            this.Text = "Frm_ImportarODC";
+            this.Name = "Frm_ServiciosODC";
+            this.Text = "Servicios Orden de Corte";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Shown += new System.EventHandler(this.Frm_ImportarODC_Shown);
+            this.Shown += new System.EventHandler(this.Frm_ServiciosODC_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtClave.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoja.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pgbProgreso.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRutaArchivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInicio.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spreadsheetBarController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,8 +517,11 @@
 
         public DevExpress.XtraBars.BarManager barManager1;
         public DevExpress.XtraBars.Bar bIconos;
-        private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnGenerarApoyo;
+        private DevExpress.XtraBars.BarLargeButtonItem btnBuscarServicios;
+        private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnImportar;
+        private DevExpress.XtraBars.BarLargeButtonItem btnParametros;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
@@ -548,26 +529,20 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtClave;
-        private DevExpress.XtraEditors.TextEdit txtHoja;
-        private DevExpress.XtraEditors.ProgressBarControl pgbProgreso;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtRutaArchivo;
-        private DevExpress.XtraBars.BarLargeButtonItem btnParametros;
-        private DevExpress.XtraBars.BarLargeButtonItem btnExaminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraSpreadsheet.UI.SpreadsheetBarController spreadsheetBarController1;
-        private DevExpress.XtraEditors.XtraOpenFileDialog OpenDialog;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.DateEdit dtFin;
+        private DevExpress.XtraEditors.DateEdit dtInicio;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn col_Pesada;
         private DevExpress.XtraGrid.GridControl dtgServicios;
         private DevExpress.XtraGrid.Views.Grid.GridView dtgValServicios;
         private DevExpress.XtraGrid.Columns.GridColumn col_Fecha;
         private DevExpress.XtraGrid.Columns.GridColumn col_ODC;
         private DevExpress.XtraGrid.Columns.GridColumn col_Ubicacion;
-        private DevExpress.XtraGrid.Columns.GridColumn col_Pesada;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn col_Placas;
         private DevExpress.XtraGrid.Columns.GridColumn col_Huertas;
         private DevExpress.XtraGrid.Columns.GridColumn col_Productor;
@@ -578,7 +553,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_CajasZ;
         private DevExpress.XtraGrid.Columns.GridColumn col_FolioZ;
         private DevExpress.XtraGrid.Columns.GridColumn col_JefeArea;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraBars.BarLargeButtonItem btnBuscarServicios;
+        private DevExpress.XtraGrid.Columns.GridColumn col_ClaveDia;
     }
 }

@@ -225,59 +225,7 @@ namespace CuttingBusiness
 
         private void btnCargarExcel_Click(object sender, EventArgs e)
         {
-            if (CargarPosicionColumnas())
-            {
-                OpenDialog.Filter = "Formato de Excel XLSX (*.xlsx)|*.xlsx|Formato de Excel XLS (*.xls)|*.xls";
-                OpenDialog.FilterIndex = 1;
-                OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
-                OpenDialog.Title = "Cargar Documento Excel";
-                OpenDialog.CheckFileExists = false;
-                OpenDialog.Multiselect = false;
-                DialogResult result = OpenDialog.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    txtRutaArchivo.Text = OpenDialog.FileName;
-                    var str = string.Empty;
-                    rCnt = 0;
-                    cCnt = 0;
-                    try
-                    {
-                        rCnt = 2;
-                        SLDocument s1 = new SLDocument(OpenDialog.FileName);
-
-                        while (!String.IsNullOrEmpty(s1.GetCellValueAsString(rCnt, 1)))
-                        {
-                            pgbProgreso.Position = rCnt;
-                            Application.DoEvents();
-                            string vFecha = s1.GetCellValueAsDateTime(rCnt, Col_PSC_Fecha).ToString();
-                            string vODC = s1.GetCellValueAsString(rCnt, Col_PSC_ODC);
-                            string vUbicacion = s1.GetCellValueAsString(rCnt, Col_PSC_Ubicacion);
-                            string vPesada = s1.GetCellValueAsString(rCnt, Col_PSC_Pesada);
-                            string vPlacas = s1.GetCellValueAsString(rCnt, Col_PSC_Placas);
-                            string vHuertas = s1.GetCellValueAsString(rCnt, Col_PSC_Huertas);
-                            string vProductor = s1.GetCellValueAsString(rCnt, Col_PSC_Productor);
-                            string vCajas = s1.GetCellValueAsString(rCnt, Col_PSC_Cajas);
-                            string vKilos = s1.GetCellValueAsString(rCnt, Col_PSC_Kilos);
-                            string vVariedad = s1.GetCellValueAsString(rCnt, Col_PSC_Variedad);
-                            string vJefeCuadrilla = s1.GetCellValueAsString(rCnt, Col_PSC_JefeCuadrilla);
-                            string vCajasZ = s1.GetCellValueAsString(rCnt, Col_PSC_CajasZ);
-                            string vFolioZ = s1.GetCellValueAsString(rCnt, Col_PSC_FolioZ);
-                            string vJefeArea = s1.GetCellValueAsString(rCnt, Col_PSC_JefeArea);
-                            CreatNewRowArticulo(vFecha, vODC, vUbicacion, vPesada, vPlacas, vHuertas, vProductor, vCajas, vKilos, vVariedad, vJefeCuadrilla, vCajasZ, vFolioZ, vJefeArea);
-                            rCnt++;
-                        }
-                        pgbProgreso.Position = 0;
-                    }
-                    catch (Exception EX)
-                    {
-                        XtraMessageBox.Show(EX.Message);
-                    }
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show("No se pudo tener acceso a los parametros para las posiciones de Excel");
-            }
+            
         }
         private Boolean CargarPosicionColumnas()
         {
@@ -324,53 +272,70 @@ namespace CuttingBusiness
 
         private void btnImportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(txtHoja.Text!=string.Empty && txtClave.Text!=string.Empty)
+            int contadorins = 0;
+            if (txtHoja.Text!=string.Empty && txtClave.Text!=string.Empty)
             {
-                pgbProgreso.Properties.Maximum = dtgValServicios.RowCount;
-                pgbProgreso.Position = 0;
-                for (int x = 0; x < dtgValServicios.RowCount; x++)
+                if (dtgValServicios.RowCount > 0)
                 {
-                    int xRow = dtgValServicios.GetVisibleRowHandle(x);
-                    pgbProgreso.Position = x + 1;
-                    Application.DoEvents();
-                    string vFecha = dtgValServicios.GetRowCellValue(xRow, "col_Fecha").ToString();
-                    string vODC = dtgValServicios.GetRowCellValue(xRow, "col_ODC").ToString();
-                    string vUbicacion = dtgValServicios.GetRowCellValue(xRow, "col_Ubicacion").ToString();
-                    string vPesada = dtgValServicios.GetRowCellValue(xRow, "col_Pesada").ToString();
-                    string vPlacas = dtgValServicios.GetRowCellValue(xRow, "col_Placas").ToString();
-                    string vHuertas = dtgValServicios.GetRowCellValue(xRow, "col_Huertas").ToString();
-                    string vProductor = dtgValServicios.GetRowCellValue(xRow, "col_Productor").ToString();
-                    string vCajas = dtgValServicios.GetRowCellValue(xRow, "col_Cajas").ToString();
-                    string vKilos = dtgValServicios.GetRowCellValue(xRow, "col_Kilos").ToString();
-                    string vVariedad = dtgValServicios.GetRowCellValue(xRow, "col_Variedad").ToString();
-                    string vJefeCuadrilla = dtgValServicios.GetRowCellValue(xRow, "col_JefeCuadrilla").ToString();
-                    string vCajasZ = dtgValServicios.GetRowCellValue(xRow, "col_CajasZ").ToString();
-                    string vFolioZ = dtgValServicios.GetRowCellValue(xRow, "col_FolioZ").ToString();
-                    string vJefeArea = dtgValServicios.GetRowCellValue(xRow, "col_JefeArea").ToString();
-                    if(!BuscarRegistro(vFecha, vODC))
+                    pgbProgreso.Properties.Maximum = dtgValServicios.RowCount;
+                    pgbProgreso.Position = 0;
+                    
+                    for (int x = 0; x < dtgValServicios.RowCount; x++)
                     {
-                        CLS_ServiciosCortes ins = new CLS_ServiciosCortes();
-                        ins.PSC_Fecha = vFecha;
-                        ins.PSC_ODC = vODC;
-                        ins.PSC_Ubicacion = vUbicacion;
-                        ins.PSC_Pesada = vPesada;
-                        ins.PSC_Placas = vPlacas;
-                        ins.PSC_Huertas = vHuertas;
-                        ins.PSC_Productor = vProductor;
-                        ins.PSC_Cajas = vCajas;
-                        ins.PSC_Kilos = vKilos;
-                        ins.PSC_Variedad = vVariedad;
-                        ins.PSC_JefeCuadrilla = vJefeCuadrilla;
-                        ins.PSC_CajasZ = vCajasZ;
-                        ins.PSC_FolioZ = vFolioZ;
-                        ins.PSC_JefeArea = vJefeArea;
-                        ins.PSC_ClaveDia = txtHoja.Text + txtClave.Text;
-                        ins.MtdInsertarServiciosCortes();
-                        if(!ins.Exito)
+                        int xRow = dtgValServicios.GetVisibleRowHandle(x);
+                        pgbProgreso.Position = x + 1;
+                        Application.DoEvents();
+                        string vFecha = dtgValServicios.GetRowCellValue(xRow, "col_Fecha").ToString();
+                        string vODC = dtgValServicios.GetRowCellValue(xRow, "col_ODC").ToString();
+                        string vUbicacion = dtgValServicios.GetRowCellValue(xRow, "col_Ubicacion").ToString();
+                        string vPesada = dtgValServicios.GetRowCellValue(xRow, "col_Pesada").ToString();
+                        string vPlacas = dtgValServicios.GetRowCellValue(xRow, "col_Placas").ToString();
+                        string vHuertas = dtgValServicios.GetRowCellValue(xRow, "col_Huertas").ToString();
+                        string vProductor = dtgValServicios.GetRowCellValue(xRow, "col_Productor").ToString();
+                        string vCajas = dtgValServicios.GetRowCellValue(xRow, "col_Cajas").ToString();
+                        string vKilos = dtgValServicios.GetRowCellValue(xRow, "col_Kilos").ToString();
+                        string vVariedad = dtgValServicios.GetRowCellValue(xRow, "col_Variedad").ToString();
+                        string vJefeCuadrilla = dtgValServicios.GetRowCellValue(xRow, "col_JefeCuadrilla").ToString();
+                        string vCajasZ = dtgValServicios.GetRowCellValue(xRow, "col_CajasZ").ToString();
+                        string vFolioZ = dtgValServicios.GetRowCellValue(xRow, "col_FolioZ").ToString();
+                        string vJefeArea = dtgValServicios.GetRowCellValue(xRow, "col_JefeArea").ToString();
+                        if (!BuscarRegistro(vFecha, vODC))
                         {
-                            XtraMessageBox.Show(ins.Mensaje);
+                            CLS_ServiciosCortes ins = new CLS_ServiciosCortes();
+                            DateTime DFecha = Convert.ToDateTime(vFecha);
+                            vFecha = DFecha.Year.ToString() + DosCeros(DFecha.Month.ToString()) + DosCeros(DFecha.Day.ToString());
+                            ins.PSC_Fecha = vFecha;
+                            ins.PSC_ODC = vODC;
+                            ins.PSC_Ubicacion = vUbicacion;
+                            ins.PSC_Pesada = vPesada;
+                            ins.PSC_Placas = vPlacas;
+                            ins.PSC_Huertas = vHuertas;
+                            ins.PSC_Productor = vProductor;
+                            ins.PSC_Cajas = vCajas;
+                            ins.PSC_Kilos = vKilos;
+                            ins.PSC_Variedad = vVariedad;
+                            ins.PSC_JefeCuadrilla = vJefeCuadrilla;
+                            ins.PSC_CajasZ = vCajasZ;
+                            ins.PSC_FolioZ = vFolioZ;
+                            ins.PSC_JefeArea = vJefeArea;
+                            ins.PSC_ClaveDia = txtHoja.Text + txtClave.Text;
+                            ins.MtdInsertarServiciosCortes();
+                            if (!ins.Exito)
+                            {
+                                XtraMessageBox.Show(ins.Mensaje);
+                            }
+                            else
+                            {
+                                contadorins++;
+                            }
                         }
                     }
+                    XtraMessageBox.Show("Se importaron " + contadorins + " de " + dtgValServicios.RowCount);
+                    btnLimpiar.PerformClick();
+                }
+                else
+                {
+                    XtraMessageBox.Show("No existen registros para importar");
                 }
             }
             else
@@ -390,9 +355,82 @@ namespace CuttingBusiness
             sel.MtdSeleccionarServicioCorteODC();
             if(sel.Exito)
             {
-                Valor = true;
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    Valor = true;
+                }
             }
             return Valor;
+        }
+
+        private void btnExaminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (CargarPosicionColumnas())
+            {
+                OpenDialog.Filter = "Formato de Excel XLSX (*.xlsx)|*.xlsx|Formato de Excel XLS (*.xls)|*.xls";
+                OpenDialog.FilterIndex = 1;
+                OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
+                OpenDialog.Title = "Cargar Documento Excel";
+                OpenDialog.CheckFileExists = false;
+                OpenDialog.Multiselect = false;
+                DialogResult result = OpenDialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    txtRutaArchivo.Text = OpenDialog.FileName;
+                    var str = string.Empty;
+                    rCnt = 0;
+                    cCnt = 0;
+                    try
+                    {
+                        rCnt = 2;
+                        SLDocument s1 = new SLDocument(OpenDialog.FileName);
+                        int celdas = 0;
+                        while (!String.IsNullOrEmpty(s1.GetCellValueAsString(rCnt, 1)))
+                        {
+                            celdas++;
+                            rCnt++;
+                        }
+                        pgbProgreso.Properties.Maximum = celdas;
+                        rCnt = 2;
+                        while (!String.IsNullOrEmpty(s1.GetCellValueAsString(rCnt, 1)))
+                        {
+                            pgbProgreso.Position = rCnt;
+                            Application.DoEvents();
+                            string vFecha = s1.GetCellValueAsDateTime(rCnt, Col_PSC_Fecha).ToString();
+                            string vODC = s1.GetCellValueAsString(rCnt, Col_PSC_ODC);
+                            string vUbicacion = s1.GetCellValueAsString(rCnt, Col_PSC_Ubicacion);
+                            string vPesada = s1.GetCellValueAsString(rCnt, Col_PSC_Pesada);
+                            string vPlacas = s1.GetCellValueAsString(rCnt, Col_PSC_Placas);
+                            string vHuertas = s1.GetCellValueAsString(rCnt, Col_PSC_Huertas);
+                            string vProductor = s1.GetCellValueAsString(rCnt, Col_PSC_Productor);
+                            string vCajas = s1.GetCellValueAsString(rCnt, Col_PSC_Cajas);
+                            string vKilos = s1.GetCellValueAsString(rCnt, Col_PSC_Kilos);
+                            string vVariedad = s1.GetCellValueAsString(rCnt, Col_PSC_Variedad);
+                            string vJefeCuadrilla = s1.GetCellValueAsString(rCnt, Col_PSC_JefeCuadrilla);
+                            string vCajasZ = s1.GetCellValueAsString(rCnt, Col_PSC_CajasZ);
+                            string vFolioZ = s1.GetCellValueAsString(rCnt, Col_PSC_FolioZ);
+                            string vJefeArea = s1.GetCellValueAsString(rCnt, Col_PSC_JefeArea);
+                            CreatNewRowArticulo(vFecha, vODC, vUbicacion, vPesada, vPlacas, vHuertas, vProductor, vCajas, vKilos, vVariedad, vJefeCuadrilla, vCajasZ, vFolioZ, vJefeArea);
+                            rCnt++;
+                        }
+                        pgbProgreso.Position = 0;
+                    }
+                    catch (Exception EX)
+                    {
+                        XtraMessageBox.Show(EX.Message);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No se pudo tener acceso a los parametros para las posiciones de Excel");
+            }
+        }
+
+        private void btnBuscarServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_ServiciosODC frm = new Frm_ServiciosODC();
+            frm.Show();
         }
     }
 }
