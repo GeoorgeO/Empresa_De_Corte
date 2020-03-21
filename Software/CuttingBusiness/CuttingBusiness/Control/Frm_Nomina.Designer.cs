@@ -39,12 +39,12 @@
             this.labelNombreJefeCuadrilla = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelImporte = new DevExpress.XtraEditors.LabelControl();
-            this.labelContadorCajas = new DevExpress.XtraEditors.LabelControl();
-            this.labelContadorTotal = new DevExpress.XtraEditors.LabelControl();
+            this.labelImporte = new DevExpress.XtraEditors.TextEdit();
+            this.labelImporteCortador = new DevExpress.XtraEditors.TextEdit();
+            this.labelContadorCajas = new DevExpress.XtraEditors.TextEdit();
+            this.labelContadorTotal = new DevExpress.XtraEditors.TextEdit();
+            this.labelContadorCortador = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelImporteCortador = new DevExpress.XtraEditors.LabelControl();
-            this.labelContadorCortador = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -86,11 +86,18 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
+            this.textTopepgoxDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.labelImporte.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelImporteCortador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorCajas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorCortador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEmpleados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkFestivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -111,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -200,11 +208,11 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.labelImporte);
+            this.groupControl1.Controls.Add(this.labelImporteCortador);
             this.groupControl1.Controls.Add(this.labelContadorCajas);
             this.groupControl1.Controls.Add(this.labelContadorTotal);
-            this.groupControl1.Controls.Add(this.labelControl20);
-            this.groupControl1.Controls.Add(this.labelImporteCortador);
             this.groupControl1.Controls.Add(this.labelContadorCortador);
+            this.groupControl1.Controls.Add(this.labelControl20);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -227,39 +235,65 @@
             // 
             // labelImporte
             // 
-            this.labelImporte.Appearance.Options.UseTextOptions = true;
-            this.labelImporte.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelImporte.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelImporte.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelImporte.Location = new System.Drawing.Point(367, 421);
+            this.labelImporte.EditValue = "0";
+            this.labelImporte.Location = new System.Drawing.Point(367, 420);
             this.labelImporte.Name = "labelImporte";
-            this.labelImporte.Size = new System.Drawing.Size(67, 17);
-            this.labelImporte.TabIndex = 50;
-            this.labelImporte.Text = "0";
+            this.labelImporte.Properties.Appearance.Options.UseTextOptions = true;
+            this.labelImporte.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelImporte.Properties.Mask.EditMask = "c0";
+            this.labelImporte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.labelImporte.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.labelImporte.Properties.ReadOnly = true;
+            this.labelImporte.Size = new System.Drawing.Size(67, 20);
+            this.labelImporte.TabIndex = 55;
+            // 
+            // labelImporteCortador
+            // 
+            this.labelImporteCortador.EditValue = "0";
+            this.labelImporteCortador.Location = new System.Drawing.Point(367, 396);
+            this.labelImporteCortador.Name = "labelImporteCortador";
+            this.labelImporteCortador.Properties.Appearance.Options.UseTextOptions = true;
+            this.labelImporteCortador.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelImporteCortador.Properties.Mask.EditMask = "c0";
+            this.labelImporteCortador.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.labelImporteCortador.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.labelImporteCortador.Properties.ReadOnly = true;
+            this.labelImporteCortador.Size = new System.Drawing.Size(67, 20);
+            this.labelImporteCortador.TabIndex = 54;
             // 
             // labelContadorCajas
             // 
-            this.labelContadorCajas.Appearance.Options.UseTextOptions = true;
-            this.labelContadorCajas.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelContadorCajas.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelContadorCajas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelContadorCajas.Location = new System.Drawing.Point(293, 421);
+            this.labelContadorCajas.EditValue = "0";
+            this.labelContadorCajas.Location = new System.Drawing.Point(294, 420);
             this.labelContadorCajas.Name = "labelContadorCajas";
-            this.labelContadorCajas.Size = new System.Drawing.Size(67, 17);
-            this.labelContadorCajas.TabIndex = 49;
-            this.labelContadorCajas.Text = "0";
+            this.labelContadorCajas.Properties.Appearance.Options.UseTextOptions = true;
+            this.labelContadorCajas.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelContadorCajas.Properties.ReadOnly = true;
+            this.labelContadorCajas.Size = new System.Drawing.Size(67, 20);
+            this.labelContadorCajas.TabIndex = 53;
             // 
             // labelContadorTotal
             // 
-            this.labelContadorTotal.Appearance.Options.UseTextOptions = true;
-            this.labelContadorTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelContadorTotal.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelContadorTotal.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelContadorTotal.Location = new System.Drawing.Point(100, 421);
+            this.labelContadorTotal.EditValue = "0";
+            this.labelContadorTotal.Location = new System.Drawing.Point(100, 420);
             this.labelContadorTotal.Name = "labelContadorTotal";
-            this.labelContadorTotal.Size = new System.Drawing.Size(67, 17);
-            this.labelContadorTotal.TabIndex = 48;
-            this.labelContadorTotal.Text = "0";
+            this.labelContadorTotal.Properties.Appearance.Options.UseTextOptions = true;
+            this.labelContadorTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelContadorTotal.Properties.ReadOnly = true;
+            this.labelContadorTotal.Size = new System.Drawing.Size(67, 20);
+            this.labelContadorTotal.TabIndex = 52;
+            this.labelContadorTotal.EditValueChanged += new System.EventHandler(this.labelContadorTotal_EditValueChanged);
+            // 
+            // labelContadorCortador
+            // 
+            this.labelContadorCortador.EditValue = "0";
+            this.labelContadorCortador.Location = new System.Drawing.Point(100, 396);
+            this.labelContadorCortador.Name = "labelContadorCortador";
+            this.labelContadorCortador.Properties.Appearance.Options.UseTextOptions = true;
+            this.labelContadorCortador.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelContadorCortador.Properties.ReadOnly = true;
+            this.labelContadorCortador.Size = new System.Drawing.Size(67, 20);
+            this.labelContadorCortador.TabIndex = 51;
             // 
             // labelControl20
             // 
@@ -268,30 +302,6 @@
             this.labelControl20.Size = new System.Drawing.Size(68, 13);
             this.labelControl20.TabIndex = 47;
             this.labelControl20.Text = "Total General:";
-            // 
-            // labelImporteCortador
-            // 
-            this.labelImporteCortador.Appearance.Options.UseTextOptions = true;
-            this.labelImporteCortador.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelImporteCortador.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelImporteCortador.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelImporteCortador.Location = new System.Drawing.Point(367, 397);
-            this.labelImporteCortador.Name = "labelImporteCortador";
-            this.labelImporteCortador.Size = new System.Drawing.Size(67, 17);
-            this.labelImporteCortador.TabIndex = 46;
-            this.labelImporteCortador.Text = "0";
-            // 
-            // labelContadorCortador
-            // 
-            this.labelContadorCortador.Appearance.Options.UseTextOptions = true;
-            this.labelContadorCortador.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelContadorCortador.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelContadorCortador.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelContadorCortador.Location = new System.Drawing.Point(100, 397);
-            this.labelContadorCortador.Name = "labelContadorCortador";
-            this.labelContadorCortador.Size = new System.Drawing.Size(67, 17);
-            this.labelContadorCortador.TabIndex = 44;
-            this.labelContadorCortador.Text = "0";
             // 
             // labelControl5
             // 
@@ -330,7 +340,7 @@
             // 
             // btnIncluirApoyo
             // 
-            this.btnIncluirApoyo.Location = new System.Drawing.Point(444, 377);
+            this.btnIncluirApoyo.Location = new System.Drawing.Point(444, 418);
             this.btnIncluirApoyo.Name = "btnIncluirApoyo";
             this.btnIncluirApoyo.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirApoyo.TabIndex = 14;
@@ -338,7 +348,7 @@
             // 
             // checkFestivo
             // 
-            this.checkFestivo.Location = new System.Drawing.Point(529, 379);
+            this.checkFestivo.Location = new System.Drawing.Point(529, 420);
             this.checkFestivo.Name = "checkFestivo";
             this.checkFestivo.Properties.Caption = "Festivo";
             this.checkFestivo.Size = new System.Drawing.Size(59, 19);
@@ -347,7 +357,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(169, 50);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 26);
@@ -355,7 +365,7 @@
             // 
             // btnELiminar
             // 
-            this.btnELiminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.btnELiminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnELiminar.ImageOptions.Image")));
             this.btnELiminar.Location = new System.Drawing.Point(224, 50);
             this.btnELiminar.Name = "btnELiminar";
             this.btnELiminar.Size = new System.Drawing.Size(25, 26);
@@ -372,6 +382,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.textTopepgoxDia);
+            this.panelControl1.Controls.Add(this.labelControl14);
             this.panelControl1.Controls.Add(this.separatorControl2);
             this.panelControl1.Controls.Add(this.separatorControl1);
             this.panelControl1.Controls.Add(this.textPromedioCaja2);
@@ -390,7 +402,7 @@
             this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Location = new System.Drawing.Point(444, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(145, 349);
+            this.panelControl1.Size = new System.Drawing.Size(145, 388);
             this.panelControl1.TabIndex = 9;
             // 
             // separatorControl2
@@ -416,6 +428,8 @@
             this.textPromedioCaja2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPromedioCaja2.Properties.Mask.EditMask = "c";
             this.textPromedioCaja2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPromedioCaja2.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPromedioCaja2.Properties.ReadOnly = true;
             this.textPromedioCaja2.Size = new System.Drawing.Size(100, 20);
             this.textPromedioCaja2.TabIndex = 53;
             // 
@@ -428,6 +442,8 @@
             this.textPromedioCaja1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPromedioCaja1.Properties.Mask.EditMask = "c";
             this.textPromedioCaja1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPromedioCaja1.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPromedioCaja1.Properties.ReadOnly = true;
             this.textPromedioCaja1.Size = new System.Drawing.Size(100, 20);
             this.textPromedioCaja1.TabIndex = 52;
             // 
@@ -448,6 +464,8 @@
             this.textPromedioCaja.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPromedioCaja.Properties.Mask.EditMask = "c";
             this.textPromedioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPromedioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPromedioCaja.Properties.ReadOnly = true;
             this.textPromedioCaja.Size = new System.Drawing.Size(100, 20);
             this.textPromedioCaja.TabIndex = 50;
             // 
@@ -468,6 +486,8 @@
             this.textPagoJefeCuadrilla.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPagoJefeCuadrilla.Properties.Mask.EditMask = "c";
             this.textPagoJefeCuadrilla.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPagoJefeCuadrilla.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPagoJefeCuadrilla.Properties.ReadOnly = true;
             this.textPagoJefeCuadrilla.Size = new System.Drawing.Size(100, 20);
             this.textPagoJefeCuadrilla.TabIndex = 48;
             // 
@@ -484,10 +504,15 @@
             this.textCajasxdia.EditValue = "0";
             this.textCajasxdia.Location = new System.Drawing.Point(76, 135);
             this.textCajasxdia.Name = "textCajasxdia";
+            this.textCajasxdia.Properties.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.textCajasxdia.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.textCajasxdia.Properties.Appearance.Options.UseBackColor = true;
+            this.textCajasxdia.Properties.Appearance.Options.UseForeColor = true;
             this.textCajasxdia.Properties.Appearance.Options.UseTextOptions = true;
             this.textCajasxdia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textCajasxdia.Properties.Mask.EditMask = "n0";
             this.textCajasxdia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textCajasxdia.Properties.ReadOnly = true;
             this.textCajasxdia.Size = new System.Drawing.Size(63, 20);
             this.textCajasxdia.TabIndex = 46;
             // 
@@ -496,10 +521,15 @@
             this.textKgcortadosxdia.EditValue = "0";
             this.textKgcortadosxdia.Location = new System.Drawing.Point(7, 135);
             this.textKgcortadosxdia.Name = "textKgcortadosxdia";
+            this.textKgcortadosxdia.Properties.Appearance.BackColor = System.Drawing.Color.Gray;
+            this.textKgcortadosxdia.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.textKgcortadosxdia.Properties.Appearance.Options.UseBackColor = true;
+            this.textKgcortadosxdia.Properties.Appearance.Options.UseForeColor = true;
             this.textKgcortadosxdia.Properties.Appearance.Options.UseTextOptions = true;
             this.textKgcortadosxdia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textKgcortadosxdia.Properties.Mask.EditMask = "n0";
             this.textKgcortadosxdia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textKgcortadosxdia.Properties.ReadOnly = true;
             this.textKgcortadosxdia.Size = new System.Drawing.Size(63, 20);
             this.textKgcortadosxdia.TabIndex = 45;
             this.textKgcortadosxdia.EditValueChanged += new System.EventHandler(this.textKgcortadosxdia_EditValueChanged);
@@ -521,6 +551,7 @@
             this.textTotalCortePgoxDia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textTotalCortePgoxDia.Properties.Mask.EditMask = "n";
             this.textTotalCortePgoxDia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textTotalCortePgoxDia.Properties.ReadOnly = true;
             this.textTotalCortePgoxDia.Size = new System.Drawing.Size(100, 20);
             this.textTotalCortePgoxDia.TabIndex = 43;
             // 
@@ -535,18 +566,20 @@
             // textPrecioCaja
             // 
             this.textPrecioCaja.EditValue = "0";
-            this.textPrecioCaja.Location = new System.Drawing.Point(21, 24);
+            this.textPrecioCaja.Location = new System.Drawing.Point(21, 363);
             this.textPrecioCaja.Name = "textPrecioCaja";
             this.textPrecioCaja.Properties.Appearance.Options.UseTextOptions = true;
             this.textPrecioCaja.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textPrecioCaja.Properties.Mask.EditMask = "c";
             this.textPrecioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPrecioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPrecioCaja.Properties.ReadOnly = true;
             this.textPrecioCaja.Size = new System.Drawing.Size(100, 20);
             this.textPrecioCaja.TabIndex = 41;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 5);
+            this.labelControl7.Location = new System.Drawing.Point(35, 344);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 13);
             this.labelControl7.TabIndex = 40;
@@ -554,13 +587,14 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(5, 85);
+            this.gridControl1.Location = new System.Drawing.Point(5, 82);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(433, 308);
+            this.gridControl1.Size = new System.Drawing.Size(433, 311);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -582,8 +616,6 @@
             this.Id_empleado.Caption = "Id Trabajador";
             this.Id_empleado.FieldName = "Id_empleado";
             this.Id_empleado.Name = "Id_empleado";
-            this.Id_empleado.Visible = true;
-            this.Id_empleado.VisibleIndex = 3;
             // 
             // Nombre_empleado
             // 
@@ -632,7 +664,7 @@
             // 
             // checkPagoFalso
             // 
-            this.checkPagoFalso.Location = new System.Drawing.Point(362, 68);
+            this.checkPagoFalso.Location = new System.Drawing.Point(362, 47);
             this.checkPagoFalso.Name = "checkPagoFalso";
             this.checkPagoFalso.Properties.Caption = "Pago Falso";
             this.checkPagoFalso.Size = new System.Drawing.Size(75, 19);
@@ -640,11 +672,12 @@
             // 
             // checkPagoxDia
             // 
-            this.checkPagoxDia.Location = new System.Drawing.Point(362, 49);
+            this.checkPagoxDia.Location = new System.Drawing.Point(362, 28);
             this.checkPagoxDia.Name = "checkPagoxDia";
             this.checkPagoxDia.Properties.Caption = "Pago x Dia";
             this.checkPagoxDia.Size = new System.Drawing.Size(75, 19);
             this.checkPagoxDia.TabIndex = 6;
+            this.checkPagoxDia.CheckedChanged += new System.EventHandler(this.checkPagoxDia_CheckedChanged);
             // 
             // textCajas
             // 
@@ -657,6 +690,7 @@
             this.textCajas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCajas.Size = new System.Drawing.Size(100, 20);
             this.textCajas.TabIndex = 4;
+            this.textCajas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCajas_KeyUp);
             // 
             // labelControl13
             // 
@@ -685,6 +719,28 @@
             this.labelEstatus.Size = new System.Drawing.Size(0, 13);
             this.labelEstatus.TabIndex = 43;
             // 
+            // textTopepgoxDia
+            // 
+            this.textTopepgoxDia.EditValue = "0";
+            this.textTopepgoxDia.Location = new System.Drawing.Point(21, 24);
+            this.textTopepgoxDia.Name = "textTopepgoxDia";
+            this.textTopepgoxDia.Properties.Appearance.Options.UseTextOptions = true;
+            this.textTopepgoxDia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textTopepgoxDia.Properties.Mask.EditMask = "c";
+            this.textTopepgoxDia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textTopepgoxDia.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textTopepgoxDia.Properties.ReadOnly = true;
+            this.textTopepgoxDia.Size = new System.Drawing.Size(100, 20);
+            this.textTopepgoxDia.TabIndex = 57;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(35, 5);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(72, 13);
+            this.labelControl14.TabIndex = 56;
+            this.labelControl14.Text = "Tope Pgo x Dia";
+            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -703,15 +759,22 @@
             this.Controls.Add(this.textIdHojaNomina);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dateFecha);
+            this.KeyPreview = true;
             this.Name = "Frm_Nomina";
             this.Text = "Frm_Nomina";
             this.Load += new System.EventHandler(this.Frm_Nomina_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Frm_Nomina_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.labelImporte.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelImporteCortador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorCajas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelContadorCortador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEmpleados.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkFestivo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -733,6 +796,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -786,16 +850,18 @@
         private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelImporte;
-        private DevExpress.XtraEditors.LabelControl labelContadorCajas;
-        private DevExpress.XtraEditors.LabelControl labelContadorTotal;
         private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.LabelControl labelImporteCortador;
-        private DevExpress.XtraEditors.LabelControl labelContadorCortador;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraGrid.Columns.GridColumn Id_secuencia;
         private DevExpress.XtraGrid.Columns.GridColumn Id_HojaNomina;
         private DevExpress.XtraGrid.Columns.GridColumn Id_Puesto;
         private DevExpress.XtraEditors.LabelControl labelEstatus;
+        private DevExpress.XtraEditors.TextEdit labelImporte;
+        private DevExpress.XtraEditors.TextEdit labelImporteCortador;
+        private DevExpress.XtraEditors.TextEdit labelContadorCajas;
+        private DevExpress.XtraEditors.TextEdit labelContadorTotal;
+        private DevExpress.XtraEditors.TextEdit labelContadorCortador;
+        private DevExpress.XtraEditors.TextEdit textTopepgoxDia;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }

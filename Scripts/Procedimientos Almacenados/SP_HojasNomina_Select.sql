@@ -15,17 +15,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_HojaNomina_Select')
-DROP PROCEDURE SP_HojaNomina_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_HojasNomina_Select')
+DROP PROCEDURE SP_HojasNomina_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_HojaNomina_Select
+CREATE PROCEDURE SP_HojasNomina_Select
 	-- Add the parameters for the stored procedure here
-	@Id_HojaNomina varchar(10)
+	@del datetime,
+	@al datetime
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -41,7 +42,7 @@ BEGIN
 			Pago_Diario,
 			H.Id_JefeCuadrilla,
 			E.Nombre_Empleado,
-			Tope_pgo_x_dia,
+			Tope_pgo_x_dia as PrecioCaja,
 			Total_corte_pgo_x_dia,
 			Kgs_cortados_x_dia,
 			Cajas_cortados_x_dia,
@@ -56,10 +57,11 @@ BEGIN
 			Pago_falso,
 			Festivo,
 			Estatus,
-			Precio_Caja
+			Nombre_Categoria
 		from HojaNomina as H
 		left join Empleados as E on E.Id_Empleado=H.Id_JefeCuadrilla
-		where Id_HojaNomina=@Id_HojaNomina
-
+		left join Cuadrillas as C on C.Id_Cuadrilla=H.Id_Cuadrilla
+		left join CategoriasCuadrilla as CC on CC.Id_Categoria=C.Id_Categoria
+		where Fecha_HojaNomina between @del and @al
 END
 GO

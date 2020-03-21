@@ -28,6 +28,8 @@ ELSE
 		[Pago_x_dia] [bit] NULL,
 		[Pago_falso] [bit] NULL,
 		[Festivo] [bit] NULL,
+		[Estatus] [char](1) NULL,
+		[Precio_Caja] [numeric](10,2) NULL,
 	 CONSTRAINT [PK_HojaNomina] PRIMARY KEY CLUSTERED 
 	(
 		[Id_HojaNomina] ASC

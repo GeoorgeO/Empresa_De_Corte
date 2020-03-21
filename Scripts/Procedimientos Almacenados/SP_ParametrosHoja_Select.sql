@@ -52,7 +52,8 @@ BEGIN
 			Kg_x_Dia_Inf_3,
 			Kg_x_Dia_Sup_3,
 			case 'A' when 'A' then Pago_Inf_3 else Pago_Inf_3_Mission end as Pago_Inf_3,
-			case 'A' when 'A' then Pago_Sup_3 else Pago_Sup_3_Mission end as Pago_Sup_3
+			case 'A' when 'A' then Pago_Sup_3 else Pago_Sup_3_Mission end as Pago_Sup_3,
+			case 'A' when 'A' then N_Cortadores else N_Cortadores_Mission end as N_Cortadores
 		from Parametros
 		where Id_Tipo=@Id_Tipo
 
