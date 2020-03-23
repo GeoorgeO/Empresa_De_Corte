@@ -9,6 +9,7 @@ namespace CapaDeDatos
 
     public class ColumnasExcel : ConexionBase
     {
+        public int Row_PSC_Inicio { get; set; }
         public int Col_PSC_Fecha { get; set; }
         public int Col_PSC_ODC { get; set; }
         public int Col_PSC_Ubicacion { get; set; }
@@ -69,6 +70,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Col_PSC_Fecha");
                 _dato.Entero = this.Col_PSC_ODC;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Col_PSC_ODC");
+                _dato.Entero = this.Row_PSC_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Row_PSC_Inicio");
                 _dato.Entero = this.Col_PSC_Ubicacion;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Col_PSC_Ubicacion");
                 _dato.Entero = this.Col_PSC_Pesada;

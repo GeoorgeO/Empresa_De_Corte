@@ -70,6 +70,8 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.spFilaInicio = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spODC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -214,6 +217,8 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.spFilaInicio);
+            this.xtraTabPage1.Controls.Add(this.labelControl15);
             this.xtraTabPage1.Controls.Add(this.spJefeArea);
             this.xtraTabPage1.Controls.Add(this.labelControl14);
             this.xtraTabPage1.Controls.Add(this.spFolioZ);
@@ -253,7 +258,7 @@
             0,
             0,
             0});
-            this.spJefeArea.Location = new System.Drawing.Point(199, 355);
+            this.spJefeArea.Location = new System.Drawing.Point(199, 385);
             this.spJefeArea.MenuManager = this.barManager1;
             this.spJefeArea.Name = "spJefeArea";
             this.spJefeArea.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -268,7 +273,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(25, 359);
+            this.labelControl14.Location = new System.Drawing.Point(25, 389);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(123, 13);
             this.labelControl14.TabIndex = 37;
@@ -281,7 +286,7 @@
             0,
             0,
             0});
-            this.spFolioZ.Location = new System.Drawing.Point(199, 329);
+            this.spFolioZ.Location = new System.Drawing.Point(199, 359);
             this.spFolioZ.MenuManager = this.barManager1;
             this.spFolioZ.Name = "spFolioZ";
             this.spFolioZ.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -296,7 +301,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(25, 333);
+            this.labelControl13.Location = new System.Drawing.Point(25, 363);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(104, 13);
             this.labelControl13.TabIndex = 35;
@@ -309,7 +314,7 @@
             0,
             0,
             0});
-            this.spCajasZ.Location = new System.Drawing.Point(199, 303);
+            this.spCajasZ.Location = new System.Drawing.Point(199, 333);
             this.spCajasZ.MenuManager = this.barManager1;
             this.spCajasZ.Name = "spCajasZ";
             this.spCajasZ.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -324,7 +329,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(25, 307);
+            this.labelControl12.Location = new System.Drawing.Point(25, 337);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(104, 13);
             this.labelControl12.TabIndex = 33;
@@ -337,7 +342,7 @@
             0,
             0,
             0});
-            this.spJefeCuadrilla.Location = new System.Drawing.Point(199, 277);
+            this.spJefeCuadrilla.Location = new System.Drawing.Point(199, 307);
             this.spJefeCuadrilla.MenuManager = this.barManager1;
             this.spJefeCuadrilla.Name = "spJefeCuadrilla";
             this.spJefeCuadrilla.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -352,7 +357,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(25, 281);
+            this.labelControl11.Location = new System.Drawing.Point(25, 311);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(141, 13);
             this.labelControl11.TabIndex = 31;
@@ -365,7 +370,7 @@
             0,
             0,
             0});
-            this.spVariedad.Location = new System.Drawing.Point(199, 251);
+            this.spVariedad.Location = new System.Drawing.Point(199, 281);
             this.spVariedad.MenuManager = this.barManager1;
             this.spVariedad.Name = "spVariedad";
             this.spVariedad.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -380,7 +385,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(25, 255);
+            this.labelControl10.Location = new System.Drawing.Point(25, 285);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(118, 13);
             this.labelControl10.TabIndex = 29;
@@ -393,7 +398,7 @@
             0,
             0,
             0});
-            this.spKilos.Location = new System.Drawing.Point(199, 225);
+            this.spKilos.Location = new System.Drawing.Point(199, 255);
             this.spKilos.MenuManager = this.barManager1;
             this.spKilos.Name = "spKilos";
             this.spKilos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -413,7 +418,7 @@
             0,
             0,
             0});
-            this.spCajas.Location = new System.Drawing.Point(199, 199);
+            this.spCajas.Location = new System.Drawing.Point(199, 229);
             this.spCajas.MenuManager = this.barManager1;
             this.spCajas.Name = "spCajas";
             this.spCajas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -433,7 +438,7 @@
             0,
             0,
             0});
-            this.spProductor.Location = new System.Drawing.Point(199, 173);
+            this.spProductor.Location = new System.Drawing.Point(199, 203);
             this.spProductor.MenuManager = this.barManager1;
             this.spProductor.Name = "spProductor";
             this.spProductor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -453,7 +458,7 @@
             0,
             0,
             0});
-            this.spHuertas.Location = new System.Drawing.Point(199, 147);
+            this.spHuertas.Location = new System.Drawing.Point(199, 177);
             this.spHuertas.MenuManager = this.barManager1;
             this.spHuertas.Name = "spHuertas";
             this.spHuertas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -473,7 +478,7 @@
             0,
             0,
             0});
-            this.spPlacas.Location = new System.Drawing.Point(199, 121);
+            this.spPlacas.Location = new System.Drawing.Point(199, 151);
             this.spPlacas.MenuManager = this.barManager1;
             this.spPlacas.Name = "spPlacas";
             this.spPlacas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -493,7 +498,7 @@
             0,
             0,
             0});
-            this.spPesada.Location = new System.Drawing.Point(199, 95);
+            this.spPesada.Location = new System.Drawing.Point(199, 125);
             this.spPesada.MenuManager = this.barManager1;
             this.spPesada.Name = "spPesada";
             this.spPesada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -513,7 +518,7 @@
             0,
             0,
             0});
-            this.spUbicacion.Location = new System.Drawing.Point(199, 69);
+            this.spUbicacion.Location = new System.Drawing.Point(199, 99);
             this.spUbicacion.MenuManager = this.barManager1;
             this.spUbicacion.Name = "spUbicacion";
             this.spUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -533,7 +538,7 @@
             0,
             0,
             0});
-            this.spODC.Location = new System.Drawing.Point(199, 43);
+            this.spODC.Location = new System.Drawing.Point(199, 73);
             this.spODC.MenuManager = this.barManager1;
             this.spODC.Name = "spODC";
             this.spODC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -553,7 +558,7 @@
             0,
             0,
             0});
-            this.spFecha.Location = new System.Drawing.Point(199, 17);
+            this.spFecha.Location = new System.Drawing.Point(199, 47);
             this.spFecha.MenuManager = this.barManager1;
             this.spFecha.Name = "spFecha";
             this.spFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -568,7 +573,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(25, 229);
+            this.labelControl9.Location = new System.Drawing.Point(25, 259);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(97, 13);
             this.labelControl9.TabIndex = 18;
@@ -576,7 +581,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(25, 203);
+            this.labelControl8.Location = new System.Drawing.Point(25, 233);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(103, 13);
             this.labelControl8.TabIndex = 16;
@@ -584,7 +589,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(25, 177);
+            this.labelControl7.Location = new System.Drawing.Point(25, 207);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(123, 13);
             this.labelControl7.TabIndex = 14;
@@ -592,7 +597,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(25, 151);
+            this.labelControl6.Location = new System.Drawing.Point(25, 181);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(114, 13);
             this.labelControl6.TabIndex = 5;
@@ -600,7 +605,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(25, 125);
+            this.labelControl5.Location = new System.Drawing.Point(25, 155);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(106, 13);
             this.labelControl5.TabIndex = 4;
@@ -608,7 +613,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(25, 99);
+            this.labelControl4.Location = new System.Drawing.Point(25, 129);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(111, 13);
             this.labelControl4.TabIndex = 3;
@@ -616,7 +621,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(25, 73);
+            this.labelControl3.Location = new System.Drawing.Point(25, 103);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(121, 13);
             this.labelControl3.TabIndex = 2;
@@ -624,7 +629,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(26, 47);
+            this.labelControl2.Location = new System.Drawing.Point(26, 77);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(98, 13);
             this.labelControl2.TabIndex = 1;
@@ -632,12 +637,40 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(24, 21);
+            this.labelControl1.Location = new System.Drawing.Point(24, 51);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(105, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Columna Excel Fecha:";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
+            // 
+            // spFilaInicio
+            // 
+            this.spFilaInicio.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spFilaInicio.Location = new System.Drawing.Point(199, 12);
+            this.spFilaInicio.MenuManager = this.barManager1;
+            this.spFilaInicio.Name = "spFilaInicio";
+            this.spFilaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spFilaInicio.Properties.MaxValue = new decimal(new int[] {
+            14,
+            0,
+            0,
+            0});
+            this.spFilaInicio.Size = new System.Drawing.Size(51, 20);
+            this.spFilaInicio.TabIndex = 40;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(24, 16);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(63, 13);
+            this.labelControl15.TabIndex = 39;
+            this.labelControl15.Text = "Fila de Inicio:";
             // 
             // Frm_Parametros_PSC
             // 
@@ -677,6 +710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spUbicacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spODC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +758,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.SpinEdit spVariedad;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.SpinEdit spFilaInicio;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
     }
 }

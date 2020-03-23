@@ -309,6 +309,12 @@
     <Compile Include="Formularios\Frm_Puesto.Designer.cs">
       <DependentUpon>Frm_Puesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_ServiciosODC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_ServiciosODC.Designer.cs">
+      <DependentUpon>Frm_ServiciosODC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_TiposCorte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Puesto.resx">
       <DependentUpon>Frm_Puesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_ServiciosODC.resx">
+      <DependentUpon>Frm_ServiciosODC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_TiposCorte.resx">
       <DependentUpon>Frm_TiposCorte.cs</DependentUpon>

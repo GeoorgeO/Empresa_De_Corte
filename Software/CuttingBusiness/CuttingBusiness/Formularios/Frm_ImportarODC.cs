@@ -13,6 +13,7 @@ namespace CuttingBusiness
     {
         int rCnt = 0;
         int cCnt = 0;
+        public int Row_PSC_Inicio { get; set; }
         public int Col_PSC_Fecha { get; set; }
         public int Col_PSC_ODC { get; set; }
         public int Col_PSC_Ubicacion { get; set; }
@@ -236,6 +237,7 @@ namespace CuttingBusiness
             {
                 if (sel.Datos.Rows.Count > 0)
                 {
+                    Row_PSC_Inicio= Convert.ToInt32(sel.Datos.Rows[0]["Row_PSC_Inicio"].ToString());
                     Col_PSC_Fecha = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Fecha"].ToString());
                     Col_PSC_ODC = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_ODC"].ToString());
                     Col_PSC_Ubicacion = Convert.ToInt32(sel.Datos.Rows[0]["Col_PSC_Ubicacion"].ToString());
@@ -266,14 +268,13 @@ namespace CuttingBusiness
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MakeTablaPedidos();
-            txtHoja.Text = string.Empty;
             txtClave.Text = string.Empty;
         }
 
         private void btnImportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int contadorins = 0;
-            if (txtHoja.Text!=string.Empty && txtClave.Text!=string.Empty)
+            if (txtClave.Text!=string.Empty)
             {
                 if (dtgValServicios.RowCount > 0)
                 {
@@ -318,7 +319,7 @@ namespace CuttingBusiness
                             ins.PSC_CajasZ = vCajasZ;
                             ins.PSC_FolioZ = vFolioZ;
                             ins.PSC_JefeArea = vJefeArea;
-                            ins.PSC_ClaveDia = txtHoja.Text + txtClave.Text;
+                            ins.PSC_ClaveDia = txtClave.Text;
                             ins.MtdInsertarServiciosCortes();
                             if (!ins.Exito)
                             {
@@ -378,11 +379,11 @@ namespace CuttingBusiness
                 {
                     txtRutaArchivo.Text = OpenDialog.FileName;
                     var str = string.Empty;
-                    rCnt = 0;
+                    rCnt = Row_PSC_Inicio;
                     cCnt = 0;
                     try
                     {
-                        rCnt = 2;
+                        rCnt = Row_PSC_Inicio;
                         SLDocument s1 = new SLDocument(OpenDialog.FileName);
                         int celdas = 0;
                         while (!String.IsNullOrEmpty(s1.GetCellValueAsString(rCnt, 1)))
@@ -391,7 +392,7 @@ namespace CuttingBusiness
                             rCnt++;
                         }
                         pgbProgreso.Properties.Maximum = celdas;
-                        rCnt = 2;
+                        rCnt = Row_PSC_Inicio;
                         while (!String.IsNullOrEmpty(s1.GetCellValueAsString(rCnt, 1)))
                         {
                             pgbProgreso.Position = rCnt;
