@@ -84,6 +84,38 @@ namespace CapaDeDatos
 
         }
 
+        public void MtdEliminarHojaNominaDetalle()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_HojaNominaDetalle_Delete";
+                _dato.CadenaTexto = Id_HojaNomina;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina");
+                _dato.CadenaTexto = Id_secuencia;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_secuencia");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
 
     }
 }

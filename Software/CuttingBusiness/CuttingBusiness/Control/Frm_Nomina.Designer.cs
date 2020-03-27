@@ -55,6 +55,8 @@
             this.btnELiminar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.textTopepgoxDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.textPromedioCaja2 = new DevExpress.XtraEditors.TextEdit();
@@ -86,8 +88,7 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
-            this.textTopepgoxDia = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -102,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkFestivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja2.Properties)).BeginInit();
@@ -118,7 +120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -147,7 +148,7 @@
             this.textIdHojaNomina.Location = new System.Drawing.Point(135, 29);
             this.textIdHojaNomina.Name = "textIdHojaNomina";
             this.textIdHojaNomina.Size = new System.Drawing.Size(100, 20);
-            this.textIdHojaNomina.TabIndex = 2;
+            this.textIdHojaNomina.TabIndex = 1;
             this.textIdHojaNomina.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
             // btnAbrirHoja
@@ -336,7 +337,8 @@
             this.lueEmpleados.Properties.DisplayMember = "Nombre_Empleado";
             this.lueEmpleados.Properties.ValueMember = "Id_Empleado";
             this.lueEmpleados.Size = new System.Drawing.Size(292, 20);
-            this.lueEmpleados.TabIndex = 16;
+            this.lueEmpleados.TabIndex = 3;
+            this.lueEmpleados.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lueEmpleados_KeyUp);
             // 
             // btnIncluirApoyo
             // 
@@ -345,6 +347,7 @@
             this.btnIncluirApoyo.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirApoyo.TabIndex = 14;
             this.btnIncluirApoyo.Text = "Incluir apoyo";
+            this.btnIncluirApoyo.Click += new System.EventHandler(this.btnIncluirApoyo_Click);
             // 
             // checkFestivo
             // 
@@ -362,6 +365,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(25, 26);
             this.btnNuevo.TabIndex = 12;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnELiminar
             // 
@@ -370,6 +374,7 @@
             this.btnELiminar.Name = "btnELiminar";
             this.btnELiminar.Size = new System.Drawing.Size(25, 26);
             this.btnELiminar.TabIndex = 11;
+            this.btnELiminar.Click += new System.EventHandler(this.btnELiminar_Click);
             // 
             // btnAgregar
             // 
@@ -404,6 +409,28 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(145, 388);
             this.panelControl1.TabIndex = 9;
+            // 
+            // textTopepgoxDia
+            // 
+            this.textTopepgoxDia.EditValue = "0";
+            this.textTopepgoxDia.Location = new System.Drawing.Point(21, 24);
+            this.textTopepgoxDia.Name = "textTopepgoxDia";
+            this.textTopepgoxDia.Properties.Appearance.Options.UseTextOptions = true;
+            this.textTopepgoxDia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textTopepgoxDia.Properties.Mask.EditMask = "c";
+            this.textTopepgoxDia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textTopepgoxDia.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textTopepgoxDia.Properties.ReadOnly = true;
+            this.textTopepgoxDia.Size = new System.Drawing.Size(100, 20);
+            this.textTopepgoxDia.TabIndex = 57;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(35, 5);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(72, 13);
+            this.labelControl14.TabIndex = 56;
+            this.labelControl14.Text = "Tope Pgo x Dia";
             // 
             // separatorControl2
             // 
@@ -610,6 +637,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
             // Id_empleado
             // 
@@ -686,7 +714,7 @@
             this.textCajas.Name = "textCajas";
             this.textCajas.Properties.Appearance.Options.UseTextOptions = true;
             this.textCajas.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textCajas.Properties.Mask.EditMask = "n";
+            this.textCajas.Properties.Mask.EditMask = "n0";
             this.textCajas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textCajas.Size = new System.Drawing.Size(100, 20);
             this.textCajas.TabIndex = 4;
@@ -709,8 +737,9 @@
             this.lueCuadrillas.Properties.DisplayMember = "Cuadrilla";
             this.lueCuadrillas.Properties.ValueMember = "Id_Cuadrilla";
             this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
-            this.lueCuadrillas.TabIndex = 42;
+            this.lueCuadrillas.TabIndex = 2;
             this.lueCuadrillas.EditValueChanged += new System.EventHandler(this.lueCuadrillas_EditValueChanged);
+            this.lueCuadrillas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lueCuadrillas_KeyUp);
             // 
             // labelEstatus
             // 
@@ -719,33 +748,21 @@
             this.labelEstatus.Size = new System.Drawing.Size(0, 13);
             this.labelEstatus.TabIndex = 43;
             // 
-            // textTopepgoxDia
+            // btnCerrarNomina
             // 
-            this.textTopepgoxDia.EditValue = "0";
-            this.textTopepgoxDia.Location = new System.Drawing.Point(21, 24);
-            this.textTopepgoxDia.Name = "textTopepgoxDia";
-            this.textTopepgoxDia.Properties.Appearance.Options.UseTextOptions = true;
-            this.textTopepgoxDia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textTopepgoxDia.Properties.Mask.EditMask = "c";
-            this.textTopepgoxDia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textTopepgoxDia.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.textTopepgoxDia.Properties.ReadOnly = true;
-            this.textTopepgoxDia.Size = new System.Drawing.Size(100, 20);
-            this.textTopepgoxDia.TabIndex = 57;
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(35, 5);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(72, 13);
-            this.labelControl14.TabIndex = 56;
-            this.labelControl14.Text = "Tope Pgo x Dia";
+            this.btnCerrarNomina.Location = new System.Drawing.Point(507, 7);
+            this.btnCerrarNomina.Name = "btnCerrarNomina";
+            this.btnCerrarNomina.Size = new System.Drawing.Size(91, 23);
+            this.btnCerrarNomina.TabIndex = 44;
+            this.btnCerrarNomina.Text = "Cerrar Nomina";
+            this.btnCerrarNomina.Click += new System.EventHandler(this.btnCerrarNomina_Click);
             // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 558);
+            this.Controls.Add(this.btnCerrarNomina);
             this.Controls.Add(this.labelEstatus);
             this.Controls.Add(this.lueCuadrillas);
             this.Controls.Add(this.labelControl13);
@@ -780,6 +797,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja2.Properties)).EndInit();
@@ -796,7 +814,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,5 +880,6 @@
         private DevExpress.XtraEditors.TextEdit labelContadorCortador;
         private DevExpress.XtraEditors.TextEdit textTopepgoxDia;
         private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.SimpleButton btnCerrarNomina;
     }
 }

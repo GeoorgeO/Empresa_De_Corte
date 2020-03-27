@@ -15,17 +15,17 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_Empleados_Nomina_Select')
-DROP PROCEDURE SP_Empleados_Nomina_Select
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'SP_PuestoEmpleado_Select')
+DROP PROCEDURE SP_PuestoEmpleado_Select
 GO
 -- =============================================
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE SP_Empleados_Nomina_Select
+CREATE PROCEDURE SP_PuestoEmpleado_Select
 	-- Add the parameters for the stored procedure here
-	
+	@Id_Empleado char(6)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -34,13 +34,9 @@ BEGIN
 
     -- Insert statements for procedure here
 	
-		select Id_Empleado,
-			Nombre_Empleado
-			,Nombre_Puesto
-		from Empleados as E
-		left join Puestos as P on P.Id_Puesto=E.Id_Puesto
-		left join Cuadrillas as C on C.Id_Cuadrilla=E.Id_Cuadrilla
-		left join CategoriasCuadrilla as CC on CC.Id_Categoria=C.Id_Categoria
-		where Activo='1'
+		select Id_Puesto
+	      ,Nombre_Puesto
+		from Puestos
+		where Id_Empleado=@Id_Empleado
 END
 GO
