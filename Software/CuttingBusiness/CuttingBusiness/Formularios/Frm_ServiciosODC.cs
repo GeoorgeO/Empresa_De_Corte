@@ -23,6 +23,150 @@ namespace CuttingBusiness
         {
             InitializeComponent();
         }
+        private void MakeTablaPedidos()
+        {
+            DataTable table = new DataTable("FirstTable");
+            DataColumn column = new DataColumn();
+            table.Reset();
+
+            // DataRow row;
+            column.DataType = typeof(DateTime);
+            column.ColumnName = "col_Fecha";
+            column.AutoIncrement = false;
+            column.Caption = "Fecha";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_ODC";
+            column.AutoIncrement = false;
+            column.Caption = "ODC";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Ubicacion";
+            column.AutoIncrement = false;
+            column.Caption = "Ubicacion";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Pesada";
+            column.AutoIncrement = false;
+            column.Caption = "Pesada";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Placas";
+            column.AutoIncrement = false;
+            column.Caption = "Placas";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Huertas";
+            column.AutoIncrement = false;
+            column.Caption = "Huertas";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Productor";
+            column.AutoIncrement = false;
+            column.Caption = "Productor";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Cajas";
+            column.AutoIncrement = false;
+            column.Caption = "Cajas";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Kilos";
+            column.AutoIncrement = false;
+            column.Caption = "Kilos";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_Variedad";
+            column.AutoIncrement = false;
+            column.Caption = "Variedad";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_JefeCuadrilla";
+            column.AutoIncrement = false;
+            column.Caption = "Jefe Cuadrilla";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_CajasZ";
+            column.AutoIncrement = false;
+            column.Caption = "CajasZ";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_FolioZ";
+            column.AutoIncrement = false;
+            column.Caption = "FolioZ";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "col_JefeArea";
+            column.AutoIncrement = false;
+            column.Caption = "Jefe Area";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            dtgServicios.DataSource = table;
+        }
         public string DosCeros(string sVal)
         {
             string str = "";
@@ -80,12 +224,12 @@ namespace CuttingBusiness
         private void btnBuscarServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             CLS_ServiciosCortes sel = new CLS_ServiciosCortes();
-            DateTime vFechaInicio =Convert.ToDateTime(dtInicio.EditValue.ToString());
+            DateTime vFechaInicio = Convert.ToDateTime(dtInicio.EditValue.ToString());
             DateTime vFechaFin = Convert.ToDateTime(dtFin.EditValue.ToString());
             sel.Fecha_Inicio = vFechaInicio.Year.ToString() + DosCeros(vFechaInicio.Month.ToString()) + DosCeros(vFechaInicio.Day.ToString());
             sel.Fecha_Fin = vFechaFin.Year.ToString() + DosCeros(vFechaFin.Month.ToString()) + DosCeros(vFechaFin.Day.ToString());
             sel.MtdSeleccionarServicioCorteODC_Fechas();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 dtgServicios.DataSource = sel.Datos;
             }
@@ -111,7 +255,7 @@ namespace CuttingBusiness
                             CLS_ServiciosCortes del = new CLS_ServiciosCortes();
                             del.PSC_Fecha = vfecha;
                             del.PSC_ODC = vOrden;
-                            del.MtdEliminarServicioCorteODC();
+                            del.MtdEliminarServicioCorte();
                             if (!del.Exito)
                             {
                                 XtraMessageBox.Show(del.Mensaje);
@@ -197,7 +341,7 @@ namespace CuttingBusiness
             sel.MtdSeleccionarServicioCorteODCCont();
             if (sel.Exito)
             {
-                valor =Convert.ToInt32(sel.Datos.Rows[0]["Registros"].ToString());
+                valor = Convert.ToInt32(sel.Datos.Rows[0]["Registros"].ToString());
             }
             return valor;
         }
@@ -228,5 +372,51 @@ namespace CuttingBusiness
             }
             return valor;
         }
+
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (dtgValServicios.RowCount > 0)
+            {
+                //pgbProgreso.Properties.Maximum = dtgValServicios.RowCount;
+                //pgbProgreso.Position = 0;
+
+                for (int x = 0; x < dtgValServicios.RowCount; x++)
+                {
+                    int xRow = dtgValServicios.GetVisibleRowHandle(x);
+                    //pgbProgreso.Position = x + 1;
+                    Application.DoEvents();
+
+                    CLS_ServiciosCortes ins = new CLS_ServiciosCortes();
+                    DateTime DFecha = Convert.ToDateTime(dtgValServicios.GetRowCellValue(xRow, "PSC_Fecha").ToString());
+                    string vFecha = DFecha.Year.ToString() + DosCeros(DFecha.Month.ToString()) + DosCeros(DFecha.Day.ToString());
+                    ins.PSC_Fecha = vFecha;
+                    ins.PSC_ODC = dtgValServicios.GetRowCellValue(xRow, "PSC_ODC").ToString();
+                    ins.PSC_Ubicacion = dtgValServicios.GetRowCellValue(xRow, "PSC_Ubicacion").ToString();
+                    ins.PSC_Pesada = dtgValServicios.GetRowCellValue(xRow, "PSC_Pesada").ToString();
+                    ins.PSC_Placas = dtgValServicios.GetRowCellValue(xRow, "PSC_Placas").ToString();
+                    ins.PSC_Huertas = dtgValServicios.GetRowCellValue(xRow, "PSC_Huertas").ToString();
+                    ins.PSC_Productor = dtgValServicios.GetRowCellValue(xRow, "PSC_Productor").ToString();
+                    ins.PSC_Cajas = dtgValServicios.GetRowCellValue(xRow, "PSC_Cajas").ToString();
+                    ins.PSC_Kilos = dtgValServicios.GetRowCellValue(xRow, "PSC_Kilos").ToString();
+                    ins.PSC_Variedad = dtgValServicios.GetRowCellValue(xRow, "PSC_Variedad").ToString();
+                    ins.PSC_JefeCuadrilla = dtgValServicios.GetRowCellValue(xRow, "PSC_JefeCuadrilla").ToString();
+                    ins.PSC_CajasZ = dtgValServicios.GetRowCellValue(xRow, "PSC_CajasZ").ToString();
+                    ins.PSC_FolioZ = dtgValServicios.GetRowCellValue(xRow, "PSC_FolioZ").ToString();
+                    ins.PSC_JefeArea = dtgValServicios.GetRowCellValue(xRow, "PSC_JefeArea").ToString();
+                    ins.PSC_ClaveDia = dtgValServicios.GetRowCellValue(xRow, "PSC_ClaveDia").ToString();
+                    ins.MtdUpdateServiciosCortes();
+                    if (!ins.Exito)
+                    {
+                        XtraMessageBox.Show(ins.Mensaje);
+                    }
+                }
+            }
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+

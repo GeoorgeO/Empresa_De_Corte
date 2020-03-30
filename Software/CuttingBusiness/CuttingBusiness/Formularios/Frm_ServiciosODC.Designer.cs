@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ServiciosODC));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
+            this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnBuscarServicios = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGenerarApoyo = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -100,9 +101,10 @@
             this.btnParametros,
             this.btnSalir,
             this.btnEliminar,
-            this.btnBuscarServicios});
+            this.btnBuscarServicios,
+            this.btnGuardar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 80;
+            this.barManager1.MaxItemId = 81;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -116,6 +118,7 @@
             this.bIconos.FloatLocation = new System.Drawing.Point(42, 184);
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnBuscarServicios),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGenerarApoyo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
@@ -130,6 +133,15 @@
             this.bIconos.OptionsBar.RotateWhenVertical = false;
             this.bIconos.OptionsBar.UseWholeRow = true;
             this.bIconos.Text = "Menú principal";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Caption = "Guardar";
+            this.btnGuardar.Id = 80;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnBuscarServicios
             // 
@@ -165,6 +177,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -378,7 +391,6 @@
             this.gridColumn1.Caption = "Pesada";
             this.gridColumn1.FieldName = "PSC_Pesada";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
             // 
@@ -414,7 +426,6 @@
             this.col_Cajas.Caption = "Cajas";
             this.col_Cajas.FieldName = "PSC_Cajas";
             this.col_Cajas.Name = "col_Cajas";
-            this.col_Cajas.OptionsColumn.AllowEdit = false;
             this.col_Cajas.Visible = true;
             this.col_Cajas.VisibleIndex = 7;
             // 
@@ -423,7 +434,6 @@
             this.col_Kilos.Caption = "Kilos";
             this.col_Kilos.FieldName = "PSC_Kilos";
             this.col_Kilos.Name = "col_Kilos";
-            this.col_Kilos.OptionsColumn.AllowEdit = false;
             this.col_Kilos.Visible = true;
             this.col_Kilos.VisibleIndex = 8;
             // 
@@ -450,7 +460,6 @@
             this.col_CajasZ.Caption = "CajasZ";
             this.col_CajasZ.FieldName = "PSC_CajasZ";
             this.col_CajasZ.Name = "col_CajasZ";
-            this.col_CajasZ.OptionsColumn.AllowEdit = false;
             this.col_CajasZ.Visible = true;
             this.col_CajasZ.VisibleIndex = 11;
             // 
@@ -477,6 +486,7 @@
             this.col_ClaveDia.Caption = "ClaveDia";
             this.col_ClaveDia.FieldName = "PSC_ClaveDia";
             this.col_ClaveDia.Name = "col_ClaveDia";
+            this.col_ClaveDia.OptionsColumn.AllowEdit = false;
             this.col_ClaveDia.Visible = true;
             this.col_ClaveDia.VisibleIndex = 14;
             // 
@@ -554,5 +564,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_FolioZ;
         private DevExpress.XtraGrid.Columns.GridColumn col_JefeArea;
         private DevExpress.XtraGrid.Columns.GridColumn col_ClaveDia;
+        private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
     }
 }
