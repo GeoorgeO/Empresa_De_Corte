@@ -778,6 +778,7 @@
             this.Controls.Add(this.dateFecha);
             this.KeyPreview = true;
             this.Name = "Frm_Nomina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nomina";
             this.Load += new System.EventHandler(this.Frm_Nomina_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Frm_Nomina_KeyUp);

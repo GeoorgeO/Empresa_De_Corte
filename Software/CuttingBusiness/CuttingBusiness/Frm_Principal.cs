@@ -300,6 +300,8 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("014"))
             {
+                Frm_Nomina Ventana = new Frm_Nomina();
+                Ventana.ShowDialog();
             }
             else
             {
