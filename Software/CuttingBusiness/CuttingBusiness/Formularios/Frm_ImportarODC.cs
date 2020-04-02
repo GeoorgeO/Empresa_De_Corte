@@ -30,7 +30,21 @@ namespace CuttingBusiness
         public int Col_PSC_JefeArea { get; set; }
         public int Col_PSC_ClaveDia { get; set; }
 
-        
+        private static Frm_ImportarODC m_FormDefInstance;
+        public static Frm_ImportarODC DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_ImportarODC();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+
         public Frm_ImportarODC()
         {
             InitializeComponent();

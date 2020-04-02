@@ -94,6 +94,8 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnImportarServicios = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -141,10 +143,11 @@
             this.btnSalir,
             this.btnTiposEntradas,
             this.btnTiposSalidas,
-            this.btnSeries});
+            this.btnSeries,
+            this.btnImportarServicios,
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 38;
+            this.ribbonControl1.MaxItemId = 40;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -157,7 +160,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(1067, 181);
+            this.ribbonControl1.Size = new System.Drawing.Size(915, 144);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnUsuarios
@@ -286,7 +289,7 @@
             // 
             // btnImportarRendimientoODC
             // 
-            this.btnImportarRendimientoODC.Caption = "Importar Rendimineto ODC";
+            this.btnImportarRendimientoODC.Caption = "Importar Rendimiento ODC";
             this.btnImportarRendimientoODC.Id = 15;
             this.btnImportarRendimientoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.Image")));
             this.btnImportarRendimientoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.LargeImage")));
@@ -449,8 +452,8 @@
             // 
             this.btnPreODC.Caption = "Precaptura ODC";
             this.btnPreODC.Id = 33;
-            this.btnPreODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnPreODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnPreODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPreODC.ImageOptions.Image")));
+            this.btnPreODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPreODC.ImageOptions.LargeImage")));
             this.btnPreODC.Name = "btnPreODC";
             this.btnPreODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPreODC_ItemClick);
             // 
@@ -557,15 +560,15 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnPreODC);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarODC);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarServicios);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCobros);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarRendimientoODC);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnCapturaODC);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnNomina);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageGroup9
@@ -673,15 +676,31 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
+            // btnImportarServicios
+            // 
+            this.btnImportarServicios.Caption = "Importar Servicios";
+            this.btnImportarServicios.Id = 38;
+            this.btnImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnImportarServicios.Name = "btnImportarServicios";
+            this.btnImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarServicios_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Apertura de Nominas";
+            this.barButtonItem2.Id = 39;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 524);
+            this.ClientSize = new System.Drawing.Size(915, 426);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Frm_Principal";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -763,6 +782,8 @@
         private DevExpress.XtraBars.BarButtonItem btnTiposEntradas;
         private DevExpress.XtraBars.BarButtonItem btnTiposSalidas;
         private DevExpress.XtraBars.BarButtonItem btnSeries;
+        private DevExpress.XtraBars.BarButtonItem btnImportarServicios;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
 

@@ -788,7 +788,10 @@
             this.Controls.Add(this.textIdHojaNomina);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dateFecha);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Nomina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Nomina";

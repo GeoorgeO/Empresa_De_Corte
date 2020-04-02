@@ -514,5 +514,19 @@ namespace CuttingBusiness
             Frm_PrecapturaODC.DefInstance.MdiParent = this;
             Frm_PrecapturaODC.DefInstance.Show();
         }
+
+        private void btnImportarServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("010"))
+            {
+                Frm_ImportarODC Ventana = new Frm_ImportarODC();
+                Frm_ImportarODC.DefInstance.MdiParent = this;
+                Frm_ImportarODC.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
+            }
+        }
     }
 }
