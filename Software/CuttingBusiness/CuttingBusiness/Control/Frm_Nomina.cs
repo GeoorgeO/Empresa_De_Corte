@@ -258,6 +258,7 @@ namespace CuttingBusiness
                             RecargarInfoCaptura();
                             ContadorTotal();
                             lueCuadrillas.Focus();
+                            textIdHojaNomina.Enabled = false;
                         }
                     }else
                     {
@@ -551,6 +552,7 @@ namespace CuttingBusiness
 
         private void NuevaHoja()
         {
+            textIdHojaNomina.Enabled = true;
             vtId_JefeCuadrilla = "";
             vtSecuencia = 0;
             vtTotalImporte = 0;
@@ -816,6 +818,7 @@ namespace CuttingBusiness
                 textIdHojaNomina.Text = Ventana.HojaSeleccionada.Trim();
                 abrirHoja();
                 lueCuadrillas.Focus();
+                textIdHojaNomina.Enabled = false;
             }
         }
 
@@ -1145,6 +1148,11 @@ namespace CuttingBusiness
                 guardarHoja();
             }
            
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            NuevaHoja();
         }
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)

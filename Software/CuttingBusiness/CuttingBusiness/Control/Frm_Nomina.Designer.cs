@@ -89,6 +89,7 @@
             this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -757,11 +758,22 @@
             this.btnCerrarNomina.Text = "Cerrar Nomina";
             this.btnCerrarNomina.Click += new System.EventHandler(this.btnCerrarNomina_Click);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(275, 27);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(83, 23);
+            this.simpleButton1.TabIndex = 45;
+            this.simpleButton1.Text = "Nueva Hoja";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 558);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);
             this.Controls.Add(this.labelEstatus);
             this.Controls.Add(this.lueCuadrillas);
@@ -882,5 +894,6 @@
         private DevExpress.XtraEditors.TextEdit textTopepgoxDia;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton btnCerrarNomina;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
