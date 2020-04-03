@@ -143,7 +143,7 @@ namespace CuttingBusiness
                 labelPagoDiario.Text = Clase.Datos.Rows[0][4].ToString();
                 vtId_JefeCuadrilla = Clase.Datos.Rows[0][5].ToString();
                 labelNombreJefeCuadrilla.Text = Clase.Datos.Rows[0][6].ToString();
-                textPrecioCaja.Text = Clase.Datos.Rows[0][7].ToString();
+               // textPrecioCaja.Text = Clase.Datos.Rows[0][7].ToString();
                 textTotalCortePgoxDia.Text = Clase.Datos.Rows[0][8].ToString();
                 textCajasxdia.Text = Clase.Datos.Rows[0][10].ToString();
                 textKgcortadosxdia.Text = Clase.Datos.Rows[0][9].ToString();
@@ -176,19 +176,31 @@ namespace CuttingBusiness
                 {
                     checkFestivo.Checked = false;
                 }
+                textPrecioCaja.Text = Clase.Datos.Rows[0][22].ToString();
+                CargarDetalle();
+                ContadorTotal();
                 if (Clase.Datos.Rows[0][21].ToString().Trim().Length > 0)
                 {
                     labelEstatus.Text = "Estatus: Nomina Cerrada";
                     bloquerHoja(false);
                     btnCerrarNomina.Visible = false;
+                    
                 }
-                textPrecioCaja.Text = Clase.Datos.Rows[0][22].ToString();
-                CargarDetalle();
-                ContadorTotal();
+                else
+                {
+                    RecargarInfoCaptura();
+                    ContadorTotal();
+                    lueCuadrillas.Focus();
+                    if (textIdHojaNomina.Text.Trim().Length >= 6)
+                    {
+                        guardarHoja();
+                    }
+                }
+
+               
+
                 Abrir = false;
-                RecargarInfoCaptura();
-                ContadorTotal();
-                lueCuadrillas.Focus();
+                
             }
         }
 
@@ -259,6 +271,7 @@ namespace CuttingBusiness
                             ContadorTotal();
                             lueCuadrillas.Focus();
                             textIdHojaNomina.Enabled = false;
+                            
                         }
                     }else
                     {
@@ -395,7 +408,8 @@ namespace CuttingBusiness
                 {
                     Clase.Estatus = "A";
                 }
-
+                Decimal.TryParse(textPrecioCaja.Text, style, culture, out valor);
+                Clase.Precio_caja = valor;
                 Clase.MtdInsertarHojaNomina();
                 if (Clase.Exito)
                 {
@@ -434,7 +448,7 @@ namespace CuttingBusiness
                         labelContadorCortador.Text = (Convert.ToInt32(labelContadorCortador.Text) + 1).ToString();
                         Decimal.TryParse(labelImporteCortador.Text, style, culture, out valor);
 
-                        TotalC = TotalC + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
+                        TotalC = TotalC + decimal.Round(Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])));
                         //labelImporteCortador.Text = (valor + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
                         labelImporteCortador.Text = TotalC.ToString();
                         
@@ -504,7 +518,9 @@ namespace CuttingBusiness
                     }
                     else
                     {
-                        textPromedioCaja2.Text = (vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text)).ToString();
+                        decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text), 4);
+
+                        textPromedioCaja2.Text = (laquesea).ToString();
                     }
                     
                    

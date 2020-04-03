@@ -32,6 +32,7 @@ namespace CapaDeDatos
         public string Festivo { get; set; }
         public string Id_Tipo { get; set; }
         public string Estatus { get; set; }
+        public decimal Precio_caja { get; set; }
 
         public string del { get; set; }
         public string al { get; set; }
@@ -213,6 +214,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Cajas_cortados_x_dia");
                 _dato.CadenaTexto = Estatus;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Estatus");
+                _dato.DecimalValor = Precio_caja;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_caja");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

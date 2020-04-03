@@ -173,10 +173,11 @@
             // 
             this.labelEmpresa.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelEmpresa.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelEmpresa.Location = new System.Drawing.Point(201, 64);
+            this.labelEmpresa.Location = new System.Drawing.Point(370, 64);
             this.labelEmpresa.Name = "labelEmpresa";
             this.labelEmpresa.Size = new System.Drawing.Size(98, 17);
             this.labelEmpresa.TabIndex = 36;
+            this.labelEmpresa.Visible = false;
             // 
             // labelPagoDiario
             // 
@@ -184,7 +185,7 @@
             this.labelPagoDiario.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelPagoDiario.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelPagoDiario.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelPagoDiario.Location = new System.Drawing.Point(305, 64);
+            this.labelPagoDiario.Location = new System.Drawing.Point(200, 64);
             this.labelPagoDiario.Name = "labelPagoDiario";
             this.labelPagoDiario.Size = new System.Drawing.Size(59, 17);
             this.labelPagoDiario.TabIndex = 37;
@@ -201,7 +202,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(305, 49);
+            this.labelControl6.Location = new System.Drawing.Point(203, 51);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(53, 13);
             this.labelControl6.TabIndex = 39;
@@ -450,11 +451,11 @@
             // textPromedioCaja2
             // 
             this.textPromedioCaja2.EditValue = "0";
-            this.textPromedioCaja2.Location = new System.Drawing.Point(20, 318);
+            this.textPromedioCaja2.Location = new System.Drawing.Point(20, 291);
             this.textPromedioCaja2.Name = "textPromedioCaja2";
             this.textPromedioCaja2.Properties.Appearance.Options.UseTextOptions = true;
             this.textPromedioCaja2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textPromedioCaja2.Properties.Mask.EditMask = "c";
+            this.textPromedioCaja2.Properties.Mask.EditMask = "c4";
             this.textPromedioCaja2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPromedioCaja2.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textPromedioCaja2.Properties.ReadOnly = true;
@@ -464,7 +465,7 @@
             // textPromedioCaja1
             // 
             this.textPromedioCaja1.EditValue = "0";
-            this.textPromedioCaja1.Location = new System.Drawing.Point(20, 292);
+            this.textPromedioCaja1.Location = new System.Drawing.Point(20, 317);
             this.textPromedioCaja1.Name = "textPromedioCaja1";
             this.textPromedioCaja1.Properties.Appearance.Options.UseTextOptions = true;
             this.textPromedioCaja1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -474,6 +475,7 @@
             this.textPromedioCaja1.Properties.ReadOnly = true;
             this.textPromedioCaja1.Size = new System.Drawing.Size(100, 20);
             this.textPromedioCaja1.TabIndex = 52;
+            this.textPromedioCaja1.Visible = false;
             // 
             // labelControl12
             // 
@@ -490,7 +492,7 @@
             this.textPromedioCaja.Name = "textPromedioCaja";
             this.textPromedioCaja.Properties.Appearance.Options.UseTextOptions = true;
             this.textPromedioCaja.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textPromedioCaja.Properties.Mask.EditMask = "c";
+            this.textPromedioCaja.Properties.Mask.EditMask = "n2";
             this.textPromedioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPromedioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textPromedioCaja.Properties.ReadOnly = true;
@@ -501,9 +503,9 @@
             // 
             this.labelControl11.Location = new System.Drawing.Point(22, 234);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(99, 13);
+            this.labelControl11.Size = new System.Drawing.Size(102, 13);
             this.labelControl11.TabIndex = 49;
-            this.labelControl11.Text = "Precio promedio caja";
+            this.labelControl11.Text = "Peso promedio x caja";
             // 
             // textPagoJefeCuadrilla
             // 
@@ -557,6 +559,7 @@
             this.textKgcortadosxdia.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textKgcortadosxdia.Properties.Mask.EditMask = "n0";
             this.textKgcortadosxdia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textKgcortadosxdia.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textKgcortadosxdia.Properties.ReadOnly = true;
             this.textKgcortadosxdia.Size = new System.Drawing.Size(63, 20);
             this.textKgcortadosxdia.TabIndex = 45;
@@ -609,9 +612,9 @@
             // 
             this.labelControl7.Location = new System.Drawing.Point(35, 344);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(54, 13);
+            this.labelControl7.Size = new System.Drawing.Size(77, 13);
             this.labelControl7.TabIndex = 40;
-            this.labelControl7.Text = "Precio Caja";
+            this.labelControl7.Text = "Precio kg x Caja";
             // 
             // gridControl1
             // 
