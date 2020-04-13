@@ -90,6 +90,7 @@
             this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -771,11 +772,21 @@
             this.simpleButton1.Text = "Nueva Hoja";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(365, 27);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(103, 23);
+            this.simpleButton2.TabIndex = 46;
+            this.simpleButton2.Text = "Cambiar Orden";
+            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 558);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);
             this.Controls.Add(this.labelEstatus);
@@ -901,5 +912,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton btnCerrarNomina;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

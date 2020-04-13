@@ -179,12 +179,11 @@ namespace CuttingBusiness
                 textPrecioCaja.Text = Clase.Datos.Rows[0][22].ToString();
                 CargarDetalle();
                 ContadorTotal();
-                if (Clase.Datos.Rows[0][21].ToString().Trim().Length > 0)
+                if (Clase.Datos.Rows[0]["Estatus"].ToString() == "C")
                 {
                     labelEstatus.Text = "Estatus: Nomina Cerrada";
                     bloquerHoja(false);
                     btnCerrarNomina.Visible = false;
-                    
                 }
                 else
                 {
@@ -460,7 +459,7 @@ namespace CuttingBusiness
                     labelImporte.Text = Total.ToString();
                 }
             }
-            if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0)
+            if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0 && Convert.ToInt32(labelContadorCajas.Text)>0)
             {
                 textPromedioCaja.Text = (Convert.ToDecimal(textKgcortadosxdia.Text) / Convert.ToInt32(labelContadorCajas.Text)).ToString();
             }
@@ -518,9 +517,11 @@ namespace CuttingBusiness
                     }
                     else
                     {
-                        decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text), 4);
-
-                        textPromedioCaja2.Text = (laquesea).ToString();
+                        if (Convert.ToDecimal(labelContadorCajas.Text) > 0)
+                        {
+                            decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text), 4);
+                            textPromedioCaja2.Text = (laquesea).ToString();
+                        }
                     }
                     
                    
@@ -635,6 +636,7 @@ namespace CuttingBusiness
                     cajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow2, gridView1.Columns["Cajas"]));
                     importe = Convert.ToDecimal(gridView1.GetRowCellValue(xRow2, gridView1.Columns["Importe"]));
                     guardarDetalle(hoja, secuencia, empleado, cajas, importe,false);
+                    textIdHojaNomina.Enabled = false;
                 }
                 CambioDetalle = false;
             }
