@@ -39,6 +39,7 @@
             this.labelNombreJefeCuadrilla = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_Empleados = new DevExpress.XtraEditors.SimpleButton();
             this.labelImporte = new DevExpress.XtraEditors.TextEdit();
             this.labelImporteCortador = new DevExpress.XtraEditors.TextEdit();
             this.labelContadorCajas = new DevExpress.XtraEditors.TextEdit();
@@ -90,7 +91,7 @@
             this.labelEstatus = new DevExpress.XtraEditors.LabelControl();
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCambiaOrden = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -211,6 +212,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btn_Empleados);
             this.groupControl1.Controls.Add(this.labelImporte);
             this.groupControl1.Controls.Add(this.labelImporteCortador);
             this.groupControl1.Controls.Add(this.labelContadorCajas);
@@ -236,6 +238,16 @@
             this.groupControl1.Size = new System.Drawing.Size(595, 446);
             this.groupControl1.TabIndex = 40;
             this.groupControl1.Text = "Registro";
+            // 
+            // btn_Empleados
+            // 
+            this.btn_Empleados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Empleados.ImageOptions.Image")));
+            this.btn_Empleados.Location = new System.Drawing.Point(330, 50);
+            this.btn_Empleados.Name = "btn_Empleados";
+            this.btn_Empleados.Size = new System.Drawing.Size(25, 26);
+            this.btn_Empleados.TabIndex = 56;
+            this.btn_Empleados.ToolTip = "Catalogo empleados";
+            this.btn_Empleados.Click += new System.EventHandler(this.btn_Empleados_Click);
             // 
             // labelImporte
             // 
@@ -772,21 +784,22 @@
             this.simpleButton1.Text = "Nueva Hoja";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // simpleButton2
+            // btnCambiaOrden
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(365, 27);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(103, 23);
-            this.simpleButton2.TabIndex = 46;
-            this.simpleButton2.Text = "Cambiar Orden";
+            this.btnCambiaOrden.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiaOrden.ImageOptions.Image")));
+            this.btnCambiaOrden.Location = new System.Drawing.Point(365, 27);
+            this.btnCambiaOrden.Name = "btnCambiaOrden";
+            this.btnCambiaOrden.Size = new System.Drawing.Size(103, 23);
+            this.btnCambiaOrden.TabIndex = 46;
+            this.btnCambiaOrden.Text = "Cambiar Orden";
+            this.btnCambiaOrden.Click += new System.EventHandler(this.btnCambiaOrden_Click);
             // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 558);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnCambiaOrden);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);
             this.Controls.Add(this.labelEstatus);
@@ -912,6 +925,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton btnCerrarNomina;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCambiaOrden;
+        private DevExpress.XtraEditors.SimpleButton btn_Empleados;
     }
 }

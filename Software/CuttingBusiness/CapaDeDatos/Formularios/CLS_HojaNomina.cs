@@ -33,6 +33,7 @@ namespace CapaDeDatos
         public string Id_Tipo { get; set; }
         public string Estatus { get; set; }
         public decimal Precio_caja { get; set; }
+        public string Id_HojaNomina_New { get; set; }
 
         public string del { get; set; }
         public string al { get; set; }
@@ -216,6 +217,38 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Estatus");
                 _dato.DecimalValor = Precio_caja;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_caja");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+        public void MtdActuaizaOrdenHojaNomina()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_HojaNomina_Update";
+                _dato.CadenaTexto = Id_HojaNomina;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina");
+                _dato.CadenaTexto = Id_HojaNomina_New;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina_New");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

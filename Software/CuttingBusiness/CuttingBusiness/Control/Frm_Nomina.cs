@@ -21,6 +21,7 @@ namespace CuttingBusiness
         decimal vtTotalImporte = 0;
         int vtCortadores;
 
+        public Boolean accesoEmpleados { get; set; }
         
 
         Boolean Abrir=false,Bandera=false,CambioDetalle=false;
@@ -45,6 +46,15 @@ namespace CuttingBusiness
 
             Importe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             Importe.DisplayFormat.FormatString = "n0";
+
+            if (accesoEmpleados)
+            {
+                btn_Empleados.Enabled = true;
+            }
+            else
+            {
+                btn_Empleados.Enabled = false;
+            }
         }
 
         private void cargarEmpleados()
@@ -1172,6 +1182,20 @@ namespace CuttingBusiness
         {
             NuevaHoja();
         }
+
+        private void btn_Empleados_Click(object sender, EventArgs e)
+        {
+            Frm_Empleados vusuarios = new Frm_Empleados();
+            vusuarios.ShowDialog();
+            cargarEmpleados();
+        }
+
+        private void btnCambiaOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {

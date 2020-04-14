@@ -301,7 +301,15 @@ namespace CuttingBusiness
             if (TieneAcceso("014"))
             {
                 Frm_Nomina Ventana = new Frm_Nomina();
-                Ventana.ShowDialog();
+                if (TieneAcceso("001"))
+                {
+                    Ventana.accesoEmpleados = true;
+                }
+                else
+                {
+                    Ventana.accesoEmpleados = false;
+                }
+                Ventana.Show();
             }
             else
             {
