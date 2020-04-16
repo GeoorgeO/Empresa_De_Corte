@@ -16,7 +16,7 @@ GO
 create PROCEDURE dbo.SP_HojaNomina_Update
 	-- Add the parameters for the stored procedure here
 	@Id_HojaNomina varchar(10),
-	@Id_HojaNomina_New Id_HojaNomina
+	@Id_HojaNomina_New varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -173,7 +173,8 @@ BEGIN
 			select 0
 		if @existe=0
 			delete from HojaNomina where Id_HojaNomina='TEMP01';
-		else select 0
+		else 
+			select 0
 			
 
 		
@@ -182,8 +183,8 @@ BEGIN
 	end try
 	begin catch
 		rollback transaction T1;
-		set @correcto=0
+		set @existe=-1
 	end catch
 
-	select @correcto resultado
+	select @existe  as resultado
 END

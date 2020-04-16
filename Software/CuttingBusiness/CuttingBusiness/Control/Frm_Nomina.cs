@@ -1192,7 +1192,18 @@ namespace CuttingBusiness
 
         private void btnCambiaOrden_Click(object sender, EventArgs e)
         {
-
+            Frm_CambiaOrden Ventana = new Frm_CambiaOrden();
+            Ventana.Orden = textIdHojaNomina.Text.Trim();
+            Ventana.ShowDialog();
+            if (Ventana.nuevaOrden!=null)
+            {
+                textIdHojaNomina.Text = Ventana.nuevaOrden;
+                RecargarInfoCaptura();
+                ContadorTotal();
+                lueCuadrillas.Focus();
+                textIdHojaNomina.Enabled = false;
+            }
+            
         }
 
        

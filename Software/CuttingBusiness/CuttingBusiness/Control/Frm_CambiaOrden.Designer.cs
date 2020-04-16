@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Control
+﻿namespace CuttingBusiness
 {
     partial class Frm_CambiaOrden
     {
