@@ -80,7 +80,7 @@ BEGIN
 				  ,[Precio_Caja] FROM HojaNomina
 			WHERE Id_HojaNomina=@Id_HojaNomina
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			insert into HojaNominaDetalle ([Id_HojaNomina]
 				  ,[Id_secuencia]
@@ -95,15 +95,15 @@ BEGIN
 			from HojaNominaDetalle
 			where Id_HojaNomina=@Id_HojaNomina
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			delete from HojaNominaDetalle where Id_HojaNomina=@Id_HojaNomina
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			delete from HojaNomina where Id_HojaNomina=@Id_HojaNomina
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			INSERT INTO HojaNomina ([Id_HojaNomina]
 				  ,[Fecha_HojaNomina]
@@ -151,7 +151,7 @@ BEGIN
 				  ,[Precio_Caja] FROM HojaNomina
 			WHERE Id_HojaNomina='TEMP01'
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			insert into HojaNominaDetalle ([Id_HojaNomina]
 				  ,[Id_secuencia]
@@ -166,15 +166,15 @@ BEGIN
 			from HojaNominaDetalle
 			where Id_HojaNomina='TEMP01'
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			delete from HojaNominaDetalle where Id_HojaNomina='TEMP01'
 		else
-			select 0
+			set @existe=1
 		if @existe=0
 			delete from HojaNomina where Id_HojaNomina='TEMP01';
 		else 
-			select 0
+			set @existe=1
 			
 
 		
