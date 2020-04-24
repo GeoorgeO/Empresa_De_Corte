@@ -1226,6 +1226,7 @@ namespace CuttingBusiness
                     if (Bandera == false)
                     {
                         Bandera = true;
+                        guardarHoja();
                     }
                     else
                     {
@@ -1235,7 +1236,6 @@ namespace CuttingBusiness
                         }
                             
                     }
-
                 }
             }
         }
