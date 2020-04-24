@@ -473,9 +473,9 @@ namespace CuttingBusiness
             {
                 textPromedioCaja.Text = (Convert.ToDecimal(textKgcortadosxdia.Text) / Convert.ToInt32(labelContadorCajas.Text)).ToString();
             }
-           
 
 
+            guardarHoja();
         }
 
         private void guardarDetalle(string Hoja,string secuencia,string empleado,int cajas,decimal importe, Boolean recarga)
@@ -847,7 +847,6 @@ namespace CuttingBusiness
                 abrirHoja();
                 lueCuadrillas.Focus();
                 textIdHojaNomina.Enabled = false;
-                guardarHoja();
             }
         }
 
@@ -1007,15 +1006,17 @@ namespace CuttingBusiness
                             textPromedioCaja2.Text = ((vtTotalImporte / (Convert.ToDecimal(labelContadorCortador.Text) - vtNcortador)) / Convert.ToDecimal(rowg["Cajas"])).ToString();
                         }
                         else
-                        {
+                        { 
                             textPromedioCaja2.Text = ((vtTotalImporte / (vtCortadores)) / Convert.ToDecimal(rowg["Cajas"])).ToString();
                         }
 
                     }
                     else
                     {
-
+                        if (rowg != null)
+                        {
                         textPromedioCaja2.Text = ((vtTotalImporte / (vtCortadores)) / Convert.ToDecimal(rowg["Cajas"])).ToString();
+                        }
                     }
 
 
@@ -1027,8 +1028,8 @@ namespace CuttingBusiness
                     limpiarCamposDetalle();
                 }
 
-                
-                
+
+                ContadorTotal(); 
 
             }
         }
@@ -1207,7 +1208,7 @@ namespace CuttingBusiness
             
         }
 
-       
+     
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {
