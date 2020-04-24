@@ -747,11 +747,11 @@ namespace CuttingBusiness
                             Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
                             if ( Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador <= vtCortadores)
                             {
-                                guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(textCajas.Text), (vtTotalImporte / vtCortadores), true);
+                                guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (vtTotalImporte / vtCortadores), true);
                             }
                             else
                             {
-                                guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(textCajas.Text), (Convert.ToDecimal(textCajas.Text) * valor), true);
+                                guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (Convert.ToDecimal(textCajas.Text) * valor), true);
                             }
                             
                             if (gridView1.RowCount > 1)
@@ -847,6 +847,7 @@ namespace CuttingBusiness
                 abrirHoja();
                 lueCuadrillas.Focus();
                 textIdHojaNomina.Enabled = false;
+                guardarHoja();
             }
         }
 
