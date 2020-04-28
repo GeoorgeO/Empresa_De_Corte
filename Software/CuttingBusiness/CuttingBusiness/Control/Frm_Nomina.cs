@@ -15,6 +15,10 @@ namespace CuttingBusiness
 {
     public partial class Frm_Nomina : DevExpress.XtraEditors.XtraForm
     {
+        public string tempFechaInicio { get; set; }
+        public string tempFechaFin { get; set; }
+        public string tempIndexSel { get; set; }
+        
 
         string vtId_JefeCuadrilla="";
         int vtSecuencia = 0;
@@ -22,7 +26,6 @@ namespace CuttingBusiness
         int vtCortadores;
 
         public Boolean accesoEmpleados { get; set; }
-        
 
         Boolean Abrir=false,Bandera=false,CambioDetalle=false;
 
@@ -39,7 +42,9 @@ namespace CuttingBusiness
         private void Frm_Nomina_Load(object sender, EventArgs e)
         {
             cargarEmpleados();
-           
+            tempFechaInicio = string.Empty;
+            tempFechaFin = string.Empty;
+            tempIndexSel = string.Empty;
             cargarCuadrillas();
             dateFecha.EditValue = DateTime.Today;
             cargarParametros();
