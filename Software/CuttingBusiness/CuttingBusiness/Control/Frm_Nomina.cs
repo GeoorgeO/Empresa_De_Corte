@@ -272,7 +272,7 @@ namespace CuttingBusiness
                             {
                                 checkFestivo.Checked = false;
                             }
-                            if (Clase.Datos.Rows[0][21].ToString().Trim().Length > 0)
+                            if (Clase.Datos.Rows[0][21].ToString().Trim().Equals("C"))
                             {
                                 labelEstatus.Text = "Estatus: Nomina Cerrada";
                                 bloquerHoja(false);
@@ -1213,7 +1213,7 @@ namespace CuttingBusiness
             
         }
 
-     
+       
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {
