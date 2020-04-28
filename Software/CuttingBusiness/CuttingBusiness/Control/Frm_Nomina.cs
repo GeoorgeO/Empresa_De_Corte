@@ -739,7 +739,11 @@ namespace CuttingBusiness
                             {
                                if (Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador > vtCortadores)
                                 {
-                                    textPromedioCaja2.Text = ((vtTotalImporte / (Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador))/ Convert.ToDecimal(textCajas.Text)).ToString();
+                                    if (vtNcortador > 0)
+                                    {
+                                        textPromedioCaja2.Text = ((vtTotalImporte / (Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador)) / Convert.ToDecimal(textCajas.Text)).ToString();
+                                    }
+                                    
                                 }else
                                 {
                                     textPromedioCaja2.Text = ((vtTotalImporte / vtCortadores) / vtCortadores).ToString();//Convert.ToDecimal(textCajas.Text)).ToString();
