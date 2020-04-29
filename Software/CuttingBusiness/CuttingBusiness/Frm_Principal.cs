@@ -181,6 +181,8 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("004"))
             {
+                Frm_Cuadrilla frm = new Frm_Cuadrilla();
+                frm.ShowDialog();
             }
             else
             {

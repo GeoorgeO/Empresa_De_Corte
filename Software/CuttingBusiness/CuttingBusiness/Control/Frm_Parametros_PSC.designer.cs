@@ -42,6 +42,8 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.spFilaInicio = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.spJefeArea = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.spFolioZ = new DevExpress.XtraEditors.SpinEdit();
@@ -70,14 +72,13 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.spFilaInicio = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spJefeArea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFolioZ.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spCajasZ.Properties)).BeginInit();
@@ -92,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spODC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -168,15 +168,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(368, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(362, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 467);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 459);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(368, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(362, 27);
             // 
             // barDockControlLeft
             // 
@@ -184,24 +184,24 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 467);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 459);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(368, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(362, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 467);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 459);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.xtraTabControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(56, 0);
+            this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(312, 467);
+            this.panelControl1.Size = new System.Drawing.Size(308, 459);
             this.panelControl1.TabIndex = 5;
             // 
             // xtraTabControl1
@@ -210,7 +210,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(288, 443);
+            this.xtraTabControl1.Size = new System.Drawing.Size(284, 435);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -248,8 +248,36 @@
             this.xtraTabPage1.Controls.Add(this.labelControl2);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(282, 415);
+            this.xtraTabPage1.Size = new System.Drawing.Size(278, 407);
             this.xtraTabPage1.Text = "Carga Excel Servicios Cortes";
+            // 
+            // spFilaInicio
+            // 
+            this.spFilaInicio.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spFilaInicio.Location = new System.Drawing.Point(199, 12);
+            this.spFilaInicio.MenuManager = this.barManager1;
+            this.spFilaInicio.Name = "spFilaInicio";
+            this.spFilaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spFilaInicio.Properties.MaxValue = new decimal(new int[] {
+            14,
+            0,
+            0,
+            0});
+            this.spFilaInicio.Size = new System.Drawing.Size(51, 20);
+            this.spFilaInicio.TabIndex = 40;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(24, 16);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(63, 13);
+            this.labelControl15.TabIndex = 39;
+            this.labelControl15.Text = "Fila de Inicio:";
             // 
             // spJefeArea
             // 
@@ -644,39 +672,11 @@
             this.labelControl1.Text = "Columna Excel Fecha:";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
-            // spFilaInicio
-            // 
-            this.spFilaInicio.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spFilaInicio.Location = new System.Drawing.Point(199, 12);
-            this.spFilaInicio.MenuManager = this.barManager1;
-            this.spFilaInicio.Name = "spFilaInicio";
-            this.spFilaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spFilaInicio.Properties.MaxValue = new decimal(new int[] {
-            14,
-            0,
-            0,
-            0});
-            this.spFilaInicio.Size = new System.Drawing.Size(51, 20);
-            this.spFilaInicio.TabIndex = 40;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(24, 16);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(63, 13);
-            this.labelControl15.TabIndex = 39;
-            this.labelControl15.Text = "Fila de Inicio:";
-            // 
             // Frm_Parametros_PSC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 492);
+            this.ClientSize = new System.Drawing.Size(362, 486);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -696,6 +696,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spJefeArea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFolioZ.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spCajasZ.Properties)).EndInit();
@@ -710,7 +711,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.spUbicacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spODC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spFecha.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spFilaInicio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

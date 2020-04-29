@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 106);
+            this.ClientSize = new System.Drawing.Size(185, 100);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.textOrdenNew);
             this.Controls.Add(this.textOrden);
