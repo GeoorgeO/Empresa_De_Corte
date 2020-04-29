@@ -92,6 +92,7 @@
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiaOrden = new DevExpress.XtraEditors.SimpleButton();
+            this.textPromedioCaja3 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -123,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -152,7 +154,6 @@
             this.textIdHojaNomina.Name = "textIdHojaNomina";
             this.textIdHojaNomina.Size = new System.Drawing.Size(100, 20);
             this.textIdHojaNomina.TabIndex = 1;
-            
             this.textIdHojaNomina.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
             // btnAbrirHoja
@@ -403,6 +404,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.textPromedioCaja3);
             this.panelControl1.Controls.Add(this.textTopepgoxDia);
             this.panelControl1.Controls.Add(this.labelControl14);
             this.panelControl1.Controls.Add(this.separatorControl2);
@@ -475,6 +477,8 @@
             this.textPromedioCaja2.Properties.ReadOnly = true;
             this.textPromedioCaja2.Size = new System.Drawing.Size(100, 20);
             this.textPromedioCaja2.TabIndex = 53;
+            this.textPromedioCaja2.Visible = false;
+            this.textPromedioCaja2.TextChanged += new System.EventHandler(this.textPromedioCaja2_TextChanged);
             // 
             // textPromedioCaja1
             // 
@@ -795,6 +799,20 @@
             this.btnCambiaOrden.Text = "Cambiar Orden";
             this.btnCambiaOrden.Click += new System.EventHandler(this.btnCambiaOrden_Click);
             // 
+            // textPromedioCaja3
+            // 
+            this.textPromedioCaja3.EditValue = "0";
+            this.textPromedioCaja3.Location = new System.Drawing.Point(20, 290);
+            this.textPromedioCaja3.Name = "textPromedioCaja3";
+            this.textPromedioCaja3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPromedioCaja3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPromedioCaja3.Properties.Mask.EditMask = "c2";
+            this.textPromedioCaja3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPromedioCaja3.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPromedioCaja3.Properties.ReadOnly = true;
+            this.textPromedioCaja3.Size = new System.Drawing.Size(100, 20);
+            this.textPromedioCaja3.TabIndex = 58;
+            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -822,7 +840,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Nomina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Nomina";
+            this.Text = "Calculo de Nomina";
             this.Load += new System.EventHandler(this.Frm_Nomina_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Frm_Nomina_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).EndInit();
@@ -858,6 +876,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -928,5 +947,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnCambiaOrden;
         private DevExpress.XtraEditors.SimpleButton btn_Empleados;
+        private DevExpress.XtraEditors.TextEdit textPromedioCaja3;
     }
 }

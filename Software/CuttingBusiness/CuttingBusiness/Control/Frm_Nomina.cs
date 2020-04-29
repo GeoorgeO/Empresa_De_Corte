@@ -1217,7 +1217,10 @@ namespace CuttingBusiness
             
         }
 
-       
+        private void textPromedioCaja2_TextChanged(object sender, EventArgs e)
+        {
+            textPromedioCaja3.Text = textPromedioCaja2.Text;
+        }
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {
