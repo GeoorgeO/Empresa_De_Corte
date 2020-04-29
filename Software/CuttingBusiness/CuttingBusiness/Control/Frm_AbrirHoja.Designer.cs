@@ -60,6 +60,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lueCategoria = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -69,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCategoria.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -280,6 +283,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.lueCategoria);
             this.panelControl1.Controls.Add(this.btnBuscar);
             this.panelControl1.Controls.Add(this.dateAl);
             this.panelControl1.Controls.Add(this.dateDel);
@@ -349,6 +354,23 @@
             this.panel1.Size = new System.Drawing.Size(930, 502);
             this.panel1.TabIndex = 11;
             // 
+            // lueCategoria
+            // 
+            this.lueCategoria.Location = new System.Drawing.Point(444, 9);
+            this.lueCategoria.Name = "lueCategoria";
+            this.lueCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCategoria.Size = new System.Drawing.Size(100, 20);
+            this.lueCategoria.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(388, 11);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(51, 13);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Categoria:";
+            // 
             // Frm_AbrirHoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueCategoria.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,5 +431,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Categoria;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LookUpEdit lueCategoria;
     }
 }
