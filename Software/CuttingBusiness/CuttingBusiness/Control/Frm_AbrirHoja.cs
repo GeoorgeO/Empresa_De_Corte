@@ -16,7 +16,11 @@ namespace CuttingBusiness
     {
         public string HojaSeleccionada { get; set; }
 
-        public Frm_AbrirHoja()
+        public string fini { get; set; }
+        public string ffin { get; set; }
+        public string categoria { get; set; }
+
+public Frm_AbrirHoja()
         {
             InitializeComponent();
         }
@@ -26,7 +30,37 @@ namespace CuttingBusiness
             HojaSeleccionada = String.Empty;
             dateDel.EditValue = DateTime.Now.AddDays(-30);
             dateAl.EditValue = DateTime.Now;
+
+            if (fini != null)
+            {
+                dateDel.EditValue = Convert.ToDateTime(fini);
+            }
+            if (ffin != null)
+            {
+                dateAl.EditValue = Convert.ToDateTime(ffin);
+            }
+            if (categoria != null)
+            {
+                lueCuadrillas.EditValue = categoria;
+            }
+
             CargarHojas();
+
+            CargarCategoriasCuadrilla();
+
+           
+        }
+
+        private void CargarCategoriasCuadrilla()
+        {
+            lueCuadrillas.Properties.DataSource = null;
+            CLS_CategoriasCuadrilla Clase = new CLS_CategoriasCuadrilla();
+
+            Clase.MtdSeleccionarCategoriasCuadrilla();
+            if (Clase.Exito)
+            {
+                lueCuadrillas.Properties.DataSource = Clase.Datos;
+            }
         }
 
         private void CargarHojas()
@@ -38,6 +72,17 @@ namespace CuttingBusiness
             Clase.del= Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             Fecha = Convert.ToDateTime(dateAl.EditValue);
             Clase.al = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            if (lueCuadrillas.EditValue == null)
+            {
+                Clase.todascategorias = "T";
+                Clase.categoria = "";
+            }else
+            {
+                Clase.todascategorias = "N";
+                Clase.categoria = lueCuadrillas.EditValue.ToString();
+            }
+            
+            
             Clase.MtdSeleccionarHojasNomina();
             if (Clase.Exito)
             {
@@ -56,6 +101,13 @@ namespace CuttingBusiness
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            fini = dateDel.EditValue.ToString();
+            ffin = dateAl.EditValue.ToString();
+            if (lueCuadrillas.EditValue != null)
+            {
+                categoria = lueCuadrillas.EditValue.ToString();
+            }
+            
             CargarHojas();
         }
 

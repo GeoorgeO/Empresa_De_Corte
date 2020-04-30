@@ -54,14 +54,14 @@
             this.Estatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnBuscar = new DevExpress.XtraEditors.SimpleButton();
             this.dateAl = new DevExpress.XtraEditors.DateEdit();
             this.dateDel = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lueCategoria = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCategoria.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -283,8 +283,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lueCuadrillas);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.lueCategoria);
             this.panelControl1.Controls.Add(this.btnBuscar);
             this.panelControl1.Controls.Add(this.dateAl);
             this.panelControl1.Controls.Add(this.dateDel);
@@ -295,6 +295,14 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(930, 37);
             this.panelControl1.TabIndex = 10;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(388, 11);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(51, 13);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Categoria:";
             // 
             // btnBuscar
             // 
@@ -354,22 +362,16 @@
             this.panel1.Size = new System.Drawing.Size(930, 502);
             this.panel1.TabIndex = 11;
             // 
-            // lueCategoria
+            // lueCuadrillas
             // 
-            this.lueCategoria.Location = new System.Drawing.Point(444, 9);
-            this.lueCategoria.Name = "lueCategoria";
-            this.lueCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lueCuadrillas.Location = new System.Drawing.Point(447, 8);
+            this.lueCuadrillas.Name = "lueCuadrillas";
+            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCategoria.Size = new System.Drawing.Size(100, 20);
-            this.lueCategoria.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(388, 11);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(51, 13);
-            this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "Categoria:";
+            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
+            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
+            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
+            this.lueCuadrillas.TabIndex = 7;
             // 
             // Frm_AbrirHoja
             // 
@@ -392,7 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueCategoria.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,6 +434,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Categoria;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LookUpEdit lueCategoria;
+        private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
     }
 }

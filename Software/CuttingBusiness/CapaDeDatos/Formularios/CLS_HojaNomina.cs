@@ -38,6 +38,9 @@ namespace CapaDeDatos
         public string del { get; set; }
         public string al { get; set; }
 
+        public string categoria { get; set; }
+        public string todascategorias { get; set; }
+
         public void MtdSeleccionarHojaNomina()
         {
             TipoDato _dato = new TipoDato();
@@ -69,36 +72,7 @@ namespace CapaDeDatos
 
         }
 
-        public void MtdSeleccionarCategorias()
-        {
-            TipoDato _dato = new TipoDato();
-            Conexion _conexion = new Conexion(cadenaConexion);
-
-            Exito = true;
-            try
-            {
-                _conexion.NombreProcedimiento = "SP_HojaNomina_Select";
-                _dato.CadenaTexto = Id_HojaNomina;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina");
-                _conexion.EjecutarDataset();
-
-                if (_conexion.Exito)
-                {
-                    Datos = _conexion.Datos;
-                }
-                else
-                {
-                    Mensaje = _conexion.Mensaje;
-                    Exito = false;
-                }
-            }
-            catch (Exception e)
-            {
-                Mensaje = e.Message;
-                Exito = false;
-            }
-
-        }
+        
 
         public void MtdSeleccionarHojasNomina()
         {
@@ -113,6 +87,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "del");
                 _dato.CadenaTexto = al;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "al");
+                _dato.CadenaTexto = categoria;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "categoria");
+                _dato.CadenaTexto = todascategorias;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "todascategorias");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

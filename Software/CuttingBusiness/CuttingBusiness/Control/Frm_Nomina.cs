@@ -848,6 +848,12 @@ namespace CuttingBusiness
         private void btnAbrirHoja_Click(object sender, EventArgs e)
         {
             Frm_AbrirHoja Ventana = new Frm_AbrirHoja();
+            if (tempFechaInicio.Trim().Length > 0)
+            {
+                Ventana.fini = tempFechaInicio;
+                Ventana.ffin = tempFechaFin;
+                Ventana.categoria = tempIndexSel;
+            }
             Ventana.ShowDialog();
             if (Ventana.HojaSeleccionada!=String.Empty)
             {
@@ -857,6 +863,12 @@ namespace CuttingBusiness
                 lueCuadrillas.Focus();
                 textIdHojaNomina.Enabled = false;
             }
+
+            tempFechaInicio= Ventana.fini;
+            tempFechaFin= Ventana.ffin;
+            tempIndexSel= Ventana.categoria;
+        
+            
         }
 
         private void Frm_Nomina_KeyUp(object sender, KeyEventArgs e)
