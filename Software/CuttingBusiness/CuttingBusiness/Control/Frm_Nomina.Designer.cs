@@ -823,7 +823,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 563);
+            this.ClientSize = new System.Drawing.Size(588, 557);
             this.Controls.Add(this.btnCambiaOrden);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);

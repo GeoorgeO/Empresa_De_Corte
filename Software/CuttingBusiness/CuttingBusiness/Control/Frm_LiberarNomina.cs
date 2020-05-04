@@ -133,7 +133,7 @@ namespace CuttingBusiness
             Clase.del = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             Fecha = Convert.ToDateTime(dtFin.EditValue);
             Clase.al = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
-            Clase.MtdSeleccionarHojasNomina();
+            Clase.MtdSeleccionarHojasNominaCerradas();
             if (Clase.Exito)
             {
                 dtgNominas.DataSource = Clase.Datos;
@@ -204,7 +204,29 @@ namespace CuttingBusiness
 
         private void btnLiberar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (CadenaCodigos != string.Empty)
+            {
+                DialogResult = XtraMessageBox.Show("¿Deseas liberar las nominas seleccionadas?", "Liberar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    CLS_HojaNomina udp = new CLS_HojaNomina();
+                    udp.EOrdenesDeCorte = CadenaCodigos;
+                    udp.MtdActuaizaLiberaHojaNomina();
+                    if(udp.Exito)
+                    {
+                        XtraMessageBox.Show("Se han liberado las nominas con exito");
+                        gridCheckMarksODC.ClearSelection();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(udp.Mensaje);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No existe ordenes seleccionadas para liberar");
+            }
         }
     }
 }

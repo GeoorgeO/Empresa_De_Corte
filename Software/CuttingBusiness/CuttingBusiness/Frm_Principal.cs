@@ -527,7 +527,7 @@ namespace CuttingBusiness
 
         private void btnImportarServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (TieneAcceso("010"))
+            if (TieneAcceso("036"))
             {
                 Frm_ImportarODC Ventana = new Frm_ImportarODC();
                 Frm_ImportarODC.DefInstance.MdiParent = this;
@@ -535,13 +535,22 @@ namespace CuttingBusiness
             }
             else
             {
-                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [036]");
             }
         }
 
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btn_AperturaNomina_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (TieneAcceso("037"))
+            {
+                Frm_LiberarNomina Ventana = new Frm_LiberarNomina();
+                Frm_ImportarODC.DefInstance.MdiParent = this;
+                Frm_ImportarODC.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
+            }
         }
     }
 }

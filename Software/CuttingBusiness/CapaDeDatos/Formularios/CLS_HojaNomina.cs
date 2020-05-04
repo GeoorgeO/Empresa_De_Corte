@@ -34,6 +34,7 @@ namespace CapaDeDatos
         public string Estatus { get; set; }
         public decimal Precio_caja { get; set; }
         public string Id_HojaNomina_New { get; set; }
+        public string EOrdenesDeCorte { get; set; }
 
         public string del { get; set; }
         public string al { get; set; }
@@ -71,8 +72,7 @@ namespace CapaDeDatos
             }
 
         }
-
-        
+               
 
         public void MtdSeleccionarHojasNomina()
         {
@@ -91,6 +91,38 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "categoria");
                 _dato.CadenaTexto = todascategorias;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "todascategorias");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdSeleccionarHojasNominaCerradas()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_HojasNominaCerradas_Select";
+                _dato.CadenaTexto = del;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "del");
+                _dato.CadenaTexto = al;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "al");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -276,6 +308,34 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdActuaizaLiberaHojaNomina()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_HojaNomina_Libera_Update";
+                _dato.CadenaTexto = EOrdenesDeCorte;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "EOrdenesDeCorte");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
     }
 }
