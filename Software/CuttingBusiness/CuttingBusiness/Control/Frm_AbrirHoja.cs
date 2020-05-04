@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+using DevExpress.XtraGrid.Columns;
 
 namespace CuttingBusiness
 {
@@ -27,6 +28,8 @@ public Frm_AbrirHoja()
 
         private void Frm_AbrirHoja_Load(object sender, EventArgs e)
         {
+            
+
             HojaSeleccionada = String.Empty;
             dateDel.EditValue = DateTime.Now.AddDays(-30);
             dateAl.EditValue = DateTime.Now;
@@ -44,11 +47,13 @@ public Frm_AbrirHoja()
                 lueCuadrillas.EditValue = categoria;
             }
 
+            radioGroup1.EditValue = "A";
+
             CargarHojas();
 
             CargarCategoriasCuadrilla();
 
-           
+            
         }
 
         private void CargarCategoriasCuadrilla()
@@ -101,6 +106,17 @@ public Frm_AbrirHoja()
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (radioGroup1.EditValue.ToString().Equals("A"))
+            {
+               
+                gridView1.Columns["Estatus"].FilterInfo = new ColumnFilterInfo("[Estatus] LIKE '%A%'");
+            }
+            else
+            {
+                
+                gridView1.Columns["Estatus"].FilterInfo = new ColumnFilterInfo("[Estatus] LIKE '%C%'");
+            }
+
             fini = dateDel.EditValue.ToString();
             ffin = dateAl.EditValue.ToString();
             if (lueCuadrillas.EditValue != null)
@@ -126,6 +142,11 @@ public Frm_AbrirHoja()
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnBuscar.PerformClick();
         }
     }
 }

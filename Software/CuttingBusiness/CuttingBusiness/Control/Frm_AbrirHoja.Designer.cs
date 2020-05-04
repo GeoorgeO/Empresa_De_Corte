@@ -54,6 +54,8 @@
             this.Estatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_Categoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnBuscar = new DevExpress.XtraEditors.SimpleButton();
             this.dateAl = new DevExpress.XtraEditors.DateEdit();
@@ -61,17 +63,17 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -283,6 +285,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.radioGroup1);
             this.panelControl1.Controls.Add(this.lueCuadrillas);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.btnBuscar);
@@ -295,6 +298,28 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(930, 37);
             this.panelControl1.TabIndex = 10;
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(613, 5);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("A", "Abiertas"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Cerradas")});
+            this.radioGroup1.Size = new System.Drawing.Size(141, 27);
+            this.radioGroup1.TabIndex = 8;
+            this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
+            // 
+            // lueCuadrillas
+            // 
+            this.lueCuadrillas.Location = new System.Drawing.Point(447, 8);
+            this.lueCuadrillas.Name = "lueCuadrillas";
+            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
+            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
+            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
+            this.lueCuadrillas.TabIndex = 7;
             // 
             // labelControl3
             // 
@@ -362,17 +387,6 @@
             this.panel1.Size = new System.Drawing.Size(930, 502);
             this.panel1.TabIndex = 11;
             // 
-            // lueCuadrillas
-            // 
-            this.lueCuadrillas.Location = new System.Drawing.Point(447, 8);
-            this.lueCuadrillas.Name = "lueCuadrillas";
-            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
-            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
-            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
-            this.lueCuadrillas.TabIndex = 7;
-            // 
             // Frm_AbrirHoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,12 +403,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateAl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDel.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +450,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Categoria;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
+        private DevExpress.XtraEditors.RadioGroup radioGroup1;
     }
 }
