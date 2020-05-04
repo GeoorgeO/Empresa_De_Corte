@@ -18,7 +18,8 @@ namespace CuttingBusiness
         public string tempFechaInicio { get; set; }
         public string tempFechaFin { get; set; }
         public string tempIndexSel { get; set; }
-        
+        public string tempEstaus { get; set; }
+
 
         string vtId_JefeCuadrilla="";
         int vtSecuencia = 0;
@@ -60,6 +61,7 @@ namespace CuttingBusiness
             {
                 btn_Empleados.Enabled = false;
             }
+            tempEstaus = "T";
         }
 
         private void cargarEmpleados()
@@ -870,7 +872,9 @@ namespace CuttingBusiness
                 Ventana.fini = tempFechaInicio;
                 Ventana.ffin = tempFechaFin;
                 Ventana.categoria = tempIndexSel;
+               
             }
+            Ventana.TEstatus = tempEstaus;
             Ventana.ShowDialog();
             if (Ventana.HojaSeleccionada!=String.Empty)
             {
@@ -884,7 +888,7 @@ namespace CuttingBusiness
             tempFechaInicio= Ventana.fini;
             tempFechaFin= Ventana.ffin;
             tempIndexSel= Ventana.categoria;
-        
+            tempEstaus = Ventana.TEstatus;
             
         }
 

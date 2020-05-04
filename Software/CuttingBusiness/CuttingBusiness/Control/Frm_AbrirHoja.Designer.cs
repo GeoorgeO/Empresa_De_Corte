@@ -63,6 +63,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -285,6 +286,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.radioGroup1);
             this.panelControl1.Controls.Add(this.lueCuadrillas);
             this.panelControl1.Controls.Add(this.labelControl3);
@@ -301,18 +303,21 @@
             // 
             // radioGroup1
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(613, 5);
+            this.radioGroup1.Location = new System.Drawing.Point(494, 5);
             this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("A", "Abiertas"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Cerradas")});
-            this.radioGroup1.Size = new System.Drawing.Size(141, 27);
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Cerradas"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("T", "Todas")});
+            this.radioGroup1.Size = new System.Drawing.Size(204, 27);
             this.radioGroup1.TabIndex = 8;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
             // lueCuadrillas
             // 
-            this.lueCuadrillas.Location = new System.Drawing.Point(447, 8);
+            this.lueCuadrillas.Location = new System.Drawing.Point(348, 8);
             this.lueCuadrillas.Name = "lueCuadrillas";
             this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -323,7 +328,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(388, 11);
+            this.labelControl3.Location = new System.Drawing.Point(289, 12);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(51, 13);
             this.labelControl3.TabIndex = 6;
@@ -331,7 +336,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(284, 7);
+            this.btnBuscar.Location = new System.Drawing.Point(717, 6);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 4;
@@ -387,6 +392,14 @@
             this.panel1.Size = new System.Drawing.Size(930, 502);
             this.panel1.TabIndex = 11;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(450, 12);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(40, 13);
+            this.labelControl4.TabIndex = 9;
+            this.labelControl4.Text = "Estatus:";
+            // 
             // Frm_AbrirHoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,7 +409,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "Frm_AbrirHoja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_AbrirHoja";
+            this.Text = "Abrir Hoja de Nomina";
             this.Load += new System.EventHandler(this.Frm_AbrirHoja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -451,5 +464,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

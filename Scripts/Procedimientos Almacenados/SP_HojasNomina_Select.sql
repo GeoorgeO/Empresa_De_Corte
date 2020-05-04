@@ -28,7 +28,8 @@ CREATE PROCEDURE SP_HojasNomina_Select
 	@del datetime,
 	@al datetime,
 	@categoria char(4),
-	@todascategorias char(1)
+	@todascategorias char(1),
+	@Estatus char(1)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -65,5 +66,6 @@ BEGIN
 		left join Cuadrillas as C on C.Id_Cuadrilla=H.Id_Cuadrilla
 		left join CategoriasCuadrilla as CC on CC.Id_Categoria=C.Id_Categoria
 		where Fecha_HojaNomina between @del and @al and (('T'=@todascategorias) or ('T'<>@todascategorias and C.Id_Categoria=@categoria))
+			and (('T'=@Estatus) or ('T'<>@Estatus and H.Estatus=@Estatus))
 END
 GO

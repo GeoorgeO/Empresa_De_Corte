@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
-using DevExpress.XtraGrid.Columns;
+
 
 namespace CuttingBusiness
 {
@@ -20,8 +20,9 @@ namespace CuttingBusiness
         public string fini { get; set; }
         public string ffin { get; set; }
         public string categoria { get; set; }
+        public string TEstatus { get; set; }
 
-public Frm_AbrirHoja()
+        public Frm_AbrirHoja()
         {
             InitializeComponent();
         }
@@ -47,7 +48,8 @@ public Frm_AbrirHoja()
                 lueCuadrillas.EditValue = categoria;
             }
 
-            radioGroup1.EditValue = "A";
+            
+            radioGroup1.EditValue = TEstatus;
 
             CargarHojas();
 
@@ -86,6 +88,15 @@ public Frm_AbrirHoja()
                 Clase.todascategorias = "N";
                 Clase.categoria = lueCuadrillas.EditValue.ToString();
             }
+
+            if (radioGroup1.EditValue == null)
+            {
+                Clase.Estatus = "T";
+            }
+            else
+            {
+                Clase.Estatus = radioGroup1.EditValue.ToString();
+            }
             
             
             Clase.MtdSeleccionarHojasNomina();
@@ -106,16 +117,7 @@ public Frm_AbrirHoja()
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (radioGroup1.EditValue.ToString().Equals("A"))
-            {
-               
-                gridView1.Columns["Estatus"].FilterInfo = new ColumnFilterInfo("[Estatus] LIKE '%A%'");
-            }
-            else
-            {
-                
-                gridView1.Columns["Estatus"].FilterInfo = new ColumnFilterInfo("[Estatus] LIKE '%C%'");
-            }
+           
 
             fini = dateDel.EditValue.ToString();
             ffin = dateAl.EditValue.ToString();
@@ -123,7 +125,8 @@ public Frm_AbrirHoja()
             {
                 categoria = lueCuadrillas.EditValue.ToString();
             }
-            
+            TEstatus = radioGroup1.EditValue.ToString();
+
             CargarHojas();
         }
 

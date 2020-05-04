@@ -91,6 +91,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "categoria");
                 _dato.CadenaTexto = todascategorias;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "todascategorias");
+                _dato.CadenaTexto = Estatus;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Estatus");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
