@@ -1,4 +1,4 @@
-﻿namespace CuttingBusiness.Control
+﻿namespace CuttingBusiness
 {
     partial class Frm_LiberarNomina
     {
@@ -159,6 +159,7 @@
             this.btnLiberar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLiberar.ImageOptions.Image")));
             this.btnLiberar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLiberar.ImageOptions.LargeImage")));
             this.btnLiberar.Name = "btnLiberar";
+            this.btnLiberar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLiberar_ItemClick);
             // 
             // btnLimpiar
             // 

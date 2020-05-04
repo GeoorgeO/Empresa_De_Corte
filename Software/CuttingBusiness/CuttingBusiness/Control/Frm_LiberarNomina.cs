@@ -12,7 +12,7 @@ using CapaDeDatos;
 using GridControlEditCBMultipleSelection;
 using DevExpress.XtraGrid;
 
-namespace CuttingBusiness.Control
+namespace CuttingBusiness
 {
     public partial class Frm_LiberarNomina : DevExpress.XtraEditors.XtraForm
     {
@@ -200,6 +200,11 @@ namespace CuttingBusiness.Control
                 btnEliminar.Enabled = true;
                 btnLiberar.Enabled = true;
             }
+        }
+
+        private void btnLiberar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -68,6 +68,8 @@
             this.btnTiposEntradas = new DevExpress.XtraBars.BarButtonItem();
             this.btnTiposSalidas = new DevExpress.XtraBars.BarButtonItem();
             this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
+            this.btnImportarServicios = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_AperturaNomina = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -94,8 +96,9 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnImportarServicios = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -145,9 +148,11 @@
             this.btnTiposSalidas,
             this.btnSeries,
             this.btnImportarServicios,
-            this.barButtonItem2});
+            this.btn_AperturaNomina,
+            this.barButtonItem1,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 40;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -493,6 +498,24 @@
             this.btnSeries.Name = "btnSeries";
             this.btnSeries.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeries_ItemClick);
             // 
+            // btnImportarServicios
+            // 
+            this.btnImportarServicios.Caption = "Importar Servicios";
+            this.btnImportarServicios.Id = 38;
+            this.btnImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarServicios.ImageOptions.Image")));
+            this.btnImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportarServicios.ImageOptions.LargeImage")));
+            this.btnImportarServicios.Name = "btnImportarServicios";
+            this.btnImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarServicios_ItemClick);
+            // 
+            // btn_AperturaNomina
+            // 
+            this.btn_AperturaNomina.Caption = "Apertura de Nominas";
+            this.btn_AperturaNomina.Id = 39;
+            this.btn_AperturaNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btn_AperturaNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btn_AperturaNomina.Name = "btn_AperturaNomina";
+            this.btn_AperturaNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -560,15 +583,15 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnPreODC);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarServicios);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCobros);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnImportarRendimientoODC);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup8
             // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnImportarServicios);
             this.ribbonPageGroup8.ItemLinks.Add(this.btnNomina);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_AperturaNomina);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageGroup9
@@ -635,6 +658,7 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
+            this.ribbonPageGroup19,
             this.ribbonPageGroup6});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Seguridad";
@@ -676,22 +700,24 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
             // 
-            // btnImportarServicios
+            // ribbonPageGroup19
             // 
-            this.btnImportarServicios.Caption = "Importar Servicios";
-            this.btnImportarServicios.Id = 38;
-            this.btnImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnImportarServicios.Name = "btnImportarServicios";
-            this.btnImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarServicios_ItemClick);
+            this.ribbonPageGroup19.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup19.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup19.Name = "ribbonPageGroup19";
+            this.ribbonPageGroup19.Text = "Parametros";
             // 
-            // barButtonItem2
+            // barButtonItem1
             // 
-            this.barButtonItem2.Caption = "Apertura de Nominas";
-            this.barButtonItem2.Id = 39;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem1.Caption = "Nomina";
+            this.barButtonItem1.Id = 40;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Importacion Ordenes";
+            this.barButtonItem3.Id = 41;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // Frm_Principal
             // 
@@ -783,7 +809,10 @@
         private DevExpress.XtraBars.BarButtonItem btnTiposSalidas;
         private DevExpress.XtraBars.BarButtonItem btnSeries;
         private DevExpress.XtraBars.BarButtonItem btnImportarServicios;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btn_AperturaNomina;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
     }
 }
 

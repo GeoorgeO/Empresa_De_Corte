@@ -56,6 +56,7 @@
             this.btnELiminar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.textPromedioCaja3 = new DevExpress.XtraEditors.TextEdit();
             this.textTopepgoxDia = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
@@ -92,7 +93,6 @@
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiaOrden = new DevExpress.XtraEditors.SimpleButton();
-            this.textPromedioCaja3 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -107,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkFestivo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -124,7 +125,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -189,7 +189,7 @@
             this.labelPagoDiario.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelPagoDiario.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelPagoDiario.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelPagoDiario.Location = new System.Drawing.Point(200, 64);
+            this.labelPagoDiario.Location = new System.Drawing.Point(304, 64);
             this.labelPagoDiario.Name = "labelPagoDiario";
             this.labelPagoDiario.Size = new System.Drawing.Size(59, 17);
             this.labelPagoDiario.TabIndex = 37;
@@ -206,7 +206,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(203, 51);
+            this.labelControl6.Location = new System.Drawing.Point(307, 51);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(53, 13);
             this.labelControl6.TabIndex = 39;
@@ -427,6 +427,20 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(145, 388);
             this.panelControl1.TabIndex = 9;
+            // 
+            // textPromedioCaja3
+            // 
+            this.textPromedioCaja3.EditValue = "0";
+            this.textPromedioCaja3.Location = new System.Drawing.Point(20, 290);
+            this.textPromedioCaja3.Name = "textPromedioCaja3";
+            this.textPromedioCaja3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPromedioCaja3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPromedioCaja3.Properties.Mask.EditMask = "c2";
+            this.textPromedioCaja3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPromedioCaja3.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.textPromedioCaja3.Properties.ReadOnly = true;
+            this.textPromedioCaja3.Size = new System.Drawing.Size(100, 20);
+            this.textPromedioCaja3.TabIndex = 58;
             // 
             // textTopepgoxDia
             // 
@@ -756,10 +770,16 @@
             this.lueCuadrillas.Name = "lueCuadrillas";
             this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCuadrillas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Cuadrilla", "Cuadrilla", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id_Cuadrilla", "Id_Cuadrilla", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id_Categoria", "Id_Categoria", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_Empleado", "Nombre_Empleado", 300, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.lueCuadrillas.Properties.DisplayMember = "Cuadrilla";
             this.lueCuadrillas.Properties.ValueMember = "Id_Cuadrilla";
-            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
+            this.lueCuadrillas.Size = new System.Drawing.Size(154, 20);
             this.lueCuadrillas.TabIndex = 2;
+            this.lueCuadrillas.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lueCuadrillas_QueryPopUp);
             this.lueCuadrillas.EditValueChanged += new System.EventHandler(this.lueCuadrillas_EditValueChanged);
             this.lueCuadrillas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lueCuadrillas_KeyUp);
             // 
@@ -772,7 +792,7 @@
             // 
             // btnCerrarNomina
             // 
-            this.btnCerrarNomina.Location = new System.Drawing.Point(507, 7);
+            this.btnCerrarNomina.Location = new System.Drawing.Point(500, 7);
             this.btnCerrarNomina.Name = "btnCerrarNomina";
             this.btnCerrarNomina.Size = new System.Drawing.Size(91, 23);
             this.btnCerrarNomina.TabIndex = 44;
@@ -799,25 +819,11 @@
             this.btnCambiaOrden.Text = "Cambiar Orden";
             this.btnCambiaOrden.Click += new System.EventHandler(this.btnCambiaOrden_Click);
             // 
-            // textPromedioCaja3
-            // 
-            this.textPromedioCaja3.EditValue = "0";
-            this.textPromedioCaja3.Location = new System.Drawing.Point(20, 290);
-            this.textPromedioCaja3.Name = "textPromedioCaja3";
-            this.textPromedioCaja3.Properties.Appearance.Options.UseTextOptions = true;
-            this.textPromedioCaja3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.textPromedioCaja3.Properties.Mask.EditMask = "c2";
-            this.textPromedioCaja3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textPromedioCaja3.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.textPromedioCaja3.Properties.ReadOnly = true;
-            this.textPromedioCaja3.Size = new System.Drawing.Size(100, 20);
-            this.textPromedioCaja3.TabIndex = 58;
-            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 552);
+            this.ClientSize = new System.Drawing.Size(594, 563);
             this.Controls.Add(this.btnCambiaOrden);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);
@@ -859,6 +865,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTopepgoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
@@ -876,7 +883,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textPromedioCaja3.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

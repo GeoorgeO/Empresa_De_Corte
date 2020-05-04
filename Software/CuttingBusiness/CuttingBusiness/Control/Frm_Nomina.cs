@@ -85,6 +85,22 @@ namespace CuttingBusiness
                 lueCuadrillas.Properties.DataSource = Clase.Datos;
             }
         }
+        private void lueCuadrillas_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            LookUpEdit edit = sender as LookUpEdit;
+            for (int i = 0; i < edit.Properties.Columns.Count; i++)
+            {
+                if (i < 3)
+                {
+                    edit.Properties.Columns[i].Width = 60;
+                }
+                else
+                {
+                    edit.Properties.Columns[i].Width = 180;
+                }
+            }
+            edit.Properties.PopupFormMinSize = new Size(100 * edit.Properties.Columns.Count, edit.Properties.PopupFormMinSize.Height);
+        }
 
         private void cargarParametros()
         {
@@ -848,7 +864,8 @@ namespace CuttingBusiness
         private void btnAbrirHoja_Click(object sender, EventArgs e)
         {
             Frm_AbrirHoja Ventana = new Frm_AbrirHoja();
-            if (tempFechaInicio.Trim().Length > 0)
+           
+            if (tempFechaInicio!= string.Empty)
             {
                 Ventana.fini = tempFechaInicio;
                 Ventana.ffin = tempFechaFin;

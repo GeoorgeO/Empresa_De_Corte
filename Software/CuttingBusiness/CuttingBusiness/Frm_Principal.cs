@@ -538,5 +538,10 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
             }
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
