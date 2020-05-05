@@ -544,8 +544,8 @@ namespace CuttingBusiness
             if (TieneAcceso("037"))
             {
                 Frm_LiberarNomina Ventana = new Frm_LiberarNomina();
-                Frm_ImportarODC.DefInstance.MdiParent = this;
-                Frm_ImportarODC.DefInstance.Show();
+                Frm_LiberarNomina.DefInstance.MdiParent = this;
+                Frm_LiberarNomina.DefInstance.Show();
             }
             else
             {

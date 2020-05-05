@@ -23,6 +23,20 @@ namespace CuttingBusiness
         {
             InitializeComponent();
         }
+        private static Frm_LiberarNomina m_FormDefInstance;
+        public static Frm_LiberarNomina DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_LiberarNomina();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         private void MakeTablaPedidos()
         {
             DataTable table = new DataTable("FirstTable");
@@ -178,15 +192,15 @@ namespace CuttingBusiness
                 foreach (DataRowView rv in (sender as GridControlCheckMarksSelection).selection)
                 {
                     if (sb.ToString().Length > 0) { sb.Append(", "); }
-                    sb.AppendFormat("{0}", rv["PSC_ODC"]);
+                    sb.AppendFormat("{0}", rv["Id_HojaNomina"]);
 
                     if (CadenaCodigos != string.Empty)
                     {
-                        CadenaCodigos = string.Format("{0},{1}", CadenaCodigos, rv["PSC_ODC"]);
+                        CadenaCodigos = string.Format("{0},{1}", CadenaCodigos, rv["Id_HojaNomina"]);
                     }
                     else
                     {
-                        CadenaCodigos = rv["PSC_ODC"].ToString();
+                        CadenaCodigos = rv["Id_HojaNomina"].ToString();
                     }
                 }
             }
@@ -216,6 +230,7 @@ namespace CuttingBusiness
                     {
                         XtraMessageBox.Show("Se han liberado las nominas con exito");
                         gridCheckMarksODC.ClearSelection();
+                        btnBuscarNominas.PerformClick();
                     }
                     else
                     {
