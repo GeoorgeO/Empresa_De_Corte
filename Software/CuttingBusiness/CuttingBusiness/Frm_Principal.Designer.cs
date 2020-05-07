@@ -70,8 +70,8 @@
             this.btnSeries = new DevExpress.XtraBars.BarButtonItem();
             this.btnImportarServicios = new DevExpress.XtraBars.BarButtonItem();
             this.btn_AperturaNomina = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnParametroNomina = new DevExpress.XtraBars.BarButtonItem();
+            this.btnParametroImportarServicios = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -149,8 +149,8 @@
             this.btnSeries,
             this.btnImportarServicios,
             this.btn_AperturaNomina,
-            this.barButtonItem1,
-            this.barButtonItem3});
+            this.btnParametroNomina,
+            this.btnParametroImportarServicios});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -516,17 +516,23 @@
             this.btn_AperturaNomina.Name = "btn_AperturaNomina";
             this.btn_AperturaNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AperturaNomina_ItemClick);
             // 
-            // barButtonItem1
+            // btnParametroNomina
             // 
-            this.barButtonItem1.Caption = "Nomina";
-            this.barButtonItem1.Id = 40;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnParametroNomina.Caption = "Nomina";
+            this.btnParametroNomina.Id = 40;
+            this.btnParametroNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnParametroNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnParametroNomina.Name = "btnParametroNomina";
+            this.btnParametroNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametroNomina_ItemClick);
             // 
-            // barButtonItem3
+            // btnParametroImportarServicios
             // 
-            this.barButtonItem3.Caption = "Importacion Ordenes";
-            this.barButtonItem3.Id = 41;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnParametroImportarServicios.Caption = "Importacion Ordenes";
+            this.btnParametroImportarServicios.Id = 41;
+            this.btnParametroImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnParametroImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnParametroImportarServicios.Name = "btnParametroImportarServicios";
+            this.btnParametroImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametroImportarServicios_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -686,8 +692,8 @@
             // 
             // ribbonPageGroup19
             // 
-            this.ribbonPageGroup19.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup19.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup19.ItemLinks.Add(this.btnParametroNomina);
+            this.ribbonPageGroup19.ItemLinks.Add(this.btnParametroImportarServicios);
             this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             this.ribbonPageGroup19.Text = "Parametros";
             // 
@@ -810,8 +816,8 @@
         private DevExpress.XtraBars.BarButtonItem btnSeries;
         private DevExpress.XtraBars.BarButtonItem btnImportarServicios;
         private DevExpress.XtraBars.BarButtonItem btn_AperturaNomina;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnParametroNomina;
+        private DevExpress.XtraBars.BarButtonItem btnParametroImportarServicios;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
     }
 }

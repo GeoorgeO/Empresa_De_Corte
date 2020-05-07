@@ -552,5 +552,31 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [037]");
             }
         }
+
+        private void btnParametroNomina_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("038"))
+            {
+                Frm_Parametros frm = new Frm_Parametros();
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [038]");
+            }
+        }
+
+        private void btnParametroImportarServicios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("039"))
+            {
+                Frm_Parametros_PSC frm = new Frm_Parametros_PSC();
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [039]");
+            }
+        }
     }
 }
