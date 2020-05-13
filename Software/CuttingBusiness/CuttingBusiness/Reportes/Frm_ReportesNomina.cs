@@ -315,7 +315,170 @@ namespace CuttingBusiness
                 Colocar_encabezado(oSheet, IdCuadrillaCategoria);
                 Colocar_Dias(oSheet);
                 Colocar_Ordenes(oSheet, cuadrilla);
+                Colocar_Empleados(oSheet, cuadrilla);
             }
+        }
+
+        private void Colocar_Empleados(Excel._Worksheet oSheet, string cuadrilla)
+        {
+            DateTime FInicio = dtInicio.DateTime;
+            DateTime FFin = dtFin.DateTime;
+            TimeSpan DiferenciaD = FFin - FInicio;
+            DateTime FActual = FInicio;
+            CLS_Reportes_Nomina sel = new CLS_Reportes_Nomina();
+            sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
+            sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
+            sel.Id_Cuadrilla = cuadrilla;
+            sel.MtdSeleccionarNominaCortadores();
+            if (!sel.Exito)
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+            string R_1 = "D";
+            string R_2 = "E";
+            int Fila = 12;
+            int DiasTrabajados = 0;
+            FActual = Convert.ToDateTime(FInicio.Day + "/" + FInicio.Month + "/" + FInicio.Year);
+            string vId_Empleado = string.Empty;
+            int N_Empleado = 1;
+            decimal T_Cajas = 0;
+            decimal T_Importe = 0;
+            for (int x = 0; x < sel.Datos.Rows.Count; x++)
+            {
+                for (int i = 0; i < DiferenciaD.Days + 1; i++)
+                {
+                    if (vId_Empleado != sel.Datos.Rows[x]["Id_Empleado"].ToString())
+                    {
+                        if(vId_Empleado!=string.Empty)
+                        {
+                            R_1 = AumentaColumna(R_1);
+                            R_1 = AumentaColumna(R_1);
+                            R_2 = AumentaColumna(R_2);
+                            R_1 = AumentaColumna(R_1);
+                            R_2 = AumentaColumna(R_2);
+                            R_2 = AumentaColumna(R_2);
+
+                            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                            oRng.Merge();
+                            oRng.Value2 = T_Cajas;
+                            oRng.Font.FontStyle = "Calibri";
+                            oRng.Font.Size = 11;
+                            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                            oRng.Font.Bold = false;
+                            oRng.NumberFormat = "0";
+
+                            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                            oRng.Merge();
+                            oRng.Value2 = T_Importe;
+                            oRng.Font.FontStyle = "Calibri";
+                            oRng.Font.Size = 11;
+                            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                            oRng.Font.Bold = false;
+                            oRng.NumberFormat = "$0.00";
+
+                            oRng = oSheet.get_Range("C" + Fila.ToString(), "C" + Fila.ToString());
+                            oRng.Merge();
+                            oRng.Value2 = DiasTrabajados;
+                            oRng.Font.FontStyle = "Calibri";
+                            oRng.Font.Size = 11;
+                            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                            oRng.Font.Bold = false;
+                            oRng.NumberFormat = "0";
+                        }
+                        Fila++;
+                        R_1 = "D";
+                        R_2 = "E";
+                        oRng = oSheet.get_Range("A" + Fila.ToString(), "A" + Fila.ToString());
+                        oRng.Value2 = N_Empleado;
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+
+                        oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Nombre_Empleado"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.EntireColumn.AutoFit();
+
+                        N_Empleado++;
+                        vId_Empleado = sel.Datos.Rows[x]["Id_Empleado"].ToString();
+                        FActual = Convert.ToDateTime(FInicio.Day + "/" + FInicio.Month + "/" + FInicio.Year);
+                        T_Cajas = 0;
+                        T_Importe = 0;
+                        DiasTrabajados = 0;
+                    }
+                    if (FActual == Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_HojaNomina"].ToString()))
+                    {
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Cajas"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "0";
+                        T_Cajas = T_Cajas + decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Cajas"].ToString()), 0);
+
+                        oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Importe"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$0.00";
+                        T_Importe =T_Importe+ decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Importe"].ToString()), 0);
+                        DiasTrabajados++;
+                        break;
+                    }
+                    FActual = FActual.AddDays(1);
+                    if (i < DiferenciaD.Days)
+                    {
+                        R_1 = AumentaColumna(R_1);
+                        R_1 = AumentaColumna(R_1);
+                        R_2 = AumentaColumna(R_2);
+                        R_2 = AumentaColumna(R_2);
+                    }
+                }
+            }
+            R_1 = AumentaColumna(R_1);
+            R_1 = AumentaColumna(R_1);
+            R_2 = AumentaColumna(R_2);
+            R_1 = AumentaColumna(R_1);
+            R_2 = AumentaColumna(R_2);
+            R_2 = AumentaColumna(R_2);
+
+            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Value2 = T_Cajas;
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = T_Importe;
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$0.00";
+
+            oRng = oSheet.get_Range("C" + Fila.ToString(), "C" + Fila.ToString());
+            oRng.Value2 = DiasTrabajados;
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "0";
+
+            oRng = oSheet.get_Range("A13", R_2 + Fila.ToString());
+            oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+            Fila++;
+
+            oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Interior.ColorIndex = 1;
         }
 
         private void Colocar_Ordenes(Excel._Worksheet oSheet, string cuadrilla)
@@ -333,7 +496,7 @@ namespace CuttingBusiness
             {
                 XtraMessageBox.Show(sel.Mensaje);
             }
-            string DiaCorto = string.Empty;
+            //string DiaCorto = string.Empty;
             string R_1 = "D";
             string R_2 = "E";
             string OrdenCorte = string.Empty;
@@ -342,7 +505,7 @@ namespace CuttingBusiness
             for (int i = 0; i < DiferenciaD.Days + 1; i++)
             {
                 OrdenCorte = string.Empty;
-                DiaCorto = dayOfWeek(FActual).ToUpper();
+                //DiaCorto = dayOfWeek(FActual).ToUpper();
                 for (int x = 0; x < sel.Datos.Rows.Count; x++)
                 {
                     if (FActual ==Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_HojaNomina"].ToString()))
@@ -430,6 +593,7 @@ namespace CuttingBusiness
                     R_2 = AumentaColumna(R_2);
                 }
             }
+            Fila--;
             oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_2 + Fila2.ToString());
             oRng.Merge();
             oRng.Value2 = "DESCUENTO";
@@ -443,12 +607,13 @@ namespace CuttingBusiness
             R_2 = AumentaColumna(R_2);
             R_2 = AumentaColumna(R_2);
 
-            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng = oSheet.get_Range(R_1 + "10", R_2 + "11");
             oRng.Merge();
             oRng.Value2 = "TOTAL";
             oRng.Font.FontStyle = "Calibri";
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
 
             oRng = oSheet.get_Range(R_1 + Fila2.ToString(), R_1 + Fila2.ToString());
