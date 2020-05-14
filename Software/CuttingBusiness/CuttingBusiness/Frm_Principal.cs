@@ -345,6 +345,9 @@ namespace CuttingBusiness
         {
             if (TieneAcceso("018"))
             {
+                Frm_ReportesNomina Ventana = new Frm_ReportesNomina();
+                Frm_ReportesNomina.DefInstance.MdiParent = this;
+                Frm_ReportesNomina.DefInstance.Show();
             }
             else
             {

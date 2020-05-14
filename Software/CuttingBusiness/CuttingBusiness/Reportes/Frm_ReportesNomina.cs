@@ -23,6 +23,8 @@ namespace CuttingBusiness
         Excel._Workbook oWB;
         Excel._Worksheet oSheet;
         Excel.Range oRng;
+        int FilaActual = 0;
+        public string ColFinal { get; set; }
 
         public string JefeCuadrilla { get; set; }
         GridControlCheckMarksSelection gridCheckMarksODC;
@@ -42,6 +44,8 @@ namespace CuttingBusiness
                 m_FormDefInstance = value;
             }
         }
+        public decimal vPagoJefeCuadrilla { get; set; }
+
         public Frm_ReportesNomina()
         {
             InitializeComponent();
@@ -164,8 +168,8 @@ namespace CuttingBusiness
 
         private void Frm_ReportesNomina_Shown(object sender, EventArgs e)
         {
-            Limpiar();
             GridMultipleODC();
+            Limpiar();
         }
         private void Limpiar()
         {
@@ -181,7 +185,7 @@ namespace CuttingBusiness
             Tot_Importe.DisplayFormat.FormatString = "$ ###,###0.00";
             Tot_Jefe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             Tot_Jefe.DisplayFormat.FormatString = "$ ###,###0.00";
-
+            gridCheckMarksODC.ClearSelection();
 
         }
 
@@ -235,6 +239,7 @@ namespace CuttingBusiness
         }
         private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            gridCheckMarksODC.ClearSelection();
             CLS_Reportes_Nomina Clase = new CLS_Reportes_Nomina();
             DateTime Fecha;
             Fecha = Convert.ToDateTime(dtInicio.EditValue);
@@ -316,7 +321,361 @@ namespace CuttingBusiness
                 Colocar_Dias(oSheet);
                 Colocar_Ordenes(oSheet, cuadrilla);
                 Colocar_Empleados(oSheet, cuadrilla);
+                Colocar_Encabezados_Sub(oSheet);
+                Colocar_Subtotales(oSheet, cuadrilla);
             }
+        }
+
+        private void Colocar_Encabezados_Sub(Excel._Worksheet oSheet)
+        {
+            int Fila = FilaActual + 1;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "TOTAL CUADRILLA POR DIA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "CORTE PAGADO POR DIA TOTAL";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "TOTAL DE CAJAS DEL DIA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "PROMEDIO POR DIA POR CAJA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "KILOS CORTADOS POR DIA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "TOTAL DE KILOS CORTADOS POR DIA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+
+            Fila =Fila+2;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "Caso Espqciales";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+
+            Fila = Fila + 2;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "Descuento Jefe de Cuadrilla";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+
+            Fila = Fila + 2;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlDouble;
+
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = "RECIBO DE CONFROMIDAD";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+
+            Fila++;
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
+            oRng.Value2 = JefeCuadrilla.ToUpper();
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.EntireColumn.AutoFit();
+            
+        }
+
+        private void Colocar_Subtotales(Excel._Worksheet oSheet, string cuadrilla)
+        {
+            DateTime FInicio = dtInicio.DateTime;
+            DateTime FFin = dtFin.DateTime;
+            TimeSpan DiferenciaD = FFin - FInicio;
+            DateTime FActual = FInicio;
+            vPagoJefeCuadrilla = 0;
+            CLS_Reportes_Nomina sel = new CLS_Reportes_Nomina();
+            sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
+            sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
+            sel.Id_Cuadrilla = cuadrilla;
+            sel.MtdSeleccionarNominaSubTotales();
+            if (!sel.Exito)
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+            
+            string R_1 = "D";
+            string R_2 = "E";
+            int Fila = FilaActual+1;
+            FActual = Convert.ToDateTime(FInicio.Day + "/" + FInicio.Month + "/" + FInicio.Year);
+            for (int i = 0; i < DiferenciaD.Days + 1; i++)
+            {
+                Fila = FilaActual + 1;
+                for (int x = 0; x < sel.Datos.Rows.Count; x++)
+                {
+                    if (FActual == Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_HojaNomina"].ToString()))
+                    {
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Formula = "=IF(COUNT(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")>0,COUNT(" + R_1 + "13:" + R_1 + FilaActual.ToString() + "),0)";
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        Fila++;
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Tope_pgo_x_dia"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$#,##0.00";
+                        Fila++;
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Formula = "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+
+                        oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["TotalImporte"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$#,##0";
+                        Fila++;
+
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        decimal Valor = decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Precio_caja_1"].ToString()), 2);
+                        oRng.Value2 = Valor;
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$#,##0.00";
+
+                        oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                        Valor = decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Precio_caja_2"].ToString()), 2);
+                        oRng.Value2 = Valor;
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$#,##0.00";
+                        Fila++;
+
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Kgs_cortados_x_dia"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "#,##0";
+
+                        oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Pago_jefe_cuadrilla"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        oRng.NumberFormat = "$#,##0";
+                        vPagoJefeCuadrilla = vPagoJefeCuadrilla + Convert.ToDecimal(sel.Datos.Rows[x]["Pago_jefe_cuadrilla"].ToString());
+                        Fila++;
+
+                        oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                        oRng.Value2 = sel.Datos.Rows[x]["Peso_promedio_caja"].ToString();
+                        oRng.Font.FontStyle = "Calibri";
+                        oRng.Font.Size = 11;
+                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                        oRng.Font.Bold = false;
+                        break;
+                    }
+                }
+                FActual = FActual.AddDays(1);
+                if (i < DiferenciaD.Days)
+                {
+                    R_1 = AumentaColumna(R_1);
+                    R_1 = AumentaColumna(R_1);
+                    R_2 = AumentaColumna(R_2);
+                    ColFinal = R_2;
+                    R_2 = AumentaColumna(R_2);
+                }
+                else
+                {
+                    R_1 = AumentaColumna(R_1);
+                    R_1 = AumentaColumna(R_1);
+                    ColFinal = R_2;
+                    R_2 = AumentaColumna(R_2);
+                }
+            }
+            Fila = FilaActual + 3;
+            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Formula = "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "#,##0";
+
+            R_1 = AumentaColumna(R_1);
+            R_2 = AumentaColumna(R_2);
+            R_2 = AumentaColumna(R_2);
+
+            int filt = FilaActual + 6;
+            oRng = oSheet.get_Range("A" + FilaActual.ToString(), R_2 + filt.ToString());
+            oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+            Fila = FilaActual + 3;
+            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Formula =  "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "#,##0";
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Formula = "=SUM(" + R_2 + "13:" + R_2 + FilaActual.ToString() + ")";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0";
+            Fila = Fila+5;
+
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "TOTAL CORTADORES";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            
+
+
+            int filatemp = Fila - 5;
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Formula = "=" + R_2 + filatemp.ToString();
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila = Fila + 2;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "CASOS ESPECIALES";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = "0";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila = Fila + 2;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "PAGO JEFE CUADRILLA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = vPagoJefeCuadrilla;
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila++;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "DESCUENTOS";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = "0";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila++;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "CASOS ESPECIALES";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = "0";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila++;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "TOTAL PAGO JEFE CUADRILLA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            filatemp = Fila - 3;
+            int filatemp2 = Fila - 1;
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = "=SUM(" + R_2 + filatemp.ToString() + ":" + R_2 + filatemp2.ToString() + ")";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
+
+            Fila=Fila+2;
+            oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
+            oRng.Merge();
+            oRng.Value2 = "TOTAL A PAGAR";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+
+            filatemp = Fila - 9;
+            filatemp2 = Fila - 2;
+            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Value2 = "="+R_2+filatemp.ToString()+"+"+R_2+filatemp2.ToString();
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.Font.Bold = false;
+            oRng.NumberFormat = "$#,##0.00";
         }
 
         private void Colocar_Empleados(Excel._Worksheet oSheet, string cuadrilla)
@@ -365,7 +724,7 @@ namespace CuttingBusiness
                             oRng.Font.Size = 11;
                             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                             oRng.Font.Bold = false;
-                            oRng.NumberFormat = "0";
+                            oRng.NumberFormat = "#,##0";
 
                             oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
                             oRng.Merge();
@@ -374,7 +733,7 @@ namespace CuttingBusiness
                             oRng.Font.Size = 11;
                             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                             oRng.Font.Bold = false;
-                            oRng.NumberFormat = "$0.00";
+                            oRng.NumberFormat = "$#,##0";
 
                             oRng = oSheet.get_Range("C" + Fila.ToString(), "C" + Fila.ToString());
                             oRng.Merge();
@@ -383,7 +742,7 @@ namespace CuttingBusiness
                             oRng.Font.Size = 11;
                             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                             oRng.Font.Bold = false;
-                            oRng.NumberFormat = "0";
+                            oRng.NumberFormat = "#,##0";
                         }
                         Fila++;
                         R_1 = "D";
@@ -394,12 +753,12 @@ namespace CuttingBusiness
                         oRng.Font.Size = 11;
                         oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                         oRng.Font.Bold = false;
+                        oRng.EntireColumn.AutoFit();
 
                         oRng = oSheet.get_Range("B" + Fila.ToString(), "B" + Fila.ToString());
                         oRng.Value2 = sel.Datos.Rows[x]["Nombre_Empleado"].ToString();
                         oRng.Font.FontStyle = "Calibri";
                         oRng.Font.Size = 11;
-                        oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                         oRng.Font.Bold = false;
                         oRng.EntireColumn.AutoFit();
 
@@ -418,16 +777,17 @@ namespace CuttingBusiness
                         oRng.Font.Size = 11;
                         oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                         oRng.Font.Bold = false;
-                        oRng.NumberFormat = "0";
+                        oRng.NumberFormat = "#,##0";
                         T_Cajas = T_Cajas + decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Cajas"].ToString()), 0);
 
                         oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
-                        oRng.Value2 = sel.Datos.Rows[x]["Importe"].ToString();
+                        int Valor = Convert.ToInt32(decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Importe"].ToString()), 0));
+                        oRng.Value2 = Valor;
                         oRng.Font.FontStyle = "Calibri";
                         oRng.Font.Size = 11;
                         oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                         oRng.Font.Bold = false;
-                        oRng.NumberFormat = "$0.00";
+                        oRng.NumberFormat = "$#,##0";
                         T_Importe =T_Importe+ decimal.Round(Convert.ToDecimal(sel.Datos.Rows[x]["Importe"].ToString()), 0);
                         DiasTrabajados++;
                         break;
@@ -462,7 +822,7 @@ namespace CuttingBusiness
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = false;
-            oRng.NumberFormat = "$0.00";
+            oRng.NumberFormat = "$#,##0";
 
             oRng = oSheet.get_Range("C" + Fila.ToString(), "C" + Fila.ToString());
             oRng.Value2 = DiasTrabajados;
@@ -470,7 +830,7 @@ namespace CuttingBusiness
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = false;
-            oRng.NumberFormat = "0";
+            oRng.NumberFormat = "#,##0";
 
             oRng = oSheet.get_Range("A13", R_2 + Fila.ToString());
             oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
@@ -479,6 +839,12 @@ namespace CuttingBusiness
 
             oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
             oRng.Interior.ColorIndex = 1;
+            FilaActual = Fila;
+            Fila = Fila + 5;
+            oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
+            oRng.Interior.ColorIndex = 1;
+            oRng.Font.Color = Color.White;
+            
         }
 
         private void Colocar_Ordenes(Excel._Worksheet oSheet, string cuadrilla)
@@ -569,6 +935,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = true;
+                oRng.EntireColumn.ColumnWidth = 9;
 
                 oRng = oSheet.get_Range(R_2 + Fila2.ToString(), R_2 + Fila2.ToString());
                 oRng.Merge();
@@ -577,6 +944,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = true;
+                oRng.EntireColumn.ColumnWidth = 9;
 
                 FActual = FActual.AddDays(1);
                 if (i < DiferenciaD.Days )
@@ -598,10 +966,11 @@ namespace CuttingBusiness
             oRng.Merge();
             oRng.Value2 = "DESCUENTO";
             oRng.Font.FontStyle = "Calibri";
-            oRng.Font.Size = 11;
+            oRng.Font.Size = 9;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
+            oRng.EntireColumn.AutoFit();
 
             R_1 = AumentaColumna(R_1);
             R_2 = AumentaColumna(R_2);
@@ -623,6 +992,7 @@ namespace CuttingBusiness
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
+            oRng.EntireColumn.ColumnWidth = 9;
 
             oRng = oSheet.get_Range(R_2 + Fila2.ToString(), R_2 + Fila2.ToString());
             oRng.Merge();
@@ -631,6 +1001,7 @@ namespace CuttingBusiness
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
+            oRng.EntireColumn.ColumnWidth = 11;
 
             oRng = oSheet.get_Range("A10", R_2 + Fila2.ToString());
             oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
@@ -861,6 +1232,7 @@ namespace CuttingBusiness
             oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
             oRng.WrapText = true;
+            oRng.EntireColumn.ColumnWidth = 11.71;
         }
 
         private string BuscarCuadrilla(string cuadrilla)
