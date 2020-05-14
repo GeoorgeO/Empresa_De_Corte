@@ -93,6 +93,7 @@
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiaOrden = new DevExpress.XtraEditors.SimpleButton();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
@@ -125,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -214,6 +216,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.radioGroup1);
             this.groupControl1.Controls.Add(this.btn_Empleados);
             this.groupControl1.Controls.Add(this.labelImporte);
             this.groupControl1.Controls.Add(this.labelImporteCortador);
@@ -237,14 +240,14 @@
             this.groupControl1.Controls.Add(this.textCajas);
             this.groupControl1.Location = new System.Drawing.Point(3, 110);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(595, 446);
+            this.groupControl1.Size = new System.Drawing.Size(610, 446);
             this.groupControl1.TabIndex = 40;
             this.groupControl1.Text = "Registro";
             // 
             // btn_Empleados
             // 
             this.btn_Empleados.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Empleados.ImageOptions.Image")));
-            this.btn_Empleados.Location = new System.Drawing.Point(330, 50);
+            this.btn_Empleados.Location = new System.Drawing.Point(332, 49);
             this.btn_Empleados.Name = "btn_Empleados";
             this.btn_Empleados.Size = new System.Drawing.Size(25, 26);
             this.btn_Empleados.TabIndex = 56;
@@ -262,7 +265,7 @@
             this.labelImporte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.labelImporte.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.labelImporte.Properties.ReadOnly = true;
-            this.labelImporte.Size = new System.Drawing.Size(67, 20);
+            this.labelImporte.Size = new System.Drawing.Size(85, 20);
             this.labelImporte.TabIndex = 55;
             // 
             // labelImporteCortador
@@ -276,18 +279,18 @@
             this.labelImporteCortador.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.labelImporteCortador.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.labelImporteCortador.Properties.ReadOnly = true;
-            this.labelImporteCortador.Size = new System.Drawing.Size(67, 20);
+            this.labelImporteCortador.Size = new System.Drawing.Size(85, 20);
             this.labelImporteCortador.TabIndex = 54;
             // 
             // labelContadorCajas
             // 
             this.labelContadorCajas.EditValue = "0";
-            this.labelContadorCajas.Location = new System.Drawing.Point(294, 420);
+            this.labelContadorCajas.Location = new System.Drawing.Point(292, 420);
             this.labelContadorCajas.Name = "labelContadorCajas";
             this.labelContadorCajas.Properties.Appearance.Options.UseTextOptions = true;
             this.labelContadorCajas.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelContadorCajas.Properties.ReadOnly = true;
-            this.labelContadorCajas.Size = new System.Drawing.Size(67, 20);
+            this.labelContadorCajas.Size = new System.Drawing.Size(73, 20);
             this.labelContadorCajas.TabIndex = 53;
             // 
             // labelContadorTotal
@@ -353,13 +356,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueEmpleados.Properties.DisplayMember = "Nombre_Empleado";
             this.lueEmpleados.Properties.ValueMember = "Id_Empleado";
-            this.lueEmpleados.Size = new System.Drawing.Size(292, 20);
+            this.lueEmpleados.Size = new System.Drawing.Size(294, 20);
             this.lueEmpleados.TabIndex = 3;
             this.lueEmpleados.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lueEmpleados_KeyUp);
             // 
             // btnIncluirApoyo
             // 
-            this.btnIncluirApoyo.Location = new System.Drawing.Point(444, 418);
+            this.btnIncluirApoyo.Location = new System.Drawing.Point(458, 418);
             this.btnIncluirApoyo.Name = "btnIncluirApoyo";
             this.btnIncluirApoyo.Size = new System.Drawing.Size(75, 23);
             this.btnIncluirApoyo.TabIndex = 14;
@@ -368,7 +371,7 @@
             // 
             // checkFestivo
             // 
-            this.checkFestivo.Location = new System.Drawing.Point(529, 420);
+            this.checkFestivo.Location = new System.Drawing.Point(544, 420);
             this.checkFestivo.Name = "checkFestivo";
             this.checkFestivo.Properties.Caption = "Festivo";
             this.checkFestivo.Size = new System.Drawing.Size(59, 19);
@@ -423,7 +426,7 @@
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.textPrecioCaja);
             this.panelControl1.Controls.Add(this.labelControl7);
-            this.panelControl1.Location = new System.Drawing.Point(444, 24);
+            this.panelControl1.Location = new System.Drawing.Point(458, 24);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(145, 388);
             this.panelControl1.TabIndex = 9;
@@ -653,7 +656,7 @@
             this.gridControl1.Location = new System.Drawing.Point(5, 82);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(433, 311);
+            this.gridControl1.Size = new System.Drawing.Size(447, 311);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -728,19 +731,21 @@
             // 
             // checkPagoFalso
             // 
-            this.checkPagoFalso.Location = new System.Drawing.Point(362, 47);
+            this.checkPagoFalso.Location = new System.Drawing.Point(401, 110);
             this.checkPagoFalso.Name = "checkPagoFalso";
             this.checkPagoFalso.Properties.Caption = "Pago Falso";
             this.checkPagoFalso.Size = new System.Drawing.Size(75, 19);
             this.checkPagoFalso.TabIndex = 7;
+            this.checkPagoFalso.Visible = false;
             // 
             // checkPagoxDia
             // 
-            this.checkPagoxDia.Location = new System.Drawing.Point(362, 28);
+            this.checkPagoxDia.Location = new System.Drawing.Point(401, 91);
             this.checkPagoxDia.Name = "checkPagoxDia";
             this.checkPagoxDia.Properties.Caption = "Pago x Dia";
             this.checkPagoxDia.Size = new System.Drawing.Size(75, 19);
             this.checkPagoxDia.TabIndex = 6;
+            this.checkPagoxDia.Visible = false;
             this.checkPagoxDia.CheckedChanged += new System.EventHandler(this.checkPagoxDia_CheckedChanged);
             // 
             // textCajas
@@ -819,11 +824,25 @@
             this.btnCambiaOrden.Text = "Cambiar Orden";
             this.btnCambiaOrden.Click += new System.EventHandler(this.btnCambiaOrden_Click);
             // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(362, 23);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Pago x Dia"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Pago x Caja"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("S", "Pago Falso")});
+            this.radioGroup1.Size = new System.Drawing.Size(90, 59);
+            this.radioGroup1.TabIndex = 47;
+            this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
+            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 551);
+            this.ClientSize = new System.Drawing.Size(614, 563);
             this.Controls.Add(this.btnCambiaOrden);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnCerrarNomina);
@@ -883,6 +902,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -954,5 +974,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCambiaOrden;
         private DevExpress.XtraEditors.SimpleButton btn_Empleados;
         private DevExpress.XtraEditors.TextEdit textPromedioCaja3;
+        private DevExpress.XtraEditors.RadioGroup radioGroup1;
     }
 }

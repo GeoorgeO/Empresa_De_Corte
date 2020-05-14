@@ -228,6 +228,7 @@
             this.textTopePago.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textTopePago.Properties.Mask.EditMask = "n2";
             this.textTopePago.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textTopePago.Properties.ReadOnly = true;
             this.textTopePago.Size = new System.Drawing.Size(73, 20);
             this.textTopePago.TabIndex = 10;
             // 
@@ -261,6 +262,7 @@
             this.textTopePagoMission.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.textTopePagoMission.Properties.Mask.EditMask = "n2";
             this.textTopePagoMission.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textTopePagoMission.Properties.ReadOnly = true;
             this.textTopePagoMission.Size = new System.Drawing.Size(73, 20);
             this.textTopePagoMission.TabIndex = 7;
             // 
@@ -607,8 +609,9 @@
             this.radioGroup1.Location = new System.Drawing.Point(475, 42);
             this.radioGroup1.Name = "radioGroup1";
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Normal", true, "Normal"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Festivo", true, "Festivo")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("N", "Normal", true, "Normal"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("F", "Festivo", true, "Festivo"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem('S', "Falso")});
             this.radioGroup1.Size = new System.Drawing.Size(70, 74);
             this.radioGroup1.TabIndex = 2;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);

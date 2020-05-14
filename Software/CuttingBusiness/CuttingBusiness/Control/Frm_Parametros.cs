@@ -25,6 +25,7 @@ namespace CuttingBusiness
         private void Frm_Parametros_Load(object sender, EventArgs e)
         {
             IdParametro = "001";
+            radioGroup1.EditValue = "N";
             CargarParametros();
         }
 
@@ -32,16 +33,24 @@ namespace CuttingBusiness
         {
             
             CLS_Parametros Clase = new CLS_Parametros();
-            if (radioGroup1.SelectedIndex == 0)
+            if (radioGroup1.EditValue.ToString().Equals("N"))
             {
-                Clase.Id_Tipo = "N";
+               
                 IdParametro = "001";
-            }else
+            }
+            if (radioGroup1.EditValue.ToString().Equals("F"))
             {
-                Clase.Id_Tipo = "F";
+               
                 IdParametro = "002";
             }
-          
+            if (radioGroup1.EditValue.ToString().Equals("FF"))
+            {
+                
+                IdParametro = "003";
+            }
+
+            Clase.Id_Tipo = radioGroup1.EditValue.ToString();
+
             Clase.MtdSeleccionarParametros();
             if (Clase.Exito)
             {
@@ -111,16 +120,10 @@ namespace CuttingBusiness
             Clase.Pago_Sup_3 = Convert.ToDecimal(textPagoSup3.Text);
             Clase.Pago_Inf_3_Mission = Convert.ToDecimal(textPagoInf3Mission.Text);
             Clase.Pago_Sup_3_Mission= Convert.ToDecimal(textPagoSup3Mission.Text);
-            if (radioGroup1.SelectedIndex == 0)
-            {
-                Clase.Id_Tipo = "N";
-              
-            }
-            else
-            {
-                Clase.Id_Tipo = "F";
+
+            Clase.Id_Tipo = radioGroup1.EditValue.ToString(); ;
                
-            }
+            
             Clase.MtdInsertarParametros();
             if (Clase.Exito)
             {
