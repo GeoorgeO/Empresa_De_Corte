@@ -783,7 +783,7 @@ namespace CuttingBusiness
         {
             if (lueCuadrillas.EditValue!=null && lueCuadrillas.EditValue.ToString().Trim().Length > 0)
             {
-                if (verificajefecuadrillaxfecha())
+                if (verificajefecuadrillaxfecha() || Abrir==true)
                 {
                     cargarParametros();
                     if (Abrir == false)
