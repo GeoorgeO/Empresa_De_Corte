@@ -147,6 +147,12 @@
     <Compile Include="Control\Frm_Parametros.Designer.cs">
       <DependentUpon>Frm_Parametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Frm_Parametros_Nomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Frm_Parametros_Nomina.Designer.cs">
+      <DependentUpon>Frm_Parametros_Nomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Frm_Parametros_PSC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     <EmbeddedResource Include="Control\Frm_Parametros.resx">
       <DependentUpon>Frm_Parametros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Frm_Parametros_Nomina.resx">
+      <DependentUpon>Frm_Parametros_Nomina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Frm_Parametros_PSC.resx">
       <DependentUpon>Frm_Parametros_PSC.cs</DependentUpon>
     </EmbeddedResource>
@@ -582,7 +591,7 @@
     <COMReference Include="Microsoft.Office.Interop.Excel">
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>8</VersionMinor>
+      <VersionMinor>7</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
