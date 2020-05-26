@@ -45,6 +45,8 @@ namespace CuttingBusiness
             }
         }
         public decimal vPagoJefeCuadrilla { get; set; }
+        public string R_T1 { get; set; }
+        public string R_T2 { get; set; }
 
         public Frm_ReportesNomina()
         {
@@ -717,7 +719,7 @@ namespace CuttingBusiness
                             R_2 = AumentaColumna(R_2);
                             R_2 = AumentaColumna(R_2);
 
-                            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+                            oRng = oSheet.get_Range(R_T1 + Fila.ToString(), R_T1 + Fila.ToString());
                             oRng.Merge();
                             oRng.Value2 = T_Cajas;
                             oRng.Font.FontStyle = "Calibri";
@@ -726,11 +728,12 @@ namespace CuttingBusiness
                             oRng.Font.Bold = false;
                             oRng.NumberFormat = "#,##0";
 
-                            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+                            oRng = oSheet.get_Range(R_T2 + Fila.ToString(), R_T2 + Fila.ToString());
                             oRng.Merge();
                             oRng.Value2 = T_Importe;
                             oRng.Font.FontStyle = "Calibri";
                             oRng.Font.Size = 11;
+
                             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                             oRng.Font.Bold = false;
                             oRng.NumberFormat = "$#,##0";
@@ -809,14 +812,14 @@ namespace CuttingBusiness
             R_2 = AumentaColumna(R_2);
             R_2 = AumentaColumna(R_2);
 
-            oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
+            oRng = oSheet.get_Range(R_T1 + Fila.ToString(), R_T1 + Fila.ToString());
             oRng.Value2 = T_Cajas;
             oRng.Font.FontStyle = "Calibri";
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = false;
 
-            oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
+            oRng = oSheet.get_Range(R_T2 + Fila.ToString(), R_T2 + Fila.ToString());
             oRng.Value2 = T_Importe;
             oRng.Font.FontStyle = "Calibri";
             oRng.Font.Size = 11;
@@ -832,16 +835,16 @@ namespace CuttingBusiness
             oRng.Font.Bold = false;
             oRng.NumberFormat = "#,##0";
 
-            oRng = oSheet.get_Range("A13", R_2 + Fila.ToString());
+            oRng = oSheet.get_Range("A13", R_T2 + Fila.ToString());
             oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
 
             Fila++;
 
-            oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
+            oRng = oSheet.get_Range("A" + Fila.ToString(), R_T2 + Fila.ToString());
             oRng.Interior.ColorIndex = 1;
             FilaActual = Fila;
             Fila = Fila + 5;
-            oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
+            oRng = oSheet.get_Range("A" + Fila.ToString(), R_T2 + Fila.ToString());
             oRng.Interior.ColorIndex = 1;
             oRng.Font.Color = Color.White;
             
@@ -975,7 +978,8 @@ namespace CuttingBusiness
             R_1 = AumentaColumna(R_1);
             R_2 = AumentaColumna(R_2);
             R_2 = AumentaColumna(R_2);
-
+            R_T1 = R_1;
+            R_T2 = R_2;
             oRng = oSheet.get_Range(R_1 + "10", R_2 + "11");
             oRng.Merge();
             oRng.Value2 = "TOTAL";
