@@ -608,10 +608,13 @@
             // 
             this.radioGroup1.Location = new System.Drawing.Point(475, 42);
             this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("N", "Normal", true, "Normal"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("F", "Festivo", true, "Festivo"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem('S', "Falso")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem('S', "S. Falso")});
             this.radioGroup1.Size = new System.Drawing.Size(70, 74);
             this.radioGroup1.TabIndex = 2;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
@@ -645,6 +648,7 @@
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "Frm_Parametros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parametros";
             this.Load += new System.EventHandler(this.Frm_Parametros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

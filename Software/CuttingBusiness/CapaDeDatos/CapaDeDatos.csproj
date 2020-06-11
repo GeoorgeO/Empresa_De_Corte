@@ -60,6 +60,7 @@
     <Compile Include="Formularios\CLS_Marcas.cs" />
     <Compile Include="Formularios\CLS_Parametros.cs" />
     <Compile Include="Formularios\CLS_Parametros_Nomina.cs" />
+    <Compile Include="Formularios\CLS_Parametros_Reportes.cs" />
     <Compile Include="Formularios\CLS_Reportes_Nomina.cs" />
     <Compile Include="Formularios\CLS_ReservaProductoSalida.cs" />
     <Compile Include="Formularios\CLS_Salidas.cs" />

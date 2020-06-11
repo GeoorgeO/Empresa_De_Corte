@@ -99,6 +99,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnParemetrosRepotes = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -150,9 +151,10 @@
             this.btnImportarServicios,
             this.btn_AperturaNomina,
             this.btnParametroNomina,
-            this.btnParametroImportarServicios});
+            this.btnParametroImportarServicios,
+            this.btnParemetrosRepotes});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 42;
+            this.ribbonControl1.MaxItemId = 43;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -520,8 +522,8 @@
             // 
             this.btnParametroNomina.Caption = "Nomina";
             this.btnParametroNomina.Id = 40;
-            this.btnParametroNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnParametroNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnParametroNomina.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParametroNomina.ImageOptions.Image")));
+            this.btnParametroNomina.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnParametroNomina.ImageOptions.LargeImage")));
             this.btnParametroNomina.Name = "btnParametroNomina";
             this.btnParametroNomina.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametroNomina_ItemClick);
             // 
@@ -529,8 +531,8 @@
             // 
             this.btnParametroImportarServicios.Caption = "Importacion Ordenes";
             this.btnParametroImportarServicios.Id = 41;
-            this.btnParametroImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnParametroImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnParametroImportarServicios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParametroImportarServicios.ImageOptions.Image")));
+            this.btnParametroImportarServicios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnParametroImportarServicios.ImageOptions.LargeImage")));
             this.btnParametroImportarServicios.Name = "btnParametroImportarServicios";
             this.btnParametroImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametroImportarServicios_ItemClick);
             // 
@@ -694,6 +696,7 @@
             // 
             this.ribbonPageGroup19.ItemLinks.Add(this.btnParametroNomina);
             this.ribbonPageGroup19.ItemLinks.Add(this.btnParametroImportarServicios);
+            this.ribbonPageGroup19.ItemLinks.Add(this.btnParemetrosRepotes);
             this.ribbonPageGroup19.Name = "ribbonPageGroup19";
             this.ribbonPageGroup19.Text = "Parametros";
             // 
@@ -724,6 +727,15 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
+            // 
+            // btnParemetrosRepotes
+            // 
+            this.btnParemetrosRepotes.Caption = "Reportes Nomina";
+            this.btnParemetrosRepotes.Id = 42;
+            this.btnParemetrosRepotes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnParemetrosRepotes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnParemetrosRepotes.Name = "btnParemetrosRepotes";
+            this.btnParemetrosRepotes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParemetrosRepotes_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -819,6 +831,7 @@
         private DevExpress.XtraBars.BarButtonItem btnParametroNomina;
         private DevExpress.XtraBars.BarButtonItem btnParametroImportarServicios;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
+        private DevExpress.XtraBars.BarButtonItem btnParemetrosRepotes;
     }
 }
 

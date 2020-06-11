@@ -49,6 +49,11 @@
             this.tabPageFormatoB = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabPageCortadores = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Dias_trabajo_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tipo_Empleado_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sueldo_Bruto_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPageJefesCuadrilla = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -73,11 +78,6 @@
             this.Sueldo_Bruto_C_J = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ISR_C_J = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Sueldo_Neto_C_J = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Dias_trabajo_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Tipo_Empleado_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Sueldo_Bruto_B_C = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -86,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
             this.tabPane2.SuspendLayout();
             this.tabPageCortadores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabPageJefesCuadrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -98,8 +100,6 @@
             this.tabNavigationPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -207,9 +207,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 346);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 344);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(693, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(693, 27);
             // 
             // barDockControlLeft
             // 
@@ -217,7 +217,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(84, 346);
+            this.barDockControlLeft.Size = new System.Drawing.Size(82, 344);
             // 
             // barDockControlRight
             // 
@@ -225,7 +225,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(693, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 346);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 344);
             // 
             // btnLimpiar
             // 
@@ -260,14 +260,14 @@
             this.tabPane1.Controls.Add(this.tabPageFormatoB);
             this.tabPane1.Controls.Add(this.tabPageFormatoC);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(84, 0);
+            this.tabPane1.Location = new System.Drawing.Point(82, 0);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabPageFormatoB,
             this.tabPageFormatoC});
-            this.tabPane1.RegularSize = new System.Drawing.Size(609, 346);
+            this.tabPane1.RegularSize = new System.Drawing.Size(611, 344);
             this.tabPane1.SelectedPage = this.tabPageFormatoB;
-            this.tabPane1.Size = new System.Drawing.Size(609, 346);
+            this.tabPane1.Size = new System.Drawing.Size(611, 344);
             this.tabPane1.TabIndex = 4;
             this.tabPane1.Text = "Formatos";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
@@ -277,7 +277,7 @@
             this.tabPageFormatoB.Caption = "Formato B";
             this.tabPageFormatoB.Controls.Add(this.tabPane2);
             this.tabPageFormatoB.Name = "tabPageFormatoB";
-            this.tabPageFormatoB.Size = new System.Drawing.Size(591, 301);
+            this.tabPageFormatoB.Size = new System.Drawing.Size(593, 299);
             // 
             // tabPane2
             // 
@@ -289,9 +289,9 @@
             this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabPageCortadores,
             this.tabPageJefesCuadrilla});
-            this.tabPane2.RegularSize = new System.Drawing.Size(591, 301);
+            this.tabPane2.RegularSize = new System.Drawing.Size(593, 299);
             this.tabPane2.SelectedPage = this.tabPageCortadores;
-            this.tabPane2.Size = new System.Drawing.Size(591, 301);
+            this.tabPane2.Size = new System.Drawing.Size(593, 299);
             this.tabPane2.TabIndex = 0;
             this.tabPane2.Text = "tabPane2";
             this.tabPane2.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane2_SelectedPageChanged);
@@ -301,7 +301,62 @@
             this.tabPageCortadores.Caption = "Cortadores";
             this.tabPageCortadores.Controls.Add(this.gridControl1);
             this.tabPageCortadores.Name = "tabPageCortadores";
-            this.tabPageCortadores.Size = new System.Drawing.Size(573, 256);
+            this.tabPageCortadores.Size = new System.Drawing.Size(575, 254);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(575, 254);
+            this.gridControl1.TabIndex = 3;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.FooterPanel.BackColor = System.Drawing.Color.Transparent;
+            this.gridView1.Appearance.FooterPanel.BackColor2 = System.Drawing.Color.Transparent;
+            this.gridView1.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Transparent;
+            this.gridView1.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Dias_trabajo_B_C,
+            this.Tipo_Empleado_B_C,
+            this.Sueldo_Bruto_B_C});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
+            // 
+            // Dias_trabajo_B_C
+            // 
+            this.Dias_trabajo_B_C.Caption = "Dias de trabajo";
+            this.Dias_trabajo_B_C.FieldName = "Dias_trabajo";
+            this.Dias_trabajo_B_C.Name = "Dias_trabajo_B_C";
+            this.Dias_trabajo_B_C.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Dias_trabajo", "Registros: {0}")});
+            this.Dias_trabajo_B_C.Visible = true;
+            this.Dias_trabajo_B_C.VisibleIndex = 0;
+            // 
+            // Tipo_Empleado_B_C
+            // 
+            this.Tipo_Empleado_B_C.Caption = "Tipo_Empleado";
+            this.Tipo_Empleado_B_C.FieldName = "Tipo_Empleado";
+            this.Tipo_Empleado_B_C.Name = "Tipo_Empleado_B_C";
+            // 
+            // Sueldo_Bruto_B_C
+            // 
+            this.Sueldo_Bruto_B_C.Caption = "Sueldo Bruto";
+            this.Sueldo_Bruto_B_C.FieldName = "Sueldo_Bruto";
+            this.Sueldo_Bruto_B_C.Name = "Sueldo_Bruto_B_C";
+            this.Sueldo_Bruto_B_C.Visible = true;
+            this.Sueldo_Bruto_B_C.VisibleIndex = 1;
             // 
             // tabPageJefesCuadrilla
             // 
@@ -551,61 +606,6 @@
             this.Sueldo_Neto_C_J.Visible = true;
             this.Sueldo_Neto_C_J.VisibleIndex = 3;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(573, 256);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.FooterPanel.BackColor = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.FooterPanel.BackColor2 = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.FooterPanel.BorderColor = System.Drawing.Color.Transparent;
-            this.gridView1.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Dias_trabajo_B_C,
-            this.Tipo_Empleado_B_C,
-            this.Sueldo_Bruto_B_C});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
-            // 
-            // Dias_trabajo_B_C
-            // 
-            this.Dias_trabajo_B_C.Caption = "Dias de trabajo";
-            this.Dias_trabajo_B_C.FieldName = "Dias_trabajo";
-            this.Dias_trabajo_B_C.Name = "Dias_trabajo_B_C";
-            this.Dias_trabajo_B_C.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Dias_trabajo", "Registros: {0}")});
-            this.Dias_trabajo_B_C.Visible = true;
-            this.Dias_trabajo_B_C.VisibleIndex = 0;
-            // 
-            // Tipo_Empleado_B_C
-            // 
-            this.Tipo_Empleado_B_C.Caption = "Tipo_Empleado";
-            this.Tipo_Empleado_B_C.FieldName = "Tipo_Empleado";
-            this.Tipo_Empleado_B_C.Name = "Tipo_Empleado_B_C";
-            // 
-            // Sueldo_Bruto_B_C
-            // 
-            this.Sueldo_Bruto_B_C.Caption = "Sueldo Bruto";
-            this.Sueldo_Bruto_B_C.FieldName = "Sueldo_Bruto";
-            this.Sueldo_Bruto_B_C.Name = "Sueldo_Bruto_B_C";
-            this.Sueldo_Bruto_B_C.Visible = true;
-            this.Sueldo_Bruto_B_C.VisibleIndex = 1;
-            // 
             // Frm_Parametros_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,6 +628,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
             this.tabPane2.ResumeLayout(false);
             this.tabPageCortadores.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabPageJefesCuadrilla.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -640,8 +642,6 @@
             this.tabNavigationPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
