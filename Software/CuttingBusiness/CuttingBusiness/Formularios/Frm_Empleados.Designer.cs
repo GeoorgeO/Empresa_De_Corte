@@ -320,7 +320,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(68, 515);
+            this.barDockControl3.Size = new System.Drawing.Size(72, 515);
             // 
             // barDockControl5
             // 
@@ -341,10 +341,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(68, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(72, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(770, 515);
+            this.xtraTabControl1.Size = new System.Drawing.Size(766, 515);
             this.xtraTabControl1.TabIndex = 8;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -356,7 +356,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(764, 487);
+            this.xtraTabPage1.Size = new System.Drawing.Size(760, 487);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -367,7 +367,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 221);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.panelControl1.Size = new System.Drawing.Size(754, 261);
+            this.panelControl1.Size = new System.Drawing.Size(750, 261);
             this.panelControl1.TabIndex = 2;
             // 
             // checkActivo
@@ -385,7 +385,7 @@
             this.gridControl1.Location = new System.Drawing.Point(7, 32);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(740, 222);
+            this.gridControl1.Size = new System.Drawing.Size(736, 222);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -577,7 +577,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(754, 216);
+            this.groupControl1.Size = new System.Drawing.Size(750, 216);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empleado";
             // 
@@ -755,7 +755,7 @@
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(31, 13);
             this.labelControl7.TabIndex = 15;
-            this.labelControl7.Text = "Clave:";
+            this.labelControl7.Text = "Clabe:";
             // 
             // textCuenta
             // 
