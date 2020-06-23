@@ -62,6 +62,8 @@
             this.Prom_Cajas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tot_Importe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tot_Jefe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -76,6 +78,7 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -197,7 +200,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(53, 472);
+            this.barDockControl3.Size = new System.Drawing.Size(57, 472);
             // 
             // barDockControl5
             // 
@@ -211,14 +214,16 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(53, 0);
+            this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(1132, 120);
+            this.panelControl1.Size = new System.Drawing.Size(1128, 120);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lueCuadrillas);
+            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.lueFormatos);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -228,7 +233,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1108, 96);
+            this.groupControl1.Size = new System.Drawing.Size(1104, 96);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Opciones de Busqueda";
             // 
@@ -297,10 +302,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgReporteNomina);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(53, 120);
+            this.panelControl2.Location = new System.Drawing.Point(57, 120);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(1132, 352);
+            this.panelControl2.Size = new System.Drawing.Size(1128, 352);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgReporteNomina
@@ -310,7 +315,7 @@
             this.dtgReporteNomina.MainView = this.dtgValReporteNomina;
             this.dtgReporteNomina.MenuManager = this.barManager2;
             this.dtgReporteNomina.Name = "dtgReporteNomina";
-            this.dtgReporteNomina.Size = new System.Drawing.Size(1108, 328);
+            this.dtgReporteNomina.Size = new System.Drawing.Size(1104, 328);
             this.dtgReporteNomina.TabIndex = 0;
             this.dtgReporteNomina.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteNomina});
@@ -401,6 +406,25 @@
             this.Tot_Jefe.Visible = true;
             this.Tot_Jefe.VisibleIndex = 7;
             // 
+            // lueCuadrillas
+            // 
+            this.lueCuadrillas.Location = new System.Drawing.Point(347, 58);
+            this.lueCuadrillas.Name = "lueCuadrillas";
+            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
+            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
+            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
+            this.lueCuadrillas.TabIndex = 11;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(280, 62);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(51, 13);
+            this.labelControl4.TabIndex = 10;
+            this.labelControl4.Text = "Categoria:";
+            // 
             // Frm_ReportesNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +455,7 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +495,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Tot_Importe;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn Tot_Jefe;
+        private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

@@ -172,6 +172,7 @@ namespace CuttingBusiness
         {
             GridMultipleODC();
             Limpiar();
+            CargarCategoriasCuadrilla();
         }
         private void Limpiar()
         {
@@ -190,7 +191,17 @@ namespace CuttingBusiness
             gridCheckMarksODC.ClearSelection();
 
         }
+        private void CargarCategoriasCuadrilla()
+        {
+            lueCuadrillas.Properties.DataSource = null;
+            CLS_CategoriasCuadrilla Clase = new CLS_CategoriasCuadrilla();
 
+            Clase.MtdSeleccionarCategoriasCuadrilla();
+            if (Clase.Exito)
+            {
+                lueCuadrillas.Properties.DataSource = Clase.Datos;
+            }
+        }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Limpiar();
@@ -2614,7 +2625,7 @@ namespace CuttingBusiness
                     Valor = "AV";
                     break;
                 case "AV":
-                    Valor = "W";
+                    Valor = "AW";
                     break;
                 case "AW":
                     Valor = "AX";
@@ -2627,6 +2638,396 @@ namespace CuttingBusiness
                     break;
                 case "AZ":
                     Valor = "BA";
+                    break;
+                case "BA":
+                    Valor = "BB";
+                    break;
+                case "BB":
+                    Valor = "BC";
+                    break;
+                case "BC":
+                    Valor = "BD";
+                    break;
+                case "BD":
+                    Valor = "BE";
+                    break;
+                case "BE":
+                    Valor = "BF";
+                    break;
+                case "BF":
+                    Valor = "BG";
+                    break;
+                case "BG":
+                    Valor = "BH";
+                    break;
+                case "BH":
+                    Valor = "BI";
+                    break;
+                case "BI":
+                    Valor = "BJ";
+                    break;
+                case "BJ":
+                    Valor = "BK";
+                    break;
+                case "BK":
+                    Valor = "BL";
+                    break;
+                case "BL":
+                    Valor = "BM";
+                    break;
+                case "BM":
+                    Valor = "BN";
+                    break;
+                case "BN":
+                    Valor = "BO";
+                    break;
+                case "BO":
+                    Valor = "BP";
+                    break;
+                case "BP":
+                    Valor = "BQ";
+                    break;
+                case "BQ":
+                    Valor = "BR";
+                    break;
+                case "BR":
+                    Valor = "BS";
+                    break;
+                case "BS":
+                    Valor = "BT";
+                    break;
+                case "BT":
+                    Valor = "BU";
+                    break;
+                case "BU":
+                    Valor = "BV";
+                    break;
+                case "BV":
+                    Valor = "BW";
+                    break;
+                case "BW":
+                    Valor = "BX";
+                    break;
+                case "BX":
+                    Valor = "BY";
+                    break;
+                case "BY":
+                    Valor = "BZ";
+                    break;
+                case "BZ":
+                    Valor = "CA";
+                    break;
+                case "CA":
+                    Valor = "CB";
+                    break;
+                case "CB":
+                    Valor = "CC";
+                    break;
+                case "CC":
+                    Valor = "CD";
+                    break;
+                case "CD":
+                    Valor = "CE";
+                    break;
+                case "CE":
+                    Valor = "CF";
+                    break;
+                case "CF":
+                    Valor = "CG";
+                    break;
+                case "CG":
+                    Valor = "CH";
+                    break;
+                case "CH":
+                    Valor = "CI";
+                    break;
+                case "CI":
+                    Valor = "CJ";
+                    break;
+                case "CJ":
+                    Valor = "CK";
+                    break;
+                case "CK":
+                    Valor = "CL";
+                    break;
+                case "CL":
+                    Valor = "CM";
+                    break;
+                case "CM":
+                    Valor = "CN";
+                    break;
+                case "CN":
+                    Valor = "CO";
+                    break;
+                case "CO":
+                    Valor = "CP";
+                    break;
+                case "CP":
+                    Valor = "CQ";
+                    break;
+                case "CQ":
+                    Valor = "CR";
+                    break;
+                case "CR":
+                    Valor = "CS";
+                    break;
+                case "CS":
+                    Valor = "CT";
+                    break;
+                case "CT":
+                    Valor = "CU";
+                    break;
+                case "CU":
+                    Valor = "CV";
+                    break;
+                case "CV":
+                    Valor = "CW";
+                    break;
+                case "CW":
+                    Valor = "CX";
+                    break;
+                case "CX":
+                    Valor = "CY";
+                    break;
+                case "CY":
+                    Valor = "CZ";
+                    break;
+                case "CZ":
+                    Valor = "DA";
+                    break;
+                case "DA":
+                    Valor = "DB";
+                    break;
+                case "DB":
+                    Valor = "DC";
+                    break;
+                case "DC":
+                    Valor = "DD";
+                    break;
+                case "DD":
+                    Valor = "DE";
+                    break;
+                case "DE":
+                    Valor = "DF";
+                    break;
+                case "DF":
+                    Valor = "DG";
+                    break;
+                case "DG":
+                    Valor = "DH";
+                    break;
+                case "DH":
+                    Valor = "DI";
+                    break;
+                case "DI":
+                    Valor = "DJ";
+                    break;
+                case "DJ":
+                    Valor = "DK";
+                    break;
+                case "DK":
+                    Valor = "DL";
+                    break;
+                case "DL":
+                    Valor = "DM";
+                    break;
+                case "DM":
+                    Valor = "DN";
+                    break;
+                case "DN":
+                    Valor = "DO";
+                    break;
+                case "DO":
+                    Valor = "DP";
+                    break;
+                case "DP":
+                    Valor = "DQ";
+                    break;
+                case "DQ":
+                    Valor = "DR";
+                    break;
+                case "DR":
+                    Valor = "DS";
+                    break;
+                case "DS":
+                    Valor = "DT";
+                    break;
+                case "DT":
+                    Valor = "DU";
+                    break;
+                case "DU":
+                    Valor = "DV";
+                    break;
+                case "DV":
+                    Valor = "DW";
+                    break;
+                case "DW":
+                    Valor = "DX";
+                    break;
+                case "DX":
+                    Valor = "DY";
+                    break;
+                case "DY":
+                    Valor = "DZ";
+                    break;
+                case "DZ":
+                    Valor = "EA";
+                    break;
+                case "EA":
+                    Valor = "EB";
+                    break;
+                case "EB":
+                    Valor = "EC";
+                    break;
+                case "EC":
+                    Valor = "ED";
+                    break;
+                case "ED":
+                    Valor = "EE";
+                    break;
+                case "EE":
+                    Valor = "EF";
+                    break;
+                case "EF":
+                    Valor = "EG";
+                    break;
+                case "EG":
+                    Valor = "EH";
+                    break;
+                case "EH":
+                    Valor = "EI";
+                    break;
+                case "EI":
+                    Valor = "EJ";
+                    break;
+                case "EJ":
+                    Valor = "EK";
+                    break;
+                case "EK":
+                    Valor = "EL";
+                    break;
+                case "EL":
+                    Valor = "EM";
+                    break;
+                case "EM":
+                    Valor = "EN";
+                    break;
+                case "EN":
+                    Valor = "EO";
+                    break;
+                case "EO":
+                    Valor = "EP";
+                    break;
+                case "EP":
+                    Valor = "EQ";
+                    break;
+                case "EQ":
+                    Valor = "ER";
+                    break;
+                case "ER":
+                    Valor = "ES";
+                    break;
+                case "ES":
+                    Valor = "ET";
+                    break;
+                case "ET":
+                    Valor = "EU";
+                    break;
+                case "EU":
+                    Valor = "EV";
+                    break;
+                case "EV":
+                    Valor = "EW";
+                    break;
+                case "EW":
+                    Valor = "EX";
+                    break;
+                case "EX":
+                    Valor = "EY";
+                    break;
+                case "EY":
+                    Valor = "EZ";
+                    break;
+                case "EZ":
+                    Valor = "FA";
+                    break;
+                case "FA":
+                    Valor = "FB";
+                    break;
+                case "FB":
+                    Valor = "FC";
+                    break;
+                case "FC":
+                    Valor = "FD";
+                    break;
+                case "FD":
+                    Valor = "FE";
+                    break;
+                case "FE":
+                    Valor = "FF";
+                    break;
+                case "FF":
+                    Valor = "FG";
+                    break;
+                case "FG":
+                    Valor = "FH";
+                    break;
+                case "FH":
+                    Valor = "FI";
+                    break;
+                case "FI":
+                    Valor = "FJ";
+                    break;
+                case "FJ":
+                    Valor = "FK";
+                    break;
+                case "FK":
+                    Valor = "FL";
+                    break;
+                case "FL":
+                    Valor = "FM";
+                    break;
+                case "FM":
+                    Valor = "FN";
+                    break;
+                case "FN":
+                    Valor = "FO";
+                    break;
+                case "FO":
+                    Valor = "FP";
+                    break;
+                case "FP":
+                    Valor = "FQ";
+                    break;
+                case "FQ":
+                    Valor = "FR";
+                    break;
+                case "FR":
+                    Valor = "FS";
+                    break;
+                case "FS":
+                    Valor = "FT";
+                    break;
+                case "FT":
+                    Valor = "FU";
+                    break;
+                case "FU":
+                    Valor = "FV";
+                    break;
+                case "FV":
+                    Valor = "FW";
+                    break;
+                case "FW":
+                    Valor = "FX";
+                    break;
+                case "FX":
+                    Valor = "FY";
+                    break;
+                case "FY":
+                    Valor = "FZ";
+                    break;
+                case "FZ":
+                    Valor = "GA";
                     break;
                 default:
                     break;
