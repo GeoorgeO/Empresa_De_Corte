@@ -64,6 +64,7 @@
             this.Tot_Jefe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.chkTodas = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -222,6 +224,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.chkTodas);
             this.groupControl1.Controls.Add(this.lueCuadrillas);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -414,7 +417,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
             this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
-            this.lueCuadrillas.Size = new System.Drawing.Size(80, 20);
+            this.lueCuadrillas.Size = new System.Drawing.Size(100, 20);
             this.lueCuadrillas.TabIndex = 11;
             // 
             // labelControl4
@@ -424,6 +427,16 @@
             this.labelControl4.Size = new System.Drawing.Size(51, 13);
             this.labelControl4.TabIndex = 10;
             this.labelControl4.Text = "Categoria:";
+            // 
+            // chkTodas
+            // 
+            this.chkTodas.Location = new System.Drawing.Point(463, 59);
+            this.chkTodas.MenuManager = this.barManager2;
+            this.chkTodas.Name = "chkTodas";
+            this.chkTodas.Properties.Caption = "Todas";
+            this.chkTodas.Size = new System.Drawing.Size(65, 19);
+            this.chkTodas.TabIndex = 12;
+            this.chkTodas.CheckedChanged += new System.EventHandler(this.chkTodas_CheckedChanged);
             // 
             // Frm_ReportesNomina
             // 
@@ -456,6 +469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,5 +511,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Tot_Jefe;
         private DevExpress.XtraEditors.LookUpEdit lueCuadrillas;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.CheckEdit chkTodas;
     }
 }

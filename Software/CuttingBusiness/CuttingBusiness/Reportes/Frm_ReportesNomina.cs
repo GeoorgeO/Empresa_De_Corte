@@ -189,6 +189,7 @@ namespace CuttingBusiness
             Tot_Jefe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             Tot_Jefe.DisplayFormat.FormatString = "$ ###,###0.00";
             gridCheckMarksODC.ClearSelection();
+            lueFormatos.ItemIndex = 0;
 
         }
         private void CargarCategoriasCuadrilla()
@@ -200,6 +201,7 @@ namespace CuttingBusiness
             if (Clase.Exito)
             {
                 lueCuadrillas.Properties.DataSource = Clase.Datos;
+                lueCuadrillas.ItemIndex = 0;
             }
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -259,6 +261,14 @@ namespace CuttingBusiness
             Clase.FechaInicio = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             Fecha = Convert.ToDateTime(dtFin.EditValue);
             Clase.FechaFin = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            if (lueCuadrillas.EditValue != null)
+            {
+                Clase.Nombre_Categoria = lueCuadrillas.Text;
+            }
+            else
+            {
+                Clase.Nombre_Categoria = string.Empty;
+            }
             Clase.MtdSeleccionarNominas();
             if (Clase.Exito)
             {
@@ -3147,6 +3157,20 @@ namespace CuttingBusiness
                 return (str = "0" + sVal);
             }
             return sVal;
+        }
+
+        private void chkTodas_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkTodas.Checked==true)
+            {
+                lueCuadrillas.EditValue = null;
+                lueCuadrillas.Enabled = false;
+            }
+            else
+            {
+                lueCuadrillas.ItemIndex = 0;
+                lueCuadrillas.Enabled = true;
+            }
         }
     }
 }

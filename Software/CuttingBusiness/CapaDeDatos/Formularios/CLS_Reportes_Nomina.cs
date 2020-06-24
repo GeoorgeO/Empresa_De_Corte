@@ -11,7 +11,7 @@ namespace CapaDeDatos
         public string FechaInicio { get; set; }
         public string FechaFin { get; set; }
         public string Id_Cuadrilla { get; set; }
-
+        public String Nombre_Categoria { get; set; }
         public void MtdSeleccionarFormatos()
         {
             TipoDato _dato = new TipoDato();
@@ -55,6 +55,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaInicio");
                 _dato.CadenaTexto = FechaFin;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaFin");
+                _dato.CadenaTexto = Nombre_Categoria;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Categoria");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
