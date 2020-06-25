@@ -83,7 +83,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(943, 571);
+            this.gridControl1.Size = new System.Drawing.Size(937, 564);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -298,7 +298,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(943, 37);
+            this.panelControl1.Size = new System.Drawing.Size(937, 37);
             this.panelControl1.TabIndex = 10;
             // 
             // labelControl4
@@ -397,14 +397,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(943, 571);
+            this.panel1.Size = new System.Drawing.Size(937, 564);
             this.panel1.TabIndex = 11;
             // 
             // Frm_AbrirHoja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 608);
+            this.ClientSize = new System.Drawing.Size(937, 601);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelControl1);
             this.Name = "Frm_AbrirHoja";

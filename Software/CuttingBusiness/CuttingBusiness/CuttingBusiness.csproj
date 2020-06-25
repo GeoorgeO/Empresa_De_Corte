@@ -37,21 +37,34 @@
       <HintPath>..\CapaDeDatos\bin\Debug\CapaDeDatos.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.DataAccess.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v17.2.Drawing, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2" />
+    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\SES_Existencias\SES_Existencias\bin\Debug\DevExpress.XtraGrid.v17.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraPdfViewer.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraSpreadsheet.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraSpreadsheet.v17.2.dll</HintPath>
@@ -377,6 +390,12 @@
     <Compile Include="Reportes\Frm_ReportesNomina.Designer.cs">
       <DependentUpon>Frm_ReportesNomina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\rpt_ReportePagoFletes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_ReportePagoFletes.Designer.cs">
+      <DependentUpon>rpt_ReportePagoFletes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Frm_CargandoConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -562,6 +581,9 @@
     <EmbeddedResource Include="Reportes\Frm_ReportesNomina.resx">
       <DependentUpon>Frm_ReportesNomina.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_ReportePagoFletes.resx">
+      <DependentUpon>rpt_ReportePagoFletes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Frm_CargandoConsulta.resx">
       <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -577,6 +599,7 @@
     <EmbeddedResource Include="Seguridad\Frm_Usuarios.resx">
       <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

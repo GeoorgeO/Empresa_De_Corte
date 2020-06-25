@@ -14,6 +14,9 @@ using DevExpress.XtraGrid;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.Globalization;
+using DevExpress.DataAccess.ConnectionParameters;
+using DevExpress.DataAccess.Sql;
+using DevExpress.XtraReports.UI;
 
 namespace CuttingBusiness
 {
@@ -254,25 +257,32 @@ namespace CuttingBusiness
         }
         private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridCheckMarksODC.ClearSelection();
-            CLS_Reportes_Nomina Clase = new CLS_Reportes_Nomina();
-            DateTime Fecha;
-            Fecha = Convert.ToDateTime(dtInicio.EditValue);
-            Clase.FechaInicio = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
-            Fecha = Convert.ToDateTime(dtFin.EditValue);
-            Clase.FechaFin = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
-            if (lueCuadrillas.EditValue != null)
+            if(lueFormatos.EditValue.ToString()=="004")
             {
-                Clase.Nombre_Categoria = lueCuadrillas.Text;
+                Formato_D();
             }
             else
             {
-                Clase.Nombre_Categoria = string.Empty;
-            }
-            Clase.MtdSeleccionarNominas();
-            if (Clase.Exito)
-            {
-                dtgReporteNomina.DataSource = Clase.Datos;
+                gridCheckMarksODC.ClearSelection();
+                CLS_Reportes_Nomina Clase = new CLS_Reportes_Nomina();
+                DateTime Fecha;
+                Fecha = Convert.ToDateTime(dtInicio.EditValue);
+                Clase.FechaInicio = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+                Fecha = Convert.ToDateTime(dtFin.EditValue);
+                Clase.FechaFin = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+                if (lueCuadrillas.EditValue != null)
+                {
+                    Clase.Nombre_Categoria = lueCuadrillas.Text;
+                }
+                else
+                {
+                    Clase.Nombre_Categoria = string.Empty;
+                }
+                Clase.MtdSeleccionarNominas();
+                if (Clase.Exito)
+                {
+                    dtgReporteNomina.DataSource = Clase.Datos;
+                }
             }
         }
 
@@ -310,6 +320,9 @@ namespace CuttingBusiness
                         case "003":
                             Formato_C();
                             break;
+                        case "004":
+                            Formato_D();
+                            break;
                         default:
                             break;
                     }
@@ -324,6 +337,27 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No se ha seleccionado una cuadrilla para generar el reporte");
             }
         }
+
+        private void Formato_D()
+        {
+            string Nombre_Categoria = string.Empty;
+            
+            string FechaInicio = dtInicio.DateTime.Year.ToString() + DosCero(dtInicio.DateTime.Month.ToString())+ DosCero(dtInicio.DateTime.Day.ToString());
+            string FechaFin = dtFin.DateTime.Year.ToString() + DosCero(dtFin.DateTime.Month.ToString()) + DosCero(dtFin.DateTime.Day.ToString());
+            if (lueCuadrillas.EditValue != null)
+            {
+                Nombre_Categoria = lueCuadrillas.Text;
+            }
+            else
+            {
+                Nombre_Categoria = string.Empty;
+            }
+            rpt_ReportePagoFletes rpt = new rpt_ReportePagoFletes(FechaInicio,FechaFin,Nombre_Categoria);
+            ((SqlDataSource)rpt.DataSource).ConfigureDataConnection += Form1_ConfigureDataConnection;
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            rpt.ShowPreviewDialog();
+        }
+
         private void Formato_C()
         {
             CreaLibro();
@@ -482,7 +516,25 @@ namespace CuttingBusiness
             oRng.EntireColumn.AutoFit();
             
         }
+        private void Form1_ConfigureDataConnection(object sender, ConfigureDataConnectionEventArgs e)
+        {
+            MSRegistro RegOut = new MSRegistro();
+            Crypto DesencriptarTexto = new Crypto();
 
+            string valServer = RegOut.GetSetting("ConexionSQL", "Server");
+            string valDB = RegOut.GetSetting("ConexionSQL", "DBase");
+            string valLogin = RegOut.GetSetting("ConexionSQL", "User");
+            string valPass = RegOut.GetSetting("ConexionSQL", "Password");
+
+            if (valServer != string.Empty && valDB != string.Empty && valLogin != string.Empty && valPass != string.Empty)
+            {
+                valServer = DesencriptarTexto.Desencriptar(valServer);
+                valDB = DesencriptarTexto.Desencriptar(valDB);
+                valLogin = DesencriptarTexto.Desencriptar(valLogin);
+                valPass = DesencriptarTexto.Desencriptar(valPass);
+                e.ConnectionParameters = new MsSqlConnectionParameters(valServer, valDB, valLogin, valPass, MsSqlAuthorizationType.SqlServer);
+            }
+        }
         private void Colocar_Subtotales(Excel._Worksheet oSheet, string cuadrilla)
         {
             DateTime FInicio = dtInicio.DateTime;
@@ -3170,6 +3222,19 @@ namespace CuttingBusiness
             {
                 lueCuadrillas.ItemIndex = 0;
                 lueCuadrillas.Enabled = true;
+            }
+        }
+
+        private void lueFormatos_EditValueChanged(object sender, EventArgs e)
+        {
+            if(lueFormatos.EditValue.ToString() == "004")
+            {
+                chkTodas.Checked = false;
+                chkTodas.Enabled = false;
+            }
+            else
+            {
+                chkTodas.Enabled = true;
             }
         }
     }

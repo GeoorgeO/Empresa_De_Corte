@@ -44,6 +44,9 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkTodas = new DevExpress.XtraEditors.CheckEdit();
+            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lueFormatos = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -62,14 +65,13 @@
             this.Prom_Cajas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tot_Importe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tot_Jefe = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lueCuadrillas = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.chkTodas = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueFormatos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties)).BeginInit();
@@ -79,8 +81,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager2
@@ -192,9 +192,9 @@
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 472);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 475);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1185, 29);
+            this.barDockControl2.Size = new System.Drawing.Size(1185, 26);
             // 
             // barDockControl3
             // 
@@ -202,7 +202,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(57, 472);
+            this.barDockControl3.Size = new System.Drawing.Size(52, 475);
             // 
             // barDockControl5
             // 
@@ -210,16 +210,16 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl5.Location = new System.Drawing.Point(1185, 0);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Size = new System.Drawing.Size(0, 472);
+            this.barDockControl5.Size = new System.Drawing.Size(0, 475);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(57, 0);
+            this.panelControl1.Location = new System.Drawing.Point(52, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(1128, 120);
+            this.panelControl1.Size = new System.Drawing.Size(1133, 120);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -236,9 +236,38 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1104, 96);
+            this.groupControl1.Size = new System.Drawing.Size(1109, 96);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Opciones de Busqueda";
+            // 
+            // chkTodas
+            // 
+            this.chkTodas.Location = new System.Drawing.Point(463, 59);
+            this.chkTodas.MenuManager = this.barManager2;
+            this.chkTodas.Name = "chkTodas";
+            this.chkTodas.Properties.Caption = "Todas";
+            this.chkTodas.Size = new System.Drawing.Size(65, 19);
+            this.chkTodas.TabIndex = 12;
+            this.chkTodas.CheckedChanged += new System.EventHandler(this.chkTodas_CheckedChanged);
+            // 
+            // lueCuadrillas
+            // 
+            this.lueCuadrillas.Location = new System.Drawing.Point(347, 58);
+            this.lueCuadrillas.Name = "lueCuadrillas";
+            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
+            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
+            this.lueCuadrillas.Size = new System.Drawing.Size(100, 20);
+            this.lueCuadrillas.TabIndex = 11;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(280, 62);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(51, 13);
+            this.labelControl4.TabIndex = 10;
+            this.labelControl4.Text = "Categoria:";
             // 
             // labelControl3
             // 
@@ -260,6 +289,7 @@
             this.lueFormatos.Size = new System.Drawing.Size(181, 20);
             this.lueFormatos.TabIndex = 8;
             this.lueFormatos.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lueFormatos_QueryPopUp);
+            this.lueFormatos.EditValueChanged += new System.EventHandler(this.lueFormatos_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -305,10 +335,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgReporteNomina);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(57, 120);
+            this.panelControl2.Location = new System.Drawing.Point(52, 120);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(1128, 352);
+            this.panelControl2.Size = new System.Drawing.Size(1133, 355);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgReporteNomina
@@ -318,7 +348,7 @@
             this.dtgReporteNomina.MainView = this.dtgValReporteNomina;
             this.dtgReporteNomina.MenuManager = this.barManager2;
             this.dtgReporteNomina.Name = "dtgReporteNomina";
-            this.dtgReporteNomina.Size = new System.Drawing.Size(1104, 328);
+            this.dtgReporteNomina.Size = new System.Drawing.Size(1109, 331);
             this.dtgReporteNomina.TabIndex = 0;
             this.dtgReporteNomina.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteNomina});
@@ -409,35 +439,6 @@
             this.Tot_Jefe.Visible = true;
             this.Tot_Jefe.VisibleIndex = 7;
             // 
-            // lueCuadrillas
-            // 
-            this.lueCuadrillas.Location = new System.Drawing.Point(347, 58);
-            this.lueCuadrillas.Name = "lueCuadrillas";
-            this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
-            this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
-            this.lueCuadrillas.Size = new System.Drawing.Size(100, 20);
-            this.lueCuadrillas.TabIndex = 11;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(280, 62);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(51, 13);
-            this.labelControl4.TabIndex = 10;
-            this.labelControl4.Text = "Categoria:";
-            // 
-            // chkTodas
-            // 
-            this.chkTodas.Location = new System.Drawing.Point(463, 59);
-            this.chkTodas.MenuManager = this.barManager2;
-            this.chkTodas.Name = "chkTodas";
-            this.chkTodas.Properties.Caption = "Todas";
-            this.chkTodas.Size = new System.Drawing.Size(65, 19);
-            this.chkTodas.TabIndex = 12;
-            this.chkTodas.CheckedChanged += new System.EventHandler(this.chkTodas_CheckedChanged);
-            // 
             // Frm_ReportesNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +460,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueFormatos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFin.Properties)).EndInit();
@@ -468,8 +471,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteNomina)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkTodas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
