@@ -28,7 +28,7 @@ namespace CuttingBusiness
         Excel.Range oRng;
         int FilaActual = 0;
         public string ColFinal { get; set; }
-
+        public int Opcion { get; set; }
         public string JefeCuadrilla { get; set; }
         GridControlCheckMarksSelection gridCheckMarksODC;
         string CadenaCodigos = null;
@@ -257,32 +257,50 @@ namespace CuttingBusiness
         }
         private void btnBuscar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(lueFormatos.EditValue.ToString()=="004")
+            dtInicio.ClosePopup();
+            dtFin.ClosePopup();
+            DateTime FInicio = dtInicio.DateTime;
+            DateTime FFin = dtFin.DateTime;
+            TimeSpan DiferenciaD = FFin - FInicio;
+            if (DiferenciaD.Days < 32)
             {
-                Formato_D();
-            }
-            else
-            {
-                gridCheckMarksODC.ClearSelection();
-                CLS_Reportes_Nomina Clase = new CLS_Reportes_Nomina();
-                DateTime Fecha;
-                Fecha = Convert.ToDateTime(dtInicio.EditValue);
-                Clase.FechaInicio = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
-                Fecha = Convert.ToDateTime(dtFin.EditValue);
-                Clase.FechaFin = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
-                if (lueCuadrillas.EditValue != null)
+                if (lueFormatos.EditValue.ToString() == "004")
                 {
-                    Clase.Nombre_Categoria = lueCuadrillas.Text;
+                    Opcion = 1;
+                    Formato_D();
                 }
                 else
                 {
-                    Clase.Nombre_Categoria = string.Empty;
+                    if (lueFormatos.EditValue.ToString() == "001")
+                    {
+                        Opcion = 0;
+                    }
+                    gridCheckMarksODC.ClearSelection();
+                    CLS_Reportes_Nomina Clase = new CLS_Reportes_Nomina();
+                    DateTime Fecha;
+                    Fecha = Convert.ToDateTime(dtInicio.EditValue);
+                    Clase.FechaInicio = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+                    Fecha = Convert.ToDateTime(dtFin.EditValue);
+                    Clase.FechaFin = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+                    if (lueCuadrillas.EditValue != null)
+                    {
+                        Clase.Nombre_Categoria = lueCuadrillas.Text;
+                    }
+                    else
+                    {
+                        Clase.Nombre_Categoria = string.Empty;
+                    }
+                    Clase.Opcion = Opcion;
+                    Clase.MtdSeleccionarNominas();
+                    if (Clase.Exito)
+                    {
+                        dtgReporteNomina.DataSource = Clase.Datos;
+                    }
                 }
-                Clase.MtdSeleccionarNominas();
-                if (Clase.Exito)
-                {
-                    dtgReporteNomina.DataSource = Clase.Datos;
-                }
+            }
+            else
+            {
+                XtraMessageBox.Show("El rango de fechas no puede ser mayor a un mes");
             }
         }
 
@@ -312,15 +330,19 @@ namespace CuttingBusiness
                     switch (lueFormatos.EditValue.ToString())
                     {
                         case "001":
+                            Opcion = 0;
                             Formato_A();
                             break;
                         case "002":
+                            Opcion = 1;
                             Formato_B();
                             break;
                         case "003":
+                            Opcion = 1;
                             Formato_C();
                             break;
                         case "004":
+                            Opcion = 1;
                             Formato_D();
                             break;
                         default:
@@ -546,6 +568,7 @@ namespace CuttingBusiness
             sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
             sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
             sel.Id_Cuadrilla = cuadrilla;
+            sel.Opcion = Opcion;
             sel.MtdSeleccionarNominaSubTotales();
             if (!sel.Exito)
             {
@@ -814,6 +837,7 @@ namespace CuttingBusiness
             sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
             sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
             sel.Id_Cuadrilla = cuadrilla;
+            sel.Opcion = Opcion;
             sel.MtdSeleccionarNominaSubTotales();
             if (!sel.Exito)
             {
@@ -1163,6 +1187,7 @@ namespace CuttingBusiness
             sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
             sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
             sel.Id_Cuadrilla = cuadrilla;
+            sel.Opcion = Opcion;
             sel.MtdSeleccionarNominaCortadores();
             if (!sel.Exito)
             {
@@ -1540,6 +1565,7 @@ namespace CuttingBusiness
             sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
             sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
             sel.Id_Cuadrilla = cuadrilla;
+            sel.Opcion = Opcion;
             sel.MtdSeleccionarNominaCortadores();
             if (!sel.Exito)
             {
@@ -1811,6 +1837,7 @@ namespace CuttingBusiness
             sel.FechaInicio = FInicio.Year + DosCero(FInicio.Month.ToString()) + DosCero(FInicio.Day.ToString());
             sel.FechaFin = FInicio.Year + DosCero(FFin.Month.ToString()) + DosCero(FFin.Day.ToString());
             sel.Id_Cuadrilla = cuadrilla;
+            sel.Opcion = Opcion;
             sel.MtdSeleccionarNominaCortadores();
             if (!sel.Exito)
             {

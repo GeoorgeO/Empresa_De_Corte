@@ -12,6 +12,7 @@ namespace CapaDeDatos
         public string FechaFin { get; set; }
         public string Id_Cuadrilla { get; set; }
         public String Nombre_Categoria { get; set; }
+        public int Opcion { get; set; }
         public void MtdSeleccionarFormatos()
         {
             TipoDato _dato = new TipoDato();
@@ -57,6 +58,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaFin");
                 _dato.CadenaTexto = Nombre_Categoria;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Categoria");
+                _dato.Entero = Opcion;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Opcion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -125,6 +128,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaFin");
                 _dato.CadenaTexto = Id_Cuadrilla;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuadrilla");
+                _dato.Entero = Opcion;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Opcion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -159,6 +164,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaFin");
                 _dato.CadenaTexto = Id_Cuadrilla;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuadrilla");
+                _dato.Entero = Opcion;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Opcion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
