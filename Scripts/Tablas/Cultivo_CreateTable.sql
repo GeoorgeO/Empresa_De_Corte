@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Cultivo](
 		[Id_Cultivo] [char](2) NOT NULL,
 		[Nombre_Cultivo] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Cultivo] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Cultivo] ASC

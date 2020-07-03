@@ -16,7 +16,9 @@ GO
 create PROCEDURE [dbo].[SP_Areas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Area char(4),
-	@Nombre_Area varchar(30)
+	@Nombre_Area varchar(30),
+	@Usuario varchar(10)
+	
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +40,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Areas
-		        SET Nombre_Area=@Nombre_Area
+		        SET Nombre_Area=@Nombre_Area,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Area=@Id_Area
 				
@@ -46,10 +50,14 @@ BEGIN
 		
 			INSERT INTO dbo.Areas
 	           (Id_Area
-	           ,Nombre_Area)
+	           ,Nombre_Area
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Area)
+	           ,@Nombre_Area
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

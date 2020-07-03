@@ -19,6 +19,10 @@ ELSE
 		[Repisa] [varchar](5) NULL,
 		[Stock] [numeric](18,0) NULL,
 		[Activo] [bit] NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 		[Id_Marca][char](4) NULL
 	 CONSTRAINT [PK_Productos] PRIMARY KEY CLUSTERED 
 	(

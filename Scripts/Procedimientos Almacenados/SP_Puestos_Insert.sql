@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Puestos_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Puesto char(3),
-	@Nombre_Puesto varchar(50)
+	@Nombre_Puesto varchar(50),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,6 +40,8 @@ BEGIN
 		
 			UPDATE dbo.Puestos
 		        SET Nombre_Puesto=@Nombre_Puesto
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Puesto=@Id_Puesto
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Puestos
 	           (Id_Puesto
-	           ,Nombre_Puesto)
+	           ,Nombre_Puesto
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Puesto)
+	           ,@Nombre_Puesto
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

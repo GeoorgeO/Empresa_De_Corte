@@ -17,7 +17,8 @@ create PROCEDURE [dbo].[SP_Estado_Insert]
 	-- Add the parameters for the stored procedure here
 	@Id_Estado char(3),
 	@Nombre_Estado varchar(20),
-	@Id_Pais varchar(20)
+	@Id_Pais varchar(20),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,7 +40,10 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Estado
-		        SET Nombre_Estado=@Nombre_Estado
+		        SET Nombre_Estado=@Nombre_Estado,
+				Id_Pais=@Id_Pais,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Estado=@Id_Estado
 				
@@ -48,11 +52,15 @@ BEGIN
 			INSERT INTO dbo.Estado
 	           (Id_Estado
 	           ,Nombre_Estado
-			   ,Id_Pais)
+			   ,Id_Pais
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Estado,
-			   @Id_Pais)
+			   @Id_Pais
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

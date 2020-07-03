@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Nombre_UnidadMedida { get; set; }
         public string Abrevia_UnidadMedida { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarUnidadesMedida()
         {
             TipoDato _dato = new TipoDato();
@@ -59,6 +61,11 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_UnidadMedida");
                 _dato.CadenaTexto = Abrevia_UnidadMedida;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Abrevia_UnidadMedida");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+
+
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

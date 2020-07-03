@@ -17,7 +17,8 @@ create PROCEDURE [dbo].[SP_UnidadesMedida_Insert]
 	-- Add the parameters for the stored procedure here
 	@Id_UnidadMedida char(3),
 	@Nombre_UnidadMedida varchar(150),
-	@Abrevia_UnidadMedida varchar(5)
+	@Abrevia_UnidadMedida varchar(5),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,7 +41,9 @@ BEGIN
 		
 			UPDATE dbo.UnidadesMedida
 		        SET Nombre_UnidadMedida=@Nombre_UnidadMedida,
-				Abrevia_UnidadMedida=@Abrevia_UnidadMedida
+				Abrevia_UnidadMedida=@Abrevia_UnidadMedida,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_UnidadMedida=@Id_UnidadMedida
 				
@@ -49,11 +52,15 @@ BEGIN
 			INSERT INTO dbo.UnidadesMedida
 	           (Id_UnidadMedida
 	           ,Nombre_UnidadMedida
-			   ,Abrevia_UnidadMedida)
+			   ,Abrevia_UnidadMedida
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_UnidadMedida
-			   ,@Abrevia_UnidadMedida)
+			   ,@Abrevia_UnidadMedida
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

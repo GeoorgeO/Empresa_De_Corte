@@ -12,7 +12,7 @@ namespace CapaDeDatos
         public string Id_Tipo_Domicilio { get; set; }
         public string Nombre_Tipo_Domicilio { get; set; }
 
-        
+        public string Usuario { get; set; }
 
         public void MtdSeleccionarTipoDomicilio()
         {
@@ -58,6 +58,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoDomicilio");
                 _dato.CadenaTexto = Nombre_Tipo_Domicilio;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_TipoDomicilio");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

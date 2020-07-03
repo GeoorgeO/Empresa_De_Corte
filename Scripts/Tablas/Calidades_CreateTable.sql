@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[MotivoSalida](
 		[Id_MotivoSalida] [char](3) NOT NULL,
 		[Nombre_MotivoSalida] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_MotivoSalida] PRIMARY KEY CLUSTERED 
 	(
 		[Id_MotivoSalida] ASC

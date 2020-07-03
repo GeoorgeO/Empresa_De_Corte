@@ -16,6 +16,8 @@ namespace CuttingBusiness
     {
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Productos_Tipo()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace CuttingBusiness
 
             Clase.Id_ProductoTipo = textId.Text.Trim();
             Clase.Nombre_ProductoTipo = textNombre.Text.Trim();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarProductoTipo();
 
             if (Clase.Exito)

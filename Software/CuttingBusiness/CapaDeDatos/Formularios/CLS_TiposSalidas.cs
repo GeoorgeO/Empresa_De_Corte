@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_TipoSalida { get; set; }
         public string Nombre_TipoSalida { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarTiposSalidas()
         {
             TipoDato _dato = new TipoDato();
@@ -57,6 +59,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoSalida");
                 _dato.CadenaTexto = Nombre_TipoSalida;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_TipoSalida");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

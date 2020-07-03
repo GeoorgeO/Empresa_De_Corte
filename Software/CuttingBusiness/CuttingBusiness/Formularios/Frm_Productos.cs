@@ -36,6 +36,9 @@ namespace CuttingBusiness
         public string Producto { get; set; }
         public string UnidadMedida { get;  set; }
         public bool PaSel { get; set; }
+
+        public string UsuariosLogin { get; set; }
+
         private void CargarProductos(String Activo)
         {
             gridControl1.DataSource = null;
@@ -69,6 +72,9 @@ namespace CuttingBusiness
             Clase.Anaquel = textAnaquel.Text.Trim();
             Clase.Id_ProductoTipo = cboProductoTipo.EditValue.ToString();
             Clase.Id_Marca = textMarca.Tag.ToString();
+
+            Clase.Usuario = UsuariosLogin.Trim();
+
             Clase.MtdInsertarProductos();
             if (Clase.Exito)
             {
@@ -238,6 +244,15 @@ namespace CuttingBusiness
             CargarProductos("1");
             CargarProductoTipo(null);
             iniciarTags();
+
+            if (PaSel == true)
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+            else
+            {
+                btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
         }
         public void CargarProductoTipo(string Valor)
         {
@@ -258,6 +273,7 @@ namespace CuttingBusiness
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             Frm_UnidadesMedida Uni = new Frm_UnidadesMedida();
+            Uni.UsuariosLogin = UsuariosLogin.Trim();
             Uni.PaSel = true;
             Uni.ShowDialog();
 
@@ -279,6 +295,7 @@ namespace CuttingBusiness
         private void btnTipoProducto_Click(object sender, EventArgs e)
         {
             Frm_Productos_Tipo frm = new Frm_Productos_Tipo();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarProductoTipo(null);
         }
@@ -305,6 +322,7 @@ namespace CuttingBusiness
         private void btnBusqMarca_Click(object sender, EventArgs e)
         {
             Frm_Marcas Uni = new Frm_Marcas();
+            Uni.UsuariosLogin = UsuariosLogin.Trim();
             Uni.PaSel = true;
             Uni.ShowDialog();
 

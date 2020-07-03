@@ -30,6 +30,10 @@ ELSE
 		[Festivo] [bit] NULL,
 		[Estatus] [char](1) NULL,
 		[Precio_Caja] [numeric](10,2) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_HojaNomina] PRIMARY KEY CLUSTERED 
 	(
 		[Id_HojaNomina] ASC

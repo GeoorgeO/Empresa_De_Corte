@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Marcas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Marca char(4),
-	@Nombre_Marca varchar(30)
+	@Nombre_Marca varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Marcas
-		        SET Nombre_Marca=@Nombre_Marca
+		        SET Nombre_Marca=@Nombre_Marca,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Marca=@Id_Marca
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Marcas
 	           (Id_Marca
-	           ,Nombre_Marca)
+	           ,Nombre_Marca
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Marca)
+	           ,@Nombre_Marca
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

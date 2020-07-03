@@ -21,16 +21,22 @@ namespace CuttingBusiness
         public string tempEstaus { get; set; }
 
 
-        string vtId_JefeCuadrilla="";
+        string vtId_JefeCuadrilla = "";
         int vtSecuencia = 0;
         decimal vtTotalImporte = 0;
         int vtCortadores;
+
+        DateTime fechaactual;
 
         public Boolean accesoEmpleados { get; set; }
 
         Boolean Abrir=false,Bandera=false,CambioDetalle=false;
 
         decimal valor;
+
+        decimal precio_maniobra;
+
+        public string UsuariosLogin { get; set; }
 
         public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
         public CultureInfo culture = CultureInfo.CreateSpecificCulture("es-MX");
@@ -49,8 +55,9 @@ namespace CuttingBusiness
             tempIndexSel = string.Empty;
             cargarCuadrillas();
             dateFecha.EditValue = DateTime.Today;
+            fechaactual = DateTime.Today;
             cargarParametros();
-
+            
             Importe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             Importe.DisplayFormat.FormatString = "n0";
 
@@ -154,14 +161,17 @@ namespace CuttingBusiness
                 if(Convert.ToDecimal(textKgcortadosxdia.Text)>= Convert.ToDecimal(Clase.Datos.Rows[0][6]) && Convert.ToDecimal(textKgcortadosxdia.Text) <= Convert.ToDecimal(Clase.Datos.Rows[0][7]))
                 {
                     textPagoJefeCuadrilla.Text = (Convert.ToDecimal(Clase.Datos.Rows[0][8]) + Convert.ToDecimal(Clase.Datos.Rows[0][9])).ToString();
+                    precio_maniobra = Convert.ToDecimal(Clase.Datos.Rows[0][9]);
                 }
                 if (Convert.ToDecimal(textKgcortadosxdia.Text) >= Convert.ToDecimal(Clase.Datos.Rows[0][10]) && Convert.ToDecimal(textKgcortadosxdia.Text) <= Convert.ToDecimal(Clase.Datos.Rows[0][11]))
                 {
                     textPagoJefeCuadrilla.Text = (Convert.ToDecimal(Clase.Datos.Rows[0][12]) + Convert.ToDecimal(Clase.Datos.Rows[0][13])).ToString();
+                    precio_maniobra = Convert.ToDecimal(Clase.Datos.Rows[0][13]);
                 }
                 if (Convert.ToDecimal(textKgcortadosxdia.Text) >= Convert.ToDecimal(Clase.Datos.Rows[0][14]) && Convert.ToDecimal(textKgcortadosxdia.Text) <= Convert.ToDecimal(Clase.Datos.Rows[0][15]))
                 {
                     textPagoJefeCuadrilla.Text = (Convert.ToDecimal(Clase.Datos.Rows[0][16]) + Convert.ToDecimal(Clase.Datos.Rows[0][17])).ToString();
+                    precio_maniobra = Convert.ToDecimal(Clase.Datos.Rows[0][17]);
                 }
                 vtCortadores = Convert.ToInt32(Clase.Datos.Rows[0][18]);
                 //vtTope = vtCortadores * Convert.ToDecimal(Clase.Datos.Rows[0][1]);
@@ -181,6 +191,7 @@ namespace CuttingBusiness
             {
                 Abrir = true;
                 dateFecha.EditValue = Convert.ToDateTime(Clase.Datos.Rows[0][1]);
+                fechaactual= Convert.ToDateTime(Clase.Datos.Rows[0][1]);
                 lueCuadrillas.EditValue = Clase.Datos.Rows[0][2].ToString();
                 labelEmpresa.Text = Clase.Datos.Rows[0][3].ToString();
                 labelPagoDiario.Text = Clase.Datos.Rows[0][4].ToString();
@@ -455,6 +466,8 @@ namespace CuttingBusiness
                 }
                 Decimal.TryParse(textPrecioCaja.Text, style, culture, out valor);
                 Clase.Precio_caja = valor;
+                Clase.Pago_Maniobra = precio_maniobra;
+                Clase.Usuario = UsuariosLogin.Trim();
                 Clase.MtdInsertarHojaNomina();
                 if (Clase.Exito)
                 {
@@ -528,7 +541,7 @@ namespace CuttingBusiness
 
             Clase.Importe = importe;
 
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarHojaNominaDetalle();
             if (Clase.Exito)
             {
@@ -852,7 +865,7 @@ namespace CuttingBusiness
                 {
                     if (verificaEmpleado())
                     {
-                        if (verificaxfecha())
+                        if (verificaxfecha(lueEmpleados.EditValue.ToString()))
                         {
 
                         
@@ -1120,10 +1133,10 @@ namespace CuttingBusiness
             return true;
         }
 
-        private Boolean verificaxfecha()
+        private Boolean verificaxfecha(string empleado)
         {
             CLS_Empleados clase = new CLS_Empleados();
-            clase.Id_Empleado = lueEmpleados.EditValue.ToString();
+            clase.Id_Empleado = empleado;
             DateTime Fecha = Convert.ToDateTime(dateFecha.Text.Trim());
             clase.Fecha_HojaNomina = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             clase.MtdSeleccionarEmpleadoxfecha();
@@ -1445,6 +1458,7 @@ namespace CuttingBusiness
         {
             Frm_CambiaOrden Ventana = new Frm_CambiaOrden();
             Ventana.Orden = textIdHojaNomina.Text.Trim();
+            Ventana.UsuariosLogin = UsuariosLogin.Trim();
             Ventana.ShowDialog();
             if (Ventana.nuevaOrden!=null)
             {
@@ -1537,7 +1551,7 @@ namespace CuttingBusiness
             }
         }
 
-      
+       
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {
@@ -1556,14 +1570,68 @@ namespace CuttingBusiness
                 {
                     if (Bandera == false)
                     {
-                        Bandera = true;
-                        guardarHoja();
+                        if (verificajefecuadrillaxfecha()){
+                            bool banda = false;
+                            for (int x = 0; x < gridView1.RowCount; x++)
+                            {
+                                int xRow = gridView1.GetVisibleRowHandle(x);
+
+                                if (verificaxfecha(gridView1.GetRowCellValue(xRow, "Id_empleado").ToString())==false)
+                                {
+                                    banda = true;
+                                    break;
+                                }
+                            }
+
+                            if (banda==false)
+                            {
+                                Bandera = true;
+                                guardarHoja();
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Nose puede cambiar de fecha, ya que existen empleados en otra Hoja con esa fecha, Favor de verificar");
+                            }
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Nose puede cambiar de fecha, ya que existe ese jefe de cuadrilla en otra Hoja con esa fecha, Favor de verificar");
+                            dateFecha.EditValue = fechaactual;
+                        }
+                        
                     }
                     else
                     {
                         if (textIdHojaNomina.Text.Trim().Length >= 6)
                         {
-                            guardarHoja();
+                            if (verificajefecuadrillaxfecha())
+                            {
+                                bool banda = false;
+                                for (int x = 0; x < gridView1.RowCount; x++)
+                                {
+                                    int xRow = gridView1.GetVisibleRowHandle(x);
+
+                                    if (verificaxfecha(gridView1.GetRowCellValue(xRow, "Id_empleado").ToString()) == false)
+                                    {
+                                        banda = true;
+                                        break;
+                                    }
+                                }
+
+                                if (banda == false)
+                                {
+                                    guardarHoja();
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("Nose puede cambiar de fecha, ya que existen empleados en otra Hoja con esa fecha, Favor de verificar");
+                                }
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Nose puede cambiar de fecha, ya que existe ese jefe de cuadrilla en otra Hoja con esa fecha, Favor de verificar");
+                            }
+
                         }
                             
                     }

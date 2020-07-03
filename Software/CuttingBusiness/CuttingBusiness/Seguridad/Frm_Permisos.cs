@@ -18,6 +18,9 @@ namespace CuttingBusiness
         public string IdPantalla { get; set; }
         public string IdPerfil { get; set; }
         public Boolean PaSel { get; set; }
+
+        public string UsuariosLogin { get; set; }
+
         public string InventarioPantallaIdDisponible { get; set; }
         public string InventarioPantallaIdAsignada { get; set; }
         private static Frm_Permisos m_FormDefInstance;
@@ -62,6 +65,8 @@ namespace CuttingBusiness
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
             Clase.Id_Pantalla = AddPantalla;
             Clase.Id_Perfil = cmbPerfiles.EditValue.ToString();
+
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarPerfilesPantallas();
             if (Clase.Exito)
             {

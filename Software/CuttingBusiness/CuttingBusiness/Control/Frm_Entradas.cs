@@ -24,6 +24,8 @@ namespace CuttingBusiness
         string RutaPDF = "", NombrePDF = "";
         Byte[] ArchivoPDFGlobal = null;
 
+        public string UsuariosLogin { get; set; }
+
         private static Frm_Entradas m_FormDefInstance;
         public static Frm_Entradas DefInstance
         {
@@ -82,6 +84,7 @@ namespace CuttingBusiness
             Frm_Proveedores frm = new Frm_Proveedores();
             frm.IdProveedor = string.Empty;
             frm.Proveedor = string.Empty;
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
             txtNombreProveedor.Tag = frm.IdProveedor;
@@ -116,13 +119,14 @@ namespace CuttingBusiness
         private void btnTipoEntrada_Click(object sender, EventArgs e)
         {
             Frm_TiposEntradas frm = new Frm_TiposEntradas();
-           
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarTiposdeEntrada(null);
         }
         private void btnSeries_Click(object sender, EventArgs e)
         {
             Frm_Series frm = new Frm_Series();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = false;
             frm.ShowDialog();
             CargarSeries(null);
@@ -135,6 +139,7 @@ namespace CuttingBusiness
             frm.Producto = string.Empty;
             frm.UnidadMedida = string.Empty;
             frm.PaSel = true;
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             txtCodigo.Text = frm.IdProducto;
             txtDescripcion.Text = frm.Producto;
@@ -758,7 +763,7 @@ namespace CuttingBusiness
                 Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
             }
             Clase.Id_Empleado = textEmpleado.Tag.ToString();
-            
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarEntradaEncabezado();
             if (Clase.Exito)
             {
@@ -1027,6 +1032,7 @@ namespace CuttingBusiness
             Frm_Empleados frm = new Frm_Empleados();
             frm.IdEmpleado = string.Empty;
             frm.Empleado = string.Empty;
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
             textEmpleado.Tag = frm.IdEmpleado;

@@ -25,6 +25,8 @@ namespace CuttingBusiness
         public string IdSerie { get; set; }
         public string Serie { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         private void CargarSerie()
         {
             gridControl1.DataSource = null;
@@ -43,6 +45,8 @@ namespace CuttingBusiness
 
             Clase.Id_Serie = textId.Text.Trim();
             Clase.Nombre_Serie = textNombre.Text.Trim();
+
+            Clase.Usuario = UsuariosLogin.Trim();
 
             Clase.MtdInsertarSerie();
 

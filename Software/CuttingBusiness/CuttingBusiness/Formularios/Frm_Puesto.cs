@@ -25,6 +25,8 @@ namespace CuttingBusiness
         public string IdPuesto { get; set; }
         public string Puesto { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         private void CargarPuestos()
         {
             gridControl1.DataSource = null;
@@ -43,7 +45,7 @@ namespace CuttingBusiness
 
             Clase.Id_Puesto = textId.Text.Trim();
             Clase.Nombre_Puesto = textNombre.Text.Trim();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarPuestos();
 
             if (Clase.Exito)

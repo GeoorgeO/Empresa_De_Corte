@@ -42,6 +42,10 @@ namespace CapaDeDatos
         public string categoria { get; set; }
         public string todascategorias { get; set; }
 
+        public decimal Pago_Maniobra { get; set; }
+
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarHojaNomina()
         {
             TipoDato _dato = new TipoDato();
@@ -293,6 +297,11 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Estatus");
                 _dato.DecimalValor = Precio_caja;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_caja");
+                _dato.DecimalValor = Pago_Maniobra;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Pago_Maniobra");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -325,6 +334,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina");
                 _dato.CadenaTexto = Id_HojaNomina_New;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_HojaNomina_New");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

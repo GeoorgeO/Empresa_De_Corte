@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Cuadrillas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Cuadrilla char(4),
-	@Id_Categoria char(4)
+	@Id_Categoria char(4),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Cuadrillas
-		        SET Id_Categoria=@Id_Categoria
+		        SET Id_Categoria=@Id_Categoria,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Cuadrilla=@Id_Cuadrilla
 				
@@ -46,10 +49,15 @@ BEGIN
 		
 			INSERT INTO dbo.Cuadrillas
 	           (Id_Cuadrilla
-	           ,Id_Categoria)
+	           ,Id_Categoria
+			   ,Creador
+			   ,Fecha_Creador
+			   )
 	     	VALUES
 	           (@maximo
-	           ,@Id_Categoria)
+	           ,@Id_Categoria
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

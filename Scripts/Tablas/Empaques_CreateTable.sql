@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Empaques](
 		[Id_Empaque] [char](3) NOT NULL,
 		[Nombre_Empaque] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Empaques] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Empaque] ASC

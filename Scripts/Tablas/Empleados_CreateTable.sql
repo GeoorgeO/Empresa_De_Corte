@@ -20,6 +20,10 @@ ELSE
 		[Fecha_Baja_Seg_Vida][datetime] NULL,
 		[Id_Puesto][char](3) NULL,
 		[Id_Cuadrilla][char](5) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 		[Activo][bit] NOT NULL
 	 CONSTRAINT [PK_Empleados] PRIMARY KEY CLUSTERED 
 	(

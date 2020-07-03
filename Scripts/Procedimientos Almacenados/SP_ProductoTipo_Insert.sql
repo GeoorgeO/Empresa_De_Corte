@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_ProductoTipo_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_ProductoTipo char(2),
-	@Nombre_ProductoTipo varchar(30)
+	@Nombre_ProductoTipo varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -33,12 +34,14 @@ BEGIN
 		select @maximo=right(Concat('00', isnull(max(Id_ProductoTipo),0)+1),2) from dbo.ProductoTipo
 
 		declare @Existe int
-		select @Existe = count(Id_Cultivo) from dbo.Cultivo a where (a.Id_Cultivo=@Id_ProductoTipo)
+		select @Existe = count(Id_ProductoTipo) from dbo.ProductoTipo a where (a.Id_ProductoTipo=@Id_ProductoTipo)
 
 		if @Existe>0 
 		
 			UPDATE dbo.ProductoTipo
-		        SET Nombre_ProductoTipo=@Nombre_ProductoTipo
+		        SET Nombre_ProductoTipo=@Nombre_ProductoTipo,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_ProductoTipo=@Id_ProductoTipo
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.ProductoTipo
 	           (Id_ProductoTipo
-	           ,Nombre_ProductoTipo)
+	           ,Nombre_ProductoTipo
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_ProductoTipo)
+	           ,@Nombre_ProductoTipo
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

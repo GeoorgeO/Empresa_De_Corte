@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_Puesto { get; set; }
         public string Nombre_Puesto { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarPuestos()
         {
             TipoDato _dato = new TipoDato();
@@ -57,6 +59,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Puesto");
                 _dato.CadenaTexto = Nombre_Puesto;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Puesto");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

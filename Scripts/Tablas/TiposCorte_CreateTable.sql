@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[TiposCorte](
 		[Id_TipoCorte] [char](3) NOT NULL,
 		[Nombre_TipoCorte] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_TipoCorte] PRIMARY KEY CLUSTERED 
 	(
 		[Id_TipoCorte] ASC

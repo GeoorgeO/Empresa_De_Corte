@@ -39,6 +39,7 @@ BEGIN
 	      ,Sueldo_Bruto
 		from Parametros_Nomina_B
 		where Tipo_Empleado=@Tipo_Empleado
+		order by Sueldo_Bruto desc
 
 END
 GO

@@ -19,6 +19,8 @@ namespace CuttingBusiness
         public string Pais { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Pais(Boolean BPasel)
         {
             this.PaSel = BPasel;
@@ -44,6 +46,7 @@ namespace CuttingBusiness
             CLS_Pais Pais = new CLS_Pais();
             Pais.Id_Pais = textId.Text.Trim();
             Pais.Nombre_Pais = textNombre.Text.Trim();
+            Pais.Usuario = UsuariosLogin.Trim();
             Pais.MtdInsertarPais();
             if (Pais.Exito)
             {

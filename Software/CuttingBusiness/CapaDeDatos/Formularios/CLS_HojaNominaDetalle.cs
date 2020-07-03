@@ -15,6 +15,8 @@ namespace CapaDeDatos
         public decimal Cajas { get; set; }
         public decimal Importe { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdInsertarHojaNominaDetalle()
         {
             TipoDato _dato = new TipoDato();
@@ -34,6 +36,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Cajas");
                 _dato.DecimalValor = Importe;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Importe");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

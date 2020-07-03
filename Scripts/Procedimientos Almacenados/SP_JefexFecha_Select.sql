@@ -25,7 +25,7 @@ GO
 -- =============================================
 CREATE PROCEDURE SP_JefexFecha_Select
 	-- Add the parameters for the stored procedure here
-	@Id_Cuadrilla  char(3),
+	@Id_Cuadrilla  char(4),
 	@Fecha_HojaNomina datetime
 AS
 BEGIN

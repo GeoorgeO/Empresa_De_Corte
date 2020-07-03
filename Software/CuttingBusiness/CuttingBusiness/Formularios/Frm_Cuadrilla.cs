@@ -14,6 +14,9 @@ namespace CuttingBusiness
 {
     public partial class Frm_Cuadrilla : DevExpress.XtraEditors.XtraForm
     {
+
+        public string UsuariosLogin { get; set; }
+
         public Frm_Cuadrilla()
         {
             InitializeComponent();
@@ -51,6 +54,8 @@ namespace CuttingBusiness
             CLS_Cuadrillas Clase = new CLS_Cuadrillas();
             Clase.Id_Cuadrilla = textId.Text.Trim();
             Clase.Id_Categoria = gleCategoria.EditValue.ToString();
+
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCuadrillas();
             if (Clase.Exito)
             {
@@ -149,6 +154,7 @@ namespace CuttingBusiness
         private void btnBusqCategoria_Click(object sender, EventArgs e)
         {
             Frm_CuadrillaCategoria Clase = new Frm_CuadrillaCategoria();
+            Clase.UsuariosLogin = UsuariosLogin.Trim();
             Clase.ShowDialog();
             CargarCategoriasCuadrilla();
         }

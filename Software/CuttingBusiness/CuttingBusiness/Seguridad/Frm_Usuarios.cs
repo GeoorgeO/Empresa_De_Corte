@@ -77,8 +77,7 @@ namespace CuttingBusiness
             Clase.Nombre_Usuario =textNombre.Text.Trim();
             Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
-            Clase.Creador = UsuariosLogin;
-            Clase.Modificador= UsuariosLogin;
+            Clase.Usuario = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
             {
@@ -130,7 +129,6 @@ namespace CuttingBusiness
 
         private void Frm_Usuarios_Load(object sender, EventArgs e)
         {
-            UsuariosLogin = "001";
             CargarPerfiles(null);
             CargarUsuarios();
             

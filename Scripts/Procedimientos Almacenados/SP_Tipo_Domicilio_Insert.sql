@@ -16,8 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Tipo_Domicilio_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_TipoDomicilio char(4),
-	@Nombre_TipoDomicilio varchar(50)
-	
+	@Nombre_TipoDomicilio varchar(50),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Tipo_Domicilio
-		        SET Nombre_TipoDomicilio=@Nombre_TipoDomicilio
+		        SET Nombre_TipoDomicilio=@Nombre_TipoDomicilio,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_TipoDomicilio=@Id_TipoDomicilio
 				
@@ -47,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Tipo_Domicilio
 	           (Id_TipoDomicilio
-	           ,Nombre_TipoDomicilio)
+	           ,Nombre_TipoDomicilio
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_TipoDomicilio)
+	           ,@Nombre_TipoDomicilio
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

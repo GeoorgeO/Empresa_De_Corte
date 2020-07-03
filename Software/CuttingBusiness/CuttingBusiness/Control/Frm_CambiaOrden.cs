@@ -22,6 +22,8 @@ namespace CuttingBusiness
 
         public string nuevaOrden;
 
+        public string UsuariosLogin { get; set; }
+
         private void Frm_CambiaOrden_Load(object sender, EventArgs e)
         {
             textOrden.Text = Orden.Trim();
@@ -32,7 +34,7 @@ namespace CuttingBusiness
             CLS_HojaNomina clase = new CLS_HojaNomina();
             clase.Id_HojaNomina = textOrden.Text.Trim();
             clase.Id_HojaNomina_New = textOrdenNew.Text.Trim();
-            
+            clase.Usuario = UsuariosLogin.Trim();
             clase.MtdActuaizaOrdenHojaNomina();
             if (clase.Exito)
             {

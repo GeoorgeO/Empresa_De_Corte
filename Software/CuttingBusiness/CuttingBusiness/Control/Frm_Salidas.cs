@@ -36,6 +36,8 @@ namespace CuttingBusiness
             }
         }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Salidas()
         {
             InitializeComponent();
@@ -492,6 +494,7 @@ namespace CuttingBusiness
             DateTime Fecha = Convert.ToDateTime(dateFecha.Text.Trim());
             Clase.Fecha_Salida = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Numero_Articulossalida = SumarCantidadArticulos();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarSalidasEncabezado();
             if (Clase.Exito)
             {
@@ -700,6 +703,7 @@ namespace CuttingBusiness
         private void btnSeries_Click(object sender, EventArgs e)
         {
             Frm_Series frm = new Frm_Series();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = false;
             frm.ShowDialog();
             CargarSeries(null);
@@ -712,6 +716,7 @@ namespace CuttingBusiness
             frm.Producto = string.Empty;
             frm.UnidadMedida = string.Empty;
             frm.PaSel = true;
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             txtCodigo.Text = frm.IdProducto;
             txtDescripcion.Text = frm.Producto;
@@ -785,7 +790,7 @@ namespace CuttingBusiness
         private void btnTipoSalida_Click(object sender, EventArgs e)
         {
             Frm_TiposSalidas frm = new Frm_TiposSalidas();
-
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarTiposdeSalida(null);
         }

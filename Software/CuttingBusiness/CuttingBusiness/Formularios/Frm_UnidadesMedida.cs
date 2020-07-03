@@ -19,6 +19,8 @@ namespace CuttingBusiness
         public string UnidadMedida { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_UnidadesMedida()
         {
             InitializeComponent();
@@ -44,6 +46,8 @@ namespace CuttingBusiness
             Clase.Id_UnidadMedida = textId.Text.Trim();
             Clase.Nombre_UnidadMedida = textNombre.Text.Trim();
             Clase.Abrevia_UnidadMedida = textAbrevia.Text.Trim();
+
+            Clase.Usuario = UsuariosLogin.Trim(); 
             Clase.MtdInsertarUnidadesMedida();
             if (Clase.Exito)
             {

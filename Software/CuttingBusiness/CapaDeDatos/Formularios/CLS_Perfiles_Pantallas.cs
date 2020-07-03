@@ -11,6 +11,8 @@ namespace CapaDeDatos
         public string Id_Pantalla { get; set; }
         public string Id_Perfil { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarPantallasDisponibles()
         {
             TipoDato _dato = new TipoDato();
@@ -145,6 +147,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pantalla");
                 _dato.CadenaTexto = Id_Perfil;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

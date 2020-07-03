@@ -24,6 +24,7 @@ namespace CuttingBusiness
         public string IdTipoDomicilio { get; set; }
         public string TipoDomicilio { get; set; }
 
+        public string UsuariosLogin { get; set; }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -65,6 +66,7 @@ namespace CuttingBusiness
             CLS_Tipo_Domicilio TipoDomicilio = new CLS_Tipo_Domicilio();
             TipoDomicilio.Id_Tipo_Domicilio = textId.Text.Trim();
             TipoDomicilio.Nombre_Tipo_Domicilio = textNombre.Text.Trim();
+            TipoDomicilio.Usuario = UsuariosLogin.Trim();
             TipoDomicilio.MtdInsertarTipoDomicilio();
             if (TipoDomicilio.Exito)
             {

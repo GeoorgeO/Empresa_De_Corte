@@ -27,7 +27,8 @@ create PROCEDURE [dbo].[SP_Empleados_Insert]
 	@Fecha_Baja_Seg_Vida varchar(15),
 	@Id_Puesto char(3),
 	@Id_Cuadrilla char(5),
-	@Activo bit
+	@Activo bit,
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -73,7 +74,9 @@ BEGIN
 				Fecha_Baja_Seg_Vida=@Fecha_Baja_Seg_Vida,
 				Id_Puesto=@Id_Puesto,
 				Id_Cuadrilla=@Id_Cuadrilla,
-				Activo=@Activo
+				Activo=@Activo,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Empleado=@Id_Empleado
 				
@@ -91,7 +94,9 @@ BEGIN
 			   ,Fecha_Baja_Seg_Vida
 			   ,Id_Puesto
 			   ,Id_Cuadrilla
-			   ,Activo)
+			   ,Activo
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Empleado
@@ -105,7 +110,9 @@ BEGIN
 			   ,@Fecha_Baja_Seg_Vida
 			   ,@Id_Puesto
 			   ,@Id_Cuadrilla
-			   ,@Activo)
+			   ,@Activo
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

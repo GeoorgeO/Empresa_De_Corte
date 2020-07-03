@@ -30,6 +30,8 @@ namespace CuttingBusiness
             }
         }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_PrecapturaODC()
         {
             InitializeComponent();
@@ -72,7 +74,9 @@ namespace CuttingBusiness
             }
             Clase.Id_Area = textArea.Tag.ToString().Trim();
             Clase.Id_Duenio = textProductor.Tag.ToString().Trim();
-           
+
+            Clase.Usuario = UsuariosLogin.Trim();
+
             Clase.MtdInsertarPrecapturaODC();
             if (Clase.Exito)
             {
@@ -257,6 +261,7 @@ namespace CuttingBusiness
         private void btnHuertas_Click(object sender, EventArgs e)
         {
             Frm_Huertas frm = new Frm_Huertas();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
 
@@ -269,6 +274,7 @@ namespace CuttingBusiness
         private void btnTiposCorte_Click(object sender, EventArgs e)
         {
             Frm_TiposCorte frm = new Frm_TiposCorte();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
 

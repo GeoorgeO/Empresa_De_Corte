@@ -72,6 +72,7 @@
             this.btn_AperturaNomina = new DevExpress.XtraBars.BarButtonItem();
             this.btnParametroNomina = new DevExpress.XtraBars.BarButtonItem();
             this.btnParametroImportarServicios = new DevExpress.XtraBars.BarButtonItem();
+            this.btnParemetrosRepotes = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -99,7 +100,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnParemetrosRepotes = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -536,6 +536,15 @@
             this.btnParametroImportarServicios.Name = "btnParametroImportarServicios";
             this.btnParametroImportarServicios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametroImportarServicios_ItemClick);
             // 
+            // btnParemetrosRepotes
+            // 
+            this.btnParemetrosRepotes.Caption = "Reportes Nomina";
+            this.btnParemetrosRepotes.Id = 42;
+            this.btnParemetrosRepotes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParemetrosRepotes.ImageOptions.Image")));
+            this.btnParemetrosRepotes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnParemetrosRepotes.ImageOptions.LargeImage")));
+            this.btnParemetrosRepotes.Name = "btnParemetrosRepotes";
+            this.btnParemetrosRepotes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParemetrosRepotes_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -727,15 +736,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
-            // 
-            // btnParemetrosRepotes
-            // 
-            this.btnParemetrosRepotes.Caption = "Reportes Nomina";
-            this.btnParemetrosRepotes.Id = 42;
-            this.btnParemetrosRepotes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnParemetrosRepotes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnParemetrosRepotes.Name = "btnParemetrosRepotes";
-            this.btnParemetrosRepotes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParemetrosRepotes_ItemClick);
             // 
             // Frm_Principal
             // 

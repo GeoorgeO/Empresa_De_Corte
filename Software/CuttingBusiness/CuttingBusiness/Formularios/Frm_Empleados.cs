@@ -169,6 +169,7 @@ namespace CuttingBusiness
                 Clase.Id_Cuadrilla = string.Empty;
             }
             Clase.Activo = "1";
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarEmpleados();
             if (Clase.Exito)
             {
@@ -196,6 +197,7 @@ namespace CuttingBusiness
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
             Domicilio.Id_Empleado = textId.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.Usuario = UsuariosLogin.Trim();
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
             {
@@ -344,6 +346,7 @@ namespace CuttingBusiness
         private void btnBusqPuesto_Click(object sender, EventArgs e)
         {
             Frm_Puesto Clase = new Frm_Puesto();
+            Clase.UsuariosLogin = UsuariosLogin.Trim();
             Clase.PaSel = true;
             Clase.ShowDialog();
 
@@ -441,6 +444,7 @@ namespace CuttingBusiness
         private void btnBusqEstado_Click(object sender, EventArgs e)
         {
             Frm_Ciudad Clase = new Frm_Ciudad();
+            Clase.UsuariosLogin = UsuariosLogin.Trim();
             Clase.PaSel = true;
             Clase.ShowDialog();
 
@@ -480,6 +484,7 @@ namespace CuttingBusiness
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
         {
             Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.UsuariosLogin = UsuariosLogin.Trim();
             tipoDomicilio.PaSel = true;
             tipoDomicilio.ShowDialog();
 

@@ -18,6 +18,10 @@ ELSE
 		[FacturaPDF] [varbinary](max) NULL,
 		[FacturaPDFNombre] [varchar](80) NULL,
 		[Id_Empleado][char](6) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_EntradaEncabezado] PRIMARY KEY CLUSTERED 
 	(
 		[Serie_Entrada] ASC,

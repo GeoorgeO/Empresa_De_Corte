@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Jefes_Area](
 		[Id_Jefe_Area] [char](4) NOT NULL,
 		[Nombre_Jefe_Area] [varchar](50) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Jefes_Area] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Jefe_Area] ASC

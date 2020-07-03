@@ -23,6 +23,8 @@ namespace CapaDeDatos
         public string Id_ProductoTipo { get; set; }
         public string Id_Marca { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarProductos()
         {
             TipoDato _dato = new TipoDato();
@@ -119,6 +121,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_ProductoTipo");
                 _dato.CadenaTexto = Id_Marca;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Marca");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

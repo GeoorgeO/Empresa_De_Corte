@@ -18,6 +18,8 @@ namespace CuttingBusiness
         public string Marca { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Marcas()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace CuttingBusiness
             CLS_Marcas Clase = new CLS_Marcas();
             Clase.Id_Marca = textId.Text.Trim();
             Clase.Nombre_Marca = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarMarcas();
             if (Clase.Exito)
             {

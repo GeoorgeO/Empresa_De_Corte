@@ -55,7 +55,7 @@ BEGIN
 			ODC.Id_Duenio,
 			Nombre_Duenio
 		from PrecapturaODC as ODC
-		left join Huertas as hue on hue.Id_Huerta=ODC.Id_Huerta
+		left join Huerta as hue on hue.Id_Huerta=ODC.Id_Huerta
 		left join TiposCorte as tc on tc.Id_TipoCorte=ODC.Id_TipoCorte
 		left join Empaques as E on E.Id_Empaque=ODC.Id_Empaque
 		left join Areas as A on A.Id_Area=ODC.Id_Area

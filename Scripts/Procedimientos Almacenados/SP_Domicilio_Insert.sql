@@ -24,7 +24,8 @@ create PROCEDURE [dbo].[SP_Domicilio_Insert]
 	@Id_Ciudad char(3),
 	@Id_TipoDomicilio char(4),
 	@Id_Persona char(8),
-	@id_TipoPersona char(4)
+	@id_TipoPersona char(4),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -54,7 +55,9 @@ BEGIN
 				Id_Ciudad=@Id_Ciudad,
 				Id_TipoDomicilio=@Id_TipoDomicilio,
 				Id_Persona=@Id_Persona,
-				id_TipoPersona=@id_TipoPersona
+				id_TipoPersona=@id_TipoPersona,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Domicilio=@Id_Domicilio
 				
@@ -70,7 +73,9 @@ BEGIN
 			   ,Id_Ciudad
 			   ,Id_TipoDomicilio
 			   ,Id_Persona
-			   ,id_TipoPersona)
+			   ,id_TipoPersona
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Calle
@@ -81,7 +86,9 @@ BEGIN
 			   ,@Id_Ciudad
 			   ,@Id_TipoDomicilio
 			   ,@Id_Persona
-			   ,@id_TipoPersona)
+			   ,@id_TipoPersona
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

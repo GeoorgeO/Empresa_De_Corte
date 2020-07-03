@@ -33,6 +33,8 @@ namespace CapaDeDatos
         public string Lote { get; set; }
         public string Fecha_Caducidad { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarEntradaPDF()
         {
             TipoDato _dato = new TipoDato();
@@ -123,6 +125,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Orden_Compra");
                 _dato.CadenaTexto = Id_Empleado;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

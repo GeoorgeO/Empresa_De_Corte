@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Marcas](
 		[Id_Marca] [char](4) NOT NULL,
 		[Nombre_Marca] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Marcas] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Marca] ASC

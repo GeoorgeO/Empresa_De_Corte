@@ -21,7 +21,8 @@ create PROCEDURE [dbo].[SP_Clientes_Insert]
 	@Telefono2 varchar(15),
 	@Email varchar(50),
 	@Contacto varchar(100),
-	@RFC varchar(20)
+	@RFC varchar(20),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -48,9 +49,11 @@ BEGIN
 				Telefono2=@Telefono2,
 				Email=@Email,
 				Contacto=@Contacto,
-				RFC=@RFC
+				RFC=@RFC,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
-		    	Id_Proveedor=@Id_Proveedor
+		    	Id_Cliente=@Id_Cliente
 				
 		else
 		
@@ -61,7 +64,9 @@ BEGIN
 			   ,Telefono2
 			   ,Email
 			   ,Contacto
-			   ,RFC)
+			   ,RFC
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Cliente
@@ -69,7 +74,9 @@ BEGIN
 			   ,@Telefono2
 			   ,@Email
 			   ,@Contacto
-			   ,@RFC)
+			   ,@RFC
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

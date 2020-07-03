@@ -38,6 +38,10 @@ ELSE
 		[Pago_Sup_3] [numeric](10,2) NULL,
 		[Pago_Inf_3_Mission] [numeric](10,2) NULL,
 		[Pago_Sup_3_Mission] [numeric](10,2) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 		[Id_Tipo][char](1) NOT NULL
 	 CONSTRAINT [PK_Parametros] PRIMARY KEY CLUSTERED 
 	(

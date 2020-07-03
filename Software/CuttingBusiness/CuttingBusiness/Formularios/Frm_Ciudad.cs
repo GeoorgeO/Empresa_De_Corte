@@ -29,6 +29,8 @@ namespace CuttingBusiness
         public string IdEstado { get; set; }
         public string Estado { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         private void CargarCiudad()
         {
             gridControl1.DataSource = null;
@@ -48,7 +50,7 @@ namespace CuttingBusiness
             Clase.Id_Ciudad = textId.Text.Trim();
             Clase.Nombre_Ciudad = textNombre.Text.Trim();
             Clase.Id_Estado = textEstado.Tag.ToString();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCiudad();
 
             if (Clase.Exito)
@@ -172,6 +174,7 @@ namespace CuttingBusiness
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             Frm_Estado Estado = new Frm_Estado();
+            Estado.UsuariosLogin = UsuariosLogin.Trim();
             Estado.PaSel = true;
             Estado.ShowDialog();
 

@@ -1,4 +1,4 @@
-
+USE [AvoHarvest]
 GO
 /****** Object:  StoredProcedure [dbo].[SP_BSC_ClienteGeneral]    Script Date: 25/08/2018 12:40:29 p. m. ******/
 SET ANSI_NULLS ON
@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Series_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Serie char(3),
-	@Nombre_Serie varchar(30)
+	@Nombre_Serie varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Series
-		        SET Nombre_Serie=@Nombre_Serie
+		        SET Nombre_Serie=@Nombre_Serie,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Serie=@Id_Serie
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Series
 	           (Id_Serie
-	           ,Nombre_Serie)
+	           ,Nombre_Serie
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Serie)
+	           ,@Nombre_Serie
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

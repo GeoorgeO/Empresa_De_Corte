@@ -25,6 +25,8 @@ namespace CapaDeDatos
 
         public string Fecha_HojaNomina { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarEmpleados()
         {
             TipoDato _dato = new TipoDato();
@@ -124,6 +126,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cuadrilla");
                 _dato.CadenaTexto = Activo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

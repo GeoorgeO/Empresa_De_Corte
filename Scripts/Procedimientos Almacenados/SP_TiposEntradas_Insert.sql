@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_TiposEntradas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_TipoEntrada char(3),
-	@Nombre_TipoEntrada varchar(30)
+	@Nombre_TipoEntrada varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,6 +40,8 @@ BEGIN
 		
 			UPDATE dbo.TiposEntradas
 		        SET Nombre_TipoEntrada=@Nombre_TipoEntrada
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_TipoEntrada=@Id_TipoEntrada
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.TiposEntradas
 	           (Id_TipoEntrada
-	           ,Nombre_TipoEntrada)
+	           ,Nombre_TipoEntrada
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_TipoEntrada)
+	           ,@Nombre_TipoEntrada
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

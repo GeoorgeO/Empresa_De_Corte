@@ -11,6 +11,10 @@ ELSE
 		[Id_UnidadMedida] [char](3) NOT NULL,
 		[Nombre_UnidadMedida] [varchar](150) NULL,
 		[Abrevia_UnidadMedida] [varchar](5) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_UnidadesMedida] PRIMARY KEY CLUSTERED 
 	(
 		[Id_UnidadMedida] ASC

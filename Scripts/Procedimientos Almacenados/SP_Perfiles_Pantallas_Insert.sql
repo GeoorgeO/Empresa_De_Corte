@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Perfiles_Pantallas_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Perfil char(3),
-	@Id_Pantalla char(3)
+	@Id_Pantalla char(3),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -42,10 +43,14 @@ BEGIN
 		
 			INSERT INTO dbo.Perfiles_Pantallas
 	           (Id_Perfil
-	           ,Id_Pantalla)
+	           ,Id_Pantalla
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@Id_Perfil
-	           ,@Id_Pantalla)
+	           ,@Id_Pantalla
+			    ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

@@ -96,6 +96,7 @@ namespace CuttingBusiness
             if (TieneAcceso("007"))
             {
                 Frm_UnidadesMedida Ventana = new Frm_UnidadesMedida();
+                Ventana.UsuariosLogin = UsuariosLogin;
                 Ventana.ShowDialog();
             }
             else
@@ -110,6 +111,7 @@ namespace CuttingBusiness
             {
                 Frm_Clientes Ventana = new Frm_Clientes();
                 Frm_Clientes.DefInstance.MdiParent = this;
+                Frm_Clientes.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Clientes.DefInstance.Show();
             }
             else
@@ -124,6 +126,7 @@ namespace CuttingBusiness
             {
                 Frm_Proveedores Ventana = new Frm_Proveedores();
                 Frm_Proveedores.DefInstance.MdiParent = this;
+                Frm_Proveedores.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Proveedores.DefInstance.Show();
             }
             else
@@ -137,6 +140,7 @@ namespace CuttingBusiness
             if (TieneAcceso("027"))
             {
                 Frm_Perfiles Ventana = new Frm_Perfiles();
+                Ventana.UsuariosLogin = UsuariosLogin;
                 Ventana.ShowDialog();
             }
             else
@@ -164,6 +168,7 @@ namespace CuttingBusiness
             {
                 Frm_Permisos Ventana = new Frm_Permisos();
                 Frm_Permisos.DefInstance.MdiParent = this;
+                Frm_Huertas.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Permisos.DefInstance.Show();
             }
             else
@@ -182,6 +187,7 @@ namespace CuttingBusiness
             if (TieneAcceso("004"))
             {
                 Frm_Cuadrilla frm = new Frm_Cuadrilla();
+                frm.UsuariosLogin = UsuariosLogin;
                 frm.ShowDialog();
             }
             else
@@ -196,6 +202,7 @@ namespace CuttingBusiness
             {
                 Frm_Productos Ventana = new Frm_Productos();
                 Frm_Productos.DefInstance.MdiParent = this;
+                Frm_Productos.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Productos.DefInstance.Show();
             }
             else
@@ -221,6 +228,7 @@ namespace CuttingBusiness
             {
                 Frm_Entradas Ventana = new Frm_Entradas();
                 Frm_Entradas.DefInstance.MdiParent = this;
+                Frm_Entradas.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Entradas.DefInstance.Show();
             }
             else
@@ -235,6 +243,7 @@ namespace CuttingBusiness
             {
                 Frm_Salidas Ventana = new Frm_Salidas();
                 Frm_Salidas.DefInstance.MdiParent = this;
+                Frm_Salidas.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Salidas.DefInstance.Show();
             }
             else
@@ -311,6 +320,7 @@ namespace CuttingBusiness
                 {
                     Ventana.accesoEmpleados = false;
                 }
+                Ventana.UsuariosLogin = UsuariosLogin.Trim();
                 Ventana.Show();
             }
             else
@@ -449,6 +459,7 @@ namespace CuttingBusiness
             {
                 Frm_Huertas Ventana = new Frm_Huertas();
                 Frm_Huertas.DefInstance.MdiParent = this;
+                Frm_Huertas.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Huertas.DefInstance.Show();
             }
             else
@@ -483,6 +494,7 @@ namespace CuttingBusiness
             if (TieneAcceso("032"))
             {
                 Frm_TiposEntradas Ventana = new Frm_TiposEntradas();
+                Ventana.UsuariosLogin = UsuariosLogin;
                 Ventana.PaSel = false;
                 Ventana.ShowDialog();
             }
@@ -497,7 +509,9 @@ namespace CuttingBusiness
             if (TieneAcceso("033"))
             {
                 Frm_TiposSalidas Ventana = new Frm_TiposSalidas();
+                Ventana.UsuariosLogin = UsuariosLogin;
                 Ventana.PaSel = false;
+               
                 Ventana.ShowDialog();
             }
             else
@@ -512,6 +526,7 @@ namespace CuttingBusiness
             {
                 Frm_Series Ventana = new Frm_Series();
                 Ventana.PaSel = false;
+                Ventana.UsuariosLogin = UsuariosLogin;
                 Ventana.ShowDialog();
             }
             else
@@ -525,6 +540,7 @@ namespace CuttingBusiness
            
             Frm_PrecapturaODC Ventana = new Frm_PrecapturaODC();
             Frm_PrecapturaODC.DefInstance.MdiParent = this;
+            Frm_PrecapturaODC.DefInstance.UsuariosLogin = UsuariosLogin;
             Frm_PrecapturaODC.DefInstance.Show();
         }
 

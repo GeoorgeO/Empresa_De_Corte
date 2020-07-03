@@ -19,7 +19,8 @@ create PROCEDURE [dbo].[SP_HojaNominaDetalle_Insert]
 	@Id_secuencia char(2),
 	@Id_empleado char(6),
 	@Cajas numeric(10,2),
-	@Importe numeric(10,2)
+	@Importe numeric(10,2),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -43,7 +44,9 @@ BEGIN
 			UPDATE dbo.HojaNominaDetalle
 		        SET Id_empleado=@Id_empleado,
 				Cajas=@Cajas,
-				Importe=@Importe
+				Importe=@Importe,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_HojaNomina=@Id_HojaNomina
 				and Id_secuencia=@Id_secuencia
@@ -55,13 +58,17 @@ BEGIN
 	           ,Id_secuencia
 			   ,Id_empleado
 			   ,Cajas
-			   ,Importe)
+			   ,Importe
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@Id_HojaNomina
 	           ,@maximo
 			   ,@Id_empleado
 			   ,@Cajas
-			   ,@Importe)
+			   ,@Importe
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

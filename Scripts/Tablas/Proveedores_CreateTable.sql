@@ -14,6 +14,10 @@ ELSE
 		[Telefono2] [varchar](15) NULL,
 		[Email] [varchar](50) NULL,
 		[Contacto] [varchar](100) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Proveedor] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Proveedor] ASC

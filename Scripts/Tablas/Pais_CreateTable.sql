@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Pais](
 		[Id_Pais] [char](3) NOT NULL,
 		[Nombre_Pais] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Pais] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Pais] ASC

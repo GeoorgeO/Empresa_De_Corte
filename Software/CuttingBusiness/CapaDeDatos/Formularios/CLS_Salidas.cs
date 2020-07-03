@@ -28,8 +28,8 @@ namespace CapaDeDatos
         public decimal Total_SalidaDetalles { get; set; }
         public string Observaciones_SalidaDetalles { get; set; }
 
-        
-        
+        public string Usuario { get; set; }
+
 
         public void MtdSeleccionarSalidasEncabezado()
         {
@@ -108,6 +108,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha_Salida");
                 _dato.Entero = Numero_Articulossalida;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Numero_Articulossalida");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Puestos](
 		[Id_Puesto] [char](3) NOT NULL,
 		[Nombre_Puesto] [varchar](50) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Puesto] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Puesto] ASC

@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[TiposSalidas](
 		[Id_TipoSalida] [char](3) NOT NULL,
 		[Nombre_TipoSalida] [varchar](30) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_TipoSalida] PRIMARY KEY CLUSTERED 
 	(
 		[Id_TipoSalida] ASC

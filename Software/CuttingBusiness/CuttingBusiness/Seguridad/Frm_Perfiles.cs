@@ -24,7 +24,7 @@ namespace CuttingBusiness
         public string Perfil { get; set; }
         public Boolean PaSel { get; set; }
 
-        
+        public string UsuariosLogin { get; set; }
 
         private void CargarPerfiles()
         {
@@ -45,6 +45,7 @@ namespace CuttingBusiness
             CLS_Perfiles Perfil = new CLS_Perfiles();
             Perfil.Id_Perfil = textId.Text.Trim();
             Perfil.Nombre_Perfil = textNombre.Text.Trim();
+            Perfil.Usuario = UsuariosLogin.Trim();
             Perfil.MtdInsertarPerfiles();
             if (Perfil.Exito)
             {

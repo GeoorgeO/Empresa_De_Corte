@@ -19,6 +19,8 @@ namespace CuttingBusiness
         public string TipoCorte { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_TiposCorte()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace CuttingBusiness
             CLS_TiposCorte Clase = new CLS_TiposCorte();
             Clase.Id_TipoCorte= textId.Text.Trim();
             Clase.Nombre_TipoCorte = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarTiposCorte();
             if (Clase.Exito)
             {

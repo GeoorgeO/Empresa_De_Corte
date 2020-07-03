@@ -19,8 +19,7 @@ create PROCEDURE [dbo].[SP_Usuarios_Insert]
 	@Nombre_Usuario varchar(50),
 	@Contrasena varchar(20),
 	@Id_Perfil char(3),
-	@Creador varchar(10),
-	@Modificador varchar(10)
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -43,7 +42,7 @@ BEGIN
 		        SET Nombre_Usuario=@Nombre_Usuario,
 				Contrasena=@Contrasena,
 				Id_Perfil=@Id_Perfil,
-				Modificador=@Modificador,
+				Modificador=@Usuario,
 				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Usuario=@Id_Usuario
@@ -62,7 +61,7 @@ BEGIN
 	           ,@Nombre_Usuario
 			   ,@Contrasena
 			   ,@Id_Perfil
-			   ,@Creador
+			   ,@Usuario
 			   ,getdate()
 			   ,1)
 		

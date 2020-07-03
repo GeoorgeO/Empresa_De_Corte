@@ -17,6 +17,8 @@ namespace CapaDeDatos
     public string Contacto { get; set; }
     public string RFC { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarProveedores()
     {
         TipoDato _dato = new TipoDato();
@@ -72,6 +74,9 @@ namespace CapaDeDatos
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contacto");
             _dato.CadenaTexto = RFC;
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
             if (_conexion.Exito)

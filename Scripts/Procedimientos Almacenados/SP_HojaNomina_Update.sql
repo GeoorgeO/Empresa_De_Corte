@@ -16,7 +16,8 @@ GO
 create PROCEDURE dbo.SP_HojaNomina_Update
 	-- Add the parameters for the stored procedure here
 	@Id_HojaNomina varchar(10),
-	@Id_HojaNomina_New varchar(10)
+	@Id_HojaNomina_New varchar(10),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -55,7 +56,10 @@ BEGIN
 				  ,[Pago_falso]
 				  ,[Festivo]
 				  ,[Estatus]
-				  ,[Precio_Caja])
+				  ,[Precio_Caja]
+				  ,[Pago_Maniobra]
+				  ,[Creador]
+			   	  ,[Fecha_Creador])
 			SELECT 'TEMP01'
 				  ,[Fecha_HojaNomina]
 				  ,[Id_Cuadrilla]
@@ -77,7 +81,10 @@ BEGIN
 				  ,[Pago_falso]
 				  ,[Festivo]
 				  ,[Estatus]
-				  ,[Precio_Caja] FROM HojaNomina
+				  ,[Precio_Caja]
+				  ,[Pago_Maniobra]
+				  ,@Usuario
+				  ,getdate() FROM HojaNomina
 			WHERE Id_HojaNomina=@Id_HojaNomina
 		else
 			set @existe=1
@@ -86,12 +93,16 @@ BEGIN
 				  ,[Id_secuencia]
 				  ,[Id_empleado]
 				  ,[Cajas]
-				  ,[Importe])
+				  ,[Importe]
+				  ,[Creador]
+			   	  ,[Fecha_Creador]))
 			select 'TEMP01'
 				  ,[Id_secuencia]
 				  ,[Id_empleado]
 				  ,[Cajas]
 				  ,[Importe]
+				  ,@Usuario
+				  ,getdate()
 			from HojaNominaDetalle
 			where Id_HojaNomina=@Id_HojaNomina
 		else
@@ -126,7 +137,10 @@ BEGIN
 				  ,[Pago_falso]
 				  ,[Festivo]
 				  ,[Estatus]
-				  ,[Precio_Caja])
+				  ,[Precio_Caja]
+				  ,[Pago_Maniobra]
+				  ,[Creador]
+			   	  ,[Fecha_Creador])
 			SELECT @Id_HojaNomina_New
 				  ,[Fecha_HojaNomina]
 				  ,[Id_Cuadrilla]
@@ -148,7 +162,10 @@ BEGIN
 				  ,[Pago_falso]
 				  ,[Festivo]
 				  ,[Estatus]
-				  ,[Precio_Caja] FROM HojaNomina
+				  ,[Precio_Caja]
+				  ,[Pago_Maniobra]
+				  ,[Creador]
+			   	  ,[Fecha_Creador] FROM HojaNomina
 			WHERE Id_HojaNomina='TEMP01'
 		else
 			set @existe=1
@@ -157,12 +174,16 @@ BEGIN
 				  ,[Id_secuencia]
 				  ,[Id_empleado]
 				  ,[Cajas]
-				  ,[Importe])
+				  ,[Importe]
+				  ,[Creador]
+			   	  ,[Fecha_Creador])
 			select @Id_HojaNomina_New
 				  ,[Id_secuencia]
 				  ,[Id_empleado]
 				  ,[Cajas]
 				  ,[Importe]
+				  ,[Creador]
+			   	  ,[Fecha_Creador]
 			from HojaNominaDetalle
 			where Id_HojaNomina='TEMP01'
 		else

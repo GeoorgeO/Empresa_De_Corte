@@ -23,7 +23,8 @@ create PROCEDURE [dbo].[SP_EntradaEncabezado_Insert]
 	@Orden_Compra varchar(10),
 	@FacturaPDF varbinary(max),
 	@FacturaPDFNombre varchar(80),
-	@Id_Empleado char(6) NULL
+	@Id_Empleado char(6) NULL,
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -39,9 +40,12 @@ BEGIN
 		declare @maximo char(8)
 		select @maximo=right(Concat('00000000', isnull(max(Folio_Entrada),0)+1),8) from dbo.EntradaEncabezado where Serie_Entrada=@Serie_Entrada
 
-		INSERT INTO EntradaEncabezado
-								 (Serie_Entrada, Folio_Entrada, Id_Proveedor, Id_TipoEntrada, Fecha_Entrada, Numero_ArticulosEntrada, FacturaPDF, FacturaPDFNombre, Id_Empleado,Orden_Compra)
-		VALUES        (@Serie_Entrada,@maximo,@Id_Proveedor,@Id_TipoEntrada,@Fecha_Entrada,@Numero_ArticulosEntrada,@FacturaPDF, @FacturaPDFNombre,@Id_Empleado,@Orden_Compra)
+		INSERT INTO EntradaEncabezado (Serie_Entrada, Folio_Entrada, Id_Proveedor, 
+			Id_TipoEntrada, Fecha_Entrada, Numero_ArticulosEntrada, FacturaPDF, 
+			FacturaPDFNombre, Id_Empleado,Orden_Compra, Creador,Fecha_Creador)
+		VALUES        (@Serie_Entrada,@maximo,@Id_Proveedor,
+			@Id_TipoEntrada,@Fecha_Entrada,@Numero_ArticulosEntrada,@FacturaPDF, 
+			@FacturaPDFNombre,@Id_Empleado,@Orden_Compra,@Usuario,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

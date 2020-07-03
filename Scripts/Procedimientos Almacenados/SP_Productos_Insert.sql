@@ -25,7 +25,8 @@ create PROCEDURE [dbo].[SP_Productos_Insert]
 	@Pasillo varchar(5),
 	@Repisa varchar(5),
 	@Id_ProductoTipo char(2),
-	@Id_Marca char(4)
+	@Id_Marca char(4),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -56,7 +57,9 @@ BEGIN
 				Pasillo=@Pasillo,
 				Repisa=@Repisa,
 				Id_ProductoTipo=@Id_ProductoTipo,
-				Id_Marca=@Id_Marca
+				Id_Marca=@Id_Marca,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Producto=@Id_Producto
 				
@@ -75,7 +78,9 @@ BEGIN
 			   ,Activo
 			   ,Stock
 			   ,Id_ProductoTipo
-			   ,Id_Marca)
+			   ,Id_Marca
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Producto
@@ -89,7 +94,9 @@ BEGIN
 			   ,1
 			   ,0
 			   ,@Id_ProductoTipo
-			   ,@Id_Marca)
+			   ,@Id_Marca
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

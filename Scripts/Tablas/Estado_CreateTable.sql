@@ -11,6 +11,10 @@ ELSE
 		[Id_Estado] [char](3) NOT NULL,
 		[Nombre_Estado] [varchar](20) NULL,
 		[Id_Pais] [varchar](20) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Estado] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Estado] ASC

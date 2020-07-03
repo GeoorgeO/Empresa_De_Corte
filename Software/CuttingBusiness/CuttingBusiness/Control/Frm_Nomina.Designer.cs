@@ -39,6 +39,7 @@
             this.labelNombreJefeCuadrilla = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.btn_Empleados = new DevExpress.XtraEditors.SimpleButton();
             this.labelImporte = new DevExpress.XtraEditors.TextEdit();
             this.labelImporteCortador = new DevExpress.XtraEditors.TextEdit();
@@ -93,12 +94,12 @@
             this.btnCerrarNomina = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCambiaOrden = new DevExpress.XtraEditors.SimpleButton();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdHojaNomina.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelImporte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelImporteCortador.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelContadorCajas.Properties)).BeginInit();
@@ -126,7 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dateFecha
@@ -156,6 +156,7 @@
             this.textIdHojaNomina.Name = "textIdHojaNomina";
             this.textIdHojaNomina.Size = new System.Drawing.Size(100, 20);
             this.textIdHojaNomina.TabIndex = 1;
+           
             this.textIdHojaNomina.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
             // btnAbrirHoja
@@ -243,6 +244,20 @@
             this.groupControl1.Size = new System.Drawing.Size(610, 446);
             this.groupControl1.TabIndex = 40;
             this.groupControl1.Text = "Registro";
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(362, 23);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Pago x Dia"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Pago x Caja"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("S", "Pago Falso")});
+            this.radioGroup1.Size = new System.Drawing.Size(90, 59);
+            this.radioGroup1.TabIndex = 47;
+            this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
             // btn_Empleados
             // 
@@ -824,20 +839,6 @@
             this.btnCambiaOrden.Text = "Cambiar Orden";
             this.btnCambiaOrden.Click += new System.EventHandler(this.btnCambiaOrden_Click);
             // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(362, 23);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Pago x Dia"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("C", "Pago x Caja"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("S", "Pago Falso")});
-            this.radioGroup1.Size = new System.Drawing.Size(90, 59);
-            this.radioGroup1.TabIndex = 47;
-            this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
-            // 
             // Frm_Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,6 +875,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelImporte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelImporteCortador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelContadorCajas.Properties)).EndInit();
@@ -902,7 +904,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkPagoxDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCajas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCuadrillas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

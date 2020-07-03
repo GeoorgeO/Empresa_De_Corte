@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Duenio](
 		[Id_Duenio] [char](4) NOT NULL,
 		[Nombre_Duenio] [varchar](100) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Duenio] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Duenio] ASC

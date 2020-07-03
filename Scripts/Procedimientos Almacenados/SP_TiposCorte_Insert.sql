@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_TiposCorte_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_TipoCorte char(3),
-	@Nombre_TipoCorte varchar(30)
+	@Nombre_TipoCorte varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.TiposCorte
-		        SET Nombre_TipoCorte=@Nombre_TipoCorte
+		        SET Nombre_TipoCorte=@Nombre_TipoCorte,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_TipoCorte=@Id_TipoCorte
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.TiposCorte
 	           (Id_TipoCorte
-	           ,Nombre_TipoCorte)
+	           ,Nombre_TipoCorte
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_TipoCorte)
+	           ,@Nombre_TipoCorte
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

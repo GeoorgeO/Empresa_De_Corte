@@ -14,6 +14,10 @@ ELSE
 		[Id_TipoSalida] [char](3) NULL,
 		[Fecha_Salida] [datetime] NULL,
 		[Numero_Articulossalida] [int] NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_SalidasEncabezado] PRIMARY KEY CLUSTERED 
 	(
 		[Serie_Salida] ASC,

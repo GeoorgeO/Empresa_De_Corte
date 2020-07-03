@@ -29,7 +29,8 @@ create PROCEDURE [dbo].[SP_Huerta_Insert]
 	@norte_Huerta	numeric(18, 0),
 	@asnm_Huerta	int,
 	@latitud_Huerta	varchar(50),
-	@longitud_Huerta	varchar(50)
+	@longitud_Huerta	varchar(50),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -52,16 +53,26 @@ BEGIN
 	if @Existe>0 
 		begin
 			UPDATE       Huerta
-			SET                Nombre_Huerta = @Nombre_Huerta, Registro_Huerta = @Registro_Huerta, Id_Duenio = @Id_Duenio, Id_Estado = @Id_Estado, Id_Ciudad = @Id_Ciudad, Id_Calidad = @Id_Calidad, Id_Cultivo = @Id_Cultivo, 
-							 zona_Huerta = @zona_Huerta, banda_Huerta = @banda_Huerta, este_Huerta = @este_Huerta, norte_Huerta = @norte_Huerta, asnm_Huerta = @asnm_Huerta, latitud_Huerta = @latitud_Huerta, 
-							 longitud_Huerta = @longitud_Huerta
+			SET Nombre_Huerta = @Nombre_Huerta, Registro_Huerta = @Registro_Huerta, Id_Duenio = @Id_Duenio, Id_Estado = @Id_Estado, Id_Ciudad = @Id_Ciudad, Id_Calidad = @Id_Calidad, Id_Cultivo = @Id_Cultivo, 
+				zona_Huerta = @zona_Huerta, banda_Huerta = @banda_Huerta, este_Huerta = @este_Huerta, norte_Huerta = @norte_Huerta, asnm_Huerta = @asnm_Huerta, latitud_Huerta = @latitud_Huerta, 
+				longitud_Huerta = @longitud_Huerta,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 			WHERE        (Id_Huerta = @Id_Huerta)
 		end
 	else
 		begin
 			INSERT INTO Huerta
-								 (Id_Huerta, Nombre_Huerta, Registro_Huerta, Id_Duenio, Id_Estado, Id_Ciudad, Id_Calidad, Id_Cultivo, zona_Huerta, banda_Huerta, este_Huerta, norte_Huerta, asnm_Huerta, latitud_Huerta, longitud_Huerta,Activa_Huerta)
-			VALUES        (@maximo,@Nombre_Huerta,@Registro_Huerta,@Id_Duenio,@Id_Estado,@Id_Ciudad,@Id_Calidad,@Id_Cultivo,@zona_Huerta,@banda_Huerta,@este_Huerta,@norte_Huerta,@asnm_Huerta,@latitud_Huerta,@longitud_Huerta,1)
+				(Id_Huerta, Nombre_Huerta, Registro_Huerta, Id_Duenio, Id_Estado, 
+				Id_Ciudad, Id_Calidad, Id_Cultivo, zona_Huerta, banda_Huerta, 
+				este_Huerta, norte_Huerta, asnm_Huerta, latitud_Huerta, longitud_Huerta,
+				Activa_Huerta,Creador
+			   ,Fecha_Creador)
+			VALUES (@maximo,@Nombre_Huerta,@Registro_Huerta,@Id_Duenio,@Id_Estado,
+				@Id_Ciudad,@Id_Calidad,@Id_Cultivo,@zona_Huerta,@banda_Huerta,
+				@este_Huerta,@norte_Huerta,@asnm_Huerta,@latitud_Huerta,@longitud_Huerta,
+				1,@Usuario
+			   ,getdate())
 		end
 	commit transaction T1;
 		set @correcto=1

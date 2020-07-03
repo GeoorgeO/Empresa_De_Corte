@@ -18,6 +18,10 @@ ELSE
 		[Id_TipoDomicilio] [char](4) NULL,
 		[Id_Persona] [char](8) NULL,
 		[id_TipoPersona] [char](4) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Domicilios] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Domicilio] ASC

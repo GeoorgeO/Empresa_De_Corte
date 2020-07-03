@@ -25,6 +25,8 @@ namespace CuttingBusiness
         public string IdTipoSalida { get; set; }
         public string TipoSalida { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         private void CargarTipoSalida()
         {
             gridControl1.DataSource = null;
@@ -43,6 +45,7 @@ namespace CuttingBusiness
 
             Clase.Id_TipoSalida = textId.Text.Trim();
             Clase.Nombre_TipoSalida = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarTiposSalidas();
 
             if (Clase.Exito)

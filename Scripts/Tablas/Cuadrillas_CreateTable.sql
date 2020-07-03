@@ -10,6 +10,10 @@ ELSE
 	CREATE TABLE [dbo].[Cuadrillas](
 		[Id_Cuadrilla] [char](4) NOT NULL,
 		[Id_Categoria] [char](4) NOT NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_Cuadrilla] PRIMARY KEY CLUSTERED 
 	(
 		[Id_Cuadrilla] ASC

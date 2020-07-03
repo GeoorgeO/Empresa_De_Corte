@@ -13,6 +13,8 @@ namespace CapaDeDatos
         public string Nombre_Estado { get; set; }
         public string Id_Pais { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarEstado()
         {
             TipoDato _dato = new TipoDato();
@@ -57,6 +59,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Estado");
                 _dato.CadenaTexto = Id_Pais;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

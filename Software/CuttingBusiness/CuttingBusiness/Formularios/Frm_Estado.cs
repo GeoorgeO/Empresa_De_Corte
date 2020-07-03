@@ -31,6 +31,9 @@ namespace CuttingBusiness
         }
 
         public Boolean PaSel { get; set; }
+
+        public string UsuariosLogin { get; set; }
+
         public Frm_Estado()
         {
             InitializeComponent();
@@ -42,7 +45,7 @@ namespace CuttingBusiness
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             Frm_Pais Pais = new Frm_Pais(true);
-
+            Pais.UsuariosLogin = UsuariosLogin.Trim();
             Pais.ShowDialog();
 
             textIdPais.Text = Pais.IdPais;
@@ -69,6 +72,7 @@ namespace CuttingBusiness
             Estado.Id_Estado = textIdEstado.Text.Trim();
             Estado.Nombre_Estado = textEstado.Text.Trim();
             Estado.Id_Pais = textIdPais.Text.Trim();
+            Estado.Usuario = UsuariosLogin.Trim();
             Estado.MtdInsertarEstado();
             if (Estado.Exito)
             {

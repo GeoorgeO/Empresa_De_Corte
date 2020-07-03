@@ -15,6 +15,8 @@ namespace CuttingBusiness
     public partial class Frm_Clientes : DevExpress.XtraEditors.XtraForm
     {
 
+        public string UsuariosLogin { get; set; }
+
         private static Frm_Clientes m_FormDefInstance;
         public static Frm_Clientes DefInstance
         {
@@ -72,6 +74,7 @@ namespace CuttingBusiness
             Clientes.Email = textCorreo.Text.Trim();
             Clientes.Contacto = textContacto.Text.Trim();
             Clientes.RFC = txtRFC.Text.Trim();
+            Clientes.Usuario = UsuariosLogin.Trim();
             Clientes.MtdInsertarClientes();
             if (Clientes.Exito)
             {
@@ -338,6 +341,7 @@ namespace CuttingBusiness
         private void btnBusqEstado_Click(object sender, EventArgs e)
         {
             Frm_Ciudad Clase = new Frm_Ciudad();
+            Clase.UsuariosLogin = UsuariosLogin.Trim();
             Clase.PaSel = true;
             Clase.ShowDialog();
 
@@ -350,6 +354,7 @@ namespace CuttingBusiness
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
         {
             Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.UsuariosLogin = UsuariosLogin.Trim();
             tipoDomicilio.PaSel = true;
             tipoDomicilio.ShowDialog();
 

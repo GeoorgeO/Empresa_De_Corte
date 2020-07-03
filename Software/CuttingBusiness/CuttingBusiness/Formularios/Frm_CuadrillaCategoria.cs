@@ -19,6 +19,8 @@ namespace CuttingBusiness
         public string Categoria { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_CuadrillaCategoria()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace CuttingBusiness
             CLS_CategoriasCuadrilla Clase = new CLS_CategoriasCuadrilla();
             Clase.Id_Categoria = textId.Text.Trim();
             Clase.Nombre_Categoria = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCategoriasCuadrilla();
             if (Clase.Exito)
             {

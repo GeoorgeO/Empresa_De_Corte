@@ -13,9 +13,10 @@ namespace CapaDeDatos
         public string Nombre_Usuario { get; set; }
         public string Contrasena { get; set; }
         public string Id_Perfil { get; set; }
-        public string Creador { get; set; }
-        public string Modificador { get; set; }
+        
         public string Activo { get; set; }
+
+        public string Usuario { get; set; }
 
         public void MtdSeleccionarUsuarios()
         {
@@ -67,10 +68,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contrasena");
                 _dato.CadenaTexto = Id_Perfil;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
-                _dato.CadenaTexto = Creador;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Creador");
-                _dato.CadenaTexto = Modificador;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Modificador");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

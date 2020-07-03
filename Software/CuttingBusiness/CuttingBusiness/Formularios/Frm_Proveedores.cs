@@ -18,6 +18,9 @@ namespace CuttingBusiness
         public Boolean PaSel { get; set; }
         public string IdProveedor { get; set; }
         public string Proveedor { get; set; }
+
+        public string UsuariosLogin { get; set; }
+
         private static Frm_Proveedores m_FormDefInstance;
         public static Frm_Proveedores DefInstance
         {
@@ -75,6 +78,8 @@ namespace CuttingBusiness
             Proveedores.Email = textCorreo.Text.Trim();
             Proveedores.Contacto = textContacto.Text.Trim();
             Proveedores.RFC = txtRFC.Text.Trim();
+
+            Proveedores.Usuario = UsuariosLogin.Trim();
             Proveedores.MtdInsertarProveedores();
             if (Proveedores.Exito)
             {
@@ -349,6 +354,7 @@ namespace CuttingBusiness
         private void btnBusqEstado_Click(object sender, EventArgs e)
         {
             Frm_Ciudad Clase = new Frm_Ciudad();
+            Clase.UsuariosLogin = UsuariosLogin.Trim();
             Clase.PaSel = true;
             Clase.ShowDialog();
 
@@ -361,6 +367,7 @@ namespace CuttingBusiness
         private void btnBusqTipoDomicilio_Click(object sender, EventArgs e)
         {
             Frm_Tipo_Domicilio tipoDomicilio = new Frm_Tipo_Domicilio();
+            tipoDomicilio.UsuariosLogin = UsuariosLogin.Trim();
             tipoDomicilio.PaSel = true;
             tipoDomicilio.ShowDialog();
 

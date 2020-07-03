@@ -17,7 +17,8 @@ create PROCEDURE [dbo].[SP_Ciudades_Insert]
 	-- Add the parameters for the stored procedure here
 	@Id_Ciudad char(3),
 	@Nombre_Ciudad varchar(30),
-	@Id_Estado char(3)
+	@Id_Estado char(3),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,7 +41,9 @@ BEGIN
 		
 			UPDATE dbo.Ciudades
 		        SET Nombre_Ciudad=@Nombre_Ciudad,
-				Id_Estado=@Id_Estado
+				Id_Estado=@Id_Estado,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Ciudad=@Id_Ciudad
 				
@@ -49,11 +52,15 @@ BEGIN
 			INSERT INTO dbo.Ciudades
 	           (Id_Ciudad
 	           ,Nombre_Ciudad
-			   ,Id_Estado)
+			   ,Id_Estado
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Nombre_Ciudad
-			   ,@Id_Estado)
+			   ,@Id_Estado
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

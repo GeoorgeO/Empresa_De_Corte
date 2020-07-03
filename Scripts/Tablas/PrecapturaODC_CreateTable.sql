@@ -22,6 +22,10 @@ ELSE
 		[Id_Jefe_Area][char](4) NULL,
 		[Id_Area][char](4) NULL,
 		[Id_duenio][char](4) NULL,
+		[Creador] [varchar](10) NULL,
+		[Fecha_Creador] [datetime] NULL,
+		[Modificador] [varchar](10) NULL,
+		[Fecha_Modificador] [datetime] NULL,
 	 CONSTRAINT [PK_PrecapturaODC] PRIMARY KEY CLUSTERED 
 	(
 		[Id_PrecapturaODC] ASC

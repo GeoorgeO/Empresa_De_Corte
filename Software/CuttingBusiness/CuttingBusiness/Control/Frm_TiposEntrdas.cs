@@ -17,6 +17,8 @@ namespace CuttingBusiness
 
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_TiposEntradas()
         {
             InitializeComponent();
@@ -43,6 +45,8 @@ namespace CuttingBusiness
 
             Clase.Id_TipoEntrada = textId.Text.Trim();
             Clase.Nombre_TipoEntrada = textNombre.Text.Trim();
+
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarTiposEntradas();
 
             if (Clase.Exito)

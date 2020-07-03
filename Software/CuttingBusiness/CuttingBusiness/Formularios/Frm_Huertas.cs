@@ -22,6 +22,8 @@ namespace CuttingBusiness
         public string IdDuenio { get; set; }
         public string Duenio { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Huertas()
         {
             InitializeComponent();
@@ -300,6 +302,9 @@ namespace CuttingBusiness
             Clase.latitud_Huerta = Convert.ToDecimal(txtLatitud.Text);
             Clase.longitud_Huerta = Convert.ToDecimal(txtLonguitud.Text);
             Clase.Activo = "1";
+
+            Clase.Usuario = UsuariosLogin.Trim();
+
             Clase.MtdInsertarHuerta();
 
             if (Clase.Exito)
