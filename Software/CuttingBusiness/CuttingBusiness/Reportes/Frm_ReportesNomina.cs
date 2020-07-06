@@ -1063,7 +1063,7 @@ namespace CuttingBusiness
 
             Fila++;
             CLS_Parametros_Reportes selT = new CLS_Parametros_Reportes();
-            selT.Tipo_Empleado = "C";
+            selT.Tipo_Empleado = "J";
             selT.MtdSeleccionarParametrosC();
             DataTable tb = null;
             if (selT.Exito)
