@@ -18,6 +18,8 @@ namespace CuttingBusiness
         public string JefeArea { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Jefes_Area()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace CuttingBusiness
             CLS_Jefes_Area Clase = new CLS_Jefes_Area();
             Clase.Id_Jefe_Area = textId.Text.Trim();
             Clase.Nombre_Jefe_Area = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarJefes_Area();
             if (Clase.Exito)
             {

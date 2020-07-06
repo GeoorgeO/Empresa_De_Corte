@@ -181,6 +181,7 @@ namespace CuttingBusiness
             frm.IdDuenio = string.Empty;
             frm.Duenio = string.Empty;
             frm.PaSel = true;
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             txtNombreProductor.Tag = frm.IdDuenio;
             txtNombreProductor.Text = frm.Duenio;
@@ -189,6 +190,7 @@ namespace CuttingBusiness
         private void btnEstado_Click(object sender, EventArgs e)
         {
             Frm_Estado frm = new Frm_Estado();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarEstado(null);
         }
@@ -196,6 +198,7 @@ namespace CuttingBusiness
         private void btnCiudad_Click(object sender, EventArgs e)
         {
             Frm_Ciudad frm = new Frm_Ciudad();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarCiudad(null);
         }
@@ -203,6 +206,7 @@ namespace CuttingBusiness
         private void btnCalidad_Click(object sender, EventArgs e)
         {
             Frm_Calidad frm = new Frm_Calidad();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarCalidad(null);
         }
@@ -210,6 +214,7 @@ namespace CuttingBusiness
         private void btnCultivo_Click(object sender, EventArgs e)
         {
             Frm_Cultivo frm = new Frm_Cultivo();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.ShowDialog();
             CargarCultivo(null);
         }

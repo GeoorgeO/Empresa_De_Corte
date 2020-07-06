@@ -24,6 +24,8 @@ namespace CuttingBusiness
         public string IdCultivo { get; set; }
         public string Cultivo { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         private void CargarCultivo()
         {
             gridControl1.DataSource = null;
@@ -42,7 +44,7 @@ namespace CuttingBusiness
 
             Clase.Id_Cultivo = textId.Text.Trim();
             Clase.Nombre_Cultivo = textNombre.Text.Trim();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCultivo();
 
             if (Clase.Exito)

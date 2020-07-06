@@ -45,7 +45,8 @@ create PROCEDURE [dbo].[SP_Parametros_Insert]
 	@Pago_Sup_3 numeric(10,2) ,
 	@Pago_Inf_3_Mission numeric(10,2) ,
 	@Pago_Sup_3_Mission numeric(10,2) ,
-	@Id_Tipo char(1)
+	@Id_Tipo char(1),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -96,7 +97,9 @@ BEGIN
 				Pago_Sup_3=@Pago_Sup_3,
 				Pago_Inf_3_Mission=@Pago_Inf_3_Mission,
 				Pago_Sup_3_Mission=@Pago_Sup_3_Mission,
-				Id_Tipo=@Id_Tipo
+				Id_Tipo=@Id_Tipo,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Parametro=@Id_Parametro
 				
@@ -133,7 +136,9 @@ BEGIN
 				Pago_Sup_3,
 				Pago_Inf_3_Mission,
 				Pago_Sup_3_Mission,
-				Id_Tipo)
+				Id_Tipo,
+				Creador,
+			   	Fecha_Creador)
 	     	VALUES
 	           (@maximo
 	           ,@Pago_x_Dia_Mission,
@@ -165,7 +170,9 @@ BEGIN
 				@Pago_Sup_3,
 				@Pago_Inf_3_Mission,
 				@Pago_Sup_3_Mission,
-				@Id_Tipo)
+				@Id_Tipo
+				,@Usuario
+			   	,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

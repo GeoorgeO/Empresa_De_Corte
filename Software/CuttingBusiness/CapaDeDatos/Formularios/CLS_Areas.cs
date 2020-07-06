@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_Area { get; set; }
         public string Nombre_Area { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarAreas()
         {
             TipoDato _dato = new TipoDato();
@@ -54,6 +56,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Area");
                 _dato.CadenaTexto = Nombre_Area;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Area");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -17,6 +17,8 @@ namespace CuttingBusiness
 
         string IdParametro;
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Parametros()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace CuttingBusiness
                
                 IdParametro = "002";
             }
-            if (radioGroup1.EditValue.ToString().Equals("FF"))
+            if (radioGroup1.EditValue.ToString().Equals("S"))
             {
                 
                 IdParametro = "003";
@@ -122,8 +124,8 @@ namespace CuttingBusiness
             Clase.Pago_Sup_3_Mission= Convert.ToDecimal(textPagoSup3Mission.Text);
 
             Clase.Id_Tipo = radioGroup1.EditValue.ToString(); ;
-               
-            
+
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarParametros();
             if (Clase.Exito)
             {

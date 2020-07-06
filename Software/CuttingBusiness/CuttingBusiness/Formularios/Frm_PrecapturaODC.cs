@@ -297,6 +297,7 @@ namespace CuttingBusiness
         private void btnBusqEmpaques_Click(object sender, EventArgs e)
         {
             Frm_Empaques frm = new Frm_Empaques();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
 
@@ -307,6 +308,7 @@ namespace CuttingBusiness
         private void btnBusqJefesArea_Click(object sender, EventArgs e)
         {
             Frm_Jefes_Area frm = new Frm_Jefes_Area();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
 
@@ -317,6 +319,7 @@ namespace CuttingBusiness
         private void btnBusqAreas_Click(object sender, EventArgs e)
         {
             Frm_Areas frm = new Frm_Areas();
+            frm.UsuariosLogin = UsuariosLogin.Trim();
             frm.PaSel = true;
             frm.ShowDialog();
 

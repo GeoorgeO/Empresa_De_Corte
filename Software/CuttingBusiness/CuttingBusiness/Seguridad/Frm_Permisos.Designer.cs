@@ -192,17 +192,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1003, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(860, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 534);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1003, 34);
+            this.barDockControlBottom.Size = new System.Drawing.Size(860, 27);
             // 
             // barDockControlLeft
             // 
@@ -210,17 +208,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(87, 656);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 534);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1003, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(860, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 656);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 534);
             // 
             // btnGuardar
             // 
@@ -246,11 +242,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(87, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            this.panelControl1.Size = new System.Drawing.Size(916, 103);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl1.Size = new System.Drawing.Size(791, 84);
             this.panelControl1.TabIndex = 20;
             // 
             // groupControl1
@@ -259,43 +254,39 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.cmbPerfiles);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(14, 14);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(888, 75);
+            this.groupControl1.Size = new System.Drawing.Size(767, 60);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfiles";
             // 
             // btnPerfiles
             // 
             this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.Image")));
-            this.btnPerfiles.Location = new System.Drawing.Point(341, 33);
-            this.btnPerfiles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPerfiles.Location = new System.Drawing.Point(292, 27);
             this.btnPerfiles.Name = "btnPerfiles";
-            this.btnPerfiles.Size = new System.Drawing.Size(28, 28);
+            this.btnPerfiles.Size = new System.Drawing.Size(24, 23);
             this.btnPerfiles.TabIndex = 9;
             this.btnPerfiles.Click += new System.EventHandler(this.btnPerfiles_Click);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(22, 42);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(19, 34);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(34, 16);
+            this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Perfil:";
             // 
             // cmbPerfiles
             // 
-            this.cmbPerfiles.Location = new System.Drawing.Point(78, 34);
-            this.cmbPerfiles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbPerfiles.Location = new System.Drawing.Point(67, 28);
             this.cmbPerfiles.MenuManager = this.barManager1;
             this.cmbPerfiles.Name = "cmbPerfiles";
             this.cmbPerfiles.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbPerfiles.Properties.NullText = "- Seleccionar Perfil -";
             this.cmbPerfiles.Properties.PopupView = this.gridLookUpEdit1View;
-            this.cmbPerfiles.Size = new System.Drawing.Size(255, 22);
+            this.cmbPerfiles.Size = new System.Drawing.Size(219, 20);
             this.cmbPerfiles.TabIndex = 0;
             this.cmbPerfiles.EditValueChanged += new System.EventHandler(this.cmbPerfiles_EditValueChanged);
             // 
@@ -312,44 +303,39 @@
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.panelControl5);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(87, 103);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl2.Location = new System.Drawing.Point(69, 84);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(916, 553);
+            this.panelControl2.Size = new System.Drawing.Size(791, 450);
             this.panelControl2.TabIndex = 26;
             // 
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.groupControl2);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl4.Location = new System.Drawing.Point(491, 2);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl4.Location = new System.Drawing.Point(421, 2);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panelControl4.Size = new System.Drawing.Size(419, 549);
+            this.panelControl4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl4.Size = new System.Drawing.Size(359, 446);
             this.panelControl4.TabIndex = 6;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.dtgAsignadas);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(8, 8);
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl2.Location = new System.Drawing.Point(7, 7);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupControl2.Size = new System.Drawing.Size(403, 533);
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupControl2.Size = new System.Drawing.Size(345, 432);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Asignadas";
             // 
             // dtgAsignadas
             // 
             this.dtgAsignadas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgAsignadas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtgAsignadas.Location = new System.Drawing.Point(8, 31);
+            this.dtgAsignadas.Location = new System.Drawing.Point(7, 26);
             this.dtgAsignadas.MainView = this.dtgValAsignadas;
-            this.dtgAsignadas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgAsignadas.Name = "dtgAsignadas";
-            this.dtgAsignadas.Size = new System.Drawing.Size(387, 494);
+            this.dtgAsignadas.Size = new System.Drawing.Size(331, 399);
             this.dtgAsignadas.TabIndex = 1;
             this.dtgAsignadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValAsignadas});
@@ -395,49 +381,44 @@
             this.panelControl3.Controls.Add(this.btnDisponeTodos);
             this.panelControl3.Controls.Add(this.btnAsignaTodos);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(421, 2);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl3.Location = new System.Drawing.Point(361, 2);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(70, 549);
+            this.panelControl3.Size = new System.Drawing.Size(60, 446);
             this.panelControl3.TabIndex = 5;
             // 
             // btnDispone
             // 
             this.btnDispone.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDispone.ImageOptions.Image")));
-            this.btnDispone.Location = new System.Drawing.Point(12, 212);
-            this.btnDispone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDispone.Location = new System.Drawing.Point(10, 172);
             this.btnDispone.Name = "btnDispone";
-            this.btnDispone.Size = new System.Drawing.Size(47, 49);
+            this.btnDispone.Size = new System.Drawing.Size(40, 40);
             this.btnDispone.TabIndex = 3;
             this.btnDispone.Click += new System.EventHandler(this.btnDispone_Click);
             // 
             // btnAsigna
             // 
             this.btnAsigna.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAsigna.ImageOptions.Image")));
-            this.btnAsigna.Location = new System.Drawing.Point(12, 155);
-            this.btnAsigna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAsigna.Location = new System.Drawing.Point(10, 126);
             this.btnAsigna.Name = "btnAsigna";
-            this.btnAsigna.Size = new System.Drawing.Size(47, 49);
+            this.btnAsigna.Size = new System.Drawing.Size(40, 40);
             this.btnAsigna.TabIndex = 2;
             this.btnAsigna.Click += new System.EventHandler(this.btnAsigna_Click);
             // 
             // btnDisponeTodos
             // 
             this.btnDisponeTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDisponeTodos.ImageOptions.Image")));
-            this.btnDisponeTodos.Location = new System.Drawing.Point(12, 98);
-            this.btnDisponeTodos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDisponeTodos.Location = new System.Drawing.Point(10, 80);
             this.btnDisponeTodos.Name = "btnDisponeTodos";
-            this.btnDisponeTodos.Size = new System.Drawing.Size(47, 49);
+            this.btnDisponeTodos.Size = new System.Drawing.Size(40, 40);
             this.btnDisponeTodos.TabIndex = 1;
             this.btnDisponeTodos.Click += new System.EventHandler(this.btnDisponeTodos_Click);
             // 
             // btnAsignaTodos
             // 
             this.btnAsignaTodos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAsignaTodos.ImageOptions.Image")));
-            this.btnAsignaTodos.Location = new System.Drawing.Point(13, 42);
-            this.btnAsignaTodos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAsignaTodos.Location = new System.Drawing.Point(11, 34);
             this.btnAsignaTodos.Name = "btnAsignaTodos";
-            this.btnAsignaTodos.Size = new System.Drawing.Size(47, 49);
+            this.btnAsignaTodos.Size = new System.Drawing.Size(40, 40);
             this.btnAsignaTodos.TabIndex = 0;
             this.btnAsignaTodos.Click += new System.EventHandler(this.btnAsignaTodos_Click);
             // 
@@ -446,33 +427,29 @@
             this.panelControl5.Controls.Add(this.groupControl3);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl5.Location = new System.Drawing.Point(2, 2);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.panelControl5.Size = new System.Drawing.Size(419, 549);
+            this.panelControl5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl5.Size = new System.Drawing.Size(359, 446);
             this.panelControl5.TabIndex = 4;
             // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.dtgDisponibles);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(8, 8);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl3.Location = new System.Drawing.Point(7, 7);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupControl3.Size = new System.Drawing.Size(403, 533);
+            this.groupControl3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupControl3.Size = new System.Drawing.Size(345, 432);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Disponibles";
             // 
             // dtgDisponibles
             // 
             this.dtgDisponibles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDisponibles.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtgDisponibles.Location = new System.Drawing.Point(8, 31);
+            this.dtgDisponibles.Location = new System.Drawing.Point(7, 26);
             this.dtgDisponibles.MainView = this.dtgValDisponibles;
-            this.dtgDisponibles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgDisponibles.Name = "dtgDisponibles";
-            this.dtgDisponibles.Size = new System.Drawing.Size(387, 494);
+            this.dtgDisponibles.Size = new System.Drawing.Size(331, 399);
             this.dtgDisponibles.TabIndex = 0;
             this.dtgDisponibles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDisponibles});
@@ -516,9 +493,9 @@
             // 
             // Frm_Permisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 690);
+            this.ClientSize = new System.Drawing.Size(860, 561);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -526,7 +503,6 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_Permisos";

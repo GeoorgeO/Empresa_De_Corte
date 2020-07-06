@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Jefes_Area_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Jefe_Area char(4),
-	@Nombre_Jefe_Area varchar(30)
+	@Nombre_Jefe_Area varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Jefes_Area
-		        SET Nombre_Jefe_Area=@Nombre_Jefe_Area
+		        SET Nombre_Jefe_Area=@Nombre_Jefe_Area,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Jefe_Area=@Id_Jefe_Area
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Jefes_Area
 	           (Id_Jefe_Area
-	           ,Nombre_Jefe_Area)
+	           ,Nombre_Jefe_Area
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Jefe_Area)
+	           ,@Nombre_Jefe_Area
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

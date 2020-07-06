@@ -39,7 +39,7 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Puestos
-		        SET Nombre_Puesto=@Nombre_Puesto
+		        SET Nombre_Puesto=@Nombre_Puesto,
 				Modificador=@Usuario,
 				Fecha_Modificador=getdate()
 		    WHERE

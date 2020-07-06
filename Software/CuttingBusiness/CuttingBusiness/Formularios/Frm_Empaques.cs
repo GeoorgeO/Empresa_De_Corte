@@ -18,6 +18,8 @@ namespace CuttingBusiness
         public string Empaque { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Empaques()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace CuttingBusiness
             CLS_Empaques Clase = new CLS_Empaques();
             Clase.Id_Empaque = textId.Text.Trim();
             Clase.Nombre_Empaque = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarEmpaques();
             if (Clase.Exito)
             {

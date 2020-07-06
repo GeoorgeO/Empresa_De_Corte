@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Empaques_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Empaque char(3),
-	@Nombre_Empaque varchar(30)
+	@Nombre_Empaque varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Empaques
-		        SET Nombre_Empaque=@Nombre_Empaque
+		        SET Nombre_Empaque=@Nombre_Empaque,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Empaque=@Id_Empaque
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Empaques
 	           (Id_Empaque
-	           ,Nombre_Empaque)
+	           ,Nombre_Empaque
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Empaque)
+	           ,@Nombre_Empaque
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

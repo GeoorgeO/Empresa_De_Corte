@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Duenio_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Duenio char(4),
-	@Nombre_Duenio varchar(100)
+	@Nombre_Duenio varchar(100),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Duenio
-		        SET Nombre_Duenio=@Nombre_Duenio
+		        SET Nombre_Duenio=@Nombre_Duenio,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Duenio=@Id_Duenio
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Duenio
 	           (Id_Duenio
-	           ,Nombre_Duenio)
+	           ,Nombre_Duenio
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Duenio)
+	           ,@Nombre_Duenio
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

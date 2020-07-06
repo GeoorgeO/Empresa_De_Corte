@@ -19,6 +19,7 @@ namespace CuttingBusiness
         public string Area { get; set; }
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
 
         public Frm_Areas()
         {
@@ -42,6 +43,7 @@ namespace CuttingBusiness
             CLS_Areas Clase = new CLS_Areas();
             Clase.Id_Area = textId.Text.Trim();
             Clase.Nombre_Area = textNombre.Text.Trim();
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarAreas();
             if (Clase.Exito)
             {

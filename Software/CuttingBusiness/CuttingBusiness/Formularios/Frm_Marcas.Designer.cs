@@ -310,7 +310,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(10, 57);
+            this.labelControl2.Location = new System.Drawing.Point(10, 58);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(33, 13);
             this.labelControl2.TabIndex = 2;
@@ -327,7 +327,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(10, 32);
+            this.labelControl1.Location = new System.Drawing.Point(10, 33);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(49, 13);
             this.labelControl1.TabIndex = 0;
@@ -347,7 +347,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_Marcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Marcas";
+            this.Text = "Marcas";
             this.Load += new System.EventHandler(this.Frm_Marcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

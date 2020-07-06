@@ -1234,6 +1234,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Empleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Frm_Empleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();

@@ -61,9 +61,15 @@
             this.Repisa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Activo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_ProductoTipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nombre_ProductoTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Id_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Nombre_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnBusqMarca = new DevExpress.XtraEditors.SimpleButton();
+            this.textMarca = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cboProductoTipo = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,12 +100,6 @@
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.textMarca = new DevExpress.XtraEditors.TextEdit();
-            this.btnBusqMarca = new DevExpress.XtraEditors.SimpleButton();
-            this.Id_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Marca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Id_ProductoTipo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -111,6 +111,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textMarca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).BeginInit();
@@ -127,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textMarca.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -453,6 +453,12 @@
             this.Activo.VisibleIndex = 12;
             this.Activo.Width = 47;
             // 
+            // Id_ProductoTipo
+            // 
+            this.Id_ProductoTipo.Caption = "Id ProductoTipo";
+            this.Id_ProductoTipo.FieldName = "Id_ProductoTipo";
+            this.Id_ProductoTipo.Name = "Id_ProductoTipo";
+            // 
             // Nombre_ProductoTipo
             // 
             this.Nombre_ProductoTipo.Caption = "Tipo Producto";
@@ -461,13 +467,27 @@
             this.Nombre_ProductoTipo.Visible = true;
             this.Nombre_ProductoTipo.VisibleIndex = 3;
             // 
+            // Id_Marca
+            // 
+            this.Id_Marca.Caption = "Id Marca";
+            this.Id_Marca.FieldName = "Id_Marca";
+            this.Id_Marca.Name = "Id_Marca";
+            // 
+            // Nombre_Marca
+            // 
+            this.Nombre_Marca.Caption = "Marca";
+            this.Nombre_Marca.FieldName = "Nombre_Marca";
+            this.Nombre_Marca.Name = "Nombre_Marca";
+            this.Nombre_Marca.Visible = true;
+            this.Nombre_Marca.VisibleIndex = 13;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
             this.panelControl1.Size = new System.Drawing.Size(911, 211);
             this.panelControl1.TabIndex = 26;
             // 
@@ -498,6 +518,31 @@
             this.groupControl1.Size = new System.Drawing.Size(887, 187);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos del Producto";
+            // 
+            // btnBusqMarca
+            // 
+            this.btnBusqMarca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqMarca.ImageOptions.Image")));
+            this.btnBusqMarca.Location = new System.Drawing.Point(535, 80);
+            this.btnBusqMarca.Name = "btnBusqMarca";
+            this.btnBusqMarca.Size = new System.Drawing.Size(24, 23);
+            this.btnBusqMarca.TabIndex = 21;
+            this.btnBusqMarca.Click += new System.EventHandler(this.btnBusqMarca_Click);
+            // 
+            // textMarca
+            // 
+            this.textMarca.Location = new System.Drawing.Point(374, 81);
+            this.textMarca.MenuManager = this.barManager1;
+            this.textMarca.Name = "textMarca";
+            this.textMarca.Size = new System.Drawing.Size(155, 20);
+            this.textMarca.TabIndex = 20;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(320, 85);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(33, 13);
+            this.labelControl11.TabIndex = 19;
+            this.labelControl11.Text = "Marca:";
             // 
             // cboProductoTipo
             // 
@@ -781,51 +826,6 @@
             // 
             this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
             // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(320, 85);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(33, 13);
-            this.labelControl11.TabIndex = 19;
-            this.labelControl11.Text = "Marca:";
-            // 
-            // textMarca
-            // 
-            this.textMarca.Location = new System.Drawing.Point(374, 81);
-            this.textMarca.MenuManager = this.barManager1;
-            this.textMarca.Name = "textMarca";
-            this.textMarca.Size = new System.Drawing.Size(155, 20);
-            this.textMarca.TabIndex = 20;
-            // 
-            // btnBusqMarca
-            // 
-            this.btnBusqMarca.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnBusqMarca.Location = new System.Drawing.Point(535, 80);
-            this.btnBusqMarca.Name = "btnBusqMarca";
-            this.btnBusqMarca.Size = new System.Drawing.Size(24, 23);
-            this.btnBusqMarca.TabIndex = 21;
-            this.btnBusqMarca.Click += new System.EventHandler(this.btnBusqMarca_Click);
-            // 
-            // Id_Marca
-            // 
-            this.Id_Marca.Caption = "Id Marca";
-            this.Id_Marca.FieldName = "Id_Marca";
-            this.Id_Marca.Name = "Id_Marca";
-            // 
-            // Nombre_Marca
-            // 
-            this.Nombre_Marca.Caption = "Marca";
-            this.Nombre_Marca.FieldName = "Nombre_Marca";
-            this.Nombre_Marca.Name = "Nombre_Marca";
-            this.Nombre_Marca.Visible = true;
-            this.Nombre_Marca.VisibleIndex = 13;
-            // 
-            // Id_ProductoTipo
-            // 
-            this.Id_ProductoTipo.Caption = "Id ProductoTipo";
-            this.Id_ProductoTipo.FieldName = "Id_ProductoTipo";
-            this.Id_ProductoTipo.Name = "Id_ProductoTipo";
-            // 
             // Frm_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -838,6 +838,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Productos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Frm_Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -852,6 +853,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textMarca.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboProductoTipo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad.Properties)).EndInit();
@@ -870,7 +872,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textUnidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textMarca.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1450,6 +1450,7 @@ namespace CuttingBusiness
         private void btn_Empleados_Click(object sender, EventArgs e)
         {
             Frm_Empleados vusuarios = new Frm_Empleados();
+            vusuarios.UsuariosLogin = UsuariosLogin.Trim();
             vusuarios.ShowDialog();
             cargarEmpleados();
         }

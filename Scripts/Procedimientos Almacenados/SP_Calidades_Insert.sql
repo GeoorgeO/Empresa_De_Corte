@@ -16,7 +16,8 @@ GO
 create PROCEDURE [dbo].[SP_Calidades_Insert] 
 	-- Add the parameters for the stored procedure here
 	@Id_Calidad char(3),
-	@Nombre_Calidad varchar(30)
+	@Nombre_Calidad varchar(30),
+	@Usuario varchar(10)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -38,7 +39,9 @@ BEGIN
 		if @Existe>0 
 		
 			UPDATE dbo.Calidades
-		        SET Nombre_Calidad=@Nombre_Calidad
+		        SET Nombre_Calidad=@Nombre_Calidad,
+				Modificador=@Usuario,
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Calidad=@Id_Calidad
 				
@@ -46,10 +49,14 @@ BEGIN
 		
 			INSERT INTO dbo.Calidades
 	           (Id_Calidad
-	           ,Nombre_Calidad)
+	           ,Nombre_Calidad
+			   ,Creador
+			   ,Fecha_Creador)
 	     	VALUES
 	           (@maximo
-	           ,@Nombre_Calidad)
+	           ,@Nombre_Calidad
+			   ,@Usuario
+			   ,getdate())
 		
 		commit transaction T1;
 		set @correcto=1

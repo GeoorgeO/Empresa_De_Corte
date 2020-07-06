@@ -95,7 +95,7 @@ BEGIN
 				  ,[Cajas]
 				  ,[Importe]
 				  ,[Creador]
-			   	  ,[Fecha_Creador]))
+			   	  ,[Fecha_Creador])
 			select 'TEMP01'
 				  ,[Id_secuencia]
 				  ,[Id_empleado]

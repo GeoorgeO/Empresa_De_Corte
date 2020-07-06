@@ -215,7 +215,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
             this.panelControl1.Size = new System.Drawing.Size(817, 410);
             this.panelControl1.TabIndex = 5;
             // 
@@ -357,7 +357,8 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_BusqEntradas";
-            this.Text = "Frm_BusqEntradas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Entradas";
             this.Load += new System.EventHandler(this.Frm_BusqEntradas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

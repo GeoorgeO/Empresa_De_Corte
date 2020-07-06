@@ -17,6 +17,8 @@ namespace CuttingBusiness
 
         public Boolean PaSel { get; set; }
 
+        public string UsuariosLogin { get; set; }
+
         public Frm_Calidad()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace CuttingBusiness
 
             Clase.Id_Calidad = textId.Text.Trim();
             Clase.Nombre_Calidad = textNombre.Text.Trim();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCalidad();
 
             if (Clase.Exito)

@@ -243,5 +243,10 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No existe ordenes seleccionadas para liberar");
             }
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

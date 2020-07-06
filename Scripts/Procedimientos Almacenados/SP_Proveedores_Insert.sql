@@ -51,7 +51,7 @@ BEGIN
 				Contacto=@Contacto,
 				RFC=@RFC,
 				Modificador=@Usuario,
-				Fecha_Modificador=getdate(),
+				Fecha_Modificador=getdate()
 		    WHERE
 		    	Id_Proveedor=@Id_Proveedor
 				

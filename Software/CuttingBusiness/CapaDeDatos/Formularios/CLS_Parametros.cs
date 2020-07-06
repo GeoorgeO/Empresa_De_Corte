@@ -40,6 +40,8 @@ namespace CapaDeDatos
         public decimal Pago_Sup_3_Mission { get; set; }
         public string Id_Tipo { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarParametros()
         {
             TipoDato _dato = new TipoDato();
@@ -141,6 +143,9 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Pago_Sup_3_Mission");
                 _dato.CadenaTexto = Id_Tipo;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tipo");
+
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

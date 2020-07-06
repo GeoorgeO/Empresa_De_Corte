@@ -23,7 +23,9 @@ namespace CuttingBusiness
 
         public string IdDuenio { get; set; }
         public string Duenio { get; set; }
-     
+
+        public string UsuariosLogin { get; set; }
+
         private void CargarDuenio()
         {
             gridControl1.DataSource = null;
@@ -42,7 +44,7 @@ namespace CuttingBusiness
 
             Clase.Id_Duenio = textId.Text.Trim();
             Clase.Nombre_Duenio = textNombre.Text.Trim();
-
+            Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarDuenio();
 
             if (Clase.Exito)

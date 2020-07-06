@@ -190,6 +190,7 @@ namespace CuttingBusiness
                     CLS_Perfiles_Pantallas ins = new CLS_Perfiles_Pantallas();
                     ins.Id_Perfil = cmbPerfiles.EditValue.ToString();
                     ins.Id_Pantalla = dtgValDisponibles.GetRowCellValue(xRow, dtgValDisponibles.Columns["Id_Pantalla"]).ToString();
+                    ins.Usuario = UsuariosLogin.Trim();
                     ins.MtdInsertarPerfilesPantallas();
                     if (!ins.Exito)
                     {
@@ -249,6 +250,7 @@ namespace CuttingBusiness
                 CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
                 del.Id_Perfil = cmbPerfiles.EditValue.ToString();
                 del.Id_Pantalla = InventarioPantallaIdDisponible;
+                del.Usuario = UsuariosLogin.Trim();
                 del.MtdInsertarPerfilesPantallas();
                 if (del.Exito)
                 {

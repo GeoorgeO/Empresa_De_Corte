@@ -447,5 +447,10 @@ namespace CuttingBusiness
             Frm_ServiciosODC frm = new Frm_ServiciosODC();
             frm.Show();
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

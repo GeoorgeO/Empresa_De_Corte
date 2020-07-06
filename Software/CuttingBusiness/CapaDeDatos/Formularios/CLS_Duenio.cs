@@ -12,6 +12,8 @@ namespace CapaDeDatos
         public string Id_Duenio { get; set; }
         public string Nombre_Duenio { get; set; }
 
+        public string Usuario { get; set; }
+
         public void MtdSeleccionarDuenio()
         {
             TipoDato _dato = new TipoDato();
@@ -57,6 +59,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Duenio");
                 _dato.CadenaTexto = Nombre_Duenio;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Duenio");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

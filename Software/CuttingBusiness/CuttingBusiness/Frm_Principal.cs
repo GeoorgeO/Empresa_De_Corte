@@ -168,7 +168,7 @@ namespace CuttingBusiness
             {
                 Frm_Permisos Ventana = new Frm_Permisos();
                 Frm_Permisos.DefInstance.MdiParent = this;
-                Frm_Huertas.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Permisos.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Permisos.DefInstance.Show();
             }
             else
@@ -577,6 +577,7 @@ namespace CuttingBusiness
             if (TieneAcceso("038"))
             {
                 Frm_Parametros frm = new Frm_Parametros();
+                frm.UsuariosLogin = UsuariosLogin.Trim();
                 frm.ShowDialog();
             }
             else
