@@ -50,6 +50,7 @@ namespace CuttingBusiness
         public decimal vPagoJefeCuadrilla { get; set; }
         public string R_T1 { get; set; }
         public string R_T2 { get; set; }
+        public int DiasTrabajados { get; private set; }
 
         public Frm_ReportesNomina()
         {
@@ -1089,7 +1090,7 @@ namespace CuttingBusiness
 
             for (int r = 0; r < tb.Rows.Count; r++)
             {
-                if (T_Importe >= Convert.ToDecimal(tb.Rows[r]["Sueldo_Bruto"].ToString()))
+                if (DiasTrabajados >= Convert.ToDecimal(tb.Rows[r]["Dias_trabajo"].ToString()))
                 {
                     string fil = R_2;
                     fil = AumentaColumna(R_2);
@@ -2108,6 +2109,7 @@ namespace CuttingBusiness
             string OrdenCorte = string.Empty;
             int Fila = 10;
             FActual = Convert.ToDateTime(FInicio.Day+ "/"+FInicio.Month+"/"+FInicio.Year);
+            DiasTrabajados = 0;
             for (int i = 0; i < DiferenciaD.Days + 1; i++)
             {
                 OrdenCorte = string.Empty;
@@ -2117,6 +2119,7 @@ namespace CuttingBusiness
                     if (FActual ==Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_HojaNomina"].ToString()))
                     {
                         OrdenCorte = sel.Datos.Rows[x]["Id_HojaNomina"].ToString();
+                        DiasTrabajados++;
                         break;
                     }
                 } 
