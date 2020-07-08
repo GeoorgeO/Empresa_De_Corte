@@ -274,6 +274,7 @@
             this.btnRespaldoBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.Image")));
             this.btnRespaldoBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.LargeImage")));
             this.btnRespaldoBD.Name = "btnRespaldoBD";
+            this.btnRespaldoBD.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnRespaldoBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRespaldoBD_ItemClick);
             // 
             // btnImportarODC
@@ -292,6 +293,7 @@
             this.btnCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCobros.ImageOptions.Image")));
             this.btnCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCobros.ImageOptions.LargeImage")));
             this.btnCobros.Name = "btnCobros";
+            this.btnCobros.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnCobros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCobros_ItemClick);
             // 
             // btnImportarRendimientoODC
@@ -301,6 +303,7 @@
             this.btnImportarRendimientoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.Image")));
             this.btnImportarRendimientoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportarRendimientoODC.ImageOptions.LargeImage")));
             this.btnImportarRendimientoODC.Name = "btnImportarRendimientoODC";
+            this.btnImportarRendimientoODC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnImportarRendimientoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportarRendimientoODC_ItemClick);
             // 
             // btnCapturaODC
@@ -328,6 +331,7 @@
             this.btnControlAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.Image")));
             this.btnControlAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.LargeImage")));
             this.btnControlAlmacen.Name = "btnControlAlmacen";
+            this.btnControlAlmacen.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnControlAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnControlAlmacen_ItemClick);
             // 
             // btnFormatoODC
@@ -337,6 +341,7 @@
             this.btnFormatoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.Image")));
             this.btnFormatoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.LargeImage")));
             this.btnFormatoODC.Name = "btnFormatoODC";
+            this.btnFormatoODC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnFormatoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFormatoODC_ItemClick);
             // 
             // btnCatalogos
