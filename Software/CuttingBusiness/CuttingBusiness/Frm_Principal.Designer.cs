@@ -274,7 +274,6 @@
             this.btnRespaldoBD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.Image")));
             this.btnRespaldoBD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRespaldoBD.ImageOptions.LargeImage")));
             this.btnRespaldoBD.Name = "btnRespaldoBD";
-            this.btnRespaldoBD.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnRespaldoBD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRespaldoBD_ItemClick);
             // 
             // btnImportarODC
@@ -331,7 +330,6 @@
             this.btnControlAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.Image")));
             this.btnControlAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnControlAlmacen.ImageOptions.LargeImage")));
             this.btnControlAlmacen.Name = "btnControlAlmacen";
-            this.btnControlAlmacen.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnControlAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnControlAlmacen_ItemClick);
             // 
             // btnFormatoODC
@@ -341,7 +339,6 @@
             this.btnFormatoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.Image")));
             this.btnFormatoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFormatoODC.ImageOptions.LargeImage")));
             this.btnFormatoODC.Name = "btnFormatoODC";
-            this.btnFormatoODC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnFormatoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFormatoODC_ItemClick);
             // 
             // btnCatalogos
@@ -351,7 +348,6 @@
             this.btnCatalogos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogos.ImageOptions.Image")));
             this.btnCatalogos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCatalogos.ImageOptions.LargeImage")));
             this.btnCatalogos.Name = "btnCatalogos";
-            this.btnCatalogos.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnCatalogos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCatalogos_ItemClick);
             // 
             // btnNominaporFecha
@@ -380,7 +376,6 @@
             this.btnRendimientoODC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRendimientoODC.ImageOptions.Image")));
             this.btnRendimientoODC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRendimientoODC.ImageOptions.LargeImage")));
             this.btnRendimientoODC.Name = "btnRendimientoODC";
-            this.btnRendimientoODC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnRendimientoODC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRendimientoODC_ItemClick);
             // 
             // btnTrabajadores
@@ -390,7 +385,6 @@
             this.btnTrabajadores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrabajadores.ImageOptions.Image")));
             this.btnTrabajadores.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTrabajadores.ImageOptions.LargeImage")));
             this.btnTrabajadores.Name = "btnTrabajadores";
-            this.btnTrabajadores.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnTrabajadores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrabajadores_ItemClick);
             // 
             // btnSegurodeVida
@@ -400,7 +394,6 @@
             this.btnSegurodeVida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSegurodeVida.ImageOptions.Image")));
             this.btnSegurodeVida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSegurodeVida.ImageOptions.LargeImage")));
             this.btnSegurodeVida.Name = "btnSegurodeVida";
-            this.btnSegurodeVida.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnSegurodeVida.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSegurodeVida_ItemClick);
             // 
             // btnSeguroSocial
@@ -410,7 +403,6 @@
             this.btnSeguroSocial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeguroSocial.ImageOptions.Image")));
             this.btnSeguroSocial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeguroSocial.ImageOptions.LargeImage")));
             this.btnSeguroSocial.Name = "btnSeguroSocial";
-            this.btnSeguroSocial.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnSeguroSocial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeguroSocial_ItemClick);
             // 
             // btnAlmacen
@@ -420,7 +412,6 @@
             this.btnAlmacen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.ImageOptions.Image")));
             this.btnAlmacen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAlmacen.ImageOptions.LargeImage")));
             this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnAlmacen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlmacen_ItemClick);
             // 
             // btnRtpCobros
@@ -430,7 +421,6 @@
             this.btnRtpCobros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRtpCobros.ImageOptions.Image")));
             this.btnRtpCobros.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRtpCobros.ImageOptions.LargeImage")));
             this.btnRtpCobros.Name = "btnRtpCobros";
-            this.btnRtpCobros.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnRtpCobros.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRtpCobros_ItemClick);
             // 
             // btnUnidaddeMedida
@@ -640,11 +630,13 @@
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnControlAlmacen);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Visible = false;
             // 
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnFormatoODC);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Visible = false;
             // 
             // ribbonPage5
             // 
@@ -663,6 +655,7 @@
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnCatalogos);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Visible = false;
             // 
             // ribbonPageGroup11
             // 
@@ -674,27 +667,32 @@
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btnRendimientoODC);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Visible = false;
             // 
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.btnTrabajadores);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.Visible = false;
             // 
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.btnSegurodeVida);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnSeguroSocial);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.Visible = false;
             // 
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.ItemLinks.Add(this.btnAlmacen);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Visible = false;
             // 
             // ribbonPageGroup16
             // 
             this.ribbonPageGroup16.ItemLinks.Add(this.btnRtpCobros);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Visible = false;
             // 
             // ribbonPage2
             // 
@@ -727,6 +725,7 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.btnRespaldoBD);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Respaldo";
+            this.ribbonPageGroup6.Visible = false;
             // 
             // ribbonPage3
             // 

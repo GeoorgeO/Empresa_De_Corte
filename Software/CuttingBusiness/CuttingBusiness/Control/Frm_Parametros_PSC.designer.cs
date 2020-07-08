@@ -149,6 +149,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -174,9 +175,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 459);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 465);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(362, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(362, 21);
             // 
             // barDockControlLeft
             // 
@@ -184,7 +185,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(54, 459);
+            this.barDockControlLeft.Size = new System.Drawing.Size(54, 465);
             // 
             // barDockControlRight
             // 
@@ -192,7 +193,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(362, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 459);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 465);
             // 
             // panelControl1
             // 
@@ -201,7 +202,7 @@
             this.panelControl1.Location = new System.Drawing.Point(54, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(308, 459);
+            this.panelControl1.Size = new System.Drawing.Size(308, 465);
             this.panelControl1.TabIndex = 5;
             // 
             // xtraTabControl1
@@ -210,7 +211,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(284, 435);
+            this.xtraTabControl1.Size = new System.Drawing.Size(284, 441);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -248,7 +249,7 @@
             this.xtraTabPage1.Controls.Add(this.labelControl2);
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(278, 407);
+            this.xtraTabPage1.Size = new System.Drawing.Size(278, 413);
             this.xtraTabPage1.Text = "Carga Excel Servicios Cortes";
             // 
             // spFilaInicio
