@@ -320,12 +320,33 @@ namespace CuttingBusiness
                             textPrecioCaja.Text= Clase.Datos.Rows[0][22].ToString();
                             CargarDetalle();
                             ContadorTotal();
+
+                            if (Clase.Datos.Rows[0]["Estatus"].ToString() == "C")
+                            {
+                                labelEstatus.Text = "Estatus: Nomina Cerrada";
+                                bloquerHoja(false);
+                                btnCerrarNomina.Visible = false;
+
+                            }
+                            else
+                            {
+                                RecargarInfoCaptura();
+                                ContadorTotal();
+                                lueCuadrillas.Focus();
+                                if (textIdHojaNomina.Text.Trim().Length >= 6)
+                                {
+                                    guardarHoja();
+                                }
+                            }
+
                             Abrir = false;
-                            RecargarInfoCaptura();
-                            ContadorTotal();
-                            lueCuadrillas.Focus();
+                            //RecargarInfoCaptura();
+                            //ContadorTotal();
+                            //lueCuadrillas.Focus();
                             textIdHojaNomina.Enabled = false;
+
                             
+
                         }
                     }else
                     {
