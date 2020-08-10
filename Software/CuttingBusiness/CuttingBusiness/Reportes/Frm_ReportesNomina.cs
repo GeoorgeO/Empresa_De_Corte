@@ -1130,6 +1130,7 @@ namespace CuttingBusiness
             }
 
             Fila = Fila + 2;
+           
             oRng = oSheet.get_Range(ColFinal + Fila.ToString(), R_1 + Fila.ToString());
             oRng.Merge();
             oRng.Value2 = "TOTAL A PAGAR";
@@ -1436,16 +1437,23 @@ namespace CuttingBusiness
                             
                         }
                     }
+                    //FActual = FActual.AddDays(1);
+                    //R_1 = AumentaColumna(R_1);
+                    //R_1 = AumentaColumna(R_1);
+                    //R_2 = AumentaColumna(R_2);
+                    //R_2 = AumentaColumna(R_2);
                 }
                 int FilaTemp = 0;
                 RenTemp = R_2;
-                R_1 = AumentaColumna(R_1);
-                R_1 = AumentaColumna(R_1);
-                R_2 = AumentaColumna(R_2);
-                R_1 = AumentaColumna(R_1);
-                R_2 = AumentaColumna(R_2);
+                R_1 = R_T1;
+                R_2 = AumentaColumna(R_1);
+                //R_1 = AumentaColumna(R_1);
+                //R_1 = AumentaColumna(R_1);
+                //R_2 = AumentaColumna(R_2);
+                //R_1 = AumentaColumna(R_1);
+                //R_2 = AumentaColumna(R_2);
                 RenTemp2 = R_1;
-                R_2 = AumentaColumna(R_2);
+                //R_2 = AumentaColumna(R_2);
 
                 oRng = oSheet.get_Range(R_2 + Fila.ToString(), R_2 + Fila.ToString());
                 oRng.Value2 = T_Importe;
@@ -1823,7 +1831,7 @@ namespace CuttingBusiness
 
             Fila= Fila+2;
 
-            oRng = oSheet.get_Range("A" + Fila.ToString(), R_2 + Fila.ToString());
+            oRng = oSheet.get_Range("A" + Fila.ToString(), R_T2 + Fila.ToString());
             oRng.Interior.ColorIndex = 1;
             oRng.Font.Color = Color.White;
             FilaActual = Fila;
