@@ -182,6 +182,24 @@ namespace CuttingBusiness
             }
         }
 
+        private void verificaimportes()
+        {
+            int xRow = gridView1.GetVisibleRowHandle(0);
+            int tcajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"]));
+            Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
+            double tprecio = Convert.ToDouble(valor);
+            double tImporte = Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
+            if (Convert.ToInt32(tcajas * tprecio) == Convert.ToInt32(tImporte))
+            {
+
+            }else
+            {
+                calculanuevosvalores('A');
+                insertanuevosvalores();
+            }
+           
+        }
+
         private void abrirHoja()
         {
             CLS_HojaNomina Clase = new CLS_HojaNomina();
@@ -233,6 +251,7 @@ namespace CuttingBusiness
                 textPrecioCaja.Text = Clase.Datos.Rows[0][22].ToString();
                 CargarDetalle();
                 ContadorTotal();
+                verificaimportes();
                 if (Clase.Datos.Rows[0]["Estatus"].ToString() == "C")
                 {
                     labelEstatus.Text = "Estatus: Nomina Cerrada";
@@ -320,7 +339,7 @@ namespace CuttingBusiness
                             textPrecioCaja.Text= Clase.Datos.Rows[0][22].ToString();
                             CargarDetalle();
                             ContadorTotal();
-
+                            verificaimportes();
                             if (Clase.Datos.Rows[0]["Estatus"].ToString() == "C")
                             {
                                 labelEstatus.Text = "Estatus: Nomina Cerrada";
@@ -538,6 +557,7 @@ namespace CuttingBusiness
                     //labelImporte.Text = (valor + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
                     labelImporte.Text = Total.ToString();
                 }
+                
             }
             if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0 && Convert.ToInt32(labelContadorCajas.Text)>0)
             {
@@ -955,16 +975,19 @@ namespace CuttingBusiness
                                 if ( Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador <= vtCortadores)
                                 {
                                     guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (vtTotalImporte / vtCortadores), true);
+                                    verificaimportes();
                                 }
                                 else
                                 {
                                     if (radioGroup1.EditValue.ToString().Equals("D"))//agrege para nuevo tipo pago-----------------------
                                     {
                                         guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (vtCortadores * valor), true);
+                                        verificaimportes();
                                     }
                                     else
                                     {
                                         guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (Convert.ToDecimal(textCajas.Text) * valor), true);
+                                        verificaimportes();
                                     }
                                     
                                 }
@@ -1573,7 +1596,7 @@ namespace CuttingBusiness
             }
         }
 
-       
+     
 
         private void lueCuadrillas_KeyUp(object sender, KeyEventArgs e)
         {

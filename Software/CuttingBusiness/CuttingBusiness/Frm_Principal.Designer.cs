@@ -167,7 +167,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnEntradas);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnSalidas);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(915, 144);
+            this.ribbonControl1.Size = new System.Drawing.Size(929, 147);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnUsuarios
@@ -747,14 +747,14 @@
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 426);
+            this.ClientSize = new System.Drawing.Size(929, 433);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";

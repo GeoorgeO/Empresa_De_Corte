@@ -94,6 +94,7 @@
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Formularios\CLS_UnidadesMedida.cs" />
     <Compile Include="Formularios\CLS_Usuarios.cs" />
+    <Compile Include="Formularios\CLS_Version.cs" />
     <Compile Include="Formularios\ColumnasExcel.cs" />
     <Compile Include="Formularios\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -45,6 +45,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
@@ -145,8 +146,9 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.skinBarSubItem1});
-            this.barManager1.MaxItemId = 1;
+            this.skinBarSubItem1,
+            this.barStaticItem1});
+            this.barManager1.MaxItemId = 2;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar3
@@ -157,7 +159,8 @@
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -183,9 +186,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 140);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 139);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(582, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(582, 26);
             // 
             // barDockControlLeft
             // 
@@ -193,7 +196,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 140);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 139);
             // 
             // barDockControlRight
             // 
@@ -201,7 +204,13 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(582, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 140);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 139);
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "V20200714.01";
+            this.barStaticItem1.Id = 1;
+            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // Frm_Login
             // 
@@ -255,5 +264,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
     }
 }

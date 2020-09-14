@@ -108,12 +108,30 @@ namespace CuttingBusiness
                 btnAcceso.Focus();
             }
         }
-        
+
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             txtUser.Focus();
             MSRegistro RegOut = new MSRegistro();
             SkinForm.LookAndFeel.SetSkinStyle(RegOut.GetSetting("ConexionSQL", "Sking"));
+
+            CLS_Version v = new CLS_Version();
+            v.MtdSeleccionarVersion();
+            if (v.Exito)
+            {
+                if (barStaticItem1.Caption.Trim().Equals(v.Datos.Rows[0][0].ToString())){
+
+                }else
+                {
+                    XtraMessageBox.Show("La version del programa no es la mas actual, se requiere la version "+ v.Datos.Rows[0][0].ToString() + Environment.NewLine+ "Favor de comunicarse con el administrador del sistema");
+                    btnAcceso.Enabled = false;
+                }
+               
+            }
+            else
+            {
+                XtraMessageBox.Show(v.Mensaje);
+            }
         }
 
         private void Frm_Login_Shown(object sender, EventArgs e)

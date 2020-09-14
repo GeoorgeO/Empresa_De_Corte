@@ -156,7 +156,6 @@
             this.textIdHojaNomina.Name = "textIdHojaNomina";
             this.textIdHojaNomina.Size = new System.Drawing.Size(100, 20);
             this.textIdHojaNomina.TabIndex = 1;
-           
             this.textIdHojaNomina.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyUp);
             // 
             // btnAbrirHoja
@@ -657,6 +656,7 @@
             this.textPrecioCaja.Properties.ReadOnly = true;
             this.textPrecioCaja.Size = new System.Drawing.Size(100, 20);
             this.textPrecioCaja.TabIndex = 41;
+            
             // 
             // labelControl7
             // 
