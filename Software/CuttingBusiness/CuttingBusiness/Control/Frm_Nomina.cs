@@ -184,19 +184,24 @@ namespace CuttingBusiness
 
         private void verificaimportes()
         {
-            int xRow = gridView1.GetVisibleRowHandle(0);
-            int tcajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"]));
-            Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
-            double tprecio = Convert.ToDouble(valor);
-            double tImporte = Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
-            if (Convert.ToInt32(tcajas * tprecio) == Convert.ToInt32(tImporte))
+            if (gridView1.RowCount > 0)
             {
+                int xRow = gridView1.GetVisibleRowHandle(0);
+                int tcajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"]));
+                Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
+                double tprecio = Convert.ToDouble(valor);
+                double tImporte = Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
+                if (Convert.ToInt32(tcajas * tprecio) == Convert.ToInt32(tImporte))
+                {
 
-            }else
-            {
-                calculanuevosvalores('A');
-                insertanuevosvalores();
+                }
+                else
+                {
+                    calculanuevosvalores('A');
+                    insertanuevosvalores();
+                }
             }
+            
            
         }
 
@@ -975,19 +980,19 @@ namespace CuttingBusiness
                                 if ( Convert.ToDecimal(labelContadorCortador.Text) + vtNcortador <= vtCortadores)
                                 {
                                     guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (vtTotalImporte / vtCortadores), true);
-                                    verificaimportes();
+                                    
                                 }
                                 else
                                 {
                                     if (radioGroup1.EditValue.ToString().Equals("D"))//agrege para nuevo tipo pago-----------------------
                                     {
                                         guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (vtCortadores * valor), true);
-                                        verificaimportes();
+                                        
                                     }
                                     else
                                     {
                                         guardarDetalle(textIdHojaNomina.Text.Trim(), DosCero(vtSecuencia.ToString()), lueEmpleados.EditValue.ToString(), Convert.ToInt32(Convert.ToDecimal(textCajas.Text)), (Convert.ToDecimal(textCajas.Text) * valor), true);
-                                        verificaimportes();
+                                        
                                     }
                                     
                                 }
@@ -1361,6 +1366,7 @@ namespace CuttingBusiness
 
         private void btnCerrarNomina_Click(object sender, EventArgs e)
         {
+            verificaimportes();
             if (textIdHojaNomina.Text.Trim().Length >= 6)
             {
                 DialogResult = XtraMessageBox.Show("¿Esta Seguro que desea Cerrar esta hoja?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
