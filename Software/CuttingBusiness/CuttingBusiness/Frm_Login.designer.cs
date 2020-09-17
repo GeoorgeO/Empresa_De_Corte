@@ -41,11 +41,11 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
@@ -174,6 +174,12 @@
             this.skinBarSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("skinBarSubItem1.ImageOptions.LargeImage")));
             this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "V20200917.01";
+            this.barStaticItem1.Id = 1;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -205,12 +211,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(582, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 139);
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "V20200714.01";
-            this.barStaticItem1.Id = 1;
-            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // Frm_Login
             // 

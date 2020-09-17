@@ -656,7 +656,6 @@
             this.textPrecioCaja.Properties.ReadOnly = true;
             this.textPrecioCaja.Size = new System.Drawing.Size(100, 20);
             this.textPrecioCaja.TabIndex = 41;
-            
             // 
             // labelControl7
             // 
