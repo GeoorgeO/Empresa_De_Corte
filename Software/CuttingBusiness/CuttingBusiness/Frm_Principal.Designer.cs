@@ -106,7 +106,7 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationIcon = ((System.Drawing.Bitmap)(resources.GetObject("ribbonControl1.ApplicationIcon")));
+            this.ribbonControl1.ApplicationIcon = global::CuttingBusiness.Properties.Resources.arbol__1_;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -756,6 +756,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 433);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";
             this.Ribbon = this.ribbonControl1;

@@ -1490,7 +1490,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
 
                 oRng = oSheet.get_Range(R_1 + FilaTemp.ToString(), R_1 + FilaTemp.ToString());
                 oRng.Formula = "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
@@ -1498,7 +1498,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
 
                 R_1 = AumentaColumna(R_1);
                 oRng = oSheet.get_Range(R_1 + Fila.ToString(), R_1 + Fila.ToString());
@@ -1508,7 +1508,7 @@ namespace CuttingBusiness
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
                 oRng.Interior.ColorIndex = 44;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
 
                 oRng = oSheet.get_Range(R_1 + FilaTemp.ToString(), R_1 + FilaTemp.ToString());
                 oRng.Formula = "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
@@ -1517,7 +1517,7 @@ namespace CuttingBusiness
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
                 oRng.Interior.ColorIndex = 44;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
 
                 R_1 = AumentaColumna(R_1);
 
@@ -1527,7 +1527,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
 
                 oRng = oSheet.get_Range(R_1 + FilaTemp.ToString(), R_1 + FilaTemp.ToString());
                 oRng.Formula = "=SUM(" + R_1 + "13:" + R_1 + FilaActual.ToString() + ")";
@@ -1535,7 +1535,7 @@ namespace CuttingBusiness
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 oRng.Font.Bold = false;
-                oRng.NumberFormat = "$#,##0";
+                oRng.NumberFormat = "$#,##0.00";
                 string Rentemp3 = R_1;
 
                 R_1 = AumentaColumna(R_1);
@@ -1652,7 +1652,7 @@ namespace CuttingBusiness
                                     oRng.Font.Size = 11;
                                     oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                                     oRng.Font.Bold = false;
-                                    oRng.NumberFormat = "$#,##0";
+                                    oRng.NumberFormat = "$#,##0.00";
 
                                     decimal Dividendos= T_Importe - Convert.ToDecimal(tb.Rows[r]["Sueldo_Bruto"].ToString());
                                     fil = AumentaColumna(fil);
@@ -1664,7 +1664,7 @@ namespace CuttingBusiness
                                     oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                                     oRng.Font.Bold = false;
                                     oRng.Interior.ColorIndex = 44;
-                                    oRng.NumberFormat = "$#,##0";
+                                    oRng.NumberFormat = "$#,##0.00";
 
                                     fil = AumentaColumna(fil);
                                     fil = AumentaColumna(fil);
@@ -1789,7 +1789,7 @@ namespace CuttingBusiness
                     oRng.Font.Size = 11;
                     oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                     oRng.Font.Bold = false;
-                    oRng.NumberFormat = "$#,##0";
+                    oRng.NumberFormat = "$#,##0.00";
 
                     decimal Dividendos = T_Importe - Convert.ToDecimal(tb.Rows[r]["Sueldo_Bruto"].ToString());
                     fil = AumentaColumna(fil);
@@ -1801,7 +1801,7 @@ namespace CuttingBusiness
                     oRng.HorizontalAlignment = Excel.XlVAlign.xlVAlignCenter;
                     oRng.Font.Bold = false;
                     oRng.Interior.ColorIndex = 44;
-                    oRng.NumberFormat = "$#,##0";
+                    oRng.NumberFormat = "$#,##0.00";
 
                     fil = AumentaColumna(fil);
                     fil = AumentaColumna(fil);
