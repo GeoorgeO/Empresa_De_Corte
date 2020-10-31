@@ -76,6 +76,12 @@
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.btnAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.groupPagoMinimo = new DevExpress.XtraEditors.GroupControl();
+            this.textPagoMinCortador = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.textPagoMinBanero = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textPagoxCajaSup.Properties)).BeginInit();
@@ -114,6 +120,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.textKgxDiaSup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textKgxDiaInf1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupPagoMinimo)).BeginInit();
+            this.groupPagoMinimo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textPagoMinCortador.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPagoMinBanero.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -621,7 +633,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(377, 337);
+            this.btnAceptar.Location = new System.Drawing.Point(377, 406);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 3;
@@ -630,23 +642,86 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(470, 337);
+            this.btnCancelar.Location = new System.Drawing.Point(470, 406);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // groupPagoMinimo
+            // 
+            this.groupPagoMinimo.Controls.Add(this.groupControl5);
+            this.groupPagoMinimo.Location = new System.Drawing.Point(12, 335);
+            this.groupPagoMinimo.Name = "groupPagoMinimo";
+            this.groupPagoMinimo.Size = new System.Drawing.Size(201, 96);
+            this.groupPagoMinimo.TabIndex = 5;
+            this.groupPagoMinimo.Text = "PAGO POR CAJA";
+            // 
+            // textPagoMinCortador
+            // 
+            this.textPagoMinCortador.Location = new System.Drawing.Point(12, 42);
+            this.textPagoMinCortador.Name = "textPagoMinCortador";
+            this.textPagoMinCortador.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoMinCortador.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoMinCortador.Properties.Mask.EditMask = "n2";
+            this.textPagoMinCortador.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPagoMinCortador.Size = new System.Drawing.Size(73, 20);
+            this.textPagoMinCortador.TabIndex = 0;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(21, 23);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(54, 13);
+            this.labelControl13.TabIndex = 1;
+            this.labelControl13.Text = "Cortadores";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(106, 23);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(39, 13);
+            this.labelControl14.TabIndex = 3;
+            this.labelControl14.Text = "Bañeros";
+            // 
+            // textPagoMinBanero
+            // 
+            this.textPagoMinBanero.Location = new System.Drawing.Point(91, 42);
+            this.textPagoMinBanero.Name = "textPagoMinBanero";
+            this.textPagoMinBanero.Properties.Appearance.Options.UseTextOptions = true;
+            this.textPagoMinBanero.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.textPagoMinBanero.Properties.Mask.EditMask = "n2";
+            this.textPagoMinBanero.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPagoMinBanero.Size = new System.Drawing.Size(73, 20);
+            this.textPagoMinBanero.TabIndex = 2;
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.textPagoMinCortador);
+            this.groupControl5.Controls.Add(this.labelControl14);
+            this.groupControl5.Controls.Add(this.labelControl13);
+            this.groupControl5.Controls.Add(this.textPagoMinBanero);
+            this.groupControl5.Location = new System.Drawing.Point(10, 21);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(178, 69);
+            this.groupControl5.TabIndex = 6;
+            this.groupControl5.Text = "Pago Minimo";
+            // 
             // Frm_Parametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 366);
+            this.ClientSize = new System.Drawing.Size(552, 438);
+            this.Controls.Add(this.groupPagoMinimo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.radioGroup1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Parametros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parametros";
@@ -692,6 +767,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.textKgxDiaSup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textKgxDiaInf1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupPagoMinimo)).EndInit();
+            this.groupPagoMinimo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textPagoMinCortador.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPagoMinBanero.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -746,5 +828,11 @@
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraEditors.SimpleButton btnAceptar;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
+        private DevExpress.XtraEditors.GroupControl groupPagoMinimo;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.TextEdit textPagoMinCortador;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit textPagoMinBanero;
     }
 }

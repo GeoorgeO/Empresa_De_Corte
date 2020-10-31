@@ -64,7 +64,9 @@ BEGIN
 			Pago_Sup_3 ,
 			Pago_Inf_3_Mission ,
 			Pago_Sup_3_Mission ,
-			Id_Tipo
+			Id_Tipo ,
+			Pago_Min_Cortador ,
+			Pago_Min_Banero
 		from Parametros
 		where Id_Tipo=@Id_Tipo
 END

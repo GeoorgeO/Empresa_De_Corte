@@ -19,6 +19,8 @@ namespace CuttingBusiness
         public string tempFechaFin { get; set; }
         public string tempIndexSel { get; set; }
         public string tempEstaus { get; set; }
+        public decimal tempPagoMinCortador { get; set; }
+        public decimal tempPagoMinBanero { get; set; }
 
 
         string vtId_JefeCuadrilla = "";
@@ -71,6 +73,7 @@ namespace CuttingBusiness
             }
             tempEstaus = "T";
         }
+
 
         private void cargarEmpleados()
         {
@@ -175,11 +178,24 @@ namespace CuttingBusiness
                 }
                 vtCortadores = Convert.ToInt32(Clase.Datos.Rows[0][18]);
                 //vtTope = vtCortadores * Convert.ToDecimal(Clase.Datos.Rows[0][1]);
+                tempPagoMinCortador = Convert.ToDecimal(Clase.Datos.Rows[0][19]);
+                tempPagoMinBanero = Convert.ToDecimal(Clase.Datos.Rows[0][20]);
             }
             else
             {
                 XtraMessageBox.Show(Clase.Mensaje);
             }
+        }
+
+        private void ReCalculoPagoMinxCaja()
+        {
+            DialogResult = XtraMessageBox.Show("El importe de la hoja es menor al monto minimo configurado ["+tempPagoMinCortador.ToString()+"], Desea recalcular para su ajuste?, Esta accion no se puede revertir ", "Importe Inferior a Pago Minimo, Recalcular Importe?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                textPromedioCaja2.Text = (tempPagoMinCortador / Convert.ToDecimal(labelContadorCajas.Text)).ToString();
+                this.Update();
+            }
+            
         }
 
         private void verificaimportes()
@@ -203,6 +219,29 @@ namespace CuttingBusiness
             }
             
            
+        }
+
+        private void verificaimportesEspecial()
+        {
+            if (gridView1.RowCount > 0)
+            {
+                int xRow = gridView1.GetVisibleRowHandle(0);
+                int tcajas = Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"]));
+                Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
+                double tprecio = Convert.ToDouble(valor);
+                double tImporte = Convert.ToDouble(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]));
+                if (Convert.ToInt32(tcajas * tprecio) == Convert.ToInt32(tImporte))
+                {
+
+                }
+                else
+                {
+                    calculanuevosvaloresEspecial('A');
+                    insertanuevosvalores();
+                }
+            }
+
+
         }
 
         private void abrirHoja()
@@ -733,6 +772,141 @@ namespace CuttingBusiness
                         
                     }
                         
+                }
+
+            }
+        }
+
+        private void calculanuevosvaloresEspecial(char accion)
+        {
+            if (gridView1.RowCount > 0)
+            {
+                if (Convert.ToDecimal(textKgcortadosxdia.Text) == 0 && Convert.ToDecimal(labelContadorCortador.Text) <= vtCortadores)
+                {
+                    if (accion == 'B')
+                    {
+
+                    }
+                    else
+                    {
+                        if (radioGroup1.EditValue.ToString().Equals("C"))
+                        {
+                            Decimal.TryParse(textPrecioCaja.Text, style, culture, out valor);
+                            if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0)
+                            {
+                                vtTotalImporte = Convert.ToDecimal(textKgcortadosxdia.Text) * valor;
+                            }
+                            else
+                            {
+                                Decimal.TryParse(textTopepgoxDia.Text, style, culture, out valor);
+                                vtTotalImporte = valor;
+
+                            }
+                            if (Convert.ToDecimal(labelContadorCortador.Text) > vtCortadores)
+                            {
+                                decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCortador.Text), 4);
+                                //textPromedioCaja2.Text = (laquesea).ToString();
+                            }
+                            else
+                            {
+                                decimal laquesea = (((vtTotalImporte / vtCortadores) * (Convert.ToDecimal(labelContadorCortador.Text))) / (Convert.ToDecimal(labelContadorCajas.Text)));
+                                // decimal laquesea = decimal.Round(((Convert.ToDecimal(labelPagoDiario.Text)/ Convert.ToDecimal(labelContadorCortador.Text))/ Convert.ToDecimal(textCajas.Text)) / vtCortadores , 4);
+                                //textPromedioCaja2.Text = (laquesea).ToString();
+                            }
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    if (accion == 'B')
+                    {
+                        //textPromedioCaja2.Text = (vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text)).ToString();
+                    }
+                    else
+                    {
+                        if (radioGroup1.EditValue.ToString().Equals("C")) //Agrege esto para nuevos tipos de pago----------
+                        {
+                            Decimal.TryParse(textPrecioCaja.Text, style, culture, out valor);
+                            if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0)
+                            {
+                                vtTotalImporte = Convert.ToDecimal(textKgcortadosxdia.Text) * valor;
+                            }
+                            else
+                            {
+                                Decimal.TryParse(textTopepgoxDia.Text, style, culture, out valor);
+                                vtTotalImporte = valor;
+
+                            }
+                        }
+                        if (radioGroup1.EditValue.ToString().Equals("D"))
+                        {
+                            decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCortador.Text) / vtCortadores, 4);
+                            //textPromedioCaja2.Text = (laquesea).ToString();
+                        }
+                        else
+                        {//----------------------------------------------------------------------------------------------------------------------
+                            if (Convert.ToDecimal(labelContadorCajas.Text) > 0)
+                            {
+                                decimal laquesea = decimal.Round(vtTotalImporte / Convert.ToDecimal(labelContadorCajas.Text), 4);
+                                //textPromedioCaja2.Text = (laquesea).ToString();
+                            }
+                        }
+
+                    }
+
+
+                }
+                for (int x = 0; x < gridView1.RowCount; x++)
+                {
+                    int xRow = gridView1.GetVisibleRowHandle(x);
+                    Decimal.TryParse(textPromedioCaja2.Text, style, culture, out valor);
+                    if ((/*Convert.ToDecimal(textKgcortadosxdia.Text) == 0 || checkPagoxDia.Checked==true*/ radioGroup1.EditValue.ToString().Equals("D")) && Convert.ToDecimal(labelContadorCortador.Text) <= vtCortadores) //Nuevo Cambio (comentado) para tipos de pago
+                    {
+                        if (Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])) != vtTotalImporte / vtCortadores)
+                        {
+                            gridView1.SetRowCellValue(xRow, "Importe", vtTotalImporte / vtCortadores);
+                            CambioDetalle = true;
+                        }
+
+                    }
+                    else
+                    {
+                        if (gridView1.GetRowCellValue(xRow, gridView1.Columns["Id_Puesto"]).ToString().Trim().Equals("03"))
+                        {
+                            if (Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])) != Convert.ToDecimal(labelPagoDiario.Text))
+                            {
+                                gridView1.SetRowCellValue(xRow, "Importe", Convert.ToDecimal(labelPagoDiario.Text));
+                                CambioDetalle = true;
+                            }
+
+                        }
+                        else
+                        {
+                            if (radioGroup1.EditValue.ToString().Equals("D")) //egrego cambio para nuevo tipo de pago --------------------------------------------------
+                            {
+                                if (Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])) != valor / vtCortadores)
+                                {
+                                    gridView1.SetRowCellValue(xRow, "Importe", valor * vtCortadores);
+                                    CambioDetalle = true;
+                                }
+                            }
+                            else
+                            { //-----------------------------------------------------------------------------------------------------------------------
+                                if (Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])) != valor * Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"])))
+                                {
+                                    gridView1.SetRowCellValue(xRow, "Importe", valor * Convert.ToInt32(gridView1.GetRowCellValue(xRow, gridView1.Columns["Cajas"])));
+                                    CambioDetalle = true;
+                                }
+                            }
+
+
+
+                        }
+
+                    }
+
                 }
 
             }
@@ -1366,7 +1540,22 @@ namespace CuttingBusiness
 
         private void btnCerrarNomina_Click(object sender, EventArgs e)
         {
-            verificaimportes();
+            decimal vimporte = 0;
+            decimal vtope = 0;
+            Decimal.TryParse(labelImporteCortador.Text, style, culture, out valor);
+            vimporte = valor;
+            Decimal.TryParse(textTopepgoxDia.Text, style, culture, out valor);
+            vtope = valor;
+            if (vimporte < vtope)
+            {
+                ReCalculoPagoMinxCaja();
+                verificaimportesEspecial();
+            }
+            else
+            {
+                verificaimportes();
+            }
+            
             if (textIdHojaNomina.Text.Trim().Length >= 6)
             {
                 DialogResult = XtraMessageBox.Show("¿Esta Seguro que desea Cerrar esta hoja?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);

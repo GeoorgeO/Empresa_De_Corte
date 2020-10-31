@@ -85,7 +85,8 @@ namespace CuttingBusiness
                 textPagoSup3.Text = Clase.Datos.Rows[0][27].ToString();
                 textPagoInf3Mission.Text = Clase.Datos.Rows[0][28].ToString();
                 textPagoSup3Mission.Text = Clase.Datos.Rows[0][29].ToString();
-               
+                textPagoMinCortador.Text = Clase.Datos.Rows[0][31].ToString();
+                textPagoMinBanero.Text = Clase.Datos.Rows[0][32].ToString();
             }
         }
 
@@ -124,6 +125,9 @@ namespace CuttingBusiness
             Clase.Pago_Sup_3_Mission= Convert.ToDecimal(textPagoSup3Mission.Text);
 
             Clase.Id_Tipo = radioGroup1.EditValue.ToString(); ;
+
+            Clase.Pago_Min_Cortador = Convert.ToDecimal(textPagoMinCortador.Text);
+            Clase.Pago_Min_Banero = Convert.ToDecimal(textPagoMinBanero.Text);
 
             Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarParametros();

@@ -39,6 +39,8 @@ namespace CapaDeDatos
         public decimal Pago_Inf_3_Mission { get; set; }
         public decimal Pago_Sup_3_Mission { get; set; }
         public string Id_Tipo { get; set; }
+        public decimal Pago_Min_Cortador { get; set; }
+        public decimal Pago_Min_Banero { get; set; }
 
         public string Usuario { get; set; }
 
@@ -146,6 +148,12 @@ namespace CapaDeDatos
 
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+
+                _dato.DecimalValor = Pago_Min_Cortador;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Pago_Min_Cortador");
+                _dato.DecimalValor = Pago_Min_Banero;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Pago_Min_Banero");
+                
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

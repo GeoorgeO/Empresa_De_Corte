@@ -46,7 +46,9 @@ create PROCEDURE [dbo].[SP_Parametros_Insert]
 	@Pago_Inf_3_Mission numeric(10,2) ,
 	@Pago_Sup_3_Mission numeric(10,2) ,
 	@Id_Tipo char(1),
-	@Usuario varchar(10)
+	@Usuario varchar(10),
+	@Pago_Min_Cortador numeric(10,2),
+	@Pago_Min_Banero numeric(10,2)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -98,6 +100,8 @@ BEGIN
 				Pago_Inf_3_Mission=@Pago_Inf_3_Mission,
 				Pago_Sup_3_Mission=@Pago_Sup_3_Mission,
 				Id_Tipo=@Id_Tipo,
+				Pago_Min_Cortador=@Pago_Min_Cortador,
+				Pago_Min_Banero=@Pago_Min_Banero,
 				Modificador=@Usuario,
 				Fecha_Modificador=getdate()
 		    WHERE
@@ -137,6 +141,8 @@ BEGIN
 				Pago_Inf_3_Mission,
 				Pago_Sup_3_Mission,
 				Id_Tipo,
+				Pago_Min_Cortador,
+				Pago_Min_Banero,
 				Creador,
 			   	Fecha_Creador)
 	     	VALUES
@@ -170,7 +176,9 @@ BEGIN
 				@Pago_Sup_3,
 				@Pago_Inf_3_Mission,
 				@Pago_Sup_3_Mission,
-				@Id_Tipo
+				@Id_Tipo,
+				@Pago_Min_Cortador,
+				@Pago_Min_Banero
 				,@Usuario
 			   	,getdate())
 		
