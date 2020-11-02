@@ -21,6 +21,9 @@ namespace CuttingBusiness
         public string tempEstaus { get; set; }
         public decimal tempPagoMinCortador { get; set; }
         public decimal tempPagoMinBanero { get; set; }
+        
+
+        Boolean Ajuste = false;
 
 
         string vtId_JefeCuadrilla = "";
@@ -189,12 +192,10 @@ namespace CuttingBusiness
 
         private void ReCalculoPagoMinxCaja()
         {
-            DialogResult = XtraMessageBox.Show("El importe de la hoja es menor al monto minimo configurado ["+tempPagoMinCortador.ToString()+"], Desea recalcular para su ajuste?, Esta accion no se puede revertir ", "Importe Inferior a Pago Minimo, Recalcular Importe?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            if (DialogResult == DialogResult.Yes)
-            {
+            
                 textPromedioCaja2.Text = (tempPagoMinCortador / Convert.ToDecimal(labelContadorCajas.Text)).ToString();
                 this.Update();
-            }
+            
             
         }
 
@@ -293,6 +294,15 @@ namespace CuttingBusiness
                     checkFestivo.Checked = false;
                 }
                 textPrecioCaja.Text = Clase.Datos.Rows[0][22].ToString();
+                if (Clase.Datos.Rows[0][23].ToString()== string.Empty)
+                {
+                    Ajuste = false;
+                }
+                else
+                {
+                    Ajuste = Convert.ToBoolean(Clase.Datos.Rows[0][23]);
+                }
+                
                 CargarDetalle();
                 ContadorTotal();
                 verificaimportes();
@@ -381,6 +391,14 @@ namespace CuttingBusiness
                                 bloquerHoja(false);
                             }
                             textPrecioCaja.Text= Clase.Datos.Rows[0][22].ToString();
+                            if (Clase.Datos.Rows[0][23].ToString() == string.Empty)
+                            {
+                                Ajuste = false;
+                            }
+                            else
+                            {
+                                Ajuste = Convert.ToBoolean(Clase.Datos.Rows[0][23]);
+                            }
                             CargarDetalle();
                             ContadorTotal();
                             verificaimportes();
@@ -592,6 +610,7 @@ namespace CuttingBusiness
 
                         TotalC = TotalC + decimal.Round(Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"])));
                         //labelImporteCortador.Text = (valor + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
+                        
                         labelImporteCortador.Text = TotalC.ToString();
                         
                     }
@@ -601,7 +620,16 @@ namespace CuttingBusiness
                     //labelImporte.Text = (valor + Convert.ToDecimal(gridView1.GetRowCellValue(xRow, gridView1.Columns["Importe"]))).ToString();
                     labelImporte.Text = Total.ToString();
                 }
+                if (Ajuste)
+                {
+                    if (TotalC % 2 > 0)
+                    {
+                        labelImporteCortador.Text = (TotalC + 1).ToString();
+                        labelImporte.Text = (Total + 1).ToString();
+                    }
+                }
                 
+
             }
             if (Convert.ToDecimal(textKgcortadosxdia.Text) > 0 && Convert.ToInt32(labelContadorCajas.Text)>0)
             {
@@ -614,6 +642,7 @@ namespace CuttingBusiness
             }
             
         }
+
 
         private void guardarDetalle(string Hoja,string secuencia,string empleado,int cajas,decimal importe, Boolean recarga)
         {
@@ -921,6 +950,8 @@ namespace CuttingBusiness
             vtCortadores=0;
             Abrir = false;
             Bandera = false;
+
+            Ajuste = false;
             
             CambioDetalle = false;
             valor=0;
@@ -1540,27 +1571,38 @@ namespace CuttingBusiness
 
         private void btnCerrarNomina_Click(object sender, EventArgs e)
         {
-            decimal vimporte = 0;
-            decimal vtope = 0;
-            Decimal.TryParse(labelImporteCortador.Text, style, culture, out valor);
-            vimporte = valor;
-            Decimal.TryParse(textTopepgoxDia.Text, style, culture, out valor);
-            vtope = valor;
-            if (vimporte < vtope)
-            {
-                ReCalculoPagoMinxCaja();
-                verificaimportesEspecial();
-            }
-            else
-            {
-                verificaimportes();
-            }
+            
             
             if (textIdHojaNomina.Text.Trim().Length >= 6)
             {
                 DialogResult = XtraMessageBox.Show("¿Esta Seguro que desea Cerrar esta hoja?", "Confirma", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (DialogResult == DialogResult.Yes)
                 {
+
+                    decimal vimporte = 0;
+                    decimal vtope = 0;
+                    Decimal.TryParse(labelImporteCortador.Text, style, culture, out valor);
+                    vimporte = valor;
+                    Decimal.TryParse(textTopepgoxDia.Text, style, culture, out valor);
+                    vtope = valor;
+                    if (vimporte < vtope)
+                    {
+                        DialogResult = XtraMessageBox.Show("El importe de la hoja es menor al monto minimo configurado [" + tempPagoMinCortador.ToString() + "], Desea recalcular para su ajuste?, Esta accion no se puede revertir ", "Importe Inferior a Pago Minimo, Recalcular Importe?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        if (DialogResult == DialogResult.Yes)
+                        {
+                            ReCalculoPagoMinxCaja();
+                            verificaimportesEspecial();
+
+                            CLS_HojaNomina clase = new CLS_HojaNomina();
+                            clase.Id_HojaNomina = textIdHojaNomina.Text.Trim();
+                            clase.MtdAjustePagoMin();
+                        }
+                    }
+                    else
+                    {
+                        verificaimportes();
+                    }
+
                     labelEstatus.Text = "NOMINA CERRADA";
                     guardarHoja();
                     bloquerHoja(false);

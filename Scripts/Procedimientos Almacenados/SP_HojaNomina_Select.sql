@@ -56,7 +56,8 @@ BEGIN
 			Pago_falso,
 			Festivo,
 			Estatus,
-			Precio_Caja
+			Precio_Caja,
+			Ajuste_PagoMin
 		from HojaNomina as H
 		left join Empleados as E on E.Id_Empleado=H.Id_JefeCuadrilla
 		where Id_HojaNomina=@Id_HojaNomina
