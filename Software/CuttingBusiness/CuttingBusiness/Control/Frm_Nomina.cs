@@ -1587,7 +1587,7 @@ namespace CuttingBusiness
                     vtope = valor;
                     if (vimporte < vtope)
                     {
-                        DialogResult = XtraMessageBox.Show("El importe de la hoja es menor al monto minimo configurado [" + tempPagoMinCortador.ToString() + "], Desea recalcular para su ajuste?, Esta accion no se puede revertir ", "Importe Inferior a Pago Minimo, Recalcular Importe?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        DialogResult = XtraMessageBox.Show("El importe de la hoja es menor al monto mínimo configurado [" + tempPagoMinCortador.ToString() + "], ¿Deseas recalcular para su ajuste?, Esta acción no se puede revertir ", "Importe Inferior a Pago Mínimo, ¿Quiere Recalcular Importe?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                         if (DialogResult == DialogResult.Yes)
                         {
                             ReCalculoPagoMinxCaja();
