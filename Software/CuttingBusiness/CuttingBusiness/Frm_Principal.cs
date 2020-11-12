@@ -611,5 +611,20 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [039]");
             }
         }
+
+        private void btnEmpresas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("002"))
+            {
+                Frm_Empresa Ventana = new Frm_Empresa();
+                Frm_Empresa.DefInstance.MdiParent = this;
+                Frm_Empresa.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Empresa.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [002]");
+            }
+        }
     }
 }

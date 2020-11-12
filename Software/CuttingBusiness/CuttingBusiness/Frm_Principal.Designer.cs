@@ -73,6 +73,7 @@
             this.btnParametroNomina = new DevExpress.XtraBars.BarButtonItem();
             this.btnParametroImportarServicios = new DevExpress.XtraBars.BarButtonItem();
             this.btnParemetrosRepotes = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEmpresas = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -152,9 +153,10 @@
             this.btn_AperturaNomina,
             this.btnParametroNomina,
             this.btnParametroImportarServicios,
-            this.btnParemetrosRepotes});
+            this.btnParemetrosRepotes,
+            this.btnEmpresas});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 43;
+            this.ribbonControl1.MaxItemId = 44;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -548,6 +550,15 @@
             this.btnParemetrosRepotes.Name = "btnParemetrosRepotes";
             this.btnParemetrosRepotes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParemetrosRepotes_ItemClick);
             // 
+            // btnEmpresas
+            // 
+            this.btnEmpresas.Caption = "Empresas";
+            this.btnEmpresas.Id = 43;
+            this.btnEmpresas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresas.ImageOptions.Image")));
+            this.btnEmpresas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEmpresas.ImageOptions.LargeImage")));
+            this.btnEmpresas.Name = "btnEmpresas";
+            this.btnEmpresas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmpresas_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -574,6 +585,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramientas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUnidaddeMedida);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHuertas);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnEmpresas);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos Iniciales";
@@ -742,6 +754,7 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // SkinForm
@@ -845,6 +858,7 @@
         private DevExpress.XtraBars.BarButtonItem btnParametroImportarServicios;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.BarButtonItem btnParemetrosRepotes;
+        private DevExpress.XtraBars.BarButtonItem btnEmpresas;
     }
 }
 

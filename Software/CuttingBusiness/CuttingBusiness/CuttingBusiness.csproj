@@ -244,6 +244,12 @@
     <Compile Include="Formularios\Frm_Marcas.Designer.cs">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Empresa.Designer.cs">
+      <DependentUpon>Frm_Empresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Series.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Marcas.resx">
       <DependentUpon>Frm_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Empresa.resx">
+      <DependentUpon>Frm_Empresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Series.resx">
       <DependentUpon>Frm_Series.cs</DependentUpon>

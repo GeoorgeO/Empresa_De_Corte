@@ -52,9 +52,6 @@ namespace CapaDeDatos
             }
 
         }
-
-
-
         public void MtdInsertarDomicilio()
         {
             TipoDato _dato = new TipoDato();
@@ -104,7 +101,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdEliminarDomicilio()
         {
             TipoDato _dato = new TipoDato();
@@ -134,7 +130,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdEliminarDomicilioPersona()
         {
             TipoDato _dato = new TipoDato();
