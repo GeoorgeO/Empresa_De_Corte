@@ -193,9 +193,9 @@
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 468);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 465);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1179, 26);
+            this.barDockControl2.Size = new System.Drawing.Size(1179, 29);
             // 
             // barDockControl3
             // 
@@ -203,7 +203,7 @@
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl3.Location = new System.Drawing.Point(0, 0);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(52, 468);
+            this.barDockControl3.Size = new System.Drawing.Size(57, 465);
             // 
             // barDockControl5
             // 
@@ -211,16 +211,16 @@
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl5.Location = new System.Drawing.Point(1179, 0);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Size = new System.Drawing.Size(0, 468);
+            this.barDockControl5.Size = new System.Drawing.Size(0, 465);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(52, 0);
+            this.panelControl1.Location = new System.Drawing.Point(57, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(1127, 120);
+            this.panelControl1.Size = new System.Drawing.Size(1122, 120);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -237,7 +237,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1103, 96);
+            this.groupControl1.Size = new System.Drawing.Size(1098, 96);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Opciones de Busqueda";
             // 
@@ -257,6 +257,9 @@
             this.lueCuadrillas.Name = "lueCuadrillas";
             this.lueCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCuadrillas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id_Categoria", "Id Categoria"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_Categoria", "Nombre Categoria")});
             this.lueCuadrillas.Properties.DisplayMember = "Nombre_Categoria";
             this.lueCuadrillas.Properties.ValueMember = "Id_Categoria";
             this.lueCuadrillas.Size = new System.Drawing.Size(100, 20);
@@ -338,10 +341,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgReporteNomina);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(52, 120);
+            this.panelControl2.Location = new System.Drawing.Point(57, 120);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(1127, 348);
+            this.panelControl2.Size = new System.Drawing.Size(1122, 345);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgReporteNomina
@@ -351,7 +354,7 @@
             this.dtgReporteNomina.MainView = this.dtgValReporteNomina;
             this.dtgReporteNomina.MenuManager = this.barManager2;
             this.dtgReporteNomina.Name = "dtgReporteNomina";
-            this.dtgReporteNomina.Size = new System.Drawing.Size(1103, 324);
+            this.dtgReporteNomina.Size = new System.Drawing.Size(1098, 321);
             this.dtgReporteNomina.TabIndex = 0;
             this.dtgReporteNomina.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteNomina});

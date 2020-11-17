@@ -11,7 +11,7 @@ namespace CapaDeDatos
 
         public string Id_Categoria { get; set; }
         public string Nombre_Categoria { get; set; }
-
+        public string Id_Empresa { get; set; }
         public string Usuario { get; set; }
 
         public void MtdSeleccionarCategoriasCuadrilla()
@@ -58,6 +58,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Categoria");
                 _dato.CadenaTexto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.CadenaTexto = Id_Empresa;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

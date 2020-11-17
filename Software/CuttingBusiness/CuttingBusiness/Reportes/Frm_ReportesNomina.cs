@@ -364,18 +364,20 @@ namespace CuttingBusiness
         private void Formato_D()
         {
             string Nombre_Categoria = string.Empty;
+            string Id_Categoria = string.Empty;
             
             string FechaInicio = dtInicio.DateTime.Year.ToString() + DosCero(dtInicio.DateTime.Month.ToString())+ DosCero(dtInicio.DateTime.Day.ToString());
             string FechaFin = dtFin.DateTime.Year.ToString() + DosCero(dtFin.DateTime.Month.ToString()) + DosCero(dtFin.DateTime.Day.ToString());
             if (lueCuadrillas.EditValue != null)
             {
                 Nombre_Categoria = lueCuadrillas.Text;
+                Id_Categoria = lueCuadrillas.EditValue.ToString();
             }
             else
             {
                 Nombre_Categoria = string.Empty;
             }
-            rpt_ReportePagoFletes rpt = new rpt_ReportePagoFletes(FechaInicio,FechaFin,Nombre_Categoria);
+            rpt_ReportePagoFletes rpt = new rpt_ReportePagoFletes(FechaInicio,FechaFin,Id_Categoria,Nombre_Categoria);
             ((SqlDataSource)rpt.DataSource).ConfigureDataConnection += Form1_ConfigureDataConnection;
             ReportPrintTool print = new ReportPrintTool(rpt);
             rpt.ShowPreviewDialog();

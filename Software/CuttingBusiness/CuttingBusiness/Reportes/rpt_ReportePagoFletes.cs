@@ -9,7 +9,7 @@ namespace CuttingBusiness
     public partial class rpt_ReportePagoFletes : DevExpress.XtraReports.UI.XtraReport
     {
         
-        public rpt_ReportePagoFletes(string FechaInicio,string FechaFin,string Nombre_Categoria)
+        public rpt_ReportePagoFletes(string FechaInicio,string FechaFin,string Id_Categoria,string Nombre_Categoria)
         {
             InitializeComponent();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();

@@ -37,14 +37,28 @@ namespace CuttingBusiness
                 gridControl1.DataSource = Clase.Datos;
             }
         }
-
-
-
+        public void CargarEmpresas(string Valor)
+        {
+            CLS_Empresas comboempresas = new CLS_Empresas();
+            comboempresas.MtdSeleccionarEmpresas();
+            if (comboempresas.Exito)
+            {
+                CargarComboTiposEntrada(comboempresas.Datos, Valor);
+            }
+        }
+        private void CargarComboTiposEntrada(DataTable Datos, string Valor)
+        {
+            lueEmpresas.Properties.DisplayMember = "Nombre_Empresa";
+            lueEmpresas.Properties.ValueMember = "Id_Empresa";
+            lueEmpresas.EditValue = Valor;
+            lueEmpresas.Properties.DataSource = Datos;
+        }
         private void InsertarCategoriasCuadrilla()
         {
             CLS_CategoriasCuadrilla Clase = new CLS_CategoriasCuadrilla();
             Clase.Id_Categoria = textId.Text.Trim();
             Clase.Nombre_Categoria = textNombre.Text.Trim();
+            Clase.Id_Empresa = lueEmpresas.EditValue.ToString();
             Clase.Usuario = UsuariosLogin.Trim();
             Clase.MtdInsertarCategoriasCuadrilla();
             if (Clase.Exito)
@@ -81,6 +95,7 @@ namespace CuttingBusiness
         {
             textId.Text = "";
             textNombre.Text = "";
+            CargarEmpresas(null);
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -92,6 +107,7 @@ namespace CuttingBusiness
                     DataRow row = this.gridView1.GetDataRow(i);
                     textId.Text = row["Id_Categoria"].ToString();
                     textNombre.Text = row["Nombre_Categoria"].ToString();
+                    lueEmpresas.EditValue= row["Id_Empresa"].ToString();
                 }
             }
             catch (Exception ex)
@@ -111,14 +127,13 @@ namespace CuttingBusiness
                 btnSeleccionar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
             CargarCategoriasCuadrilla();
+            CargarEmpresas(null);
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-
-
                 InsertarCategoriasCuadrilla();
             }
             else
@@ -154,6 +169,12 @@ namespace CuttingBusiness
             IdCategoria = textId.Text.Trim();
             Categoria = textNombre.Text.Trim();
             this.Close();
+        }
+
+        private void btnBusqEmpresa_Click(object sender, EventArgs e)
+        {
+            Frm_Empresa frm = new Frm_Empresa();
+            frm.ShowDialog();
         }
     }
 }
