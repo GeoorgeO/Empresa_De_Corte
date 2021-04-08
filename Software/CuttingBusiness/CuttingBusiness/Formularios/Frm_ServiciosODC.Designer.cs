@@ -211,9 +211,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 461);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 462);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(910, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(910, 26);
             // 
             // barDockControlLeft
             // 
@@ -221,7 +221,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(57, 461);
+            this.barDockControlLeft.Size = new System.Drawing.Size(57, 462);
             // 
             // barDockControlRight
             // 
@@ -229,7 +229,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(910, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 461);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 462);
             // 
             // btnImportar
             // 
@@ -320,7 +320,7 @@
             this.panelControl2.Location = new System.Drawing.Point(57, 80);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(853, 381);
+            this.panelControl2.Size = new System.Drawing.Size(853, 382);
             this.panelControl2.TabIndex = 10;
             // 
             // dtgServicios
@@ -330,7 +330,7 @@
             this.dtgServicios.MainView = this.dtgValServicios;
             this.dtgServicios.MenuManager = this.barManager1;
             this.dtgServicios.Name = "dtgServicios";
-            this.dtgServicios.Size = new System.Drawing.Size(829, 357);
+            this.dtgServicios.Size = new System.Drawing.Size(829, 358);
             this.dtgServicios.TabIndex = 1;
             this.dtgServicios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValServicios});
@@ -390,6 +390,7 @@
             // 
             this.gridColumn1.Caption = "Pesada";
             this.gridColumn1.FieldName = "PSC_Pesada";
+            this.gridColumn1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.ImageOptions.Image")));
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
@@ -425,6 +426,7 @@
             // 
             this.col_Cajas.Caption = "Cajas";
             this.col_Cajas.FieldName = "PSC_Cajas";
+            this.col_Cajas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("col_Cajas.ImageOptions.Image")));
             this.col_Cajas.Name = "col_Cajas";
             this.col_Cajas.Visible = true;
             this.col_Cajas.VisibleIndex = 7;
@@ -433,6 +435,7 @@
             // 
             this.col_Kilos.Caption = "Kilos";
             this.col_Kilos.FieldName = "PSC_Kilos";
+            this.col_Kilos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("col_Kilos.ImageOptions.Image")));
             this.col_Kilos.Name = "col_Kilos";
             this.col_Kilos.Visible = true;
             this.col_Kilos.VisibleIndex = 8;
@@ -460,6 +463,7 @@
             this.col_CajasZ.Caption = "CajasZ";
             this.col_CajasZ.FieldName = "PSC_CajasZ";
             this.col_CajasZ.Name = "col_CajasZ";
+            this.col_CajasZ.OptionsColumn.AllowEdit = false;
             this.col_CajasZ.Visible = true;
             this.col_CajasZ.VisibleIndex = 11;
             // 

@@ -207,9 +207,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 344);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 346);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(693, 27);
+            this.barDockControlBottom.Size = new System.Drawing.Size(693, 25);
             // 
             // barDockControlLeft
             // 
@@ -217,7 +217,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(82, 344);
+            this.barDockControlLeft.Size = new System.Drawing.Size(84, 346);
             // 
             // barDockControlRight
             // 
@@ -225,7 +225,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(693, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 344);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 346);
             // 
             // btnLimpiar
             // 
@@ -260,14 +260,14 @@
             this.tabPane1.Controls.Add(this.tabPageFormatoB);
             this.tabPane1.Controls.Add(this.tabPageFormatoC);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(82, 0);
+            this.tabPane1.Location = new System.Drawing.Point(84, 0);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabPageFormatoB,
             this.tabPageFormatoC});
-            this.tabPane1.RegularSize = new System.Drawing.Size(611, 344);
+            this.tabPane1.RegularSize = new System.Drawing.Size(609, 346);
             this.tabPane1.SelectedPage = this.tabPageFormatoB;
-            this.tabPane1.Size = new System.Drawing.Size(611, 344);
+            this.tabPane1.Size = new System.Drawing.Size(609, 346);
             this.tabPane1.TabIndex = 4;
             this.tabPane1.Text = "Formatos";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
@@ -277,7 +277,7 @@
             this.tabPageFormatoB.Caption = "Formato B";
             this.tabPageFormatoB.Controls.Add(this.tabPane2);
             this.tabPageFormatoB.Name = "tabPageFormatoB";
-            this.tabPageFormatoB.Size = new System.Drawing.Size(593, 299);
+            this.tabPageFormatoB.Size = new System.Drawing.Size(591, 301);
             // 
             // tabPane2
             // 
@@ -289,9 +289,9 @@
             this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabPageCortadores,
             this.tabPageJefesCuadrilla});
-            this.tabPane2.RegularSize = new System.Drawing.Size(593, 299);
+            this.tabPane2.RegularSize = new System.Drawing.Size(591, 301);
             this.tabPane2.SelectedPage = this.tabPageCortadores;
-            this.tabPane2.Size = new System.Drawing.Size(593, 299);
+            this.tabPane2.Size = new System.Drawing.Size(591, 301);
             this.tabPane2.TabIndex = 0;
             this.tabPane2.Text = "tabPane2";
             this.tabPane2.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane2_SelectedPageChanged);
@@ -301,7 +301,7 @@
             this.tabPageCortadores.Caption = "Cortadores";
             this.tabPageCortadores.Controls.Add(this.gridControl1);
             this.tabPageCortadores.Name = "tabPageCortadores";
-            this.tabPageCortadores.Size = new System.Drawing.Size(575, 254);
+            this.tabPageCortadores.Size = new System.Drawing.Size(573, 256);
             // 
             // gridControl1
             // 
@@ -310,7 +310,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(575, 254);
+            this.gridControl1.Size = new System.Drawing.Size(573, 256);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

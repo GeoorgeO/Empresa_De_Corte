@@ -594,6 +594,7 @@ namespace CuttingBusiness
         private void btnBusqCuadrilla_Click(object sender, EventArgs e)
         {
             Frm_Cuadrilla Clase = new Frm_Cuadrilla();
+            Clase.UsuariosLogin = UsuariosLogin;
             Clase.ShowDialog();
             CargarCuadrillas();
         }

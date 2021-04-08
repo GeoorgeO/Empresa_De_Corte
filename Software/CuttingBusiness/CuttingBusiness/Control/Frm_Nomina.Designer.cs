@@ -745,7 +745,7 @@
             // 
             // checkPagoFalso
             // 
-            this.checkPagoFalso.Location = new System.Drawing.Point(401, 110);
+            this.checkPagoFalso.Location = new System.Drawing.Point(377, 113);
             this.checkPagoFalso.Name = "checkPagoFalso";
             this.checkPagoFalso.Properties.Caption = "Pago Falso";
             this.checkPagoFalso.Size = new System.Drawing.Size(75, 19);
@@ -754,7 +754,7 @@
             // 
             // checkPagoxDia
             // 
-            this.checkPagoxDia.Location = new System.Drawing.Point(401, 91);
+            this.checkPagoxDia.Location = new System.Drawing.Point(367, 88);
             this.checkPagoxDia.Name = "checkPagoxDia";
             this.checkPagoxDia.Properties.Caption = "Pago x Dia";
             this.checkPagoxDia.Size = new System.Drawing.Size(75, 19);

@@ -351,22 +351,22 @@ namespace CuttingBusiness
             string valor = string.Empty;
             switch (registros)
             {
-                case 0:
+                case 1:
                     valor = "A";
                     break;
-                case 1:
+                case 2:
                     valor = "B";
                     break;
-                case 2:
+                case 3:
                     valor = "C";
                     break;
-                case 3:
+                case 4:
                     valor = "D";
                     break;
-                case 4:
+                case 5:
                     valor = "E";
                     break;
-                case 5:
+                case 6:
                     valor = "F";
                     break;
             }
@@ -408,6 +408,10 @@ namespace CuttingBusiness
                     if (!ins.Exito)
                     {
                         XtraMessageBox.Show(ins.Mensaje);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Se ha modificado el registro con Exito");
                     }
                 }
             }

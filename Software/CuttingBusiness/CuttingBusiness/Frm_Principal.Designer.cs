@@ -101,6 +101,7 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnCategoriaCuadrillas = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -154,9 +155,10 @@
             this.btnParametroNomina,
             this.btnParametroImportarServicios,
             this.btnParemetrosRepotes,
-            this.btnEmpresas});
+            this.btnEmpresas,
+            this.btnCategoriaCuadrillas});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 44;
+            this.ribbonControl1.MaxItemId = 45;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -581,11 +583,12 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnEmpresas);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnCategoriaCuadrillas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCuadrilla);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHerramientas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUnidaddeMedida);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHuertas);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnEmpresas);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos Iniciales";
@@ -762,6 +765,15 @@
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
+            // btnCategoriaCuadrillas
+            // 
+            this.btnCategoriaCuadrillas.Caption = "Categorias Cuadrillas";
+            this.btnCategoriaCuadrillas.Id = 44;
+            this.btnCategoriaCuadrillas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnCategoriaCuadrillas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnCategoriaCuadrillas.Name = "btnCategoriaCuadrillas";
+            this.btnCategoriaCuadrillas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCategoriaCuadrillas_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -859,6 +871,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.BarButtonItem btnParemetrosRepotes;
         private DevExpress.XtraBars.BarButtonItem btnEmpresas;
+        private DevExpress.XtraBars.BarButtonItem btnCategoriaCuadrillas;
     }
 }
 

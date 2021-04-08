@@ -174,6 +174,7 @@ namespace CuttingBusiness
         private void btnBusqEmpresa_Click(object sender, EventArgs e)
         {
             Frm_Empresa frm = new Frm_Empresa();
+            frm.UsuariosLogin = UsuariosLogin;
             frm.ShowDialog();
         }
     }
