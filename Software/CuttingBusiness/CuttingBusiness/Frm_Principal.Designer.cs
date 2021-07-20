@@ -74,6 +74,9 @@
             this.btnParametroImportarServicios = new DevExpress.XtraBars.BarButtonItem();
             this.btnParemetrosRepotes = new DevExpress.XtraBars.BarButtonItem();
             this.btnEmpresas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCategoriaCuadrillas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDiasTrabajo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHistoricoCuadrilla = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,7 +104,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.btnCategoriaCuadrillas = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -156,9 +158,11 @@
             this.btnParametroImportarServicios,
             this.btnParemetrosRepotes,
             this.btnEmpresas,
-            this.btnCategoriaCuadrillas});
+            this.btnCategoriaCuadrillas,
+            this.btnDiasTrabajo,
+            this.btnHistoricoCuadrilla});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 45;
+            this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -561,6 +565,33 @@
             this.btnEmpresas.Name = "btnEmpresas";
             this.btnEmpresas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmpresas_ItemClick);
             // 
+            // btnCategoriaCuadrillas
+            // 
+            this.btnCategoriaCuadrillas.Caption = "Categorias Cuadrillas";
+            this.btnCategoriaCuadrillas.Id = 44;
+            this.btnCategoriaCuadrillas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoriaCuadrillas.ImageOptions.Image")));
+            this.btnCategoriaCuadrillas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCategoriaCuadrillas.ImageOptions.LargeImage")));
+            this.btnCategoriaCuadrillas.Name = "btnCategoriaCuadrillas";
+            this.btnCategoriaCuadrillas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCategoriaCuadrillas_ItemClick);
+            // 
+            // btnDiasTrabajo
+            // 
+            this.btnDiasTrabajo.Caption = "Dias Trabajados";
+            this.btnDiasTrabajo.Id = 45;
+            this.btnDiasTrabajo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDiasTrabajo.ImageOptions.Image")));
+            this.btnDiasTrabajo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDiasTrabajo.ImageOptions.LargeImage")));
+            this.btnDiasTrabajo.Name = "btnDiasTrabajo";
+            this.btnDiasTrabajo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDiasTrabajo_ItemClick);
+            // 
+            // btnHistoricoCuadrilla
+            // 
+            this.btnHistoricoCuadrilla.Caption = "Historial Cuadrilla";
+            this.btnHistoricoCuadrilla.Id = 46;
+            this.btnHistoricoCuadrilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistoricoCuadrilla.ImageOptions.Image")));
+            this.btnHistoricoCuadrilla.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHistoricoCuadrilla.ImageOptions.LargeImage")));
+            this.btnHistoricoCuadrilla.Name = "btnHistoricoCuadrilla";
+            this.btnHistoricoCuadrilla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHistoricoCuadrilla_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -676,6 +707,8 @@
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.btnNominaporFecha);
             this.ribbonPageGroup11.ItemLinks.Add(this.btnAcumuladoNomina);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnDiasTrabajo);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnHistoricoCuadrilla);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             // 
             // ribbonPageGroup12
@@ -764,15 +797,6 @@
             // 
             this.SkinForm.EnableBonusSkins = true;
             this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            // 
-            // btnCategoriaCuadrillas
-            // 
-            this.btnCategoriaCuadrillas.Caption = "Categorias Cuadrillas";
-            this.btnCategoriaCuadrillas.Id = 44;
-            this.btnCategoriaCuadrillas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnCategoriaCuadrillas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnCategoriaCuadrillas.Name = "btnCategoriaCuadrillas";
-            this.btnCategoriaCuadrillas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCategoriaCuadrillas_ItemClick);
             // 
             // Frm_Principal
             // 
@@ -872,6 +896,8 @@
         private DevExpress.XtraBars.BarButtonItem btnParemetrosRepotes;
         private DevExpress.XtraBars.BarButtonItem btnEmpresas;
         private DevExpress.XtraBars.BarButtonItem btnCategoriaCuadrillas;
+        private DevExpress.XtraBars.BarButtonItem btnDiasTrabajo;
+        private DevExpress.XtraBars.BarButtonItem btnHistoricoCuadrilla;
     }
 }
 

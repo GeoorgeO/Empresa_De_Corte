@@ -155,6 +155,7 @@
             this.dtgValFormatBJ.GridControl = this.dtgFormatBJ;
             this.dtgValFormatBJ.Name = "dtgValFormatBJ";
             this.dtgValFormatBJ.OptionsView.ShowGroupPanel = false;
+            this.dtgValFormatBJ.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.dtgFormatBJ_ShowingEditor);
             this.dtgValFormatBJ.ShownEditor += new System.EventHandler(this.dtgValFormatBJ_ShownEditor);
             this.dtgValFormatBJ.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dtgValFormatBJ_CellValueChanged);
             // 
@@ -224,6 +225,7 @@
             this.dtgValFormatBC.GridControl = this.dtgFormatBC;
             this.dtgValFormatBC.Name = "dtgValFormatBC";
             this.dtgValFormatBC.OptionsView.ShowGroupPanel = false;
+            this.dtgValFormatBC.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.dtgValFormatBC_ShowingEditor);
             this.dtgValFormatBC.ShownEditor += new System.EventHandler(this.dtgValFormatBC_ShownEditor);
             this.dtgValFormatBC.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dtgValFormatBC_CellValueChanged);
             // 
@@ -306,6 +308,7 @@
             this.dtgValFormatCJ.OptionsPrint.AllowMultilineHeaders = true;
             this.dtgValFormatCJ.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.dtgValFormatCJ.OptionsView.ShowGroupPanel = false;
+            this.dtgValFormatCJ.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.dtgFormatCJ_ShowingEditor);
             this.dtgValFormatCJ.ShownEditor += new System.EventHandler(this.dtgValFormatCJ_ShownEditor);
             this.dtgValFormatCJ.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dtgValFormatCJ_CellValueChanged);
             // 
@@ -397,6 +400,7 @@
             this.dtgValFormatCC.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.dtgValFormatCC.OptionsView.RowAutoHeight = true;
             this.dtgValFormatCC.OptionsView.ShowGroupPanel = false;
+            this.dtgValFormatCC.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.dtgFormatCC_ShowingEditor);
             this.dtgValFormatCC.ShownEditor += new System.EventHandler(this.dtgValFormatCC_ShownEditor);
             this.dtgValFormatCC.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dtgValFormatCC_CellValueChanged);
             // 

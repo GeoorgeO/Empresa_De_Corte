@@ -1371,7 +1371,7 @@ namespace CuttingBusiness
                 string R_1 = "D";
                 string R_2 = "E";
                 int Fila = FilaActual - 1;
-                int DiasTrabajados = 0;
+                //int DiasTrabajados = 0;
                 FActual = Convert.ToDateTime(FInicio.Day + "/" + FInicio.Month + "/" + FInicio.Year);
                 string vId_Empleado = string.Empty;
                 string RenTemp = string.Empty;

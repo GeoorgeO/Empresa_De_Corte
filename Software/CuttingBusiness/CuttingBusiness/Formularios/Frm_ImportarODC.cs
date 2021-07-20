@@ -4,7 +4,6 @@ using DevExpress.XtraEditors;
 using CapaDeDatos;
 using SpreadsheetLight;
 using System.Data;
-using CapaDeDatos;
 
 namespace CuttingBusiness
 {
@@ -12,7 +11,7 @@ namespace CuttingBusiness
     public partial class Frm_ImportarODC : DevExpress.XtraEditors.XtraForm
     {
         int rCnt = 0;
-        int cCnt = 0;
+        //int cCnt = 0;
         public int Row_PSC_Inicio { get; set; }
         public int Col_PSC_Fecha { get; set; }
         public int Col_PSC_ODC { get; set; }
@@ -394,7 +393,7 @@ namespace CuttingBusiness
                     txtRutaArchivo.Text = OpenDialog.FileName;
                     var str = string.Empty;
                     rCnt = Row_PSC_Inicio;
-                    cCnt = 0;
+                    //cCnt = 0;
                     try
                     {
                         rCnt = Row_PSC_Inicio;

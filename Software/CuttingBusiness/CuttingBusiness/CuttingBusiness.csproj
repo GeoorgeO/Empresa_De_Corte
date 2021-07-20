@@ -390,6 +390,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Frm_HistoricoCuadrillas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_HistoricoCuadrillas.Designer.cs">
+      <DependentUpon>Frm_HistoricoCuadrillas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_DiasTrabajados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_DiasTrabajados.Designer.cs">
+      <DependentUpon>Frm_DiasTrabajados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_ReportesNomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -588,6 +600,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Frm_HistoricoCuadrillas.resx">
+      <DependentUpon>Frm_HistoricoCuadrillas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_DiasTrabajados.resx">
+      <DependentUpon>Frm_DiasTrabajados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_ReportesNomina.resx">
       <DependentUpon>Frm_ReportesNomina.cs</DependentUpon>
     </EmbeddedResource>

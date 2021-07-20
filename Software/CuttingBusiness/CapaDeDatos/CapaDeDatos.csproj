@@ -52,6 +52,8 @@
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Formularios\CLS_Areas.cs" />
     <Compile Include="Formularios\CLS_Empaques.cs" />
+    <Compile Include="Formularios\CLS_EmpleadosHis.cs" />
+    <Compile Include="Formularios\CLS_EmpleadosRep.cs" />
     <Compile Include="Formularios\CLS_Empleados_Nomina.cs" />
     <Compile Include="Formularios\CLS_Entradas.cs" />
     <Compile Include="Formularios\CLS_HojaNomina.cs" />

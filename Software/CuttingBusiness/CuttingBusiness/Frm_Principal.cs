@@ -640,5 +640,36 @@ namespace CuttingBusiness
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [041]");
             }
         }
+
+        private void btnDiasTrabajo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("042"))
+            {
+                Frm_DiasTrabajados Ventana = new Frm_DiasTrabajados();
+                Frm_DiasTrabajados.DefInstance.MdiParent = this;
+                Frm_DiasTrabajados.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_DiasTrabajados.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [042]");
+            }
+        }
+
+        private void btnHistoricoCuadrilla_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("043"))
+            {
+                Frm_HistoricoCuadrillas Ventana = new Frm_HistoricoCuadrillas();
+                Frm_HistoricoCuadrillas.DefInstance.MdiParent = this;
+                Frm_HistoricoCuadrillas.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_HistoricoCuadrillas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [043]");
+            }
+        }
     }
+    
 }

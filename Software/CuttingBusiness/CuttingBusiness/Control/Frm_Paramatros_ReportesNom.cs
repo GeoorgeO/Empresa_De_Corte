@@ -29,6 +29,7 @@ namespace CuttingBusiness
         public bool PrimeraEdicionBJ { get; private set; }
         public bool PrimeraEdicionCC { get; private set; }
         public bool PrimeraEdicionCJ { get; private set; }
+        public string DiaAnterior { get;  set; }
 
         public Frm_Paramatros_ReportesNom()
         {
@@ -420,109 +421,328 @@ namespace CuttingBusiness
         {
             if (!PrimeraEdicionBC == true)
             {
-                if (e.Column.FieldName == "Dias_Trabajo" || e.Column.FieldName == "Sueldo_Bruto")
+                if (e.Column.FieldName == "Dias_trabajo" || e.Column.FieldName == "Sueldo_Bruto")
                 {
+
                     PrimeraEdicionBC = true;
                     GridView gv = sender as GridView;
                     int.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"]).ToString(), style, culture, out vDias_Trabajo);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Bruto"]).ToString(), style, culture, out vSueldo_Bruto);
-                    CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
-                    udp.Dias_trabajo = vDias_Trabajo;
-                    udp.Sueldo_Bruto = vSueldo_Bruto;
-                    udp.Tipo_Empleado = "C";
-                    udp.Id = vIdTemp;
-                    udp.MtdUpdateParametrosB();
-                    if(!udp.Exito)
+                    string vId=gv.GetRowCellValue(e.RowHandle, gv.Columns["Id"]).ToString();
+                    Boolean ValidaDato = true;
+                    if (e.Column.FieldName == "Dias_trabajo")
                     {
-                        XtraMessageBox.Show(udp.Mensaje);
+                        ValidaDato = ValidaDiasBC(vDias_Trabajo,vId);
+                    }
+                    if (ValidaDato)
+                    {
+                        CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
+                        udp.Dias_trabajo = vDias_Trabajo;
+                        udp.Sueldo_Bruto = vSueldo_Bruto;
+                        udp.Tipo_Empleado = "C";
+                        udp.Id = vIdTemp;
+                        udp.MtdUpdateParametrosB();
+                        if (!udp.Exito)
+                        {
+                            XtraMessageBox.Show(udp.Mensaje);
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Ya existe este dia de trabajo");
+                        gv.SetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"], DiaAnterior);
                     }
                     PrimeraEdicionBC = false;
                 }
             }
         }
 
+        private bool ValidaDiasBC(int VDia, string Id)
+        {
+            Boolean Valor = true;
+            CLS_Parametros_Reportes sel = new CLS_Parametros_Reportes();
+            sel.Tipo_Empleado = "C";
+            sel.MtdSeleccionarParametrosB();
+            if (sel.Exito)
+            {
+                for (int i = 0; i < sel.Datos.Rows.Count; i++)
+                {
+                    if (sel.Datos.Rows[i]["Id"].ToString() != Id)
+                    {
+                        if (sel.Datos.Rows[i]["Dias_trabajo"].ToString() == VDia.ToString())
+                        {
+                            Valor = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            return Valor;
+        }
+
         private void dtgValFormatBJ_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (!PrimeraEdicionBJ == true)
             {
-                if (e.Column.FieldName == "Dias_Trabajo" || e.Column.FieldName == "Sueldo_Bruto")
+                if (e.Column.FieldName == "Dias_trabajo" || e.Column.FieldName == "Sueldo_Bruto")
                 {
                     PrimeraEdicionBJ = true;
                     GridView gv = sender as GridView;
                     int.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"]).ToString(), style, culture, out vDias_Trabajo);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Bruto"]).ToString(), style, culture, out vSueldo_Bruto);
-                    CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
-                    udp.Dias_trabajo = vDias_Trabajo;
-                    udp.Sueldo_Bruto = vSueldo_Bruto;
-                    udp.Tipo_Empleado = "J";
-                    udp.Id = vIdTemp;
-                    udp.MtdUpdateParametrosB();
-                    if (!udp.Exito)
+                    string vId = gv.GetRowCellValue(e.RowHandle, gv.Columns["Id"]).ToString();
+                    Boolean ValidaDato = true;
+                    if (e.Column.FieldName == "Dias_trabajo")
                     {
-                        XtraMessageBox.Show(udp.Mensaje);
+                        ValidaDato = ValidaDiasBJ(vDias_Trabajo,vId);
+                    }
+                    if (ValidaDato)
+                    {
+                        CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
+                        udp.Dias_trabajo = vDias_Trabajo;
+                        udp.Sueldo_Bruto = vSueldo_Bruto;
+                        udp.Tipo_Empleado = "J";
+                        udp.Id = vIdTemp;
+                        udp.MtdUpdateParametrosB();
+                        if (!udp.Exito)
+                        {
+                            XtraMessageBox.Show(udp.Mensaje);
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Ya existe este dia de trabajo");
+                        gv.SetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"], DiaAnterior);
                     }
                     PrimeraEdicionBJ = false;
                 }
             }
         }
 
+        private bool ValidaDiasBJ(int VDia, string Id)
+        {
+            Boolean Valor = true;
+            CLS_Parametros_Reportes sel = new CLS_Parametros_Reportes();
+            sel.Tipo_Empleado = "J";
+            sel.MtdSeleccionarParametrosB();
+            if (sel.Exito)
+            {
+                for (int i = 0; i < sel.Datos.Rows.Count; i++)
+                {
+                    if (sel.Datos.Rows[i]["Id"].ToString() != Id)
+                    {
+                        if (sel.Datos.Rows[i]["Dias_trabajo"].ToString() == VDia.ToString())
+                        {
+                            Valor = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            return Valor;
+        }
+
         private void dtgValFormatCC_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (!PrimeraEdicionCC == true)
             {
-                if (e.Column.FieldName == "Dias_Trabajo" || e.Column.FieldName == "Sueldo_Bruto" || e.Column.FieldName == "ISR")
+                if (e.Column.FieldName == "Dias_trabajo" || e.Column.FieldName == "Sueldo_Bruto" || e.Column.FieldName == "ISR")
                 {
                     PrimeraEdicionCC = true;
                     GridView gv = sender as GridView;
                     int.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"]).ToString(), style, culture, out vDias_Trabajo);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Bruto"]).ToString(), style, culture, out vSueldo_Bruto);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["ISR"]).ToString(), style, culture, out vISR);
+                    string vId = gv.GetRowCellValue(e.RowHandle, gv.Columns["Id"]).ToString();
                     vSueldo_Neto = vSueldo_Bruto - vISR;
                     gv.SetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Neto"], vSueldo_Neto);
-                    CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
-                    udp.Dias_trabajo = vDias_Trabajo;
-                    udp.Sueldo_Bruto = vSueldo_Bruto;
-                    udp.ISR = vISR;
-                    udp.Sueldo_Neto = vSueldo_Neto;
-                    udp.Tipo_Empleado = "C";
-                    udp.Id = vIdTemp;
-                    udp.MtdUpdateParametrosC();
-                    if (!udp.Exito)
+                    Boolean ValidaDato = true;
+                    if (e.Column.FieldName == "Dias_trabajo")
                     {
-                        XtraMessageBox.Show(udp.Mensaje);
+                        ValidaDato = ValidaDiasCC(vDias_Trabajo,vId);
+                    }
+                    if (ValidaDato)
+                    {
+                        CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
+                        udp.Dias_trabajo = vDias_Trabajo;
+                        udp.Sueldo_Bruto = vSueldo_Bruto;
+                        udp.ISR = vISR;
+                        udp.Sueldo_Neto = vSueldo_Neto;
+                        udp.Tipo_Empleado = "C";
+                        udp.Id = vIdTemp;
+                        udp.MtdUpdateParametrosC();
+                        if (!udp.Exito)
+                        {
+                            XtraMessageBox.Show(udp.Mensaje);
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Ya existe este dia de trabajo");
+                        gv.SetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"], DiaAnterior);
                     }
                     PrimeraEdicionCC = false;
                 }
             }
         }
 
+        private bool ValidaDiasCC(int vDia, string Id)
+        {
+            Boolean Valor = true;
+            CLS_Parametros_Reportes sel = new CLS_Parametros_Reportes();
+            sel.Tipo_Empleado = "C";
+            sel.MtdSeleccionarParametrosB();
+            if (sel.Exito)
+            {
+                for (int i = 0; i < sel.Datos.Rows.Count; i++)
+                {
+                    if (sel.Datos.Rows[i]["Id"].ToString() != Id)
+                    {
+                        if (sel.Datos.Rows[i]["Dias_trabajo"].ToString() == vDia.ToString())
+                        {
+                            Valor = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            return Valor;
+        }
+
         private void dtgValFormatCJ_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (!PrimeraEdicionCJ == true)
             {
-                if (e.Column.FieldName == "Dias_Trabajo" || e.Column.FieldName == "Sueldo_Bruto" || e.Column.FieldName == "ISR")
+                if (e.Column.FieldName == "Dias_trabajo" || e.Column.FieldName == "Sueldo_Bruto" || e.Column.FieldName == "ISR")
                 {
+                    
                     PrimeraEdicionCJ = true;
                     GridView gv = sender as GridView;
                     int.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"]).ToString(), style, culture, out vDias_Trabajo);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Bruto"]).ToString(), style, culture, out vSueldo_Bruto);
                     decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["ISR"]).ToString(), style, culture, out vISR);
+                    string vId = gv.GetRowCellValue(e.RowHandle, gv.Columns["Id"]).ToString();
                     vSueldo_Neto = vSueldo_Bruto - vISR;
                     gv.SetRowCellValue(e.RowHandle, gv.Columns["Sueldo_Neto"], vSueldo_Neto);
-                    CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
-                    udp.Dias_trabajo = vDias_Trabajo;
-                    udp.Sueldo_Bruto = vSueldo_Bruto;
-                    udp.ISR = vISR;
-                    udp.Sueldo_Neto = vSueldo_Neto;
-                    udp.Tipo_Empleado = "J";
-                    udp.Id = vIdTemp;
-                    udp.MtdUpdateParametrosC();
-                    if (!udp.Exito)
+                    Boolean ValidaDato = true;
+                    if (e.Column.FieldName == "Dias_trabajo")
                     {
-                        XtraMessageBox.Show(udp.Mensaje);
+                        ValidaDato = ValidaDiasCJ(vDias_Trabajo,vId);
+                    }
+                    if (ValidaDato)
+                    {
+                        CLS_Parametros_Reportes udp = new CLS_Parametros_Reportes();
+                        udp.Dias_trabajo = vDias_Trabajo;
+                        udp.Sueldo_Bruto = vSueldo_Bruto;
+                        udp.ISR = vISR;
+                        udp.Sueldo_Neto = vSueldo_Neto;
+                        udp.Tipo_Empleado = "J";
+                        udp.Id = vIdTemp;
+                        udp.MtdUpdateParametrosC();
+                        if (!udp.Exito)
+                        {
+                            XtraMessageBox.Show(udp.Mensaje);
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Ya existe este dia de trabajo");
+                        gv.SetRowCellValue(e.RowHandle, gv.Columns["Dias_trabajo"], DiaAnterior);
                     }
                     PrimeraEdicionCJ = false;
                 }
+            }
+        }
+
+        private bool ValidaDiasCJ(int vDia, string Id)
+        {
+            Boolean Valor = true;
+            CLS_Parametros_Reportes sel = new CLS_Parametros_Reportes();
+            sel.Tipo_Empleado = "J";
+            sel.MtdSeleccionarParametrosB();
+            if (sel.Exito)
+            {
+                for (int i = 0; i < sel.Datos.Rows.Count; i++)
+                {
+                    if (sel.Datos.Rows[i]["Id"].ToString() != Id)
+                    {
+                        if (sel.Datos.Rows[i]["Dias_trabajo"].ToString() == vDia.ToString())
+                        {
+                            Valor = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            return Valor;
+        }
+
+        private void dtgFormatBC_ShowingEditor(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void dtgFormatBJ_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValFormatBJ.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValFormatBJ.GetDataRow(i);
+                    DiaAnterior = row["Dias_trabajo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgFormatCC_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValFormatCC.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValFormatCC.GetDataRow(i);
+                    DiaAnterior = row["Dias_trabajo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgFormatCJ_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValFormatCJ.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValFormatCJ.GetDataRow(i);
+                    DiaAnterior = row["Dias_trabajo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgValFormatBC_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValFormatBC.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValFormatBC.GetDataRow(i);
+                    DiaAnterior = row["Dias_trabajo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
             }
         }
     }

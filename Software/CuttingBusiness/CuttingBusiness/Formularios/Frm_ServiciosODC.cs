@@ -241,7 +241,6 @@ namespace CuttingBusiness
             if (DialogResult == DialogResult.Yes)
             {
                 string[] ODC = CadenaCodigos.Split(',');
-                int t = 0;
                 foreach (string vOrden in ODC)
                 {
                     for (int i = 0; i < dtgValServicios.RowCount; i++)
@@ -276,7 +275,6 @@ namespace CuttingBusiness
             if (DialogResult == DialogResult.Yes)
             {
                 string[] ODC = CadenaCodigos.Split(',');
-                int t = 0;
                 foreach (string vOrden in ODC)
                 {
                     for (int i = 0; i < dtgValServicios.RowCount; i++)
