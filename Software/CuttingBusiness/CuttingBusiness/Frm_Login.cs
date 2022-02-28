@@ -119,14 +119,16 @@ namespace CuttingBusiness
             v.MtdSeleccionarVersion();
             if (v.Exito)
             {
-                if (barStaticItem1.Caption.Trim().Equals(v.Datos.Rows[0][0].ToString())){
-
-                }else
+                if (barStaticItem1.Caption.Trim().Equals(v.Datos.Rows[0][0].ToString()))
                 {
-                    XtraMessageBox.Show("La version del programa no es la mas actual, se requiere la version "+ v.Datos.Rows[0][0].ToString() + Environment.NewLine+ "Favor de comunicarse con el administrador del sistema");
+
+                }
+                else
+                {
+                    XtraMessageBox.Show("La version del programa no es la mas actual, se requiere la version " + v.Datos.Rows[0][0].ToString() + Environment.NewLine + "Favor de comunicarse con el administrador del sistema");
                     btnAcceso.Enabled = false;
                 }
-               
+
             }
             else
             {

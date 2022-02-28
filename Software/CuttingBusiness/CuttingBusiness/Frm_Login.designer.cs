@@ -176,7 +176,7 @@
             // 
             // barStaticItem1
             // 
-            this.barStaticItem1.Caption = "V20201117.01";
+            this.barStaticItem1.Caption = "V20210903.01";
             this.barStaticItem1.Id = 1;
             this.barStaticItem1.Name = "barStaticItem1";
             // 
