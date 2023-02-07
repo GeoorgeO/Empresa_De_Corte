@@ -2394,7 +2394,7 @@
   <data name="btnParametroNomina.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAACR0RVh0VGl0bGUARG9jdW1lbnRQcm9wZXJ0aWVzO1Byb3BlcnRpZXM7NlalgwAA
+        wQAADsEBuJFr7QAAACR0RVh0VGl0bGUARG9jdW1lbnRQcm9wZXJ0aWVzO1Byb3BlcnRpZXM7NlalgwAA
         BvdJREFUWEfFVwlQlVUU/jG1xcqWmZpsWqZSc6tsGaeccbIMsXRwIZeyKVHDjfGhQGApiOCugPtOqJip
         gErIIhiyC4qKSSwuIILLez6W93grj69z7uP9vPI30GmmM/PNPe/w3vm+e8+991wkAP8r7g60mUsrOhEe
         ugc6K4Dj/Lt/NZnPmVwEyNZF56ZH7s4FjYhkROVgXZR9jCDYx2xE7MpG+M5srKVx7c4sgeA1x0IoBQth
@@ -2758,7 +2758,7 @@
   <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>18, 24</value>
   </metadata>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Frm_Principal.IconOptions.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgYGp0YFRX7GBgb9BgY

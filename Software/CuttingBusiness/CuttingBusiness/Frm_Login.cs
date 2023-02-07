@@ -40,6 +40,7 @@ namespace CuttingBusiness
                 {
                     Crypto claseencripta = new Crypto();
                     SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena =claseencripta.Encriptar(txtPass.Text) };
+                    //string val=claseencripta.Desencriptar("1kUYW1P67V0=");
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {

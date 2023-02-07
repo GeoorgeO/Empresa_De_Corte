@@ -110,7 +110,7 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationIcon = global::CuttingBusiness.Properties.Resources.arbol__1_;
+            this.ribbonControl1.ApplicationButtonImageOptions.Image = global::CuttingBusiness.Properties.Resources.arbol__1_;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -160,7 +160,8 @@
             this.btnEmpresas,
             this.btnCategoriaCuadrillas,
             this.btnDiasTrabajo,
-            this.btnHistoricoCuadrilla});
+            this.btnHistoricoCuadrilla,
+            this.ribbonControl1.SearchEditItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -464,6 +465,7 @@
             this.btnHuertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuertas.ImageOptions.Image")));
             this.btnHuertas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuertas.ImageOptions.LargeImage")));
             this.btnHuertas.Name = "btnHuertas";
+            this.btnHuertas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnHuertas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuertas_ItemClick);
             // 
             // btnPreODC
@@ -604,16 +606,17 @@
             // ribbonPageGroup17
             // 
             this.ribbonPageGroup17.AllowTextClipping = false;
+            this.ribbonPageGroup17.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup17.ItemLinks.Add(this.btnEmpleados);
             this.ribbonPageGroup17.ItemLinks.Add(this.btnProveedores);
             this.ribbonPageGroup17.ItemLinks.Add(this.btnClientes);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.ShowCaptionButton = false;
             this.ribbonPageGroup17.Text = "Catalogo Personas";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
+            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEmpresas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCategoriaCuadrillas);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCuadrilla);
@@ -621,15 +624,14 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnUnidaddeMedida);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHuertas);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Catalogos Iniciales";
             // 
             // ribbonPageGroup18
             // 
             this.ribbonPageGroup18.AllowTextClipping = false;
+            this.ribbonPageGroup18.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup18.ItemLinks.Add(this.btnSalir);
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
-            this.ribbonPageGroup18.ShowCaptionButton = false;
             // 
             // ribbonPage4
             // 
@@ -805,7 +807,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 433);
             this.Controls.Add(this.ribbonControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Frm_Principal.IconOptions.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Frm_Principal";
             this.Ribbon = this.ribbonControl1;
